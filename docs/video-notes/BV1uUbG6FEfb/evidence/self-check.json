@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-09-28T21:02:21.967721+08:00",
+  "scope": "Analyst-coder self-review, not independent reviewer approval",
+  "protected_file_count": 123,
+  "protected_files_unchanged": true,
+  "root_readme_only_appended": true,
+  "root_readme_bom_unchanged": true,
+  "local_markdown_links_resolve": true,
+  "asr_segment_count": 686,
+  "srt_segment_count": 686,
+  "asr_times_ordered_and_within_audio": true,
+  "frame_index_records_checked": 271,
+  "frame_time_tolerance_seconds": 0.1,
+  "no_media_models_dependencies_in_notes": true,
+  "note": "No hardware, firmware flashing, simulation, training, or robot execution was performed.",
+  "full_asr_removed_from_deliverables": true,
+  "full_asr_temp_copies_exist": true,
+  "asr_segment_count_source": "internal TEMP machine transcript",
+  "srt_segment_count_source": "internal TEMP SRT",
+  "chapter_index_count": 14,
+  "chapter_summaries_are_paraphrased_not_verbatim": true
+}

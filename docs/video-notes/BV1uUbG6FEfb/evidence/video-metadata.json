@@ -1,0 +1,37 @@
+{
+  "fetched_at": "2026-09-28T20:55:57.058820+08:00",
+  "source_api": "https://api.bilibili.com/x/web-interface/view?bvid=BV1uUbG6FEfb",
+  "code": 0,
+  "data": {
+    "bvid": "BV1uUbG6FEfb",
+    "aid": 117233732815841,
+    "cid": 41685224881,
+    "title": "手搓microduck保姆级完整教程！一步一步带你从零开始做鸭，小白也能复刻！",
+    "pubdate": 1788852600,
+    "duration": 1317,
+    "desc": "microduck等不及发货了，来和我一起手搓一个出来！这次教程我把我能想到的问题都写在视频里面了，大家加油，评论区期待你们的成果~\nhttps://github.com/AI-FanGe/Microduck-build-tutorial",
+    "owner": {
+      "mid": 2161614,
+      "name": "AI研究室-帆哥",
+      "face": "https://i0.hdslb.com/bfs/face/1222ce7fb2e7737b0e2a56f9c0b9356dd22e092c.jpg"
+    },
+    "pages": [
+      {
+        "cid": 41685224881,
+        "page": 1,
+        "from": "vupload",
+        "part": "手搓microduck保姆级完整教程！一步一步带你从零开始做鸭，小白也能复刻！",
+        "duration": 1317,
+        "vid": "",
+        "weblink": "",
+        "dimension": {
+          "width": 3840,
+          "height": 2160,
+          "rotate": 0
+        },
+        "first_frame": "http://i0.hdslb.com/bfs/storyff/_00001zlz6auhdxhtp238qaqsi67p35b_firsti.jpg",
+        "ctime": 1788845168
+      }
+    ]
+  }
+}

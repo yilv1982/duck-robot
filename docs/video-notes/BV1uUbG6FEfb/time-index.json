@@ -1,0 +1,164 @@
+{
+  "video_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/",
+  "type": "original_paraphrased_chapter_index_not_transcript",
+  "description_zh": "根据内部ASR与关键帧整理的原创章节摘要，时间为主题近似边界，不含逐字原文。",
+  "chapters": [
+    {
+      "start_seconds": 0,
+      "end_seconds": 84,
+      "title_zh": "开场与复刻范围",
+      "summary_zh": "展示作者机器人，并介绍打印修改、部署教程和已训练步态；复刻难度与当前仓库可运行性应分别判断。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=0",
+      "frames": [
+        "frames/contact-sheet-01.jpg"
+      ]
+    },
+    {
+      "start_seconds": 84,
+      "end_seconds": 184,
+      "title_zh": "零件选型",
+      "summary_zh": "说明XL330、Pi、OpenRB、IMU、6V电池与Pi降压；本次侧重运动，不包含语音与摄像头开发。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=84",
+      "frames": [
+        "frames/02-15-480.jpg",
+        "frames/02-45-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 184,
+      "end_seconds": 280,
+      "title_zh": "结构与装配准备",
+      "summary_zh": "以含嘴部的15舵机模型解释结构；塑料环替代部分轴承，注意润滑、螺丝长度和先确认舵机中位。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=184",
+      "frames": [
+        "frames/03-15-480.jpg",
+        "frames/03-20-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 280,
+      "end_seconds": 348,
+      "title_zh": "分别装双腿",
+      "summary_zh": "从脚壳与首个舵机开始，逐步固定连接件及支承环，先分别完成双腿。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=280",
+      "frames": [
+        "frames/05-00.jpg",
+        "frames/05-30.jpg"
+      ]
+    },
+    {
+      "start_seconds": 348,
+      "end_seconds": 475,
+      "title_zh": "躯干与接腿",
+      "summary_zh": "组合髋部舵机和夹持结构，先固定后续会被遮挡的孔，再接回两条腿。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=348",
+      "frames": [
+        "frames/06-30.jpg",
+        "frames/07-00.jpg"
+      ]
+    },
+    {
+      "start_seconds": 475,
+      "end_seconds": 588,
+      "title_zh": "颈头嘴和电池空间",
+      "summary_zh": "组装颈头与嘴部结构；作者为较大的电池修改外壳开口，并把板件安排到后侧。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=475",
+      "frames": [
+        "frames/08-30.jpg",
+        "frames/09-00.jpg",
+        "frames/09-30.jpg"
+      ]
+    },
+    {
+      "start_seconds": 588,
+      "end_seconds": 658,
+      "title_zh": "焊接与三类线路",
+      "summary_zh": "演示上锡和焊接，并讲电源、共地和信号；通用24V动效不代表本机电压。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=588",
+      "frames": [
+        "frames/10-20-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 658,
+      "end_seconds": 843,
+      "title_zh": "单舵机参数与编号",
+      "summary_zh": "OpenRB通过USB连电脑逐个设置ID、1Mbps和Return Delay=0，执行Center；作者另改PWM Slope=255并取消Shutdown Bit0，后者不作为安全建议。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=658",
+      "frames": [
+        "frames/12-27-480.jpg",
+        "frames/12-58-480.jpg",
+        "frames/13-01-480.jpg",
+        "frames/13-54-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 843,
+      "end_seconds": 925,
+      "title_zh": "总线与控制信号连接",
+      "summary_zh": "同名三线合并分支；GND/Data接OpenRB，动力V留作独立电源分支；连接Pi、OpenRB与IMU。没有确认拔跳线。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=843",
+      "frames": [
+        "frames/14-57-480.jpg",
+        "frames/15-17-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 925,
+      "end_seconds": 1024,
+      "title_zh": "电源分路与IMU固定",
+      "summary_zh": "电池正极经开关后分舵机动力和Pi降压两路，后者6V转5V；固定线束和与策略匹配的IMU朝向。电池铭牌不可读。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=925",
+      "frames": [
+        "frames/15-27-480.jpg",
+        "frames/16-12-480.jpg",
+        "frames/16-22-480.jpg",
+        "frames/16-42-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 1024,
+      "end_seconds": 1080,
+      "title_zh": "刷写预制镜像",
+      "summary_zh": "下载Release中的xz镜像，用Pi Imager自定义写卡并插Pi；口述建议新卡且大于32GB，与画内16GB起清单有差别。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=1024",
+      "frames": [
+        "frames/17-24-480.jpg",
+        "frames/17-45-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 1080,
+      "end_seconds": 1165,
+      "title_zh": "首启联网",
+      "summary_zh": "显示器和键盘连接Pi，配置2.4GHz Wi-Fi及自动连接，再接回OpenRB。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=1080",
+      "frames": [
+        "frames/19-02-480.jpg"
+      ]
+    },
+    {
+      "start_seconds": 1165,
+      "end_seconds": 1271,
+      "title_zh": "SSH与键盘首跑",
+      "summary_zh": "同网络电脑SSH进入Pi并启动部署程序；机器人先回中，随后作者扶住并按V启动步态，方向键调整速度和转向。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=1165",
+      "frames": [
+        "frames/19-51-480.jpg",
+        "frames/20-12-480.jpg",
+        "frames/20-24-480.jpg",
+        "frames/21-00.jpg"
+      ]
+    },
+    {
+      "start_seconds": 1271,
+      "end_seconds": 1317,
+      "title_zh": "总结与后续",
+      "summary_zh": "总结复刻难度并提及后续自定义动作；没有演示完整IMU标定、训练、导出或工程验收。",
+      "jump_url": "https://www.bilibili.com/video/BV1uUbG6FEfb/?t=1271",
+      "frames": [
+        "frames/21-30.jpg"
+      ]
+    }
+  ]
+}

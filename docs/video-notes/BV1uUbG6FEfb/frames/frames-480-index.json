@@ -1,0 +1,800 @@
+[
+  {
+    "group": "materials",
+    "requested_seconds": 100,
+    "actual_seconds": 99.9666875,
+    "file": "01-40-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 105,
+    "actual_seconds": 104.9666875,
+    "file": "01-45-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 110,
+    "actual_seconds": 109.9666875,
+    "file": "01-50-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 115,
+    "actual_seconds": 114.9666875,
+    "file": "01-55-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 120,
+    "actual_seconds": 119.9666875,
+    "file": "02-00-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 125,
+    "actual_seconds": 124.9666875,
+    "file": "02-05-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 130,
+    "actual_seconds": 129.9666875,
+    "file": "02-10-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 135,
+    "actual_seconds": 134.9666875,
+    "file": "02-15-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 140,
+    "actual_seconds": 139.9666875,
+    "file": "02-20-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 145,
+    "actual_seconds": 144.9666875,
+    "file": "02-25-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 150,
+    "actual_seconds": 149.9666875,
+    "file": "02-30-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 155,
+    "actual_seconds": 154.9666875,
+    "file": "02-35-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 160,
+    "actual_seconds": 159.9666875,
+    "file": "02-40-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 165,
+    "actual_seconds": 164.9666875,
+    "file": "02-45-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 170,
+    "actual_seconds": 169.9666875,
+    "file": "02-50-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 175,
+    "actual_seconds": 174.9666875,
+    "file": "02-55-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 180,
+    "actual_seconds": 179.9666875,
+    "file": "03-00-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 185,
+    "actual_seconds": 184.9666875,
+    "file": "03-05-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 190,
+    "actual_seconds": 189.9666875,
+    "file": "03-10-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 195,
+    "actual_seconds": 194.9666875,
+    "file": "03-15-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 200,
+    "actual_seconds": 199.9666875,
+    "file": "03-20-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 205,
+    "actual_seconds": 204.9666875,
+    "file": "03-25-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 210,
+    "actual_seconds": 209.9666875,
+    "file": "03-30-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 215,
+    "actual_seconds": 214.9666875,
+    "file": "03-35-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 220,
+    "actual_seconds": 219.9666875,
+    "file": "03-40-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 225,
+    "actual_seconds": 224.9666875,
+    "file": "03-45-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 230,
+    "actual_seconds": 229.9666875,
+    "file": "03-50-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 235,
+    "actual_seconds": 234.9666875,
+    "file": "03-55-480.jpg"
+  },
+  {
+    "group": "materials",
+    "requested_seconds": 240,
+    "actual_seconds": 239.9666875,
+    "file": "04-00-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 590,
+    "actual_seconds": 589.9666875,
+    "file": "09-50-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 595,
+    "actual_seconds": 594.9666875,
+    "file": "09-55-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 600,
+    "actual_seconds": 599.9666875,
+    "file": "10-00-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 605,
+    "actual_seconds": 604.9666875,
+    "file": "10-05-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 610,
+    "actual_seconds": 609.9666875,
+    "file": "10-10-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 615,
+    "actual_seconds": 614.9666875,
+    "file": "10-15-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 620,
+    "actual_seconds": 619.9666875,
+    "file": "10-20-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 625,
+    "actual_seconds": 624.9666875,
+    "file": "10-25-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 630,
+    "actual_seconds": 629.9666875,
+    "file": "10-30-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 635,
+    "actual_seconds": 634.9666875,
+    "file": "10-35-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 640,
+    "actual_seconds": 639.9666875,
+    "file": "10-40-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 645,
+    "actual_seconds": 644.9666875,
+    "file": "10-45-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 650,
+    "actual_seconds": 649.9666875,
+    "file": "10-50-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 655,
+    "actual_seconds": 654.9666875,
+    "file": "10-55-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 660,
+    "actual_seconds": 659.9666875,
+    "file": "11-00-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 665,
+    "actual_seconds": 664.9666875,
+    "file": "11-05-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 852,
+    "actual_seconds": 851.9666875,
+    "file": "14-12-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 857,
+    "actual_seconds": 856.9666875,
+    "file": "14-17-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 862,
+    "actual_seconds": 861.9666875,
+    "file": "14-22-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 867,
+    "actual_seconds": 866.9666875,
+    "file": "14-27-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 872,
+    "actual_seconds": 871.9666875,
+    "file": "14-32-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 877,
+    "actual_seconds": 876.9666875,
+    "file": "14-37-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 882,
+    "actual_seconds": 881.9666875,
+    "file": "14-42-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 887,
+    "actual_seconds": 886.9666875,
+    "file": "14-47-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 892,
+    "actual_seconds": 891.9666875,
+    "file": "14-52-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 897,
+    "actual_seconds": 896.9666875,
+    "file": "14-57-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 902,
+    "actual_seconds": 901.9666875,
+    "file": "15-02-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 907,
+    "actual_seconds": 906.9666875,
+    "file": "15-07-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 912,
+    "actual_seconds": 911.9666875,
+    "file": "15-12-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 917,
+    "actual_seconds": 916.9666875,
+    "file": "15-17-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 922,
+    "actual_seconds": 921.9666875,
+    "file": "15-22-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 927,
+    "actual_seconds": 926.9666875,
+    "file": "15-27-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 932,
+    "actual_seconds": 931.9666875,
+    "file": "15-32-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 937,
+    "actual_seconds": 936.9666875,
+    "file": "15-37-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 942,
+    "actual_seconds": 941.9666875,
+    "file": "15-42-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 947,
+    "actual_seconds": 946.9666875,
+    "file": "15-47-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 952,
+    "actual_seconds": 951.9666875,
+    "file": "15-52-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 957,
+    "actual_seconds": 956.9666875,
+    "file": "15-57-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 962,
+    "actual_seconds": 961.9666875,
+    "file": "16-02-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 967,
+    "actual_seconds": 966.9666875,
+    "file": "16-07-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 972,
+    "actual_seconds": 971.9666875,
+    "file": "16-12-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 977,
+    "actual_seconds": 976.9666875,
+    "file": "16-17-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 982,
+    "actual_seconds": 981.9666875,
+    "file": "16-22-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 987,
+    "actual_seconds": 986.9666875,
+    "file": "16-27-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 992,
+    "actual_seconds": 991.9666875,
+    "file": "16-32-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 997,
+    "actual_seconds": 996.9666875,
+    "file": "16-37-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 1002,
+    "actual_seconds": 1001.9666875,
+    "file": "16-42-480.jpg"
+  },
+  {
+    "group": "wiring",
+    "requested_seconds": 1007,
+    "actual_seconds": 1006.9666875,
+    "file": "16-47-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 666,
+    "actual_seconds": 665.9666875,
+    "file": "11-06-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 673,
+    "actual_seconds": 672.9666875,
+    "file": "11-13-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 680,
+    "actual_seconds": 679.9666875,
+    "file": "11-20-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 687,
+    "actual_seconds": 686.9666875,
+    "file": "11-27-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 694,
+    "actual_seconds": 693.9666875,
+    "file": "11-34-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 701,
+    "actual_seconds": 700.9666875,
+    "file": "11-41-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 708,
+    "actual_seconds": 707.9666875,
+    "file": "11-48-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 715,
+    "actual_seconds": 714.9666875,
+    "file": "11-55-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 722,
+    "actual_seconds": 721.9666875,
+    "file": "12-02-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 729,
+    "actual_seconds": 728.9666875,
+    "file": "12-09-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 736,
+    "actual_seconds": 735.9666875,
+    "file": "12-16-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 743,
+    "actual_seconds": 742.9666875,
+    "file": "12-23-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 750,
+    "actual_seconds": 749.9666875,
+    "file": "12-30-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 757,
+    "actual_seconds": 756.9666875,
+    "file": "12-37-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 764,
+    "actual_seconds": 763.9666875,
+    "file": "12-44-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 771,
+    "actual_seconds": 770.9666875,
+    "file": "12-51-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 778,
+    "actual_seconds": 777.9666875,
+    "file": "12-58-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 785,
+    "actual_seconds": 784.9666875,
+    "file": "13-05-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 792,
+    "actual_seconds": 791.9666875,
+    "file": "13-12-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 799,
+    "actual_seconds": 798.9666875,
+    "file": "13-19-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 806,
+    "actual_seconds": 805.9666875,
+    "file": "13-26-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 813,
+    "actual_seconds": 812.9666875,
+    "file": "13-33-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 820,
+    "actual_seconds": 819.9666875,
+    "file": "13-40-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 827,
+    "actual_seconds": 826.9666875,
+    "file": "13-47-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 834,
+    "actual_seconds": 833.9666875,
+    "file": "13-54-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 841,
+    "actual_seconds": 840.9666875,
+    "file": "14-01-480.jpg"
+  },
+  {
+    "group": "setup",
+    "requested_seconds": 848,
+    "actual_seconds": 847.9666875,
+    "file": "14-08-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1030,
+    "actual_seconds": 1029.9666875,
+    "file": "17-10-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1037,
+    "actual_seconds": 1036.9666875,
+    "file": "17-17-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1044,
+    "actual_seconds": 1043.9666875,
+    "file": "17-24-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1051,
+    "actual_seconds": 1050.9666875,
+    "file": "17-31-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1058,
+    "actual_seconds": 1057.9666875,
+    "file": "17-38-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1065,
+    "actual_seconds": 1064.9666875,
+    "file": "17-45-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1072,
+    "actual_seconds": 1071.9666875,
+    "file": "17-52-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1079,
+    "actual_seconds": 1078.9666875,
+    "file": "17-59-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1086,
+    "actual_seconds": 1085.9666875,
+    "file": "18-06-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1093,
+    "actual_seconds": 1092.9666875,
+    "file": "18-13-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1100,
+    "actual_seconds": 1099.9666875,
+    "file": "18-20-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1107,
+    "actual_seconds": 1106.9666875,
+    "file": "18-27-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1114,
+    "actual_seconds": 1113.9666875,
+    "file": "18-34-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1121,
+    "actual_seconds": 1120.9666875,
+    "file": "18-41-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1128,
+    "actual_seconds": 1127.9666875,
+    "file": "18-48-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1135,
+    "actual_seconds": 1134.9666875,
+    "file": "18-55-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1142,
+    "actual_seconds": 1141.9666875,
+    "file": "19-02-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1149,
+    "actual_seconds": 1148.9666875,
+    "file": "19-09-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1156,
+    "actual_seconds": 1155.9666875,
+    "file": "19-16-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1163,
+    "actual_seconds": 1162.9666875,
+    "file": "19-23-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1170,
+    "actual_seconds": 1169.9666875,
+    "file": "19-30-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1177,
+    "actual_seconds": 1176.9666875,
+    "file": "19-37-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1184,
+    "actual_seconds": 1183.9666875,
+    "file": "19-44-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1191,
+    "actual_seconds": 1190.9666875,
+    "file": "19-51-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1198,
+    "actual_seconds": 1197.9666875,
+    "file": "19-58-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1205,
+    "actual_seconds": 1204.9666875,
+    "file": "20-05-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1212,
+    "actual_seconds": 1211.9666875,
+    "file": "20-12-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1219,
+    "actual_seconds": 1218.9666875,
+    "file": "20-19-480.jpg"
+  },
+  {
+    "group": "software",
+    "requested_seconds": 1226,
+    "actual_seconds": 1225.9666875,
+    "file": "20-26-480.jpg"
+  }
+]

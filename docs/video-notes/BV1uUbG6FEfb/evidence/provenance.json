@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-09-28T20:55:57.164644+08:00",
+  "source": "Public Bilibili playurl API; response-supplied bilivideo.com backup URLs; no cookies, login or account credentials",
+  "playurl_api": "https://api.bilibili.com/x/player/playurl?bvid=BV1uUbG6FEfb&cid=41685224881&qn=16&fnval=16&fourk=0",
+  "private_signed_urls_saved_in_temp_only": true,
+  "temp_workspace": "C:\\Users\\yilv\\AppData\\Local\\Temp\\duck-video-BV1uUbG6FEfb-20260928-204522",
+  "media": [
+    {
+      "temporary_path": "C:\\Users\\yilv\\AppData\\Local\\Temp\\duck-video-BV1uUbG6FEfb-20260928-204522\\audio.m4a",
+      "name": "audio.m4a",
+      "bytes": 11060974,
+      "sha256": "554184b7fc90f4cdb7c2b448523932eec9d2e9c185932c6a5b55b070ded90bb2",
+      "duration_seconds": 1316.73675,
+      "codec": "aac",
+      "width": null,
+      "height": null
+    },
+    {
+      "temporary_path": "C:\\Users\\yilv\\AppData\\Local\\Temp\\duck-video-BV1uUbG6FEfb-20260928-204522\\video.mp4",
+      "name": "video.mp4",
+      "bytes": 38537658,
+      "sha256": "ec4a16f3eca82d166ea3130cc3168eed59e24faffaa72e30d564c55e4eee0630",
+      "duration_seconds": 1316.738938,
+      "codec": "h264",
+      "width": 640,
+      "height": 360
+    },
+    {
+      "temporary_path": "C:\\Users\\yilv\\AppData\\Local\\Temp\\duck-video-BV1uUbG6FEfb-20260928-204522\\video480.mp4",
+      "name": "video480.mp4",
+      "bytes": 59059987,
+      "sha256": "b66c39967b98df942864d965f16b8549e08d7d0e317eb0433bfb7e2629d7ad04",
+      "duration_seconds": 1316.740375,
+      "codec": "h264",
+      "width": 852,
+      "height": 480
+    }
+  ],
+  "asr": {
+    "status": "machine_transcription_unreviewed_not_author_subtitles",
+    "model": "Systran/faster-whisper-small",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "zh",
+    "beam_size": 5,
+    "vad_filter": true,
+    "condition_on_previous_text": false,
+    "media_duration_seconds": 1316.7573125,
+    "duration_after_vad": 1272.24,
+    "elapsed_seconds": 264.13282680511475,
+    "created_at": "2026-09-28T20:55:02.437109+08:00",
+    "source_video": "https://www.bilibili.com/video/BV1uUbG6FEfb/",
+    "notice_zh": "完整本地ASR仅在TEMP内部保留；项目交付改写摘要、时间索引与关键帧。模型识别不是作者字幕，型号/参数/命令以核读画面及官方资料为准。"
+  },
+  "model_source": "https://huggingface.co/Systran/faster-whisper-small",
+  "model_revision": [
+    "536b0662742c02347bc0e980a01041f333bce120"
+  ],
+  "model_sha256": [
+    "3e305921506d8872816023e4c273e75d2419fb89b24da97b4fe7bce14170d671"
+  ],
+  "dependencies": {
+    "faster-whisper": "1.2.1",
+    "ctranslate2": "4.8.2",
+    "av": "18.1.0",
+    "onnxruntime": "1.30.0",
+    "numpy": "2.4.6",
+    "tokenizers": "0.23.2",
+    "huggingface-hub": "1.33.0",
+    "Pillow": "12.3.0"
+  },
+  "python": "3.11.15 (main, Mar  3 2026, 14:55:34) [MSC v.1944 64 bit (AMD64)]",
+  "coverage": {
+    "whole_audio_submitted": true,
+    "segment_count": 686,
+    "first_segment_start": 0.0,
+    "last_segment_end": 1314.91,
+    "sum_asr_segment_lengths": 1273.2200000000003,
+    "note": "VAD/segment intervals are ASR output, not a guarantee that every spoken word is represented."
+  },
+  "visual_method": "PyAV seek/decode: first decoded frame within 0.05s of requested target; 30s overview plus selected 2/5/7s windows; source resolution preserved, no generative enlargement.",
+  "deliverables": {
+    "full_transcript_in_project": false,
+    "full_transcript_internal_temp_only": true,
+    "chapter_index": "time-index.json",
+    "chapter_index_contains": "original paraphrased summaries, not verbatim transcript",
+    "notes": "README.md",
+    "key_frames": "frames/"
+  }
+}

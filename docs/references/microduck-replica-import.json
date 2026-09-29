@@ -1,0 +1,2694 @@
+{
+  "repository": "https://github.com/fanhao375/microduck-replica",
+  "branch_at_import": "master",
+  "commit": "0f2cff6bd76499ef9f57931c53ee76d16ae5c198",
+  "commit_time_utc": "2026-09-28T12:57:11Z",
+  "imported_at": "2026-09-28T21:29:35.730512+08:00",
+  "destination": "microduck-replica/",
+  "method": "Pinned GitHub source archive; preserved archive bytes; no nested .git history",
+  "archive_sha256": "47c34d3ef7a88b43f8a6db06a331a479836d39c8e6c92a24ac4b52259d845753",
+  "archive_bytes": 39611227,
+  "tracked_files": 444,
+  "extracted_bytes": 84943915,
+  "verification": "All paths match the complete commit tree; Git blob hashes verified after attribute-declared CRLF normalization for listed scripts; all disk SHA256 hashes match archive bytes",
+  "archive_crlf_paths": [
+    "hardware/imu_to_dxl/firmware/Tests/control_table_test.cmd",
+    "hardware/imu_to_dxl/firmware/Tests/imu_test.cmd",
+    "hardware/imu_to_dxl/firmware/Tools/build.ps1",
+    "hardware/imu_to_dxl/firmware/Tools/test.ps1",
+    "tools/radxa/1-做卡.ps1"
+  ],
+  "submodules": 0,
+  "unresolved_lfs_pointers": 0,
+  "licenses": [
+    "microduck-replica/LICENSE",
+    "microduck-replica/NOTICE.md"
+  ],
+  "scope": "Independent reference snapshot; no dependency installation or program execution",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 700,
+      "sha256": "0c0422d0160d6b2d387d4fd363e453e89d078e1a0ae92dbb3ea608cf52fcbe1f",
+      "git_blob_sha1": "6845043ac65733fa59882e0b642bb8d5a240656f"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 260,
+      "sha256": "e197ca73e90237c9f3dcb38c862d5e429855ddc37f3108c44e80d4140ef4e2e2",
+      "git_blob_sha1": "5ba95f1d4c278accec0d756d5b80ecb362143d86"
+    },
+    {
+      "path": "BOM.en.md",
+      "bytes": 12815,
+      "sha256": "2cbca6730aa1116a25b8971c9ebabc14d30c9252211977d1b1d03da0ef3534b4",
+      "git_blob_sha1": "99349384374f2a3a2a54d795ffd745814dc50bcf"
+    },
+    {
+      "path": "BOM.md",
+      "bytes": 32134,
+      "sha256": "08228ece57929007ba0b595dfc9e6aa87a1810afb91991f16eb95b07280f6398",
+      "git_blob_sha1": "d2b196371caeae0201a44783b491cf2a2d113871"
+    },
+    {
+      "path": "BUILD-LOG.en.md",
+      "bytes": 3262,
+      "sha256": "b7eeb8e833569aebb0e6ef601121e9dc5aca2cea38323ad6750bd1683c5dc471",
+      "git_blob_sha1": "8ff4fccd22bdadd25deff93d5b29c81ae115e195"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 4143,
+      "sha256": "d7e6ad94a4e25f8d48db364d050fd3af7d7e2b906ff4e68d249ab1fb5f8bd190",
+      "git_blob_sha1": "98d6f73e0d71cb8fa73e4f97f98363892ea00f97"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 7066,
+      "sha256": "368cf51a432279e584d914387a9dd224556c30cd3ec220bd57417158cedefda9",
+      "git_blob_sha1": "4982e4b3f289bbfa6ffaa17c6196a6b96cf1aede"
+    },
+    {
+      "path": "PROGRESS.md",
+      "bytes": 16403,
+      "sha256": "3202c04ee6d4a665a34e3fd6092aab5f558ebdc2cad838c23d75456e42e4ba3c",
+      "git_blob_sha1": "8945101b5429935c4756cae0421312a075427cdc"
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 27909,
+      "sha256": "1412b312e31cc6e444a391f881a34f42c2d33a87b1db54806e6829b935e5f738",
+      "git_blob_sha1": "eff57cfa772eb465b2e2c367ceb90325e69124dc"
+    },
+    {
+      "path": "README.md",
+      "bytes": 27408,
+      "sha256": "0603398935116936bd4cb36ff9f98b864bc58ae7203aa7a20bab9d0e37995c55",
+      "git_blob_sha1": "e8f6d72126d1bd5520af3269c152dbf2aedb5e2a"
+    },
+    {
+      "path": "assembly-drawings/01_正面.png",
+      "bytes": 197328,
+      "sha256": "fd1277c274d747ac2c49fbdef6630a9076f218778c6262a2953ea10695411f4d",
+      "git_blob_sha1": "e3b63f642ab4ed8d71e8fc700f062d3553ab7449"
+    },
+    {
+      "path": "assembly-drawings/02_侧面.png",
+      "bytes": 228785,
+      "sha256": "8a3649c395c65ebe6ea0e2d1c9b3faad2d93d7d650296e09caf0320f813d8e00",
+      "git_blob_sha1": "69a4bcc0ea35c592995753b7f8ee4d81450e098b"
+    },
+    {
+      "path": "assembly-drawings/03_背面.png",
+      "bytes": 200077,
+      "sha256": "f84bd8ee480111b8a09608b241aeaf394d1aad52b6007a6b14300fb407e8dd77",
+      "git_blob_sha1": "8427669724d818dd8ca8719ede38336f7b015616"
+    },
+    {
+      "path": "assembly-drawings/04_四分之三.png",
+      "bytes": 262750,
+      "sha256": "5ec79926764d7e68f63cf58ac8d00100e8626678ffb2e62eb9a60104ebbe317c",
+      "git_blob_sha1": "76b4fa485f6a6795b15a52c5702d03926530c029"
+    },
+    {
+      "path": "assembly-drawings/05_爆炸图_侧面.png",
+      "bytes": 229812,
+      "sha256": "3bbf70d6033264d0f2fbcf6b38c38a9a7223d91f2c4da945b51c6e457ac179bb",
+      "git_blob_sha1": "96b751bd7b78499e7e0a768c4141718e5033d72f"
+    },
+    {
+      "path": "assembly-drawings/06_爆炸图_四分之三.png",
+      "bytes": 260360,
+      "sha256": "ee0ecd7492dcfde418c90f76593a6fa5172b730eabc99f85316ab2d6c5a016d7",
+      "git_blob_sha1": "c4fa3692953ceee39cb1d2a3ba5fea46deccedc2"
+    },
+    {
+      "path": "assembly-drawings/07_分色对照_装配态.png",
+      "bytes": 291330,
+      "sha256": "ff7f5402e44ab95ccccaafab660a9199e479e2ce3711b3af8d6b7e1485818f42",
+      "git_blob_sha1": "bf68c7f94800c9844203c279f2f35938b94c8aee"
+    },
+    {
+      "path": "assets/cad-solidworks-装配体.png",
+      "bytes": 108359,
+      "sha256": "4fa8f9a5040465d79d67e552bd889f12f29f10adfb4be4896b9903dcbaf454c6",
+      "git_blob_sha1": "6ac2a7354df182b7745775717c6b6c127fc2eb32"
+    },
+    {
+      "path": "assets/flash/烧卡-1-Rufus问更新-点否.png",
+      "bytes": 12415,
+      "sha256": "5f2d7569112ed621d0b70689a0b7de1737c0570a9696403f7673bb06eb52ac0a",
+      "git_blob_sha1": "223022c57dd5a6c2b1c54dc1fddc50bfe9442f69"
+    },
+    {
+      "path": "assets/flash/烧卡-2-设备自动选中-点选择.png",
+      "bytes": 36320,
+      "sha256": "b0c5104d9d377ee220b9bcb5914a9e47b8d47098e5e356f5ecd1d19ac1662511",
+      "git_blob_sha1": "b334d2b4c9d0e803e98fcf5f99def6014ab93597"
+    },
+    {
+      "path": "assets/flash/烧卡-3-正在写入.png",
+      "bytes": 35013,
+      "sha256": "148b77074f7ead08fb2f98369354c778fef44bf6854343939c9bd70fbc52ab1b",
+      "git_blob_sha1": "5f7d125dc05c35d6041455ee69dab73599000101"
+    },
+    {
+      "path": "assets/flash/烧卡-4-完成-准备就绪.png",
+      "bytes": 37189,
+      "sha256": "8cdacff781e7bfd7ee964a51658dfbaa14147b4613d54397de2759888556344c",
+      "git_blob_sha1": "a2b9f9948c8ec41c3f3ba69b3f0855048a7bab8f"
+    },
+    {
+      "path": "assets/hw/01-物理布局.png",
+      "bytes": 202751,
+      "sha256": "b1d9ae0a2ce1db69c0d33249f65ee6bb2af5d5a593398e077343eb24ddc58957",
+      "git_blob_sha1": "bb1f98585ed0757c3d677711e1cc7c735c672b4c"
+    },
+    {
+      "path": "assets/hw/02-电源分配.png",
+      "bytes": 87222,
+      "sha256": "946453edcf55d0606b13ad6042d54625740d1adb36fb808ff612917fbc7b3240",
+      "git_blob_sha1": "a1ed9af13155ae39e8593b76c3d5a88f8cd58316"
+    },
+    {
+      "path": "assets/hw/02b-供电与保护.png",
+      "bytes": 226822,
+      "sha256": "bc3396b11463fb7abb75100dafd44c4c3d2b9455b0ad32699a02e76e9d3ac6d8",
+      "git_blob_sha1": "ce51eb0460d6a95f7417c171698363c001f66db7"
+    },
+    {
+      "path": "assets/hw/03-总线拓扑.png",
+      "bytes": 88463,
+      "sha256": "d315e51c0d50f18654b5d9b4521d76a3d11f5c23a72f7a0909dd6fa75ca9b17d",
+      "git_blob_sha1": "00107d719d99b45359dc0816131804ca987df1fc"
+    },
+    {
+      "path": "assets/hw/04-控制周期.png",
+      "bytes": 84914,
+      "sha256": "67a0d80cbd4b296eee6519bfb39a1eb70064407df058255ab7a7dbedb2214bb2",
+      "git_blob_sha1": "1be5d725aff21f8bfa10acf93544b56964f3f9bd"
+    },
+    {
+      "path": "assets/hw/05-IMU板内部.png",
+      "bytes": 105867,
+      "sha256": "24e4960795c81d161b7bd92f499c698f222389115b4ea0a315e19452fc196042",
+      "git_blob_sha1": "fdb151f6b0dc4d3fbc5d310f5b7619cef6fbec7b"
+    },
+    {
+      "path": "assets/hw/06-总线时序对比.png",
+      "bytes": 102680,
+      "sha256": "f840c6f17bb26b26cce34d024f695bc7a0c3bf3f35ab07c99fca172ad9898049",
+      "git_blob_sha1": "bd7dab08b72ae85d453d883e6c4dfe55a9fa98e9"
+    },
+    {
+      "path": "assets/hw/Microduck硬件图集.pdf",
+      "bytes": 2824332,
+      "sha256": "aad8b22a0b156a546b6839a61ce00f9b6b5973b563c453d175fb0bf16ce4cd5a",
+      "git_blob_sha1": "1175defbf8b31af66b37c975b12ece8c29ca0886"
+    },
+    {
+      "path": "assets/hw/imu_to_dxl-PCB.png",
+      "bytes": 157274,
+      "sha256": "128e7b83f04a8895f170cecac1060abaafa4e4219280bdfb615129e89d0f0523",
+      "git_blob_sha1": "1559e5e7edf6a6a2befe100dfee109e1ef871b73"
+    },
+    {
+      "path": "assets/hw/imu_to_dxl-原理图.png",
+      "bytes": 257375,
+      "sha256": "2f578154885d52cb33e24eb3d45aade5d7b1f17be29e22fac3bf870942bebfa5",
+      "git_blob_sha1": "4a901876c9b628d1e97019d3799c12bfeb591b23"
+    },
+    {
+      "path": "assets/hw/radxa-camera-cable-reference-20260928.png",
+      "bytes": 453633,
+      "sha256": "31e1d6aa5fc76b1db88adce3c2d77caf0903a64efba0faed152e99ea111a4e62",
+      "git_blob_sha1": "1f40c31187d4705d614cd4a43726e2fcfdb4eca7"
+    },
+    {
+      "path": "assets/hw/不打HAT-接线图.png",
+      "bytes": 219820,
+      "sha256": "a088c4b5113ffc493cf2b33828705e6530fbb55f0f9ea6b906c9bbdc746c9c8d",
+      "git_blob_sha1": "9a85b975b1d8b10d7566a6a59598ec6e41113234"
+    },
+    {
+      "path": "assets/servo-web.png",
+      "bytes": 134137,
+      "sha256": "c16c37adf8f256922430383f9b49721eeca04096d5e134677e5ffc4760c86bfb",
+      "git_blob_sha1": "3db565ce99408da1496c2cc685a0513117903a66"
+    },
+    {
+      "path": "assets/wechat-group-9.png",
+      "bytes": 66945,
+      "sha256": "6c7a61d8682a97c332b94ce21c25a968e97bf320999d528c01c3d132150b0c8c",
+      "git_blob_sha1": "f311dfd7a7c12feb43be6f270bdb5f072bde5853"
+    },
+    {
+      "path": "assets/首次上电-2026-09-18.jpg",
+      "bytes": 74345,
+      "sha256": "dca05b781e996fdbc617cc899d6683bd6b5b3d511dd955fa2ddc30501edbaa64",
+      "git_blob_sha1": "063d1d92cf6d73e6ed2bada72c2c6b2399e5acfe"
+    },
+    {
+      "path": "assets/首次上电-2026-09-18.mp4",
+      "bytes": 1746559,
+      "sha256": "23cd97288262a7d4111ed15c884524267f12425e55505daeaae9f2c55339b700",
+      "git_blob_sha1": "24904797f8f79ebd3492a85b3ec847461a24d318"
+    },
+    {
+      "path": "assets/首次上电-站起来.gif",
+      "bytes": 4123454,
+      "sha256": "6aecb781bfd125b0f4b927f52b968e32672904addffaff8a4101a93690cadeb0",
+      "git_blob_sha1": "4fdc41a1a1dd20a8575da3135bd65a85f9a48dba"
+    },
+    {
+      "path": "build-log/photos/2026-09-02-首批打印件.jpg",
+      "bytes": 641474,
+      "sha256": "6a6ba801ecdc25279f6f4831a2c00f0e64685c3178fb8fa89f98b57a46d4418c",
+      "git_blob_sha1": "fbd8ed08f4b4c9fdafa24c384b84f63b1ac628f4"
+    },
+    {
+      "path": "build-log/photos/2026-09-13-飞特版装机-手持.jpg",
+      "bytes": 198289,
+      "sha256": "2521e811a575bd5d19b7c3804dc90134862a019e11f316111d3d57580e268ddf",
+      "git_blob_sha1": "5cd0c9cda1b06b760d2b6bd3341ae806b5210f3f"
+    },
+    {
+      "path": "build-log/photos/2026-09-13-飞特版装机-正面.jpg",
+      "bytes": 248673,
+      "sha256": "8f75815c0797e651df9cf600dfbe1bfef87d82e45b097b4b2dc720d84499daa6",
+      "git_blob_sha1": "d93d012722f11af01dd0a1a11ad479ae1305f01c"
+    },
+    {
+      "path": "cad/README.md",
+      "bytes": 1462,
+      "sha256": "433f414727587c8e56687f6b6b3695ad7decb7b928776a332626d46b5ebf30f7",
+      "git_blob_sha1": "e119417ad08d3cdb9f9663d27cb8445f3bc86de4"
+    },
+    {
+      "path": "docs/CAD结构件版本核对-20260928.md",
+      "bytes": 7130,
+      "sha256": "77ffd0affbfa53805d07a96ef61183329fe31b88b7d2039a6c5936a7d89e4ded",
+      "git_blob_sha1": "84b09f8a1862e703da596e8f016f7e1fab2a8f98"
+    },
+    {
+      "path": "docs/HD-1910-M6参数来源.md",
+      "bytes": 3275,
+      "sha256": "29f4bba0682ba8b83152bb8ea7db084276cbf6234062a830a1d80d1df7978792",
+      "git_blob_sha1": "172cc906f3947c84622c60d018f73b518bdc0326"
+    },
+    {
+      "path": "docs/HD-1910训练前数据清单.md",
+      "bytes": 14828,
+      "sha256": "2a5d2f964c3022aa8169038bb0f7c0fc62ad35dfc11faddb4220e5d2a2cb6dec",
+      "git_blob_sha1": "6deb8eda81b790126c66eea1f6f056fbf9c40979"
+    },
+    {
+      "path": "docs/actuator-selection.en.md",
+      "bytes": 27440,
+      "sha256": "c65230d606c884392b42488df2179d2035fc01c715097b05c9d81ec056b7c7a3",
+      "git_blob_sha1": "97e30ba083a7bafcbd836b9abc7198692c468fd7"
+    },
+    {
+      "path": "docs/ecosystem.en.md",
+      "bytes": 8334,
+      "sha256": "51d0036a88450ee91eeebd37df3fc71f8e233e4c92944c179768910e2343d6b8",
+      "git_blob_sha1": "3d6a622968c467254b72502b440b3380a1dff3c9"
+    },
+    {
+      "path": "docs/fastener-reconstruction.en.md",
+      "bytes": 6089,
+      "sha256": "afd7d73b2c83442348fa0d76c20c2ef2e33b47dc78e804535e38e275f4fdd561",
+      "git_blob_sha1": "ec08cddae1c75931663e4c867d09bf4d56b152f7"
+    },
+    {
+      "path": "docs/hardware-teardown.en.md",
+      "bytes": 30640,
+      "sha256": "512358c4abc562c4d30311c83f0c36b20de75fa96f817e7a39d8db85d9e02b3e",
+      "git_blob_sha1": "961ed67d1f4dd922c01b550b7ce51f2d9515d53e"
+    },
+    {
+      "path": "docs/hole_analysis.json",
+      "bytes": 74232,
+      "sha256": "5b10f7421d3f2620d7b5710b040097bc0bce924e3aacf9f556beeaa4689af0f7",
+      "git_blob_sha1": "44f1f3d4a578f1436877c6ad6db7be3a1b35a1b4"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-09-24-consolidate-hd1910.md",
+      "bytes": 3932,
+      "sha256": "2112a78f42b22f7033344d99343daf8edb65d3795901fa8d3432894960905189",
+      "git_blob_sha1": "7dee4d79f5a8c75bc767278361d4061d9fdbc4e5"
+    },
+    {
+      "path": "docs/不打HAT-接线图.html",
+      "bytes": 19511,
+      "sha256": "14aa4c423acd9c29601f80a118121abaedc82cfef557ed87a1f1cdb96aaddd09",
+      "git_blob_sha1": "af4bc976ae13ca96de42ea26e8ac068c59884889"
+    },
+    {
+      "path": "docs/不打HAT.md",
+      "bytes": 14670,
+      "sha256": "49d6cb4b1e3e51dc34f83c7a0febe964f4580cd6ff60e793fbc7f8769d24fe92",
+      "git_blob_sha1": "56c3ae3871d2922d862d0a3cdd3087dea2c7aa72"
+    },
+    {
+      "path": "docs/执行器选型.md",
+      "bytes": 26394,
+      "sha256": "fa5fef46460a8e8470423065635412dd6f6c61c672dd45d60ea091c6b8b91a3c",
+      "git_blob_sha1": "c85e4390a8a20cba3ccbee14d62e492d73885b72"
+    },
+    {
+      "path": "docs/机械采购清单.md",
+      "bytes": 10608,
+      "sha256": "a327f236b7bfd3c4766e245bb61b8fe9722223c1615be7968e26c29080ab2cf8",
+      "git_blob_sha1": "8d448d5f11ba27d6a87e63727ab6fbebc8411d88"
+    },
+    {
+      "path": "docs/生态导航.md",
+      "bytes": 7998,
+      "sha256": "8c9687d1caec9724067cc0753e26c0dccff1bb289be7167802ac331b6dc40acb",
+      "git_blob_sha1": "78c9a8411c3c3fbda6c89676e1f0661520e4ff9d"
+    },
+    {
+      "path": "docs/电控采购清单.md",
+      "bytes": 28406,
+      "sha256": "9bd9676ee1d5f1a2122877ff4ea5ba4675adead0f375c95a007bd95f0a6ddcc5",
+      "git_blob_sha1": "4bb5c9675a2123d42e3e7046137a0b998da3d3fa"
+    },
+    {
+      "path": "docs/硬件入门.md",
+      "bytes": 19405,
+      "sha256": "f15557f077b34f1879225564519b786076984fec405d76625c5a56db87e8a62c",
+      "git_blob_sha1": "6912962afd6d3d34e17b24326d1006e91d64afa4"
+    },
+    {
+      "path": "docs/硬件方案逆向.md",
+      "bytes": 46729,
+      "sha256": "017079b46c2915648b091dc29adf1ace1094cbc1e9fda8af5a37d74b056cc5dd",
+      "git_blob_sha1": "951e8827ea817ca94ebce345e73e503857eaa75a"
+    },
+    {
+      "path": "docs/硬件规格速查.md",
+      "bytes": 18520,
+      "sha256": "24a164c5d636a9140f223199e7c6c978c60035808576dddb5f1e003989ca0330",
+      "git_blob_sha1": "5f1da57f5cb3a1f74fddce48ec026fb0def25d36"
+    },
+    {
+      "path": "docs/社区动态.md",
+      "bytes": 7043,
+      "sha256": "ecb4770a9c37eff998c2242afd934d06ec585e3f46be84d8010124e7af68e9f3",
+      "git_blob_sha1": "295f98738d913206d2969b82f27577236ac6f118"
+    },
+    {
+      "path": "docs/紧固件反推.md",
+      "bytes": 5244,
+      "sha256": "7ff9b638db6eaa69d403464b2f06f088d5edaa734ea505ae0703dab48ff72297",
+      "git_blob_sha1": "4771fa7247097696157590faf363525684c8dbfa"
+    },
+    {
+      "path": "docs/飞特资料/README.md",
+      "bytes": 2602,
+      "sha256": "f17028107f976b520bdbb077c77cf26e515ae7758f7c6892304278d97af50851",
+      "git_blob_sha1": "13a3af7b5a6002782ef94c243894b73d430591f9"
+    },
+    {
+      "path": "docs/飞特资料/SCS通信协议-v1.0-2026-06-09.md",
+      "bytes": 13940,
+      "sha256": "9883a154bf29f098d242b03d75cfc0a1a820057aebe4dfda5e5c4fd16e4940c0",
+      "git_blob_sha1": "9be66e35b9290721fb1995a3762f2e5b22d12d0b"
+    },
+    {
+      "path": "docs/飞特资料/磁编码SMS&STS&HTS-十六进制指令生成表-250508.xlsx",
+      "bytes": 1697488,
+      "sha256": "e4c050997562340147593d3d17f6620ec09de9785dcfc699789b71aafd7b85d6",
+      "git_blob_sha1": "a1f14861fa5e027ba8e48fcdff2ff052d6bec863"
+    },
+    {
+      "path": "docs/飞特资料/磁编码SMS内存表手册-v1.1-2026-08-27.md",
+      "bytes": 10130,
+      "sha256": "a8fa0432d3f7db3a32cfdd5f316e83911bcced0e4db58346d63199f36e140fae",
+      "git_blob_sha1": "f475d9bc3182034595c3ef6d3e1ab81089275e03"
+    },
+    {
+      "path": "docs/飞特资料/磁编码STS内存表手册-v1.1-2026-08-27.md",
+      "bytes": 10107,
+      "sha256": "bfc2d2fe02ca2164e822f0cfc3a0a858cea8b45e72fdf6ccdf0322c1be9c0ab0",
+      "git_blob_sha1": "4c4e046cc48b9f77f693e06aed90542e4bb9753e"
+    },
+    {
+      "path": "hardware/imu_to_dxl/README.md",
+      "bytes": 37942,
+      "sha256": "30cb21e7a7999017c7c742feb20a6583017161b96d88fab2d1e300b6036a54d7",
+      "git_blob_sha1": "b283ac540704dea3f89303834fc7a75c6210644b"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/.gitattributes",
+      "bytes": 132,
+      "sha256": "21929de8d68074572596b69bdbb3a5b93fd97e2897184bdd691ff2aa637a6cd6",
+      "git_blob_sha1": "53e46a1995589592c05f85a5317ff2f7c0ecaa1b"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/.gitignore",
+      "bytes": 262,
+      "sha256": "1557a3993bfb7360e909e8739aab1b46fea7aa151856b18e32230c1a8576b9c6",
+      "git_blob_sha1": "67a5776654e67a01d0389f33b98586959558f588"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Build/imu_to_dxl.hex",
+      "bytes": 30222,
+      "sha256": "10ef4813c52a6f8ed0115d5ac09c271f895e1e1097d904f9f916cf7cde880f35",
+      "git_blob_sha1": "b9609b306b975c71edcecc305d570f48523fee4e"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Inc/board.h",
+      "bytes": 1015,
+      "sha256": "bd5a6ed66fcffa5caf81e4a0b35758a8bd31fb9b592499a9bd57b0eccfd85e09",
+      "git_blob_sha1": "a2dce29ab58877e92289d91c5b86f5ff8a3c08d5"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Inc/board_config.h",
+      "bytes": 1238,
+      "sha256": "f9d00e510fddaf09cfdd830de492e554c5832e4301cc76759b63aade7e2cf894",
+      "git_blob_sha1": "ac5150ac05418f7581686d02737b0cf13966302f"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Inc/control_table.h",
+      "bytes": 1135,
+      "sha256": "1e337230d7a1b6fd5be1f04f2695286c95cd05eedf7771b00388e7d58810b36c",
+      "git_blob_sha1": "5d4e93f5e285518755a5eb8a57a175f927174ee0"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Inc/imu.h",
+      "bytes": 2178,
+      "sha256": "93f652e70771e3d4988fdc774062cbba986c827e96318835c43a481f0ce5f02c",
+      "git_blob_sha1": "14553f1f6f6015108990d2ae5c31d2ef5e051b84"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Inc/protocol.h",
+      "bytes": 4781,
+      "sha256": "ac34e700fc8e48e1bd78315942f5e7d5dac4c6fb7d90e22c5b382bd61e55786e",
+      "git_blob_sha1": "b9950ef2a094b7a7a4c3c92b537d3bbd046edf0e"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Src/board.c",
+      "bytes": 12520,
+      "sha256": "fe82bdde73eda2d994bb6ead7ee239172076860328a7cb383bb8b5136fb92740",
+      "git_blob_sha1": "72023629d8901db8a1372693ae30d1c9e2a82ec6"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Src/control_table.c",
+      "bytes": 4677,
+      "sha256": "d8dd679cdaefb42684ee9e31033d6ec6d14feb695fb90786fedb313ad6c951b9",
+      "git_blob_sha1": "0092eb2a4520175606d73e1b06ecca8c9532225c"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Src/imu.c",
+      "bytes": 11541,
+      "sha256": "f883d889de31b67b2c55e36d377be3dec4befd76ecea29fbe38e46e547830dc4",
+      "git_blob_sha1": "e8823f6cd26b3c7db6dc8bb1f6295e9384f3801f"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Src/main.c",
+      "bytes": 2838,
+      "sha256": "7780f989fe65983c9d2934fb84290aa5747710636282b7748131cf7023267bbc",
+      "git_blob_sha1": "5eb29d096e403a5be8ab497b6c0f805555a4a0fc"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Core/Src/protocol.c",
+      "bytes": 13337,
+      "sha256": "20d7c9bd80b31f04baef4aac5d499a7d885722a85193ff3b8df0964aee41695f",
+      "git_blob_sha1": "12228af36ca5e36ab83d6e5336e81e36fbd2ba81"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/DEPENDENCIES.md",
+      "bytes": 4034,
+      "sha256": "a047886bdd9c497684c4227155bb450f29237aaa52a7f3900ae03921dcbf3f77",
+      "git_blob_sha1": "48f6ecee5afea3b27dfe31ec4936af29094307eb"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g031xx.h",
+      "bytes": 601994,
+      "sha256": "336a1cdbbb54593c0d78c4c9440914deac58a523021883b7c96a76e7613f0a90",
+      "git_blob_sha1": "7937801466a677bf067df2a3805b433bfc86f491"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Device/ST/STM32G0xx/Include/stm32g0xx.h",
+      "bytes": 7920,
+      "sha256": "f67dcdf72b69776ef2308a84090cd3ea87affc83470c225d39377494fac7c296",
+      "git_blob_sha1": "514237f8b74e1776e9a9a3369a0eaf3fc0c919e2"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Device/ST/STM32G0xx/Include/system_stm32g0xx.h",
+      "bytes": 2227,
+      "sha256": "20ee999e4431472a7c351e2412537aa0ef7f5f5e499a21a92c1d4cc21f84ebf1",
+      "git_blob_sha1": "a1b094c71154f46e17c1fb9ad3e1e836e86f4204"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Device/ST/STM32G0xx/LICENSE.md",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Device/ST/STM32G0xx/Source/system_stm32g0xx.c",
+      "bytes": 11255,
+      "sha256": "d95e3aef373a5842d9166e2e3670991b98249082f989e2eea60151bc44588841",
+      "git_blob_sha1": "92a7f280b697f59b5620e8e0d80415bb6b42f943"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Device/ST/STM32G0xx/source-commit.json",
+      "bytes": 77775,
+      "sha256": "9ee9bf77696a71cf6d17cbac044d1f439fefdc08815b558d5c40ef89c1e391b9",
+      "git_blob_sha1": "a0480fb326a235890225fb12d01108fa855c1d24"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Include/cmsis_armclang.h",
+      "bytes": 20706,
+      "sha256": "f7361b36a56909eff2b1cecd778443fd9da21eaa86878dabf5e8e216f6bfea29",
+      "git_blob_sha1": "446d21a918faf0f00cce8562ab83154b195ab9c9"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Include/cmsis_compiler.h",
+      "bytes": 9265,
+      "sha256": "8932e7ac5c9a13b199c64f25b3dc67ebf0a877b33dbcf434d4e1b78e625f57c5",
+      "git_blob_sha1": "662e568750d5f28b81da006e7fd4e1f2f911c1ed"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Include/cmsis_version.h",
+      "bytes": 1936,
+      "sha256": "3b9195c5373a2a4dbfd968b083b3d7f5f446f9ec2e126f75928ac1ff4356b91e",
+      "git_blob_sha1": "849a8a4a15d3fe3a80d58289b7f6236b0c13ea0b"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Include/core_cm0plus.h",
+      "bytes": 50066,
+      "sha256": "3a01ca99a202b3c2acf476e9523181c9f6ddb027fa8e097c0be0037b213c8f23",
+      "git_blob_sha1": "9b4468e22c4379b8c468ae81ab62e139494d2cb8"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Include/m-profile/armv7m_mpu.h",
+      "bytes": 11458,
+      "sha256": "44294dc3e331deb8daae269793e579cc10920a9b88d133bbaf3a7af65d29f9e4",
+      "git_blob_sha1": "5a4eba231c173c96d0a244137870c31420ac07bd"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/Include/m-profile/cmsis_armclang_m.h",
+      "bytes": 24869,
+      "sha256": "d7425ea4ca4577e557f9ea155006f5506db1e9f6580442d56d6417549ad53b92",
+      "git_blob_sha1": "5e93b9ee7c75544ecc3eecf11579c264f5283c7a"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/LICENSE",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "git_blob_sha1": "8dada3edaf50dbc082c9a125058f25def75e625a"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/CMSIS/dependency-hashes.json",
+      "bytes": 2758,
+      "sha256": "565482277d869d76967b76d72c7460670534ebeb2d8233c837cd539cee0af7ed",
+      "git_blob_sha1": "3da815fd0dcbf8ac83f4a1d21fa63311908e5d3c"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/LSM6DSV16X/LICENSE",
+      "bytes": 1518,
+      "sha256": "b54f36a43cf9b8f6292c8f0f3b4c267ebd59859587e0152c94305bc81dda68bc",
+      "git_blob_sha1": "bc7d5adf95c099cd8aabc684296a5979d8021bd0"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/LSM6DSV16X/README.md",
+      "bytes": 2521,
+      "sha256": "374fb99a18688fcf21a9bbf4122c0fae4fb56de3389245238b185835fcd522f6",
+      "git_blob_sha1": "aa9430a1a1e115fd18e16718bfebd1e8e2206a12"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/LSM6DSV16X/lsm6dsv16x_reg.c",
+      "bytes": 207367,
+      "sha256": "cd2684780702d544e1c32a5fbac4698ae56a15c3f7db4d2786b5d9a1f22b82a6",
+      "git_blob_sha1": "00898813a273870718dbe48589e5300e022dbb0c"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/LSM6DSV16X/lsm6dsv16x_reg.h",
+      "bytes": 289216,
+      "sha256": "6c0965c7acc93e00c7e9a60ab67af1d5eefd6cca255c2d0557cf0141086da591",
+      "git_blob_sha1": "76dfa38b8a1082f4e2aa979e16eae4a71c04c611"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Drivers/LSM6DSV16X/source.json",
+      "bytes": 403,
+      "sha256": "52f595376a370f8512496ffa970bee6829412492078b924ba6b723079038e62e",
+      "git_blob_sha1": "ad249ae5af02ab587ba87617dfd51434818782c5"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/LICENSE",
+      "bytes": 1080,
+      "sha256": "aad051480cdeeb76f01e0ce961600709b666719c2b349d95e7aca283032e07e3",
+      "git_blob_sha1": "3681aeac76d003807b231ce589a589af9a8b52f3"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/MDK-ARM/EventRecorderStub.scvd",
+      "bytes": 339,
+      "sha256": "c0bc76c307786ae399f79bf32d410f7d6c46e0ac1208cc882f60ac2649cba601",
+      "git_blob_sha1": "0fb3ee58a621ab7a1ac0664f7bf9d51959574cde"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/MDK-ARM/JLinkSettings.JLinkScript",
+      "bytes": 426,
+      "sha256": "86ba031a22efeaa8b28275fe97de8e31766399877fac85414de6c2e1c430e92c",
+      "git_blob_sha1": "fe7c182f644e3979f15eacf2a3cbfbbb438dbfde"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/MDK-ARM/imu_to_dxl.sct",
+      "bytes": 411,
+      "sha256": "92c55641aa0be5c6c436feb30d83a564e67f356dffb7a82e35dcd35ca1c151cb",
+      "git_blob_sha1": "53ff5deb2e5a4c80db17b83ce805372f58075efb"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/MDK-ARM/imu_to_dxl.uvprojx",
+      "bytes": 16076,
+      "sha256": "f66d979d7dc2f525b39cc89ca0858c4d73673ab85192c18a42e8a9517ac9ed55",
+      "git_blob_sha1": "a38c166259d28116f60ef6c38d1a8cdafa5cd938"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/MDK-ARM/imu_to_dxl_jlink.uvprojx",
+      "bytes": 17819,
+      "sha256": "ad619064e1c95fbfe4583d0749ff3f376ccba2e9e6248710a65532ce94ffc4a1",
+      "git_blob_sha1": "0149e82c026c9d20edfebec17ad4a9836f10df33"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/README.md",
+      "bytes": 17876,
+      "sha256": "0bbcf491a5fb8845af72a830c11910e6c94bc2db96842b5f6663d940b95179c2",
+      "git_blob_sha1": "e770dae56a199f41913801ceb3490953802579c9"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Startup/startup_stm32g031xx.s",
+      "bytes": 9787,
+      "sha256": "5552b01d0e2ad95f9f41ea2b81ff0fe72c1898e147d8c636bcf9650cf27dd18a",
+      "git_blob_sha1": "8182058cf1d9ec4096753770916b171381e3d3f2"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/bus_sim_shim.c",
+      "bytes": 2699,
+      "sha256": "99092936e09e21f794d38caa1197baeac230647e74a503c58be31a1a263c5c5e",
+      "git_blob_sha1": "588d290ad63077fe3c3acd75e08f33c2e178a7be"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/bus_sim_test.py",
+      "bytes": 13495,
+      "sha256": "1697c31055bf25d550d4556a292d0d84b6a478992c715f93fabf6a9360b18985",
+      "git_blob_sha1": "48593ac51dd7e5747a35809c9bd6f77f00c1739a"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/control_table_test.c",
+      "bytes": 5006,
+      "sha256": "acc62b4619b8dcc9adc93c3fe0c87fbd618abd42986b8469bf2c3497a2a9b1d7",
+      "git_blob_sha1": "5fa723414a70e86f3dc9eb9c241584754dfdb14b"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/control_table_test.cmd",
+      "bytes": 642,
+      "sha256": "fa0bd4032459ed1a31635f68c259e7923289b6a84577e26fbd36533c8091bb0f",
+      "git_blob_sha1": "24e3861fdf8573a7c17eae816bf4b4277f6f027f"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/imu_board/board.h",
+      "bytes": 279,
+      "sha256": "521ecbdf4179fe06af3f518285c4c5cd03071f031877f839c8642d49d8597eaa",
+      "git_blob_sha1": "029ec7b8e02242aa5aee00b5b4d7a9db8950dec4"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/imu_test.c",
+      "bytes": 10513,
+      "sha256": "5456aac0860974b4e2ecb0e4425ad946ee7dd23228b0af7b24a4291fe2f2da76",
+      "git_blob_sha1": "10975cf4206f784b0cd639e16d205792935ecabf"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/imu_test.cmd",
+      "bytes": 654,
+      "sha256": "6590ad1056473a92ef28ace130397c6a55220d693e1861455c7dd7068d056d9b",
+      "git_blob_sha1": "d32738f07e7702aebfd5e022c27e2db7128ded52"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tests/protocol_test.c",
+      "bytes": 22307,
+      "sha256": "1383bcbbd0430f138f7e291441f0a984167e4b40872404d9cfd9d0c80e1ba960",
+      "git_blob_sha1": "13b37c095f7c4c9702fd4399b9346ec6fbf9cd99"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tools/build.ps1",
+      "bytes": 5725,
+      "sha256": "4757dec034896f658cfb766a9483f879abded7d3866e7259588b9cb9ac8e64fb",
+      "git_blob_sha1": "4db3127baceca30271cdb921f4d5820c50ba596b"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tools/protocol_test.py",
+      "bytes": 3392,
+      "sha256": "707669eddd17eafd58bb176796779ab1765bd4b300f16198057372bf84388048",
+      "git_blob_sha1": "54033ca0d3b7c3de3d767ee781d2a6cbf6ecc04e"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tools/requirements.txt",
+      "bytes": 14,
+      "sha256": "0b81718d1cbe8a7696e45a9388c9205272b5e345cd79d0cf1ccfb7a9fd1925e9",
+      "git_blob_sha1": "d0dfd58b57b68cf15ccf5fd94bc77ed735f03272"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/Tools/test.ps1",
+      "bytes": 1476,
+      "sha256": "1d8738be876019ab9962df31d97469150dd6cdbd51fe2eb25c254dbfc3a2f9ea",
+      "git_blob_sha1": "a5bc9597ca09c3e8d217ca078024f68e4bbcf365"
+    },
+    {
+      "path": "hardware/imu_to_dxl/firmware/VALIDATION.md",
+      "bytes": 9174,
+      "sha256": "d0677a7427d5b44f5d7d6a0307a5603e7faffbb87235c338427b76b13f8879fc",
+      "git_blob_sha1": "5350b6d38ecdc4b867392ea3140927b595c0e944"
+    },
+    {
+      "path": "hardware/imu_to_dxl/imu_to_dxl-PCB.pdf",
+      "bytes": 338603,
+      "sha256": "e5a3c349bcacbf8c6c7c4d9f524aa899472b13c2fc159d00d797a3efffadc001",
+      "git_blob_sha1": "d3595675b9c787ac405ebcdde525acb082e4704e"
+    },
+    {
+      "path": "hardware/imu_to_dxl/imu_to_dxl-PCB.step",
+      "bytes": 17899753,
+      "sha256": "752a67bd59c543903ffcac74d44470b473f4c99899cd5449d0392a443cd8c9ff",
+      "git_blob_sha1": "87650ac927a777918921f8c479a9e50a663394a3"
+    },
+    {
+      "path": "hardware/imu_to_dxl/imu_to_dxl-交互式BOM.html",
+      "bytes": 7630998,
+      "sha256": "64e2386e24deef24469d9576f2a71fffadec5caccf2cbea3262c2c651471cbe7",
+      "git_blob_sha1": "d8557694450a1a3918d9686b3538c90e176928d4"
+    },
+    {
+      "path": "hardware/imu_to_dxl/imu_to_dxl-原理图.pdf",
+      "bytes": 158838,
+      "sha256": "ef141102139d60c96cb195b587af0e014aad1341010ed05e4d3acf0d12787e82",
+      "git_blob_sha1": "2eaf713724a3144fb778e6d9fed4f463bb37a162"
+    },
+    {
+      "path": "hardware/imu_to_dxl/imu_to_dxl-接线表.md",
+      "bytes": 19009,
+      "sha256": "67c836daacd84f35e1d43d2b66a316f9e74815b59fba04e7e8bc0279b335c3ae",
+      "git_blob_sha1": "d7a1115beebbfc56190b31ac076bdff3957705cb"
+    },
+    {
+      "path": "hardware/imu_to_dxl/imu_to_dxl-板框-45x22-R2.dxf",
+      "bytes": 845,
+      "sha256": "a6fbdb2712aabf1458d739c242e781100aae55bb366fcecdb311fcdfb164e048",
+      "git_blob_sha1": "a61ec6211d35a8b4659733f8d5c41ed911a60d3b"
+    },
+    {
+      "path": "hardware/imu_to_dxl/imu_to_dxl.eprj2",
+      "bytes": 2646016,
+      "sha256": "4fef83c09d2db93c257a41728f3a30559384a1a201ccc825cb206e3c4bb9a243",
+      "git_blob_sha1": "bb8734ac902ce3b02996ea4d9a8d51e2ea20b39b"
+    },
+    {
+      "path": "hardware/imu_to_dxl/总线协议.md",
+      "bytes": 14563,
+      "sha256": "72277360f0e8262ae4529b9f745f0988b5f95a23177fe05680e0d6bc2b5f2be5",
+      "git_blob_sha1": "687cfb147d971dee5d54ae20d590bd5243946db7"
+    },
+    {
+      "path": "print/README.en.md",
+      "bytes": 1917,
+      "sha256": "b4b17a3f7d294a03a7f1509b78c30f92eececfb25108e4144ee23d9726cbcd32",
+      "git_blob_sha1": "01268e4cd5ffcc4b32c286550b18467f869ddebe"
+    },
+    {
+      "path": "print/README.md",
+      "bytes": 1968,
+      "sha256": "fcb04d63c024c4dbcda9fae0ce7cad87316e1c67f2f31eca11b8ce55a8ab839f",
+      "git_blob_sha1": "d05c7402ba6001994516901fbfbf2fc7a6c3fe81"
+    },
+    {
+      "path": "scripts/analyze_holes.py",
+      "bytes": 5829,
+      "sha256": "ca0c8bdcba5969fabbb10689daf7005f47c789c967aacae247005eef58b0908a",
+      "git_blob_sha1": "c137ec3db3cebcc4eeb0ee64812300774b786676"
+    },
+    {
+      "path": "scripts/export_assembly_stl.py",
+      "bytes": 4118,
+      "sha256": "7980019b432348dcc5c0f994cb908912c3ccb4569f128b8bc95e91d12e6d36d7",
+      "git_blob_sha1": "1f08259dab33f422e943bb38ba1f551cef4110d3"
+    },
+    {
+      "path": "scripts/fetch_upstream.sh",
+      "bytes": 973,
+      "sha256": "81767ae7e9aa7fff0b04186a0e9ac2e6ceb8b4b2c7e4155ec45935a3c8960d63",
+      "git_blob_sha1": "ceb65aa314bd5aaabaa3d2d439e90a84fdff029f"
+    },
+    {
+      "path": "scripts/render_assembly.py",
+      "bytes": 7856,
+      "sha256": "04ac965d395c2f1bb6444d87d517bd33c3c1a59795086e9d09e0ae55bee8ba40",
+      "git_blob_sha1": "15196707536aa19805a7596a0f5e9bbd52c4a204"
+    },
+    {
+      "path": "software/README.md",
+      "bytes": 4917,
+      "sha256": "f76499cdefbb8361ae511ee425897c231f4b030607d22393df150c2d10d00e49",
+      "git_blob_sha1": "fcbc858ec6bf1a95fa4387da5eb4934a37ea93b0"
+    },
+    {
+      "path": "software/training/.gitignore",
+      "bytes": 423,
+      "sha256": "ff9e1ab101c9dcec2cf5dee50ca995a5d9f0660aa1ccfdea8e5da059ee5cfb05",
+      "git_blob_sha1": "7257287274960356ed1e8c8adb96d64737ba5685"
+    },
+    {
+      "path": "software/training/AGENTS.md",
+      "bytes": 15761,
+      "sha256": "aceb94476f03918fd71f928b9bd3a9bcfba0688b407e4bd85fbc008449a3a705",
+      "git_blob_sha1": "ddae6a81d71116cc9d59bd718ff5f2d2676e8e57"
+    },
+    {
+      "path": "software/training/CLAUDE.md",
+      "bytes": 11,
+      "sha256": "336cc4fbf19beaada7ccf9986414fa91851a8d7a07dfb3ccbe800a69eed0ab49",
+      "git_blob_sha1": "43c994c2d3617f947bcb5adf1933e21dabe46bb5"
+    },
+    {
+      "path": "software/training/LICENSE",
+      "bytes": 11351,
+      "sha256": "2d3fd9ffffa70a4307498ec630b14a6b4731e010f8ddda92686eaf65733c2dfe",
+      "git_blob_sha1": "5babf660c98eac4418422e1a62a5d9fc51a4d63e"
+    },
+    {
+      "path": "software/training/README.md",
+      "bytes": 3192,
+      "sha256": "1faae2b2ad46105e30ba17a1bc52ce83c14d487899a773424083c7761799fbc1",
+      "git_blob_sha1": "45bf3ef0fdcae8d45de38f666420e5a610e2cc06"
+    },
+    {
+      "path": "software/training/README.upstream.md",
+      "bytes": 10377,
+      "sha256": "aedd0012a8b3feb53af4be31c03cd2dc9306512f8b5144dd5089faf0cd661372",
+      "git_blob_sha1": "28067199beae8640e2fa3e1f864ffe735692f249"
+    },
+    {
+      "path": "software/training/UPSTREAM.md",
+      "bytes": 2995,
+      "sha256": "eb31b30391d8b6b9fdcfad5a7e1c3da2480d606725f92285e8ba55cbb3928a4c",
+      "git_blob_sha1": "f1f61d69b3c4a8cfcf8d0b917b57ee1759e5146c"
+    },
+    {
+      "path": "software/training/docs/hd1910-baseline.md",
+      "bytes": 7836,
+      "sha256": "b93a26121bacbcc837987e99e49762773f5e78f6d26ce5265275930401787c44",
+      "git_blob_sha1": "e8608fcfa52b64c85910fbdd7cf90ff7ef82a3fd"
+    },
+    {
+      "path": "software/training/docs/roller_standup_policy_summary.md",
+      "bytes": 12645,
+      "sha256": "32d53f83de1a21c5e13ed9baa0b9b7ca6eefc7e763aea6a3dd19dc4a165e8486",
+      "git_blob_sha1": "c7def69c17ade1de804551fb259be35b9911e674"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-07-17-roller-crouch-glide.md",
+      "bytes": 36653,
+      "sha256": "d9c10ba0e836a2f4760c118fe7c8094a4bc0ce7b9301da3e37cdc59239033e67",
+      "git_blob_sha1": "372f0c4becc7b7b935810da6972a3a8d163affd2"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-07-22-roller-slope.md",
+      "bytes": 28520,
+      "sha256": "cb2ebc86629d02ea7acb59b8459dfec159da7b54a6e446012feea09afbde4347",
+      "git_blob_sha1": "2862c70407c9ad9270a5df26a72ba146d8ea62b6"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-07-24-ground-pick-pose-following.md",
+      "bytes": 25072,
+      "sha256": "1d2af76b0dd69f8d75968fb0045e052a224c795c650f946609edaa9669edd39b",
+      "git_blob_sha1": "e1a4c1e3f18d0db63a02d8025045de506960be9e"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-07-24-shoot-pose-following.md",
+      "bytes": 30344,
+      "sha256": "84b650a5172559cec7f09b28091d36907b91e02e7b347f6a5ce23f92a1d8da28",
+      "git_blob_sha1": "696600b56b0967c48bdcdf33fad598e42663e896"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-07-27-swizzle-head-control.md",
+      "bytes": 10142,
+      "sha256": "abd2bfbaf01538969bf0d8dcca1afa51e37193807df7425625e847e557914c66",
+      "git_blob_sha1": "3690f1f1c863eb929769f1375f477146be2b76b0"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-08-04-roller-standup.md",
+      "bytes": 59548,
+      "sha256": "cd7ad30f918bf9c83c328be544dfd19b38bd81e4ef883757148d45daae6cebf0",
+      "git_blob_sha1": "31b1ec098ef1534c6c136650f779c842e4d2e5a2"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-08-04-spin-env.md",
+      "bytes": 65611,
+      "sha256": "2f2fb22f79cd7390a917a32cc5f026b5debdf0a17ba57abe0fd41b5b73bbe8d7",
+      "git_blob_sha1": "64ccd8430a87ae4b247d66b6d239e4a8b1a2d7f6"
+    },
+    {
+      "path": "software/training/docs/superpowers/plans/2026-09-24-hd1910-m6.md",
+      "bytes": 2727,
+      "sha256": "1e673373cdab09820a8255b89b068b275f374fe736a713010df996b23ccf32a3",
+      "git_blob_sha1": "af6bcac6d5222e12f7000ebbe1bebd5bb6652067"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-07-17-roller-crouch-glide-design.md",
+      "bytes": 8216,
+      "sha256": "e76a24f508f75c61f7b6e501a718bb7b2d48fb7f25e873f23a58b8b3f204556d",
+      "git_blob_sha1": "f0757c1faa2ac6f4cad334df58262c64f15fc14a"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-07-22-roller-slope-design.md",
+      "bytes": 6446,
+      "sha256": "af0a560fa0537bbdd62c490abe9241768f2d9e134473be65aaba053352855c28",
+      "git_blob_sha1": "130ebba58739223d00839a84dbf7f29ac44e7eef"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-07-23-swizzle-env-design.md",
+      "bytes": 5181,
+      "sha256": "0bd417c0c0e2873a3d7fceed0eb729b66628b7953dfe2b2a63c460aeee4f02d6",
+      "git_blob_sha1": "358f94cb2f96c705a90352d1cdaea816ed9e0479"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-07-24-ground-pick-pose-following-design.md",
+      "bytes": 7956,
+      "sha256": "53c3f77f1958b3594a6fce66f711c38db9380ed123bcb039ba2ad649cf36a869",
+      "git_blob_sha1": "339857b2dbb5f4a559a3fa06f4081535a0314f68"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-07-24-shoot-pose-following-design.md",
+      "bytes": 10810,
+      "sha256": "eed901730b9ac3e77fec05e9b37a908165a89d545d17199565ae31d956357d0d",
+      "git_blob_sha1": "294e783b252439a667c647c4151f8bd8525abc83"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-07-27-swizzle-head-control-design.md",
+      "bytes": 4765,
+      "sha256": "0c6015d5542f01ea00cc8d65a503a898e47c2a92c16c5184b5a144c94dc6c148",
+      "git_blob_sha1": "31cb623b9e86c0f13fcbdb05f898912b4eb020de"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-08-04-roller-standup-design.md",
+      "bytes": 20152,
+      "sha256": "b902d9aee3a86fb9f29fcf08db2a1a13dcc25373fe2e27b1d43d12d0b15c87a8",
+      "git_blob_sha1": "f775e4c9245c97337d53a21a30046e1c4ad554b0"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-08-04-spin-env-design.md",
+      "bytes": 23360,
+      "sha256": "1465e5fa43b5e45a0e6f30ed4a9a2e2a175a0d039a4e8bc7addad59e9eded645",
+      "git_blob_sha1": "251be4bd0f7d4f7ff9edc46764bf6c8574620960"
+    },
+    {
+      "path": "software/training/docs/superpowers/specs/2026-09-24-hd1910-m6-design.md",
+      "bytes": 1832,
+      "sha256": "86f6b0f90bf46f698e85dbd5116de5c3fab6ecdc06efd0f7b88d2ea88fbfb3ef",
+      "git_blob_sha1": "07df259bb10b1152529512d2a30b32fdbfc54c86"
+    },
+    {
+      "path": "software/training/pyproject.toml",
+      "bytes": 4566,
+      "sha256": "45f3476af2b5bba1c3199aadb8372ec1bb08496ca91b08dec78543addd5c8440",
+      "git_blob_sha1": "479431f14761ff0d9efb7fe9e98e2658ec64f927"
+    },
+    {
+      "path": "software/training/scripts/crouch_pose_editor.py",
+      "bytes": 3490,
+      "sha256": "0268aacd7bdc0d3ecca8cbd40b70e2f65d25ed52d83b8b50327e306a478cac41",
+      "git_blob_sha1": "1c8193f8d001c229a781d37463cc22efd69e600a"
+    },
+    {
+      "path": "software/training/scripts/export.py",
+      "bytes": 11130,
+      "sha256": "3ea14f48901156ec4a8dd5f8ed7d59041a1ba31b22beb5183d5258fc854e0bc5",
+      "git_blob_sha1": "90a0a1315935ed7e0ceb649544e69ec1404e99b9"
+    },
+    {
+      "path": "software/training/scripts/hf/README.md",
+      "bytes": 3213,
+      "sha256": "10fffdc425e2cb8602ee17389187d69f508faf101342d7575f108979d9d78cc0",
+      "git_blob_sha1": "f77b1f2e69f9e36f76ae8a2266de8679e36caee9"
+    },
+    {
+      "path": "software/training/scripts/hf/train_hf.py",
+      "bytes": 426,
+      "sha256": "0db74a6edd3cc157a5596ac6f019496e8fdde936d9edcc3f260052297d7f1ae9",
+      "git_blob_sha1": "85b476e673472e869941376499d2cedd6253f3e3"
+    },
+    {
+      "path": "software/training/scripts/hf/uploader.py",
+      "bytes": 2491,
+      "sha256": "0b9610e26cfc02082b361d2198768d260846cd8354a2824251e31718935512a1",
+      "git_blob_sha1": "7c5f96621ed184ce9d60c7bc20edeecbb14d7833"
+    },
+    {
+      "path": "software/training/scripts/infer_policy.py",
+      "bytes": 71036,
+      "sha256": "69db723bb2fc237824190ba4039e31c2ac9cabf347b2b493d66d0c9df5c3ddc2",
+      "git_blob_sha1": "abbf257a7557b00410c3c47472fc83f4c71b4418"
+    },
+    {
+      "path": "software/training/scripts/play_latest.py",
+      "bytes": 2006,
+      "sha256": "1e898b201992a111dbc220832f63d32dc9fcc79f0f5658a0075d854fd4c99adc",
+      "git_blob_sha1": "841ff1d7406b82ac28b25b72ccc52501f4022721"
+    },
+    {
+      "path": "software/training/scripts/plot_observations_comparison_plotly.py",
+      "bytes": 10517,
+      "sha256": "f5e9af3bdc1e81822980e81475c307a8925797ac87fdd100b0a5fe0898ce54d5",
+      "git_blob_sha1": "d3cb4b0ee272f1e2406bd05e2dcc59a5cc6bea2a"
+    },
+    {
+      "path": "software/training/scripts/testbench_sim2real.py",
+      "bytes": 24394,
+      "sha256": "ebdb1007bb56cb2ab7c700d205d7815bad1afab0853508e38916e25244fd347f",
+      "git_blob_sha1": "1ba3d58735767bd775142a84a8eaa67e52668f39"
+    },
+    {
+      "path": "software/training/scripts/validate_bam_testbench.py",
+      "bytes": 9066,
+      "sha256": "3be5028f89f65ad960fd19e1a56fc20875a43c7b1f9cc75d5cc3ef56ae91efbe",
+      "git_blob_sha1": "08455e7b3d854cee005e5ddfa7c42159493521a7"
+    },
+    {
+      "path": "software/training/scripts/view_slope_terrain.py",
+      "bytes": 4122,
+      "sha256": "252467c923df9641edfa064b028acd48024cc57a67b2cbb3db3dfdb31870aaa5",
+      "git_blob_sha1": "fef271dd5974d27ef31483c4d322cc27257af954"
+    },
+    {
+      "path": "software/training/scripts/wandb_utils.py",
+      "bytes": 5070,
+      "sha256": "a4682def0e329c16f287dc881ab629e1b7918ff0d18de4c38c366ff2e3839250",
+      "git_blob_sha1": "d55f7d425ba807211cb51745d6d60cdec5c54dd4"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/actuator/__init__.py",
+      "bytes": 328,
+      "sha256": "181bfbec32115818720695915322f6e2c860fe87767570662a029f8e2d01f12d",
+      "git_blob_sha1": "170f7c0500c132c5cdb391c7693d8bcbc120b0b0"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/actuator/feetech_bam.py",
+      "bytes": 1813,
+      "sha256": "e31d38e5b673b5b86b37fc48617861ebfca3125d9c85374a980dad89f0dbf7a9",
+      "git_blob_sha1": "c29574b966db53db2fcabd37df0de88a31f977c5"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/actuator/friction_dr_bam.py",
+      "bytes": 5060,
+      "sha256": "e9b349a4be9910ea2c452cacfa78ccfc7fadb9f60e2f5ab8b54eed835e09b2b4",
+      "git_blob_sha1": "5215017930ac0e6e74c252d928b8aeb3a39518fd"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/hf_jobs.py",
+      "bytes": 20290,
+      "sha256": "997f16f94b7040618ed1201abaaefcfe5632405d6ad430de22f892b4341a84a6",
+      "git_blob_sha1": "e2fe5a62fa3b788e310804b08ca454ca08406d7e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/hd1910/.gitattributes",
+      "bytes": 19,
+      "sha256": "3bc5de8ac5316cddc8fa8fa8af676854effad97ec8bb9a65cddabbb25bed7236",
+      "git_blob_sha1": "0174d471344294bda2ab4a39daad88eafedd9042"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/hd1910/1910_m6.json",
+      "bytes": 754,
+      "sha256": "ef2d51adfb1cc0831b9b02ca19aa9176fceecdf725148d084378d7d9a64afceb",
+      "git_blob_sha1": "5a1af6ce935fdf58e0ad021f5297c933397d67e8"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/hd1910/LICENSE",
+      "bytes": 11351,
+      "sha256": "2d3fd9ffffa70a4307498ec630b14a6b4731e010f8ddda92686eaf65733c2dfe",
+      "git_blob_sha1": "5babf660c98eac4418422e1a62a5d9fc51a4d63e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/hd1910/README.md",
+      "bytes": 3031,
+      "sha256": "1ad19308cb6b953f1a7ee4166dc4e90398433d4de91e7b623f16bd989035429b",
+      "git_blob_sha1": "1441428290c481b97b350a7fa60ca5503134fbce"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/add_backlash.py",
+      "bytes": 5867,
+      "sha256": "c304dbf56e23c4e73009e67297e358bb758904372858e344eff7eff47cfd8293",
+      "git_blob_sha1": "aa35e16d3ce8b72b076d70a00f0b16a3944e2dca"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/additional.xml",
+      "bytes": 611,
+      "sha256": "958010af8e09a2ac7a79797d1aead327435e5201b3c4df0f2f7220f3c2c42941",
+      "git_blob_sha1": "25cc7d851fb54c25539486e88c50c2ffc69386ef"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_l_v1.part",
+      "bytes": 377,
+      "sha256": "b53da1917f3f4cd06eb5f71d685ed38a941cd89533d7204a7a071bd359c22507",
+      "git_blob_sha1": "34173cfe46514cccf0e3352bf271cdd9989e44a4"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_l_v1.stl",
+      "bytes": 235984,
+      "sha256": "70ecf0629559e3edf8f194f286a5fa0bd0ef77b75429b5f24f8bae70c7aa7446",
+      "git_blob_sha1": "1c6f20db7db4698e9e81c01b1a39814bd5b2c3d7"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_left.part",
+      "bytes": 377,
+      "sha256": "b4dc1cdcaec2ae69b3fbf0c540077fec7c1339d2b0a7db02de4a46638844e1e6",
+      "git_blob_sha1": "bee2818ebe4372086d85d41a6c03c65859260386"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_left.stl",
+      "bytes": 248984,
+      "sha256": "98f14ba6e6cd138740aa822a615aaa0db34527d499c40b2379aacd13427a1379",
+      "git_blob_sha1": "712488c2707191e5b0a35551eae10bc04c2e06df"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_r_v1.part",
+      "bytes": 377,
+      "sha256": "5e209d3e323121d1b104f39ca025b804e3a2a601b673a97e84695c00907947b7",
+      "git_blob_sha1": "0208428f0654029f04ee862c3a36680e422b15e0"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_r_v1.stl",
+      "bytes": 235784,
+      "sha256": "e3f277879aa6eb24e118795f4d8d8525acab9192c202a569d1403408ec656754",
+      "git_blob_sha1": "562399b378bf9f4a30c7724e8d94313c142d99e5"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_right.part",
+      "bytes": 378,
+      "sha256": "8cb81c3e44f27253e375d96b247fec743f4bedd417662e46defb8f857351ccfd",
+      "git_blob_sha1": "f201459284c9b7a072adc0b56282909bd342b579"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/ankle_right.stl",
+      "bytes": 248884,
+      "sha256": "836032fdeaa4b1f47f75cb24fa4ad9ebdb09acec158a0d787b3890c6dc4d4c6e",
+      "git_blob_sha1": "e60bbf205af71d224bcb89cefc3646117238c51f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/banana_pcb_locker.part",
+      "bytes": 384,
+      "sha256": "237808941d1088f6f3ad6eb0ede28b04ddde32bef5f3908e753373482762aae8",
+      "git_blob_sha1": "601be5dd4c3253752e9bcd30db805ef84d9bf0ce"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/banana_pcb_locker.stl",
+      "bytes": 69484,
+      "sha256": "a176364f824248b5156b37f2fd5c6b8bdfb24cd08be7ed6b3faa10b4db14a9cb",
+      "git_blob_sha1": "b7b521560dd5c345fdae427e61dfb71158c1aa87"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/bearing_roll.part",
+      "bytes": 379,
+      "sha256": "a5ceca94037dc49a4b2531a1bafb45295631a459f2b8714affb95ff9b14b626a",
+      "git_blob_sha1": "e0730bc20329de90bf78f9eb22c09c4fc54e7711"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/bearing_roll.stl",
+      "bytes": 121084,
+      "sha256": "2b30cbdb110c5cca7092a9b2658c9e899e294bf2df71635828858e1d1a20abfe",
+      "git_blob_sha1": "a814312ea6b0921ab28e97238f1c7bee6cb646be"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/bottom_head_shell.part",
+      "bytes": 383,
+      "sha256": "0b978903486cbaf1dc391187432bdd2d95d4befb3bc86efb49e6749c4ecee916",
+      "git_blob_sha1": "0341ac8d98020804e285d9047756c3449d39f7d2"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/bottom_head_shell.stl",
+      "bytes": 1048584,
+      "sha256": "3ce9532854a712c93e00e0fd2bbc2ce6b1c45f9418fd29d6e82f6ad8af8fc1af",
+      "git_blob_sha1": "643f11092df7f9f7c55e55c9c3e71d4e4c6cb27f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/elec_rpi_robot_hat_pcb.part",
+      "bytes": 388,
+      "sha256": "a18ef5bd2de122a8f287a6daa7ddef8e109fa8a9bcd66dc7874c35820d423967",
+      "git_blob_sha1": "c6ff4d512ae08721a4dd31ea1bed2eb349da0cdf"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/elec_rpi_robot_hat_pcb.stl",
+      "bytes": 942884,
+      "sha256": "45b904bcb378161d274d313cd067d3967305db0bf22c0955530145e18cdd2cd8",
+      "git_blob_sha1": "09048bcf69bac09c72fb834b45161b9aaf2ec21f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/face_part.part",
+      "bytes": 376,
+      "sha256": "d31844079ddd160095c1f5dbc2d926925ffdc05fd977f0914b4c7847832b2c94",
+      "git_blob_sha1": "23f67eb07a7d5f8671bb17f40162153287bed028"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/face_part.stl",
+      "bytes": 570684,
+      "sha256": "30eaa56fc38129ba16e2b4e247ac419b0ae9e5b0fe9e748697f4838d338b952e",
+      "git_blob_sha1": "0a27859ff2337baf9131c71f302667d8f6195da1"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/foot_left.part",
+      "bytes": 376,
+      "sha256": "f108a74d19a267d901d3dbce9a040a8a13f77fcf3a32de503ee9dc76e0cfc0fe",
+      "git_blob_sha1": "fe3f22c776d6c941d1ee6fbbee0b5973f456cab4"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/foot_left.stl",
+      "bytes": 996184,
+      "sha256": "5de2622a7b894e0fc9988dc6cff6579ee1dc818ffaddd0319f49cf5d5bd05587",
+      "git_blob_sha1": "43155ba3d9b1e40f6d8e6a4df7d30157ff202f75"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/foot_right.part",
+      "bytes": 377,
+      "sha256": "7ac0b161f409281fb0712b941eb066b70403e22ac1f2c76f23e663b0bed8def1",
+      "git_blob_sha1": "dfeb4fd530cef3374cd9b20dfce83f9145008f6f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/foot_right.stl",
+      "bytes": 995784,
+      "sha256": "8ffa894b29578edc78f5e982a7d89a8f5e4fa1dc27232b88c22a8a0a74cfbaa7",
+      "git_blob_sha1": "6971bbccdcfe1bf088f8ac618e772144d3a444fd"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/hip_l.part",
+      "bytes": 372,
+      "sha256": "9d94fb2e8be79cb51534eabd937472eb98d444124ef0e41859c9fa3a5fe78a12",
+      "git_blob_sha1": "0b59d97be9c3cea3e339fe45cc25c50d2e8f81a6"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/hip_l.stl",
+      "bytes": 1048584,
+      "sha256": "02bc777ce76a31b3d5c415188f8268b989f4eca57bc440a2900825ac459dec38",
+      "git_blob_sha1": "516223995f17415282cade51e3383d058dc7fc8d"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/jaw.part",
+      "bytes": 369,
+      "sha256": "c9d0c3f118395e03325e1bb36aaf459437aef485f388ee28920113a89c578599",
+      "git_blob_sha1": "f54b09e7485d2bb3bf3561cb7f80430fae6f421f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/jaw.stl",
+      "bytes": 495984,
+      "sha256": "65c300349113d3c6cd4a2cc587f76f7228115565a854492e42358ba8df71796a",
+      "git_blob_sha1": "d7b0e12b5aae0b482a0bf7ca36e97f93f435637d"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/jaw_soft.part",
+      "bytes": 426,
+      "sha256": "faa573ca64c9a98c65bd6288db990a0fa4d87ec2c8b52322dece28cd8f901faf",
+      "git_blob_sha1": "bc030cbf36921e4d106849ce1a6c03bbb4bc35bf"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/jaw_soft.stl",
+      "bytes": 336384,
+      "sha256": "61a426890f748713d45a9c0844149bcb0340d326f75295dcf7de2a4d768cbc85",
+      "git_blob_sha1": "3c8bb13ec4028a479378d8cf0bfd6c5e5283655d"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/left_shell.part",
+      "bytes": 377,
+      "sha256": "aa4bafd4db8e67981618d243be1e3993d3b29f2df7d7a4d3266514fedb4844c4",
+      "git_blob_sha1": "66c25a111fe075b867baaaa86016628882950ed2"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/left_shell.stl",
+      "bytes": 1048584,
+      "sha256": "efc16f55a4c32d21d74bf834faba27346788f154e29b40850cbcc69fda2f2396",
+      "git_blob_sha1": "9cb1656883bf27581c93479865a57d2be4956982"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/left_upper_leg.part",
+      "bytes": 381,
+      "sha256": "3c78a8df597dcd02f1c55bf115356c4fa7d05e83846146196bc85b0cacfd045d",
+      "git_blob_sha1": "3368919f0145deb915f7f1b94bdbdf44eace1265"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/left_upper_leg.stl",
+      "bytes": 612584,
+      "sha256": "b84e46d681cb971029e421c252de85e2f31e8858abee610dc26cd18037ef0224",
+      "git_blob_sha1": "b02cccbc748e925bbb33a98f9dfce7346581e730"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/leg.part",
+      "bytes": 370,
+      "sha256": "81e89572f2756e43caa953fbd4f2c1b8c501f6ba90c860d23b8175784d956682",
+      "git_blob_sha1": "0cd4c379e8c5059682784fe2d6bda36eb0ebe589"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/leg.stl",
+      "bytes": 738884,
+      "sha256": "b57d55ec2504dfb90b07bfc781dbf9b4bb6560becaf1dddbadd6a3914fdc423f",
+      "git_blob_sha1": "cc46130821755719727a27ebaea4e319b8303e01"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/lens.part",
+      "bytes": 370,
+      "sha256": "80c76fa330fbb16918885e346f7eaf2cde0f2afe2877d5bcb4936b960cb6c686",
+      "git_blob_sha1": "f7c75e5c68076fd94a491e355063c5eefe079789"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/lens.stl",
+      "bytes": 93684,
+      "sha256": "1549b2dad784d1a4c505c1ca62bffce6ca4e9b22c9273b37d6cda1c8bf2ca127",
+      "git_blob_sha1": "beff90540f3bebf4c43dfdfec8dba373e335e5ca"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/m12_lens_holder.part",
+      "bytes": 381,
+      "sha256": "23f95c75f609192a7c682b6a97b7cf9d35a558c9b2673225e45af9be80e17270",
+      "git_blob_sha1": "93a0a234344c95cbb905c8a9a1c1cdb5287d1c20"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/m12_lens_holder.stl",
+      "bytes": 549684,
+      "sha256": "7a9989bbe776ddd7a268013e63cdf0efc2fdae245ad2754a6b18d6bfbe21c2ed",
+      "git_blob_sha1": "23a01435a6bbd30ce4dd9d31a39402df4829d538"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/motor_support.part",
+      "bytes": 380,
+      "sha256": "4c3bde24035a852b5af4b116ff642ace7f78e0b3f3414f24e64bd0c4c24c21f1",
+      "git_blob_sha1": "bf25f389d428c6f4eb28e2ef6deffd5c4984860c"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/motor_support.stl",
+      "bytes": 180884,
+      "sha256": "5a741ee0dc71b349b8d6def4bffb826c4b9304c47cf0f00ffd1a3140b9205220",
+      "git_blob_sha1": "810f089cf1ba3322678123a86dd648de83fd06b8"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/neck.part",
+      "bytes": 371,
+      "sha256": "e3f51571b03c59f8567feb32924ec22cacdb19a608949274ca160266849749bd",
+      "git_blob_sha1": "a046c8b0300b7c0dee3f8a02044dba6912db5ad0"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/neck.stl",
+      "bytes": 73484,
+      "sha256": "ee5d4cbc51f64c43cd9c15f82709be93b5bd3f080013726d1d39c329c85050b9",
+      "git_blob_sha1": "ce34b0be3d7712548200dcf12111f709fd499aff"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/neck_pitch.part",
+      "bytes": 428,
+      "sha256": "2eacfc6f3cd00271117bf60e2c804d36199514fceefcbf779d5a69e3fa9d9fb0",
+      "git_blob_sha1": "038de486add063588f1a837d94b2ecfc098d5f62"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/neck_pitch.stl",
+      "bytes": 356084,
+      "sha256": "b9aed695e03da3819d244ecc66f1ad2d3c5c435f759403bb9e0f3b9ca2876453",
+      "git_blob_sha1": "1fd0ce0ec7e31e3f6cde20edf08f90a78554b8a9"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/noenoeil.part",
+      "bytes": 375,
+      "sha256": "94a1b3faadec6e553e1a02ad76b0876f03238a730b1492e0c0f3bfbd60c8d0c4",
+      "git_blob_sha1": "58af762fae83065f92d110a6c4b98ecae1d1352e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/noenoeil.stl",
+      "bytes": 49284,
+      "sha256": "f5492d8291da053bb4cb3f6680f90507648c4cfe1ef59f92b7d8f53e980d279b",
+      "git_blob_sha1": "40ef4d074244dd8e1eef792a76c075f6b4f725fc"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/np_f970.part",
+      "bytes": 373,
+      "sha256": "d1df78f4ee49c31709c4065907113fb78d362bf54131ce88fcb7f435bccff758",
+      "git_blob_sha1": "2525f4d84dcedd1362818428973214acefbc4672"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/np_f970.stl",
+      "bytes": 1048584,
+      "sha256": "979ca81251d4ec5862b6c987b46095aa07d0534ca1ec15f3cf438bbf7189deda",
+      "git_blob_sha1": "1ba95ee33747dc61cfcc17e54f8dc776cc342a1b"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/pcb__raspberry_pi_zero_2_w.part",
+      "bytes": 393,
+      "sha256": "bf299c636ebc460238475c7976956e4934e4d713960625e1c8747c6b7ec90315",
+      "git_blob_sha1": "b1b137d5d932117f769e28bfb007248b840a398f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/pcb__raspberry_pi_zero_2_w.stl",
+      "bytes": 1048584,
+      "sha256": "0608b3cc7d15e479ae3a275c03096df44322ed06a8dbfc59fe790c46b3690753",
+      "git_blob_sha1": "83ad4e5343ac9ac4010f68634cca270b0247f86f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/power_support.part",
+      "bytes": 380,
+      "sha256": "9a64299e5ac93dd4e26e4cf7a8d4cf6bc21f91277894b947d8b4dec15e5c4a54",
+      "git_blob_sha1": "4c025668e2ecfc2f862e4f04b093e7cc33350aac"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/power_support.stl",
+      "bytes": 641684,
+      "sha256": "cb43ba9351f51559f49ffc89679478288cfe6e9682b31898397406165b520cbe",
+      "git_blob_sha1": "981bd2088b381691ac1b004c7b664d2af410ca63"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/right_shell.part",
+      "bytes": 378,
+      "sha256": "870fe9cb00def1881fcc771111ab08baa41ba90fad82df24351deaed4babf9a4",
+      "git_blob_sha1": "219a997caa41a58e688134b24c373c503a73e811"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/right_shell.stl",
+      "bytes": 1048584,
+      "sha256": "484779f2bbe856f212d96a152550bb6834fd3c69603da315b6f70d1a3766d120",
+      "git_blob_sha1": "5879c3c7253fb9b2814227697ce6eb775d38df5a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/right_upper_leg.part",
+      "bytes": 382,
+      "sha256": "9881b241fcf6841627df32ac0c2defabb6f62c25a816397e102d6507845b2fee",
+      "git_blob_sha1": "53202fecf75382de70d09df43e53ccf077c48b38"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/right_upper_leg.stl",
+      "bytes": 612584,
+      "sha256": "208f4c94a94a9c6b978030ea194440a94a0508390cf5b0ce8efc5e560f559f21",
+      "git_blob_sha1": "d70b8403f19e14ee92fa67c841bf209951bf7174"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/rim.part",
+      "bytes": 421,
+      "sha256": "96648c282219239d1c1bba14c3d81949618759983674c15449776cb40d41c177",
+      "git_blob_sha1": "e5638b681213fd37d3d6f86b0edc3615d41b22bf"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/rim.stl",
+      "bytes": 115284,
+      "sha256": "c2a84cd05ed8ce87bbdd64950bca415ba5945641385f5ec7cdbb161aa37281a4",
+      "git_blob_sha1": "9a857697bd3079f145d980ed22bb140da824a933"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/roller_blade.part",
+      "bytes": 430,
+      "sha256": "add40a287e5f06d0fa704fc74795b7221940519653002aafa01e5e69accc9238",
+      "git_blob_sha1": "e51e6b24df5d11859e4b51eaa97e0d095bef38a7"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/roller_blade.stl",
+      "bytes": 1048484,
+      "sha256": "7b13447a82624d952e958d83572ed0c6e610d595db1f7f60217b6c8f059fec15",
+      "git_blob_sha1": "12ceafecbf52995021621ba3a743ceb4cd515b08"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration__22x16x4.part",
+      "bytes": 421,
+      "sha256": "dd0251e775053e63aa6bea486ab9fcb411caba2267d6eb59a3bbf91e20d20d8d",
+      "git_blob_sha1": "f2e63369c961974e73b347b9a7ab2c423c4a95fc"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration__22x16x4.stl",
+      "bytes": 1048584,
+      "sha256": "154412afeab1875acfc8bbd437f193f02c86cdd6a556395db10bb7126c545c6e",
+      "git_blob_sha1": "56ab78aca4c937d65ce3effb9b6b71b6581b1671"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration_default.part",
+      "bytes": 420,
+      "sha256": "4141ba7e90c4c9eaefc60ff7e0e6d0a93ceef6bad3a7c50fc76a343afc4a4074",
+      "git_blob_sha1": "476d8a300cab729b3bcaf8727f29b08f49221a6b"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration_default.stl",
+      "bytes": 1048584,
+      "sha256": "4d0d4c174a167e5f783b52b212a14a5bbd8a3180988c744c299c330a6b3de448",
+      "git_blob_sha1": "4baeca23b342d5355fa43186f36ddba1be7ad597"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/soft_mouth_top.part",
+      "bytes": 432,
+      "sha256": "4bfa1f8ace9b9000ff76f2fd34e9cef278e6635b871c3291cb45e2e02e5fac4a",
+      "git_blob_sha1": "1bc8b3251e7b8b6781d9e41bc210100597dc4c80"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/soft_mouth_top.stl",
+      "bytes": 393584,
+      "sha256": "16f662c82bd3e24f0e64ee22b6b549b9a2a76f6de7b7477b9f89f5861f3e91a1",
+      "git_blob_sha1": "43e95157dc9527478d9ad5bea4571bdce18e4a8b"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/sole_left.part",
+      "bytes": 376,
+      "sha256": "ffb0032792ba57bf6b452254003004b300ab0bf1e6efea2ae88519f245e0b823",
+      "git_blob_sha1": "30da97120e79039eaebf30c37b43719ef6d12d89"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/sole_left.stl",
+      "bytes": 789484,
+      "sha256": "db35f3b231c075fe1f9cb5449e7a698fb8ea97362daf8432be3e9700c2067574",
+      "git_blob_sha1": "1fe55aac746723d2f2181d5f7aaa5aa1bfedcb73"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/sole_right.part",
+      "bytes": 377,
+      "sha256": "5362397c481ef7cbe09740b33f42eaf1af1385c3bc9d08b202d088e5fc4c48f4",
+      "git_blob_sha1": "3dae5e6209e79db3b6e64835c22df4458c42ba5a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/sole_right.stl",
+      "bytes": 794484,
+      "sha256": "a4f5c114aae7137d559cacfb71d77c981588850335de5a09a14f95a4192a218f",
+      "git_blob_sha1": "7d22f5cddcb7af58dff8f6deb356279e00b68485"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/speaker.part",
+      "bytes": 373,
+      "sha256": "85a0792545beacafdacab250149681219cc7cfef6313ccb7176216dc52b007c0",
+      "git_blob_sha1": "23d1a7323f9355b1e1a7a28f497b5800e3e48705"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/speaker.stl",
+      "bytes": 684,
+      "sha256": "694064a99dbecd48aea6122232ff1051b085e59ccbd4c53d8c32640105b4e826",
+      "git_blob_sha1": "1f4de82900f5a13ef397d39a61b0b8985fb5c956"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/tire.part",
+      "bytes": 422,
+      "sha256": "4efa94edfa0848c7eaada2624404f9b202467b6c646d1d8688fb511a4d8f878e",
+      "git_blob_sha1": "f6c666b7e5e518ee67d18806c5d68232ab677782"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/tire.stl",
+      "bytes": 352884,
+      "sha256": "9f680806474bcfaa5b0a1db5b008578ccbedb33b60a39221c494cbff409033c9",
+      "git_blob_sha1": "628feaa508354f055d2c0bcf95df4525c64e316c"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/top_head_shell.part",
+      "bytes": 380,
+      "sha256": "f360b4a97017b99c5526bdb550917832d450aa4902699b2f429c7474093252c1",
+      "git_blob_sha1": "775745003d2c49f648c702d2a3696eec97fbbebb"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/top_head_shell.stl",
+      "bytes": 806084,
+      "sha256": "bc64288c0d54e13ec907256c2b99535937d370af1410de498905ec3cf8d7c3df",
+      "git_blob_sha1": "f446053309fc01ca0ddf866091995c173d9e1814"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/trunk_base.part",
+      "bytes": 377,
+      "sha256": "06e306b5be13395d2e6f2cd44a97e8f55557052ba7f5e6829995977127401ccb",
+      "git_blob_sha1": "9f96dced6a4e1c5ea78fd2933ad2c780cb62f43f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/trunk_base.stl",
+      "bytes": 184984,
+      "sha256": "fabfecefb73fbdc027e0fc8fc482a3857b86682a8dac0ca2ed88ae3011c01659",
+      "git_blob_sha1": "1fc5ea02be9583d292fc8c661095c9c76abbef87"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/trunk_shell_left.part",
+      "bytes": 383,
+      "sha256": "16b045d38fc21ba05d339ecfed088d1e3dc558e758257390f3d0329923386856",
+      "git_blob_sha1": "139f8c3e01d11a279c00a98be55b514d8444205f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/trunk_shell_left.stl",
+      "bytes": 708384,
+      "sha256": "508bf1436c09bb5acb27568b157477f74ccd985f5cb0911a0d0e25d178882772",
+      "git_blob_sha1": "787f7107efcf90d6ce298249986a15037bed73f3"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/trunk_shell_right.part",
+      "bytes": 384,
+      "sha256": "7455f306da6716514c12c31eca7aea4ddeb499c7dd230eaeb6465920128dc4f6",
+      "git_blob_sha1": "a7acc5edbe7873bc603e142baafc6618f119c773"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/trunk_shell_right.stl",
+      "bytes": 567984,
+      "sha256": "d5761d6995bfc175ddf429bab8ee2fab2fa9dea1ff52da30531a3b79be1c730e",
+      "git_blob_sha1": "eeac8d3f61282529846c4073e5d58f23812713e5"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/upper_leg_left.part",
+      "bytes": 381,
+      "sha256": "7c063eafef78ae93911b7d5b8383968197b3c1981141b3d4183ac7615edb5244",
+      "git_blob_sha1": "40f4153ca6a10dc1bbef7b12168d38db3ef64da7"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/upper_leg_left.stl",
+      "bytes": 612584,
+      "sha256": "b84e46d681cb971029e421c252de85e2f31e8858abee610dc26cd18037ef0224",
+      "git_blob_sha1": "b02cccbc748e925bbb33a98f9dfce7346581e730"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/upper_leg_right.part",
+      "bytes": 382,
+      "sha256": "4e9bee95c91c19a05cbc528926eca320b19f78a250dd33df203a4c18be5f588a",
+      "git_blob_sha1": "69c0ae64c85dcb303a96fab1132af7c35af78690"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/upper_leg_right.stl",
+      "bytes": 612584,
+      "sha256": "d6ed49dc77a539c65b9db1251f16b1e037f5ccf4334607e487dd624f9e12f59e",
+      "git_blob_sha1": "8427f7e7ac30e0f93d226ef5f87766e66eb6f868"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/upper_leg_rigidity_plate.part",
+      "bytes": 391,
+      "sha256": "ef84e417228b03a23592b2e66192c7b95bef6beda582ea3fa7dff4823f694123",
+      "git_blob_sha1": "b28b60714857d6b746926eb0ad8b89ba3e1f2517"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/upper_leg_rigidity_plate.stl",
+      "bytes": 180084,
+      "sha256": "41a4f826b5badfb75a1c0a6d26527c49761de88597d67c25ad731df2cdab7995",
+      "git_blob_sha1": "8b00e8ed3e2c62909ca8c0dab30252e22e90179c"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/xl330.part",
+      "bytes": 372,
+      "sha256": "038c57fd1dae4419cf1c9481891479749625a0339803a72a8a97b6fd04722414",
+      "git_blob_sha1": "8f666ea48a370d89699d59d3018d52ec0d6d1f23"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/xl330.stl",
+      "bytes": 206384,
+      "sha256": "c9f6bf7dd9d8b307a4174b40ff12517b3ea470e5535319a5b7dcce4ba52cdfe1",
+      "git_blob_sha1": "0ea8d4fa34037b0987a64a22a104bea0ff80a8b6"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/yaw2roll.part",
+      "bytes": 374,
+      "sha256": "83506821e896b626cf0ceffc15bd20fd12f7acea2cd143a6e3fe91032953f5f7",
+      "git_blob_sha1": "0b7e3e0670d1eb158b275812c003a80893bea5ba"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/yaw2roll.stl",
+      "bytes": 620284,
+      "sha256": "56ce1110e43c2279c6580f79a2a8c9e3f91b3bf5cdf8cf00b1caa3cab127a6a7",
+      "git_blob_sha1": "4354d0ccc1acafe547b4fb9df34a8b612252521a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/yaw_roll_motion.part",
+      "bytes": 382,
+      "sha256": "38b10c473463ff0417f3d12f75abf481ab81a3779d47cc560185b8c6d466f5fd",
+      "git_blob_sha1": "e846155f5c262a235a634ff4fcc01bd009a087e2"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/assets/yaw_roll_motion.stl",
+      "bytes": 290784,
+      "sha256": "41149f07f2fb4f2c62b589b3e43c17bedbc57e17d2de5d4e22c4f4e4d3e73dc7",
+      "git_blob_sha1": "a69ce50c08ff5139171bddd80f6994b89d42cf66"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/ball.xml",
+      "bytes": 706,
+      "sha256": "54a455bf454a9b6167655381df91593bbca86695d8d71e29fb6af69454c7c865",
+      "git_blob_sha1": "42c3278eb5f5498e8204bc9696bf223c810e7d2e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/config_mjcf_allcollisions.json",
+      "bytes": 2006,
+      "sha256": "2c27728a0e6d7d9dcfe210ede931cc24f5a59f19fbd6b0846bf8eca1c9ac1e11",
+      "git_blob_sha1": "7e964fc6a07fa6fba2f7a8fbd5604fe7b72048c4"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/config_mjcf_allcollisions_backlash.json",
+      "bytes": 2141,
+      "sha256": "19f453a1409c15867f7e08577b49cf1d3b52f7bfaa6abbccf7456cfd28dc5ebb",
+      "git_blob_sha1": "1ec800b691d6c0de9ca59fb415db760574e590b3"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/config_mjcf_allcollisions_rollers.json",
+      "bytes": 2092,
+      "sha256": "5932ade31b859e9bb4d9986b0d0d8e7000d4d2f6048b86a919f49e462694328c",
+      "git_blob_sha1": "93bb0edb6a6db14ad71be1f137334dd02569b938"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/config_mjcf_allcollisions_rollers_backlash.json",
+      "bytes": 2235,
+      "sha256": "a0d61ffc0bbfcce791c6b79b25694ce3401cf4b693819b91d5f751e8c033585e",
+      "git_blob_sha1": "c67f0cde11c1ea4ed79756542d42f39f335a00c7"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/config_mjcf_walk.json",
+      "bytes": 1814,
+      "sha256": "31fdf5bd061170fb41729b3a82a7780e772121ec566625c5a6bf849b890b31f9",
+      "git_blob_sha1": "43db1632f26ce5d421b03d1c4941b69ee2d8ee4c"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/config_mjcf_walk_backlash.json",
+      "bytes": 1974,
+      "sha256": "1f662b54138c30b135a451e1765da34045b6330bcb7c573d2719c51ef5f564a0",
+      "git_blob_sha1": "fc1a83d27f945aa20ada665f2fc198e04ec7ddad"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/joints_properties.xml",
+      "bytes": 1780,
+      "sha256": "6a4481a9279ffd92139479e67515df7b3510799ceb648c18fde0d58c300eae86",
+      "git_blob_sha1": "ad2e7558204743c6532223e5f5d5f69c419250d4"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/robot_allcollisions.xml",
+      "bytes": 32898,
+      "sha256": "7a6fdf437f5a80c7348ad801f43f906b997a834389cb70cca5e1e8517ba38044",
+      "git_blob_sha1": "7f296e3f85de71541cd5f5e3bda46ab2b463d547"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/robot_allcollisions_backlash.xml",
+      "bytes": 34985,
+      "sha256": "248c712e13258104ccab3f96c5cc47c7faa8f718f56f2c7de03efda653c8fb6b",
+      "git_blob_sha1": "c31684fb879cd3aef94a862e40e00c2919ba3341"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/robot_allcollisions_rollers.xml",
+      "bytes": 35688,
+      "sha256": "c201a72ecbc4dd8e110c840cb79b1647aab59e6c76db7369a88c34a33307447e",
+      "git_blob_sha1": "f0eb02c44a0b8300fc873d51c710d881f6852f07"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/robot_allcollisions_rollers_backlash.xml",
+      "bytes": 37775,
+      "sha256": "97d18e5426a911a443b06ec28ea87af18413f243c12cbb55ae844bbb5b0c2e2c",
+      "git_blob_sha1": "32e6dbce81f465f4b4f8fb72eea283c1d5e5b571"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/robot_walk.xml",
+      "bytes": 32017,
+      "sha256": "07af5e482200dfd2a7bf80ddde371153c88768a3a5aebc2f58ea42136fc7dadb",
+      "git_blob_sha1": "2ee35d44e2177ce92416a91548669db3ae5453c3"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/robot_walk_backlash.xml",
+      "bytes": 34104,
+      "sha256": "43686e85bf0fa0c77c89673d546c483d4a22d06a9c81fff3a673bfe9aae36d0d",
+      "git_blob_sha1": "da94d438ab92196accc3e0045d531c3fbb7b204e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/scene.xml",
+      "bytes": 2350,
+      "sha256": "0d2f58227a3e1c4caae4e847a368ae83516d0f398f428c4e96737b67dd894ef1",
+      "git_blob_sha1": "3ce5068fa88a9f9f9d1f9a2c3757f8f50a3e8dd6"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/scene_backlash.xml",
+      "bytes": 2570,
+      "sha256": "9ad82184844332f3999a3bb4e634700e8d8010f9974744c16f9ac174243cf488",
+      "git_blob_sha1": "1254e270be3ca68224de814d278d3b9782ecf8f9"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/scene_ball.xml",
+      "bytes": 1238,
+      "sha256": "3d59c82db5c3ac5cb35b1f5d4dfa550832be2eddffa9249ba0bfef3b6452e2bd",
+      "git_blob_sha1": "a7207f6aeb244aa810e12e21faab1d16f25787d2"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/scene_rollers.xml",
+      "bytes": 2439,
+      "sha256": "b22987450ae4d8e4656d6f236390ef0d01ad316560f645a557a2d18c4b45dc2d",
+      "git_blob_sha1": "5f15f9d0fb0ab327c5875abfe7a38f256f372ac9"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/scene_walk.xml",
+      "bytes": 2341,
+      "sha256": "6e23146c1a5025473b55ec94cbe37b08104ca388b7eb005ea277f8230736c8be",
+      "git_blob_sha1": "7aa25e52b609da73d759c7adc99233c7e63239bc"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/scene_walk_backlash.xml",
+      "bytes": 2562,
+      "sha256": "bf71c93e90f5a70890f6f76f79f8ba25191cf7ef0a8de47b1dd24f629449150b",
+      "git_blob_sha1": "0fba9a5e2fe909930058ebe6a26383b60240d05e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck/sensors.xml",
+      "bytes": 357,
+      "sha256": "47854a0ab18261f069553e1572e0c329c4f39e4557dbdada71e0dc62af14ee20",
+      "git_blob_sha1": "a2be91b7ff8f47643fe0937eb2d89f91069827ba"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/microduck_constants.py",
+      "bytes": 10380,
+      "sha256": "b846c0e99ac340b0c6a0c35da686a7c5fd2fd84ef6cccaed15255fcbfd30682a",
+      "git_blob_sha1": "8aa7b23a14c1b50969eb5046b8a5c0761c7ff7db"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/testbench_constants.py",
+      "bytes": 1777,
+      "sha256": "bf5e95376131471443e1daddf5abb0bc6326bc6b5c49bfb352774bcc6b011b9f",
+      "git_blob_sha1": "e676e5918a0f3b79630bba28667b8324e75cd258"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/arm.part",
+      "bytes": 369,
+      "sha256": "081b71065888ab6ccb90b601e21438a115d748a19164d0d1d0ac19fffbb3bbef",
+      "git_blob_sha1": "51da6d449b6f2ed496acb1f82ff62fc95ea5aa77"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/arm.stl",
+      "bytes": 151284,
+      "sha256": "2b5adeff9acddca7ca3f14ca502687bdccb0d5718ca5eee5ea8e0b7b92fe460e",
+      "git_blob_sha1": "a8dbbf40cc1925082c2554b550bee0a709df2200"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/axis.part",
+      "bytes": 370,
+      "sha256": "e50bc0c3d0d0efc2c0389db3da6614b38d1ac3d63b586bd0c419c097be35a6d3",
+      "git_blob_sha1": "de3f789bff930380475fd3c1a8c987b382c768dd"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/axis.stl",
+      "bytes": 14484,
+      "sha256": "435cdf37cd5cfd9cc7ce1202fcf075aebabffbf6cf1249a8e8d3a93d6350b244",
+      "git_blob_sha1": "7cd475fbbc17abd6c8953c03c9ab02c5d74b33e7"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/bench_holder.part",
+      "bytes": 378,
+      "sha256": "e54085f77346853620ce55bf8bac6c6ba1e5569bda857edf851890605ec96327",
+      "git_blob_sha1": "62d6f930940d10c6816ea07c5b387f65ae5628a9"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/bench_holder.stl",
+      "bytes": 60284,
+      "sha256": "3a46df8b07b5b7eda4a0f68642cc90e4a557cb3f8678e49a2508b9225a26cba1",
+      "git_blob_sha1": "32cfa186dccd172761f998cd5ec2b5566c058210"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_1.part",
+      "bytes": 372,
+      "sha256": "e49e473f52d3f72fd8dcdffa16bece1dd019ecba220721a5c03fd42986901367",
+      "git_blob_sha1": "1c0a3885dff7a135b4904eaee94ca6a98f12ac33"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_1.stl",
+      "bytes": 151284,
+      "sha256": "2b5adeff9acddca7ca3f14ca502687bdccb0d5718ca5eee5ea8e0b7b92fe460e",
+      "git_blob_sha1": "a8dbbf40cc1925082c2554b550bee0a709df2200"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_2.part",
+      "bytes": 372,
+      "sha256": "b0c87058dda6e65b78ce252b0da49cc77f4e7101d6d9a1be1cfcff4ff8293208",
+      "git_blob_sha1": "8d4f8bf19e128dab42b59e52ac9bac7e24381acb"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_2.stl",
+      "bytes": 28884,
+      "sha256": "6f57229eb624849885294536527402ebd6a2e4933e086ad80eda1604d3fbec0c",
+      "git_blob_sha1": "8219a169ad1351269a6bccd54f102a10f4332663"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_3.part",
+      "bytes": 372,
+      "sha256": "f8021a43202b3a5b3af40455f4790a1fa85695ddec8dd38fb1ea8d6970a9bb30",
+      "git_blob_sha1": "bd58d22f6d7cf79d5fd512c7df778dfb63664101"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_3.stl",
+      "bytes": 60284,
+      "sha256": "3a46df8b07b5b7eda4a0f68642cc90e4a557cb3f8678e49a2508b9225a26cba1",
+      "git_blob_sha1": "32cfa186dccd172761f998cd5ec2b5566c058210"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_4.part",
+      "bytes": 372,
+      "sha256": "7bc00fb470725890737598e59ee990a2bb82c242994f671d92b3fa597e4234d5",
+      "git_blob_sha1": "db6b2c206e9064923bff5466f28374c2aecfebfd"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_4.stl",
+      "bytes": 28884,
+      "sha256": "4e5b08e92d99bb9fa2d0f4b00f9c1f25b98092f1594e9735c38caef76a4475a7",
+      "git_blob_sha1": "b5590840b429965cf9f54fe299d25d8ae63cdff1"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_5.part",
+      "bytes": 372,
+      "sha256": "e650c96517ea0fc724fc6042043a7fa9bcba94faa26f9d5cdfcc0fc4b519e930",
+      "git_blob_sha1": "2b87f2be0be2e7464acc465e0d8716c9944e332a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/part_5.stl",
+      "bytes": 14484,
+      "sha256": "435cdf37cd5cfd9cc7ce1202fcf075aebabffbf6cf1249a8e8d3a93d6350b244",
+      "git_blob_sha1": "7cd475fbbc17abd6c8953c03c9ab02c5d74b33e7"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/spacer.part",
+      "bytes": 372,
+      "sha256": "55d9bfc8ab9583b8f9967762d2e79821f27bdfe539790ac69968058b25fd4bbc",
+      "git_blob_sha1": "292fd50b40d982ce62ebbd0dafc1feca62feacb1"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/spacer.stl",
+      "bytes": 28884,
+      "sha256": "6f57229eb624849885294536527402ebd6a2e4933e086ad80eda1604d3fbec0c",
+      "git_blob_sha1": "8219a169ad1351269a6bccd54f102a10f4332663"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/weight.part",
+      "bytes": 372,
+      "sha256": "612e03a44dc3d61747e6504a9df7b927117503dfeeba38fe132ca697870c2164",
+      "git_blob_sha1": "06dd404ae29d0c0e08cd9be929949c953be68d3e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/weight.stl",
+      "bytes": 28884,
+      "sha256": "4e5b08e92d99bb9fa2d0f4b00f9c1f25b98092f1594e9735c38caef76a4475a7",
+      "git_blob_sha1": "b5590840b429965cf9f54fe299d25d8ae63cdff1"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/xl330.part",
+      "bytes": 371,
+      "sha256": "e1e95b797098ec0e855db86c7d316b689dd04445d838c92a2bfc8d6a624efa50",
+      "git_blob_sha1": "311a5fbe3f678b1847696367e7902b6a06f3070b"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/assets/xl330.stl",
+      "bytes": 206384,
+      "sha256": "c9f6bf7dd9d8b307a4174b40ff12517b3ea470e5535319a5b7dcce4ba52cdfe1",
+      "git_blob_sha1": "0ea8d4fa34037b0987a64a22a104bea0ff80a8b6"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/config.json",
+      "bytes": 508,
+      "sha256": "c66518cd6fade3bbe881be0ab9b6e1ac395ddfb41a9b3ce5b39dfdf58e3a0210",
+      "git_blob_sha1": "8d44975bcceb541ea54710ccf295cbfb1495c712"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/joints_properties.xml",
+      "bytes": 909,
+      "sha256": "5204d854ca41a08b752be733acc7abe238c279f6525cbf2c532792446b187458",
+      "git_blob_sha1": "c0406a1cf62a96d05863c949e9c4e6ffa69cda6d"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/scene.xml",
+      "bytes": 932,
+      "sha256": "711f1503b4cee29270f206bd538de38fbd9df18cb2c12ff6a012061fadce247c",
+      "git_blob_sha1": "4b9fa89bbdfb1106f9def3c284447f9acbb3bb4a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/robot/xl330_test_bench/xl330_test_bench.xml",
+      "bytes": 4598,
+      "sha256": "b189f8c9d97b1e8fd11a67e8270f379042f863bca24d3af03970194c5e3451f2",
+      "git_blob_sha1": "14132ba3f49cd1a32be3672b8565fca3cfed9fca"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/__init__.py",
+      "bytes": 11890,
+      "sha256": "a5e66678babc43829c4cdedb452c577da5937356b6383c441a3b2ff86c52d3b0",
+      "git_blob_sha1": "1674cb8b31e641a39736758e22c9b9ea590d70cf"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/backlash.py",
+      "bytes": 4344,
+      "sha256": "c2fc78e42576c40f7a6ac8eac034630e780bd1881a843666274e64d424e8dcb4",
+      "git_blob_sha1": "44fdbb78a1236afa613199e9bf7fa6c3e34e4331"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/mdp.py",
+      "bytes": 302264,
+      "sha256": "2c1a046ea8845a1ae0b986fa9d12bc27aa279d4f7f699ac2116ccc8bb2b5863a",
+      "git_blob_sha1": "f8dfcba3bbf4201ee41d8cbf98b76e5d57ccca6a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_ball_kick_env_cfg.py",
+      "bytes": 29653,
+      "sha256": "313180628c0d0364ea6d0f1843e7e3e10b76585491b90b0c1f0e301d9e5fd30c",
+      "git_blob_sha1": "34ea20cb1611a7e45c435b08e9ee5689700a5d3d"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_ground_pick_env_cfg.py",
+      "bytes": 32917,
+      "sha256": "9b68951e2c84fdccb5894701efa97e060438eb56c956a34c65e844ba3fa6185e",
+      "git_blob_sha1": "94df8b551a913fe22e3e21dace40cc7fbfee76d3"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_hd1910_env_cfg.py",
+      "bytes": 1635,
+      "sha256": "3a14010c6902bb3089e302b13149364e6db294316fbc79619d831029eecae35a",
+      "git_blob_sha1": "c683374e1a13405596031892d5275bd1d19d521d"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_roller_crouch_env_cfg.py",
+      "bytes": 19507,
+      "sha256": "745142fab9ffc4c43a6b7d367d6be37f5675f5fbf255ac4341a9e2a21a4062ee",
+      "git_blob_sha1": "c37507d68ce9a99372994051b355141cda50d86e"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_roller_slope_env_cfg.py",
+      "bytes": 12134,
+      "sha256": "92738df650e3527c8cbe194169f60fb2a232933b1eabbbaf7d4b7d2aa67e2b42",
+      "git_blob_sha1": "a39b601e14c6d080ce0b7c1ebae1329b1e7a13df"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_roller_standup_env_cfg.py",
+      "bytes": 27733,
+      "sha256": "146e417c082823039b87d2ff350e96e84007df80c268d53984d7c160f25cdeee",
+      "git_blob_sha1": "872ad8c17cf6dfae3f8dea51a32518c25f75d7ad"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_roulade_env_cfg.py",
+      "bytes": 35052,
+      "sha256": "7075e079849a9961dbe8d35dc680848c9651e8a98897f08538c48b29f715fc10",
+      "git_blob_sha1": "7ce9c51b1ca127df1f2cd90cd12ca51bef1590c0"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_sitstand_env_cfg.py",
+      "bytes": 43897,
+      "sha256": "4cb26df53b53beea7e98f995a13dfe3de31c8c0f46b963818a6e337c4a256ac2",
+      "git_blob_sha1": "fb8f8c6ceda9151dbb8e03aa2f0bec6c17b5247a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_spin_env_cfg.py",
+      "bytes": 19856,
+      "sha256": "ba85e26407a29a208f871aa229bb2c7971eca6087f0740e7de6f898adbc5b395",
+      "git_blob_sha1": "60cf32ef09064eba13a205e17cd05ce359d2b08a"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_standup_env_cfg.py",
+      "bytes": 58592,
+      "sha256": "b20b8f3fac5a374dd602f371f0b500955b4dbcb4d3f7330bddfa15b327826873",
+      "git_blob_sha1": "358b567c75300551c3e1b0ccbcd378f481cb9f14"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_velocity_env_cfg.py",
+      "bytes": 44971,
+      "sha256": "75a0430b814ac7495eb237ab806fbd4dd10309b9fd3027ac3eee3c2e3c5a944a",
+      "git_blob_sha1": "45a1f6d5b7f5d81aa58dab777ed34f458a2f847c"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_velocity_rollers_env_cfg.py",
+      "bytes": 30194,
+      "sha256": "c134f914a516dad7c34f31aecb073b2973c44cf02017ee8bef66ebd046c587fe",
+      "git_blob_sha1": "6967db9eb46e647a757408dad982025dc9d9cb66"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_velocity_swizzle_env_cfg.py",
+      "bytes": 9544,
+      "sha256": "75197c956afd77586f60e4b773033ace15e088179bb5912a88328862b0a10f49",
+      "git_blob_sha1": "104dfa1964699a045aea0981f6c9e471493d4acf"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/microduck_velstand_env_cfg.py",
+      "bytes": 21298,
+      "sha256": "0ccb20f3334d47afcb59dcdb9cda54fdd417b86f535fec8c73f5db6fe0d1c666",
+      "git_blob_sha1": "3e1631243612c0c5b85e15b70b36f89de5480114"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/slope_terrain.py",
+      "bytes": 5004,
+      "sha256": "1ce48eef8b4bd82cde94d7c9f50f19d2992f4dc8d3b5b5d314b7381bc572b8a0",
+      "git_blob_sha1": "e4270fc6a211064f4137edd19a8e946275e1a83f"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/symmetry.py",
+      "bytes": 7348,
+      "sha256": "e37980389773f2f87b8f376df449af4d70e0c983744459f9a35a3ee7b686186b",
+      "git_blob_sha1": "e950421916f48231f22108178dc769ae7912d5d6"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/tasks/testbench_env_cfg.py",
+      "bytes": 9481,
+      "sha256": "d254218ca3f491e52d471ad033ebd1cb39a339f1f21394ea55e2bec4f3dc2776",
+      "git_blob_sha1": "7b6ebef8e75c20991a83c079ea2aebedef8e3103"
+    },
+    {
+      "path": "software/training/src/mjlab_microduck/train_cli.py",
+      "bytes": 1092,
+      "sha256": "ab210a1ee8eaf56ab8499eaf3b71b60f2d32935db7a041db621f3975ec7120aa",
+      "git_blob_sha1": "0a6fd36fbd69525323cf22da0450d0bac5468ab4"
+    },
+    {
+      "path": "software/training/tests/test_aarch64_cuda_torch.py",
+      "bytes": 5291,
+      "sha256": "a709e75b92398465c28244b5282f67fa0c762f83bf63f331dd7cc895ca203e02",
+      "git_blob_sha1": "ebcda61f661f502d86ad38b97a8313fd32ed00a6"
+    },
+    {
+      "path": "software/training/tests/test_crouch_glide.py",
+      "bytes": 3853,
+      "sha256": "a98d7a4cfea4d0995b685ab261b35de6173dc89b7024bd2fd7c80f840beda25c",
+      "git_blob_sha1": "af81d716fccff270a36cabac5bffa61e0a3ec48a"
+    },
+    {
+      "path": "software/training/tests/test_descent_speed.py",
+      "bytes": 1261,
+      "sha256": "3e4d7bca6881a3055b487507301801c6d6de1e880f7bfa9bec3d9ad978cbf69c",
+      "git_blob_sha1": "cf97f1f7ac6ff026f0e88679194507a1fab726a0"
+    },
+    {
+      "path": "software/training/tests/test_ground_pick_cfg.py",
+      "bytes": 2434,
+      "sha256": "0d1556219800df3b7c7d6c7c53f1ae304d0072ebaf8dbe57e5937f11bdf05708",
+      "git_blob_sha1": "fe9c9ca4e2608b73b9a22c3ffb60f5138eff35a4"
+    },
+    {
+      "path": "software/training/tests/test_ground_pick_pose.py",
+      "bytes": 4628,
+      "sha256": "dc2156a7d1f730f09c6ff139e07574f5255c7c6fc17900b190905dee00046855",
+      "git_blob_sha1": "23d23c86ff5435e431781cb659932eddf4a7cbce"
+    },
+    {
+      "path": "software/training/tests/test_hd1910_cfg.py",
+      "bytes": 3631,
+      "sha256": "649f005eb2dab142259cec7f04be8d8ccb68670608aaecbcf4cd60160206d363",
+      "git_blob_sha1": "22c32e03abf3e453bddea7eaec7232a52d300fad"
+    },
+    {
+      "path": "software/training/tests/test_hd1910_rollout.py",
+      "bytes": 1842,
+      "sha256": "8b4b509aad994cdea946f360afd6cc5622e23360e213730f69f63ffab522fc65",
+      "git_blob_sha1": "b37e70110b1bb7941feaa38c665205ef90844d5b"
+    },
+    {
+      "path": "software/training/tests/test_head_pose_bias.py",
+      "bytes": 6159,
+      "sha256": "21c94e089004de584e7d0422f94dabb3b566bb182b000f01031c8badf84ed9ee",
+      "git_blob_sha1": "49334bbd17409f3a7ee0b3149376ecfbcfa920fe"
+    },
+    {
+      "path": "software/training/tests/test_hf_source_snapshot.py",
+      "bytes": 2364,
+      "sha256": "e45a3f150d2ff606057c7e1358ce3a1add134fb10e8200af81ed58d62df41394",
+      "git_blob_sha1": "fca8a85d4044404062dfeef86ba5ccf01ebf1aa8"
+    },
+    {
+      "path": "software/training/tests/test_nan_guard.py",
+      "bytes": 1888,
+      "sha256": "b80c338ce6949ab754806615bce2b8b8e47b43391f0290f07afbb1cd43e7facf",
+      "git_blob_sha1": "77ea793006fe9062e599d7c63ecd730f5999f6d5"
+    },
+    {
+      "path": "software/training/tests/test_obs_nan_guard.py",
+      "bytes": 4527,
+      "sha256": "d521a3ddf30f9be8fee54dd2dce68a662952e9acc05223457bf68a24af8aa731",
+      "git_blob_sha1": "12c7d12449253301478e8758dc96bba864e6ff63"
+    },
+    {
+      "path": "software/training/tests/test_roller_crouch_cfg.py",
+      "bytes": 2300,
+      "sha256": "99598c25cbb265e12ea3eca0cbbe30616183e0e28f75cfa3f82fb5e600ecfa9d",
+      "git_blob_sha1": "25a7e86e5d994c6e2683db3eb3d6870ef567566c"
+    },
+    {
+      "path": "software/training/tests/test_roller_slope_cfg.py",
+      "bytes": 4459,
+      "sha256": "62fe70c4cc69b42294f43db2480a53b3048569118344d691b8c654947c724122",
+      "git_blob_sha1": "3a438e3b8bd9afd9aae2099c9c889cc26836feaa"
+    },
+    {
+      "path": "software/training/tests/test_roller_standup_cfg.py",
+      "bytes": 25009,
+      "sha256": "7067c4375d8b43471bcd94a6c9b1a8c1c17b6bac64099588cc13356009aebba7",
+      "git_blob_sha1": "9d8d558db152b4e671fe536e5a3752f1661e1318"
+    },
+    {
+      "path": "software/training/tests/test_slope_curriculum.py",
+      "bytes": 1365,
+      "sha256": "efd0e6f4e3ece42bdfdca011815a5506af74a5f094fbd265e5644f964678e6a0",
+      "git_blob_sha1": "b55f4a014cd2e991aa999306a9936e426c7c28e5"
+    },
+    {
+      "path": "software/training/tests/test_slope_terrain.py",
+      "bytes": 4034,
+      "sha256": "a48713d10b1ee4faddef6e96c54d1f3ff09f71ea73c787714babd1d3af6afbfc",
+      "git_blob_sha1": "7bf32d126bee087b7461cb22b614441ff6f04eeb"
+    },
+    {
+      "path": "software/training/tests/test_spin.py",
+      "bytes": 15896,
+      "sha256": "0f27f1a1afee0c2c7c15e73fdad4c2649b4f396670206dbb57aa1743f71b4b95",
+      "git_blob_sha1": "73ca47a2c9ad9656497d005a4527d8aaeb1c265c"
+    },
+    {
+      "path": "software/training/tests/test_spin_cfg.py",
+      "bytes": 4457,
+      "sha256": "62dfeac34c863e755650790f62af19b8e4584f829c640f455d71c08ec5fec065",
+      "git_blob_sha1": "888e939673f862c4f416b3dd67d42e9dfbb9d5b6"
+    },
+    {
+      "path": "software/training/tests/test_swizzle_head_cfg.py",
+      "bytes": 1750,
+      "sha256": "d053d11281576687230fe60234ec0fb545ee1c2974486df8ac5996628e346cb7",
+      "git_blob_sha1": "52b31f33dce3f9d00fc1b49aae22d1962715a701"
+    },
+    {
+      "path": "software/training/tests/test_wheel_glide.py",
+      "bytes": 1990,
+      "sha256": "5e9796ed46f9a1b09a160c9b868c3d525ca2f6bece3ca202b369409e99c537bb",
+      "git_blob_sha1": "2e51c76dbfd6cb686758ecd313968a8cd95e9268"
+    },
+    {
+      "path": "software/training/uv.lock",
+      "bytes": 241445,
+      "sha256": "2eeeb680025baa737e7ccf3a87da3695a9d49b228de0bb60d8af0c022ab5f1aa",
+      "git_blob_sha1": "2d20aecb14941fa43ddcdbda960e3f03c3993cad"
+    },
+    {
+      "path": "software/飞特适配架构.md",
+      "bytes": 65387,
+      "sha256": "2080819c1437938fb039b0d57b49ed54c829859bee6275bb6528b8d3825fc499",
+      "git_blob_sha1": "1e1c25ebf37a30ee2ab34cff32bf93672756eaeb"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/.gitignore",
+      "bytes": 9,
+      "sha256": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+      "git_blob_sha1": "b83d22266ac8aa2f8df2edef68082c789727841d"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/Cargo.lock",
+      "bytes": 16013,
+      "sha256": "8fc3f7a0b37f6b6b0c22e016fb9dac16c6f5ff6ee492ca67d625efb2dcaf6838",
+      "git_blob_sha1": "eb1452f73295a30a6a9a30c1fb4620dd8f1f12d5"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/Cargo.toml",
+      "bytes": 2603,
+      "sha256": "c2eadbc40ec2bddde65a3692cd6d3a454624feb06f72c36358e2463fa33fbeb9",
+      "git_blob_sha1": "3c1e71fe48200252c6bb4621e009c6dab55ed987"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/HD-1910-C001串型规格书20260907.pdf",
+      "bytes": 4888402,
+      "sha256": "aafd3b6a03f4902f74164bf49091d88c01418b12ddf7d5f8118cbc763f03f9a9",
+      "git_blob_sha1": "e4846bf9459c77b0084d05ddc9222f5b400ce963"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/HL-2915-C002串型规格书20260227.pdf",
+      "bytes": 634844,
+      "sha256": "6dc6825a4606203c8d315bc4e6ea6419b6ae1c4a7a1fcc82816ef372a32de601",
+      "git_blob_sha1": "d7f97a3d7fe50a41d4a4ff0bdbfda6f37c7d4d15"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/README.md",
+      "bytes": 2003,
+      "sha256": "0dfc99210395eb9ca8bd2272d9d6cb6a8345c6f1162b8660ec8dbfc4456cf2e1",
+      "git_blob_sha1": "b761897eb62f172fd6e671db222b063a148d1a1a"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/TUTORIAL.md",
+      "bytes": 27946,
+      "sha256": "f4f1148cb45f71330b4e08152138ead9a300546568f68a3d62eb4de806a562b9",
+      "git_blob_sha1": "e66033156dbb948e36473e1bff8c593b7d9e8daa"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/src/error.rs",
+      "bytes": 2716,
+      "sha256": "259b48129f32801b9e682114732cfedd22f50b7f98fe3b6d027d82309a2c5165",
+      "git_blob_sha1": "caa3de303678378e013f870f5fa0a47178763148"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/src/lib.rs",
+      "bytes": 1030,
+      "sha256": "5eca6c9d68f18547b2bc015723c3be01ce3d6e905ab07ae02903f57536600ea7",
+      "git_blob_sha1": "4be0d8f74efd403a12fb9e206910ab484d276e53"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/src/main.rs",
+      "bytes": 29098,
+      "sha256": "61adaf3a19355257faa176c133037c2877a471dae00d0bcc2efa121a07725985",
+      "git_blob_sha1": "8f3f2dcb26f62a70a778d16daa0a8bc2465d43fa"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/src/protocol.rs",
+      "bytes": 8732,
+      "sha256": "d05fca43146bdc73f2be8f1f1645f69ddbe4c4473a5c136c80975e54595bf5a5",
+      "git_blob_sha1": "36c807ee5c828962dd79bfb7ecac5918c3de93a3"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/src/registers.rs",
+      "bytes": 24094,
+      "sha256": "d35047414f4473c48182f7e5234ad827d727e8df5726df6ee4f25922eaf81a10",
+      "git_blob_sha1": "54c704a9e3a8d2bc021086a7e40b6394033de6f1"
+    },
+    {
+      "path": "tools/FeeTech_HD1910M_Servo/src/servo.rs",
+      "bytes": 17075,
+      "sha256": "aa8555757bed87a7a624d94d900a6933a96a19269ce2d4cb995b22eb61793fc9",
+      "git_blob_sha1": "c387daaff51025024a4d82f66593289ea59ceeb4"
+    },
+    {
+      "path": "tools/fold_contact/README.md",
+      "bytes": 4110,
+      "sha256": "c5ac9dda673ff6cb74a02a73c2406fbfd1b026718d0d43f2a0965256287e2487",
+      "git_blob_sha1": "2a387f680a728bdaaa1eff92964784c9c5202daa"
+    },
+    {
+      "path": "tools/fold_contact/fold_contact.py",
+      "bytes": 8915,
+      "sha256": "643ecb583be296e4e2a5fa459fc564b63bdca6190cf157ef68673a2b9101944b",
+      "git_blob_sha1": "e034c9d8ef1478b84991107367e52347e7b7c6b4"
+    },
+    {
+      "path": "tools/imu200/.gitignore",
+      "bytes": 6,
+      "sha256": "96731671afe640d782dff36b82a3ad8d1ce0ebe4a7b174f6506f251395941e2f",
+      "git_blob_sha1": "333c1e910a3e2bef1b9d0d4587392627d8388974"
+    },
+    {
+      "path": "tools/imu200/imu200.py",
+      "bytes": 20876,
+      "sha256": "c3ad44659c58c468f6270c8823700160e279b078396e15cc0a5e7a60548e2529",
+      "git_blob_sha1": "ebd9fba41d4dc17431c281efc9201b406cfc3064"
+    },
+    {
+      "path": "tools/radxa/1-做卡.ps1",
+      "bytes": 1698,
+      "sha256": "7fac00a651ad3536d966feb7ca4b9dd89cb7aa33b42c70b4c4abf66cda912a12",
+      "git_blob_sha1": "f3f9cedfe461655d7d77d4e030beecafc6336637"
+    },
+    {
+      "path": "tools/radxa/README.md",
+      "bytes": 4643,
+      "sha256": "d73323a9fc58aca0656cf68994b5d5630aee115c14b70efc0254cecd0106f566",
+      "git_blob_sha1": "f477ad968c898515dcf605b211a2eb138d7d818d"
+    },
+    {
+      "path": "tools/radxa/build-armbian-card.sh",
+      "bytes": 9171,
+      "sha256": "b018d821ffccbea36655f420468ba1856b6a600e1ca1f6e1a3c378bbe9a8625f",
+      "git_blob_sha1": "d28765cffffb72179faad970fafd015461fdac58"
+    },
+    {
+      "path": "tools/radxa/card.conf",
+      "bytes": 323,
+      "sha256": "81fd32d6b2fb197579311696fd589374271b3725cdaa52d7bc0f111c0c385195",
+      "git_blob_sha1": "24945b612ccac1adb35543d2899933d870ba5d66"
+    },
+    {
+      "path": "tools/radxa/release-notes-20260920.md",
+      "bytes": 8039,
+      "sha256": "feaa0fa33d6e3be66167f0cf52b83a71c92d818550ae839f68de7c1c6a81e329",
+      "git_blob_sha1": "c17f8756bc7eba983b538d746378ece516160ac9"
+    },
+    {
+      "path": "tools/radxa/摄像头调试记录-20260928.md",
+      "bytes": 6137,
+      "sha256": "e13f3ead5d101ba728b3895bb5e011b40b7142bacf941ea1a332b83e92dc7136",
+      "git_blob_sha1": "214da4abd80873df15fa0779c5810c2bd73709c9"
+    },
+    {
+      "path": "tools/radxa/联网与HAT调试记录-20260928.md",
+      "bytes": 5119,
+      "sha256": "69d69d32bd762465382c29b3e156ef657bac65d6b39cfc0ff5313ac35d495b10",
+      "git_blob_sha1": "9f8891524df528175d49c8cab0ae5c7bf23e276b"
+    },
+    {
+      "path": "tools/radxa/镜像使用说明.md",
+      "bytes": 13449,
+      "sha256": "cfbe02d2f906f9a215adc94701ab1b6b2ea6847253fbda3b24bb9d64cfb7f7f5",
+      "git_blob_sha1": "e77365433f3963d1156cc71dc1b94adce1c7ba58"
+    },
+    {
+      "path": "tools/servo-web/.gitignore",
+      "bytes": 128,
+      "sha256": "c466a61769b3c944bbf7a0d543879d89c82d65afc470a5ad138f09fcf431d341",
+      "git_blob_sha1": "f231c5c36c060c2e41749eab7576bb1c1bdb917d"
+    },
+    {
+      "path": "tools/servo-web/README.md",
+      "bytes": 29071,
+      "sha256": "a258b08b533835d41051abd5a9bde6361a2f008d269f450d59261e40f4147d3a",
+      "git_blob_sha1": "2c6a39b46746c56ac3e66eecd36c84a98356a41c"
+    },
+    {
+      "path": "tools/servo-web/build_model.py",
+      "bytes": 9025,
+      "sha256": "0efa8f991a72b3a647aa3fc20cce2669dd94a7029db276f8b50ad4aaa1aeb06c",
+      "git_blob_sha1": "8bc7183f3b800eab42ac899415e8df0d432c84b4"
+    },
+    {
+      "path": "tools/servo-web/directions.json",
+      "bytes": 520,
+      "sha256": "313bb53255eef0ae0cab252f69fe5c31abf609c34201d33a6116e0f33da04ba4",
+      "git_blob_sha1": "5415cfcb5a217d7a6c22b0eafb23e514551752d3"
+    },
+    {
+      "path": "tools/servo-web/feetech.py",
+      "bytes": 13161,
+      "sha256": "2a39efeaa78213c6e52bc9fdbfda83871c31002bb64d87bbd7bc38762cea9e87",
+      "git_blob_sha1": "39abe17413db4870e5e44850971a1de91166d46a"
+    },
+    {
+      "path": "tools/servo-web/imu-jlink.example.json",
+      "bytes": 100,
+      "sha256": "0031942c89b9b0713d653d5125ef1bdd9dc03e9f8b57c51ac2dd5d02298b7a94",
+      "git_blob_sha1": "3c9d0adb8cb1ae16c77048e603cc81dd4f7d3e27"
+    },
+    {
+      "path": "tools/servo-web/imu_attitude.js",
+      "bytes": 3939,
+      "sha256": "57c1984bff897471e6b5890312c9da66179afada7332a8160b5b1981ce01ec66",
+      "git_blob_sha1": "bff9a585c5578c27843b6ef602c94b8e57d2753a"
+    },
+    {
+      "path": "tools/servo-web/imu_bridge.py",
+      "bytes": 37020,
+      "sha256": "3dc7ba35fa639fc5b881151e017d5fd6d4f6ddf95db0733be04e65c8d9ef9e7d",
+      "git_blob_sha1": "551454f628fafee35151f72343094140e60cb634"
+    },
+    {
+      "path": "tools/servo-web/imu_bus.py",
+      "bytes": 9839,
+      "sha256": "a3e4864f1208c5a4cf853fcc90d3bf2019a28f8ea4dad4b0d77587e0be91bafa",
+      "git_blob_sha1": "744260c35d0b8771bf6a3d13f76599243a71998b"
+    },
+    {
+      "path": "tools/servo-web/index.html",
+      "bytes": 74709,
+      "sha256": "c05fb7add20924453877f1ee44b1461964ac4edb992d948cc547fc06e3866d46",
+      "git_blob_sha1": "56a15ac7ee066f45abfc894e412b82c02f206e6c"
+    },
+    {
+      "path": "tools/servo-web/model/NOTICE.md",
+      "bytes": 457,
+      "sha256": "6b0445fa294ae29326509486c642aa489ed47002645e2a268d3b0eff33629db3",
+      "git_blob_sha1": "c40f217e5e898820700cd075ab09e21d33df620f"
+    },
+    {
+      "path": "tools/servo-web/model/meshes.bin",
+      "bytes": 2856560,
+      "sha256": "d2252354ee5a04367aaf82242e08e52491b02ebbf27d48dc2c20350e6714d1a8",
+      "git_blob_sha1": "033ca35517e1a07275b86555a38aebf76010aac3"
+    },
+    {
+      "path": "tools/servo-web/model/model.json",
+      "bytes": 17056,
+      "sha256": "4759870326c14f8030393c6ceb9c4c1e9f264a45ef6d604a92df06c2c8d04073",
+      "git_blob_sha1": "6bea9275375e39207a6e3ef1c49a3771a41df0aa"
+    },
+    {
+      "path": "tools/servo-web/poses/站-2026-09-20.json",
+      "bytes": 1261,
+      "sha256": "2509d5c0aa97a688d49dff09011274b16988fbfec8a3635d7ad5b6d4c7eb1186",
+      "git_blob_sha1": "1c0f04eed3fb4b8fbfbc24fb9ab7ac71825c8c62"
+    },
+    {
+      "path": "tools/servo-web/poses/缩-2026-09-20.json",
+      "bytes": 1259,
+      "sha256": "99e8291304ca16393a4e780ec559a097e8ae2c07290b6e0c48d69e3051f93bc1",
+      "git_blob_sha1": "2844c70127fae1a55407117c4b9c386401580e25"
+    },
+    {
+      "path": "tools/servo-web/readpose.py",
+      "bytes": 2328,
+      "sha256": "bd4acfc40a6954dbae247950a20c025d2a9488028aa56d7fd409e90052849344",
+      "git_blob_sha1": "122114f579d357bc1d02b6ff99e934e8537357f5"
+    },
+    {
+      "path": "tools/servo-web/requirements-test.txt",
+      "bytes": 42,
+      "sha256": "2ff0ecb4b968ff33529db3fc1414d836986d262fe8e425f6293a59513f015398",
+      "git_blob_sha1": "e3fcd49461c2766332ccf40db1bc92defefbd2dd"
+    },
+    {
+      "path": "tools/servo-web/requirements.txt",
+      "bytes": 96,
+      "sha256": "533d9cae24981feb11903625e5c40d7afdbf89af7d809201ce8bebee294696aa",
+      "git_blob_sha1": "e51b393dba0a239e9413c9571e1a88c446fcb4b1"
+    },
+    {
+      "path": "tools/servo-web/selftest.py",
+      "bytes": 15746,
+      "sha256": "65b49e65fa9b77fc774e3d94ac4b0a1a2080ab6fdde609b83fffbb2b080d78ee",
+      "git_blob_sha1": "dc496dff0e00407bed04edde56eb058b4a7ac95b"
+    },
+    {
+      "path": "tools/servo-web/server.py",
+      "bytes": 80663,
+      "sha256": "8f3e1fc9d12f7c408555f40dcec848245e69808ac2457111c9bf449c5b7f3b5c",
+      "git_blob_sha1": "5c50ba37070bf909456ad001b9dfdcc28888d001"
+    },
+    {
+      "path": "tools/servo-web/servo_report.py",
+      "bytes": 8754,
+      "sha256": "34a53a581156e316b8b783c934fffdd2f3248c6456f4657fa3eee7876b0c78fe",
+      "git_blob_sha1": "e2c4f5d9a77be0197b451f3b13a2dfb2e92ba3e6"
+    },
+    {
+      "path": "tools/servo-web/sim_bus.py",
+      "bytes": 9659,
+      "sha256": "53944c9b3daacc3930b4f4b6783505145a393a15e0160cbd91e095a7dcc30e8c",
+      "git_blob_sha1": "850b858171346f929f7a356e13c6d0fb58e6858c"
+    },
+    {
+      "path": "tools/servo-web/test_imu_attitude.cjs",
+      "bytes": 6192,
+      "sha256": "5c11fe1e9cab80f0ed4ddca8a90b6fee1fee03f82fa43c22564cf4fe24d3c439",
+      "git_blob_sha1": "b8c76f1d0d1a28ee4399eccae38b2354c5082f61"
+    },
+    {
+      "path": "tools/servo-web/test_imu_bridge.py",
+      "bytes": 18270,
+      "sha256": "3e41175967d9f607e41ebc5a846255a63d687a03e4309d24ea1d78683973340b",
+      "git_blob_sha1": "e08e4a6b37e0b58c553bbb23fda3aa861349ab06"
+    },
+    {
+      "path": "tools/servo-web/test_imu_bus.py",
+      "bytes": 9756,
+      "sha256": "c8b6370e75aff07335223411d189e8bcf7eb58cb78496703d777db897a1fd3c7",
+      "git_blob_sha1": "d47e32dbb37f8cbb754ad65e320810fa1cfde0bd"
+    },
+    {
+      "path": "tools/servo-web/test_imu_server.py",
+      "bytes": 12072,
+      "sha256": "e27e5aa1aa837ef7c4005c5bb95b0181dc419c01741f16de795bc8d7a8a81f35",
+      "git_blob_sha1": "d90df08e35a3b657d44c696a6d26dfeb70d5e573"
+    },
+    {
+      "path": "tools/servo-web/test_imu_swd.py",
+      "bytes": 19366,
+      "sha256": "1f2fb1029e2d4e222173d2acc3980cb188b2cbd35f547c1cc61bd332770425dd",
+      "git_blob_sha1": "dd222fa5462be760b723630256c01518458fe9af"
+    },
+    {
+      "path": "tools/servo-web/test_servo_report.py",
+      "bytes": 2701,
+      "sha256": "3916028c7eff996fd67ea8489fc655d3d7d0f41c8bd37181e0ce724763843905",
+      "git_blob_sha1": "cc2d9be06ecd3cb36abac189dba5a38f585e996a"
+    },
+    {
+      "path": "tools/servo-web/test_sim.py",
+      "bytes": 18117,
+      "sha256": "d65271e5fc76f73fac6b81ff9bf23458d87d3330e7bcedb1261870f999a21568",
+      "git_blob_sha1": "09dd199a21a4504b7f32c17a569209ddc7a86bfa"
+    },
+    {
+      "path": "tools/servo-web/远程排查交接.md",
+      "bytes": 8443,
+      "sha256": "d6bd325418fbcd2092a1a53fe7b8c63f58ff8ef7c75dca8b3612d74c1188142b",
+      "git_blob_sha1": "699faca075fbfb30bef17619ee121b5d8eac4d69"
+    },
+    {
+      "path": "tools/stl_viewer.html",
+      "bytes": 8520,
+      "sha256": "1c86bd2957d39e64207db6a8cb8d9f3fd33fa90e6a0fd0633c6284f16954d0d1",
+      "git_blob_sha1": "9058b958cc6b5c90ad674f7863a08e00dac93529"
+    },
+    {
+      "path": "tools/sts3215Servo_testtool/.gitignore",
+      "bytes": 19,
+      "sha256": "4f0944189d5358b284a34108aa30a63556e6f5b60ad36482b740159b5399a662",
+      "git_blob_sha1": "53eaa21960d1b9c229de5e6ca9becd1a6089c021"
+    },
+    {
+      "path": "tools/sts3215Servo_testtool/Cargo.lock",
+      "bytes": 7272,
+      "sha256": "c3c28b9d649608ee817b4e671ae2fc86082d9b4afac2913e7a0a1dfca9236023",
+      "git_blob_sha1": "c230454c1637640ab6efa5fb4977a23dadd59be8"
+    },
+    {
+      "path": "tools/sts3215Servo_testtool/Cargo.toml",
+      "bytes": 208,
+      "sha256": "10a828e75b2242e785ccdfddc221d58f7d8751906bd73426a1cc5f346e772666",
+      "git_blob_sha1": "fcc42772201b0b4184fe0218afaa1820d9c3e4b4"
+    },
+    {
+      "path": "tools/sts3215Servo_testtool/README.md",
+      "bytes": 7332,
+      "sha256": "2e4f74224ca96c01ee190cc120fe32bccc044949c2c11d435f3b864dca792fca",
+      "git_blob_sha1": "ff3aed0055508f02c861f9e6571f6ad99ca99eda"
+    },
+    {
+      "path": "tools/sts3215Servo_testtool/src/main.rs",
+      "bytes": 18671,
+      "sha256": "dc39e911f81ed4d76c5a6b956db055f7ec1c0b891c686e4cb9257f8d238d5f88",
+      "git_blob_sha1": "71ef652ecf53014a23fae8e495113a7173a34dc9"
+    },
+    {
+      "path": "tools/sts3215Servo_testtool/src/sts.rs",
+      "bytes": 14145,
+      "sha256": "66032ee97da39703858b6e218cce5540a2c745507799e538ec71d5827ff0144e",
+      "git_blob_sha1": "64602932980d6c2d32ec355b98033db064376bb4"
+    },
+    {
+      "path": "tools/飞特/CH340_URT.rar",
+      "bytes": 229475,
+      "sha256": "546aaf96a54647f7a3ddd7e21389d64be2d198926c6058d8b19ee90e9eea4e17",
+      "git_blob_sha1": "64101abb3fdd98e9d5faf6f034a4bc7a46bf54e0"
+    },
+    {
+      "path": "tools/飞特/FD1.9.8.5(250729).7z",
+      "bytes": 171908,
+      "sha256": "33b92ac03ff048238bb6455a96aec98e97f6c87a97903ac197406f6d937c7734",
+      "git_blob_sha1": "8943b0d5b787c57f783c0f7b86490a95fc4e14d1"
+    },
+    {
+      "path": "tools/飞特/LICENSE",
+      "bytes": 1064,
+      "sha256": "80a39310d03fcd1aaf97800ac33a5a937daf8ebc034dab89425a08abb5636564",
+      "git_blob_sha1": "ecb8ab9ced97c831616423f6c437ca1fc8e34895"
+    },
+    {
+      "path": "tools/飞特/README.md",
+      "bytes": 2115,
+      "sha256": "889549c4e50e31cbac1dc1304ae911201a8da4ae2e43b712c583c783b40d2964",
+      "git_blob_sha1": "018a95c1091e366ae988ed0e3d0f1f429c1a1f1b"
+    },
+    {
+      "path": "构建日志.md",
+      "bytes": 4975,
+      "sha256": "35f7f5fe8d3f232f99bf127fa7229cc11e87b164644b14bb5738243e73c1f3bf",
+      "git_blob_sha1": "20ac3d8285f947faceff3254e66b4a2382d6a5c1"
+    },
+    {
+      "path": "调试记录.md",
+      "bytes": 30722,
+      "sha256": "63c3c0ffd2f7c9bc093e0d45d700d74252248b1b79a2a5a1a52375bd5d48a8ff",
+      "git_blob_sha1": "2be4f8558d70eedbeb9951a0494479d5ebebc50e"
+    },
+    {
+      "path": "踩坑记录.md",
+      "bytes": 22842,
+      "sha256": "266a9359c60893081bec81e3fe57b9c21ab1a2187b9f6fb95210a9ebabd2b496",
+      "git_blob_sha1": "a3a8b1a81de07b1920cc69c3ba4052ab0438cd07"
+    }
+  ]
+}

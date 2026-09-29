@@ -1,0 +1,222 @@
+[
+  {
+    "requested_seconds": 0,
+    "actual_seconds": 0.0,
+    "file": "00-00.jpg"
+  },
+  {
+    "requested_seconds": 30,
+    "actual_seconds": 29.9666875,
+    "file": "00-30.jpg"
+  },
+  {
+    "requested_seconds": 60,
+    "actual_seconds": 59.9666875,
+    "file": "01-00.jpg"
+  },
+  {
+    "requested_seconds": 90,
+    "actual_seconds": 89.9666875,
+    "file": "01-30.jpg"
+  },
+  {
+    "requested_seconds": 120,
+    "actual_seconds": 119.9666875,
+    "file": "02-00.jpg"
+  },
+  {
+    "requested_seconds": 150,
+    "actual_seconds": 149.9666875,
+    "file": "02-30.jpg"
+  },
+  {
+    "requested_seconds": 180,
+    "actual_seconds": 179.9666875,
+    "file": "03-00.jpg"
+  },
+  {
+    "requested_seconds": 210,
+    "actual_seconds": 209.9666875,
+    "file": "03-30.jpg"
+  },
+  {
+    "requested_seconds": 240,
+    "actual_seconds": 239.9666875,
+    "file": "04-00.jpg"
+  },
+  {
+    "requested_seconds": 270,
+    "actual_seconds": 269.9666875,
+    "file": "04-30.jpg"
+  },
+  {
+    "requested_seconds": 300,
+    "actual_seconds": 299.9666875,
+    "file": "05-00.jpg"
+  },
+  {
+    "requested_seconds": 330,
+    "actual_seconds": 329.9666875,
+    "file": "05-30.jpg"
+  },
+  {
+    "requested_seconds": 360,
+    "actual_seconds": 359.9666875,
+    "file": "06-00.jpg"
+  },
+  {
+    "requested_seconds": 390,
+    "actual_seconds": 389.9666875,
+    "file": "06-30.jpg"
+  },
+  {
+    "requested_seconds": 420,
+    "actual_seconds": 419.9666875,
+    "file": "07-00.jpg"
+  },
+  {
+    "requested_seconds": 450,
+    "actual_seconds": 449.9666875,
+    "file": "07-30.jpg"
+  },
+  {
+    "requested_seconds": 480,
+    "actual_seconds": 479.9666875,
+    "file": "08-00.jpg"
+  },
+  {
+    "requested_seconds": 510,
+    "actual_seconds": 509.9666875,
+    "file": "08-30.jpg"
+  },
+  {
+    "requested_seconds": 540,
+    "actual_seconds": 539.9666875,
+    "file": "09-00.jpg"
+  },
+  {
+    "requested_seconds": 570,
+    "actual_seconds": 569.9666875,
+    "file": "09-30.jpg"
+  },
+  {
+    "requested_seconds": 600,
+    "actual_seconds": 599.9666875,
+    "file": "10-00.jpg"
+  },
+  {
+    "requested_seconds": 630,
+    "actual_seconds": 629.9666875,
+    "file": "10-30.jpg"
+  },
+  {
+    "requested_seconds": 660,
+    "actual_seconds": 659.9666875,
+    "file": "11-00.jpg"
+  },
+  {
+    "requested_seconds": 690,
+    "actual_seconds": 689.9666875,
+    "file": "11-30.jpg"
+  },
+  {
+    "requested_seconds": 720,
+    "actual_seconds": 719.9666875,
+    "file": "12-00.jpg"
+  },
+  {
+    "requested_seconds": 750,
+    "actual_seconds": 749.9666875,
+    "file": "12-30.jpg"
+  },
+  {
+    "requested_seconds": 780,
+    "actual_seconds": 779.9666875,
+    "file": "13-00.jpg"
+  },
+  {
+    "requested_seconds": 810,
+    "actual_seconds": 809.9666875,
+    "file": "13-30.jpg"
+  },
+  {
+    "requested_seconds": 840,
+    "actual_seconds": 839.9666875,
+    "file": "14-00.jpg"
+  },
+  {
+    "requested_seconds": 870,
+    "actual_seconds": 869.9666875,
+    "file": "14-30.jpg"
+  },
+  {
+    "requested_seconds": 900,
+    "actual_seconds": 899.9666875,
+    "file": "15-00.jpg"
+  },
+  {
+    "requested_seconds": 930,
+    "actual_seconds": 929.9666875,
+    "file": "15-30.jpg"
+  },
+  {
+    "requested_seconds": 960,
+    "actual_seconds": 959.9666875,
+    "file": "16-00.jpg"
+  },
+  {
+    "requested_seconds": 990,
+    "actual_seconds": 989.9666875,
+    "file": "16-30.jpg"
+  },
+  {
+    "requested_seconds": 1020,
+    "actual_seconds": 1019.9666875,
+    "file": "17-00.jpg"
+  },
+  {
+    "requested_seconds": 1050,
+    "actual_seconds": 1049.9666875,
+    "file": "17-30.jpg"
+  },
+  {
+    "requested_seconds": 1080,
+    "actual_seconds": 1079.9666875,
+    "file": "18-00.jpg"
+  },
+  {
+    "requested_seconds": 1110,
+    "actual_seconds": 1109.9666875,
+    "file": "18-30.jpg"
+  },
+  {
+    "requested_seconds": 1140,
+    "actual_seconds": 1139.9666875,
+    "file": "19-00.jpg"
+  },
+  {
+    "requested_seconds": 1170,
+    "actual_seconds": 1169.9666875,
+    "file": "19-30.jpg"
+  },
+  {
+    "requested_seconds": 1200,
+    "actual_seconds": 1199.9666875,
+    "file": "20-00.jpg"
+  },
+  {
+    "requested_seconds": 1230,
+    "actual_seconds": 1229.9666875,
+    "file": "20-30.jpg"
+  },
+  {
+    "requested_seconds": 1260,
+    "actual_seconds": 1259.9666875,
+    "file": "21-00.jpg"
+  },
+  {
+    "requested_seconds": 1290,
+    "actual_seconds": 1289.9666875,
+    "file": "21-30.jpg"
+  }
+]
