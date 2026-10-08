@@ -1,0 +1,2642 @@
+{
+  "date": "2026-10-08",
+  "timezone": "Asia/Shanghai",
+  "query": "microduck",
+  "scope": "GitHub repository search default (not exhaustive fork-inclusive code search); metadata for 376 results, root README.md/readme.md screening; hardware-specific follow-up documented in report.",
+  "repository_count": 376,
+  "readme_ok_count": 331,
+  "repositories": [
+    {
+      "name": "pollen-robotics/microduck",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "default_branch": "main",
+      "description": "A Tiny biped duck robot 🦆",
+      "readme_status": 200
+    },
+    {
+      "name": "pollen-robotics/microduck_rl",
+      "url": "https://github.com/pollen-robotics/microduck_rl",
+      "default_branch": "develop",
+      "description": "RL training environments for Microduck (mjlab)",
+      "readme_status": 200
+    },
+    {
+      "name": "AI-FanGe/Microduck-build-tutorial",
+      "url": "https://github.com/AI-FanGe/Microduck-build-tutorial",
+      "default_branch": "main",
+      "description": "A practical hardware and software setup for a compact RL-powered biped robot.",
+      "readme_status": 200
+    },
+    {
+      "name": "fanhao375/microduck-replica",
+      "url": "https://github.com/fanhao375/microduck-replica",
+      "default_branch": "master",
+      "description": "Microduck 复刻 · 从官方 MJCF 与 Rust 源码反推出的装配图、CAD 装配体与完整电控方案 | Mechanical + electronics reconstruction of Pollen Robotics' Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "jonathanhawkins/microduck-lab",
+      "url": "https://github.com/jonathanhawkins/microduck-lab",
+      "default_branch": "main",
+      "description": "Train RL policies for the Pollen Microduck 🦆 on an ordinary Mac, no CUDA GPU,  and watch them learn live in the browser.",
+      "readme_status": 200
+    },
+    {
+      "name": "fanhao375/microduck-replica-cad",
+      "url": "https://github.com/fanhao375/microduck-replica-cad",
+      "default_branch": "master",
+      "description": "Microduck 复刻的可编辑 SolidWorks 三维图纸与 21 页装配安装说明书 · 图纸作者 机械行者Robo · 配套主仓 fanhao375/microduck-replica",
+      "readme_status": 200
+    },
+    {
+      "name": "joeynyc/awesome-microduck",
+      "url": "https://github.com/joeynyc/awesome-microduck",
+      "default_branch": "main",
+      "description": "A curated list of software, simulators, policies, agent tools and coverage for the Pollen Robotics / Hugging Face Microduck robot",
+      "readme_status": 200
+    },
+    {
+      "name": "IronSpiderMan/MicroDuckModels",
+      "url": "https://github.com/IronSpiderMan/MicroDuckModels",
+      "default_branch": "main",
+      "description": "基于 Three.js 和 Vite 构建的 MicroDuck 机器人 3D 预览器，可按原始运动学层级组装并交互查看完整模型。",
+      "readme_status": 200
+    },
+    {
+      "name": "zhuoligetu123/microduck-hd1910m",
+      "url": "https://github.com/zhuoligetu123/microduck-hd1910m",
+      "default_branch": "main",
+      "description": "Radxa ZERO 3W + 飞特 HD1910M ×15 + BNO08x。包含行走、拾取、起身、翻滚四模型适配、Rust 后端/底层、RL 训练与 MuJoCo 仿真源码；客户端APK。 MicroDuck HD1910M native runtime, RL integration, deployment and APK release",
+      "readme_status": 200
+    },
+    {
+      "name": "microai-lab/microduck-studio",
+      "url": "https://github.com/microai-lab/microduck-studio",
+      "default_branch": "main",
+      "description": "Local web studio for developing, debugging, visualizing, and safely orchestrating Microduck robot and reinforcement learning workflows.",
+      "readme_status": 200
+    },
+    {
+      "name": "LuwuDynamics/xgoduck_hardware",
+      "url": "https://github.com/LuwuDynamics/xgoduck_hardware",
+      "default_branch": "master",
+      "description": "Build your own robot duck. XGO-Duck is a 3D-printable biped powered by Arduino UNO Q and 15 servos, adapted from Pollen Robotics' Microduck. Includes mechanical models, PCB designs, a BOM, and an assembly guide. Build it, explore its motion, and make it your own.",
+      "readme_status": 200
+    },
+    {
+      "name": "pollen-robotics/microduck-gst-plugins",
+      "url": "https://github.com/pollen-robotics/microduck-gst-plugins",
+      "default_branch": "main",
+      "description": "Prebuilt aarch64 GStreamer plugins for the micro duck robot: Rockchip MPP hardware encoders and gst-plugins-rs WebRTC. Built in CI from pinned upstream sources.",
+      "readme_status": 200
+    },
+    {
+      "name": "Vottivott/microduck-playground",
+      "url": "https://github.com/Vottivott/microduck-playground",
+      "default_branch": "main",
+      "description": "Reproducible Microduck RL experiments, policies, simulation assets, and hardware add-ons",
+      "readme_status": 200
+    },
+    {
+      "name": "bsprenger/microduck-rl-torch",
+      "url": "https://github.com/bsprenger/microduck-rl-torch",
+      "default_branch": "main",
+      "description": "Portable PyTorch-native Microduck simulation and training environment powered by mujoco-torch.",
+      "readme_status": 200
+    },
+    {
+      "name": "ScrapMeta/microduck-diy",
+      "url": "https://github.com/ScrapMeta/microduck-diy",
+      "default_branch": "main",
+      "description": "官方 Microduck 完美复刻与生态适配；在官方生态下扩展硬件与玩法。小红书：精钢葫芦娃 · 公众号：人工具身智能",
+      "readme_status": 200
+    },
+    {
+      "name": "TommyZihao/microduck_runtime",
+      "url": "https://github.com/TommyZihao/microduck_runtime",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "laotawayer/microduck",
+      "url": "https://github.com/laotawayer/microduck",
+      "default_branch": "main",
+      "description": "Independent hobbyist reproduction of the microduck 3D model. Unofficial and not affiliated with Unitree Robotics.",
+      "readme_status": 200
+    },
+    {
+      "name": "metahubaifeel/microduck-rl-on-thor",
+      "url": "https://github.com/metahubaifeel/microduck-rl-on-thor",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "00make/microduck-arena",
+      "url": "https://github.com/00make/microduck-arena",
+      "default_branch": "main",
+      "description": "Microduck Arena — 3v3 reinforcement-learning football, fully in your browser. MuJoCo WASM physics + ONNX neural policies at 50 Hz.",
+      "readme_status": 200
+    },
+    {
+      "name": "LathamZ/microduck-color-studio",
+      "url": "https://github.com/LathamZ/microduck-color-studio",
+      "default_branch": "main",
+      "description": "A 3D color and material studio for humans and agents, with Microduck, lighting, filament inventory and palette recommendations.",
+      "readme_status": 200
+    },
+    {
+      "name": "osrbot/microduck-ros2-isaac",
+      "url": "https://github.com/osrbot/microduck-ros2-isaac",
+      "default_branch": "main",
+      "description": "MicroDuck ROS 2 Jazzy and NVIDIA Isaac Sim community integration",
+      "readme_status": 200
+    },
+    {
+      "name": "Ley-WL/microduck-guide",
+      "url": "https://github.com/Ley-WL/microduck-guide",
+      "default_branch": "main",
+      "description": "MicroDuck 3D assembly tutorial with servo IDs and parts inventory",
+      "readme_status": 200
+    },
+    {
+      "name": "jyg9/microduck-community-kit",
+      "url": "https://github.com/jyg9/microduck-community-kit",
+      "default_branch": "main",
+      "description": "补充microduck缺少的硬件电路和固件，另外配套一些测试工具。imu_to_dxl;banana_pcb;microduck复刻",
+      "readme_status": 200
+    },
+    {
+      "name": "Macmachi/microduck-rl-genesis",
+      "url": "https://github.com/Macmachi/microduck-rl-genesis",
+      "default_branch": "main",
+      "description": "Teaching an 800 g biped to walk on an AMD GPU : a Genesis port of Pollen Robotics' CUDA-only MuJoCo Warp training task, actuator validated bit-exact.",
+      "readme_status": 200
+    },
+    {
+      "name": "SaberOnGo/open-microduck",
+      "url": "https://github.com/SaberOnGo/open-microduck",
+      "default_branch": "main",
+      "description": "Independent open-source Microduck reverse engineering, hardware research, simulation, reinforcement learning, and sim-to-real robotics project.",
+      "readme_status": 200
+    },
+    {
+      "name": "nickoenig37/mjlab_microduck_waddle",
+      "url": "https://github.com/nickoenig37/mjlab_microduck_waddle",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "7757/fanduck",
+      "url": "https://github.com/7757/fanduck",
+      "default_branch": "main",
+      "description": "超能花钱鸭 Fanduck · Microduck 已复刻成功！分享实机演示、物料清单、3D 打印、板件、制作工具与 3D 镜像工作台。Build resources from our completed Microduck replica.",
+      "readme_status": 200
+    },
+    {
+      "name": "AlexBodner/microduck-tracking",
+      "url": "https://github.com/AlexBodner/microduck-tracking",
+      "default_branch": "main",
+      "description": "Multi-object tracking for the Microduck robot, built on roboflow/trackers: target lock and fetch in its official MuJoCo sim, plus a measured hardware feasibility review",
+      "readme_status": 200
+    },
+    {
+      "name": "kabilankb/isaaclab-microduck",
+      "url": "https://github.com/kabilankb/isaaclab-microduck",
+      "default_branch": "main",
+      "description": "Isaac Lab 3.0 / Newton MJWarp reinforcement-learning environments for Microduck, an 800 g bipedal robot — locomotion, ball-kick, and two-robot tasks.",
+      "readme_status": 200
+    },
+    {
+      "name": "pollen-robotics/microduck_emotions",
+      "url": "https://github.com/pollen-robotics/microduck_emotions",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "rokbenko/quackd",
+      "url": "https://github.com/rokbenko/quackd",
+      "default_branch": "main",
+      "description": "One CLI for all your robots. Connect them, command them, and let them work together, each with an LLM for a brain (Claude, OpenAI, Gemini, Grok, or local via Ollama or vLLM), VLAs for arms and decision LLMs (Jev, Laya, Kev). Drives Microduck, Open Duck Mini, LeRobot, XLeRobot, AlohaMini, ToddlerBot, or any ROS 2 base from a laptop, offboard.",
+      "readme_status": 200
+    },
+    {
+      "name": "ngxson/wicroduck",
+      "url": "https://github.com/ngxson/wicroduck",
+      "default_branch": "main",
+      "description": "Train microduck on your browser, no downloading is required",
+      "readme_status": 200
+    },
+    {
+      "name": "boris721/microduck-3d",
+      "url": "https://github.com/boris721/microduck-3d",
+      "default_branch": "master",
+      "description": "Microduck robot 3D models (STL + MuJoCo MJCF) — extracted from pollen-robotics/microduck-simulator",
+      "readme_status": 200
+    },
+    {
+      "name": "rocPAI-Forge/microduck_rl_unilab",
+      "url": "https://github.com/rocPAI-Forge/microduck_rl_unilab",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "ros-claw/microduck",
+      "url": "https://github.com/ros-claw/microduck",
+      "default_branch": "main",
+      "description": "Microduck Circus — three Pollen Microducks learn to skip a long rope in MuJoCo, driven by the ROSClaw loop: Chat → Act → Fail → Practice → Adapt → Darwin → Champion → Perform",
+      "readme_status": 200
+    },
+    {
+      "name": "heranhe/microduck-lab-cloud",
+      "url": "https://github.com/heranhe/microduck-lab-cloud",
+      "default_branch": "main",
+      "description": "Cloud-ready reinforcement learning, interactive simulation and behavior suite for MicroDuck biped robots",
+      "readme_status": 200
+    },
+    {
+      "name": "moodyawhvh/microduck-chinese",
+      "url": "https://github.com/moodyawhvh/microduck-chinese",
+      "default_branch": "main",
+      "description": "[中文版] MicroDuck — 开源微型双足鸭子机器人，硬件加软件全套方案",
+      "readme_status": 200
+    },
+    {
+      "name": "SIJEYUSES/MicroDuck-Agent",
+      "url": "https://github.com/SIJEYUSES/MicroDuck-Agent",
+      "default_branch": "main",
+      "description": "MicroDuck Agent is an online service specifically designed for embodied intelligent learning and practice of Agents.",
+      "readme_status": 200
+    },
+    {
+      "name": "tianjin66/microduck-step-3d-models-ai-stl",
+      "url": "https://github.com/tianjin66/microduck-step-3d-models-ai-stl",
+      "default_branch": "main",
+      "description": "Microduck STEP 3D 模型（AI 逆向 STL）｜30 repaired solids, original STL and bilingual CAD views. CC BY-NC-SA 4.0; non-commercial.",
+      "readme_status": 200
+    },
+    {
+      "name": "AiBoBoMaker/MicroDuck-BoBoRedesign",
+      "url": "https://github.com/AiBoBoMaker/MicroDuck-BoBoRedesign",
+      "default_branch": "main",
+      "description": "A 3D-printable redesign of the MicroDuck bipedal robot",
+      "readme_status": 200
+    },
+    {
+      "name": "RXLiao/OpenDuckMini-MicroDuck-Locomotion-Training",
+      "url": "https://github.com/RXLiao/OpenDuckMini-MicroDuck-Locomotion-Training",
+      "default_branch": "main",
+      "description": "The locomotion policy for Duck Robot from Reinforcement Learning",
+      "readme_status": 200
+    },
+    {
+      "name": "wslengzhicheng/microduck-diy",
+      "url": "https://github.com/wslengzhicheng/microduck-diy",
+      "default_branch": "main",
+      "description": "Microduck 中文 DIY 装机文档（BOM/打印/接线/装配），对齐 sesame-robot 细度；软件镜像见 AI-FanGe/Microduck-build-tutorial",
+      "readme_status": 200
+    },
+    {
+      "name": "adityakamath/microduck_description",
+      "url": "https://github.com/adityakamath/microduck_description",
+      "default_branch": "main",
+      "description": "Microduck description package for use with ROS 2 (URDF/xacro + meshes).",
+      "readme_status": 200
+    },
+    {
+      "name": "apirrone/microduck_maploc_rs",
+      "url": "https://github.com/apirrone/microduck_maploc_rs",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "agentculture/microduck-cli",
+      "url": "https://github.com/agentculture/microduck-cli",
+      "default_branch": "main",
+      "description": "Agent-agnostic CLI for controlling the MicroDuck robot. Any agent, any human, one CLI. Built on the neurosymbolic-system runtime and following the reachy-mini-cli architecture.",
+      "readme_status": 200
+    },
+    {
+      "name": "lingzolabs/microduck-hardware-replica",
+      "url": "https://github.com/lingzolabs/microduck-hardware-replica",
+      "default_branch": "main",
+      "description": "非官方 Microduck 硬件复刻资源整理。基于 Pollen Robotics 公开发布的 MuJoCo/MJCF 与 STL 模型生成；与 Pollen Robotics 无隶属关系，也未获其背书。",
+      "readme_status": 200
+    },
+    {
+      "name": "BruzWJ/BruzMicroduck_CAD",
+      "url": "https://github.com/BruzWJ/BruzMicroduck_CAD",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Xbotics-Embodied-AI-club/MotrixLab-MicroDuck",
+      "url": "https://github.com/Xbotics-Embodied-AI-club/MotrixLab-MicroDuck",
+      "default_branch": "microduck",
+      "description": "使用MotrixLab框架对小鸭子进行强化学习训练",
+      "readme_status": 200
+    },
+    {
+      "name": "jrubiosainz/microduck",
+      "url": "https://github.com/jrubiosainz/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "zachgarner/microduck-headstand",
+      "url": "https://github.com/zachgarner/microduck-headstand",
+      "default_branch": "main",
+      "description": "Teaching the Microduck a headstand routine in sim: fold, kick-ups, split switch, back rolls",
+      "readme_status": 200
+    },
+    {
+      "name": "mrroman/microducks",
+      "url": "https://github.com/mrroman/microducks",
+      "default_branch": "master",
+      "description": "Microframework for functional Web development",
+      "readme_status": 200
+    },
+    {
+      "name": "Stickic-cyber/Microduck_UI",
+      "url": "https://github.com/Stickic-cyber/Microduck_UI",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "apirrone/microduck_pet_detect",
+      "url": "https://github.com/apirrone/microduck_pet_detect",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Happenmass/duck-on-desk",
+      "url": "https://github.com/Happenmass/duck-on-desk",
+      "default_branch": "main",
+      "description": "A physics-driven 3D Microduck on your desktop that reacts to Claude Code, Codex, Pi and opencode",
+      "readme_status": 200
+    },
+    {
+      "name": "sim336/OptiDuck",
+      "url": "https://github.com/sim336/OptiDuck",
+      "default_branch": "main",
+      "description": "OptiDuck - open-source microduck quadruped on Radxa ZERO 3W",
+      "readme_status": 200
+    },
+    {
+      "name": "craigm26/duckkit",
+      "url": "https://github.com/craigm26/duckkit",
+      "default_branch": "main",
+      "description": "The Pollen Robotics Microduck as pure Swift: real policies, real kinematics, zero dependencies",
+      "readme_status": 200
+    },
+    {
+      "name": "SkyOAO/MPU-IOTESSENTIALS-Project3-Microduck",
+      "url": "https://github.com/SkyOAO/MPU-IOTESSENTIALS-Project3-Microduck",
+      "default_branch": "sim2real",
+      "description": "MPU course project: Microduck simulation based on Pollen Robotics’ Microduck_rl, plus cloud, database, web pages. Web commands are logged in cloud DB, sent to local sim, executed; results/telemetry return to cloud. We add a special entertainment action trained by RL.",
+      "readme_status": 200
+    },
+    {
+      "name": "avanx/microduck_imu_to_ttl",
+      "url": "https://github.com/avanx/microduck_imu_to_ttl",
+      "default_branch": "master",
+      "description": "microduck躯干IMU板",
+      "readme_status": 200
+    },
+    {
+      "name": "aj-dev-smith/microduck-mcp",
+      "url": "https://github.com/aj-dev-smith/microduck-mcp",
+      "default_branch": "main",
+      "description": "Drive the Pollen Robotics Microduck (sim) from any MCP client — with a live Agent Experience debug page",
+      "readme_status": 200
+    },
+    {
+      "name": "jjshdbndg/microduck-motrixsim",
+      "url": "https://github.com/jjshdbndg/microduck-motrixsim",
+      "default_branch": "main",
+      "description": "MicroDuck 在 MotrixSim 中的仿真、行走策略与《天鹅湖》舞台演出复现",
+      "readme_status": 200
+    },
+    {
+      "name": "tailong-wu/microduck-mjbatch",
+      "url": "https://github.com/tailong-wu/microduck-mjbatch",
+      "default_branch": "main",
+      "description": "Train the Pollen Microduck with mjbatch: CPU-batched MuJoCo PPO, no GPU required",
+      "readme_status": 200
+    },
+    {
+      "name": "apirrone/microduck_app",
+      "url": "https://github.com/apirrone/microduck_app",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "selinayfilizp/microduck-courier",
+      "url": "https://github.com/selinayfilizp/microduck-courier",
+      "default_branch": "main",
+      "description": "Microduck book courier: pick, carry, place Courage to Be Disliked in a tiny apartment",
+      "readme_status": 200
+    },
+    {
+      "name": "chenp9527/microduck-jump",
+      "url": "https://github.com/chenp9527/microduck-jump",
+      "default_branch": "main",
+      "description": "PPO training for MicroDuck in-place small jump 3~6cm, inspired by joanfox happy-hop, no MJCF modification",
+      "readme_status": 200
+    },
+    {
+      "name": "ob1-s/awesome-microduck",
+      "url": "https://github.com/ob1-s/awesome-microduck",
+      "default_branch": "main",
+      "description": "Awesome list for Microduck — games, sim, VR, hardware mods",
+      "readme_status": 200
+    },
+    {
+      "name": "oldman1969/microduck",
+      "url": "https://github.com/oldman1969/microduck",
+      "default_branch": "main",
+      "description": "microduck",
+      "readme_status": 404
+    },
+    {
+      "name": "poboll/microduck-replica",
+      "url": "https://github.com/poboll/microduck-replica",
+      "default_branch": "master",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "jvpflum/microduck-lab",
+      "url": "https://github.com/jvpflum/microduck-lab",
+      "default_branch": "main",
+      "description": "Reproducible MicroDuck reinforcement-learning lab for NVIDIA DGX Spark",
+      "readme_status": 200
+    },
+    {
+      "name": "notwitcheer/microduck-lab",
+      "url": "https://github.com/notwitcheer/microduck-lab",
+      "default_branch": "main",
+      "description": "Hermes Agent tool, training tools and rough-terrain patches for the Pollen Robotics Microduck. Simulation only.",
+      "readme_status": 200
+    },
+    {
+      "name": "shiyi-ale/microduck-teaching",
+      "url": "https://github.com/shiyi-ale/microduck-teaching",
+      "default_branch": "master",
+      "description": "Teaching notes for reproducing the XGO Duck / MicroDuck project",
+      "readme_status": 200
+    },
+    {
+      "name": "qianen6/microduck-replica-kit",
+      "url": "https://github.com/qianen6/microduck-replica-kit",
+      "default_branch": "main",
+      "description": "Microduck 社区复刻：R9 工程试装模型、39 件 STL、11 件打印工程、HD-1910/OpenRB 路线与脱敏文档",
+      "readme_status": 200
+    },
+    {
+      "name": "00make/Awesome-MicroDuck",
+      "url": "https://github.com/00make/Awesome-MicroDuck",
+      "default_branch": "main",
+      "description": "A curated list of software, simulators, policies, agent tools and coverage for the Pollen Robotics / Hugging Face Microduck robot",
+      "readme_status": 200
+    },
+    {
+      "name": "Qi-hub-dot/microduck-locomotion-diagnosis",
+      "url": "https://github.com/Qi-hub-dot/microduck-locomotion-diagnosis",
+      "default_branch": "master",
+      "description": "Reproduced, diagnosed and fixed a locomotion training failure in an open-source bipedal robot (microduck_rl issue #46). Found a reward gate that pays for stepping in place, and showed the project's error metric overestimates tracking error about 3x.",
+      "readme_status": 200
+    },
+    {
+      "name": "toyhank/microduck-vision-soccer",
+      "url": "https://github.com/toyhank/microduck-vision-soccer",
+      "default_branch": "main",
+      "description": "Autonomous robot soccer for Pollen Robotics Microduck in MuJoCo — head-camera vision, visual servoing, physical biped kicks, and a monocular goalkeeper.",
+      "readme_status": 200
+    },
+    {
+      "name": "rocPAI-Forge/microduck_rl_tutorial",
+      "url": "https://github.com/rocPAI-Forge/microduck_rl_tutorial",
+      "default_branch": "main",
+      "description": "Reinforcement learning Lab of Microduck with ROCm",
+      "readme_status": 200
+    },
+    {
+      "name": "Shiyao-Huang/ChinaMicroDuck",
+      "url": "https://github.com/Shiyao-Huang/ChinaMicroDuck",
+      "default_branch": "main",
+      "description": "Microduck (Pollen Robotics × Hugging Face) 国产复刻资料库：四方案可行性/实价询价/官方资产审计/仿真训练验证/打板规格 — China replication project for the open-source biped robot duck",
+      "readme_status": 200
+    },
+    {
+      "name": "bihaokun/microduck-step-up-policy",
+      "url": "https://github.com/bihaokun/microduck-step-up-policy",
+      "default_branch": "main",
+      "description": "Simulation-validated 25 mm step-up and head-brake recovery policies for Pollen Robotics Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "mengwei666/my_microduck",
+      "url": "https://github.com/mengwei666/my_microduck",
+      "default_branch": "main",
+      "description": "my_microduck",
+      "readme_status": 404
+    },
+    {
+      "name": "Xiaomiju-x/rdk-x5-microduck",
+      "url": "https://github.com/Xiaomiju-x/rdk-x5-microduck",
+      "default_branch": "main",
+      "description": "RDK X5 + HD1910M MicroDuck 实体原型：装配、舵机与IMU联调、短距离行走演示、微调工具及工程复盘。",
+      "readme_status": 200
+    },
+    {
+      "name": "digitalShokri/microduck-learning",
+      "url": "https://github.com/digitalShokri/microduck-learning",
+      "default_branch": "main",
+      "description": "microduck-learning",
+      "readme_status": 0
+    },
+    {
+      "name": "yuxc2011/microduck",
+      "url": "https://github.com/yuxc2011/microduck",
+      "default_branch": "main",
+      "description": "microduck copy",
+      "readme_status": 200
+    },
+    {
+      "name": "CHLEE-Sage/MicroduckP",
+      "url": "https://github.com/CHLEE-Sage/MicroduckP",
+      "default_branch": "main",
+      "description": "English interactive 3D assembly explorer for the Microduck biped robot.",
+      "readme_status": 200
+    },
+    {
+      "name": "xingxingRealzyx/esp-duck",
+      "url": "https://github.com/xingxingRealzyx/esp-duck",
+      "default_branch": "main",
+      "description": "Microduck RL walking policy at 50 Hz on ESP32-S3 - INT8 weights, FP32 activations, quantization-gated",
+      "readme_status": 200
+    },
+    {
+      "name": "shenjin73/microduck-build",
+      "url": "https://github.com/shenjin73/microduck-build",
+      "default_branch": "main",
+      "description": "microduck replica",
+      "readme_status": 200
+    },
+    {
+      "name": "nefiag/MicroduckTraining",
+      "url": "https://github.com/nefiag/MicroduckTraining",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "snakeyear/MicroduckP",
+      "url": "https://github.com/snakeyear/MicroduckP",
+      "default_branch": "main",
+      "description": "English interactive 3D assembly explorer for the Microduck biped robot.",
+      "readme_status": 0
+    },
+    {
+      "name": "chelleboyer/microduck",
+      "url": "https://github.com/chelleboyer/microduck",
+      "default_branch": "develop",
+      "description": "My microduck repo :)",
+      "readme_status": 200
+    },
+    {
+      "name": "frechele/duckduck",
+      "url": "https://github.com/frechele/duckduck",
+      "default_branch": "main",
+      "description": "My Little Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "jchlee428-cyber/microduck_rl",
+      "url": "https://github.com/jchlee428-cyber/microduck_rl",
+      "default_branch": "main",
+      "description": "나의 microduck_rl",
+      "readme_status": 200
+    },
+    {
+      "name": "brian-h-wang/microduck-adventures",
+      "url": "https://github.com/brian-h-wang/microduck-adventures",
+      "default_branch": "main",
+      "description": "Adventures with MicroDuck!",
+      "readme_status": 0
+    },
+    {
+      "name": "jpgreen30/Microduck",
+      "url": "https://github.com/jpgreen30/Microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "gotree94/Microduck_AX12A_Project",
+      "url": "https://github.com/gotree94/Microduck_AX12A_Project",
+      "default_branch": "main",
+      "description": "Microduck_AX12A_Project",
+      "readme_status": 200
+    },
+    {
+      "name": "Tmi1993/microduck--",
+      "url": "https://github.com/Tmi1993/microduck--",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "brianlmerritt/microduck_home",
+      "url": "https://github.com/brianlmerritt/microduck_home",
+      "default_branch": "main",
+      "description": "MicroDuck Home Parent Project",
+      "readme_status": 200
+    },
+    {
+      "name": "barrystyle/microduck",
+      "url": "https://github.com/barrystyle/microduck",
+      "default_branch": "master",
+      "description": null,
+      "readme_status": 404
+    },
+    {
+      "name": "BaoJianqiang/microduck",
+      "url": "https://github.com/BaoJianqiang/microduck",
+      "default_branch": "main",
+      "description": "把microduck的rust代码和reaeme文档、配置文件，全都解读一遍",
+      "readme_status": 200
+    },
+    {
+      "name": "shinekim0486/microduck",
+      "url": "https://github.com/shinekim0486/microduck",
+      "default_branch": "main",
+      "description": "초파리 뇌로 로봇을 조종하기 — 인공지능 공부하기",
+      "readme_status": 200
+    },
+    {
+      "name": "namyikim/microduck",
+      "url": "https://github.com/namyikim/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "ybotaiy/microduck",
+      "url": "https://github.com/ybotaiy/microduck",
+      "default_branch": "main",
+      "description": "Personal MicroDuck pet-agent experiments and project planning",
+      "readme_status": 200
+    },
+    {
+      "name": "zmdfly6-cell/microduck",
+      "url": "https://github.com/zmdfly6-cell/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "rocket0xdev1025/microduck",
+      "url": "https://github.com/rocket0xdev1025/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 404
+    },
+    {
+      "name": "BaoBaoJianqiang/microduck",
+      "url": "https://github.com/BaoBaoJianqiang/microduck",
+      "default_branch": "main",
+      "description": "把microduck的rust代码和reaeme文档、配置文件，全都解读一遍",
+      "readme_status": 200
+    },
+    {
+      "name": "eery1677-lab/microduck",
+      "url": "https://github.com/eery1677-lab/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "rbmakers/microduck-",
+      "url": "https://github.com/rbmakers/microduck-",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "yuzhoudabaozhayujiamigou-cloud/microduck",
+      "url": "https://github.com/yuzhoudabaozhayujiamigou-cloud/microduck",
+      "default_branch": "main",
+      "description": "Microduck landing site for huggingface.it.com",
+      "readme_status": 404
+    },
+    {
+      "name": "hblpf2007/microduck",
+      "url": "https://github.com/hblpf2007/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "OneRobotAI/microduck",
+      "url": "https://github.com/OneRobotAI/microduck",
+      "default_branch": "main",
+      "description": "one-click installation and training",
+      "readme_status": 200
+    },
+    {
+      "name": "KilllerBoss/microduck",
+      "url": "https://github.com/KilllerBoss/microduck",
+      "default_branch": "main",
+      "description": "MICRODUCK: RL-trainierter Zweibein-Roboter — Kaggle-Training (mjlab/PPO), Snapdragon-NPU-Deployment (S26 Ultra, 0.054 ms), Android-APK mit In-App-3D-Simulation und Gemini-Hybridsteuerung",
+      "readme_status": 200
+    },
+    {
+      "name": "gnoejh/microduck",
+      "url": "https://github.com/gnoejh/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "asdfjep/microduck",
+      "url": "https://github.com/asdfjep/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "rootkind35-del/Microduck",
+      "url": "https://github.com/rootkind35-del/Microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "jaychai1118-pixel/microduck",
+      "url": "https://github.com/jaychai1118-pixel/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "zhaoc9527/Microduck-",
+      "url": "https://github.com/zhaoc9527/Microduck-",
+      "default_branch": "main",
+      "description": "Microduck复刻教程",
+      "readme_status": 0
+    },
+    {
+      "name": "fei723/microduck",
+      "url": "https://github.com/fei723/microduck",
+      "default_branch": "main",
+      "description": "MicroDuck quadruped robot: CAD, 3D print files, servo docs",
+      "readme_status": 404
+    },
+    {
+      "name": "sriharshakunda/microduck",
+      "url": "https://github.com/sriharshakunda/microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "sueszli/quack",
+      "url": "https://github.com/sueszli/quack",
+      "default_branch": "master",
+      "description": "de-sloppified microduck_rl",
+      "readme_status": 404
+    },
+    {
+      "name": "wudanwt/Microduck",
+      "url": "https://github.com/wudanwt/Microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "CodCodingCode/microduck-backflip",
+      "url": "https://github.com/CodCodingCode/microduck-backflip",
+      "default_branch": "back-roulade",
+      "description": "Microduck RL: box-edge backflip + backward roulade (fork of pollen-robotics/microduck_rl)",
+      "readme_status": 200
+    },
+    {
+      "name": "ZenanLin1999/microduck_nan",
+      "url": "https://github.com/ZenanLin1999/microduck_nan",
+      "default_branch": "main",
+      "description": "Nan's microduck project.",
+      "readme_status": 0
+    },
+    {
+      "name": "ReadbytheBeach/my-microduck",
+      "url": "https://github.com/ReadbytheBeach/my-microduck",
+      "default_branch": "main",
+      "description": "learning the pollen-robotics/microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "amazedsaint/duckfly",
+      "url": "https://github.com/amazedsaint/duckfly",
+      "default_branch": "main",
+      "description": "Map fly-circuit signals to robot actions in an interactive Microduck simulator for the web and macOS.",
+      "readme_status": 200
+    },
+    {
+      "name": "jovinus302/microducktape",
+      "url": "https://github.com/jovinus302/microducktape",
+      "default_branch": "codex/microduck-interactive",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "aistasiia/legomicroduck",
+      "url": "https://github.com/aistasiia/legomicroduck",
+      "default_branch": "main",
+      "description": "a Lego model of Microduck",
+      "readme_status": 404
+    },
+    {
+      "name": "xiaohu-art/MicroDuck",
+      "url": "https://github.com/xiaohu-art/MicroDuck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "zhaoc9527/Microduck_DIY_Guide",
+      "url": "https://github.com/zhaoc9527/Microduck_DIY_Guide",
+      "default_branch": "main",
+      "description": "Microduck复刻教程",
+      "readme_status": 404
+    },
+    {
+      "name": "ThousandsOfTies/GarTalkableDuck",
+      "url": "https://github.com/ThousandsOfTies/GarTalkableDuck",
+      "default_branch": "main",
+      "description": "GarTalkableDuck product repository for Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "huanyue-233/MicroDuck",
+      "url": "https://github.com/huanyue-233/MicroDuck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "craigm26/microduck-com",
+      "url": "https://github.com/craigm26/microduck-com",
+      "default_branch": "main",
+      "description": "The static site for Microduck Studio (microduckstudio.com), served by Cloudflare Pages",
+      "readme_status": 200
+    },
+    {
+      "name": "nyle-prosal/duckman-microduck",
+      "url": "https://github.com/nyle-prosal/duckman-microduck",
+      "default_branch": "main",
+      "description": "Duck-Man: maze tag for Microduck. Five real Microducks in MuJoCo; trained stand-up policy + evolved strategy network. HIM Arena entry.",
+      "readme_status": 200
+    },
+    {
+      "name": "prodou/microduck-replica",
+      "url": "https://github.com/prodou/microduck-replica",
+      "default_branch": "main",
+      "description": "Non-official BOM/parts replica of Pollen Robotics Microduck, built from reverse-engineered evidence in the official software repo",
+      "readme_status": 200
+    },
+    {
+      "name": "barikata1984/microduck-dojo",
+      "url": "https://github.com/barikata1984/microduck-dojo",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Ley-WL/microduck-observer",
+      "url": "https://github.com/Ley-WL/microduck-observer",
+      "default_branch": "main",
+      "description": "MicroDuck robot web observer: 3D attitude, live BNO085 IMU telemetry, logs and 15-servo dashboard. Vue + FastAPI.",
+      "readme_status": 200
+    },
+    {
+      "name": "APX103/mjx_microduck",
+      "url": "https://github.com/APX103/mjx_microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "masszhou/microduck-notes",
+      "url": "https://github.com/masszhou/microduck-notes",
+      "default_branch": "main",
+      "description": "learning and replicating notes",
+      "readme_status": 200
+    },
+    {
+      "name": "acnlabs/microduck-plugin",
+      "url": "https://github.com/acnlabs/microduck-plugin",
+      "default_branch": "main",
+      "description": "Agent Plugins 1.0 package: train, export, and publish Microduck RL policies",
+      "readme_status": 200
+    },
+    {
+      "name": "xulytiengviet/vi-microduck",
+      "url": "https://github.com/xulytiengviet/vi-microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "micro-zoo/microduck-simulator",
+      "url": "https://github.com/micro-zoo/microduck-simulator",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "xiongy26/microduck-ar",
+      "url": "https://github.com/xiongy26/microduck-ar",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Arvmor/microduck-simulator",
+      "url": "https://github.com/Arvmor/microduck-simulator",
+      "default_branch": "jump-skill",
+      "description": "Fork of pollen-robotics/microduck-simulator (HF Space) — browser playground, with the jump/hop skill wired in",
+      "readme_status": 200
+    },
+    {
+      "name": "Tim-is-coding/Microduck-Studio",
+      "url": "https://github.com/Tim-is-coding/Microduck-Studio",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "shengqu12/Microduck_rl",
+      "url": "https://github.com/shengqu12/Microduck_rl",
+      "default_branch": "main",
+      "description": "16709-final-project",
+      "readme_status": 200
+    },
+    {
+      "name": "kav1982/microduck-workspace",
+      "url": "https://github.com/kav1982/microduck-workspace",
+      "default_branch": "main",
+      "description": "Microduck workspace: official repos as submodules plus press kit",
+      "readme_status": 200
+    },
+    {
+      "name": "sungokuzzzzyp-create/microduck_rl",
+      "url": "https://github.com/sungokuzzzzyp-create/microduck_rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "BaoJianqiang/microduck_rl",
+      "url": "https://github.com/BaoJianqiang/microduck_rl",
+      "default_branch": "main",
+      "description": "把强化学习的代码和reaeme文档、配置文件，全都解读一遍",
+      "readme_status": 200
+    },
+    {
+      "name": "maddiedreese/gritty-microduck",
+      "url": "https://github.com/maddiedreese/gritty-microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Shybert-AI/microduck-duel",
+      "url": "https://github.com/Shybert-AI/microduck-duel",
+      "default_branch": "master",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "lishaojieli/microduck_learning",
+      "url": "https://github.com/lishaojieli/microduck_learning",
+      "default_branch": "main",
+      "description": "Learning ROS 2, C++, MuJoCo and reinforcement learning through Microduck.",
+      "readme_status": 200
+    },
+    {
+      "name": "navicoby/microduck-log",
+      "url": "https://github.com/navicoby/microduck-log",
+      "default_branch": "main",
+      "description": "MicroDuck 강화학습 훈련일지 — 무엇을 했고 무엇이 나왔는지, 실패와 정정까지",
+      "readme_status": 200
+    },
+    {
+      "name": "SAMBAS123/microduck-sandbox",
+      "url": "https://github.com/SAMBAS123/microduck-sandbox",
+      "default_branch": "main",
+      "description": "Flock band fork of Pollen's Microduck browser sandbox — walk the floor to play a pentatonic groove on the real RL duck",
+      "readme_status": 200
+    },
+    {
+      "name": "jvpflum/microduck-simulator",
+      "url": "https://github.com/jvpflum/microduck-simulator",
+      "default_branch": "main",
+      "description": "Pollen MicroDuck browser simulator with Policy Bench model previews",
+      "readme_status": 200
+    },
+    {
+      "name": "TonyRuan/microduck-android",
+      "url": "https://github.com/TonyRuan/microduck-android",
+      "default_branch": "main",
+      "description": "Offline Android Microduck simulator: original motion policies, MuJoCo physics, touch joystick and 3D controls. 安卓离线运控仿真。",
+      "readme_status": 200
+    },
+    {
+      "name": "raphael2053/microduck-rebuild",
+      "url": "https://github.com/raphael2053/microduck-rebuild",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "juper007/Microduck_connectome",
+      "url": "https://github.com/juper007/Microduck_connectome",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "k286c7hg65-hub/microduck-virt",
+      "url": "https://github.com/k286c7hg65-hub/microduck-virt",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Xuexue-Jiang/microduck-rl",
+      "url": "https://github.com/Xuexue-Jiang/microduck-rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "wei-a11y/microduck_learing",
+      "url": "https://github.com/wei-a11y/microduck_learing",
+      "default_branch": "study_9_14",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "RaphaelGrj/microduck-catalogue",
+      "url": "https://github.com/RaphaelGrj/microduck-catalogue",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Treescoder/microduck_simulator",
+      "url": "https://github.com/Treescoder/microduck_simulator",
+      "default_branch": "main_train",
+      "description": "Real trained RL policies for the Microduck robot, running fully in the browser: MuJoCo compiled to WebAssembly steps the physics, onnxruntime-web runs the policy network at 50 Hz. No server, no backend.",
+      "readme_status": 200
+    },
+    {
+      "name": "itchson/MicroDuckling",
+      "url": "https://github.com/itchson/MicroDuckling",
+      "default_branch": "main",
+      "description": "A small, 3D-printable hobby robot inspired by Microduck. Four servos, open CAD, and a community roadmap toward Isaac Sim. Early prototype.",
+      "readme_status": 200
+    },
+    {
+      "name": "mshooter/microduck_academy",
+      "url": "https://github.com/mshooter/microduck_academy",
+      "default_branch": "main",
+      "description": " MuJoCo simulation server for Pollen Robotics' Microduck, speaking the robot's own intent API (robot.move, robot.do, robot.look). Groundwork for a JdeRobot Robotics Academy exercise.",
+      "readme_status": 200
+    },
+    {
+      "name": "kgediya/specs-microduck",
+      "url": "https://github.com/kgediya/specs-microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "mhoydich/pointcast-microduck",
+      "url": "https://github.com/mhoydich/pointcast-microduck",
+      "default_branch": "main",
+      "description": "Pointcast 031: Microduck, open robotics, and programming behavior with AI",
+      "readme_status": 200
+    },
+    {
+      "name": "xujiayuxian-png/microduck-habitat",
+      "url": "https://github.com/xujiayuxian-png/microduck-habitat",
+      "default_branch": "main",
+      "description": "A tiny, curious Microduck that lives on your desktop — an offline virtual pet for Windows, macOS and Linux, built with Electron, Three.js and TypeScript.",
+      "readme_status": 200
+    },
+    {
+      "name": "xuanyuelinyin/microduck-rl",
+      "url": "https://github.com/xuanyuelinyin/microduck-rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "zhoumiaosen/microduck-rl",
+      "url": "https://github.com/zhoumiaosen/microduck-rl",
+      "default_branch": "main",
+      "description": "MicroDuck reinforcement learning with mjlab and MuJoCo Warp: training, evaluation, and published running policies.",
+      "readme_status": 200
+    },
+    {
+      "name": "dongheonh/microduck_vr",
+      "url": "https://github.com/dongheonh/microduck_vr",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "meganetaaan/microduck-stackchan",
+      "url": "https://github.com/meganetaaan/microduck-stackchan",
+      "default_branch": "main",
+      "description": "MicroDuck × Stack-chan / Tab5: thin-flap design studies, no-arms trained gaits and MuJoCo WASM browser simulator",
+      "readme_status": 200
+    },
+    {
+      "name": "openverse-orca/microduck-orcalab",
+      "url": "https://github.com/openverse-orca/microduck-orcalab",
+      "default_branch": "main",
+      "description": "在Orcalab中畅玩Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "jplin123/microduck-playground",
+      "url": "https://github.com/jplin123/microduck-playground",
+      "default_branch": "main",
+      "description": "Reproducible MicroDuck RL experiments, policies, simulation assets, and hardware add-ons",
+      "readme_status": 200
+    },
+    {
+      "name": "lgtkgtv/microduck_sim",
+      "url": "https://github.com/lgtkgtv/microduck_sim",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Rishitha2628/microduck-kick",
+      "url": "https://github.com/Rishitha2628/microduck-kick",
+      "default_branch": "main",
+      "description": "Teaching a Microduck to kick a ball in simulation: PPO vs FastSAC vs FastTD3 on a laptop GPU",
+      "readme_status": 200
+    },
+    {
+      "name": "AIcrowd/aicrowd-microduck",
+      "url": "https://github.com/AIcrowd/aicrowd-microduck",
+      "default_branch": "main",
+      "description": "CLI to validate, pack and submit policies to the AIcrowd Microduck Sim2Real Challenge",
+      "readme_status": 200
+    },
+    {
+      "name": "Faultsaktism8742/microduck-lab",
+      "url": "https://github.com/Faultsaktism8742/microduck-lab",
+      "default_branch": "main",
+      "description": "Train reinforcement learning policies for Microduck, an open-source bipedal robot, directly on Apple Silicon Macs—no GPU needed, with live browser visualization.",
+      "readme_status": 200
+    },
+    {
+      "name": "rbmakers/microduck_learning",
+      "url": "https://github.com/rbmakers/microduck_learning",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "superobk/microduck-imu",
+      "url": "https://github.com/superobk/microduck-imu",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "green-creeper/microduck_genesis",
+      "url": "https://github.com/green-creeper/microduck_genesis",
+      "default_branch": "main",
+      "description": "Drop-in Genesis World physics simulation for Pollen Robotics Microduck with daemon IPC parity and vectorized RL locomotion.",
+      "readme_status": 200
+    },
+    {
+      "name": "elecsheep1/microduck-isaaclab",
+      "url": "https://github.com/elecsheep1/microduck-isaaclab",
+      "default_branch": "main",
+      "description": "基于 IsaacLab 复现 MicroDuck 四足机器人的强化学习训练与 Sim2Real 部署",
+      "readme_status": 200
+    },
+    {
+      "name": "bentedesco/microduck-parkour",
+      "url": "https://github.com/bentedesco/microduck-parkour",
+      "default_branch": "main",
+      "description": "Programmable Microduck parkour: wall flip and stemming chimney climb in the official Pollen Robotics simulator.",
+      "readme_status": 0
+    },
+    {
+      "name": "RaphaelGrj/microduck-brain",
+      "url": "https://github.com/RaphaelGrj/microduck-brain",
+      "default_branch": "main",
+      "description": "Cerveau comportemental Microduck (Phase 3) : orchestrateur hors-robot, parle a robotd",
+      "readme_status": 200
+    },
+    {
+      "name": "brunoch0/microduck-watch",
+      "url": "https://github.com/brunoch0/microduck-watch",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "superobk/microduck-xhs",
+      "url": "https://github.com/superobk/microduck-xhs",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "SerenaL1/Microduck-Gymnasium",
+      "url": "https://github.com/SerenaL1/Microduck-Gymnasium",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "cesar-gamez/Microduck-Gamez",
+      "url": "https://github.com/cesar-gamez/Microduck-Gamez",
+      "default_branch": "main",
+      "description": "RL policy for my future Microduck.",
+      "readme_status": 200
+    },
+    {
+      "name": "affanbinusman/microduck-vla",
+      "url": "https://github.com/affanbinusman/microduck-vla",
+      "default_branch": "main",
+      "description": "VLA robotics experiments with Microduck simulation and local Apple Silicon training",
+      "readme_status": 200
+    },
+    {
+      "name": "lumimoon-robotics/microduck-lumi",
+      "url": "https://github.com/lumimoon-robotics/microduck-lumi",
+      "default_branch": "main",
+      "description": "微鸭 · 飞特 HD-1910 国产化复刻开源项目 · Radxa Zero 3W + 双供电方案（7.5V 有线 / 2S 18650 无线）· 配套淘宝采购链接",
+      "readme_status": 200
+    },
+    {
+      "name": "BaoBaoJianqiang/microduck_rl",
+      "url": "https://github.com/BaoBaoJianqiang/microduck_rl",
+      "default_branch": "main",
+      "description": "把强化学习的代码和reaeme文档、配置文件，全都解读一遍",
+      "readme_status": 200
+    },
+    {
+      "name": "sim336/microduck_rl",
+      "url": "https://github.com/sim336/microduck_rl",
+      "default_branch": "develop",
+      "description": "OptiDuck RL training repo (mjlab + MuJoCo)",
+      "readme_status": 200
+    },
+    {
+      "name": "hayatoshibahara/microduck-demo",
+      "url": "https://github.com/hayatoshibahara/microduck-demo",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "JoyJeeo/microduck-simulator",
+      "url": "https://github.com/JoyJeeo/microduck-simulator",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "kenpeter/microduck_rl",
+      "url": "https://github.com/kenpeter/microduck_rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "nothing17777/ipmd-microduck",
+      "url": "https://github.com/nothing17777/ipmd-microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Bravo-Robots/microduck-rayuela",
+      "url": "https://github.com/Bravo-Robots/microduck-rayuela",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "GeorgeCao-001/microduck-hatchery",
+      "url": "https://github.com/GeorgeCao-001/microduck-hatchery",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 404
+    },
+    {
+      "name": "SynthReality-Labs/microduck-lab",
+      "url": "https://github.com/SynthReality-Labs/microduck-lab",
+      "default_branch": "main",
+      "description": "Interactive reinforcement learning studio for Pollen Robotics’ Microduck — design, train, inspect, and improve robot policies with an AI agent.",
+      "readme_status": 200
+    },
+    {
+      "name": "virtualrobotix/microduck-replica",
+      "url": "https://github.com/virtualrobotix/microduck-replica",
+      "default_branch": "master",
+      "description": "Third-party Microduck replica study, documentation and tools in English.",
+      "readme_status": 200
+    },
+    {
+      "name": "andreifurdui/microduck-simulator",
+      "url": "https://github.com/andreifurdui/microduck-simulator",
+      "default_branch": "main",
+      "description": "Mirror of pollen-robotics/microduck-simulator (HF Space) for local dev — personal sandbox",
+      "readme_status": 200
+    },
+    {
+      "name": "Greninja44/microduck_genesis",
+      "url": "https://github.com/Greninja44/microduck_genesis",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "digows/microduck-twin",
+      "url": "https://github.com/digows/microduck-twin",
+      "default_branch": "main",
+      "description": "A complete Pollen Robotics Microduck digital twin, for real simulation while you are in the waitlist :)",
+      "readme_status": 200
+    },
+    {
+      "name": "superobk/microduck-startup",
+      "url": "https://github.com/superobk/microduck-startup",
+      "default_branch": "main",
+      "description": "A learning path for microduck RL",
+      "readme_status": 200
+    },
+    {
+      "name": "matrix-air/microduck-cost",
+      "url": "https://github.com/matrix-air/microduck-cost",
+      "default_branch": "main",
+      "description": "Microduck 同款自研 · 四模式(DIRECT/IPD/JDM/ODM)成本与时效计算器",
+      "readme_status": 0
+    },
+    {
+      "name": "XWT985/microduck_robot",
+      "url": "https://github.com/XWT985/microduck_robot",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "bl4z3ng41n/microduck-sim",
+      "url": "https://github.com/bl4z3ng41n/microduck-sim",
+      "default_branch": "main",
+      "description": "Microduck: how to simulate it, run it locally, live MuJoCo WASM sim, BOM",
+      "readme_status": 200
+    },
+    {
+      "name": "zhangpf21/vlm-microduck",
+      "url": "https://github.com/zhangpf21/vlm-microduck",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "budyd/my-microduck",
+      "url": "https://github.com/budyd/my-microduck",
+      "default_branch": "develop",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "kai04072911-sudo/microduck-learning",
+      "url": "https://github.com/kai04072911-sudo/microduck-learning",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "kingsleyli920/microduck-academy",
+      "url": "https://github.com/kingsleyli920/microduck-academy",
+      "default_branch": "main",
+      "description": "A bilingual, local-first reinforcement learning classroom for Microduck with browser Python and the official 3D simulator.",
+      "readme_status": 200
+    },
+    {
+      "name": "joeynyc/microduck-mcp",
+      "url": "https://github.com/joeynyc/microduck-mcp",
+      "default_branch": "main",
+      "description": "Agent-agnostic MCP server for the Pollen Robotics Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "alextechradar/awesome-microduck",
+      "url": "https://github.com/alextechradar/awesome-microduck",
+      "default_branch": "main",
+      "description": "Curated and continuously reviewed map of the Microduck ecosystem — simulators, RL, policies, agent tools, hardware and DIY builds.",
+      "readme_status": 200
+    },
+    {
+      "name": "TonyRuan/microduck-web",
+      "url": "https://github.com/TonyRuan/microduck-web",
+      "default_branch": "codex/static-web",
+      "description": "Microduck browser simulator: local MuJoCo physics, adaptive controls, and community ONNX policies",
+      "readme_status": 200
+    },
+    {
+      "name": "srayuth089/microduck-docker",
+      "url": "https://github.com/srayuth089/microduck-docker",
+      "default_branch": "main",
+      "description": "🦆 Microduck bipedal robot simulator in one Docker command — MuJoCo physics, pretrained RL policies and a 3D browser viewer. Made for STEM classrooms.",
+      "readme_status": 200
+    },
+    {
+      "name": "dreamerarun/isaaclab_microduck",
+      "url": "https://github.com/dreamerarun/isaaclab_microduck",
+      "default_branch": "5usu/microduck-port",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "wangshushadow-boop/microduck-isaac",
+      "url": "https://github.com/wangshushadow-boop/microduck-isaac",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "lishaojieli/microduck_rl",
+      "url": "https://github.com/lishaojieli/microduck_rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 404
+    },
+    {
+      "name": "apirrone/microduck_sounds",
+      "url": "https://github.com/apirrone/microduck_sounds",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Ngalalalekhaaa/microduck-project",
+      "url": "https://github.com/Ngalalalekhaaa/microduck-project",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "joshuachang1111/microduck-simulator",
+      "url": "https://github.com/joshuachang1111/microduck-simulator",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "jangho-git/Microduck_sim",
+      "url": "https://github.com/jangho-git/Microduck_sim",
+      "default_branch": "main",
+      "description": "Microduck 시뮬레이션 플랫폼 - 브라우저 MuJoCo 시뮬레이터 + RL 정책 (running/swing/basketball)",
+      "readme_status": 200
+    },
+    {
+      "name": "MACRL2/microduck-viewer",
+      "url": "https://github.com/MACRL2/microduck-viewer",
+      "default_branch": "main",
+      "description": "In-browser MuJoCo+JS-policy+three.js microduck sims, embedded in the MACRL2 textbook",
+      "readme_status": 200
+    },
+    {
+      "name": "abhishekkumarnaik34-hub/microduck_rl",
+      "url": "https://github.com/abhishekkumarnaik34-hub/microduck_rl",
+      "default_branch": "main",
+      "description": "Train 50Hz RL locomotion policies for the Microduck biped robot in MuJoCo with PPO and deploy to real hardware.",
+      "readme_status": 200
+    },
+    {
+      "name": "alertform/microduck-walking",
+      "url": "https://github.com/alertform/microduck-walking",
+      "default_branch": "main",
+      "description": "Yaw-wobble ablation on the Microduck walking policy, benchmarked against Pollen Robotics' released baseline (fork of pollen-robotics/microduck_rl)",
+      "readme_status": 200
+    },
+    {
+      "name": "cucu11039004-web/microduck_rl",
+      "url": "https://github.com/cucu11039004-web/microduck_rl",
+      "default_branch": "develop",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "fivif/spacemit-microduck",
+      "url": "https://github.com/fivif/spacemit-microduck",
+      "default_branch": "main",
+      "description": "Microduck brain-swap: SpacemiT RISC-V K3/K1 runtime port + sim integration",
+      "readme_status": 200
+    },
+    {
+      "name": "ChuhangLiu2002/microduck-study",
+      "url": "https://github.com/ChuhangLiu2002/microduck-study",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "littlejohntj/microduck-sim",
+      "url": "https://github.com/littlejohntj/microduck-sim",
+      "default_branch": "master",
+      "description": "The Hugging Face Microduck robot ported into an iPhone: its trained RL policies + MuJoCo physics, native in Swift/RealityKit, with AR",
+      "readme_status": 200
+    },
+    {
+      "name": "Lulzx/microduck-backflip",
+      "url": "https://github.com/Lulzx/microduck-backflip",
+      "default_branch": "main",
+      "description": "Reproducible reinforcement-learning task, evaluation pipeline, and safety gates for a Pollen Robotics MicroDuck backflip",
+      "readme_status": 200
+    },
+    {
+      "name": "skbose/microduck-experiments",
+      "url": "https://github.com/skbose/microduck-experiments",
+      "default_branch": "main",
+      "description": "Experiments in training and puppeteering the Microduck bipedal robot on a Mac",
+      "readme_status": 200
+    },
+    {
+      "name": "wangzi6224/microduck_rl",
+      "url": "https://github.com/wangzi6224/microduck_rl",
+      "default_branch": "develop",
+      "description": "RL training environments for Microduck (mjlab)",
+      "readme_status": 200
+    },
+    {
+      "name": "AungKaung1928/microduck-rl",
+      "url": "https://github.com/AungKaung1928/microduck-rl",
+      "default_branch": "main",
+      "description": "PPO balance policy for the Microduck biped in CPU MuJoCo: 332.6 vs PD 175.8, domain-randomisation result reported",
+      "readme_status": 200
+    },
+    {
+      "name": "luoyanfeidao/microduck_android",
+      "url": "https://github.com/luoyanfeidao/microduck_android",
+      "default_branch": "main",
+      "description": "机器鸭转录到Android的研究项目",
+      "readme_status": 200
+    },
+    {
+      "name": "RaphaelGrj/microduck-project",
+      "url": "https://github.com/RaphaelGrj/microduck-project",
+      "default_branch": "main",
+      "description": "Contexte et notes du projet Microduck (Pollen Robotics)",
+      "readme_status": 200
+    },
+    {
+      "name": "ApurvK032/microduck-webxr",
+      "url": "https://github.com/ApurvK032/microduck-webxr",
+      "default_branch": "main",
+      "description": "Independent WebXR Microduck with Quest controls and Apache-2.0 Pollen Robotics assets",
+      "readme_status": 200
+    },
+    {
+      "name": "wxhzzsf/microduck-rl",
+      "url": "https://github.com/wxhzzsf/microduck-rl",
+      "default_branch": "main",
+      "description": "The RL models and training code for",
+      "readme_status": 0
+    },
+    {
+      "name": "SoryuElvars/microduck-embodied",
+      "url": "https://github.com/SoryuElvars/microduck-embodied",
+      "default_branch": "main",
+      "description": "MicroDuck embodied learning project: robust locomotion, PointGoal navigation, and Classical vs RL evaluation.",
+      "readme_status": 200
+    },
+    {
+      "name": "mingyuan915/microduck_rl",
+      "url": "https://github.com/mingyuan915/microduck_rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "DollhouseRobotics/microduck-miniverse",
+      "url": "https://github.com/DollhouseRobotics/microduck-miniverse",
+      "default_branch": "main",
+      "description": "Reproducible Miniverse bundles for Pollen Robotics Microduck policies",
+      "readme_status": 0
+    },
+    {
+      "name": "xiongy26/microduck-cns",
+      "url": "https://github.com/xiongy26/microduck-cns",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "miguelaeh/jev-microduck",
+      "url": "https://github.com/miguelaeh/jev-microduck",
+      "default_branch": "main",
+      "description": "Make Microduck autonomous controlled in a loop by Jev.",
+      "readme_status": 200
+    },
+    {
+      "name": "exploreli/microduck_new_action",
+      "url": "https://github.com/exploreli/microduck_new_action",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "llama/microduck-beak-throw",
+      "url": "https://github.com/llama/microduck-beak-throw",
+      "default_branch": "main",
+      "description": "RL policy for a Microduck to throw a ball from its beak and recover to standing",
+      "readme_status": 200
+    },
+    {
+      "name": "Joeliews/Microduck-Joe-lite",
+      "url": "https://github.com/Joeliews/Microduck-Joe-lite",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "yuecui0130-create/microduck-carpet-lab",
+      "url": "https://github.com/yuecui0130-create/microduck-carpet-lab",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Mini-Duck-Duck/hugging-face-microduck",
+      "url": "https://github.com/Mini-Duck-Duck/hugging-face-microduck",
+      "default_branch": "main",
+      "description": "国内复刻hugging face鸭子",
+      "readme_status": 0
+    },
+    {
+      "name": "hikarioyama/microduck-onefoot-skate",
+      "url": "https://github.com/hikarioyama/microduck-onefoot-skate",
+      "default_branch": "main",
+      "description": "Microduck one-foot skating: interim RL results, measurements and method (2.0 s gate not passed)",
+      "readme_status": 200
+    },
+    {
+      "name": "ddasdkimo/microduck-build-journal",
+      "url": "https://github.com/ddasdkimo/microduck-build-journal",
+      "default_branch": "main",
+      "description": "Open Duck Mini v2 build journal, CAD assembly views and reproducible modifications",
+      "readme_status": 200
+    },
+    {
+      "name": "Bravo-Robots/microduck_rl-rayuela",
+      "url": "https://github.com/Bravo-Robots/microduck_rl-rayuela",
+      "default_branch": "rayuela",
+      "description": "Microduck aprende a jugar a la rayuela con aprendizaje por refuerzo: políticas entrenadas en simulación con mjlab y desplegadas en ROS 2 con visión y teleop.",
+      "readme_status": 200
+    },
+    {
+      "name": "gkgaurav833/microduck-jump-solana",
+      "url": "https://github.com/gkgaurav833/microduck-jump-solana",
+      "default_branch": "main",
+      "description": "A browser-based 2D platformer game featuring Microduck jumping across platforms to gain height and collect SOL coins",
+      "readme_status": 0
+    },
+    {
+      "name": "pezzonovante7/microduck-sidekick-dance",
+      "url": "https://github.com/pezzonovante7/microduck-sidekick-dance",
+      "default_branch": "main",
+      "description": "MicroDuck side-kick dance skill: mjlab task, train, export ONNX",
+      "readme_status": 200
+    },
+    {
+      "name": "LukeLiu2000/Understanding-MicroDuck",
+      "url": "https://github.com/LukeLiu2000/Understanding-MicroDuck",
+      "default_branch": "main",
+      "description": "Understand and read the MicroDuck software, explain its software working process, RL algorithms and training methods, and use it as a study note and tutorial for learning RL robots.",
+      "readme_status": 200
+    },
+    {
+      "name": "YalmanchiliTejas/MicroDuck-RL",
+      "url": "https://github.com/YalmanchiliTejas/MicroDuck-RL",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "KilllerBoss/MicroDuckTrainer",
+      "url": "https://github.com/KilllerBoss/MicroDuckTrainer",
+      "default_branch": "main",
+      "description": "MicroDuck Trainer v2.0 – MuJoCo Roboter-Training auf Android: Original MicroDuck-Ente + Unitree G1, ES-Training, KI-Bewertung, Touch-Gamepad (Joystick + A-D), Turbo bis Hyper, kontinuierlicher Testmodus. Komplett offline.",
+      "readme_status": 200
+    },
+    {
+      "name": "YDxun/microduck-duck-play",
+      "url": "https://github.com/YDxun/microduck-duck-play",
+      "default_branch": "master",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "liuxue-lab/microduck-double-balance",
+      "url": "https://github.com/liuxue-lab/microduck-double-balance",
+      "default_branch": "main",
+      "description": "Microduck dual-ball balance learning in MuJoCo",
+      "readme_status": 200
+    },
+    {
+      "name": "ddy918/MicroDuck_rl",
+      "url": "https://github.com/ddy918/MicroDuck_rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Daphilippe/microduck_remote_brain",
+      "url": "https://github.com/Daphilippe/microduck_remote_brain",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "sarvob/sarvoday-microduck-lab",
+      "url": "https://github.com/sarvob/sarvoday-microduck-lab",
+      "default_branch": "main",
+      "description": "Reproducible Microduck robotics challenges, training runs, and simulator evidence from Sarvoday Robotics.",
+      "readme_status": 200
+    },
+    {
+      "name": "HandsomeWuuu/Microduck-playground-competition",
+      "url": "https://github.com/HandsomeWuuu/Microduck-playground-competition",
+      "default_branch": "main",
+      "description": "Guess which microduck wins a two-lap race.",
+      "readme_status": 200
+    },
+    {
+      "name": "eric-rolph/microduck-robot-brain",
+      "url": "https://github.com/eric-rolph/microduck-robot-brain",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "pcpcchen-coder/MicroDuckDIY",
+      "url": "https://github.com/pcpcchen-coder/MicroDuckDIY",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "KhushiJ2911/microduck-piano-learning",
+      "url": "https://github.com/KhushiJ2911/microduck-piano-learning",
+      "default_branch": "main",
+      "description": "Two free-root MicroDuck bipeds traversing a passive MuJoCo floor keyboard — an honest robot-learning baseline.",
+      "readme_status": 200
+    },
+    {
+      "name": "STARKTANG108/microduck-print-pack",
+      "url": "https://github.com/STARKTANG108/microduck-print-pack",
+      "default_branch": "main",
+      "description": "MicroDuck 3D打印包: 47可打印STL+零件表+渲染 (CC BY-NC-SA, 来源pollen-robotics)",
+      "readme_status": 200
+    },
+    {
+      "name": "tachytelicdetonation/microduck-replica-lab",
+      "url": "https://github.com/tachytelicdetonation/microduck-replica-lab",
+      "default_branch": "main",
+      "description": "Open Microduck assembly explorer, CPU simulation, reference CAD, build guides, and US/China sourcing.",
+      "readme_status": 200
+    },
+    {
+      "name": "Harrisous/MicroDuck-RL",
+      "url": "https://github.com/Harrisous/MicroDuck-RL",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "adammong/microduck-jetson-mount",
+      "url": "https://github.com/adammong/microduck-jetson-mount",
+      "default_branch": "main",
+      "description": "MicroDuck Jetson Orin Nano mount: parametric CAD, printable parts, wiring fit study and MuJoCo payload models",
+      "readme_status": 200
+    },
+    {
+      "name": "asdfjep/Microduck-build-tutorial",
+      "url": "https://github.com/asdfjep/Microduck-build-tutorial",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "DANVEZ/microduck-replica-guide",
+      "url": "https://github.com/DANVEZ/microduck-replica-guide",
+      "default_branch": "main",
+      "description": "🦆 机器鸭 Microduck 复刻资料合集 — 46项采购BOM + 9阶段施工SOP + 21页装配说明书 + 3D打印工程。纯网络资料整理，未做真机验证。",
+      "readme_status": 200
+    },
+    {
+      "name": "AlexandreEDMOND/microduck-rl-lab",
+      "url": "https://github.com/AlexandreEDMOND/microduck-rl-lab",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "eriklee1895/microduck-codex-pets",
+      "url": "https://github.com/eriklee1895/microduck-codex-pets",
+      "default_branch": "main",
+      "description": "An unofficial community archive of themed MicroDuck pets for Codex.",
+      "readme_status": 200
+    },
+    {
+      "name": "focus9527-jpg/microduck-replica-plan",
+      "url": "https://github.com/focus9527-jpg/microduck-replica-plan",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "ramziabbyad1/microduck-sim-bridge",
+      "url": "https://github.com/ramziabbyad1/microduck-sim-bridge",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "getbodymd/microduck-body-sim",
+      "url": "https://github.com/getbodymd/microduck-body-sim",
+      "default_branch": "main",
+      "description": "Deploys pollen-robotics/microduck in a simulated environment on your own machine, and registers it as a leasable body on the GetBody service.",
+      "readme_status": 200
+    },
+    {
+      "name": "guilinmini/microduck_ros2",
+      "url": "https://github.com/guilinmini/microduck_ros2",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "zheflow/microduck-s288",
+      "url": "https://github.com/zheflow/microduck-s288",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "modewang/Microduck-replicad-main",
+      "url": "https://github.com/modewang/Microduck-replicad-main",
+      "default_branch": "master",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "qilinxiaoxiang/microduck-beak-lab",
+      "url": "https://github.com/qilinxiaoxiang/microduck-beak-lab",
+      "default_branch": "main",
+      "description": "Reproducible Microduck beak pickup demos, jaw RL baselines, and proposed head–jaw learning experiments",
+      "readme_status": 200
+    },
+    {
+      "name": "ob1-s/microduck-mini-golf",
+      "url": "https://github.com/ob1-s/microduck-mini-golf",
+      "default_branch": "main",
+      "description": "Microduck MuJoCo mini-golf: real cup, goal-conditioned kick control, and reproducible sports simulator",
+      "readme_status": 404
+    },
+    {
+      "name": "RRetlev/MicroDuckHunt",
+      "url": "https://github.com/RRetlev/MicroDuckHunt",
+      "default_branch": "master",
+      "description": null,
+      "readme_status": 404
+    },
+    {
+      "name": "bnjdpn/microduck-cat-vision",
+      "url": "https://github.com/bnjdpn/microduck-cat-vision",
+      "default_branch": "main",
+      "description": "Local cat recognition and browser-based Microduck robot simulator",
+      "readme_status": 200
+    },
+    {
+      "name": "sdm-commits/microduck-sports-challenge",
+      "url": "https://github.com/sdm-commits/microduck-sports-challenge",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Shinro-xyz/shinro-demo-microduck",
+      "url": "https://github.com/Shinro-xyz/shinro-demo-microduck",
+      "default_branch": "main",
+      "description": "Microduck reference-robot demo for the shinro control framework: compile a trained walking policy ONNX to a Zig kernel and replay MuJoCo from it.",
+      "readme_status": 200
+    },
+    {
+      "name": "lxm/microduck-servo-guide",
+      "url": "https://github.com/lxm/microduck-servo-guide",
+      "default_branch": "main",
+      "description": "MicroDuck 飞特 HD-1910 v2.1 舵机编号与 3D 装配对照工具",
+      "readme_status": 200
+    },
+    {
+      "name": "metahubaifeel/microduck-jump-rl",
+      "url": "https://github.com/metahubaifeel/microduck-jump-rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "KilllerBoss/microduck-kopfstand-apk",
+      "url": "https://github.com/KilllerBoss/microduck-kopfstand-apk",
+      "default_branch": "main",
+      "description": "Microduck Kopfstand: offline Android-APK mit MuJoCo-WASM + gelernter Policy",
+      "readme_status": 200
+    },
+    {
+      "name": "keeeeenw/microduck_rl_mac",
+      "url": "https://github.com/keeeeenw/microduck_rl_mac",
+      "default_branch": "develop",
+      "description": "RL training environments for Microduck (mjlab) on Mac",
+      "readme_status": 200
+    },
+    {
+      "name": "jin2319546842-max/microduck-active-perception",
+      "url": "https://github.com/jin2319546842-max/microduck-active-perception",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "shaibuafeez/microduck-ai-world",
+      "url": "https://github.com/shaibuafeez/microduck-ai-world",
+      "default_branch": "main",
+      "description": "Embodied AI for Microduck: robot runtime, RL policies, MuJoCo world, and a non-blocking vision-language brain",
+      "readme_status": 200
+    },
+    {
+      "name": "caijunwei245/microduck-RSL-RL",
+      "url": "https://github.com/caijunwei245/microduck-RSL-RL",
+      "default_branch": "develop",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "QingYuan-Chen/MicroDuck_Reproduce",
+      "url": "https://github.com/QingYuan-Chen/MicroDuck_Reproduce",
+      "default_branch": "main",
+      "description": "MicroDuck 强化学习步态训练的学习性复现与评估记录",
+      "readme_status": 200
+    },
+    {
+      "name": "apirrone/microduck_kinematics_rs",
+      "url": "https://github.com/apirrone/microduck_kinematics_rs",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "SimYard/isaac_microduck_rl",
+      "url": "https://github.com/SimYard/isaac_microduck_rl",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "x10zyn/microduck-sim-playground",
+      "url": "https://github.com/x10zyn/microduck-sim-playground",
+      "default_branch": "main",
+      "description": "A lightweight, educational Microduck simulation and RL workspace",
+      "readme_status": 200
+    },
+    {
+      "name": "ck2112688-code/microduck-cloud-training",
+      "url": "https://github.com/ck2112688-code/microduck-cloud-training",
+      "default_branch": "main",
+      "description": "MicroDuck 在线强化学习训练、ONNX 导出与仿真回放的一键教程",
+      "readme_status": 0
+    },
+    {
+      "name": "zjsss900/microduck-desktop-pet",
+      "url": "https://github.com/zjsss900/microduck-desktop-pet",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "lamquocdat01/microduck-tse-artifact",
+      "url": "https://github.com/lamquocdat01/microduck-tse-artifact",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "nefiag/MicroDuckFootballRL",
+      "url": "https://github.com/nefiag/MicroDuckFootballRL",
+      "default_branch": "main",
+      "description": "MicroDuck 足球强化学习课程：Gymnasium、Stable-Baselines3 PPO、Sim2Real、动画与视频制作",
+      "readme_status": 200
+    },
+    {
+      "name": "AI-zyf/microduck-build-log",
+      "url": "https://github.com/AI-zyf/microduck-build-log",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "xiaohu-art/MicroDuck-IL",
+      "url": "https://github.com/xiaohu-art/MicroDuck-IL",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "kevin-feige-ai/microduck-hd1910",
+      "url": "https://github.com/kevin-feige-ai/microduck-hd1910",
+      "default_branch": "main",
+      "description": "复刻microduck， hd910 舵机版",
+      "readme_status": 200
+    },
+    {
+      "name": "dasanplaen-cmyk/microduck_rl-rayuela",
+      "url": "https://github.com/dasanplaen-cmyk/microduck_rl-rayuela",
+      "default_branch": "rayuela",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "aiforworlds/microduck_rl_scs225",
+      "url": "https://github.com/aiforworlds/microduck_rl_scs225",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "Liyucheng1997/318_lab-microduck-simulator",
+      "url": "https://github.com/Liyucheng1997/318_lab-microduck-simulator",
+      "default_branch": "main",
+      "description": "MicroDuck RL simulator with custom-trained jump policy - MuJoCo WASM + ONNX in the browser",
+      "readme_status": 200
+    },
+    {
+      "name": "jrubiosainz/microduck-him-2026-submissions",
+      "url": "https://github.com/jrubiosainz/microduck-him-2026-submissions",
+      "default_branch": "main",
+      "description": "HIM 2026 Microduck candidates: MuJoCo capture-the-flag and Don Pato - The Endless Siesta editable 3D outfit",
+      "readme_status": 200
+    },
+    {
+      "name": "jjshdbndg/MotrixLab-MicroDuck",
+      "url": "https://github.com/jjshdbndg/MotrixLab-MicroDuck",
+      "default_branch": "codex/microduck-passive-rollers",
+      "description": "MicroDuck passive-roller locomotion environment for MotrixLab / MotrixSim",
+      "readme_status": 200
+    },
+    {
+      "name": "CheYongda/COMP6131-CareDuck",
+      "url": "https://github.com/CheYongda/COMP6131-CareDuck",
+      "default_branch": "main",
+      "description": "Cloud-Interactive Microduck Simulation for Elderly Companionship",
+      "readme_status": 0
+    },
+    {
+      "name": "TonyRuan/microduck-imx6ull",
+      "url": "https://github.com/TonyRuan/microduck-imx6ull",
+      "default_branch": "main",
+      "description": "Microduck i.MX6ULL gait-control experiments, MuJoCo hardware-in-the-loop, and compact Mac keyboard teleoperation GUI",
+      "readme_status": 200
+    },
+    {
+      "name": "gordonho/microduck-rl-on-mac",
+      "url": "https://github.com/gordonho/microduck-rl-on-mac",
+      "default_branch": "main",
+      "description": "Train MicroDuck (bipedal robot) on Apple Silicon Mac without CUDA GPU — 1.5M-step PPO reinforcement learning experiments",
+      "readme_status": 200
+    },
+    {
+      "name": "sgyli7/Sai_Lab",
+      "url": "https://github.com/sgyli7/Sai_Lab",
+      "default_branch": "main",
+      "description": "Sai_Lab: Godot/Jolt and Unity/Tuanjie Sim2Sim projects for MicroDuck and Sai Robot",
+      "readme_status": 200
+    },
+    {
+      "name": "rubixhacker/itchy-duck",
+      "url": "https://github.com/rubixhacker/itchy-duck",
+      "default_branch": "main",
+      "description": "Scratch and TurboWarp control for Pollen Robotics Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "MenciousL/microduck-hl2909-print",
+      "url": "https://github.com/MenciousL/microduck-hl2909-print",
+      "default_branch": "master",
+      "description": "Microduck HL-2909-C001 millimetre STL print files",
+      "readme_status": 200
+    },
+    {
+      "name": "ThomasBurgess2000/microduck-max-height-jump",
+      "url": "https://github.com/ThomasBurgess2000/microduck-max-height-jump",
+      "default_branch": "main",
+      "description": "Baked-normalizer ONNX and reproducibility evidence for the Microduck maximum-height jump policy",
+      "readme_status": 200
+    },
+    {
+      "name": "yangyihai/Microduck_RL_Ball_Follow",
+      "url": "https://github.com/yangyihai/Microduck_RL_Ball_Follow",
+      "default_branch": "main",
+      "description": "Reinforcement learning for 800g/25cm Microduck bipedal robot on MuJoCoWarp. Includes ball-follow task, command-block contract layer, and interactive drag-the-ball demo.",
+      "readme_status": 200
+    },
+    {
+      "name": "Jeff4steel/HD1910-Duck",
+      "url": "https://github.com/Jeff4steel/HD1910-Duck",
+      "default_branch": "main",
+      "description": "Trying to make a microduck by HD1910 servos",
+      "readme_status": 0
+    },
+    {
+      "name": "lukegao209/microduck-remote-policy-server",
+      "url": "https://github.com/lukegao209/microduck-remote-policy-server",
+      "default_branch": "main",
+      "description": "Remote policy transport and inference server for Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "BaoBao112233/MicroDuck_v1",
+      "url": "https://github.com/BaoBao112233/MicroDuck_v1",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "AlexAtmtit/AwesomeDucks",
+      "url": "https://github.com/AlexAtmtit/AwesomeDucks",
+      "default_branch": "main",
+      "description": "The best skills, practices and tools for Microduck",
+      "readme_status": 0
+    },
+    {
+      "name": "hjianbo/microduck_demo_part1",
+      "url": "https://github.com/hjianbo/microduck_demo_part1",
+      "default_branch": "main",
+      "description": "Reproducible MQTT control demo for the official Microduck MuJoCo walking policy",
+      "readme_status": 200
+    },
+    {
+      "name": "YahyaLimbo/microduck_ros2_slam",
+      "url": "https://github.com/YahyaLimbo/microduck_ros2_slam",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 200
+    },
+    {
+      "name": "sgyli7/MicroDuck-Unity-Sim2Sim",
+      "url": "https://github.com/sgyli7/MicroDuck-Unity-Sim2Sim",
+      "default_branch": "main",
+      "description": "MuJoCo ↔ Unity / Tuanjie Engine Sim2Sim for MicroDuck.",
+      "readme_status": 200
+    },
+    {
+      "name": "AmanPriyanshu/toodoom-the-mlx-metal-microduck",
+      "url": "https://github.com/AmanPriyanshu/toodoom-the-mlx-metal-microduck",
+      "default_branch": "main",
+      "description": "My own implementation for microduck RL training and navigation",
+      "readme_status": 200
+    },
+    {
+      "name": "zhiyilearn/microduck_walk_train_with_Kaggle",
+      "url": "https://github.com/zhiyilearn/microduck_walk_train_with_Kaggle",
+      "default_branch": "main",
+      "description": "This project demonstrates train microduck behavior \"walk\" in Kaggle Platform.",
+      "readme_status": 200
+    },
+    {
+      "name": "taherfattahi/microduck-rigid-body-kinematic-viewer",
+      "url": "https://github.com/taherfattahi/microduck-rigid-body-kinematic-viewer",
+      "default_branch": "main",
+      "description": "Interactive 3D viewer for Microduck's rigid body kinematic model.",
+      "readme_status": 200
+    },
+    {
+      "name": "youngsemicolon/microduck-sim2real-showcase",
+      "url": "https://github.com/youngsemicolon/microduck-sim2real-showcase",
+      "default_branch": "main",
+      "description": "Microduck sim2real showcase: MuJoCo, official RL policies, generated navigation, challenges and reproducible videos",
+      "readme_status": 200
+    },
+    {
+      "name": "andreagenovese/quacknav",
+      "url": "https://github.com/andreagenovese/quacknav",
+      "default_branch": "main",
+      "description": "Navigation for the Pollen Robotics Microduck: mapping, localization, named places and go-to on the stock robotd, with MuJoCo and paper twins to measure it",
+      "readme_status": 200
+    },
+    {
+      "name": "wjb000/pebble",
+      "url": "https://github.com/wjb000/pebble",
+      "default_branch": "main",
+      "description": "Pebble — Microduck-scale biped + SO-101 arms, browser sim + BOM",
+      "readme_status": 200
+    },
+    {
+      "name": "ob1-s/uduck-registry",
+      "url": "https://github.com/ob1-s/uduck-registry",
+      "default_branch": "main",
+      "description": "Community registry of policies and behaviors for Pollen Robotics’ Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "copilot-robotics/Duckling",
+      "url": "https://github.com/copilot-robotics/Duckling",
+      "default_branch": "master",
+      "description": "Microduck Simulator - Taro 4.x WeChat mini-program & web game",
+      "readme_status": 200
+    },
+    {
+      "name": "andreagenovese/quack-control",
+      "url": "https://github.com/andreagenovese/quack-control",
+      "default_branch": "main",
+      "description": "Local control plane for the Microduck's daemons (quack-nav, quacksat, …)",
+      "readme_status": 200
+    },
+    {
+      "name": "kai-zhang-er/duck-harness",
+      "url": "https://github.com/kai-zhang-er/duck-harness",
+      "default_branch": "main",
+      "description": "a harness-engineering based project to play with the huggingface microduck",
+      "readme_status": 404
+    },
+    {
+      "name": "chenw0164-beep/https-github.com-fanhao375-microduck-replica-cad",
+      "url": "https://github.com/chenw0164-beep/https-github.com-fanhao375-microduck-replica-cad",
+      "default_branch": "main",
+      "description": null,
+      "readme_status": 0
+    },
+    {
+      "name": "jixinyan/Oh-My-Duck",
+      "url": "https://github.com/jixinyan/Oh-My-Duck",
+      "default_branch": "main",
+      "description": "Interactive agentic system and RL framework for Microduck. Learning, Controlling, Customizing.",
+      "readme_status": 200
+    },
+    {
+      "name": "jadeqwang/ducky",
+      "url": "https://github.com/jadeqwang/ducky",
+      "default_branch": "main",
+      "description": "playing around with microduck in sim while waiting for it to arrive",
+      "readme_status": 200
+    },
+    {
+      "name": "kvnloo/quackles-nightly",
+      "url": "https://github.com/kvnloo/quackles-nightly",
+      "default_branch": "main",
+      "description": "Nightly WIP of the Microduck product page (separate GitHub Pages site)",
+      "readme_status": 200
+    },
+    {
+      "name": "ATMartin/micropal",
+      "url": "https://github.com/ATMartin/micropal",
+      "default_branch": "main",
+      "description": "🦆🤖: A whimsical desktop companion inspired by Pollen Robotics's \"Microduck\".",
+      "readme_status": 200
+    },
+    {
+      "name": "lryain/microquack",
+      "url": "https://github.com/lryain/microquack",
+      "default_branch": "main",
+      "description": "How microduck speaks: fully procedural droid-voice synthesis, fitting, and phrase generation",
+      "readme_status": 200
+    },
+    {
+      "name": "nikikilbertus/duckpfn",
+      "url": "https://github.com/nikikilbertus/duckpfn",
+      "default_branch": "main",
+      "description": "TabPFN to make a robot Microduck walk using tables all the way down.",
+      "readme_status": 200
+    },
+    {
+      "name": "acnlabs/embody",
+      "url": "https://github.com/acnlabs/embody",
+      "default_branch": "main",
+      "description": "ACN agents get a body. Microduck is the first adapter, not the platform.",
+      "readme_status": 200
+    },
+    {
+      "name": "kathula29/bird-robot",
+      "url": "https://github.com/kathula29/bird-robot",
+      "default_branch": "main",
+      "description": "Design, build logs, CAD, electronics, and software for a Microduck-inspired bird robot.",
+      "readme_status": 200
+    },
+    {
+      "name": "amazedsaint/jevduck",
+      "url": "https://github.com/amazedsaint/jevduck",
+      "default_branch": "main",
+      "description": "A research simulator for Jev decisions over Microduck robots in shared MuJoCo physics.",
+      "readme_status": 200
+    },
+    {
+      "name": "MengyangGao/OpenMicroDuck",
+      "url": "https://github.com/MengyangGao/OpenMicroDuck",
+      "default_branch": "main",
+      "description": "CAD and MuJoCo experiments for Microduck: walking, sit/stand, recovery, and jaw control.",
+      "readme_status": 200
+    },
+    {
+      "name": "lachlanhurst/dukki",
+      "url": "https://github.com/lachlanhurst/dukki",
+      "default_branch": "main",
+      "description": "Bipedal robot based on Microduck, rebuilt around Unitree J288 servos and a Radxa CM4.",
+      "readme_status": 200
+    },
+    {
+      "name": "hellobs/learned-duck",
+      "url": "https://github.com/hellobs/learned-duck",
+      "default_branch": "main",
+      "description": "A 3D-printed desktop Bluetooth speaker paying homage to MicroDuck — learned, not designed.",
+      "readme_status": 200
+    },
+    {
+      "name": "carpentry-liu/rl-physics-overlay",
+      "url": "https://github.com/carpentry-liu/rl-physics-overlay",
+      "default_branch": "main",
+      "description": "不阻塞训练的 MuJoCo / Microduck 物理遥测插件：实时展示关节力、力矩、接触力与强化学习数据。",
+      "readme_status": 200
+    },
+    {
+      "name": "Faultsaktism8742/faultsaktism8742.github.io",
+      "url": "https://github.com/Faultsaktism8742/faultsaktism8742.github.io",
+      "default_branch": "main",
+      "description": "Train reinforcement-learning policies for Microduck biped robots on Apple Silicon Macs, no GPU needed.",
+      "readme_status": 404
+    },
+    {
+      "name": "hwkim3330/micro-rex",
+      "url": "https://github.com/hwkim3330/micro-rex",
+      "default_branch": "main",
+      "description": "Microduck-compatible T-rex retrofit prototype: editable CAD, STL, drawings, MuJoCo model and 3D viewer",
+      "readme_status": 200
+    },
+    {
+      "name": "andreagenovese/quacksat",
+      "url": "https://github.com/andreagenovese/quacksat",
+      "default_branch": "main",
+      "description": "Mobile voice satellite for Home Assistant and AI agents, running on the Pollen Robotics Microduck",
+      "readme_status": 200
+    },
+    {
+      "name": "virtualrobotix/Ardupilot-Neural-Mixer",
+      "url": "https://github.com/virtualrobotix/Ardupilot-Neural-Mixer",
+      "default_branch": "main",
+      "description": "EN: MicroDuck biped PPO policy running as an ArduPilot (ArduRover) task, MuJoCo as SITL plant, MAVProxy control. | IT: policy PPO del MicroDuck come task ArduPilot, MuJoCo pianta SITL, comando via MAVProxy. Docs EN+IT.",
+      "readme_status": 200
+    },
+    {
+      "name": "wanhjh1223/robot_rl_lab",
+      "url": "https://github.com/wanhjh1223/robot_rl_lab",
+      "default_branch": "main",
+      "description": "Multi-robot reinforcement learning, MuJoCo simulation and evaluation for Microduck, MicroQuad, Humanoid and Unitree G1.",
+      "readme_status": 200
+    },
+    {
+      "name": "Harboria/harboria",
+      "url": "https://github.com/Harboria/harboria",
+      "default_branch": "main",
+      "description": "Open-source long-term personal AI runtime for MicroDuck, physical AI robots, and smart hardware.",
+      "readme_status": 200
+    },
+    {
+      "name": "KeqiYe/duck_gym",
+      "url": "https://github.com/KeqiYe/duck_gym",
+      "default_branch": "main",
+      "description": "A custom CPU/CUDA rigid-body AVBD simulation engine for MicroDuck reinforcement learning with rsl-rl.",
+      "readme_status": 200
+    },
+    {
+      "name": "monyuan/micro-duck-flow",
+      "url": "https://github.com/monyuan/micro-duck-flow",
+      "default_branch": "main",
+      "description": "跟进中国各个团队、个人复刻 Microduck的进度",
+      "readme_status": 200
+    },
+    {
+      "name": "armature-ai-labs/indieduck-runtime",
+      "url": "https://github.com/armature-ai-labs/indieduck-runtime",
+      "default_branch": "main",
+      "description": "IndieDuck onboard Rust source integration base, adapted from JoyandAI and Pollen Robotics MicroDuck. Hardware integration in progress.",
+      "readme_status": 200
+    },
+    {
+      "name": "abhishekkumarnaik34-hub/abhishekkumarnaik34-hub.github.io",
+      "url": "https://github.com/abhishekkumarnaik34-hub/abhishekkumarnaik34-hub.github.io",
+      "default_branch": "main",
+      "description": "Train bipedal RL policies for the Microduck robot in MuJoCo with PPO, deploy via ONNX to real hardware.",
+      "readme_status": 404
+    },
+    {
+      "name": "hwkim3330/micro-cat",
+      "url": "https://github.com/hwkim3330/micro-cat",
+      "default_branch": "main",
+      "description": "Micro Cat — commercial cat-shaped 14-axis biped. Measured joint travel, measured static stability, no Microduck hardware files.",
+      "readme_status": 200
+    },
+    {
+      "name": "D-Robotics/robot-learning-platform",
+      "url": "https://github.com/D-Robotics/robot-learning-platform",
+      "default_branch": "main",
+      "description": "MicroDuck × RDK-X5 robot learning workbench: simulate, record, train locally or on RoboGo, evaluate Sim2Real, and deploy safely.",
+      "readme_status": 200
+    },
+    {
+      "name": "armature-ai-labs/indieduck-rl",
+      "url": "https://github.com/armature-ai-labs/indieduck-rl",
+      "default_branch": "main",
+      "description": "IndieDuck reinforcement-learning source integration base from JoyandAI and Pollen Robotics MicroDuck RL. Robot model integration in progress.",
+      "readme_status": 200
+    },
+    {
+      "name": "CdyDoodle/maxy_duck",
+      "url": "https://github.com/CdyDoodle/maxy_duck",
+      "default_branch": "main",
+      "description": "Pollen Robotics Microduck on Windows: native MuJoCo sim, PPO training in WSL, training monitor, and an RL course",
+      "readme_status": 200
+    },
+    {
+      "name": "AungKaung1928/mujoco-vecenv-cpp",
+      "url": "https://github.com/AungKaung1928/mujoco-vecenv-cpp",
+      "default_branch": "main",
+      "description": "Threaded C++17 MuJoCo environment for the Microduck, bit-identical to the Python reference, drop-in for its PPO",
+      "readme_status": 200
+    },
+    {
+      "name": "rangerchaz/meckie-duck-gateway",
+      "url": "https://github.com/rangerchaz/meckie-duck-gateway",
+      "default_branch": "main",
+      "description": "Drive a Pollen Robotics Microduck over plain HTTP — the Meckie Body Protocol gateway, with a hardware-free test double",
+      "readme_status": 200
+    },
+    {
+      "name": "craigm26/duckbatch",
+      "url": "https://github.com/craigm26/duckbatch",
+      "default_branch": "main",
+      "description": "Batched, judged, efficiency-first RL for Pollen's Microduck: many small attempts on one 4 GB GPU, pruned by a pre-registered kill order, with decision models (Jev, GLiNER2.5-Decide) measured as judges.",
+      "readme_status": 200
+    },
+    {
+      "name": "jxtngx/cursor-factory-command",
+      "url": "https://github.com/jxtngx/cursor-factory-command",
+      "default_branch": "main",
+      "description": "Command and control harness for Cursor factories. Factory Directorate (ops + engineering). Example mission: Reachy Mini-class and MicroDuck-class tabletop swarm.",
+      "readme_status": 200
+    },
+    {
+      "name": "guang384/ducktop",
+      "url": "https://github.com/guang384/ducktop",
+      "default_branch": "main",
+      "description": "microduck 的桌面 3D 控制台：wgpu 渲染 + ONNX Runtime 推理 + MuJoCo 物理（独立项目）",
+      "readme_status": 200
+    },
+    {
+      "name": "craigm26/duckbench",
+      "url": "https://github.com/craigm26/duckbench",
+      "default_branch": "main",
+      "description": "The Microduck physics bench: MuJoCo + Pollen's policies as an HTTP service, the phone bench bundle, and the stairs and ball challenge harnesses.",
+      "readme_status": 200
+    },
+    {
+      "name": "guang384/mjlab-sycl",
+      "url": "https://github.com/guang384/mjlab-sycl",
+      "default_branch": "master",
+      "description": "Run mjlab (MuJoCo Warp) PPO training on Intel GPUs — vendored warp SYCL backend, barrier-free flat kernels, select_gpus-free train entry, verification gates + viewer tooling. Works with microduck_rl and any mjlab task package.",
+      "readme_status": 200
+    },
+    {
+      "name": "1225297600/ONNX-Runtime-Rust-Mujoco",
+      "url": "https://github.com/1225297600/ONNX-Runtime-Rust-Mujoco",
+      "default_branch": "main",
+      "description": "仿照microduck的设计，使用mujoco仿真、ort推理、rust编程，学习设计流程",
+      "readme_status": 404
+    },
+    {
+      "name": "kotoba-lang/org-jsonrpc",
+      "url": "https://github.com/kotoba-lang/org-jsonrpc",
+      "default_branch": "main",
+      "description": "JSON-RPC 2.0 in Kotoba — codec and NDJSON framing. Spec is https://www.jsonrpc.org/specification. Transport-agnostic; not a MicroDuck rewrite.",
+      "readme_status": 200
+    },
+    {
+      "name": "hs7j4yk4sz-boop/cryptopunk-brick-bust",
+      "url": "https://github.com/hs7j4yk4sz-boop/cryptopunk-brick-bust",
+      "default_branch": "main",
+      "description": "My CryptoPunk as a 1,329-piece brick bust, with a 66-page instruction booklet and BrickLink parts list. Inspired by @victormustar's Microduck.",
+      "readme_status": 200
+    },
+    {
+      "name": "sxyseo/duck-whatled",
+      "url": "https://github.com/sxyseo/duck-whatled",
+      "default_branch": "main",
+      "description": "什么鸭 WhatDuck · Microduck 复刻学习站:30 课公开课 + 200 篇代码/硬件深度解读",
+      "readme_status": 200
+    },
+    {
+      "name": "GustavHugod/atech_duck",
+      "url": "https://github.com/GustavHugod/atech_duck",
+      "default_branch": "main",
+      "description": "Microduck-class RL biped on the Atech modular electronics platform: Open Duck Mini v2 body, Atech 14-port board + modules, ESP32-S3 firmware, MuJoCo walking simulation",
+      "readme_status": 200
+    },
+    {
+      "name": "noteflowai/robot-reel",
+      "url": "https://github.com/noteflowai/robot-reel",
+      "default_branch": "main",
+      "description": "Review Physical AI with original evidence: compare VLM explanations against recorded robot outcomes, replay SmolVLA failures, and inspect Newton/Genesis simulations offline.",
+      "readme_status": 200
+    },
+    {
+      "name": "carpentry-liu/mini-duck-lite",
+      "url": "https://github.com/carpentry-liu/mini-duck-lite",
+      "default_branch": "main",
+      "description": "基于 Microduck 路线的拓展性复现：10DOF 双足硬件、MuJoCo 强化学习、Hardware-First Sim2Real 与安全 Agent。",
+      "readme_status": 200
+    },
+    {
+      "name": "gurimaruking/NanoDuck",
+      "url": "https://github.com/gurimaruking/NanoDuck",
+      "default_branch": "main",
+      "description": "A 162 mm, 196 g bipedal duck robot built around MG90S hobby servos - a clean-sheet redesign of Pollen Robotics' MicroDuck, sized from measured joint torque rather than catalogue arithmetic.",
+      "readme_status": 200
+    },
+    {
+      "name": "larai-w/veai-line-message",
+      "url": "https://github.com/larai-w/veai-line-message",
+      "default_branch": "main",
+      "description": "A serverless LINE notification bridge: voice notes from Alexa and the daily care summary from the microduck care bridge, both pushed to LINE. A single AWS Lambda with three entry points, including an optional call-confirmation route.",
+      "readme_status": 200
+    },
+    {
+      "name": "agentculture/neurosymbolic-system",
+      "url": "https://github.com/agentculture/neurosymbolic-system",
+      "default_branch": "main",
+      "description": "The runtime that lets agents control robots. Extracted from reachy-mini-cli: senses, rules, arbitration and motion composed onto one 50 Hz tick, imported as a library by robot CLIs such as reachy-mini-cli and microduck-cli.",
+      "readme_status": 200
+    },
+    {
+      "name": "a125477365/DuckPet",
+      "url": "https://github.com/a125477365/DuckPet",
+      "default_branch": "main",
+      "description": "插件化宠物机器鸭大脑 × microduck 官方 MuJoCo 物理仿真：声纹/人脸/体型识别、优先级仲裁、乱逛/跟随/踢球/叼取/跳舞",
+      "readme_status": 200
+    },
+    {
+      "name": "StevePederzani/conDUCKtor",
+      "url": "https://github.com/StevePederzani/conDUCKtor",
+      "default_branch": "main",
+      "description": "conDUCKtor is an open-source tool providing a sim-to-real AI-harness and onboard robotics policy for the Pollen Robotics Microduck expanding the musical play-along capabilities to live agent-to-human rehearsal and concert performance, including coda and jazz improvisation. Practice makes perfect!",
+      "readme_status": 200
+    },
+    {
+      "name": "xiongy26/unitree-g1-race",
+      "url": "https://github.com/xiongy26/unitree-g1-race",
+      "default_branch": "main",
+      "description": "六种真实人形机器人（Unitree G1、众擎 PM01、Booster T1、天工、灵犀 X1、MicroDuck）同场 25m 短跑：官方 MJCF 模型 + 官方 ONNX 策略权重，MuJoCo WASM 全物理仿真，纯浏览器运行、零安装。",
+      "readme_status": 200
+    },
+    {
+      "name": "LucaZhang7784/stackchan-fusionduck-stable",
+      "url": "https://github.com/LucaZhang7784/stackchan-fusionduck-stable",
+      "default_branch": "main",
+      "description": "这是一个在既有 Fusion 验证基础上完成的结构化升级。本版本的主要提升是：网络生命周期从板级初始化中分离，传感器、电源、运动、确认弹窗和报文解析拥有清晰边界；构建支持 MicroDuck 独立轨与生产固件哈希固化；MQTT 心跳、ACK、队列核销和故障诊断均可通过真实日志复核。相较于原先集中式实现，代码更易审计、故障定位路径更短，且保留了可回退的工程基线。",
+      "readme_status": 200
+    }
+  ]
+}
