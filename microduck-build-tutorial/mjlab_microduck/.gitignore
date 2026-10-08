@@ -2,10 +2,9 @@
 
 src/mjlab_microduck/robot/microduck/scad/
 
-.vscode/
-.venv/
+.vscode/*
+.venv/*
+uv.lock
 
-# uv.lock is intentionally versioned for reproducible A-only training.
-logs/
-wandb/
-exports/
+logs/*
+wandb/*

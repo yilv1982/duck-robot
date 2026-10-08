@@ -10,7 +10,6 @@
 
 import numpy as np
 from copy import deepcopy
-from dataclasses import fields
 
 from mjlab.envs import ManagerBasedRlEnvCfg
 from mjlab.envs.mdp.actions import JointPositionActionCfg
@@ -70,7 +69,7 @@ from mjlab_microduck.tasks.mdp import (
     feet_distance_penalty,
     penalize_stepping_while_standing,
     stepping_curriculum,
-    UniformVelocityCommandWithRotationCfg,
+    UniformVelocityCommandWithRotation,
     action_target_limits_l2,
     mounted_body_ang_vel,
     mounted_body_projected_gravity,
@@ -121,7 +120,6 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
 
     cfg.viewer = deepcopy(VIEWER_CONFIG)
     cfg.sim = deepcopy(SIM_CFG)
-    cfg.decimation = 4  # 0.005 s physics * 4 = 0.020 s policy (50 Hz).
     cfg.scene = deepcopy(SCENE_CFG)
 
     foot_site_names = ["left_foot", "right_foot"]
@@ -177,7 +175,6 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
     joint_pos_action = cfg.actions["joint_pos"]
     assert isinstance(joint_pos_action, JointPositionActionCfg)
     joint_pos_action.scale = 1.0
-    joint_pos_action.use_default_offset = True
     cfg.actions["joint_pos"].actuator_names = (dofs_filter,)
 
     #---------------------------- Observations ----------------------
@@ -329,14 +326,8 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
     )
 
     #---------------------------- Commands --------------------------
-    # A real config subclass survives registry deepcopy; a lambda would retain
-    # the original command and disconnect curriculum updates from the sampler.
-    base_command = cfg.commands["twist"]
-    command = UniformVelocityCommandWithRotationCfg(**{
-        field.name: deepcopy(getattr(base_command, field.name))
-        for field in fields(base_command)
-    })
-    cfg.commands["twist"] = command
+    command = cfg.commands["twist"]
+    command.build = lambda env, _cmd=command: UniformVelocityCommandWithRotation(_cmd, env)
     command.viz.z_offset = 0.5
 
     command.rel_standing_envs = 0.1
@@ -351,8 +342,7 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
     command.rotation_min_ang_vel = 0.5
 
     #---------------------------- Events ----------------------------
-    # reset_root_state_uniform adds this delta to HOME_FRAME.pos.z = 0.12.
-    cfg.events["reset_base"].params["pose_range"]["z"] = (0.0, 0.01)
+    cfg.events["reset_base"].params["pose_range"]["z"] = (0.12, 0.13)
 
     cfg.events["push_robot"].params["velocity_range"] = {
         "x": (-0.5, 0.5),
@@ -381,27 +371,30 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
         },
     )
 
-    # Pinned BAM doc zeros XML joint friction/damping and computes fixed m6
-    # friction internally. Scaling MuJoCo frictionloss=0 would have no effect.
+    cfg.events["dof_friction_randomization"] = EventTermCfg(
+        mode="startup",
+        func=dr.joint_friction,
+        params={
+            "asset_cfg": SceneEntityCfg("robot", joint_names=(dofs_filter,)),
+            "operation": "scale",
+            "ranges": (0.5, 2.0),
+        },
+    )
 
     #---------------------------- Curriculum ------------------------
     cfg.curriculum = {}
 
-    # Thresholds count control steps per env, NOT aggregate samples. With
-    # num_steps_per_env=24: expand at 3000 / 6000 PPO iterations on a fresh run.
-    # Each stage takes effect at the first reset after its threshold.
     cfg.curriculum["staged_curriculum"] = CurriculumTermCfg(
         func=step_based_staged_curriculum,
         params={
             "stages": [
                 {
-                    "name": "iteration 3000: penalize stepping + intermediate velocity",
+                    "name": "penalize stepping + increase velocity",
                     "step": 3000 * 24,
                     "apply": lambda env: {
                         set_command_velocity(
                             env,
                             lin_vel_x=(-0.35, 0.35),
-                            lin_vel_y=(-0.2, 0.2),
                             ang_vel_z=(-0.75, 0.75),
                             rotation_env_ang_vel_z=(-1.5, 1.5),
                         ),
@@ -413,17 +406,6 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
                             rel_rotation_envs=0.1,
                         ),
                     },
-                },
-                {
-                    "name": "iteration 6000: full A deployment velocity envelope",
-                    "step": 6000 * 24,
-                    "apply": lambda env: set_command_velocity(
-                        env,
-                        lin_vel_x=(-0.5, 0.7),
-                        lin_vel_y=(-0.3, 0.3),
-                        ang_vel_z=(-1.5, 1.5),
-                        rotation_env_ang_vel_z=(-3.0, 3.0),
-                    ),
                 },
             ],
         },
@@ -438,11 +420,6 @@ def make_microduck_velocity_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
     #---------------------------- Play mode -------------------------
     if play:
         cfg.curriculum = {}
-        # Evaluate against deployment limits rather than the startup curriculum.
-        cfg.commands["twist"].ranges.lin_vel_x = (-0.5, 0.7)
-        cfg.commands["twist"].ranges.lin_vel_y = (-0.3, 0.3)
-        cfg.commands["twist"].ranges.ang_vel_z = (-1.5, 1.5)
-        cfg.commands["twist"].rotation_env_ang_vel_range = (-3.0, 3.0)
         
         cfg.commands["twist"].rel_standing_envs = 0.0
         cfg.commands["twist"].rel_rotation_envs = 0.0

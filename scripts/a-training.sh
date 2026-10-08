@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A-only WSL entry point. Never installs dependencies or resumes a checkpoint.
 set -euo pipefail
-readonly ROOT=/mnt/e/Projects/duck-robot
+readonly ROOT=/mnt/c/Projects/duck-robot
 readonly PROJECT="$ROOT/microduck-build-tutorial/mjlab_microduck"
 readonly VENV=/home/yilv/.venvs/duck-robot-a-training
 readonly PYTHON="$VENV/bin/python"
@@ -60,7 +60,7 @@ from pathlib import Path
 import sys
 import mjlab_microduck
 expected_prefix = Path('/home/yilv/.venvs/duck-robot-a-training')
-expected_source = Path('/mnt/e/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/__init__.py')
+expected_source = Path('/mnt/c/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/__init__.py')
 if Path(sys.prefix) != expected_prefix or Path(sys.prefix).resolve() != expected_prefix:
     raise SystemExit(f'Wrong sys.prefix: {sys.prefix}')
 if Path(mjlab_microduck.__file__) != expected_source or expected_source.resolve() != expected_source:

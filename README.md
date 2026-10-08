@@ -2,14 +2,17 @@
 
 Microduck 小型双足机器人的个人复刻项目，记录选型采购、3D 打印、装配、系统部署与实机验证；强化学习训练可在基础验证后再复现。
 
+进度流水与硬件到位记录见 [PROGRESS.md](./PROGRESS.md)。
+
 ## 并行参考方案
 
-两套开源资料按独立目录并列保存，**不合并代码、硬件配置或采购清单**：
+三套开源资料按独立目录并列保存，**只读参考、不做修改、不合并代码、硬件配置或采购清单**（2026-10-09 规则，历史混入的本地修改已提取到 [local-changes/](./local-changes/README.md) 并还原）：
 
 | 方案 | 本地入口 | 主要参考内容 |
 | :--- | :--- | :--- |
 | A：帆哥教程 | [microduck-build-tutorial](./microduck-build-tutorial/README.md) | Raspberry Pi Zero 2 W、OpenRB、XL330 路线的教程、部署代码与配套视频；既有核查及视频笔记继续保留。 |
 | B：fanhao375 复刻研究 | [microduck-replica](./microduck-replica/README.md) | 机械装配分析、电控与调试资料、训练/工具代码；同时讨论 XL330 与飞特 HD-1910 路线，其主线及接口不能直接套用方案 A。 |
+| C：jyg9 社区套件 | [microduck-community-kit](./microduck-community-kit/README.md) | **当前主参考（2026-10-09）**。飞特 HD-1910-C001 路线：imu_to_dxl/banana_pcb/dxl_hub 三块板、GD32 固件与升级工具、官方 robotd 的飞特补丁、HLS 舵机浏览器调试器。`software/microduck_feetech/` 完整源码上游尚未推送。 |
 
 **下文机器人概览、复刻计划及根目录 [BOM](./BOM.md) 仍以方案 A 为基线，不自动适用于方案 B。** 方案 B 的来源说明和实测记录仅作独立参考，本项目尚未逐项核实或运行；舵机型号、供电、电控板、IMU、ID/零位、通信协议、打印件和策略必须按选定路线成套核对。上游有关超规格供电的记录不构成本项目的安全建议。
 
@@ -42,15 +45,17 @@ Microduck 小型双足机器人的个人复刻项目，记录选型采购、3D �
 
 ### 方案 A 训练入口
 
-- [安装与使用](E:/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/README.md)
-- [验收命令、模型来源、课程与物理限制](E:/Projects/duck-robot/docs/a-training.md)
-- [实际 run / checkpoint / ONNX / SHA-256 证据](E:/Projects/duck-robot/docs/a-training-validation.json)
+> **2026-10-09**：下述库内修改（`pyproject.toml` 版本钉死、重写的 `export_onnx.py`、env cfg 课程修改、官方 `microduck_rl @ cb70b792` 的 `robot/` 恢复树等）已按「参考库只读」规则提取到 [local-changes/microduck-build-tutorial/](./local-changes/microduck-build-tutorial/)，`microduck-build-tutorial/` 还原为上游原样。**恢复训练环境前需先把提取件按相对路径复制回位**，且 `export_onnx.py` 内的 `/mnt/e/` 路径已随 E→C 迁移失效，须改为 `/mnt/c/`。
+
+- [安装与使用](./local-changes/microduck-build-tutorial/mjlab_microduck/README.md)（提取件位置）
+- [验收命令、模型来源、课程与物理限制](./docs/a-training.md)
+- [实际 run / checkpoint / ONNX / SHA-256 证据](./docs/a-training-validation.json)
 
 ```bash
 # WSL：只读来源/版本与任务检查；训练不会自动开始。
-bash /mnt/e/Projects/duck-robot/scripts/a-training.sh check
+bash /mnt/c/Projects/duck-robot/scripts/a-training.sh check
 # 正式训练示例：尚未执行，必须由用户明确启动。
-bash /mnt/e/Projects/duck-robot/scripts/a-training.sh train --num-envs 512 --max-iterations 15000
+bash /mnt/c/Projects/duck-robot/scripts/a-training.sh train --num-envs 512 --max-iterations 15000
 ```
 
 64 env smoke 与 **512 env 扩容基准均仅验证 5 iterations**，据此正式示例选用 512 env；**15000 iterations 尚未启动，后段稳定性/课程与收敛未验证**。
@@ -159,7 +164,7 @@ MICRODUCK_INPUT=keyboard PYTHONPATH=src .venv/bin/python src/main.py
 
 ### 阶段 7（可选）：新训练基线、显式导出与部署前验收
 
-方案 A 已重建训练基线，64/512 env 各 5 iterations 短训练与安全导出通过；这不是恢复原丢失训练工程，也不代表策略已收敛。安装、正式训练命令和验收记录见 [A 训练说明](E:/Projects/duck-robot/docs/a-training.md)。
+方案 A 已重建训练基线，64/512 env 各 5 iterations 短训练与安全导出通过；这不是恢复原丢失训练工程，也不代表策略已收敛。安装、正式训练命令和验收记录见 [A 训练说明](./docs/a-training.md)。
 
 - 现行导出必须显式指定 `--checkpoint` 与 `--output`；不会自动选择 latest checkpoint，也不会默认向当前目录输出 `policy.onnx`。
 - 使用 `a-training.sh export --checkpoint /absolute/path/model_N.pt --output /absolute/path/new-policy.onnx`；输出必须是不存在的新路径，已有目标拒绝覆盖。

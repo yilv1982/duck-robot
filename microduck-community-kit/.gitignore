@@ -1,0 +1,72 @@
+# ===== 操作系统 =====
+.DS_Store
+Thumbs.db
+.directory
+*~
+
+# ===== 编辑器 / IDE =====
+.vscode/
+.idea/
+*.iml
+*.code-workspace
+.vs/
+*.suo
+*.user
+*.userprefs
+*.launch
+*.swp
+*.swo
+
+# ===== 通用构建产物 =====
+build/
+dist/
+out/
+target/
+# .NET 的输出目录。**不要**写成裸 `bin/`：git 的 `dir/` 规则匹配**任意层级**的同名目录，
+# 会把 `duck-detect/src/bin/`、`pet-detect/src/bin/` 这类**源码**目录一起排除掉。
+bin/Debug/
+bin/Release/
+obj/
+Debug/
+Release/
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.exe
+*.elf
+*.hex
+*.bin
+# `robotctl/assets/duck.bin` 是源码资产（robotctl 要读的固件/资源），不是构建产物。
+!software/microduck_feetech/robotctl/assets/duck.bin
+*.map
+*.lst
+*.su
+*.d
+# `*.d` 同时匹配以 `.d` 结尾的**目录**，会吃掉 systemd 的 sysusers.d / journald.conf.d，
+# 以及单元的 drop-in 目录（`<unit>.service.d` / `<unit>.timer.d`）。
+!sysusers.d/
+!*.conf.d/
+!*.service.d/
+!*.timer.d/
+*.pdb
+
+# ===== 日志 / 临时文件 =====
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.bck
+
+# ===== 本地配置 / 密钥 =====
+.env
+.env.*
+!.env.example
+secrets.*
+*.pem
+*.key

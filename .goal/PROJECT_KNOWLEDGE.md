@@ -1,8 +1,15 @@
 # 项目知识（2026-09-30）
 
+## 2026-10-09 增补
+- **硬件到位**（用户确认，实物复测未做）：微雪 Bus Servo Adapter (A)、黑色 XT60 降压模块（丝印 7.2-16V 待核）、绿色 IMU2DXL v1.0 板（哪版自绘待核）、白色鸭图案 HAT V1.1；全部舵机与打印件到位，数量待清点。明细与待办见根 `PROGRESS.md`。
+- **方案方向**：主参考改为 `microduck-community-kit`（飞特 HD-1910-C001 + 官方 robotd 飞特补丁 + imu_to_dxl 总线从站）。缺口：`software/microduck_feetech/` 未推送、主控↔总线物理适配未开源、真机整定值需复测。
+- **参考库清理**：replica 锚定 `0f2cff6bd7`、tutorial 还原为上游 main（2026-10-09 哈希校验 0 差异）；A 训练库内修改（4 改 + 51 增）提取至 `local-changes/`，其中 `export_onnx.py` 含失效 `/mnt/e/` 路径。
+- 工程自 E 盘迁 C 盘后，文件时间戳全部为 2026-10-09，**不能再按时间戳找改动**，版本核对一律走上游哈希对比。
+
 ## 范围与规则
-- 工作区：`E:\Projects\duck-robot`。交流用简体中文。含中文的 `.ps1` 必须 UTF-8 BOM；优先用 WSL Bash，避免跨 shell 删除/移动。
+- 工作区：`C:\Projects\duck-robot`（2026-10-09 自 `E:\Projects\duck-robot` 迁入；历史脚本/文档中的 `/mnt/e/`、`E:/` 路径已失效）。交流用简体中文。含中文的 `.ps1` 必须 UTF-8 BOM；优先用 WSL Bash，避免跨 shell 删除/移动。
 - A、B 是独立上游源码快照，不能混合模型、策略、硬件配置或采购资料。不要为了跑通而直接修改上游配置或锁文件。
+- **参考库只读（2026-10-09 用户定规）**：`microduck-replica/`、`microduck-community-kit/`、`microduck-build-tutorial/` 是别人的方案，只读参考，禁止在里面做任何修改。用户进度记在根 `PROGRESS.md`；历史混入的本地修改已提取到 `local-changes/` 并还原上游原样（快照锚点与校验记录见 PROGRESS.md「参考库使用规则」）。
 - 当前已经跑通的是 **B 的 XL330 平地任务**，不是 HD1910；没有进行实机控制。用户正在理解 RL、Real2Sim、训练任务配置和性能。
 
 ## 已安装环境与入口

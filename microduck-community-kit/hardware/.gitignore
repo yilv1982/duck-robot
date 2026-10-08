@@ -1,0 +1,36 @@
+# ===== KiCad =====
+*.kicad_prl
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*-backups/
+fp-info-cache
+# editor lock files: a crashed session leaves these behind
+~*.lck
+*.bak
+*.bck
+*.tmp
+
+# ===== Altium =====
+History/
+Project Outputs/
+__Previews/
+*.PrjPcbStructure
+*.SchDocPreview
+*.PcbDocPreview
+*.pcbpreview
+*.LOG
+*.ddb
+
+# ===== Eagle =====
+*.b#?
+*.s#?
+*.l#?
+*.dri
+*.gpi
+
+# ===== 3D CAD =====
+*.FCStd1
+*.fcstd1
+*.bak
+~$*
+*.swp
