@@ -1,0 +1,65 @@
+{
+  "repository": "https://github.com/jyg9/microduck-community-kit",
+  "commit": "0a73426c084ae5a94cdedf5d2be0e3ff5134334d",
+  "upstream_directory": "hardware/banana_pcb",
+  "imported_date": "2026-10-08",
+  "timezone": "Asia/Shanghai",
+  "files": [
+    {
+      "path": "UPSTREAM-REPOSITORY-LICENSE.txt",
+      "upstream_path": "LICENSE",
+      "bytes": 11357,
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "LICENCE.txt",
+      "upstream_path": "hardware/banana_pcb/LICENCE.txt",
+      "bytes": 8852,
+      "git_blob_sha1": "4fe041e077a8179e50d8d068fb5803cf1f80abba",
+      "sha256": "6e471d647db50527d0c75ee5f1a55a74012ab177c73282bef0bdc7f6562b7ded"
+    },
+    {
+      "path": "README.md",
+      "upstream_path": "hardware/banana_pcb/README.md",
+      "bytes": 372,
+      "git_blob_sha1": "5fc9fe025e196abca0db10f651c432833a44c3cc",
+      "sha256": "b29fec8f5c334e370d8129d9d472523d7513e15be656660f89dad00164cfa1ee"
+    },
+    {
+      "path": "banana_pcb.kicad_pcb",
+      "upstream_path": "hardware/banana_pcb/banana_pcb.kicad_pcb",
+      "bytes": 399308,
+      "git_blob_sha1": "0f0b2a15af3dfec37d458da109235bea392ce7e2",
+      "sha256": "ea262b7162a33a586b30ec380b866b6caf55519dfbe63a2fffbc45af5dfc4ec5"
+    },
+    {
+      "path": "banana_pcb.kicad_pro",
+      "upstream_path": "hardware/banana_pcb/banana_pcb.kicad_pro",
+      "bytes": 15249,
+      "git_blob_sha1": "0af025a112ac0f3a7ef6e86f38fd1f0fae270924",
+      "sha256": "e80849f922b23efaa734d7da000530932a15af4f0b1e8c31016674148b089fe7"
+    },
+    {
+      "path": "banana_pcb.kicad_sch",
+      "upstream_path": "hardware/banana_pcb/banana_pcb.kicad_sch",
+      "bytes": 6612,
+      "git_blob_sha1": "cfd3c27d61469950e521c4039d529b85854fe231",
+      "sha256": "7673a0a06c023ae7c4b6940f275c054bc91efa0147b5cb07455e9e40d7a21b4b"
+    },
+    {
+      "path": "docs/img/1.jpg",
+      "upstream_path": "hardware/banana_pcb/docs/img/1.jpg",
+      "bytes": 58812,
+      "git_blob_sha1": "10d08e2d6dc88c82c81dc8b18d6d930a0ef56492",
+      "sha256": "70b43aa1a23328ecffe0970b0419f81cc6f86e70568058f915f163c183c9c81c"
+    },
+    {
+      "path": "production/banana_pcb.zip",
+      "upstream_path": "hardware/banana_pcb/production/banana_pcb.zip",
+      "bytes": 14609,
+      "git_blob_sha1": "73c65a8500b8fd468e1ec7c1ccb718557ae22d6e",
+      "sha256": "39a255b23ebf158f61daf837360fdfe0fd55220ae6194f927cd0513773c45966"
+    }
+  ]
+}
