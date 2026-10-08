@@ -1,0 +1,952 @@
+===== PAGE 1 =====
+1 2 3 4 5 6
+1 2 3 4 5 6
+A
+B
+C
+D
+A
+B
+C
+D
+Date : Rev :Size : "A4"
+Id : /
+Title :
+File : elec_RPI_Robot_HAT
+Sheet : /
+[fixed] Acc. is at 0x19 I2C address
+[fixed] Soft reset of the audio DAC
+[fixed] Ideal diode
+[fixed] Know position of IMU
+[update] Dynamixel_dir is based on Tx
+[added] IMU can be disconnected
+[added] IMU_IT is cabled
+[added] Access to I2C0
+[added] Switch off detection
+Date
+C1
+[fix] 3V3 on IO10/11
+[fix] MOS direction of Ideal diode
+[update] I2C3 is by default instead of reserved I2C
+Check
+EB
+Release
+Fiducials
+A1
+Cabled buses on Raspberry PIs
+ - PI zero 2W:
+     - I2C0 (           pin 27/28 ID_SD/C): reserved, but can be on J6 with 0R
+     - I2C1 (IO  2/ 3 - pin  3/ 5 SDA/SCL): IMU + Audio + Qwiic J5
+ - PI 4:
+     - same I2C0/1
+     - I2C3 (IO  4/ 5 - pin  7/29 SDA/SCL): Qwiic J6
+     - I2C4 (IO  8/ 9 - pin 24/21 SDA/SCL): Qwiic J7
+     - I2C5 (IO 10/11 - pin 19/23 SDA/SCL): Qwiic J8
+ - PI 5:
+     - same I2C0/1
+     - I2C2 (IO  2/ 3 - pin  3/ 5 SDA/SCL): Qwiic J5
+08/07/2026
+EB
+06/05/2026 SNEB
+Initial drawing
+\"RPI_Robot_HAT\" is a raspberry PI HAT designed for small/medium 
+size robots. It has an IMU, Dynamixel connectors and audio. Its
+dimensions fits a raspberry PI zero
+Designer
+Cabled GPIOs on the 40-way Header:
+ - GPIO00/01: HAT identification over I2C (reserved)
+ - GPIO02: IMU + Audio + Stemma/QT - SDA
+ - GPIO03: IMU + Audio + Stemma/QT - SCL
+ - GPIO04: Stemma/QT - SDA
+ - GPIO05: Stemma/QT - SCL
+ - GPIO06: Switch off detection
+ - GPIO07
+ - GPIO08: Stemma/QT - SDA
+ - GPIO09: Stemma/QT - SCL
+ - GPIO10: Stemma/QT - SDA
+ - GPIO11: Stemma/QT - SCL
+ - GPIO12
+ - GPIO13:
+ - GPIO14: Dynamixel - UART_Tx
+ - GPIO15: Dynamixel - UART_Rx
+ - GPIO16
+ - GPIO17
+ - GPIO18: Audio, PCM Clk
+ - GPIO19: Audio, PCM FS
+ - GPIO20: Audio, Din
+ - GPIO21: Audio, Dout
+ - GPIO22: IMU_IT
+ - GPIO23
+ - GPIO24
+ - GPIO25
+ - GPIO26
+ - GPIO27
+SN
+B1
+SN
+Comments
+06/03/2026
+Mounting
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+21
+23
+25
+27
+29
+31
+33
+35
+37
+39
+MP
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+34
+36
+38
+40
+J1
+Female Header 2x20 SMD
++5V
++3V3
++3V3
+C46
+100nF
+SDA3/RX3_M0/IO1_A0
+SCL3/TX3_M0/IO1_A1
+IMU_INT/IO3_B0
+SPI3_MOSI_M1/IO4_C3
+SPI3_MISO_M1/IO4_C5
+SPI3_CLK_M1/IO4_C2
+I2S3_MCLK_M0/GPIO3_A2
+UART5_RX_M1/IO3_C3
+I2S(1)_SCLK_RX_M0 I2S3_SDI_M0/IO3_A6
+UART2_RX_M0/IO0_D0
+I2C4_SCL_M0/IO4_B3
+I2S3_SDO_M0/IO3_A5
+SPI3_CS0_M1/PWM13_M1/IO4_C6
+I2C4_SDA_M0/IO4_B2
+UART2_TX_M0/IO0_D1
+I2S3_SCLK_M0/O3_A3
+I2C5_SCL_M0/IO3_B3
+I2C5_SDA_M0/IO3_B4
+I2S3_LRCK_M0/IO3_A4
+RADXA ZERO 3W RASPI ZERO 2W
+UART5_TX_M1/IO3_C2
+I2S1_SDO2_M2/IO3_C1
+IO0/SDA_EEPROM
+SPI3_CS0_M1/PWM13_M1/IO3_B1
+IO26
+RASPI ZERO 2W
+IO21/PCM_DOUT/SPI1_MOSI
+IO16/SPI1_CE2IO19/PCM_FS
+IO12/PWM0
+IO13/PWM1
+IO8/SPI0_CE0
+IO6
+IO5
+IO7/SPI0_CE1
+RADXA ZERO 3W
+IO25
+IO11_SPI0_SCK
+IO9_SPI0_MISO
+IO10_SPI0_MOSI
+IO20/PCM_DIN/SPI1_MISO
+IO22
+IO24
+IO27
+IO23
+IO1/SCL_EEPROM
+I2C5改到29，31
+IO18/PCM_CLKIO17
+IO15/RXD0
+IO14/TXD0
+PWM14_M0/IO3_C4
+(PWR_DET)
+IO4
+(BMI088_INT)
+(WCLK)
+(BCLK)
+IO3_A7
+IO3/SCL1
+IO2/SDA1
+R34
+10kΩ
+R33
+10kΩ
+A0
+1
+A1
+2
+A2
+3
+GND
+4
+SDA
+5
+SCL
+6
+WP
+7
+VCC
+8
+EP
+9
+U16
+BL24C32A-NTRC
+I2C4_SCL_M0/IO4_B3
+I2C4_SDA_M0/IO4_B2
+PWR_DET/IO3_A1
+UART4_RX_M1/PWM8_M0/IO3_B1
+UART4_TX_M1/PWM9_M0
+IMU_INT2
+===== PAGE 2 =====
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+A A
+B B
+C C
+D D
+原理图 Microduck-Hat-for-Radxa-Zero
+创建日期 2026-09-03
+更新日期 2026-09-04
+绘制
+Microduck-Hat审阅
+版本 尺寸 页    2    共    5
+V1.0 A4 嘉立创EDA
+板子 Microduck-Hat-for-Radxa-Zero图页 Power
+FB
+1
+EN
+2
+VIN
+3
+GND4
+SW
+5
+BST
+6
+U1
+AP63205WU-7
+C1
+10uF
+L1
+6.8uH
+C3
+22uF
+C4
+22uF
+C5
+100nF
+C2
+100nF
+D1
+BAT54SW,115
+G1
+S2 D 3
+Q1
+SI2312CDS-T1-GE3
+VS
+1
+GND2
+OFF
+3
+IN
+4
+GATE 5
+OUT
+6
+U2
+LM5050MKX-1/NOPB
+100Ω
+R1
++BATT
+R2
+10kΩ
+D2
+BZT52B3V3
+C6
+10nF
+PWR_DET/IO3_A1
+IO6
+Switch off
+detection
++5V
+===== PAGE 3 =====
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+A A
+B B
+C C
+D D
+原理图 Microduck-Hat-for-Radxa-Zero
+创建日期 2026-09-03
+更新日期 2026-09-12
+绘制
+Microduck-Hat审阅
+版本 尺寸 页    3    共    5
+V1.0 A4 嘉立创EDA
+板子 Microduck-Hat-for-Radxa-Zero图页 Sensor
+INT2
+1
+VDD
+3
+GNDA
+4
+CSB25
+GNDIO6
+PS7
+SCL/SCK8
+SDA/SDI
+9
+SDO2
+10
+VDDIO
+11
+INT3 12
+INT4 13
+CSB114
+SDO115
+INT1 16
+U3
+BMI088
+R5 0Ω
+R4
+0Ω
+R3
+0Ω
+IMU_INT/IO3_B0
+SCL3/TX3_M0/IO1_A1
+SDA3/RX3_M0/IO1_A0
++3V3
++3V3
++3V3
+C8
+100nF
+C7
+100nF
+R6
+0Ω
+I2C add.:
+ - acc.: 0x19
+ - gyr.: 0x68
+I2C SENSOR BUS
+1
+1
+2
+2
+3
+3
+4
+4
+0
+0
+CN4
+BM04B-SRSS-TB(LF)(SN)
+1
+1
+2
+2
+3
+3
+4
+4
+0
+0
+CN3
+BM04B-SRSS-TB(LF)(SN)
+1
+1
+2
+2
+3
+3
+4
+4
+0
+0
+CN2
+BM04B-SRSS-TB(LF)(SN)
+1
+1
+2
+2
+3
+3
+4
+4
+0
+0
+CN1
+BM04B-SRSS-TB(LF)(SN)
+R9
+10kΩ
+R13
+10kΩ
+R11
+10kΩ
+R10
+10kΩ
+R8
+10kΩ
+R7
+10kΩ
+R12
+10kΩ
+R14
+10kΩ
+I2C5_SDA_M0/IO3_B4
+I2C4_SDA_M0/IO4_B2
+SDA3/RX3_M0/IO1_A0
+UART4_RX_M1/PWM8_M0/IO3_B1
+I2C4_SCL_M0/IO4_B3
+SCL3/TX3_M0/IO1_A1
+UART4_TX_M1/PWM9_M0
+I2C5_SCL_M0/IO3_B3
++3V3
++3V3
++3V3
++3V3
+VDDIO
+28
+XIN32
+27
+XOUT32/CLKSEL1
+26
+GND
+25
+RESV_NC
+24
+RESV_NC
+23
+RESV_NC
+22
+RESV_NC
+21
+H_SDA/H_MISO/TX
+20
+H_SCL/SCK/RX
+19
+H_CSN
+18
+SA0/H_MOSI
+17
+ENV_SDA
+16
+ENV_SCL
+15
+H_INTN
+14
+RESV_NC
+13
+RESV_NC
+12
+NRST
+11
+CLKSEL0
+10
+CAP
+9
+RESV_NC
+8
+RESV_NC
+7
+PS0/WAKE
+6
+PS1
+5
+BOOTN
+4
+VDD
+3
+GND
+2
+RESV_NC
+1
+U14
+BNO085
+===== PAGE 4 =====
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+A A
+B B
+C C
+D D
+原理图 Microduck-Hat-for-Radxa-Zero
+创建日期 2026-09-03
+更新日期 2026-09-20
+绘制
+Microduck-Hat审阅
+版本 尺寸 页    4    共    5
+V1.0 A4 嘉立创EDA
+板子 Microduck-Hat-for-Radxa-Zero图页 Servo
+Q2
+MMBT3906
+C11
+100nF
+C10
+100nF
+C9
+100nF
+C12
+100nF
+R32
+0Ω
+R21
+0Ω
+SERVOS
+R20
+10kΩ
+R16
+10kΩ
+R15
+10kΩ
+R18
+10kΩ
+R19
+10kΩ
+UART2_RX_M0/IO0_D0
+UART2_TX_M0/IO0_D1
+UART2_TX_M0/IO0_D1
++3V3
++3V3
++3V3
++3V3
++3V3
++3V3
++3V3
++3V3
++3V3
+R17
+20kΩ
+TTL_TXEN
+IO15
+IO14
+VCC 5
+Y 4
+GND3
+INA2
+OE# 1
+U4
+SN74LVC1G125DBVR(UMW)
+VCC
+5
+Y
+4
+GND
+3
+B
+2
+A
+1
+U7
+74LVC1G08GV
+VCC 5
+Y 4
+GND3
+INA2
+OE 1
+U5
+SN74LVC1G126DBVR(UMW)
+VCC
+8
+B
+7
+A
+6
+GND
+5
+DI
+4
+DE
+3
+RE#
+2
+RO
+1
+U6
+SIT3088EEUA
+SERVO_DIR
+1
+1
+2
+2
+3
+3
+4
+4
+U9
+B4B-EH-A(LF)(SN)
+1
+1
+2
+2
+3
+3
+4
+4
+U8
+B4B-EH-A(LF)(SN)
++BATT
++BATT
+R31
+1kΩ
+F1
+PRG18BB101MB1RB
+1
+1
+2
+2
+3
+3
+CN12
+B3B-EH-A(LF)(SN)
+1
+1
+2
+2
+3
+3
+CN11
+B3B-EH-A(LF)(SN)
++BATT
+D3
+BZT52C5V1S-7-F
+===== PAGE 5 =====
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+A A
+B B
+C C
+D D
+原理图 Microduck-Hat-for-Radxa-Zero
+创建日期 2026-09-04
+更新日期 2026-09-04
+绘制
+Microduck-Hat审阅
+版本 尺寸 页    5    共    5
+V1.0 A4 嘉立创EDA
+板子 Microduck-Hat-for-Radxa-Zero图页 Audio
+MCLK1
+BCLK2
+WCLK3
+DIN4
+DOUT5
+DVSS 6
+IOVDD7
+SCL8
+SDA9
+MIC1LP/LINE1LP 10
+MIC1LM/LINE1LM 11
+MIC1RP/LINE1RP 12
+MIC1RM/LINE1RM 13
+MIC2L/LINE2L/MICDET 14
+MICBIAS 15
+MIC2R/LINE2R 16
+AVSS1 17DRVDD18
+HPLOUT 19
+HPLCOM 20
+DRVSS 21
+HPRCOM 22
+HPROUT 23
+DRVDD24
+AVDD25
+AVSS2 26
+LEFT_LOP 27
+LEFT_LOM 28
+RIGHT_LOP 29
+RIGHT_LOM 30
+RESET#31
+DVDD32
+EP 33
+U10
+TLV320AIC3104IRHBR
+SCL3/TX3_M0/IO1_A1
+SDA3/RX3_M0/IO1_A0
+I2S3_LRCK_M0/IO3_A4
+I2S3_SCLK_M0/O3_A3
+I2S3_SDO_M0/IO3_A5
+I2S3_SDI_M0/IO3_A6
+VDD
+4
+OUT
+3
+GND
+2
+Tri-state
+1
+OSC1
+12MHz
+C22
+100nF
+C20
+100nF
+C15
+100nF
+C13
+100nF
+C26
+100nF
+C17
+100nF C27
+100nF
+C14
+100nF
+R30
+0Ω
+R28
+0Ω
+R29
+0Ω
+R23
+0Ω
+R24
+10kΩ
+R22
+10kΩ
+R26
+10kΩ
+R25
+10kΩ
+R27
+10kΩ
++3V3
++3V3
++3V3
++3V3
++5V
++5V +5V
++5V
+Vout 2
+Vin3
+GND 1
+U11
+XC6206P182MR
+C16
+1uF
+C39
+1uF
+C28
+1uF
+C21
+1uF
+C31
+1uF
+C45
+1uF
+C40
+1uF
+C38
+1uF
+C36
+1uF
+C34
+1uF
+C32
+1uF
+C30
+1uF
+C29
+1uF
+C23
+1uF
+C18
+1uF
+C24
+10uF
+C19
+10uF
+C35
+10uF
+C33
+10uF
+C25
+10uF
++1V8
++OUT_L
+1
+PGNDL
+2
+-OUT_L
+3
+PVDDL
+4
+MUTE#
+5
+VDD
+6
+INL
+7
+VREF
+8 MODE
+9
+INR
+10
+GND
+11
+SHDN#
+12
+PVDDR
+13
+-OUT_R
+14
+PGNDR
+15
++OUT_R
+16
+U12
+PAM8406DR
+C37
+10nF
+1
+1
+2
+2
+CN8
+2016WV-02KP
+1
+1
+2
+2
+CN7
+2016WV-02KP
+L4
+BLM15PX121SN1D
+L2
+BLM15PX121SN1D
+L5
+BLM15PX121SN1D
+L3
+BLM15PX121SN1D
++OUT_L
+-OUT_R
+-OUT_L
++OUT_R
+C43
+220nF
+C41
+220nF
+C44
+220nF
+C42
+220nF
+OUT_L+
+OUT_R-
+OUT_R+
+OUT_L-
+OUT
+1
+GND
+2
+GND
+3
+VDD
+4
+U13
+LMA2718T421-OA5-2
+I2C address: 0x18
+L6
+BLM15AG601SN1D
+11
+LAIL-PZ2.54-1P-L
+H1
+1
+1
+2
+2
+3
+3
+4
+4 CN5
+ZX-MX1.25-2PLT
+1
+1
+2
+2
+3
+3
+4
+4 CN6
+ZX-MX1.25-2PLT
+1
+1
+2
+2
+3
+3
+4
+4 CN9
+ZX-MX1.25-2PLT
+1
+1
+2
+2
+3
+3
+4
+4
+CN10
+ZX-MX1.25-2PLT
