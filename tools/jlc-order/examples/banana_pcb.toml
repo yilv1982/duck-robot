@@ -1,0 +1,17 @@
+# banana_pcb 电池转接板下单参数（板框出自 banana_pcb.kicad_pcb Edge.Cuts 实测）
+# 用法: python -m jlc_order pcb quote -p examples/banana_pcb.toml
+
+[board]
+length = 39.2          # 板长 mm（实测 39.19，报价取整留余量）
+width = 6.8            # 板宽 mm（实测 6.79）
+layers = 2             # 双层板
+quantity = 5           # 打样 5 片
+thickness = 1.6        # 板厚 mm
+color = "绿色"          # 阻焊颜色
+surface_finish = "无铅喷锡"
+copper_thickness = 1.0 # oz
+test = "免费飞针测试"
+
+# [extra] 段用于官方接口对齐后的补充字段，原样并入请求报文
+# [extra]
+# addressId = "..."

@@ -14,6 +14,10 @@ __pycache__/
 !.env.sample
 !.env.template
 
+# jlc-order real config and local call ledger (keep example templates)
+tools/jlc-order/jlc-order.toml
+tools/jlc-order/orders.jsonl
+
 # Operating system and editor temporary files
 .DS_Store
 Thumbs.db
@@ -21,3 +25,9 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# KiCad lock files
+*.lck
+
+# ZCode agent session state
+.zcode/
