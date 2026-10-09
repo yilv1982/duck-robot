@@ -38,7 +38,7 @@
 
 **关键风险（同前）**：输入丝印 7.2-18V，2S 带载跌 6.6V 可能掉出稳压；IMU 板 LDO 上限 5.5V，若选压焊盘桥在 6V/7V 档接 IMU 会烧。
 
-**实测手顺（2026-10-10 已完成空载扫描，结论见 [buck-module-test.md](../buck-module-test.md)）：** 剩余：改焊 5V 档 + 空载复验 5.00V（IMU LDO 上限 5.5V 的前置）→ 台架带载复测。~~核 DC 母座~~（勘误：板上无此件）。
+**实测手顺（2026-10-10 已完成空载扫描，结论见 [buck-module-test.md](../buck-module-test.md)）：** 剩余：改焊 5V 档 + 空载复验 5.00V（IMU LDO 上限 5.5V 的前置）→ 台架带载复测。~~核 DC 母座~~（勘误：板上无此件）。**该板在整机中的角色与接线见 [power-architecture.md](../power-architecture.md)。**
 
 ## 万用表 — 德力西 6000 位数字万用表
 

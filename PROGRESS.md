@@ -63,6 +63,10 @@
 - `microduck-replica/调试记录.md`：此前会话把 10-09 到货记录（7 行）写进了上游作者的表格里。用户相关内容已转录到本文件上表；原文件还原为上游版（「手头有的」等小节本来就是上游作者 fanhao375 的库存记录，不是本项目的）。
 - `microduck-build-tutorial/`：A 训练重建的库内修改（4 个改文件 + 51 个添加文件，清单见 [local-changes/README](./local-changes/README.md)）全部提取，目录还原为上游原样。A 训练的说明与验收记录不受影响：[docs/a-training.md](./docs/a-training.md)、[docs/a-training-validation.json](./docs/a-training-validation.json)。
 
+## 供电架构定稿（2026-10-10）
+
+基于电源板空载实测 + IMU 网表 + HAT 查证记录，整机供电拓扑定稿并建档：[docs/power-architecture.md](./docs/power-architecture.md)。核心结论：降压模块 = IMU 的 5V 专属电源（VCC 改焊 5V 后）+ 电池配电中转（PWR OUT→HAT）；HAT 吃电池直通电压、板内 AP63205 给主控降 5V、舵机口直出电池压喂总线；IMU 走"数据挂总线、电走 5V 支路"的叶节点接法（J1 绝不插总线链）。未定项：总线电流过不过 HAT F1 保险，带载复测定。
+
 ## 方案方向（2026-10-09）
 
 - **主参考 = microduck-community-kit（飞特路线）**：HD-1910-C001 + 官方 robotd 的飞特补丁（`firmware/v1/patches/`）+ imu_to_dxl 总线从站（ID 200，双协议）。与手头硬件（飞特舵机、IMU2DXL 板、微雪半双工转接板）直接对口。
