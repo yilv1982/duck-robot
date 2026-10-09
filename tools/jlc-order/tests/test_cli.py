@@ -14,6 +14,30 @@ def config_env(monkeypatch, tmp_path):
     monkeypatch.setenv("JLC_ACCESS_KEY", "ak-1")
     monkeypatch.setenv("JLC_SECRET_KEY", "sk-1")
     monkeypatch.setenv("JLC_LEDGER_PATH", str(tmp_path / "ledger.jsonl"))
+    # doctor/quote 不需要 [order]；order 类命令需要 → 用本地 toml 提供
+    order_cfg = tmp_path / "with-order.toml"
+    order_cfg.write_text(
+        """
+app_id = "app-1"
+access_key = "ak-1"
+secret_key = "sk-1"
+ledger_path = "LEDGER_PLACEHOLDER"
+
+[order]
+pcb_file_url = "https://example.com/banana_pcb.zip"
+file_name = "banana_pcb.zip"
+link_man = "张三"
+link_phone = "13800001111"
+consignee = "张三"
+receive_phone = "13800001111"
+province = "广东省"
+city = "深圳市"
+area = "南山区"
+address = "科技园 1 号"
+invoice_title = "张三"
+""".replace("LEDGER_PLACEHOLDER", str(tmp_path / "ledger.jsonl").replace("\\", "\\\\")),
+        encoding="utf-8",
+    )
     return tmp_path
 
 
@@ -22,6 +46,9 @@ PARAMS_TOML = """
 length = 39.2
 width = 6.8
 """
+
+
+ORDER_CFG_NAME = "with-order.toml"
 
 
 def test_order_dry_run_never_sends(monkeypatch, config_env, tmp_path, capsys):
@@ -35,11 +62,15 @@ def test_order_dry_run_never_sends(monkeypatch, config_env, tmp_path, capsys):
     params = tmp_path / "p.toml"
     params.write_text(PARAMS_TOML, encoding="utf-8")
     code = cli.main(
-        ["pcb", "order", "-p", str(params), "--file-id", "f-1", "--dry-run"]
+        [
+            "--config", str(config_env / ORDER_CFG_NAME),
+            "pcb", "order", "-p", str(params), "--dry-run",
+        ]
     )
     out = capsys.readouterr().out
     assert code == 0
     assert "DRY-RUN" in out and "不会发送" in out
+    assert "banana_pcb.zip" in out  # 下单摘要包含文件信息
     # 台账不应记录 dry-run
     assert not (config_env / "ledger.jsonl").exists()
 
@@ -56,10 +87,28 @@ def test_order_confirm_gate_blocks_without_yes(monkeypatch, config_env, tmp_path
     monkeypatch.setattr(JlcClient, "post_json", fake_post)
     params = tmp_path / "p.toml"
     params.write_text(PARAMS_TOML, encoding="utf-8")
-    code = cli.main(["pcb", "order", "-p", str(params), "--file-id", "f-1"])
+    code = cli.main(
+        [
+            "--config", str(config_env / ORDER_CFG_NAME),
+            "pcb", "order", "-p", str(params),
+        ]
+    )
     assert code == 1  # 非交互环境没有 --yes → 拒绝
     assert calls == []
     assert "已取消" in capsys.readouterr().out
+
+
+def test_order_without_order_section_fails(config_env, tmp_path, capsys):
+    params = tmp_path / "p.toml"
+    params.write_text(PARAMS_TOML, encoding="utf-8")
+    # 只有密钥、没有 [order] 段的配置
+    bare = tmp_path / "bare.toml"
+    bare.write_text(
+        'app_id = "app-1"\naccess_key = "ak-1"\nsecret_key = "sk-1"\n', encoding="utf-8"
+    )
+    code = cli.main(["--config", str(bare), "pcb", "order", "-p", str(params)])
+    assert code == 2
+    assert "[order]" in capsys.readouterr().err
 
 
 def test_quote_prints_params(monkeypatch, config_env, tmp_path, capsys):

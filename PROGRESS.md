@@ -29,16 +29,19 @@
 
 **原理图档案（2026-10-09 建）**：已确认硬件的设计文件统一存 [docs/schematics/](./docs/schematics/README.md)——IMU 板（ScrapMeta v0.3 的 `.eprj2` 真源工程 + 网表，钉 `main @ aa4c32d`）、HAT V1.1（5 页 PDF）；微雪转接板与降压模块为成品模块无公开原理图，暂只记规格待补。
 
+**banana_pcb 打板已下单（2026-10-09 用户确认），等板回来。** 到板后手顺：焊 U6068 插针 ×2（未购则先买）→ 打印 `banana_pcb_locker` → 拆电池焊接出线（线径按 3-5A 选）→ 万用表直流档核极性 → 断电机械试装（插针与电池触点配合、locker 保持力）→ 只带主控支路验证 5V。
+
 ### 由到货衍生的待办
 
 - [ ] 万用表实测降压模块输入下限、输出电压与带载表现
 - [x] 确认 IMU 板是哪一版设计（2026-10-09 用户确认：ScrapMeta microduck-diy v0.3）
-- [ ] 按手顺完成 IMU 板刷机：购 SWD 调试器（推荐 DAPLink）+ SH1.0 7P 线 → 接线 → 双击 `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` 全 PASS（详见 [flash/README.md](./flash/README.md)）
+- [ ] 按手顺完成 IMU 板刷机：购 SWD 调试器（推荐 DAPLink）→ J2 接线（⚠️ 实物 J2 未焊插座只有焊盘，2026-10-10 看实物标注图确认：焊 BM07B-SRSS-TB 座 + SH1.0 7P 线，或杜邦线直接焊盘）→ 双击 `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` 全 PASS（详见 [flash/README.md](./flash/README.md)）
 - [ ] 清点舵机（型号、数量、ID/零位状态）与打印件（版本、材料、缺件）
 - [ ] 微雪转接板上机验证（对比飞线方案）
 - [ ] 向板卡来源确认 HAT PCB V1.1 相对原理图 V1.0 的改动（2026-10-06 导出的图为 V1.0）
 - [ ] 飞特舵机原线（5264 端子）与 HAT 的 JST EH 3P 舵机座试插；不配则换 5264-3P 座或转接线
 - [ ] HAT V1.1 与手头主控/外壳的机械与电气适配核对
+- [ ] banana_pcb 到板装配与取电验证（焊 U6068 ×2、locker 打印、核极性、断电试装、主控支路验证）
 
 ## 2026-10-09 参考库清理（提取 → 还原）
 
@@ -59,3 +62,57 @@
 2026-10-09 工程从 `E:\Projects\duck-robot` 迁到 `C:\Projects\duck-robot`（全部文件时间戳为迁移当日，无法再据时间戳判断改动，版本核对一律以上游哈希为准）。历史文档/脚本里的 `/mnt/e/`、`E:/` 路径已失效；本次已修根 README 的 3 处链接与 `scripts/a-training.sh` 的 2 处路径，`local-changes/` 里的提取件（export_onnx.py 等）仍含旧路径，复用前需改。
 
 **本机新装工具链（2026-10-09）**：Python 3.13（`%LOCALAPPDATA%\Programs\Python\Python313`，含 pyserial）、OpenOCD 0.12.0（工程内 `flash/tools/`）、嘉立创EDA专业版 3.2.149（`%LOCALAPPDATA%\Programs\lceda-pro`，可开 `.eprj2`）。注意：本机无 git（用 GitHub Desktop 内嵌 git 提交）、无 WSL——旧机器的训练环境不在这台机器上。
+
+## 嘉立创开放平台 API 打通（2026-10-09）
+
+- 应用 **microduck-replica**（AppID 631092845187391489）PCB 业务线 API 已开通；密钥与 RSA 脱敏密钥已配置到 `tools/jlc-order/jlc-order.toml`（gitignore）。
+- 之前 doctor 401 的根因：示例配置里的 appid/密钥是**官方文档教学示例值**，示例路径 `/order/v1/createOrder` 也只是签名示例，真实接口路径完全不同。
+- 真实路径从控制台→SDK下载的官方 Java SDK jar 提取，14 个已授权 PCB 接口全部对齐进 `api_spec.py` 并探活验证；14 份接口 PDF 文档已下载到 `tools/jlc-order/api-docs/`（gitignore）。
+- **计价链路全通**：`python -m jlc_order pcb quote -p examples/banana_pcb.toml` 实测返回真实价格（banana_pcb 39.2×6.8mm 双层 5 片 ≈ **¥55.04**：喷镀 30.04 + 特价 20 + 税 5）。
+- 关键报文事实：板长宽在 `stencilLength/stencilWidth` 且单位是 **cm**；层数=`stencilLayer`、数量=`stencilCounts`；计价无需文件。
+- **下单未完**：`/pcb/order/create` 需 `pcbFileUrl`+`fileName`（平台无上传接口，文件需先有可访问 URL）+ RSA 加密的 `orderReceive` 收货信息；cli 的 order/quick 命令待实现，字段表见 `api-docs/创建订单接口.pdf`。
+- 3D 打印有独立 API（`/3dp-open/order/uploadModelFile`/`submitOrder`，有上传接口），但需在控制台为应用加开 3DP 业务线。
+
+## jlc-order 下单命令实现（2026-10-09 下午）
+
+- 通读《创建订单接口》PDF 后实现完整下单：`pcb order` / `pcb quick`（打包校验→计价→确认→下单）已对齐真实报文，dry-run 全链路验证（含 JOP 签名）。
+- 关键结论：官方示例收货信息**明文**提交（RSA 脱敏密钥用于解密响应，不加密请求）；`pcbFileUrl` 可为任意公网 URL（示例用网盘）；`advancePayment=false` 只建单不扣款（默认）。
+- 下单信息存 `jlc-order.toml [order]` 段（gitignore）；查询/返单单号=`customerOrderId`（整数）+ `orderType`（examples 样板/batch 小批量）。
+- 待用户侧两件事即可真实下单：① gerber zip 托管到公网 URL 填入 `[order].pcb_file_url`；② 填收货人/发票/快递信息。
+
+## banana_pcb 首单 API 下单成功（2026-10-09 下午）
+
+- **订单 customerOrderId 85073604**（生产单 86482706/Y2）：39.2×6.8mm 双层 1.6mm 5 片 FR-4 绿色无铅喷锡全部测试，顺丰电商标快寄付，**¥50.04 待支付**（状态 1=等待嘉立创审核，未自动扣款），去 jlc.com 订单页人工支付。
+- 全自动链路首次跑通：KiCad gerber → 百度网盘（官方 MCP stdio 上传）→ 分享链接（SSE `file_sharelink_set`，30 天提取码 jlc8）→ `[order].pcb_file_url` → 计价 → `/pcb/order/create`。
+- API 下单踩坑实录（均已写进代码注释/README）：
+  1. `charFontColor`（丝印字符颜色）下单必填（计价可省）；
+  2. 个人发票必须显式 `invoiceType="personal"`，否则默认 company 报「发票主体与类型不符」；
+  3. **`expressType=JYM` API 下单被拒**（报笼统「提交订单错误」），换 `SF_DSBZ_JF` 即过——浪费 4 次尝试才定位；
+  4. 同一 pcbFileUrl 短时间重复提交会报「存在重复文件」——解法是换文件名重新上传+新分享链接（`tools/baidu-pan-mcp/run_upload_share.py` + `share_link.py` 一分钟搞定）。
+- 百度网盘 MCP 双服务器已配进 `~/.zcode/cli/config.json`（baidu-pan SSE + baidu-pan-upload stdio），个人 token 30 天有效（2026-11-08 前需重新授权）。
+
+## 嘉立创开放平台上传能力调查（2026-10-09）
+
+用户问「API 没有上传功能么」→ 逐一验证各业务 SDK（控制台 SDK下载 逐个提取路径常量）：
+- **PCB（已开通 14 接口）**：无上传，下单只能 pcbFileUrl；审核失败重传也只在 jlc.com 网页（askGuest 通道）
+- **SMT（已开通）**：54 个类全是 /smtOpenApi/ 元器件邮寄管理+查单，无上传
+- **CNC（已开通）**：官方描述即"下载图纸、查单"，无上传
+- **云ERP（未开通）**：/open/api/saas/erp/* 进销存单据，无关
+- **3DP（审核中）**：唯一有上传的业务线（/3dp-open/order/uploadModelFile），3D 打印专用
+- SDK 基础包有 UploadRequest 基类、SDK 文档演示过 UploadFileRequest(orderNo,file)，但无任何业务包实现；控制台自己的 /api/file/fileUpload 仅限控制台内用
+- 结论：**PCB 下单文件上传不存在 API 通道**；pcbFileUrl 需"直接下载字节流"的直链（百度分享页→爬虫抓到网页→"压缩包损坏"）；后续自动下单需直链托管方案（GitHub release / 对象存储）
+- 附：应用管理页的"已获得/申请中/可申请（86）"是静态标签非页签；业务线状态 SMT、CNC 已开通，3DP、元器件&MRO 审核中
+
+## GitHub 直链实测（2026-10-09，结论：不可行）
+
+- 仓库 duck-robot 已转公开，`raw.githubusercontent.com` 链接本机直连可下载且 md5 一致；
+- 但 API 下单实测两种结果：`raw.githubusercontent.com` 域名 → 报「PCB文件资源路径无效」；`github.com/.../raw/...`（302 重定向式）→ 通过校验但 JLC 服务端**同步抓取超时**（客户端 30s/120s 两档均超时，未产生幽灵订单）——嘉立创履约侧网络到海外源基本不可达，「有海外业务」不等于国内工厂的爬虫有海外出口；
+- 另确认：下单去重键=文件名+内容哈希（换 fileName 标签可绕「存在重复文件」）；
+- 待选替代：Gitee raw 直链（需码云账号）/ 问客服 pcbFileUrl 支持形式 / jlc.com 网页上传（当单急救）。
+
+## 全自动下单链路收官（2026-10-09 15:06）
+
+- **Gitee 镜像方案成功**：duck-robot 已镜像到 gitee.com/yilv1982/duck-robot（双远程 origin=GitHub / gitee=Gitee，推送凭证已存 GCM）；gerber zip 的国内直链 = `https://gitee.com/yilv1982/duck-robot/raw/main/hardware/banana_pcb/production/banana_pcb.zip`（匿名下载 1 秒、md5 一致）。
+- **订单 85078132 审核通过**（下单后 26 秒过审，"单片出货，数量:5片"）——JLC 爬虫从 Gitee 抓文件秒下（对比 GitHub 120s 超时）。¥50.04 待支付，19:30 前付款排当晚生产。
+- 旧订单 85073604（百度网盘链接"压缩包损坏"那单）停留在审核询问状态，需在 jlc.com 网页取消。
+- ** pcbFileUrl 最终结论**：用国内代码托管 raw 直链（Gitee）；网盘分享页（爬虫抓到网页）、海外源（GitHub 超时）都不可行。以后改版重下单流程：改 PCB → 导 gerber → commit+push 两边 → 更新 [order] 的 file_name（避开文件名+哈希去重）→ `pcb order --yes`。

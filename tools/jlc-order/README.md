@@ -20,19 +20,21 @@ uv run python -m jlc_order doctor       # 自检：验签、IP 白名单、时�
 
 ```bash
 python -m jlc_order doctor                                   # 自检
-python -m jlc_order file upload <gerber.zip>                 # 上传资料 → fileId
-python -m jlc_order pcb quote -p examples/banana_pcb.toml    # 在线计价
+python -m jlc_order pcb quote -p examples/banana_pcb.toml    # 在线计价（无需文件）
 python -m jlc_order pcb order -p examples/banana_pcb.toml \
-        --file-id <id> [--yes|--dry-run]                     # 创建订单
-python -m jlc_order pcb reorder --order-no <单号> [--yes]     # 返单
-python -m jlc_order order get --order-no <单号>               # 订单信息
-python -m jlc_order order progress --order-no <单号> [--watch]# 生产进度/轮询
+        [--file-url <url>] [--yes|--dry-run]                 # 创建订单
+python -m jlc_order pcb reorder --order-no <customerOrderId> [--yes]      # 返单
+python -m jlc_order order get --order-no <customerOrderId>   # 订单信息
+python -m jlc_order order progress --order-no <customerOrderId> [--watch] # 进度/轮询
 python -m jlc_order pcb quick --project ../../hardware/banana_pcb \
-        -p examples/banana_pcb.toml [--yes]                  # 一键全流程
+        -p examples/banana_pcb.toml [--yes]                  # 打包校验→计价→确认→下单
 python -m jlc_order ledger                                   # 最近调用台账
 ```
 
 参数模板见 `examples/banana_pcb.toml`（banana_pcb 电池转接板，39.2×6.8mm 双层板）。
+下单信息（资料 URL/收货人/发票/快递）配置在 `jlc-order.toml` 的 `[order]` 段，
+注释模板见 `config.example.toml`；`order get/progress/reorder` 的单号是整数
+`customerOrderId`（`--order-type examples|batch`，样板默认 examples）。
 
 ## 安全机制
 
@@ -45,11 +47,20 @@ python -m jlc_order ledger                                   # 最近调用台�
 
 ## 接口对齐状态
 
-`jlc_order/api_spec.py` 集中管理接口路径。签名协议（JOP / HmacSHA256）已用
-[官方文档示例](https://open.jlc.com/develop-guide?doc=signature)的期望签名值做过
-逐字节 golden 验证（`tests/test_auth.py`）。部分业务接口路径为占位，`doctor`
-会列出未对齐项；对齐方式：登录 open.jlc.com 控制台 → 接口文档，按文档修正
-`api_spec.py` 的 `path` 与字段映射（`PcbParams.to_payload`）。
+**2026-10-09 已对齐并线上验证**：签名（JOP/HmacSHA256）、网关、14 个已授权 PCB 接口。
+路径出自官方 PCB 业务 SDK jar（控制台→SDK下载）与各接口 PDF 文档
+（已下载到 `api-docs/`，gitignore，重下入口：控制台→应用管理→管理→查看文档）。
+
+- 计价全链路已通：`pcb quote` 用工艺参数即可算价（无需文件），实测返回真实价格。
+- **下单全链路已实测跑通**（2026-10-09 首单 customerOrderId 85073604）：文件以
+  `pcbFileUrl`+`fileName` 传入（开放平台无上传接口；用百度网盘分享链接，上传/分享
+  脚本见 `tools/baidu-pan-mcp/`）；联系人/收货信息按官方示例明文提交；`advancePayment=false`
+  默认只建单不扣款。API 下单三个坑（都已内置处理）：`charFontColor` 下单必填、
+  个人发票必须 `invoiceType="personal"`、**快递 JYM 会被拒需用 SF_DSBZ_JF 等**。
+  使用前在 `jlc-order.toml` 补 `[order]` 段（见 `config.example.toml`）。
+- 应用（microduck-replica）当前只开通了 PCB 业务线；3D 打印另有独立接口
+  （`/3dp-open/order/uploadModelFile`、`submitOrder` 等，3DP 业务 SDK 可从控制台下载），
+  需在控制台为应用加开 3DP 业务线后可用。
 
 ## 常见问题
 

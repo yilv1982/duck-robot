@@ -17,6 +17,8 @@ __pycache__/
 # jlc-order real config and local call ledger (keep example templates)
 tools/jlc-order/jlc-order.toml
 tools/jlc-order/orders.jsonl
+# JLC official API doc PDFs (proprietary, downloaded from console)
+tools/jlc-order/api-docs/
 
 # Operating system and editor temporary files
 .DS_Store
@@ -31,3 +33,4 @@ Desktop.ini
 
 # ZCode agent session state
 .zcode/
+tools/baidu-pan-mcp/

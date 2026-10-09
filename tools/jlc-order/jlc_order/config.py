@@ -28,6 +28,7 @@ class Config:
     endpoint: str = DEFAULT_ENDPOINT
     timeout: float = DEFAULT_TIMEOUT_SECONDS
     ledger_path: Path | None = None  # None = 工具目录下 orders.jsonl
+    order: dict | None = None  # [order] 段原文，由 order_info.OrderInfo 解析校验
 
 
 def load_config(path: Path | None = None) -> Config:
@@ -67,6 +68,7 @@ def load_config(path: Path | None = None) -> Config:
         endpoint=str(endpoint).rstrip("/"),
         timeout=timeout,
         ledger_path=Path(ledger).expanduser() if ledger else None,
+        order=data.get("order") if isinstance(data.get("order"), dict) else None,
     )
 
 

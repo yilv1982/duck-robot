@@ -1,11 +1,39 @@
 # 嘉立创开放平台配置模板
 # 复制为 jlc-order.toml（同目录）并填入真实密钥；jlc-order.toml 已被 gitignore。
-# 密钥来源：open.jlc.com → 控制台 → 创建应用（一键生成 appid / AccessKey / SecretKey）。
+# 密钥来源：open.jlc.com → 控制台 → 应用管理（下面三行是官方文档示例值，非真实密钥）。
 
 # 应用 ID 与 API 密钥（三項均必填；也可用环境变量 JLC_APP_ID / JLC_ACCESS_KEY / JLC_SECRET_KEY）
 app_id = "293992070061998081"
 access_key = "b6713a535d56412f805afadd7e818455"
 secret_key = "z0BWlikshimuyiwBsH1i2qwnzMb3j3kA"
+
+# RSA 脱敏密钥（可选；控制台→应用管理→脱敏密钥。用于解密查询响应中的敏感数据）
+# 单行 base64（无 PEM 头尾），PKCS#8 私钥 / X.509 公钥
+# rsa_public_key = "MIIBIjANBgkq..."
+# rsa_private_key = "MIIEvAIBADANBgkq..."
+
+# 下单信息（pcb order / pcb quick 需要；个人数据只存本机）
+# pcbFileUrl 说明：开放平台无上传接口，先把 gerber zip 托管到可公网访问的
+# URL（网盘直链/对象存储，官方示例用网盘链接），下单后嘉立创自行下载解析。
+# advance_payment = false → 只建单不自动扣款，订单生成后在嘉立创人工支付（默认，最安全）
+#
+# [order]
+# pcb_file_url = "https://pan.baidu.com/s/xxxx?pwd=xxxx"
+# file_name = "banana_pcb.zip"
+# link_man = "张三"
+# link_phone = "138xxxxxxxx"
+# consignee = "张三"
+# receive_phone = "138xxxxxxxx"
+# province = "广东省"
+# city = "深圳市"
+# area = "南山区"
+# address = "xx 路 xx 号"
+# invoice_title = "张三"            # 发票抬头（个人=姓名）
+# invoice = "个人电子发票普票"
+# express_type = "SF_DSBZ_JF"       # 顺丰电商标快寄付（实测可用；JYM API 下单会被拒）
+# advance_payment = false
+# use_coupon = true
+# order_remark = ""
 
 # 开放平台网关（一般不用改）
 # endpoint = "https://open-api.jlc.com"

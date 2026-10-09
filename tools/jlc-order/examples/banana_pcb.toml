@@ -8,10 +8,10 @@ layers = 2             # 双层板
 quantity = 5           # 打样 5 片
 thickness = 1.6        # 板厚 mm
 color = "绿色"          # 阻焊颜色
-surface_finish = "无铅喷锡"
-copper_thickness = 1.0 # oz
-test = "免费飞针测试"
+surface_finish = "无铅喷锡"  # 焊盘喷镀：有铅喷锡/无铅喷锡/沉金
+copper_thickness = 1.0 # oz（外层仅 1/2）
+test = "全部测试"       # 不测试/抽测/全部测试/测试一半/随机抽测
+plate_type = 1         # 板材：1=FR-4（详见 pcb_params.py ALLOWED_PLATE_TYPE）
 
-# [extra] 段用于官方接口对齐后的补充字段，原样并入请求报文
+# [extra] 段原样并入请求顶层（如 acheiveTimeType 等可选工艺字段）
 # [extra]
-# addressId = "..."

@@ -17,6 +17,7 @@ from .client import ApiError, ApiResponse, JlcClient
 from .config import Config, ConfigError, load_config
 from .console import confirm_order, print_json, print_price_table
 from .gerber import default_output_zip, pack_directory, validate_zip
+from .order_info import OrderInfo, OrderInfoError
 from .orders import Ledger, ledger_path
 from .pcb_params import ParamsError, PcbParams
 
@@ -42,24 +43,39 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_pcb = sub.add_parser("pcb", help="PCB 打样")
     pcb_sub = p_pcb.add_subparsers(dest="action", required=True)
-    p_quote = pcb_sub.add_parser("quote", help="PCB 在线计价")
+    p_quote = pcb_sub.add_parser("quote", help="PCB 在线计价（无需文件）")
     p_quote.add_argument("-p", "--params", type=Path, required=True, help="参数模板 toml")
-    p_quote.add_argument("--file-id", default=None, help="已上传的资料文件 ID")
-    p_order = pcb_sub.add_parser("order", help="创建 PCB 订单")
-    _add_order_flags(p_order, params=True, file_id=True)
+    p_order = pcb_sub.add_parser(
+        "order", help="创建 PCB 订单（文件 URL 与收货信息取自配置 [order] 段）"
+    )
+    _add_order_flags(p_order, params=True)
+    p_order.add_argument(
+        "--file-url", default=None, help="覆盖 [order].pcb_file_url（本次下单的资料 URL）"
+    )
     p_reorder = pcb_sub.add_parser("reorder", help="按历史订单返单")
-    p_reorder.add_argument("--order-no", required=True)
+    p_reorder.add_argument("--order-no", required=True, help="历史订单 customerOrderId")
+    p_reorder.add_argument(
+        "--order-type", default="examples", choices=["examples", "batch"], help="订单类别"
+    )
     _add_order_flags(p_reorder)
-    p_quick = pcb_sub.add_parser("quick", help="一键：打包→校验→上传→计价→确认→下单")
+    p_quick = pcb_sub.add_parser(
+        "quick", help="一键：打包校验 Gerber（本地）→ 计价 → 确认 → 下单"
+    )
     p_quick.add_argument("--project", type=Path, required=True, help="KiCad 工程目录")
     _add_order_flags(p_quick, params=True)
 
     p_order_q = sub.add_parser("order", help="订单查询")
     order_sub = p_order_q.add_subparsers(dest="action", required=True)
     p_get = order_sub.add_parser("get", help="查询订单信息")
-    p_get.add_argument("--order-no", required=True)
+    p_get.add_argument("--order-no", required=True, help="customerOrderId（整数）")
+    p_get.add_argument(
+        "--order-type", default="examples", choices=["examples", "batch"], help="订单类别"
+    )
     p_prog = order_sub.add_parser("progress", help="查询生产进度")
-    p_prog.add_argument("--order-no", required=True)
+    p_prog.add_argument("--order-no", required=True, help="customerOrderId（整数）")
+    p_prog.add_argument(
+        "--order-type", default="examples", choices=["examples", "batch"], help="订单类别"
+    )
     p_prog.add_argument("--watch", action="store_true", help="每 60 秒轮询直至完成")
 
     return parser
@@ -69,12 +85,9 @@ def _add_order_flags(
     parser: argparse.ArgumentParser,
     *,
     params: bool = False,
-    file_id: bool = False,
 ) -> None:
     if params:
         parser.add_argument("-p", "--params", type=Path, required=True, help="参数模板 toml")
-    if file_id:
-        parser.add_argument("--file-id", required=True, help="资料文件 ID")
     parser.add_argument("--yes", action="store_true", help="跳过交互确认")
     parser.add_argument("--dry-run", action="store_true", help="只打印请求不发送")
 
@@ -83,7 +96,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         return _dispatch(args)
-    except (ConfigError, ParamsError) as exc:
+    except (ConfigError, ParamsError, OrderInfoError) as exc:
         print(f"错误: {exc}", file=sys.stderr)
         return 2
     except ApiError as exc:
@@ -137,10 +150,14 @@ def _doctor(args) -> int:
             print(f"  - {ep.name}: {ep.path}（{ep.description}）")
         print("对齐入口: open.jlc.com → 控制台 → 接口文档（需登录）")
 
-    print("\n发起真实探活请求（查询订单，空单号）...")
+    print("\n发起真实探活请求（查询订单，空参数）...")
     client = JlcClient(config)
     try:
-        resp = client.post_json(api_spec.ORDER_GET.path, {"orderNo": ""}, retries=0)
+        resp = client.post_json(
+            api_spec.ORDER_GET.path,
+            {"customerOrderId": "", "orderType": ""},
+            retries=0,
+        )
     except ConnectionError as exc:
         print(f"✗ 网络不通: {exc}")
         return 4
@@ -150,7 +167,10 @@ def _doctor(args) -> int:
         print(f"  应答: {resp.body_text[:200]}")
         return 0
     if resp.status == 401:
-        print("✗ 验签不通过：检查 secret_key 与系统时间")
+        if "不存在" in resp.body_text:
+            print(f"✗ 接口路径不存在（验签尚未被校验）: {resp.body_text[:200]}")
+        else:
+            print(f"✗ 验签不通过：检查 secret_key 与系统时间。{resp.body_text[:200]}")
         return 3
     if resp.status == 403:
         print("✗ 请求被拒：大概率 IP 白名单未放行本机出口 IP")
@@ -177,12 +197,20 @@ def _file_upload(args) -> int:
     print(report.summary())
     if not report.ok:
         return 2
-    _, client = _make_client(args)
-    resp = client.upload_file(
-        api_spec.FILE_UPLOAD.path, {"fileType": "gerber"}, args.zip_path
+    print(
+        "\n注意：开放平台没有 PCB 文件上传接口（下单传 pcbFileUrl）。"
+        f"请把 {args.zip_path} 托管到可公网访问的 URL（网盘直链/对象存储等），"
+        "再把 URL 填进 jlc-order.toml 的 [order].pcb_file_url。"
     )
-    print_json(resp.data())
     return 0
+
+
+def _load_order_info(args, *, file_url_override: str | None = None) -> OrderInfo:
+    config = load_config(args.config)
+    info = OrderInfo.load(config.order)
+    if file_url_override:
+        info = OrderInfo(**{**info.__dict__, "pcb_file_url": file_url_override})
+    return info
 
 
 def _pcb_quote(args) -> int:
@@ -192,10 +220,7 @@ def _pcb_quote(args) -> int:
         return 2
     print(f"计价参数: {params.describe()}")
     _, client = _make_client(args)
-    payload = params.to_payload()
-    if args.file_id:
-        payload["fileId"] = args.file_id
-    resp = client.post_json(api_spec.PCB_QUOTE.path, payload)
+    resp = client.post_json(api_spec.PCB_QUOTE.path, params.to_payload())
     print_price_table(resp.data())
     print_json(resp.data())
     return 0
@@ -206,15 +231,23 @@ def _pcb_order(args) -> int:
     if problems := params.validate():
         print("参数问题:", *problems, sep="\n  - ")
         return 2
+    info = _load_order_info(args, file_url_override=args.file_url)
+    if problems := info.validate():
+        print("下单信息问题:", *problems, sep="\n  - ")
+        return 2
+
     _, client = _make_client(args, dry_run=args.dry_run)
-    payload = params.to_payload()
-    payload["fileId"] = args.file_id
+    payload = {**params.to_payload(), **info.to_payload()}
     prompt = (
-        f"即将创建真实 PCB 订单并产生费用：{params.describe()}，资料 {args.file_id}。确认下单?"
+        f"即将创建真实 PCB 订单：{params.describe()}。{info.describe()}。"
+        + ("订单创建后自动扣款！" if info.advance_payment else "创建后需人工在嘉立创支付。")
+        + " 确认下单?"
     )
     if args.dry_run:
         print(prompt, "（dry-run 模式，不会发送）")
-    elif not confirm_order(prompt, yes=args.yes):
+        client.post_json(api_spec.PCB_CREATE_ORDER.path, payload, retries=0)  # dry-run 只打印
+        return 0
+    if not confirm_order(prompt, yes=args.yes):
         print("已取消。")
         return 1
     resp = client.post_json(api_spec.PCB_CREATE_ORDER.path, payload, retries=0)
@@ -224,38 +257,39 @@ def _pcb_order(args) -> int:
 
 def _pcb_reorder(args) -> int:
     _, client = _make_client(args, dry_run=args.dry_run)
-    prompt = f"将按历史订单 {args.order_no} 创建返单（产生真实费用）。确认?"
+    body = {"customerOrderId": args.order_no, "orderType": args.order_type}
+    prompt = f"将按历史订单 {args.order_no}（{args.order_type}）创建返单（产生真实费用）。确认?"
     if args.dry_run:
         print(prompt, "（dry-run 模式，不会发送）")
-    elif not confirm_order(prompt, yes=args.yes):
+        client.post_json(api_spec.PCB_REORDER.path, body, retries=0)
+        return 0
+    if not confirm_order(prompt, yes=args.yes):
         print("已取消。")
         return 1
-    resp = client.post_json(
-        api_spec.PCB_REORDER.path, {"orderNo": args.order_no}, retries=0
-    )
+    resp = client.post_json(api_spec.PCB_REORDER.path, body, retries=0)
     print_json(resp.data() if resp.json else {"raw": resp.body_text})
     return 0
 
 
 def _order_get(args) -> int:
     _, client = _make_client(args)
-    resp = client.post_json(api_spec.ORDER_GET.path, {"orderNo": args.order_no})
+    body = {"customerOrderId": int(args.order_no), "orderType": args.order_type}
+    resp = client.post_json(api_spec.ORDER_GET.path, body)
     print_json(resp.data())
     return 0
 
 
 def _order_progress(args) -> int:
     _, client = _make_client(args)
+    body = {"customerOrderId": int(args.order_no), "orderType": args.order_type}
     while True:
-        resp = client.post_json(
-            api_spec.ORDER_PROGRESS.path, {"orderNo": args.order_no}
-        )
+        resp = client.post_json(api_spec.ORDER_PROGRESS.path, body)
         data = resp.data()
         print_json(data)
         if not args.watch:
             return 0
-        status_text = str(data.get("status") or data.get("progress") or "")
-        if any(word in status_text for word in ("完成", "发货", "已出货")):
+        status_text = str(data.get("orderStatus") or data.get("status") or "")
+        if any(word in status_text for word in ("complete_send", "canceled", "已发货", "已取消")):
             print("订单已完结，停止轮询。")
             return 0
         print("60 秒后再次查询（Ctrl+C 退出）...")
@@ -287,39 +321,36 @@ def _pcb_quick(args) -> int:
     if problems := params.validate():
         print("参数问题:", *problems, sep="\n  - ")
         return 2
+    info = _load_order_info(args)
+    if problems := info.validate():
+        print("下单信息问题:", *problems, sep="\n  - ")
+        return 2
 
     config = load_config(args.config)
     ledger = Ledger(ledger_path(config))
     client = JlcClient(config, dry_run=args.dry_run, on_call=ledger.append)
 
-    print("\n[1/3] 上传 Gerber...")
-    if args.dry_run:
-        client.upload_file(api_spec.FILE_UPLOAD.path, {"fileType": "gerber"}, zip_path)
-        print("（dry-run：未真实上传）")
-        return 0
-    upload_resp = client.upload_file(
-        api_spec.FILE_UPLOAD.path, {"fileType": "gerber"}, zip_path
-    )
-    file_id = upload_resp.data().get("fileId")
-    if not file_id:
-        print(f"上传成功但未返回 fileId: {upload_resp.body_text[:300]}")
-        return 3
-    print(f"fileId: {file_id}")
-
-    print("[2/3] 计价...")
-    payload = params.to_payload()
-    payload["fileId"] = file_id
-    quote_resp = client.post_json(api_spec.PCB_QUOTE.path, payload)
+    print("\n[1/2] 在线计价...")
+    quote_resp = client.post_json(api_spec.PCB_QUOTE.path, params.to_payload())
     print_price_table(quote_resp.data())
 
-    print("[3/3] 下单...")
-    prompt = f"以上价格确认下单？{params.describe()}，fileId={file_id}"
+    print("[2/2] 下单...")
+    payload = {**params.to_payload(), **info.to_payload()}
+    prompt = (
+        f"以上价格确认下单？{params.describe()}。{info.describe()}。"
+        f"注意：请确保 [order].pcb_file_url 指向的是刚校验的 {zip_path.name} 最新内容。"
+    )
+    if args.dry_run:
+        print(prompt, "（dry-run 模式，不会发送）")
+        client.post_json(api_spec.PCB_CREATE_ORDER.path, payload, retries=0)
+        return 0
     if not confirm_order(prompt, yes=args.yes):
         print("已取消（未下单）。")
         return 1
     order_resp = client.post_json(api_spec.PCB_CREATE_ORDER.path, payload, retries=0)
     print_json(order_resp.data())
     return 0
+
 
 
 if __name__ == "__main__":  # pragma: no cover
