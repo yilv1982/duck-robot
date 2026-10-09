@@ -19,7 +19,7 @@
 | 物品 | 数量 | 说明 / 待办 |
 |---|---|---|
 | 微雪 Waveshare Bus Servo Adapter (A) | 1 | 半双工总线转接板，即 replica《电控采购清单》的「半双工总线转接板」待买项；此前台架一直用 FE-URT-2 顶替。整机走它还是飞线，待测 |
-| 黑色降压模块（XT60 端子） | 1 | 板上丝印 **7.2-16V**（照片识别，待万用表核）。⚠️ 若输入下限真是 7.2V：2S 电池带载跌到 6.6V 时会掉出稳压——清单要求下限 ≤6V，用前实测 |
+| 黑色降压模块（XT60 端子） | 1 | 2026-10-10 照片细读（[存档](./docs/photos/README.md)）+ **空载实测**（[操作单](./docs/buck-module-test.md)）：板名 **BUS SERVO POWER SUPPLY V1.3**（By 造物の乐趣，社区自研件，公开无资料，二维码待扫）；丝印 PWR IN 7.2-18V / OUT PWR 5V or 7.4V MAX 6A。**实测**：VCC（3P）12V→6.00V、6.6V→6.00V、6.3V→5.99V——选压桥 **6V 档**、稳压下限 **≈6.3V**（跌落跟随非关机，远好于丝印 7.2V），**2S 最差工况可用**；PWR OUT（2P）全程跟随输入 = **电池直通口**（舵机总线，对上 HD-1910 直挂 7.8-8.1V 用法）。接口分工闭环（~~DC 母座~~系照片误判，实物无此件）。**接 IMU 前须改焊 5V 档**（LDO 上限 5.5V），带载复测待台架 |
 | 绿色 IMU 板 | 1 | **用户确认 = ScrapMeta microduck-diy imu_to_dxl v0.3**（STM32G031，板 32×22mm）。三版来源对比与刷机兼容性查证见 [docs/references/imu-to-dxl-variants-20261009](./docs/references/imu-to-dxl-variants-20261009/research.md)；**飞特固件刷写包已备好**（[flash/](./flash/README.md)：校验过的 0.2.0 HEX + OpenOCD + 一键脚本 + imu200 验收工具），⚠️ 该板 LDO 上限 5.5V，**只能 5V 供电**，2S 总线集成时 VCC 须走 5V 支路 |
 | 白色鸭图案 HAT（V1.1） | 1 | **原理图已归档查证**（2026-10-09，[docs/references/microduck-hat-20261006](./docs/references/microduck-hat-20261006/research.md)）：官方 RPI Robot HAT 的嘉立创 EDA 派生版，Radxa Zero 3W（舵机总线 UART2=ttyS2）兼容 Pi Zero 2W，比官方多一颗 BNO085。原理图 V1.0 与手上 PCB V1.1 的差异待核 |
 | 全部舵机 | 待清点 | 型号/数量/出厂 ID 状态待登记。飞特方案按官方关节表应为 HD-1910-C001 ×15（含嘴） |
@@ -27,13 +27,28 @@
 
 台架现状：总线调试用 FE-URT-2 + 飞线；转接线是否随本批到货未记录。
 
+**工具与耗材到位（2026-10-09 用户口头确认，实物未复测）**：
+
+| 物品 | 数量 | 说明 / 待办 |
+|---|---|---|
+| 万用表 | 1 | 解锁「降压模块实测」待办（与直流电源配合） |
+| 稳定直流电源 | 1 | 做降压模块输入下限/输出电压扫描；带载表现后续用台架实测 |
+| 电烙铁 | 1 | 解锁 IMU 板 J2 焊接、banana_pcb 焊接工序。焊锡/助焊剂已确认有 |
+| 电池盒 | 1 | 对应 banana_pcb 取电方案；化学体系/串数/触点形式待登记 |
+| 杜邦线 | 若干 | 可走 IMU J2「杜邦线直焊焊盘」路线（替代 BM07B-SRSS-TB 座 + SH1.0 7P 线） |
+| 无头电子线 | 若干 | banana_pcb「拆电池焊接出线」备选线材；线径须按 3-5A 核对，具体线规待登记 |
+
+**工具照片存档（2026-10-10 建，同日降压模块正反面入档）**：[docs/photos/](./docs/photos/README.md)——万用表、直流电源、降压模块正反面（含元件标注图）实拍照片已从微信缓存拷入永久保存；后续照片（J2 焊盘、HAT、舵机/打印件清点）同规则补入。
+
+**在途（2026-10-09 用户确认已发货）**：DAPLink SWD 调试器、U6068 插针 ×2、电池。到齐后 IMU 刷机链路（J2 焊接 → DAPLink 烧录 → imu200 验收）与 banana_pcb 装配的硬件缺件清零；电池到货后登记化学体系/串数/触点，与电池盒、降压模块实测结果一起定供电方案。
+
 **原理图档案（2026-10-09 建）**：已确认硬件的设计文件统一存 [docs/schematics/](./docs/schematics/README.md)——IMU 板（ScrapMeta v0.3 的 `.eprj2` 真源工程 + 网表，钉 `main @ aa4c32d`）、HAT V1.1（5 页 PDF）；微雪转接板与降压模块为成品模块无公开原理图，暂只记规格待补。
 
 **banana_pcb 打板已下单（2026-10-09 用户确认），等板回来。** 到板后手顺：焊 U6068 插针 ×2（未购则先买）→ 打印 `banana_pcb_locker` → 拆电池焊接出线（线径按 3-5A 选）→ 万用表直流档核极性 → 断电机械试装（插针与电池触点配合、locker 保持力）→ 只带主控支路验证 5V。
 
 ### 由到货衍生的待办
 
-- [ ] 万用表实测降压模块输入下限、输出电压与带载表现
+- [ ] 万用表实测降压模块（[操作单](./docs/buck-module-test.md)）：**2026-10-10 空载扫描已完成**——选压桥 6V 档、实测稳压下限 ≈6.3V（压差 0.3V 跌落跟随，远好于丝印 7.2V）、2S 最差点 6.6V 时输出仍 6.00V，**2S 初判可用**；接口分工闭环（XT60 入 / PWR OUT 直通 / 3P VCC 稳压；"DC 母座"系照片误判，实物无此件）。剩余：改焊 5V 档 + 空载复验 5.00V（IMU LDO 上限 5.5V 的前置）→ 台架带载复测
 - [x] 确认 IMU 板是哪一版设计（2026-10-09 用户确认：ScrapMeta microduck-diy v0.3）
 - [ ] 按手顺完成 IMU 板刷机：购 SWD 调试器（推荐 DAPLink）→ J2 接线（⚠️ 实物 J2 未焊插座只有焊盘，2026-10-10 看实物标注图确认：焊 BM07B-SRSS-TB 座 + SH1.0 7P 线，或杜邦线直接焊盘）→ 双击 `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` 全 PASS（详见 [flash/README.md](./flash/README.md)）
 - [ ] 清点舵机（型号、数量、ID/零位状态）与打印件（版本、材料、缺件）
@@ -61,7 +76,7 @@
 
 2026-10-09 工程从 `E:\Projects\duck-robot` 迁到 `C:\Projects\duck-robot`（全部文件时间戳为迁移当日，无法再据时间戳判断改动，版本核对一律以上游哈希为准）。历史文档/脚本里的 `/mnt/e/`、`E:/` 路径已失效；本次已修根 README 的 3 处链接与 `scripts/a-training.sh` 的 2 处路径，`local-changes/` 里的提取件（export_onnx.py 等）仍含旧路径，复用前需改。
 
-**本机新装工具链（2026-10-09）**：Python 3.13（`%LOCALAPPDATA%\Programs\Python\Python313`，含 pyserial）、OpenOCD 0.12.0（工程内 `flash/tools/`）、嘉立创EDA专业版 3.2.149（`%LOCALAPPDATA%\Programs\lceda-pro`，可开 `.eprj2`）。注意：本机无 git（用 GitHub Desktop 内嵌 git 提交）、无 WSL——旧机器的训练环境不在这台机器上。
+**本机新装工具链（2026-10-09）**：Python 3.13（`%LOCALAPPDATA%\Programs\Python\Python313`，含 pyserial）、OpenOCD 0.12.0（工程内 `flash/tools/`）、嘉立创EDA专业版 3.2.149（`%LOCALAPPDATA%\Programs\lceda-pro`，可开 `.eprj2`）、Git for Windows 2.55（winget 安装于 `C:\Program Files\Git`；`~/.gitconfig` 里失效的本地代理已移除，可直连，user.name/email 已配好）。无 WSL——旧机器的训练环境不在这台机器上。
 
 ## 嘉立创开放平台 API 打通（2026-10-09）
 
