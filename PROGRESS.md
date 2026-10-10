@@ -2,12 +2,6 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
-## 全球消费电子玩具公开资料研究完成（2026-10-10）
-
-- 完成截至2026-10-10的[中文研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.md)、[产品与案例对照](./docs/references/consumer-electronic-toys-market-20261010/competitors.md)及[统一证据/质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.md)的公开资料集成：30个型号/代际样本（消费核心29、机构教育邻接1）、10个案例、96个M/R/P编号记录；编号数不等于独立报告或全部法规全文核验。
-- 内容涵盖规模边界、首购与留存、经营与服务生命周期、假设经济演算、区域合规和多环节机会；来源等级、未知价格/条款及独立审查修订状态均保留在证据日志。
-- **未进行访谈、实物测试、采购或企业接洽；不改变C线硬件路线，也不构成接线、上电、下单或产品上市许可。**
-
 ## 堵转是否会损坏 HAT：存在性核查（2026-10-10）
 
 - 用户要求先分析实际问题，不先推进配电改造。新增[风险核查](./docs/references/stall-hat-risk-20261010/research.md)，含原厂规格摘录与来源哈希。
