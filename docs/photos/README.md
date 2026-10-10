@@ -22,6 +22,8 @@
 | [IMU 旧实物标注原件](../schematics/imu-to-dxl-scrapmeta-v0.3/实物板元件标注.jpg) | IMU 板历史总览 | 2026-10-09（原登记） | 原件已在原理图专题保存；**电压说明过期，不用于接线**，仅保留来源追溯 | U3 位置说明使用上行新版 |
 | [hat-v1.2-port-review.png](./hat-v1.2-port-review.png) | HAT V1.2 接口复核 | 2026-10-10（制作） | 本会话生成；源图为本表正反面原图，标出两个 3Pin 口、两组 4Pin 空位及圆柱电容；背面旋转 90° | [供电复核](../references/power-review-20261010/research.md)，入口仍待电气核验 |
 | [hat-v1.2-wiring-plan.png](./hat-v1.2-wiring-plan.png) | HAT 单链供电意向图 | 2026-10-10（制作） | 本轮用户指定本表 `hat-v1.2-port-review.png` 为底图（已有原件，不重复拷贝）；裁出正背面面板，加 A/B/C 和功能箭头。脚本 `scripts/annotate-hat-wiring.py`；**不标照片上下针极性，非上电放行** | [验证单](../hat-v1.2-test.md)、[供电记录](../references/power-review-20261010/research.md) |
+| [hat-v1.2-servos-closeup-user-20261010.png](./hat-v1.2-servos-closeup-user-20261010.png) | 用户提供的 HAT SERVOS 局部图 | 2026-10-10（收到） | 从本轮剪贴板临时附件原样归档，保留 A/B 框选；对应疑似 EH 3Pin 板端座，照片不独立证明实物额定/品牌 | [接口与配电比较](../references/power-distribution-comparison-20261010/research.md) |
+| [dxl-hub-power-distribution-explained.png](./dxl-hub-power-distribution-explained.png) | 社区 dxl_hub 配电解释图 | 2026-10-10（制作） | 来源为只读社区库 `hardware/dxl_hub/docs/1.jpg`；脚本 `scripts/annotate-dxl-hub-power.py`，框示 J3 输入与分支；**是另一块板的设计图，不是本机 HAT 接线图** | [配电比较及证据](../references/power-distribution-comparison-20261010/research.md) |
 
 ## 降压模块（黑色，XT60 输入）— 2026-10-10 照片识别（正面+背面）
 

@@ -1,0 +1,456 @@
+{
+  "date": "2026-10-10",
+  "source_path": "references/microduck-community-kit/hardware/dxl_hub/dxl_hub.kicad_pcb",
+  "sha256": "59d6e182f18bc1214a53b9db76bed6c5de9252024a1d8b3468b846e229e87009",
+  "components": [
+    {
+      "reference": "CN2",
+      "value": "A2007WR-3P",
+      "footprint": "microduck:CONN-TH_A2007WR-3P",
+      "at": [
+        "135.89995",
+        "85.5",
+        "90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "/DATA",
+          "size": [
+            "1.5",
+            "1.5"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.5",
+            "1.5"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "GND",
+          "size": [
+            "1.5",
+            "1.5"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "value": "~",
+      "footprint": "microduck:pad-2(thru)",
+      "at": [
+        "143.87",
+        "103.18",
+        "180"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+BATT",
+          "size": [
+            "3",
+            "3"
+          ],
+          "drill": [
+            "1.6"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "size": [
+            "3",
+            "3"
+          ],
+          "drill": [
+            "1.6"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "value": "1.8mm螺丝孔",
+      "footprint": "microduck:pad",
+      "at": [
+        "149.6",
+        "78.95"
+      ],
+      "pads": []
+    },
+    {
+      "reference": "C1",
+      "value": "1000uF/10V固态",
+      "footprint": "microduck:CAP-TH_BD8.0-P3.50-D0.5-FD",
+      "at": [
+        "137.74",
+        "102.05",
+        "90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "+BATT",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "GND",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "CN7",
+      "value": "B3B-EH-A (LF)(SN)",
+      "footprint": "microduck:CONN-TH_B3B-EH-A-LF-SN",
+      "at": [
+        "138",
+        "92.4",
+        "90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "GND",
+          "size": [
+            "1.85",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "/DATA",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "CN8",
+      "value": "B3B-PH-K-S(LF)(SN)",
+      "footprint": "microduck:CONN-TH_B3B-PH-K-S",
+      "at": [
+        "135.6",
+        "93.4",
+        "90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "/DATA",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "GND",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "value": "1.8mm螺丝孔",
+      "footprint": "microduck:pad",
+      "at": [
+        "130.61",
+        "78.94"
+      ],
+      "pads": []
+    },
+    {
+      "reference": "CN4",
+      "value": "A2007WR-3P",
+      "footprint": "microduck:CONN-TH_A2007WR-3P",
+      "at": [
+        "144.10005",
+        "85.1",
+        "-90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "/DATA",
+          "size": [
+            "1.5",
+            "1.5"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.5",
+            "1.5"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "GND",
+          "size": [
+            "1.5",
+            "1.5"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "CN6",
+      "value": "B3B-PH-K-S(LF)(SN)",
+      "footprint": "microduck:CONN-TH_B3B-PH-K-S",
+      "at": [
+        "142.31",
+        "92.15",
+        "90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "/DATA",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "GND",
+          "size": [
+            "1.6",
+            "1.6"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "CN1",
+      "value": "B3B-EH-A (LF)(SN)",
+      "footprint": "microduck:CONN-TH_B3B-EH-A-LF-SN",
+      "at": [
+        "141.7999",
+        "82.1",
+        "-90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "GND",
+          "size": [
+            "1.85",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "/DATA",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "CN5",
+      "value": "B3B-EH-A (LF)(SN)",
+      "footprint": "microduck:CONN-TH_B3B-EH-A-LF-SN",
+      "at": [
+        "144.5001",
+        "92.45",
+        "90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "GND",
+          "size": [
+            "1.85",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "/DATA",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "reference": "CN3",
+      "value": "B3B-EH-A (LF)(SN)",
+      "footprint": "microduck:CONN-TH_B3B-EH-A-LF-SN",
+      "at": [
+        "138.3201",
+        "82.15",
+        "90"
+      ],
+      "pads": [
+        {
+          "pin": "1",
+          "net": "GND",
+          "size": [
+            "1.85",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "2",
+          "net": "+BATT",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        },
+        {
+          "pin": "3",
+          "net": "/DATA",
+          "size": [
+            "1.7",
+            "1.7"
+          ],
+          "drill": [
+            "1"
+          ]
+        }
+      ]
+    }
+  ],
+  "interpretation": "J3 battery pads and shared power/data nets; connectors/capacitor/mounting pads only; no onboard fuse or active protection found in this PCB snapshot. No current/thermal validation."
+}

@@ -2,6 +2,13 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## EH 接口与其他配电方案对照（2026-10-10）
+
+- 用户提供的[HAT SERVOS 局部图](./docs/photos/hat-v1.2-servos-closeup-user-20261010.png)已从临时附件原样归档；EH 名称来自存档图，实物品牌/额定待核。
+- 核对社区 dxl_hub 的 PCB/README：J3 为两线电源输入，头/左右腿/IMU 分支，未见板载保险；这与本会话最小 HAT 单链意向不同。“不打 HAT”采用独立动力支路+保险的计划，亦非本机实测。
+- 新增[配电解释图](./docs/photos/dxl-hub-power-distribution-explained.png)和[对照研究](./docs/references/power-distribution-comparison-20261010/research.md)，含原始资料哈希、PCB 器件/焊盘抽取与在线来源获取失败记录。
+- 结论是评估配电/保护，不是新增采购或准许上电；HAT 可继续用于主控供电和数据转换，具体支路额定/接法/接口数量仍须设计验证。
+
 ## 过流保护设计说明（2026-10-10）
 
 - 回答用户保护怎么做，新增[过流保护方案](./docs/overcurrent-protection.md)：正极主保险靠近电池出线，后接直流总开关，明确保险/PTC/电子保护/BMS 的边界。

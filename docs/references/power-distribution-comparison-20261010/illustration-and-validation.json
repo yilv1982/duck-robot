@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-10",
+  "user_image": {
+    "source": "User-provided clipboard attachment",
+    "archive": "docs/photos/hat-v1.2-servos-closeup-user-20261010.png",
+    "sha256": "fe5eee8d3c05c3ddb117850efeb02fc902b9e45c485540552d0a83d27edeafe1",
+    "original_bytes_preserved": true
+  },
+  "diagram": {
+    "source": "references/microduck-community-kit/hardware/dxl_hub/docs/1.jpg",
+    "source_sha256": "dbd2ecbd15e54af8260a71657aa961392d625aebd91243ca26835a8599291be7",
+    "output": "docs/photos/dxl-hub-power-distribution-explained.png",
+    "output_sha256": "e29f87fd5e94c96cd9333d8bd13940767c75c364db51e1967f33d10f97e17b9f",
+    "generator": "scripts/annotate-dxl-hub-power.py",
+    "deterministic_regeneration": true,
+    "final_visual_review": "J3 power pads and branch region checked; diagram identified as separate community board, not HAT pin map"
+  },
+  "checks": {
+    "markdown_links": 170,
+    "broken_links": 0,
+    "script_syntax": "passed",
+    "reference_trees_modified": false,
+    "hardware_test_performed": false
+  }
+}
