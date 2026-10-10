@@ -2,6 +2,12 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 过流保护设计说明（2026-10-10）
+
+- 回答用户保护怎么做，新增[过流保护方案](./docs/overcurrent-protection.md)：正极主保险靠近电池出线，后接直流总开关，明确保险/PTC/电子保护/BMS 的边界。
+- **保险安数与具体器件未定**：需先核准最弱连接器/导线、正常峰值及动作曲线。HAT 入口约 3A 与整机参考 3–5A 的矛盾不能靠加 5A 保险解决；没有实测、短路/堵转试验或采购。
+- BOM 补充待选的直流总开关/断电件；规则导航和供电文档已互链。调研说明同步写入[供电复核记录](./docs/references/power-review-20261010/research.md)。
+
 ## HAT 单链接线意向图（2026-10-10）
 
 - 按用户指定的 `hat-v1.2-port-review.png` 底图，生成[接线意向图](./docs/photos/hat-v1.2-wiring-plan.png)与[可复现脚本](./scripts/annotate-hat-wiring.py)：A 口两线进电，B 口接舵机链与末端 IMU，C 排母对插 Radxa。

@@ -44,6 +44,7 @@
 | [BOM.md](BOM.md) | C 线物料、数量、状态及采购缺口。 |
 | [供电架构 v2](docs/power-architecture-v2.md) | 当前供电架构讨论基线，**不代表 HAT V1.2 或整机带载已验证**；须结合下面的复核记录。 |
 | [供电与 HAT 实物复核](docs/references/power-review-20261010/research.md) | 电流预算、分支前提、两口/八焊盘识别、LDO 标注及尚未验证的风险。 |
+| [过流保护方案](docs/overcurrent-protection.md) | 电池正极保险/总开关、额定协调与电子保护边界；保险安数及实际入口能力尚未核准。 |
 | [HAT V1.2 接线意向图](docs/photos/hat-v1.2-wiring-plan.png) | 用户底图派生：A 两线进电 / B 舵机+末端 IMU / C 主控对插；未核准针序与载流，不作上电放行。 |
 | [HAT V1.2 测试单](docs/hat-v1.2-test.md) | 断电核对、分阶段上电与总线验证；入口未知时不可照猜测接电。 |
 | [降压模块测试单](docs/buck-module-test.md) | 原始空载测量与操作过程；不是整机带载验收，历史错误要求应按勘误清除。 |
