@@ -2,6 +2,12 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 市场调研重要商业判断留存（2026-10-10）
+
+- 用户指出机会建议的详细解释很重要，要求记录。已补入报告[附录 D：重要商业判断与验证方法](./docs/references/consumer-electronic-toys-market-20261010/research.html#decision-notes)，并从执行摘要、第六节直接链接；Markdown 与 HTML 同步。
+- 重点保留：玩法先于技术、有限交互/无屏的边界、可复用 ODM 服务、可维修/可降级、分阶段投入，以及静态版/互动版/AI版的对照验证。
+- **用户确认的是重点留存，不是选定商业路线或授权投资/实验；例子和验证方法仍属研究解释与待验证假设。** 本轮未新增外部市场数据、未开展用户实验、不改变 C 线硬件任务。
+
 ## 市场调研增加 HTML 阅读版（2026-10-10）
 
 - 按用户要求将三份正式文档转换为[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)、[竞品与案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)、[证据与方法](./docs/references/consumer-electronic-toys-market-20261010/evidence.html) HTML；Markdown 保留为源文件，研究结论和原始来源不变。
