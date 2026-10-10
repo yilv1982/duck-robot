@@ -40,3 +40,7 @@ A 线（XL330 + OpenRB + Pi Zero 2W）的完整步骤基线（阶段 0-7）、�
 ## 致谢
 
 感谢 [AI-FanGe/Microduck-build-tutorial](https://github.com/AI-FanGe/Microduck-build-tutorial)、[Rhoban/microban](https://github.com/Rhoban/microban)、[pollen-robotics/microduck](https://github.com/pollen-robotics/microduck) 及方案 B/C 上游作者的开源工作；各参考库内容以其自带许可为准。
+
+## 市场调研
+
+- 2026-10-10：全球消费电子玩具公开资料研究——[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.md)、[30个产品样本与10个案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.md)、[证据与质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.md)。行业中立机会判断，不改变本项目C线硬件路线。
