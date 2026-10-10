@@ -2,6 +2,13 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 消费电子玩具：Microduck漏项修补（2026-10-10，现行）
+
+- [X11／G5](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html#card-x11)已补官方成品预售＋开源社区平台；[主文](./docs/references/consumer-electronic-toys-market-20261010/research.html#microduck-community)承认零售成品取样遗漏，以动作／角色表达、教程、套件支持与AI二次开发候选补齐框架，不重做全市场。
+- [D101—D105](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#microduck-sources)为5条新增证据，现行**234编号／41覆盖／39图／4视频**；41＝37消费核心基线＋3邻接＋1开源平台，不是41已售。原229证据、40卡与38图／4视频保留，以下流水中的旧总数为阶段历史。
+- 主会话API快照：主仓9,276 stars／1,199 forks；各仓不相加为用户，不换算销量。官方USD399美国预售未含税运；商店称订单多且爬产，新单估计4—6个月，不保圣诞交付，缺订单量／取消率／出货。主会话独立抽核D101范围已登记，未结账或实测。
+- 已保存X11官方主视觉900×312小图并view_image核对；程序与4HTML生成检查记质量日志。**本补录的独立内容／范围审查及主会话QA已完成，无必改项**；通过范围见质量日志。本角色未暂存／commit／push，版本同步由主会话统一办理。未改只读参考库，不改变C线供电／采购／训练事实。
+
 ## 消费电子玩具：融资与海外平台整合（2026-10-10）
 
 - [主报告专节](./docs/references/consumer-electronic-toys-market-20261010/research.html#capital-overseas-2026)新增融资8行、平台代表12行、关联5行三表；只做资本／渠道与销售证据分层，不生成金额或热度排行榜。

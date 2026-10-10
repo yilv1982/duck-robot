@@ -1,13 +1,13 @@
 # 全球消费电子玩具：竞品与经营案例附表
 
-> 截止日2026-10-10。**原基线仍为30个产品/代际样本、10案例、60条P证据；其中29个消费核心样本、1个机构教育邻接。2026新增观察单列，不据来源条数扩充为35/36个已验证竞品；全专题现为192个编号记录（旧115＋T19＋U58），另有40卡图鉴（原30＋10提名，37核心研究对象＋3邻接，非现售或交付数）。** 功能为厂商说明，未进行实物或疗效测试；网页入口不等于交付保证。
+> 截止日2026-10-10。**原基线仍为30个产品/代际样本、10案例、60条P证据；其中29个消费核心样本、1个机构教育邻接。2026新增观察单列，不据来源条数扩充为35/36个已验证竞品；全专题现为234个编号记录（旧229＋D5），另有41卡图鉴（原40＋Microduck项目，37消费核心基线＋3邻接＋1开源平台，非现售或交付数）。** 功能为厂商说明，未进行实物或疗效测试；网页入口不等于交付保证。
 
-导航：[融资×海外平台](research.md#capital-overseas-2026) · [40卡图鉴](product-atlas.md) · [正文](research.md) · [统一证据库](evidence.md) · [执行日志](evidence.md#execution-log)
+导航：[Microduck／G5独立平台卡](product-atlas.md#card-x11) · [融资×海外平台](research.md#capital-overseas-2026) · [41卡图鉴](product-atlas.md) · [正文](research.md) · [统一证据库](evidence.md) · [执行日志](evidence.md#execution-log)
 
 <a id="signals-2026"></a>
 ## 2026新增观察：独立于30产品基线，不合计为已验证竞品
 
-今年需求见[报告摘要](research.md#summary)，事件窗与网页日期规则见[第一节](research.md#q1)。原30型号/10案例是历史与当前产品的目的性基线，保留原条目及来源；下表是新增调查线索，不宣称六组均为核心玩具、GenAI、当年首次发售或已交付。原96＋S8/E11的115编号基线保留；新增T19/U58后现行192编号，编号不等于独立来源、产品数或经营成功数。
+今年需求见[报告摘要](research.md#summary)，事件窗与网页日期规则见[第一节](research.md#q1)。原30型号/10案例是历史与当前产品的目的性基线，保留原条目及来源；下表是新增调查线索，不宣称六组均为核心玩具、GenAI、当年首次发售或已交付。原96＋S8/E11的115编号基线保留；T19/U58阶段为192编号；C／W／A阶段为229，本次加D5后现行234编号。Microduck仅补在G5／X11，不回填本页原30样本或10案例；编号不等于独立来源、产品数或经营成功数。
 
 | 对象/边界 | 2026事件与当前配置主张 | 截止日允许的商业阶段 | 下一步与限制 |
 |---|---|---|---|
@@ -22,9 +22,9 @@
 
 
 <a id="atlas-cross-index"></a>
-## 40卡图鉴交叉索引（不重算本页旧价格）
+## 41卡图鉴交叉索引（不重算本页旧价格）
 
-新增[图鉴](product-atlas.md#atlas-index)提供逐款媒体、玩法、AI分类、本地／云、价格与服务、2026现态、风险和验证问题。原30样本表及10案例保留；本轮新增[融资×海外平台专节](research.md#capital-overseas-2026)与[229编号统一登记](evidence.md#overseas-sources)，18条平台商品观察不增加本页独立产品数，也不替换原地区价格。仍按新U证据纠正已闭合的税费、发货承诺、临时免费和软件期限；不重排旧价格或推定40款已售。F14、X04、X06仍为三类邻接。
+新增[图鉴](product-atlas.md#atlas-index)提供逐款媒体、玩法、AI分类、本地／云、价格与服务、2026现态、风险和验证问题。原30样本表及10案例保留；本轮新增[融资×海外平台专节](research.md#capital-overseas-2026)与[234编号统一登记](evidence.md#microduck-sources)，18条平台商品观察不增加本页独立产品数，也不替换原地区价格。仍按新U证据纠正已闭合的税费、发货承诺、临时免费和软件期限；不重排旧价格或推定41款已售。F14、X04、X06仍为三类邻接，新增G5／X11为官方成品预售＋社区生态的开源平台独立卡，不回填旧30样本。
 
 | 组 | 卡片深链 |
 |---|---|
@@ -32,6 +32,7 @@
 | [G2](product-atlas.md#group-g2) | [AD11](product-atlas.md#card-ad11) · [AD12](product-atlas.md#card-ad12) · [AD13](product-atlas.md#card-ad13) · [AD14](product-atlas.md#card-ad14) · [AD15](product-atlas.md#card-ad15) · [X01](product-atlas.md#card-x01) · [X02](product-atlas.md#card-x02) · [X03](product-atlas.md#card-x03) · [X04](product-atlas.md#card-x04) · [X05](product-atlas.md#card-x05) |
 | [G3](product-atlas.md#group-g3) | [F01](product-atlas.md#card-f01) · [F02](product-atlas.md#card-f02) · [F03](product-atlas.md#card-f03) · [F04](product-atlas.md#card-f04) · [F05](product-atlas.md#card-f05) · [F06](product-atlas.md#card-f06) · [F07](product-atlas.md#card-f07) · [F08](product-atlas.md#card-f08) · [X09](product-atlas.md#card-x09) · [X10](product-atlas.md#card-x10) |
 | [G4](product-atlas.md#group-g4) | [F09](product-atlas.md#card-f09) · [F10](product-atlas.md#card-f10) · [F11](product-atlas.md#card-f11) · [F12](product-atlas.md#card-f12) · [F13](product-atlas.md#card-f13) · [F14](product-atlas.md#card-f14) · [F15](product-atlas.md#card-f15) · [X06](product-atlas.md#card-x06) · [X07](product-atlas.md#card-x07) · [X08](product-atlas.md#card-x08) |
+| [G5](product-atlas.md#group-g5) | [X11 Microduck](product-atlas.md#card-x11)（开源社区平台） |
 
 <a id="sample-method"></a>
 ## 一、采样、去重与证据方法

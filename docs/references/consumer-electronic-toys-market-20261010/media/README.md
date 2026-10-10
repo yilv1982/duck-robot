@@ -1,6 +1,6 @@
 # 产品图鉴媒体归档与权利说明
 
-截止／归档日：2026-10-10。供[40卡图鉴](../product-atlas.md)、[研究报告](../research.md)和[新增U证据](../evidence.md#atlas-sources)使用；完整、无字段删减的机器可读记录为[manifest.json](manifest.json)。这是42项媒体记录，不是42款产品。
+截止／归档日：2026-10-10。供[41卡图鉴](../product-atlas.md)、[研究报告](../research.md)和[新增U证据](../evidence.md#atlas-sources)使用；完整、无字段删减的机器可读记录为[manifest.json](manifest.json)。现为43项媒体记录（原42＋X11主图1），覆盖41个研究对象，不是43款产品。
 
 ## 数量、路径与版本
 
@@ -10,7 +10,8 @@
 | G2 | 10 | 10 | 0 | [media-g2.json](../parts/media-g2.json) |
 | G3 | 10 | 8 | 2 | [media-g3.json](../parts/media-g3.json) |
 | G4 | 10 | 8 | 2 | [media-g4.json](../parts/media-g4.json) |
-| 合计 | **40唯一product_id** | **38** | **4** | 42记录逐项保留 |
+| G5 | 1 | 1 | 0 | [Microduck补片](../parts/microduck-market-2026.md)／[D102](../evidence.md#d102) |
+| 合计 | **41唯一product_id** | **39** | **4** | 原42记录逐项保留＋X11主图1 |
 
 - JSON中的`local_path`以专题根目录为基准（如`media/g1/ad01.jpg`），不是从本README再拼一层media；下表链接则按本README位置解析。
 - 只按manifest列出的实际路径发布，不扫描目录把临时文件或原始大图自动打包。主会话已回传独立程序核验：38图均在media内、SHA-256／宽高／字节与分片JSON一致，长边≤1200，总2,360,883 bytes，g*下无未索引多余图。此为主会话结果，集成者不冒称亲自做了该项独立验收。
@@ -75,7 +76,8 @@
 | [X06](../product-atlas.md#card-x06) · AOGU CoCo 先行预约版宣传图 | [g4/x06.jpg](g4/x06.jpg) | AOGU CoCo 2026 Beta先行预约版 | [AOGU株式会社（PR TIMES企业稿提供）](https://prtimes.jp/main/html/rd/p/000000007.000166793.html) |
 | [X07](../product-atlas.md#card-x07) · Romi Lacatan自然白代表图，不代表全系列统计 | [g4/x07.jpg](g4/x07.jpg) | Lacatan自然白；非P01/P02或Hello Kitty型 | [MIXI / Romi](https://shop.romi.ai/products/romi-lacatan) |
 | [X08](../product-atlas.md#card-x08) · Toniebox 2 Moon Grey代表图，不代表全系列年度统计 | [g4/x08.jpg](g4/x08.jpg) | Toniebox 2 Moon Grey，非初代 | [tonies GmbH](https://tonies.com/en-eu/toniebox-2/) |
+| [X11](../product-atlas.md#card-x11) · Microduck四配色官方主视觉 | [microduck/x11.jpg](microduck/x11.jpg) | 官方2026README，同一产品 | [Pollen Robotics](https://github.com/pollen-robotics/microduck/blob/main/README.md) |
 
 ## 更新与更正
 
-清单由四个冻结JSON数组顺序拼接，不统一裁掉不同组的扩展字段，也不以同product_id去重AIBI额外证据图。后续换图须保留来源／版本、更新SHA-256与尺寸并复核卡片；未明确授权前不修改parts或g*图文件。本轮仅整合现有素材，不发起额外下载。来源访问失败、代际错配与未读内容详见U101—U113、U201—U210、U301—U317、U401—U418。
+原42项清单由四个冻结JSON数组顺序拼接，不统一裁掉不同组的扩展字段，也不以同product_id去重AIBI额外证据图。后续换图须保留来源／版本、更新SHA-256与尺寸并复核卡片；未明确授权前不修改parts或g*图文件。原40卡阶段仅整合现有素材；本轮按授权仅新增Microduck官方README主视觉900×312预览（46,696 bytes），已view_image核对，不增加视频。原38图／4视频及42条JSON对象字段不改；现39图共2,407,579 bytes，清单43项。来源访问失败、代际错配与未读内容详见U101—U113、U201—U210、U301—U317、U401—U418。

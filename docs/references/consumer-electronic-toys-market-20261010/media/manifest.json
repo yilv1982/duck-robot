@@ -914,5 +914,30 @@
     "width": 640,
     "height": 640,
     "bytes": 45786
+  },
+  {
+    "product_id": "X11",
+    "kind": "image",
+    "local_path": "media/microduck/x11.jpg",
+    "source_page": "https://github.com/pollen-robotics/microduck/blob/main/README.md",
+    "asset_url": "https://github.com/user-attachments/assets/c2f7c245-8217-46a1-8d1e-e0ba967cd969",
+    "video_url": null,
+    "title": "Microduck官方README主视觉：四种配色，同一产品",
+    "publisher": "Pollen Robotics",
+    "accessed": "2026-10-10",
+    "version": "2026-10-10官方README展示；非A／C社区套件实物",
+    "rights": "公开官方宣传素材的最小必要研究引用；图片与商标权利归原权利人。未取得开放素材或商用再分发授权，不从软件Apache-2.0推定图片许可。",
+    "processing": "源WebP为1839×638；按比例缩小并转RGB JPEG quality=88 optimize为900×312，不放大、不裁切、不生成或改画面。最终预览已用functions.view_image打开核对：四种配色、画面完整、比例正常。",
+    "verified": true,
+    "limitations": "仅证明官方README使用该主视觉；四配色不计四产品，不作本机、DIY套件、销量、动作性能或供货证据。未下载或播放新增视频；原始大图未另行永久归档。",
+    "sha256": "d730a24173c53f33f35fc1422e506cba7c1a5fc9c5bbd59a1f41da63e50bbb3c",
+    "width": 900,
+    "height": 312,
+    "bytes": 46696,
+    "source_sha256": "07697da85e127859b6b90d1d845a1ebc7269e3069833636c06a35ecc5e0e1991",
+    "source_width": 1839,
+    "source_height": 638,
+    "source_bytes": 149162,
+    "verification_scope": "官方README源图URL对应核对＋900px最终预览view_image视觉核对；不包含实机、销量、视频动态或版权授权审计。 主会话于2026-10-10另独立view_image打开900×312派生图，确认四配色全身、比例清晰、无裁断；不外推动态性能。"
   }
 ]

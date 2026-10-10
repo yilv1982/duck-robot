@@ -1,9 +1,9 @@
 # 全球消费电子玩具研究：证据、方法与执行日志
 
-> 截止日：2026-10-10。状态：**原M17条、R19条、P60条共96编号基线保留；S8条、E11条合计115个旧编号原文保留；旧192编号全文保留；新增C12／W18／A7后现行229编号（含历史纠错、失败与方法，非独立来源数）；R18正式原文已闭合。来源等级与未知边界逐条保留，独立审查修订状态见末尾日志。**
-> 本文件的方法是本次研究的分析约定，不是市场事实或法规意见。M/R/P/S/E/T/U/C/W/A 编号仅在收到相应证据并核对后登记；不以空占位锚点冒充证据。
+> 截止日：2026-10-10。状态：**原M17条、R19条、P60条共96编号基线保留；S8条、E11条合计115个旧编号原文保留；旧192编号全文保留；旧229编号保留；新增D101—D105后现行234编号（含历史纠错、失败与方法，非独立来源数）；R18正式原文已闭合。来源等级与未知边界逐条保留，独立审查修订状态见末尾日志。**
+> 本文件的方法是本次研究的分析约定，不是市场事实或法规意见。M/R/P/S/E/T/U/C/W/A/D 编号仅在收到相应证据并核对后登记；不以空占位锚点冒充证据。
 
-导航：[融资原文](#capital-sources) · [联合方法](#method-capital-overseas) · [报告正文](research.md) · [竞品与经营案例](competitors.md) · [技术使能证据](#technology-enablers) · [40卡图鉴](product-atlas.md) · [图鉴新增来源](#atlas-sources) · [执行日志](#execution-log)
+导航：[Microduck证据](#microduck-sources) · [社区方法](#method-microduck) · [融资原文](#capital-sources) · [联合方法](#method-capital-overseas) · [报告正文](research.md) · [竞品与经营案例](competitors.md) · [技术使能证据](#technology-enablers) · [41卡图鉴](product-atlas.md) · [图鉴新增来源](#atlas-sources) · [执行日志](#execution-log)
 
 <a id="current-corrections"></a>
 ## 本轮现行补核与旧证据读法
@@ -29,6 +29,13 @@
 
 地区以中国、北美、欧洲、日本、韩国为主，东南亚和印度作增量扫描。北美须区分美国、加拿大及资料实际覆盖范围；欧洲须区分欧盟、英国和其他市场，不能把一国结论推广为整个地区。地区缺资料只表示覆盖不足，不表示市场没有需求。
 
+<a id="method-microduck"></a>
+### 开源社区补录方法（2026-10-10）
+
+原40卡的零售成品取样漏掉开源DIY／社区平台，本轮仅补Microduck，不重做全市场。现行41覆盖＝37消费核心基线＋3邻接＋1开源平台；官方成品和A／B／C社区路线放在同一项目卡分栏，不重复计产品或与标准消费整机共用销量分母。D101—D105是新增5条证据ID（非原附录D），原229全保留后共234；编号不是独立网站或用户数。
+
+社区轨分别观察stars／forks、实际贡献、教程内容、衍生设计／板件、成功复刻／部署及付费／交付／留存。缺GMV不等于无社区价值；star不能替代销售，fork不证明复刻完成，五仓库用户不相加，仓库创建时间不作首发时间。主会话API回传与本轮直接读官方资料的来源归属分开。用户“爆款”判断经D105部分落到可观察社区信号，但全球销量爆款、真实社媒播放和增长曲线仍无证。RL控制与GenAI分开；AI二次开发为候选，不给产品补配模型；官方售价与社区BOM、当前成品与旧XL330／HD-1910配置分开。[完整补片](parts/microduck-market-2026.md)
+
 <a id="method-period"></a>
 ## 二、时间、规模与预测口径
 
@@ -51,7 +58,7 @@
 | 估计 | 由公开数据或明确假设计算的结果 | 在这些输入和假设下得到的区间、敏感性 | 不称实测、不以计算精度掩盖输入不确定性 |
 | 研究推断 | 从证据形成的解释、机制或判断 | 可能成立的需求机制、机会条件与反证 | 不把相关性当因果，不把资料缺失当负面经营事实 |
 
-重要数字、核心判断及其适用范围须在相邻句子引用本文件的具体条目。多个判断不共用一条范围不明的段末来源。正式证据采用显式 HTML 小写锚点，M01 使用 `id="m01"`，正文显示 `[M01](evidence.md#m01)`；R01、P101 等同理。旧115个M/R/P/S/E编号均有完整条目及显式锚点；本轮加入T101—T110、T201—T209共19条，另加入U58后形成192编号保留基线；新增C12／W18／A7后现行229编号，包含商品观察、限定材料、历史纠错、失败与方法，T不证明玩具实际采纳；新增S01—S08、E01—E11使用s01/e01等小写锚点。编号不是独立来源，格式示例不另增数量。
+重要数字、核心判断及其适用范围须在相邻句子引用本文件的具体条目。多个判断不共用一条范围不明的段末来源。正式证据采用显式 HTML 小写锚点，M01 使用 `id="m01"`，正文显示 `[M01](evidence.md#m01)`；R01、P101 等同理。旧115个M/R/P/S/E编号均有完整条目及显式锚点；本轮加入T101—T110、T201—T209共19条，另加入U58后形成192编号保留基线；C12／W18／A7阶段为229编号，本轮新增D101—D105后现行234编号，包含商品观察、社区快照、限定材料、历史纠错、失败与方法，T不证明玩具实际采纳；新增S01—S08、E01—E11使用s01/e01等小写锚点。编号不是独立来源，格式示例不另增数量。
 
 M 类由市场分析分片交付；R 类由法规分析分片交付；P101 起由成人产品分片交付，P201 起由家庭产品分片交付。S类为2026需求/渠道增补，E类为2026产品/交付增补；T类为软件／硬件可选使能及条款，U类为逐卡补读／媒体与生命周期补核；同品牌或同一上游链不因编号不同而成为独立证明。方法使用 `method-*` 锚点，模型假设使用 `h*`，二者均不计入外部证据条数。C为融资披露及旧期纠错，W为WEST商品／官方材料／访问与指标方法，A为APAC商品观察；编号不等于融资事件或SKU数。正式合并保留原编号；遇重复编号不覆盖、不私自重排，先登记冲突并交主会话裁决。
 
@@ -2917,7 +2924,7 @@ T201—T209 只作为**可选使能**引用。任何具体产品是否采用 ESP
 <a id="atlas-sources"></a>
 ## 产品图鉴新增来源（U101—U418的已登记58条）
 
-> 仅登记实际存在的编号：G1为U101—U113共13、G2为U201—U210共10、G3为U301—U317共17、G4为U401—U418共18。来源数不是产品数、独立网站数或观看视频数；完整移入分片末尾的新增来源及限制。视频仅元数据核验（G4另核起始画面），均未完整观看或动态实测；T使能不能充作厂商采纳披露。卡片见[40卡图鉴](product-atlas.md)，逐项媒体字段见[manifest](media/manifest.json)。
+> 仅登记实际存在的编号：G1为U101—U113共13、G2为U201—U210共10、G3为U301—U317共17、G4为U401—U418共18。来源数不是产品数、独立网站数或观看视频数；完整移入分片末尾的新增来源及限制。视频仅元数据核验（G4另核起始画面），均未完整观看或动态实测；T使能不能充作厂商采纳披露。卡片见[41卡图鉴](product-atlas.md)，逐项媒体字段见[manifest](media/manifest.json)。
 
 ### G1 新增来源与原分片限制
 
@@ -4467,6 +4474,62 @@ T201—T209 只作为**可选使能**引用。任何具体产品是否采用 ESP
 
 **未采纳及访问边界：** FoloToy五倍增长回顾2025，不作为今年销售；本轮C105已补2026融资原文与准确披露日，不能把旧销售排除记录理解为没有今年融资披露。Miko混入同名咖啡公司、旧财年，Ropet/Moflin缺2026可拆分销售或续费。DeskMate众筹原站受限，不采用摘要金额；此前S/E扫描未取得欧洲用户签收或其对象的2026下架／停服原文，不等于没有发生；本轮51515原App期限另由U406补核，不沿用为所有产品均无停用证据。详细失败与来源见[S分片排除记录](parts/signals-2026-demand.md)、[E分片失败记录](parts/signals-2026-products.md)。
 
+<a id="microduck-sources"></a>
+## Microduck补录证据｜D101—D105（非原附录D）
+
+<a id="d101"></a>
+### D101｜官方 Microduck 产品页与商店：成品预售、价格与新订单延期
+
+- **等级／日期／版本：** A，Pollen Robotics 第一方产品与商店声明；2026-10-10 HTTP 200访问，非实机或订单验收。产品页定位“Pick your pack / Tech specs / Open source”，商店定位价格、Key Specifications、Shipping & Availability及顶部公告。当前 Microduck 成品，不是旧XL330复刻套件、Microban或Reachy Mini。
+- **来源：** [官方产品页](https://pollen-robotics.com/microduck/)（由官方运行时README的“Get yours here”发现）；[官方商店美国／USD参数页](https://store.pollen-robotics.com/products/microduck?currency=USD&country=US)；[商店无地区参数页](https://store.pollen-robotics.com/products/microduck)。
+- **原文与证据：** 产品页“Pre-orders open August 27, 2026”“$399 before taxes and shipping”；盒内“Robot, battery, USB-C cable, game controller”。美国参数页显示“$399.00 USD”，Shopify active currency及priceCurrency均为USD。无参数访问显示EUR340.00，不作汇率换算或美国报价。商店顶部：“We can’t promise Christmas delivery for new microduck orders anymore…Current estimate for new orders: 4–6 months.”正文仍有“First deliveries targeted before Christmas 2026”：是早期首批目标，不能用来覆盖新订单警示。
+- **产品架构与玩法：** 第一方列15电机、25cm、前向广角相机、8×8 ToF LiDAR、2 IMU、可动夹取喙、麦克风／扬声器、头与喙两处NFC、RK3566＋AI accelerator、1GB RAM／32GB存储、Wi-Fi／Bluetooth、可换NP-F550。产品页约800g、商店780g，保留页面差异，不强行视作同一称重条件；本卡用约0.8kg。官方列走路、坐站、踢球、低头拾取、轮滑、倒地起身，称随附7个动作策略及50Hz本地策略环，不从图中验证成功率。续航“approx. 1 hour”仅店方宣称，未测工况，不据此估算DIY续航。
+- **购买口径与限制：** 2026-10-10美国展示价USD399，未含税运；默认EUR340税费状态未单独锁定。是含机器人／电池／USB-C线／手柄的预售套装；充电器包、开发包、附件包另购，不能把配轮玩法当标配轮子。官方列首发US／Canada／EU／UK／Norway／Switzerland／Japan／South Korea，中国未列，不推定可直邮。新订单4—6个月是估计，不是发货／签收证据；网页Add to cart／InStock结构化标签不改变预售身份。“The community ordered a lot of ducks”与正在爬产、新单交期拉长，是企业自述的需求／排产压力直接线索；不是只有GitHub围观，但未给订单量、取消率或实际出货。
+- **独立抽核：** 主会话另于2026-10-10真实HTTP 200核对产品页25cm／RL／开箱可玩／8月27日预售／$399未含税运，以及美国参数商店399USD／15电机／顶部订单与4—6个月公告；未结账、购买或实测，不扩为全部来源复核。
+- **结论／下一步：** 已有明确成品商业入口，不应因DIY属性漏收；价格、配件和供货须分地区／订单批次继续核验。没有购买、结账或联系商家；全球销量、退款、留存和实际交付仍未知。
+
+<a id="d102"></a>
+### D102｜官方运行时、架构与软件许可：动作脑不等于生成式对话
+
+- **等级／日期：** A，2026-10-10读取官方`main`的README、LICENSE及架构文件，均HTTP 200；源文件为当前分支，不冒称固定提交快照。
+- **来源／定位：** [microduck README](https://github.com/pollen-robotics/microduck/blob/main/README.md)“This repo is the duck’s brain / It does things / Under the hood”；[架构](https://github.com/pollen-robotics/microduck/blob/main/docs/design/architecture.md)顶部状态与§1／§2；[LICENSE](https://github.com/pollen-robotics/microduck/blob/main/LICENSE)。
+- **证据：** README称RK3566上运行Rust工作区，`robotd`拥有50Hz控制环／15舵机总线并加载ONNX神经策略；`updaterd`更新／回滚、`configd`网络身份、`btd`蓝牙、`padd`手柄、`mediad`相机WebRTC、`tofd`深度传感器，通过Unix socket JSON-RPC通信。训练链路指向`microduck_rl`，README为动作提供官方演示链接。架构文件顶部仍标draft／2026-07-22及“first shipped version”目标；因此不将整张设计图当每台机器已完成配置，尤其传感器可选／未装配情形。
+- **许可／媒体：** 软件LICENSE为Apache-2.0；不自动扩张为所有硬件CAD、品牌或宣传照片的开放许可。README首张[官方主视觉](https://github.com/user-attachments/assets/c2f7c245-8217-46a1-8d1e-e0ba967cd969)有4种配色，表示同一产品，不计4款。本轮唯一新增媒体为900×312 JPEG小预览，已用`view_image`核对画面、比例和无裁切；主会话另独立打开900×312派生图，确认四配色全身、比例清晰无裁断，仅属图片视觉复核。图片权利与哈希见媒体清单。
+- **结论／限制：** 可编程、可读源码和本地动作执行成立于公开资料层面；没有在这些已读来源中核到现成LLM聊天或长期生成式陪伴功能。RL动作控制≠生成式会话，相机／NFC／AI accelerator和可扩展API亦不能证明已接大模型。未编译、刷写、运行或实测延迟／动作／安全／离线全功能；动作视频未播放验证。
+
+<a id="d103"></a>
+### D103｜microduck_rl：可训练、导出与分享的动作生态
+
+- **等级／日期／来源：** A，2026-10-10 HTTP 200读取[默认develop README](https://github.com/pollen-robotics/microduck_rl/blob/develop/README.md)与[LICENSE](https://github.com/pollen-robotics/microduck_rl/blob/develop/LICENSE)；定位Quickstart、Tasks、Publishing a policy。早先读取main可达，但本条以主会话确认的默认develop为准，不混称不同分支固定版本。
+- **证据：** `mjlab`（MuJoCo Warp）＋PPO；训练50Hz策略、导出ONNX交运行时部署。列速度行走／头姿控制、倒地恢复、坐站、喙触地拾取、踢球、翻滚及轮滑等任务；踢球条目标注actor is ball-blind，不能擅写成视觉自主追球。Quickstart要求CUDA GPU，亦可使用Hugging Face Jobs；公开BAM执行器建模、域随机化、backlash仿真及策略发布步骤。LICENSE为Apache-2.0。
+- **结论：** 社区不只是围观硬件，还能训练、发布和复用动作；从“买来玩”到“改玩法”的路径是市场观察对象。标准化环境、模型与发布工具**可能降低从零研发的部分成本**，但学习、GPU、装配、动力学匹配和调试门槛仍在；README的训练时长不是本项目复现结果。
+- **限制／下一步：** 未跑训练／sim2real，不将任务清单视为所有成品或C线HD-1910均能直接执行；未获得社区策略下载／实际部署人数及持续贡献队列。需按执行器、固件、模型版本核兼容并统计复用与完成率。
+
+<a id="d104"></a>
+### D104｜本地只读社区资料：教程、双舵机复刻与PCB／固件供应链
+
+- **等级／日期：** A（各作者对自己项目的一手说明），2026-10-10读取本地参考库；不是实时远端全量审计，也不是本机测试。
+- **来源／定位：** [A教程README](../../../references/microduck-build-tutorial/README.md)硬件／镜像／运行段（[上游](https://github.com/AI-FanGe/Microduck-build-tutorial)）；[B复刻README](../../../references/microduck-replica/README.md)“两种舵机”、CAD入口及构建记录，并读[NOTICE](../../../references/microduck-replica/NOTICE.md)（[上游](https://github.com/fanhao375/microduck-replica)）；[C社区套件README](../../../references/microduck-community-kit/README.md)“主要包括／其他说明”及[飞特补丁快照](../../../references/microduck-community-kit/firmware/v1/patches/README.md)（[上游](https://github.com/jyg9/microduck-community-kit)）。
+- **已核内容：** A提供Pi Zero 2 W／OpenRB／XL330路线教程、镜像、接线与运行步骤；B把XL330与HD-1910-C001的机械、协议、训练模型区分，CAD另有版本入口，并有作者构建／调试记录；C明确“不是官方Microduck仓库”，提供imu_to_dxl PCB／固件／主机工具、banana_pcb、dxl_hub、飞特舵机调试器与运行时补丁，并有作者板件供应入口。它们分别体现教程内容、衍生结构与可采购部件方向，不是三个独立终端用户群。
+- **纠错与兼容边界：** 不采用B首页“IMU未开源／唯一公开重建”的过时全称断言，C已公开自己的IMU工程和固件；这也不反向证明官方当前成品每块硬件均开放。C首页“完整源码可编译”不能盖过本项目已记录的本地`software/microduck_feetech/`完整源码缺口；补丁基线`f0d934e`有明确快照限制，不承诺适配当前main。上游真机／编译记录不写成本项目完成。A的XL330参数、C的HD-1910参数及官方2026成品分栏，不复用供电、扭矩、成本表或训练结论。
+- **许可／结论：** B为文件级混合许可，GitHub NOASSERTION不等于全Apache；不得把软件许可推广到全部CAD或商用成品。教程与模块化补充确实构成降低从零复刻门槛的路径，但“更低门槛”是相对从零自研的机制推断，不是普通消费者零门槛、不保证套件交付与售后。未核板件订单、销量或良率；下一步需完成复刻数、支持工时、备件兼容和版权链证据。
+
+<a id="d105"></a>
+### D105｜GitHub公开社区快照：五仓库分开记录，不合计独立用户
+
+- **等级／日期／归属：** A，GitHub官方REST公开字段。2026-10-10主会话逐仓库真实HTTP 200核验后以消息回传；本Analyst-Coder直接登记，未重复请求。观察时分未记录，仅保留日期；[小型JSON与全部回传字段](parts/microduck-community-snapshot-20261010.json)。
+
+| 仓库／官方API | stars | forks | created_at（UTC） | pushed_at（回传精度） | 默认分支／API许可 |
+|---|---:|---:|---|---|---|
+| [pollen-robotics/microduck](https://api.github.com/repos/pollen-robotics/microduck) | 9,276 | 1,199 | 2026-07-29T07:52:16Z | 2026-10-09T15:19:16Z | main／Apache-2.0 |
+| [pollen-robotics/microduck_rl](https://api.github.com/repos/pollen-robotics/microduck_rl) | 2,396 | 543 | 2025-12-06T13:00:59Z | 2026-10-09T10:08:49Z | develop／Apache-2.0 |
+| [AI-FanGe/Microduck-build-tutorial](https://api.github.com/repos/AI-FanGe/Microduck-build-tutorial) | 1,211 | 300 | 2026-09-04T17:18:43Z | 2026-09-11（仅日） | main／MIT |
+| [fanhao375/microduck-replica](https://api.github.com/repos/fanhao375/microduck-replica) | 1,131 | 204 | 2026-08-28T13:42:48Z | 2026-10-08（仅日） | master／NOASSERTION |
+| [jyg9/microduck-community-kit](https://api.github.com/repos/jyg9/microduck-community-kit) | 14 | 5 | 2026-09-27T08:30:35Z | 2026-10-10T01:20:56Z | main／Apache-2.0 |
+
+- **额外回传字段：** 五项`full_name`一致、`fork=false`、`archived=false`；microduck描述为“Tiny biped duck robot”，homepage为`https://pollen-robotics.com/microduck`，subscribers_count=54。`fork=false`只指GitHub仓库关系，不否认存在衍生设计或共享代码。
+- **结论／限制：** 主仓9,276 stars／1,199 forks、训练仓与两套千星级教程／复刻资料，足以支持“值得独立纳入的开源社区现象”，纠正只看零售成品的选样偏差。**star≠销量／留存，fork≠完成复刻，跨仓库用户重叠；仓库创建日≠产品首发，单日累计≠今年增长曲线。**不据此宣称全球消费级销量爆款、总用户数或市场排名。还缺独立贡献者／完成复刻与部署／教程播放／订单履约／D30或D90再用等数据。
+
 <a id="execution-log"></a>
 ## 十一、研究执行日志（始终置于文件末）
 
@@ -4759,3 +4822,19 @@ T201—T209 只作为**可选使能**引用。任何具体产品是否采用 ESP
 - **最终总审通过并冻结（2026-10-10，主会话回传）：**无必改项，C112公司全称缺来源的P2已关闭；Markdown／HTML中的主体、SKU、地区、金额、时间、混合父listing sold、临时免费及原报告框架一致。审查结论沿用上文限定的外部复核范围，不扩称全部来源重访、资金到账／销售后台审计或实物验收。本次仅追加最终结论、更新PROGRESS本轮审核／生成检查完成状态并重建evidence.html；版本同步由主会话办理，不声称commit／push已完成。
 - **主会话最终机械QA实数：**四HTML一致性检查通过，1,438个本地链接、44张表；全专题21份Markdown共1,329个本地链接、82个表格块，列数检查0错；229证据ID为原192＋37且精确唯一，旧192原文逐字保留；40卡、42媒体记录及38张图片的hash／尺寸／bytes不变；scripts／测试／media的git diff为空，编码／凭据检查和新三片行尾／EOF检查通过。正文13,767 Han，用户接受本轮增量；这些是主会话实际QA结果，不新增来源或统计对象。
 - **最终视觉与测试范围：**沿用主会话桌面1280及390窄屏专题预览检查：锚点、标题与数值可读，无整页横溢或console error；窄屏表格容器309／scrollWidth512，页面375≤390。unittest27项为25通过、2因符号链接权限跳过；未实测file://或PDF。最终审核／生成检查完成，交回主会话总审后的版本同步。
+
+
+### Microduck遗漏修补｜Analyst-Coder自检与待独立审查（2026-10-10）
+
+- **范围与当前状态：**只补X11／G5及社区纳样框架，不重做市场。官方成品预售与社区DIY同时呈现；原229编号全文保留，现行234＝229＋D101—D105；原40卡保留，现行41＝37消费核心基线＋3邻接＋1开源平台，不是已售数。D是新证据ID前缀，不是原附录D。主报告突出官方“社区订单多／爬产／新单4—6个月”的需求排产线索，但不升级为订单量、取消率、出货或全球销量爆款。
+- **来源核验归属：**本角色HTTP 200核读官方产品／商店、运行时README／架构／LICENSE、RL默认develop README／LICENSE，并读本地A／B／C只读资料；GitHub五仓公开字段由主会话HTTP 200采集回传，集中为D105和小JSON，不重复抓数。D101主会话另独立抽核产品页与美国参数商店，范围已写入该条；不冒称全资料双重核验。GBK终端显示中止和bs4缺包的提取尝试、替代方法见补片，未安装依赖。
+- **原件与集合保护：**以Git HEAD为开工基线提取229个旧显式证据块，229／229全文包含比对通过；234编号精确唯一。原40个卡正文块40／40保留，现41个card锚点精确唯一。原42条媒体JSON对象逐字段相同、原38张JPEG逐字节与Git基线相同；4条视频外链不变。没有修改旧分组片或只读参考库，README／PROGRESS移除本轮新增说明后与开工基线一致。
+- **新媒体：**仅X11官方README四配色主视觉，1839×638 WebP缩为900×312 JPEG、46,696 bytes；最终图已用view_image检查主体、四配色、画面完整与比例，不裁切／生成假图；主会话另独立view_image确认900×312四配色全身图清晰、比例正常、无裁断，回传复核已登记。现39JPEG＋4视频＝43记录、41个product_id；39图总2,407,579 bytes，全部哈希／宽高／字节与manifest一致。原大图不冒称永久归档，软件Apache-2.0不覆盖宣传素材权利。
+- **代码与程序检查：**渲染器只改图鉴40→41元信息；测试仅改两条真实元信息断言，40卡fixture保留。`python -B -m unittest scripts.test_render_toy_market_html`运行27项：25通过、2按原符号链接权限条件跳过。4HTML生成及`--check`通过：1,496个本地链接、46张表，无远程资产，源文本保留。`git diff --check`通过；仅提示既有Git换行策略的LF／CRLF转换警告，不是空白错误。
+- **Markdown链接检查过程与结果：**22份Markdown共1,386个本地链接、86个表格块；原始表格列宽0错。初版通用检查把冻结的product-atlas-g1—g4拼装片按文件目录解析，报告136处根相对引用；按其专题根集成上下文复查、并核对旧片文本未改后0错，没有为通过检查改写旧片。验证旧片的首次逐字节比较遇工作副本CRLF／Git LF差异，改用换行规范化文本比较后通过。新补片本身使用可独立解析的相对路径。
+- **交接与未测：**这些是Analyst-Coder自检，不是独立审查通过。未做本轮浏览器视觉／file://／打印PDF检查，旧阶段视觉记录不外推新增段；未播放视频动态、未运行机器人／RL训练、未结账／购买／联系、未采社媒播放或后台订单／留存。待主会话独立审查，未暂存／commit／push；版本同步由主会话统一办理。不改变C线硬件路线及本机验收状态。
+
+
+- **Microduck最终内容／范围审查通过（2026-10-10，Reviewer经主会话回传）：**无必改项。Reviewer独立HTTP读取官方README与architecture，确认架构仍标draft，核对50Hz本地控制、15舵机及MuJoCo／PPO→ONNX链路；高层外部LLM设计与robotd反应控制分开，不将可扩展设计写成现款预装聊天。价格／交期、社区计数、A／B／C路线隔离、许可及媒体口径通过内容审查。Reviewer未重新采集API、价格、图片或重跑测试；这些核验分别沿用下述主会话QA及既有D101／D105／媒体复核，不声称全部来源二次采集。Reviewer起初进行了只读git检查，随后停止，未写入文件。
+- **主会话最终QA通过（2026-10-10回传）：**4HTML `--check`通过，1,496个本地链接、46张表；27项unittest为25通过、2按原权限条件跳过。234个唯一证据ID、41卡、43媒体记录准确；原42媒体对象深度相等，原38张图片字节哈希匹配，新增主图900×312。主会话所用Markdown检查范围为1,123个本地链接、0错，不与上文含冻结拼装片的1,386链接自检合并为同一统计范围。references／hardware／flash／BOM／AGENTS无diff；新增两个文本文件无U+FFFD、行尾空白或EOF问题，`git diff --check`通过。新增图片另有主会话view_image独立视觉复核，范围见上文。
+- **最终状态：**Microduck补录的独立内容／范围审查和主会话QA已完成，冻结供版本同步；上文“待独立审查”为交接时的历史状态，以本条为准。本次仅补最终日志、更新PROGRESS本轮状态并重建evidence.html，不新增事实、卡片或视频；不扩称实机、训练、结账、订单后台、浏览器／PDF或动态视频已经验收。Analyst-Coder未暂存／commit／push，版本同步由主会话统一办理。

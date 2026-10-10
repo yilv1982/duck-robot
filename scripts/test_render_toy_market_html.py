@@ -98,8 +98,8 @@ class RendererTests(unittest.TestCase):
     def test_four_page_routes_metadata_and_original_titles(self):
         self.assertEqual(list(self.pages), ["research", "competitors", "evidence", "product-atlas"])
         self.assertEqual(self.pages["product-atlas"][0], "产品图鉴")
-        self.assertIn("40 个分析对象", self.pages["product-atlas"][1])
-        self.assertIn("非40款已售", self.pages["product-atlas"][1])
+        self.assertIn("41 个分析对象", self.pages["product-atlas"][1])
+        self.assertIn("非41款已售", self.pages["product-atlas"][1])
         self.assertEqual(self.pages["evidence"][1], "分级证据 · 技术与产品来源")
         pages = self.render_all()
         links, tables = renderer.validate(pages)
