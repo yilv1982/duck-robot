@@ -43,6 +43,6 @@ A 线（XL330 + OpenRB + Pi Zero 2W）的完整步骤基线（阶段 0-7）、�
 
 ## 市场调研
 
-- 2026-10-10：全球消费电子玩具公开资料研究——[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)、[30个产品样本与10个案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)、[证据与质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.html)。行业中立机会判断，不改变本项目C线硬件路线。
+- 2026-10-10：全球消费电子玩具公开资料研究——[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)、[30个产品样本与10个案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)、[证据与质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.html)。现已按2026滚动事件修订：国庆与近90天线索优先，原96编号加S8/E11共115条（非独立来源数）；保留30产品/10案例基线，新增产品观察单列。行业中立，不预设AI或非AI胜出，不改变本项目C线硬件路线。
 
 - 阅读版为可离线打开的 HTML，含章节目录、证据跳转与宽表格；[Markdown 源文件](./docs/references/consumer-electronic-toys-market-20261010/research.md)保留。重新生成：`python scripts/render_toy_market_html.py`；一致性检查：追加 `--check`（依赖 `markdown-it-py`）。

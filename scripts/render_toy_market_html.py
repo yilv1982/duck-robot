@@ -21,9 +21,9 @@ from markdown_it.token import Token
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "docs/references/consumer-electronic-toys-market-20261010"
 PAGES = {
-    "research": ("研究报告", "行业全景 · 商业机会", "先看市场边界，再看需求与商业机会。"),
+    "research": ("研究报告", "2026 滚动线索 · 商业机会", "先看国庆与近90天的实际线索，再看机会、交付与持续价值。"),
     "competitors": ("竞品与案例", "30 个产品样本 · 10 个经营案例", "按产品、价格、服务生命周期和证据进行对照。"),
-    "evidence": ("证据与方法", "96 个分级记录 · 可追溯来源", "保留来源、口径、反证、访问限制与审查记录。"),
+    "evidence": ("证据与方法", "115 个编号记录 · 非独立来源数", "保留来源、口径、反证、访问限制与审查记录。"),
 }
 URL_RE = re.compile(r'https?://[^\s<>"\[\]“”‘’\u3000-\u303f\uff00-\uffef]+')
 
