@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-10",
+  "timezone": "Asia/Shanghai",
+  "request": "Use the existing user-specified review image as base and assess the single-chain HAT wiring topology.",
+  "source": {
+    "path": "docs/photos/hat-v1.2-port-review.png",
+    "sha256": "9d98e78d2992ed0d44a0a691e0a46a4d5f5c9972c9256a1a4cbf4e7d5a527352",
+    "preserved_identical_to_git_HEAD": true,
+    "status": "Existing archived image re-specified by user; no duplicate original"
+  },
+  "output": {
+    "path": "docs/photos/hat-v1.2-wiring-plan.png",
+    "sha256": "9bd91819a49ddf7ce049e354af903ddc9381e6c1ad0ae2f9f345f1a468361c32",
+    "dimensions": [
+      1800,
+      1740
+    ]
+  },
+  "script": "scripts/annotate-hat-wiring.py",
+  "processing": "Crop front/back photo panels from original marked image; add A/B/C role frames, functional arrows and prerequisite warnings. No per-pin spatial polarity assigned.",
+  "verification": {
+    "script_syntax": "passed",
+    "deterministic_regeneration": "passed",
+    "visual_review": "Final image opened and checked; labels correspond to the two SERVOS housings and rear 40P header.",
+    "hardware_measurements_performed": false
+  },
+  "constraints": [
+    "V1.2 power/data net mapping and pin orientation unverified",
+    "Single SERVOS input carries total current; connector rating and protection not validated",
+    "Topology agreement is conditional, not approval to connect battery or full servo load"
+  ]
+}

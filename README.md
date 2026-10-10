@@ -10,7 +10,7 @@ Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C
 
 - **执行机构**：飞特 HD-1910-C001 ×15（总线型，官方 robotd 有飞特补丁）
 - **主控/总线**：microduck HAT（Radxa Zero 3W，板载 74LVC 半双工驱动接 UART2）+ imu_to_dxl v0.3 作总线从站（ID 200，双协议）
-- **供电**：舵机/HAT/IMU 全部电池直通电压（电源板为可选转接件），拓扑见 [docs/power-architecture-v2.md](./docs/power-architecture-v2.md)
+- **供电候选**：电池原压经取电/保护进入 HAT 一个 SERVOS 口，另一口接舵机+末端 IMU，40P 对插主控并供 5V。HAT 电源/通信通过后可不装微雪板和独立稳压板；**实物针序、入口载流仍待验证**。见[接线图](./docs/photos/hat-v1.2-wiring-plan.png)与[架构说明](./docs/power-architecture-v2.md)
 - **采购清单**：[BOM.md](./BOM.md)（已重写为 C 线；A 版存档于 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)）
 - **PCB 打样**：[tools/jlc-order](./tools/jlc-order/README.md) —— 嘉立创开放平台全自动下单（计价→建单→审核→进度跟踪），2026-10-09 已实测下单并审核通过
 - **IMU 刷机**：[flash/README.md](./flash/README.md)（DAPLink 接 J2 焊盘）

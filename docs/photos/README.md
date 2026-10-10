@@ -21,6 +21,7 @@
 | [imu-ldo-location.png](./imu-ldo-location.png) | IMU 板 U3 定位及放大图 | 2026-10-10（制作） | 本会话生成，源图为下行的用户实物标注原件；去掉错误的 5.5V 上限说明，按设计识别 AP2210K-3.3 | [供电复核](../references/power-review-20261010/research.md) |
 | [IMU 旧实物标注原件](../schematics/imu-to-dxl-scrapmeta-v0.3/实物板元件标注.jpg) | IMU 板历史总览 | 2026-10-09（原登记） | 原件已在原理图专题保存；**电压说明过期，不用于接线**，仅保留来源追溯 | U3 位置说明使用上行新版 |
 | [hat-v1.2-port-review.png](./hat-v1.2-port-review.png) | HAT V1.2 接口复核 | 2026-10-10（制作） | 本会话生成；源图为本表正反面原图，标出两个 3Pin 口、两组 4Pin 空位及圆柱电容；背面旋转 90° | [供电复核](../references/power-review-20261010/research.md)，入口仍待电气核验 |
+| [hat-v1.2-wiring-plan.png](./hat-v1.2-wiring-plan.png) | HAT 单链供电意向图 | 2026-10-10（制作） | 本轮用户指定本表 `hat-v1.2-port-review.png` 为底图（已有原件，不重复拷贝）；裁出正背面面板，加 A/B/C 和功能箭头。脚本 `scripts/annotate-hat-wiring.py`；**不标照片上下针极性，非上电放行** | [验证单](../hat-v1.2-test.md)、[供电记录](../references/power-review-20261010/research.md) |
 
 ## 降压模块（黑色，XT60 输入）— 2026-10-10 照片识别（正面+背面）
 
@@ -104,7 +105,7 @@
 | 小信号芯片区 | SOT-23-5/6 多颗（LDO/74LVC/LM5050 等，待 V1.2 图对照） |
 | 焊盘 ×8 | 对应正面两组 4Pin 空接口，不是已确认的独立电池输入 |
 
-**接口结论**：照片中只明确看到两个已焊接 SERVOS 3Pin 口，未识别出标注 BAT/VIN 的独立电池入口。若电池占用其中一个 SERVOS 口，就只剩一个口接舵机链；不能直接按“两口各接一条链”施工。详见[复核记录](../references/power-review-20261010/research.md)。
+**接口结论**：照片中只明确看到两个已焊接 SERVOS 3Pin 口，未识别出标注 BAT/VIN 的独立电池入口。现将用户提出的流程画为[接线意向图](./hat-v1.2-wiring-plan.png)：A 两线进电、B 接单条舵机链与末端 IMU、C 对插主控。这与“两口各接一条舵机链”不同；实物针序/路径/载流未核准，不能凭图上电。详见[复核记录](../references/power-review-20261010/research.md)。
 
 **行动项**：接线/上电前向板卡来源索取 **V1.2 原理图或改动说明**（重点：MCU 功能与固件、+BATT 入口形式、舵机口供电路径是否与 V1.0 一致）。供电架构分析（[power-architecture-v2.md](../power-architecture-v2.md)）基于 V1.0 图，舵机口 +BATT 直通等结论需按 V1.2 实物复核。
 
