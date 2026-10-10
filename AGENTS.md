@@ -44,6 +44,7 @@
 | [BOM.md](BOM.md) | C 线物料、数量、状态及采购缺口。 |
 | [供电架构 v2](docs/power-architecture-v2.md) | 当前供电架构讨论基线，**不代表 HAT V1.2 或整机带载已验证**；须结合下面的复核记录。 |
 | [供电与 HAT 实物复核](docs/references/power-review-20261010/research.md) | 电流预算、分支前提、两口/八焊盘识别、LDO 标注及尚未验证的风险。 |
+| [堵转是否会烧 HAT：风险核查](docs/references/stall-hat-risk-20261010/research.md) | 区分电流路径、短时/持续堵转、保护默认关闭与实际耐受；先核验，不将配电改造预设为结论。 |
 | [EH 与其他配电方案比较](docs/references/power-distribution-comparison-20261010/research.md) | 社区 dxl_hub 输入焊盘/分支、无 HAT 动力独立配线、OpenRB 总额定与剩余验证风险。 |
 | [过流保护方案](docs/overcurrent-protection.md) | 电池正极保险/总开关、额定协调与电子保护边界；保险安数及实际入口能力尚未核准。 |
 | [HAT V1.2 接线意向图](docs/photos/hat-v1.2-wiring-plan.png) | 用户底图派生：A 两线进电 / B 舵机+末端 IMU / C 主控对插；未核准针序与载流，不作上电放行。 |
