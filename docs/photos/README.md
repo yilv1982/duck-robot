@@ -12,6 +12,12 @@
 | [buck-module-xt60-annotated.jpg](./buck-module-xt60-annotated.jpg) | ↑ 的元件标注版 | 2026-10-10 | v2（实测后勘误）：10 处元件编号 + 图例，⑧=3P 排针⑨=PWR OUT 红塑 2P；脚本 `scripts/annotate_buck_module.py` | 对照实物讲解/测试接线 |
 | [buck-module-xt60-back.jpg](./buck-module-xt60-back.jpg) | 降压模块背面 | 2026-10-10 | 板名 BUS SERVO POWER SUPPLY V1.3（By 造物の乐趣），背面有 VOLT_SEL 选压焊盘/排针焊点/二维码 | 确认板子身份与接口定义 |
 | [buck-module-xt60-back-annotated.jpg](./buck-module-xt60-back-annotated.jpg) | ↑ 的接口标注版 | 2026-10-10 | v4（勘误无 DC 母座）：① 金色圆孔（疑安装孔）② 二维码 ③ XT60 焊点 ④ VOLT_SEL 焊盘（改焊处）⑤ PWR OUT 焊点 ⑥ 3P 排针焊点 ⑦ 安装孔 | 实测/改焊时对照 |
+| [waveshare-bus-servo-adapter-a.jpg](./waveshare-bus-servo-adapter-a.jpg) | 微雪总线转接板正面 | 2026-10-10 | Bus Servo Adapter (A) v1.1，双舵机口 + UART 排针 + USB-C + DC 母座/端子 | 台架总线调试接线对照 |
+| [waveshare-bus-servo-adapter-a-annotated.jpg](./waveshare-bus-servo-adapter-a-annotated.jpg) | ↑ 的元件标注版 | 2026-10-10 | 7 处标注 + 用法要点；脚本 `scripts/annotate-waveshare-adapter.py` | 台架接线/模式跳线对照 |
+| [hat-v1.2-front.jpg](./hat-v1.2-front.jpg) | HAT 正面 | 2026-10-10 | 实物丝印 **V1.2**（此前档案误记 V1.1）；舵机口×2、Qwiic×4、扬声器/麦克风座群、超级电容 | 图物差异核对 |
+| [hat-v1.2-back.jpg](./hat-v1.2-back.jpg) | HAT 背面 | 2026-10-10 | **F303 类 MCU（V1.0 原理图无此件）**、PAM8406、40P 排母、圆形焊盘×8 | 索取 V1.2 原理图 |
+| [hat-v1.2-front-annotated.jpg](./hat-v1.2-front-annotated.jpg) | ↑ 正面标注版 | 2026-10-10 | 8 处标注；脚本 `scripts/annotate-hat.py` | 接线对照 |
+| [hat-v1.2-back-annotated.jpg](./hat-v1.2-back-annotated.jpg) | ↑ 背面标注版 | 2026-10-10 | 7 处标注 + 关键发现 | 接线对照 |
 
 ## 降压模块（黑色，XT60 输入）— 2026-10-10 照片识别（正面+背面）
 
@@ -38,7 +44,64 @@
 
 **关键风险（同前）**：输入丝印 7.2-18V，2S 带载跌 6.6V 可能掉出稳压；IMU 板 LDO 上限 5.5V，若选压焊盘桥在 6V/7V 档接 IMU 会烧。
 
-**实测手顺（2026-10-10 已完成空载扫描，结论见 [buck-module-test.md](../buck-module-test.md)）：** 剩余：改焊 5V 档 + 空载复验 5.00V（IMU LDO 上限 5.5V 的前置）→ 台架带载复测。~~核 DC 母座~~（勘误：板上无此件）。**该板在整机中的角色与接线见 [power-architecture.md](../power-architecture.md)。**
+**实测手顺（2026-10-10 已完成空载扫描，结论见 [buck-module-test.md](../buck-module-test.md)）：** 剩余：台架带载复测。~~核 DC 母座~~（勘误：板上无此件）。~~改焊 5V 档~~（2026-10-10 v2 评审取消：AP2210K-3.3 输入上限实为 13.2V，IMU 直挂总线，本板稳压支路无负载）。**该板在整机中的角色与接线见 [power-architecture-v2.md](../power-architecture-v2.md)（历史版本 v1 同目录存档）。**
+
+## 微雪总线转接板 — Bus Servo Adapter (A) v1.1 — 2026-10-10 照片识别
+
+板子身份（左缘竖排丝印）：**Bus Servo Adapter (A) v1.1**，Waveshare，板 42×33mm、安装孔 φ2.5×4（孔距 37×28mm）。成品模块无公开原理图；规格以[微雪官方 wiki](https://www.waveshare.com/wiki/Bus_Servo_Adapter_(A)) 为准。**照片识别、实物未复测**；板载降压 IC 与 USB 串口芯片型号丝印照片上不可辨（USB 串口按微雪资料为 CH343）。
+
+**正面元件（对应标注图 [waveshare-bus-servo-adapter-a-annotated.jpg](./waveshare-bus-servo-adapter-a-annotated.jpg)）：**
+
+| 元件 | 识别要点 |
+|---|---|
+| 舵机口 ×2（白座 5264-3P） | 丝印 D/V/G = 数据/电源/地；两口并联，菊链最多 253 颗 |
+| UART 排针 TX/RX/GND | A 模式接 MCU；微雪 wiki 提醒 **RX-RX、TX-TX 直连**（丝印已按对端标注，勿交叉） |
+| 模式跳线帽 ×2（黄色） | **A = UART 控制 / B = USB 控制**，对照板面 A/B 表格丝印 |
+| USB-C 座 | B 模式接电脑（CH343 串口，微雪总线工具/LeRobot 可用） |
+| DC 母座 5.5/2.1 ∥ DC+/DC- 螺丝端子（绿 2P） | 电源输入，两路并联；丝印 DC 9-12.6V |
+| 板载降压（SOIC-8 + 47µH 电感） | 仅供板内逻辑；**不给舵机稳压** |
+| PWR 电源指示灯 | 右下角 |
+| 半双工转换与阻容区 | UART↔单线总线收发切换电路（芯片丝印未读清） |
+
+**关键事实（官方资料 + 第三方实测一致）**：**输入电压直通舵机口 V 脚，板上不给舵机稳压**——输入必须等于舵机额定电压。丝印 9-12.6V 是针对 ST 系 12V 舵机的标称；微雪 wiki 注明 5-8.4V 亦可输入。
+
+**本项目用法**：HD-1910 是 7.4V 舵机 → 台架喂 **2S（6.6-8.4V）正确，严禁 12V**。角色 = 台架总线调试（舵机改 ID/零位、imu200 验收、对比飞线/FE-URT-2 方案），**不进整机供电链**（整机架构见 [power-architecture-v2.md](../power-architecture-v2.md)）。
+
+## HAT — Microduck Controller Hat for Radxa Zero 3W（实物 V1.2）— 2026-10-10 照片识别
+
+板子身份（正面丝印）：**Microduck Controller Hat for Radxa Zero 3W**，实物版本丝印 **V1.2**（正背面均有）。**⚠️ 此前档案记为 V1.1，以实物为准更正为 V1.2**；存档原理图（[SCH PDF](../references/microduck-hat-20261006/SCH_Microduck-Hat-for-Radxa-Zero_2026-10-06.pdf)）仅为 **V1.0**。照片识别、未上电未复测。
+
+**关键发现（图物差异）**：
+
+1. **背面有一颗 F303 类 MCU**（LQFP48，丝印 ?32F303CET6，品牌前缀不可辨）+ 金属壳晶振——V1.0 原理图 5 页中**没有任何 MCU**，属 V1.1/V1.2 新增，用途未知（总线卸载/电源管理/RTC 皆有可能）。
+2. **正面有一颗超级电容**（丝印疑 1.0F 5.5V）——V1.0 图中无，疑为 MCU 的 RTC 备份电源。
+3. 背面中部有**圆形焊盘 ×8**（两排各 3 金 + 1 银）——疑电源/总线输入焊盘，待核。
+4. RS485 座（EH 4P ×2）位置为**空焊盘未焊**；本项目用 TTL 总线，不影响。
+
+**正面元件（对应 [hat-v1.2-front-annotated.jpg](./hat-v1.2-front-annotated.jpg)）：**
+
+| 元件 | 识别要点 |
+|---|---|
+| 舵机口 ×2（JST EH 3P，左缘大白座） | 丝印 SERVOS；按 V1.0 图：1=GND 2=+BATT 直通 3=DATA（V1.2 待复核） |
+| Qwiic/I2C 座 ×4（SH 1.0 4P） | 丝印 I2C3 / I2C4 / I2C5 等 |
+| RS485 座焊盘 ×2（EH 4P） | 空焊盘未焊 |
+| AP63205 5V 降压区 | 电感丝印 CK 6R8 = 6.8µH，与 V1.0 图 L1 一致 |
+| 超级电容 | 丝印疑 1.0F 5.5V，V1.0 图无，待核 |
+| 扬声器/麦克风座群 | 丝印 SPEAKERS、LEFT/RIGHT、Mic、MICS |
+| 40P 排母焊盘（正面） | 排母本体焊在背面，插 Radxa Zero 3W |
+
+**背面元件（对应 [hat-v1.2-back-annotated.jpg](./hat-v1.2-back-annotated.jpg)）：**
+
+| 元件 | 识别要点 |
+|---|---|
+| F303 类 MCU（LQFP48） | 丝印 ?32F303CET6；**V1.0 图无此件** |
+| MCU 晶振 | 金属壳贴片 |
+| PAM8406 音频功放（SOP-16） | 与 V1.0 图 U12 一致 |
+| 40P 排母 | 2×20，插 Radxa Zero 3W |
+| 小信号芯片区 | SOT-23-5/6 多颗（LDO/74LVC/LM5050 等，待 V1.2 图对照） |
+| 圆形焊盘 ×8 | 疑电源/总线输入，待核 |
+
+**行动项**：接线/上电前向板卡来源索取 **V1.2 原理图或改动说明**（重点：MCU 功能与固件、+BATT 入口形式、舵机口供电路径是否与 V1.0 一致）。供电架构分析（[power-architecture-v2.md](../power-architecture-v2.md)）基于 V1.0 图，舵机口 +BATT 直通等结论需按 V1.2 实物复核。
 
 ## 万用表 — 德力西 6000 位数字万用表
 
@@ -84,5 +147,5 @@
 ## 新增照片规则
 
 - 文件名：`主题-型号.jpg`（英文小写连字符），收到日期写登记表
-- 待收照片（拍后补入）：IMU 板 J2 焊盘面、HAT V1.1、舵机清点、打印件清点、降压模块主控 IC 近拍；**二维码用手机扫（结果发给助手即可），压缩照片解不了码**
+- 待收照片（拍后补入）：IMU 板 J2 焊盘面、舵机清点、打印件清点、降压模块主控 IC 近拍；**二维码用手机扫（结果发给助手即可），压缩照片解不了码**
 - 说明写在对应小节，重点记"照片里当时的状态"和"后续要用它核对什么"

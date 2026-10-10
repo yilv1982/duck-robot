@@ -1,7 +1,7 @@
 # 项目知识（2026-09-30）
 
 ## 2026-10-09 增补
-- **硬件到位**（用户确认，实物复测未做）：微雪 Bus Servo Adapter (A)、黑色 XT60 降压模块（丝印 7.2-16V 待核）、绿色 IMU2DXL v1.0 板（哪版自绘待核）、白色鸭图案 HAT V1.1；全部舵机与打印件到位，数量待清点。明细与待办见根 `PROGRESS.md`。
+- **硬件到位**（用户确认，实物复测未做）：微雪 Bus Servo Adapter (A)、黑色 XT60 降压模块（丝印 7.2-16V 待核；2026-10-10 实测更新见 PROGRESS 与 docs/photos：实为 7.2-18V，空载下限 ≈6.3V）、绿色 IMU2DXL 板（2026-10-09 用户确认 = ScrapMeta microduck-diy **v0.3**，STM32G031；本行早先记"v1.0 待核"已过时）、白色鸭图案 HAT（**实物丝印 V1.2**，2026-10-10 照片确认，PROGRESS 已同步；存档原理图为 V1.0，图物差异大：背面多 F303 类 MCU + 超级电容，V1.2 图纸待向板卡来源索取）；全部舵机与打印件到位，数量待清点。明细与待办见根 `PROGRESS.md`。
 - **方案方向**：主参考改为 `microduck-community-kit`（飞特 HD-1910-C001 + 官方 robotd 飞特补丁 + imu_to_dxl 总线从站）。缺口：`software/microduck_feetech/` 未推送、主控↔总线物理适配未开源、真机整定值需复测。
 - **参考库清理**：replica 锚定 `0f2cff6bd7`、tutorial 还原为上游 main（2026-10-09 哈希校验 0 差异）；A 训练库内修改（4 改 + 51 增）提取至 `local-changes/`，其中 `export_onnx.py` 含失效 `/mnt/e/` 路径。
 - 工程自 E 盘迁 C 盘后，文件时间戳全部为 2026-10-09，**不能再按时间戳找改动**，版本核对一律走上游哈希对比。
@@ -13,6 +13,8 @@
 - 当前已经跑通的是 **B 的 XL330 平地任务**，不是 HD1910；没有进行实机控制。用户正在理解 RL、Real2Sim、训练任务配置和性能。
 
 ## 已安装环境与入口
+
+> ⚠️ **本节为旧机（E 盘时代）环境记录**：现机（C 盘，2026-10-09 迁入）**无 WSL**，训练环境不在本机（见根 PROGRESS「工程迁移」）。复用训练流程前须在现机重建，且所有 `/mnt/e/` 路径须改写。
 - WSL 发行版 `Ubuntu`，用户 `yilv`，Ubuntu 24.04；RTX 4080 16GB 可用。
 - Linux uv：`/home/yilv/.local/bin/uv`，版本 0.12.20。
 - 训练目录：`/mnt/e/Projects/duck-robot/microduck-replica/software/training`。

@@ -14,7 +14,7 @@ Microduck 小型双足机器人的个人复刻项目，记录选型采购、3D �
 | B：fanhao375 复刻研究 | [microduck-replica](./microduck-replica/README.md) | 机械装配分析、电控与调试资料、训练/工具代码；同时讨论 XL330 与飞特 HD-1910 路线，其主线及接口不能直接套用方案 A。 |
 | C：jyg9 社区套件 | [microduck-community-kit](./microduck-community-kit/README.md) | **当前主参考（2026-10-09）**。飞特 HD-1910-C001 路线：imu_to_dxl/banana_pcb/dxl_hub 三块板、GD32 固件与升级工具、官方 robotd 的飞特补丁、HLS 舵机浏览器调试器。`software/microduck_feetech/` 完整源码上游尚未推送。 |
 
-**下文机器人概览、复刻计划及根目录 [BOM](./BOM.md) 仍以方案 A 为基线，不自动适用于方案 B。** 方案 B 的来源说明和实测记录仅作独立参考，本项目尚未逐项核实或运行；舵机型号、供电、电控板、IMU、ID/零位、通信协议、打印件和策略必须按选定路线成套核对。上游有关超规格供电的记录不构成本项目的安全建议。
+**路线状态（2026-10-10 更新）：主线 = 方案 C（飞特，2026-10-09 定稿）**。下文「机器人概览」「复刻计划」及原根目录 BOM 均为方案 A 基线（2026-09-28 编写），保留作 A 线回退参考，**不描述当前执行的硬件路线**：现行采购清单见 [BOM.md](./BOM.md)（已重写为 C 线，A 版存档于 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)），硬件状态见 [PROGRESS](./PROGRESS.md)，供电拓扑见 [docs/power-architecture-v2.md](./docs/power-architecture-v2.md)（v1 当日评审证伪两处前提后修订：IMU 直挂总线、电源板降为可选转接件）。方案 B 的来源说明和实测记录仅作独立参考；上游有关超规格供电的记录不构成本项目的安全建议。
 
 ### 方案 B 快速入口
 
@@ -68,6 +68,8 @@ smoke 已生成 model_4.pt（4720063 bytes）及 a-smoke.onnx（773823 bytes）�
 
 ## 机器人概览
 
+> ⚠️ **本节为方案 A 基线（XL330 + OpenRB + Pi Zero，2026-09-28）**，不是当前执行的 C 线。C 线硬件 = 飞特 HD-1910-C001 ×15 + HAT V1.2（Radxa Zero 3W）+ imu_to_dxl v0.3，舵机/HAT/IMU 全部吃电池直通电压（电源板为可选转接件），见 [PROGRESS](./PROGRESS.md) 与 [供电架构 v2](./docs/power-architecture-v2.md)。
+
 - **主控**：Raspberry Pi Zero 2 W（控制程序、蓝牙手柄、Wi-Fi / SSH；Wi-Fi 仅支持 2.4GHz）
 - **舵机**：Dynamixel XL330-M288-T × 14（双腿 10 个、头颈 4 个），通过 OpenRB-150 接入
 - **IMU**：BNO080/BNO085/BNO086（I2C，具体模块的电源与电平需另核）
@@ -77,6 +79,8 @@ smoke 已生成 model_4.pt（4720063 bytes）及 a-smoke.onnx（773823 bytes）�
 采购与接线细项见 [BOM.md](./BOM.md)。[上游教程](./microduck-build-tutorial/README.md) 和 [视频教程](https://www.youtube.com/watch?v=Vep8AjoCnEM) 用于对照，不作为安全规格或复刻成功的保证。
 
 ## 复刻计划
+
+> ⚠️ **以下阶段 0-7 为方案 A 的步骤基线（2026-09-28）**。C 线的当前工作序列见 [PROGRESS](./PROGRESS.md) 待办（IMU 刷机、banana_pcb 装配、舵机清点、HAT 验证等）与 [flash/README](./flash/README.md)。
 
 ### 阶段 0：确认可行性，再决定采购
 

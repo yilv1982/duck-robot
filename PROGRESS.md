@@ -18,10 +18,10 @@
 
 | 物品 | 数量 | 说明 / 待办 |
 |---|---|---|
-| 微雪 Waveshare Bus Servo Adapter (A) | 1 | 半双工总线转接板，即 replica《电控采购清单》的「半双工总线转接板」待买项；此前台架一直用 FE-URT-2 顶替。整机走它还是飞线，待测 |
+| 微雪 Waveshare Bus Servo Adapter (A) | 1 | 半双工总线转接板，即 replica《电控采购清单》的「半双工总线转接板」待买项；此前台架一直用 FE-URT-2 顶替。整机走它还是飞线，待测。2026-10-10 照片归档+元件标注（[docs/photos/](./docs/photos/README.md)）：实物 v1.1，输入**直通舵机口不稳压**（HD-1910 台架喂 2S，严禁 12V），跳线 A=UART/B=USB（CH343） |
 | 黑色降压模块（XT60 端子） | 1 | 2026-10-10 照片细读（[存档](./docs/photos/README.md)）+ **空载实测**（[操作单](./docs/buck-module-test.md)）：板名 **BUS SERVO POWER SUPPLY V1.3**（By 造物の乐趣，社区自研件，公开无资料，二维码待扫）；丝印 PWR IN 7.2-18V / OUT PWR 5V or 7.4V MAX 6A。**实测**：VCC（3P）12V→6.00V、6.6V→6.00V、6.3V→5.99V——选压桥 **6V 档**、稳压下限 **≈6.3V**（跌落跟随非关机，远好于丝印 7.2V），**2S 最差工况可用**；PWR OUT（2P）全程跟随输入 = **电池直通口**（舵机总线，对上 HD-1910 直挂 7.8-8.1V 用法）。接口分工闭环（~~DC 母座~~系照片误判，实物无此件）。**接 IMU 前须改焊 5V 档**（LDO 上限 5.5V），带载复测待台架 |
 | 绿色 IMU 板 | 1 | **用户确认 = ScrapMeta microduck-diy imu_to_dxl v0.3**（STM32G031，板 32×22mm）。三版来源对比与刷机兼容性查证见 [docs/references/imu-to-dxl-variants-20261009](./docs/references/imu-to-dxl-variants-20261009/research.md)；**飞特固件刷写包已备好**（[flash/](./flash/README.md)：校验过的 0.2.0 HEX + OpenOCD + 一键脚本 + imu200 验收工具），⚠️ 该板 LDO 上限 5.5V，**只能 5V 供电**，2S 总线集成时 VCC 须走 5V 支路 |
-| 白色鸭图案 HAT（V1.1） | 1 | **原理图已归档查证**（2026-10-09，[docs/references/microduck-hat-20261006](./docs/references/microduck-hat-20261006/research.md)）：官方 RPI Robot HAT 的嘉立创 EDA 派生版，Radxa Zero 3W（舵机总线 UART2=ttyS2）兼容 Pi Zero 2W，比官方多一颗 BNO085。原理图 V1.0 与手上 PCB V1.1 的差异待核 |
+| 白色鸭图案 HAT（**实物丝印 V1.2**，2026-10-10 照片更正，此前误记 V1.1） | 1 | **原理图已归档查证**（2026-10-09，[docs/references/microduck-hat-20261006](./docs/references/microduck-hat-20261006/research.md)）：官方 RPI Robot HAT 的嘉立创 EDA 派生版，Radxa Zero 3W（舵机总线 UART2=ttyS2）兼容 Pi Zero 2W，比官方多一颗 BNO085。**2026-10-10 正反面照片归档+元件标注**（[docs/photos/](./docs/photos/README.md)）：实物 V1.2 与存档原理图 V1.0 差异大——**背面多一颗 F303 类 MCU（LQFP48）+ 正面多一颗超级电容（疑 RTC 备份），V1.0 图中均无**；RS485 座未焊。接线/上电前须索取 V1.2 原理图 |
 | 全部舵机 | 待清点 | 型号/数量/出厂 ID 状态待登记。飞特方案按官方关节表应为 HD-1910-C001 ×15（含嘴） |
 | 打印件 | 待清点 | 版本/材料/数量待登记；打印模型以上游独立仓库 microduck-replica-cad 为准 |
 
@@ -42,7 +42,7 @@
 
 **在途（2026-10-09 用户确认已发货）**：DAPLink SWD 调试器、U6068 插针 ×2、电池。到齐后 IMU 刷机链路（J2 焊接 → DAPLink 烧录 → imu200 验收）与 banana_pcb 装配的硬件缺件清零；电池到货后登记化学体系/串数/触点，与电池盒、降压模块实测结果一起定供电方案。
 
-**原理图档案（2026-10-09 建）**：已确认硬件的设计文件统一存 [docs/schematics/](./docs/schematics/README.md)——IMU 板（ScrapMeta v0.3 的 `.eprj2` 真源工程 + 网表，钉 `main @ aa4c32d`）、HAT V1.1（5 页 PDF）；微雪转接板与降压模块为成品模块无公开原理图，暂只记规格待补。
+**原理图档案（2026-10-09 建）**：已确认硬件的设计文件统一存 [docs/schematics/](./docs/schematics/README.md)——IMU 板（ScrapMeta v0.3 的 `.eprj2` 真源工程 + 网表，钉 `main @ aa4c32d`）、HAT（5 页 PDF，图版本 V1.0；实物 2026-10-10 照片确认为 V1.2，目录已更名 `microduck-hat-v1.0-sch`）；微雪转接板与降压模块为成品模块无公开原理图，暂只记规格待补。
 
 **banana_pcb 打板已下单（2026-10-09 用户确认），等板回来。** 到板后手顺：焊 U6068 插针 ×2（未购则先买）→ 打印 `banana_pcb_locker` → 拆电池焊接出线（线径按 3-5A 选）→ 万用表直流档核极性 → 断电机械试装（插针与电池触点配合、locker 保持力）→ 只带主控支路验证 5V。
 
@@ -53,9 +53,9 @@
 - [ ] 按手顺完成 IMU 板刷机：购 SWD 调试器（推荐 DAPLink）→ J2 接线（⚠️ 实物 J2 未焊插座只有焊盘，2026-10-10 看实物标注图确认：焊 BM07B-SRSS-TB 座 + SH1.0 7P 线，或杜邦线直接焊盘）→ 双击 `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` 全 PASS（详见 [flash/README.md](./flash/README.md)）
 - [ ] 清点舵机（型号、数量、ID/零位状态）与打印件（版本、材料、缺件）
 - [ ] 微雪转接板上机验证（对比飞线方案）
-- [ ] 向板卡来源确认 HAT PCB V1.1 相对原理图 V1.0 的改动（2026-10-06 导出的图为 V1.0）
+- [ ] 向板卡来源索取 HAT **V1.2** 原理图或改动说明（存档图为 V1.0；2026-10-10 照片发现实物 V1.2 多 F303 类 MCU + 超级电容，图物差异大，见 [docs/photos/](./docs/photos/README.md) HAT 小节）
 - [ ] 飞特舵机原线（5264 端子）与 HAT 的 JST EH 3P 舵机座试插；不配则换 5264-3P 座或转接线
-- [ ] HAT V1.1 与手头主控/外壳的机械与电气适配核对
+- [ ] HAT V1.2 与手头主控/外壳的机械与电气适配核对（电气功能确认按 [docs/hat-v1.2-test.md](./docs/hat-v1.2-test.md) 操作单执行：断电通断核对 + 限流上电分步验证）
 - [ ] banana_pcb 到板装配与取电验证（焊 U6068 ×2、locker 打印、核极性、断电试装、主控支路验证）
 
 ## 2026-10-09 参考库清理（提取 → 还原）
@@ -65,7 +65,18 @@
 
 ## 供电架构定稿（2026-10-10）
 
-基于电源板空载实测 + IMU 网表 + HAT 查证记录，整机供电拓扑定稿并建档：[docs/power-architecture.md](./docs/power-architecture.md)。核心结论：降压模块 = IMU 的 5V 专属电源（VCC 改焊 5V 后）+ 电池配电中转（PWR OUT→HAT）；HAT 吃电池直通电压、板内 AP63205 给主控降 5V、舵机口直出电池压喂总线；IMU 走"数据挂总线、电走 5V 支路"的叶节点接法（J1 绝不插总线链）。未定项：总线电流过不过 HAT F1 保险，带载复测定。
+基于电源板空载实测 + IMU 网表 + HAT 查证记录，整机供电拓扑定稿并建档：docs/power-architecture-v1.md。当天评审证伪其中两处前提（IMU LDO 上限实为 13.2V 非 5.5V；HAT 的 F1 在数据线而非舵机电源路），已修订为现行版 [docs/power-architecture-v2.md](./docs/power-architecture-v2.md)：IMU 直挂总线（混血线与改焊 5V 任务取消）、电源板降为可选转接件、F1 未定项关闭、新增全链无保险与 EH 座分流两个风险项。
+
+## 主文档路线审计（2026-10-10）
+
+逐份检查主要文档中「确定路线（2026-10-09 主参考 C 飞特）之前」的遗留信息，修复如下：
+
+- **根 BOM.md 重写为 C 线现行清单**（核心件/供电充电/线材/结构件/安全边界，按供电架构 v2 口径：IMU 直挂总线、电源板可选、新增 5A 保险采购项）；原 A 线清单（2026-09-28，XL330 + OpenRB + Pi Zero）原样存档 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)，仅回退 A 线时使用——其供电安全研究（XL330 6.0V 上限、OpenRB 板级电流限制）仍有效。
+- **README.md**：路线状态段更新（主线 = C，指向架构 v2）；「机器人概览」「复刻计划」两节加 A 线基线横幅（原文保留不删——A 训练资产仍有效）。
+- **.goal/PROJECT_KNOWLEDGE.md**：IMU 版本行更正（"v1.0 待核"→已确认 v0.3）；「已安装环境与入口」节加旧机横幅（现机无 WSL，训练环境不在本机，/mnt/e/ 路径失效）。
+- **power-architecture-v2.md** 两处残留 "实物 V1.1" 更正为 V1.2（与 PROGRESS/照片一致）。
+- 检查过、无需改：docs/a-training.md、docs/b-training.md（明确的 A/B 线训练存档，属历史资产）；flash/、docs/photos/、PROGRESS 本体均为 C 线现行档。
+- 审计移交用户的待确认项：① NP-F550 充电器是否已有（BOM 已列）② HAT V1.2 图纸索取（到货待办已列）。
 
 ## 方案方向（2026-10-09）
 
