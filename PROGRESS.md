@@ -2,6 +2,13 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 消费电子玩具：融资与海外平台整合（2026-10-10）
+
+- [主报告专节](./docs/references/consumer-electronic-toys-market-20261010/research.html#capital-overseas-2026)新增融资8行、平台代表12行、关联5行三表；只做资本／渠道与销售证据分层，不生成金额或热度排行榜。
+- [统一证据](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#capital-sources)现行**229编号＝旧192＋C12＋W18＋A7**。C12含8主要披露、2限定观察、2历史纠错；W18含11商品、5官方材料／报告线索、1访问记录、1方法；A7为商品观察。18条listing、7平台体系并非18款新产品／成功交易，旧192／115及以下阶段流水原样保留。
+- [40卡图鉴](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html)只补有范围限定的产品／平台深链；原卡数、图片／视频与价格不变。C104补LE270-CN芙崽随行版国内发售的供应方声明，不认证美国.net；C102保留bibo上市6月／开售7月冲突；C112缺来源的公司全称已从分片及正式证据撤回。
+- FIN独立9URL审查及SHOP独立11URL审查结果、未覆盖来源、W102／W199主会话方法核查分别写入[质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#execution-log)；不称全部来源二次核验或资金／销售后台审计。**最终审核与生成检查已完成**：总审无必改项、C112的P2已关闭，程序／视觉QA实数及未测范围见日志；版本同步由主会话办理，不提前记录为已commit／push。
+
 ## 消费电子玩具：2026技术使能与40卡整合（2026-10-10）
 
 - [研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)保持国庆／近90天线索主轴、618及上半年单列，新增软件／硬件使能如何改变玩法与门槛；区分原型、内容、实时交互、量产、长期服务。T101只支持compaction工程改善；T110补Qwen3.5小模型原生文本后端与有正反项的官方同表基准，不宣称全面提升或具体玩具已采用。

@@ -43,6 +43,8 @@ A 线（XL330 + OpenRB + Pi Zero 2W）的完整步骤基线（阶段 0-7）、�
 
 ## 市场调研
 
+- 2026-10-10 本轮增补：[融资×海外平台专节](./docs/references/consumer-electronic-toys-market-20261010/research.html#capital-overseas-2026)与[完整证据／覆盖缺口](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#overseas-sources)已整合；**现行229编号＝旧192＋C12＋W18＋A7**，含历史纠错、失败与方法，不是229条正向销售证据。18条商品listing观察、7个平台体系不等于18SKU或18次成交；40卡／38图／4视频及原价格保留。下方192／115数字保留为此前阶段记录，现行以本条及质量日志为准。
+
 - 2026-10-10：全球消费电子玩具公开资料研究——[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)、[40卡产品图鉴](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html)、[原30样本与10案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)、[证据与质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.html)、[媒体来源](./docs/references/consumer-electronic-toys-market-20261010/media/README.md)。2026滚动信号主轴＋软件／硬件使能专节：现行192编号＝旧115＋T19＋U58（非独立来源数）；40＝原30＋10提名，37核心研究对象＋3邻接，不是40款已售／交付；38图＋4视频仅作研究引用。TECH小修及四组40卡审查修订已落实，最终集成视觉待复核；T110已补原生文本后端与有限正反基准。行业中立，不预设AI或非AI胜出，不改变C线硬件路线。
 
 - 阅读版为可离线打开的 HTML，含章节目录、证据跳转与宽表格；[Markdown 源文件](./docs/references/consumer-electronic-toys-market-20261010/research.md)保留。重新生成：`python scripts/render_toy_market_html.py`；一致性检查：追加 `--check`（依赖 `markdown-it-py`、`Pillow`）。
