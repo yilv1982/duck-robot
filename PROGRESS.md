@@ -2,6 +2,12 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 市场调研增加 HTML 阅读版（2026-10-10）
+
+- 按用户要求将三份正式文档转换为[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)、[竞品与案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)、[证据与方法](./docs/references/consumer-electronic-toys-market-20261010/evidence.html) HTML；Markdown 保留为源文件，研究结论和原始来源不变。
+- 增加页间导航、可折叠目录、证据锚点、横向滚动表格、移动端布局与打印样式；样式和脚本内嵌，不依赖 CDN。
+- 生成与检查脚本：[render_toy_market_html.py](./scripts/render_toy_market_html.py)。通过正文文本一致性、本地链接/锚点、重复 ID 和离线资源检查，并在浏览器检查桌面/手机布局及跨页证据跳转。
+
 ## 全球消费电子玩具公开资料研究完成（2026-10-10）
 
 - 完成截至2026-10-10的[中文研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.md)、[产品与案例对照](./docs/references/consumer-electronic-toys-market-20261010/competitors.md)及[统一证据/质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.md)的公开资料集成：30个型号/代际样本（消费核心29、机构教育邻接1）、10个案例、96个M/R/P编号记录；编号数不等于独立报告或全部法规全文核验。
