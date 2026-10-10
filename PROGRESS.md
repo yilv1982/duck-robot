@@ -2,6 +2,13 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 项目规则与本轮资料归档（2026-10-10）
+
+- 新建根目录 [AGENTS.md](./AGENTS.md)：主要目录与文档导航、调研落盘、用户图片归档、硬件标注归档、自动提交并推送、中文沟通及过期信息清理规则；保留只读参考库、UTF-8 BOM 和安全边界。
+- 本会话的供电、VBATT、LDO、舵机分支及 HAT V1.2 实物复核已落盘至 [research.md](./docs/references/power-review-20261010/research.md)。**仅资料/照片复核，无本机上电或带载测试。**
+- 已登记两张派生图：[IMU LDO 位置](./docs/photos/imu-ldo-location.png)、[HAT 接口复核](./docs/photos/hat-v1.2-port-review.png)，来源和旧图失效状态见[照片索引](./docs/photos/README.md)。
+- 供电 v2 与照片索引同步本轮更正：HAT 未识别到独立电池入口，不能直接要求两口分两支；八焊盘对应两组 4Pin 空位；撤回“超级电容”和“软件硬限流兜底”的无依据判断。完整历史文档尚未作全面勘误审计。
+
 ## 参考库使用规则（2026-10-09 起）
 
 **`microduck-replica/`、`microduck-community-kit/`、`microduck-build-tutorial/` 是别人的方案，只读参考，不在里面做任何修改。** 自己的进度、笔记、补丁一律放工程根目录（本文件、`docs/`、`local-changes/`）。历史上混入参考库的本地修改已于 2026-10-09 提取到 [local-changes/](./local-changes/) 并把参考库还原为上游原样：
