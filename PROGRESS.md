@@ -2,6 +2,17 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 消费电子玩具：2026技术使能与40卡整合（2026-10-10）
+
+- [研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)保持国庆／近90天线索主轴、618及上半年单列，新增软件／硬件使能如何改变玩法与门槛；区分原型、内容、实时交互、量产、长期服务。T101只支持compaction工程改善；T110补Qwen3.5小模型原生文本后端与有正反项的官方同表基准，不宣称全面提升或具体玩具已采用。
+- [40卡图鉴](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html)：四组各10卡＝原30＋10提名，37消费核心研究对象＋3邻接（F14机构教育、X04成人生产力、X06成人照护），不是40已售／已交付。原[30样本／10案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)及旧价格基线保留。
+- [正式证据](./docs/references/consumer-electronic-toys-market-20261010/evidence.html)现行**192编号＝旧115＋T19＋U58**，不是独立网站／报告数；旧115条及历史日志保留。T110已依据8个实际读取的官方URL纳入；小尺寸3/2发布、2B默认模式IFEval退步及参数／算力不等条件保留。Eilik税费排除、AIBI发货承诺、Loona暂时免费、51515原App于2026-10-01停止更新／支持已同步现行文，不混入SPIKE 2031承诺。
+- [媒体归档](./docs/references/consumer-electronic-toys-market-20261010/media/README.md)与[manifest](./docs/references/consumer-electronic-toys-market-20261010/media/manifest.json)合42记录＝38JPEG＋4视频链接，覆盖40唯一product_id。主会话独立核38图哈希／尺寸／字节通过，总2,360,883 bytes；视频只元数据／部分起始画面，无完整观看或动态实测。素材版权不开放，披露限制不等于获得授权。
+- TECH主干通过，两小修按追加授权已同步分片与正式文；PRODUCTS23通过G2/G3的20卡（18图、抽查4源页，其余未复访）。G1/G4审查亦通过，两视频范围／LOVOT阈值小修已镜像；最终集成／浏览器视觉结果已回传通过；总审仅列F04／F15两个主题四处旧附表同步，现已修正，已通过最终定点复核，内容与生成检查完成；版本同步由主会话办理；渲染脚本测试主会话回报27项＝25pass＋2权限skip，集成者不改脚本。
+- 主会话最终程序QA已回传：全专题18份Markdown（含历史片）1,201个本地链接、47表列宽检查0错；192证据／40卡集合与媒体校验通过，四HTML --check通过（1,279链接、27表）。这些是四处同步前的检查快照，本次修正后的生成检查另记质量日志。最终浏览器reload确认40卡、36张正文主图及4项导航无横溢，主报告使能锚点跳转和表格可读；另2张证据图在归档，不称file://或打印PDF已测。
+- D1—D7重点、行业中立及硬件C线路线保持；真实签收、留存、完整BOM／云成本／儿童场景仍未验收。版本同步由主会话按项目规则处理；以下完整保留原HEAD的上轮2026滚动阶段及更早历史记录。
+
+
 ## 消费电子玩具：转为2026滚动线索主线（2026-10-10）
 
 - [研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)摘要先列国庆/9月实际线索，618及上半年单列；近90天明确为7月13日至10月10日。2025与跨年财年移为背景，不再主导机会排序。

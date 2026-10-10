@@ -1,7 +1,7 @@
 """Build offline HTML reading editions of the toy-market research.
 
 Usage: python scripts/render_toy_market_html.py [--check]
-Dependency: markdown-it-py (already available in the project execution environment).
+Dependencies: markdown-it-py and Pillow (local raster image dimensions only).
 Markdown remains the source of truth. No network requests are made.
 """
 from __future__ import annotations
@@ -17,13 +17,15 @@ from urllib.parse import unquote, urlsplit, urlunsplit
 
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "docs/references/consumer-electronic-toys-market-20261010"
 PAGES = {
-    "research": ("研究报告", "2026 滚动线索 · 商业机会", "先看国庆与近90天的实际线索，再看机会、交付与持续价值。"),
+    "research": ("研究报告", "2026 滚动线索 · 商业机会", "先看国庆与近90天的实际线索，再看今年能力加持、逐款图鉴、机会、交付与持续价值。"),
     "competitors": ("竞品与案例", "30 个产品样本 · 10 个经营案例", "按产品、价格、服务生命周期和证据进行对照。"),
-    "evidence": ("证据与方法", "115 个编号记录 · 非独立来源数", "保留来源、口径、反证、访问限制与审查记录。"),
+    "evidence": ("证据与方法", "分级证据 · 技术与产品来源", "保留来源、口径、反证、访问限制与审查记录。"),
+    "product-atlas": ("产品图鉴", "40 个分析对象 · 非40款已售产品", "逐款查看产品形态、今年能力加持与证据边界；销售状态以各卡说明为准。"),
 }
 URL_RE = re.compile(r'https?://[^\s<>"\[\]“”‘’\u3000-\u303f\uff00-\uffef]+')
 
@@ -43,13 +45,13 @@ h1{margin:13px 0 10px;font-size:clamp(26px,3vw,40px);font-weight:750;letter-spac
 .side-actions{margin-top:19px;display:flex;flex-wrap:wrap;gap:8px}.button{border:1px solid #b8cbce;border-radius:5px;background:#fff;color:#264e59;padding:7px 11px;cursor:pointer;text-decoration:none;font-size:12px;line-height:1.5;font-family:inherit}.button:hover{background:#e5efee}
 .reading{min-width:0;background:var(--paper);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 28px #152a3805;padding:33px 42px 40px}
 .prose{overflow-wrap:anywhere;min-width:0}.prose p{margin:0 0 18px}.prose h2{font-size:24px;line-height:1.55;font-weight:750;margin:44px 0 20px;padding-top:23px;border-top:1px solid var(--line)}.prose h3{font-size:18px;line-height:1.7;margin:29px 0 14px;font-weight:700}.prose h4{font-size:16px;margin:25px 0 10px}.prose h2:first-child{margin-top:0}.prose strong{color:#102f3f}.prose ul,.prose ol{padding-left:1.5em;margin:10px 0 22px}.prose li{margin:5px 0}.prose li>p{margin:4px 0}.prose blockquote{margin:0 0 23px;border-left:3px solid #6dafaa;padding:14px 18px;background:#f0f7f5;color:#52666e;font-size:13px;line-height:1.9}.prose blockquote p:last-child{margin-bottom:0}.prose blockquote strong{font-weight:550;color:#36525e}
-.prose code{font-size:.88em;background:#f0f3f4;border:1px solid #e1e8e9;border-radius:3px;padding:1px 4px;color:#275263}.prose pre{overflow:auto;background:#122f40;color:#deeeef;border-radius:6px;padding:18px 20px;font-size:13px;line-height:1.75}.prose pre code{background:none;color:inherit;border:0;padding:0}.prose hr{border:0;border-top:1px solid var(--line);margin:30px 0}.prose a[id]{display:block;scroll-margin-top:95px}.prose h2,.prose h3,.prose h4{scroll-margin-top:95px}.prose :target{background:#fff7d8}.prose img{max-width:100%;height:auto}
+.prose code{font-size:.88em;background:#f0f3f4;border:1px solid #e1e8e9;border-radius:3px;padding:1px 4px;color:#275263}.prose pre{overflow:auto;background:#122f40;color:#deeeef;border-radius:6px;padding:18px 20px;font-size:13px;line-height:1.75}.prose pre code{background:none;color:inherit;border:0;padding:0}.prose hr{border:0;border-top:1px solid var(--line);margin:30px 0}.prose a[id]{display:block;scroll-margin-top:95px}.prose h2,.prose h3,.prose h4{scroll-margin-top:95px}.prose :target{background:#fff7d8}.prose img{display:block;max-width:100%;width:auto;height:auto;max-height:420px;object-fit:contain;margin:20px auto;padding:14px;background:#f7faf9;border:1px solid var(--line);border-radius:8px}
 .table-scroll{width:100%;overflow-x:auto;margin:20px 0 27px;border:1px solid #d6e2e4;border-radius:6px;scrollbar-width:thin;scrollbar-color:#8daeb2 #edf4f3}.table-scroll table{border-collapse:collapse;min-width:100%;font-size:13px;line-height:1.75}.table-scroll th,.table-scroll td{border-right:1px solid #e0e8e9;border-bottom:1px solid #e0e8e9;text-align:left;vertical-align:top;padding:12px 14px;min-width:9rem;max-width:30rem;overflow-wrap:anywhere}.table-scroll th{background:#edf5f4;color:#1b4f57;font-weight:700}.table-scroll tbody tr:nth-child(even){background:#f8faf9}.table-scroll tbody tr:hover{background:#edf7f5}.table-scroll tr:last-child td{border-bottom:0}.table-scroll th:last-child,.table-scroll td:last-child{border-right:0}
 .footer{border-top:1px solid var(--line);margin-top:38px;padding-top:20px;color:#76838a;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer p{margin:0}.footer a{color:#526e77}
 @media(min-width:1700px){.reading{padding-left:54px;padding-right:54px}}
 @media(max-width:1000px){.layout{grid-template-columns:210px minmax(0,1fr);gap:18px;padding:0 20px 50px}.reading{padding:26px}.hero{padding:30px 23px}.top-inner{padding:12px 20px}.brand small{display:none}}
-@media(max-width:740px){body{font-size:15px}.topbar{position:relative}.top-inner{align-items:flex-start;flex-direction:column;gap:8px;padding:13px 18px}.page-nav{width:100%}.page-nav a{font-size:13px;padding:6px 11px}.hero{padding:25px 19px 22px}.layout{display:block;padding:0 12px 30px}.sidebar{position:static;max-height:none;padding:0 8px 18px}.sidebar>details{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 13px}.sidebar>details>nav{max-height:250px;overflow:auto}.toc-note{margin:5px 0 8px}.side-actions{margin-top:10px}.reading{padding:23px 19px;border-radius:7px}.prose h2{font-size:21px}.prose h3{font-size:17px}.meta{gap:6px}.meta span{font-size:11px}.table-scroll th,.table-scroll td{min-width:8rem;padding:10px}.eyebrow{font-size:11px}}
-@media print{@page{margin:15mm}body{background:#fff;color:#000;font-size:10pt;line-height:1.65}.topbar,.sidebar,.skip,.footer{display:none!important}.hero{padding:0 0 12px}.eyebrow{font-size:9pt}.hero h1{font-size:23pt}.meta{margin-top:9px}.layout{display:block;padding:0;margin:0;max-width:none}.reading{padding:0;border:0;box-shadow:none}.prose h2{font-size:16pt;margin-top:25px;break-after:avoid}.prose h3{font-size:12pt;break-after:avoid}.prose blockquote{font-size:9pt}.table-scroll{overflow:visible;border-radius:0}.table-scroll table{table-layout:fixed;min-width:0;width:100%;font-size:7.5pt}.table-scroll th,.table-scroll td{min-width:0;max-width:none;padding:5px;word-break:break-word}.table-scroll tr{break-inside:avoid}a{color:inherit;text-decoration:none}.prose pre{white-space:pre-wrap;background:#eee;color:#000}.prose :target{background:none}}
+@media(max-width:740px){body{font-size:15px}.topbar{position:relative}.top-inner{align-items:flex-start;flex-direction:column;gap:8px;padding:13px 18px}.page-nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.page-nav a{min-width:0;text-align:center;white-space:normal;font-size:13px;padding:6px 11px}.hero{padding:25px 19px 22px}.layout{display:block;padding:0 12px 30px}.sidebar{position:static;max-height:none;padding:0 8px 18px}.sidebar>details{border:1px solid var(--line);background:#fff;border-radius:6px;padding:4px 13px}.sidebar>details>nav{max-height:250px;overflow:auto}.toc-note{margin:5px 0 8px}.side-actions{margin-top:10px}.reading{padding:23px 19px;border-radius:7px}.prose h2{font-size:21px}.prose h3{font-size:17px}.meta{gap:6px}.meta span{font-size:11px}.table-scroll th,.table-scroll td{min-width:8rem;padding:10px}.eyebrow{font-size:11px}}
+@media print{@page{margin:15mm}body{background:#fff;color:#000;font-size:10pt;line-height:1.65}.topbar,.sidebar,.skip,.footer{display:none!important}.hero{padding:0 0 12px}.eyebrow{font-size:9pt}.hero h1{font-size:23pt}.meta{margin-top:9px}.layout{display:block;padding:0;margin:0;max-width:none}.reading{padding:0;border:0;box-shadow:none}.prose h2{font-size:16pt;margin-top:25px;break-after:avoid}.prose h3{font-size:12pt;break-after:avoid}.prose blockquote{font-size:9pt}.table-scroll{overflow:visible;border-radius:0}.table-scroll table{table-layout:fixed;min-width:0;width:100%;font-size:7.5pt}.table-scroll th,.table-scroll td{min-width:0;max-width:none;padding:5px;word-break:break-word}.table-scroll tr{break-inside:avoid}a{color:inherit;text-decoration:none}.prose pre{white-space:pre-wrap;background:#eee;color:#000}.prose :target{background:none}.prose img{max-width:100%;max-height:220mm;width:auto;height:auto;object-fit:contain;break-inside:avoid;page-break-inside:avoid}}
 """
 
 
@@ -61,22 +63,76 @@ class InspectHTML(HTMLParser):
         self.text: list[str] = []
         self.table_count = 0
         self.remote_assets: list[str] = []
+        self.image_sources: list[str] = []
 
     def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
+        # Browsers use the first occurrence of duplicate HTML attributes.
+        attrs = dict(reversed(attrs))
         if attrs.get("id"):
             self.ids.append(attrs["id"])
         if tag == "a" and "href" in attrs:
             self.hrefs.append(attrs["href"])
         if tag == "table":
             self.table_count += 1
-        if tag in {"script", "img", "iframe", "link"}:
-            url = attrs.get("src") or attrs.get("href", "")
-            if url.startswith(("http:", "https:", "//")):
+        if tag == "img":
+            self.image_sources.append(attrs.get("src") or "")
+        asset_attrs = {
+            "script": ("src",), "img": ("src",), "iframe": ("src",),
+            "link": ("href",), "base": ("href",), "source": ("src",),
+            "video": ("src", "poster"), "audio": ("src",), "track": ("src",),
+            "embed": ("src",), "object": ("data",), "input": ("src",),
+        }
+        urls = [attrs.get(attr) or "" for attr in asset_attrs.get(tag, ())]
+        if tag in {"img", "source"} and attrs.get("srcset"):
+            urls.extend(item.strip().split()[0] for item in attrs["srcset"].split(",") if item.strip())
+        for url in urls:
+            try:
+                parsed = urlsplit(url.replace("\\", "/"))
+                remote = parsed.scheme or parsed.netloc
+            except ValueError:
+                remote = True
+            if remote:
                 self.remote_assets.append(url)
 
     def handle_data(self, data):
         self.text.append(data)
+
+
+def local_image_path(src):
+    """Resolve an actual HTML src without reading outside the report's media tree."""
+    assert src and not any(ord(char) < 32 for char in src), f"Invalid image src: {src!r}"
+    try:
+        url = urlsplit(src)
+    except ValueError as exc:
+        raise AssertionError(f"Invalid image src: {src!r}") from exc
+    assert not url.scheme and not url.netloc, f"Remote image src: {src}"
+    path = unquote(url.path)
+    assert path and not path.startswith("/") and "\\" not in path and ":" not in path, f"Invalid local image src: {src}"
+    assert not any(ord(char) < 32 for char in path), f"Invalid local image src: {src!r}"
+    media = REPORT.resolve() / "media"
+    target = (REPORT / path).resolve()
+    assert target.is_relative_to(media), f"Image outside media: {src}"
+    assert target.is_file(), f"Missing image or not a file: {src}"
+    return target
+
+
+def prepare_image(token):
+    # Invalid/missing sources stay visible in the markup; validate() reports them.
+    src = token.attrGet("src") or ""
+    token.attrSet("loading", "lazy")
+    token.attrSet("decoding", "async")
+    try:
+        path = local_image_path(src)
+    except AssertionError:
+        return
+    try:
+        with Image.open(path) as image:
+            width, height = image.size
+    except OSError:
+        # Keep local formats Pillow cannot inspect (e.g. SVG) without inventing dimensions.
+        return
+    token.attrSet("width", str(width))
+    token.attrSet("height", str(height))
 
 
 def visible_text(markup):
@@ -164,10 +220,13 @@ def render_page(key):
         if token.type == "inline" and token.children:
             token.children = linkify_plain_urls(token.children)
             for child in token.children:
+                if child.type == "image":
+                    prepare_image(child)
                 if child.type == "link_open":
                     url = rewrite_link(child.attrGet("href") or "")
                     child.attrSet("href", url)
-                    if url.startswith(("https://", "http://")):
+                    parsed_url = urlsplit(url)
+                    if parsed_url.scheme in {"http", "https"} or parsed_url.netloc:
                         child.attrSet("target", "_blank")
                         child.attrSet("rel", "noopener noreferrer")
     body = md.renderer.render(tokens, md.options, {})
@@ -221,7 +280,12 @@ def validate(pages):
         doc.feed(markup)
         duplicates = [key for key, count in Counter(doc.ids).items() if count > 1]
         assert not duplicates, f"Duplicate IDs in {name}: {duplicates}"
-        assert not doc.remote_assets, f"Remote assets in {name}"
+        assert not doc.remote_assets, f"Remote assets in {name}: {doc.remote_assets}"
+        for src in doc.image_sources:
+            try:
+                local_image_path(src)
+            except AssertionError as exc:
+                raise AssertionError(f"{name}: {exc}") from exc
         assert "\ufffd" not in markup, f"Encoding replacement in {name}"
         parsed[name] = doc
     checked = 0
@@ -253,7 +317,7 @@ def main():
         else:
             path.write_text(markup, encoding="utf-8", newline="\n")
         print(f"{'CHECK' if args.check else 'BUILD'} {name}: {len(markup.encode('utf-8')):,} bytes")
-    print(f"PASS: 3 pages; {links} local links; {tables} tables; source text preserved; no remote assets.")
+    print(f"PASS: {len(pages)} pages; {links} local links; {tables} tables; source text preserved; no remote assets.")
 
 
 if __name__ == "__main__":

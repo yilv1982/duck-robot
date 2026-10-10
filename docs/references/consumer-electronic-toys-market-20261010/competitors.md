@@ -1,13 +1,13 @@
 # 全球消费电子玩具：竞品与经营案例附表
 
-> 截止日2026-10-10。**原基线仍为30个产品/代际样本、10案例、60条P证据；其中29个消费核心样本、1个机构教育邻接。2026新增观察单列，不据来源条数扩充为35/36个已验证竞品；全专题现为115个编号记录。** 功能为厂商说明，未进行实物或疗效测试；网页入口不等于交付保证。
+> 截止日2026-10-10。**原基线仍为30个产品/代际样本、10案例、60条P证据；其中29个消费核心样本、1个机构教育邻接。2026新增观察单列，不据来源条数扩充为35/36个已验证竞品；全专题现为192个编号记录（旧115＋T19＋U58），另有40卡图鉴（原30＋10提名，37核心研究对象＋3邻接，非现售或交付数）。** 功能为厂商说明，未进行实物或疗效测试；网页入口不等于交付保证。
 
-导航：[正文](research.md) · [统一证据库](evidence.md) · [执行日志](evidence.md#execution-log)
+导航：[40卡图鉴](product-atlas.md) · [正文](research.md) · [统一证据库](evidence.md) · [执行日志](evidence.md#execution-log)
 
 <a id="signals-2026"></a>
 ## 2026新增观察：独立于30产品基线，不合计为已验证竞品
 
-今年需求见[报告摘要](research.md#summary)，事件窗与网页日期规则见[第一节](research.md#q1)。原30型号/10案例是历史与当前产品的目的性基线，保留原条目及来源；下表是新增调查线索，不宣称六组均为核心玩具、GenAI、当年首次发售或已交付。新增S8/E11加原96共115编号，编号不等于独立来源、产品数或经营成功数。
+今年需求见[报告摘要](research.md#summary)，事件窗与网页日期规则见[第一节](research.md#q1)。原30型号/10案例是历史与当前产品的目的性基线，保留原条目及来源；下表是新增调查线索，不宣称六组均为核心玩具、GenAI、当年首次发售或已交付。原96＋S8/E11的115编号基线保留；新增T19/U58后现行192编号，编号不等于独立来源、产品数或经营成功数。
 
 | 对象/边界 | 2026事件与当前配置主张 | 截止日允许的商业阶段 | 下一步与限制 |
 |---|---|---|---|
@@ -19,6 +19,19 @@
 | AOGU CoCo / 成人照护邻接 | 7/29公告限定50台先行预约、Beta，寄送日另通知 | 预约名额，不是销量、已交付或医疗效果 | 生成式实现未确认，不算儿童玩具或确认GenAI样本。[E11](evidence.md#e11) |
 
 发布/预售/众筹、执行者到货、实际寄出、消费者签收、持续使用和复购分层。当前页面仅证实观察时的主张，不能还原历史版本；全部本机未测。原材料与访问失败见正式E条目及[产品分片](parts/signals-2026-products.md)。Romi活动、LOVOT合同、Haivivi门店等使用/渠道线索见[S04](evidence.md#s04)—[S07](evidence.md#s07)，不拼成上述新品的用户漏斗。
+
+
+<a id="atlas-cross-index"></a>
+## 40卡图鉴交叉索引（不重算本页旧价格）
+
+新增[图鉴](product-atlas.md#atlas-index)提供逐款媒体、玩法、AI分类、本地／云、价格与服务、2026现态、风险和验证问题。原30样本表及10案例保留，只按新U证据纠正已闭合的税费、发货承诺、临时免费和软件期限；不重排旧价格或推定40款已售。F14、X04、X06仍为三类邻接。
+
+| 组 | 卡片深链 |
+|---|---|
+| [G1](product-atlas.md#group-g1) | [AD01](product-atlas.md#card-ad01) · [AD02](product-atlas.md#card-ad02) · [AD03](product-atlas.md#card-ad03) · [AD04](product-atlas.md#card-ad04) · [AD05](product-atlas.md#card-ad05) · [AD06](product-atlas.md#card-ad06) · [AD07](product-atlas.md#card-ad07) · [AD08](product-atlas.md#card-ad08) · [AD09](product-atlas.md#card-ad09) · [AD10](product-atlas.md#card-ad10) |
+| [G2](product-atlas.md#group-g2) | [AD11](product-atlas.md#card-ad11) · [AD12](product-atlas.md#card-ad12) · [AD13](product-atlas.md#card-ad13) · [AD14](product-atlas.md#card-ad14) · [AD15](product-atlas.md#card-ad15) · [X01](product-atlas.md#card-x01) · [X02](product-atlas.md#card-x02) · [X03](product-atlas.md#card-x03) · [X04](product-atlas.md#card-x04) · [X05](product-atlas.md#card-x05) |
+| [G3](product-atlas.md#group-g3) | [F01](product-atlas.md#card-f01) · [F02](product-atlas.md#card-f02) · [F03](product-atlas.md#card-f03) · [F04](product-atlas.md#card-f04) · [F05](product-atlas.md#card-f05) · [F06](product-atlas.md#card-f06) · [F07](product-atlas.md#card-f07) · [F08](product-atlas.md#card-f08) · [X09](product-atlas.md#card-x09) · [X10](product-atlas.md#card-x10) |
+| [G4](product-atlas.md#group-g4) | [F09](product-atlas.md#card-f09) · [F10](product-atlas.md#card-f10) · [F11](product-atlas.md#card-f11) · [F12](product-atlas.md#card-f12) · [F13](product-atlas.md#card-f13) · [F14](product-atlas.md#card-f14) · [F15](product-atlas.md#card-f15) · [X06](product-atlas.md#card-x06) · [X07](product-atlas.md#card-x07) · [X08](product-atlas.md#card-x08) |
 
 <a id="sample-method"></a>
 ## 一、采样、去重与证据方法
@@ -73,10 +86,10 @@
 | <a id="ad03"></a>AD03 | **Casio Moflin PE-M10GD/SR**；非语言情绪成长毛绒AI宠物 | 日本/JPY；**59,400，历史发布MSRP** | 2024-10-10公告、11-07计划开售；含税；2026-10-10访问；当前成交/运费待确认 | Club Moflin为可选维修/毛皮护理优惠：6,600 JPY/年含税，一年合同最多3只；**不是生成式对话必需费**。续费/取消程序待核 | 原代仍在当前产品列表；PE-M11改变充电屋，不能直接共用历史价；单品页403不作停售依据。[P117](evidence.md#p117)[P118](evidence.md#p118)[P119](evidence.md#p119) |
 | <a id="ad04"></a>AD04 | **Qoobo（大号，非Petit）**；抚摸反馈尾巴毛绒 | 日本/JPY；**17,600** | 2026-10-10，官方店含税价；运费结账计算 | 未取得强制订阅条款；厂商定位是触摸/尾巴交互，不据“疗愈”词推定生成式AI或医疗效果 | 正式商品页可读；变体库存未最终确认，不能从HTML模板“在庫切れ”断言全系列售罄。[P104](evidence.md#p104) |
 | <a id="ad05"></a>AD05 | **Mirumi**；会侧目/转头的机电毛绒挂件 | 日本/JPY；**22,000** | 2026-10-01 10:00调价生效，2026-10-10官方店仍显示此含税价；运费待核 | 订阅未查到可靠条款，记待确认；机电反应不能直接叫LLM玩具 | 官方店有各颜色项目；不沿用发布/众筹旧价；不误认旅游站mirumi.jp为官网。[P105](evidence.md#p105)[P114](evidence.md#p114) |
-| <a id="ad06"></a>AD06 | **Eilik 单机蓝/粉基础款**；桌面表情/触摸机器人 | 国际官方店/USD；**139.99** | 2026-10-10；单机而非双机、DQ或AI Station；税运待核 | FAQ明确基础Eilik可不依赖WiFi/Internet运行；未取得强制周期费，仍不声称全部未来AI服务永久免费。另售AI Station不是基础机自带功能 | 官方单机商品页；网页数据明确USD。国际店金额不作为中国内销价。[P107](evidence.md#p107) |
+| <a id="ad06"></a>AD06 | **Eilik 单机蓝/粉基础款**；桌面表情/触摸机器人 | 国际官方店/USD；**139.99** | 2026-10-10；单机而非双机、DQ或AI Station；不含目的地关税、税项及其它当地费用，运费待结账核[U109](evidence.md#u109) | FAQ明确基础Eilik可不依赖WiFi/Internet运行；未取得强制周期费，仍不声称全部未来AI服务永久免费。另售AI Station不是基础机自带功能 | 官方单机商品页；网页数据明确USD。国际店金额不作为中国内销价。[P107](evidence.md#p107) |
 | <a id="ad07"></a>AD07 | **LivingAI EMO 基础套装，LA20401011**；自主桌面宠物 | 国际官方店/USD；**279** | 2026-10-10；含标准耳机、Skateboard充电板/线及赠Smart Light；税运待核 | 订阅、各功能联网条件待确认；不把GO HOME自动回充功能默认配给基础版 | 厂商称下单约2周发货，未验证交付；GO HOME另为369 USD，不计第二款。[P106](evidence.md#p106)[P128](evidence.md#p128) |
-| <a id="ad08"></a>AD08 | **LivingAI AIBI Pocket，LA23101011**；随身/桌面AI宠物 | 国际官方店/USD；**249** | 2026-10-10；实际商品页及USD结构化数据，税运待核 | 会员、联网、云依赖和停订后功能待确认；“all-day”只是厂家定位，不是实测续航 | 有单品购买入口；“Pre-order Gift”出现在配件，不能据此推断所有AIBI交付状态。[P106](evidence.md#p106)[P127](evidence.md#p127) |
-| <a id="ad09"></a>AD09 | **KEYi Loona Petbot Premium**；家庭轮式机器宠物，成人/儿童交叉 | 新加坡页面/SGD；**691** | 2026-10-10；含Loona Premium+Charging Dock+Game Prop Kit；税运待核 | 有双频Wi-Fi、App游戏与GPT宣传；是否收费/额度**待确认**：收费FAQ未成功展开。Premium是套件名，不是已核实订阅 | 有购买入口；与桌面Deskmate、未来Space Edition分开。2小时续航等均厂家标称。[P113](evidence.md#p113)[P116](evidence.md#p116) |
+| <a id="ad08"></a>AD08 | **LivingAI AIBI Pocket，LA23101011**；随身/桌面AI宠物 | 国际官方店/USD；**249** | 2026-10-10；实际商品页及USD结构化数据，税运待核 | 会员、联网、云依赖和停订后功能待确认；“all-day”只是厂家定位，不是实测续航 | 有单品购买入口；当前页承诺下单约两周发出，非已交付；“Pre-order Gift”配件不确定历史批次状态。[U111](evidence.md#u111)[P106](evidence.md#p106)[P127](evidence.md#p127) |
+| <a id="ad09"></a>AD09 | **KEYi Loona Petbot Premium**；家庭轮式机器宠物，成人/儿童交叉 | 新加坡页面/SGD；**691** | 2026-10-10；含Loona Premium+Charging Dock+Game Prop Kit；税运待核 | 有双频Wi-Fi、App游戏与GPT宣传；补核FAQ称ChatGPT 4o**暂时免费**；额度、未来收费及停服后功能仍待确认。[U112](evidence.md#u112)Premium是套件名，不是已核实订阅 | 有购买入口；与桌面Deskmate、未来Space Edition分开。2小时续航等均厂家标称。[P113](evidence.md#p113)[P116](evidence.md#p116) |
 | <a id="ad10"></a>AD10 | **Vector 2.0 黑色新机**；桌面自主/语音机器人 | 当前国际官方店/USD；**249.99** | 2026-10-10；不是初代Anki历史价，也不是Open Box；税运待核 | **语音指令依赖付费订阅**11.99 USD/月或99.99/年；不订阅仍可运行但不连Vector cloud。取消/自动续费待核 | 当前站声称有货、1个工作日内发货；未独立验证。当前有站不能抹去历史受挫，也不能将历史停服写成当前永久死亡。[P112](evidence.md#p112)[P115](evidence.md#p115) |
 | <a id="ad11"></a>AD11 | **Robosen Optimus Prime G1 Elite／乐森擎天柱G1精英版**；授权IP自动变形/编程机电收藏玩具 | **中国大陆/CNY：4,999**；并列美国店/USD：999 | 2026-10-10；中国参考价5,999不当成交价；国内花呗12期属分期。美国明确未税、运费另算；两地售后/版本细节待核 | 未获得必需订阅条款；不把自动变形/编程直接升级成生成式AI | 国内官网直链有赞店已核；商品页保留标价但是否可立即购买待确认。美国店声称有货；不混Flagship/电影版/拖车。[P111](evidence.md#p111)[P120](evidence.md#p120)[P121](evidence.md#p121) |
 | <a id="ad12"></a>AD12 | **Ropet KAMOMO Pro**；可触摸毛绒AI宠物 | 国际官方店/USD；**349**（对比价469） | 2026-10-10；Pro套件，不是299且Sold out的无充电座Basic；税运按地区待核 | 厂商称日常交互本地离线；另有Dream Sketch联网功能，不能写全功能不联网。订阅金额/取消未取得，待确认 | 正确官网ropetai.com已从Google官方结果核实；不使用无关ropet.com或把本期KAMOMO配置等同早期众筹配置。[P126](evidence.md#p126) |
@@ -102,7 +115,7 @@
 | F01 | Miko 3，不含Mini | 厂商5–10岁；儿童／家庭、对话陪伴、内容教育 | 页面有Add To Cart | Max及家长App仍被销售／介绍；真实云可用性未测 [P201](evidence.md#p201) [P202](evidence.md#p202) |
 | F02 | Moxie原有机器人；区分Embodied与Moxie Robots, Inc. | 儿童／家庭、社交情感陪伴；不是已验证医疗器械 | 新运营方明确“不再销售” | 旧机有条件续支持；新Android App有记录，旧iOS美区链接失效；非全部恢复 [P203](evidence.md#p203) [P209](evidence.md#p209) [P210](evidence.md#p210) [P211](evidence.md#p211) [P227](evidence.md#p227) [P228](evidence.md#p228) |
 | F03 | ROYBI原家用教育机器人系列；未混入新型号 | 当前站称3岁+；儿童／家庭、语言／早教、STEM内容 | 介绍站存在，但未核到价格／结账 | 家长App和内容为官网自述；账号／云未测 [P204](evidence.md#p204) |
-| F04 | Furby 2023回归代，不含1998／2012／Connect及小号衍生款 | 儿童主玩、怀旧成人交叉；触摸／语音反应玩具 | 已证2023发行；截至日单品库存未核 | 固定指令与反应已证；未取得本代联网／停服依赖的明确支持声明 [P212](evidence.md#p212) [P225](evidence.md#p225) |
+| F04 | Furby 2023回归代，不含1998／2012／Connect及小号衍生款 | 儿童主玩、怀旧成人交叉；触摸／语音反应玩具 | 已证2023发行；截至日单品库存未核 | 固定指令与反应已证；官方支持页（F6743）已明确6岁以上、不连接互联网；本机未实测。[U304](evidence.md#u304) [P212](evidence.md#p212) [P225](evidence.md#p225) |
 | F05 | Hatchimals Alive **Mystery Hatch**电子孵化版；Draggle代表，不含非电子小蛋 | 5岁+；家庭、惊喜孵化／养成 | 当前品牌导航及独立产品页存在；未核价／库存 | 产品页介绍电池驱动交互，未列App／订阅；未实测 [P217](evidence.md#p217) |
 | F06 | Bitzee原版15宠物，不含Magicals／Disney／Aquarium | 5岁+；家庭、数字养成／触摸玩具 | 当前官网仍列原版；未核价／库存 | 产品页本机养成反应，无所需App／订阅说明；未实测 [P216](evidence.md#p216) |
 | F07 | Tamagotchi Uni；颜色玩法相同，仅计1款，不含Paradise／Connection | 儿童家庭＋成人收藏交叉；养成、下载内容 | 产品页保留，硬件现货及现价未核 | 2026年10月仍有内容公告；页面安全支持期限已过；不能等同停服 [P213](evidence.md#p213) [P214](evidence.md#p214) [P215](evidence.md#p215) [P226](evidence.md#p226) |
@@ -111,7 +124,7 @@
 | F10 | Wonder Workshop Dash，现MORAVIA Education渠道；不含Cue／Dot | 当前商品说明6–11岁；家庭／课堂、STEM编程 | 官方渠道USD189.99、available=true | 官方说明移动App安装后可离线；web Blockly需网 [P219](evidence.md#p219) [P220](evidence.md#p220) |
 | F11 | Ozobot Evo，Entry Kit为1台代表报价；不以班级套装加数 | 家长／教师与K–12学生；STEM、无屏色码编程 | 官方目录USD175、available=true | 色码无屏、online Blockly与免费课程并行；未测云／App [P218](evidence.md#p218) |
 | F12 | Makeblock mBot2／mBot Neo，CyberPi代；不混mBot1／Rover | 官方高年级小学至中学；家庭／课堂、STEM搭建编程 | 本轮购买页跨域跳转，现价／库存未确认 | 官方支持、组装、预置程序、固件与mBlock文档可达 [P221](evidence.md#p221) [P222](evidence.md#p222) |
-| F13 | LEGO MINDSTORMS Robot Inventor **51515**，非EV3 | 官方10岁+；家庭／爱好者、STEM搭建 | 官方Retired Product，购买禁用 | 历史App说明页仍在；其Android旧下载链接本轮找不到，不能推定所有平台停服 [P206](evidence.md#p206) [P207](evidence.md#p207) [P229](evidence.md#p229) [P230](evidence.md#p230) |
+| F13 | LEGO MINDSTORMS Robot Inventor **51515**，非EV3 | 官方10岁+；家庭／爱好者、STEM搭建 | 官方Retired Product，购买禁用 | 开发者商店公告Robot Inventor App自2026-10-01停用、不再更新支持；不等于所有已安装程序失效，迁移非1:1保证。[U406](evidence.md#u406) [P206](evidence.md#p206) [P207](evidence.md#p207) [P229](evidence.md#p229) [P230](evidence.md#p230) |
 | F14 | LEGO Education SPIKE Prime **45678**；**机构教育邻接** | 官方Grades 6–8；课堂／竞赛STEM | 官方标2026-06-30退役 | SPIKE App官方承诺支持至2031-06-30；退役后不加新功能 [P208](evidence.md#p208) |
 | F15 | KEYi ClicBot模块化机器人；不含Loona，不按模块套装加数 | 家庭亲子／编程创作；硬件准确适龄未核 | 未核当前硬件在售价／现货 | 官方开发者Android App可列出，更新2025-12-07；账号与社区未测 [P223](evidence.md#p223) |
 
@@ -149,10 +162,10 @@
 <a id="f04"></a>
 ### F04｜Furby 2023
 
-- **身份／人群**：Hasbro在2023-06-22宣告回归的Furby，25周年代；儿童为主，怀旧成人购买／收藏是交叉需求。紫／珊瑚只作外观，计1款；当前精确适龄未从本轮已读官方正文核出。[P212](evidence.md#p212)
+- **身份／人群**：Hasbro在2023-06-22宣告回归的Furby，25周年代；儿童为主，怀旧成人购买／收藏是交叉需求。紫／珊瑚只作外观，计1款；官方支持页（F6743）已明确6岁以上、不连接互联网；本机未实测。[U304](evidence.md#u304)[P212](evidence.md#p212)
 - **功能**：5个语音激活模式、600+预设回应、歌曲／灯光、拥抱／抚摸／挠肚／晃动／喂假食物反应；这是有限指令玩具，不因会回应就称生成式AI。[P212](evidence.md#p212) [P225](evidence.md#p225)
 - **销售／价／渠道**：证实2023首发Amazon及7月15日起主要零售商；本轮未核2026原代现货与价格。检索所见$69.99未取得对应价格正文，**不填为现价**；税运未知。
-- **订阅／云**：所读2023发布稿未列订阅或所需App；不能混用旧Furby Connect、2012代App说明。明确无网证明／本代说明书尚缺，故只写“未见必要云服务说明”，不冒称已做离线验收。
+- **订阅／云**：所读2023发布稿未列订阅或所需App；不能混用旧Furby Connect、2012代App说明。官方支持页（F6743）已明确6岁以上、不连接互联网；本机未实测。[U304](evidence.md#u304)
 - **商业证据／风险**：官方“前三年全球4000万”是1998原版历史，不是2023代销量；BBC提到Hasbro整体当季业绩弱，也不是2023新Furby失败证据。耐玩性、重复反馈、噪声／耗电与机械寿命待实测。
 
 <a id="f05"></a>
@@ -230,8 +243,8 @@
 ### F13｜LEGO MINDSTORMS Robot Inventor 51515
 
 - **身份／人群**：官方10岁+、949片、5个主模型，智能Hub／电机／传感器；是51515，不是EV3。App历史说明为Scratch式拖拽与Python、蓝牙遥控。[P207](evidence.md#p207) [P229](evidence.md#p229)
-- **销售／价**：官方明确Retired Product、购买按钮禁用；美国站仍显示 **$359.99**，只能记**退役页历史留存价**，不是可购买价、也未经核定为最初发行MSRP。税运未知。与官方退役主题清单交叉确认，压过页面残留Retiring soon标签。[P206](evidence.md#p206) [P207](evidence.md#p207)
-- **软件／云／订阅**：官方加拿大App介绍页仍链接平台商店；本轮Android包 `com.lego.retail.mindstorms` 返回找不到请求网址。没有验证其他平台、现有安装或替代软件，**不写全平台停服或已购硬件全部报废**。基础App历史内容未见强制月订阅；当前兼容／支持结束的精确日期仍缺。[P229](evidence.md#p229) [P230](evidence.md#p230)
+- **销售／价**：官方明确Retired Product、购买按钮禁用；美国站仍显示 **$359.99**，只能记**退役页历史留存价**，不是可购买价；U405补核2020发布稿中同额美元宣布价，不改变本页原金额。[U405](evidence.md#u405)税运未知。与官方退役主题清单交叉确认，压过页面残留Retiring soon标签。[P206](evidence.md#p206) [P207](evidence.md#p207)
+- **软件／云／订阅**：官方加拿大App介绍页仍链接平台商店；本轮Android包 `com.lego.retail.mindstorms` 返回找不到请求网址。没有验证其他平台、现有安装或替代软件，**不写全平台停服或已购硬件全部报废**。基础App历史内容未见强制月订阅；U406补核开发者商店公告：Robot Inventor App自2026-10-01停用、不再更新或支持；现有程序与迁移兼容仍需测试，SPIKE App不能保证1:1体验／固件替换。[U406](evidence.md#u406)[P229](evidence.md#p229) [P230](evidence.md#p230)
 - **渠道／商业**：官方对退役套装引导BrickLink等二手收藏渠道；购买二手不保证包含电池、原充电器、可用App。确证的是产品线退役，不是LEGO经营失败。[P206](evidence.md#p206)
 - **风险**：App分发与OS兼容、充电电池及专用电子件备件、旧教程过期；实体积木继续可用不等于编程功能无条件可用。
 
@@ -247,7 +260,7 @@
 <a id="f15"></a>
 ### F15｜KEYi ClicBot
 
-- **身份／人群**：模块拼接式家庭娱乐／教育机器人；官方开发者App支持动作脚本／图形编程、引导案例、STEAM视频与社区。硬件上市原公告和准确适龄未取得；商店“3岁+”是App内容评级，不当硬件安全年龄。[P223](evidence.md#p223)
+- **身份／人群**：模块拼接式家庭娱乐／教育机器人；官方开发者App支持动作脚本／图形编程、引导案例、STEAM视频与社区。已取得2020-04-24厂商发布／预售稿；首批实际交付日及硬件安全年龄仍未核。[U408](evidence.md#u408) 商店“3岁+”是App内容评级，不当硬件安全年龄。[P223](evidence.md#p223)
 - **销售／价**：本轮未确认当前官方硬件报价或库存；地区、币种、税运未知，不使用二手／缺货套装的搜索价格冒充现货。KEYi品牌其他机器人存在不代表ClicBot继续生产。
 - **服务／订阅／云**：Google Play当前可列出App，开发者KEYi Technology Co., Ltd.，更新2025-12-07。App安装与社区／教学内容有平台依赖；完整离线能力、账号可注册性、必要订阅未知，未见明确基础订阅证据。
 - **商业证据**：10K+为该App平台下载档位，不是硬件销量；评分出现不同设备分组，不摘成统一质量结论。
@@ -288,7 +301,7 @@
 ### AC04 — Loona Petbot：具身游戏与生成式功能不能混成一个免费承诺
 - **形态与场景：** 轮式家庭宠物，官网同时面向家庭成员和儿童，以表情、找人、避障、App游戏与AI对话构成复合玩法；本表不采同品牌的手机驱动桌面Deskmate。[P113](evidence.md#p113)[P116](evidence.md#p116)
 - **可比配置：** 新加坡页691 SGD对应Premium本体+充电座+游戏道具，不能与裸机、特殊配色或未来Space Edition混价。5 TOPS、2小时续航等是厂商规格，非本机测试。[P116](evidence.md#p116)
-- **服务缺口：** 官网上有明确的ChatGPT 4o收费FAQ问题，但本轮未成功展开其回答，因此保持“订阅/额度待确认”；“Premium”只证实为套装标签，不能据此认定要月付或已永久免费。
+- **服务补核：** U112已展开FAQ，原文称ChatGPT 4o“free…for the moment”，因此当前为暂时免费，额度、未来收费／停服后功能仍未知；旧P116未展开是历史采集限制。“Premium”仍只是套装标签，不是永久服务承诺。[U112](evidence.md#u112)
 - **启示（分析）：** 机械互动/本地感知与联网生成服务应有独立功能清单；消费者需要知道无网/到期时还剩哪些玩法。营销页的宣传能力不等同于地区实际可用能力。
 - **限制/下一步：** 补官方服务中心的费用/额度、无网功能、各国售后；未来交付条目不提前计入截至日出货。
 
@@ -347,7 +360,7 @@
 
 **价值与依赖**：积木机械系统和电机／传感器可支持反复搭建，软件增加Scratch/Python、蓝牙遥控与教程。实体可拆重组意味着停卖不等于所有实体价值消失，但编程链路仍受App分发、OS与专用电池影响。[P229](evidence.md#p229)
 
-**支持边界**：官方App介绍还在，却不能证明其商店链接现在有效；本轮Android链接找不到。没有核到所有平台同日下架、当前维护承诺或替代程序兼容，因此只能写“退役确定、部分下载链路失效、实际软件续用待验”。[P230](evidence.md#p230)
+**支持边界**：官方App介绍还在，却不能证明其商店链接现在有效；本轮Android链接找不到。新U406补核LEGO开发者在Microsoft Store的声明：Robot Inventor App自2026-10-01停用且不再更新／支持，建议转SPIKE但不保证1:1体验或固件替换。旧P230访问失败记录保留；公告不证明所有平台同日下架或已安装程序全部失效，实际续用／迁移仍待验。[U406](evidence.md#u406)[P230](evidence.md#p230)
 
 **对照**：SPIKE Prime 45678在2026-06-30也已官方退役，但明确给了2031-06-30 App支持与2027–2028竞赛窗口。两套系统不能互相代替承诺；SPIKE只作机构邻接对照，不扩大成消费者市场统计。[P208](evidence.md#p208)
 

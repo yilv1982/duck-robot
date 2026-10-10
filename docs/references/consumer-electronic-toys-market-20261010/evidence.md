@@ -1,9 +1,21 @@
 # 全球消费电子玩具研究：证据、方法与执行日志
 
-> 截止日：2026-10-10。状态：**原M17条、R19条、P60条共96编号基线保留；新增S8条、E11条，共115个编号记录（非115个独立来源）；R18正式原文已闭合。来源等级与未知边界逐条保留，独立审查修订状态见末尾日志。**
-> 本文件的方法是本次研究的分析约定，不是市场事实或法规意见。M/R/P/S/E 编号仅在收到相应证据并核对后登记；不以空占位锚点冒充证据。
+> 截止日：2026-10-10。状态：**原M17条、R19条、P60条共96编号基线保留；S8条、E11条合计115个旧编号原文保留；加入T19、U58后现行192个编号记录（非独立来源数）；R18正式原文已闭合。来源等级与未知边界逐条保留，独立审查修订状态见末尾日志。**
+> 本文件的方法是本次研究的分析约定，不是市场事实或法规意见。M/R/P/S/E/T/U 编号仅在收到相应证据并核对后登记；不以空占位锚点冒充证据。
 
-导航：[报告正文](research.md) · [竞品与经营案例](competitors.md) · [执行日志](#execution-log)
+导航：[报告正文](research.md) · [竞品与经营案例](competitors.md) · [技术使能证据](#technology-enablers) · [40卡图鉴](product-atlas.md) · [图鉴新增来源](#atlas-sources) · [执行日志](#execution-log)
+
+<a id="current-corrections"></a>
+## 本轮现行补核与旧证据读法
+
+旧115条M/R/P/S/E正文原样保留，记录当时所见与失败路径；下表和新增U条是已闭合问题的**现行判断**，不可继续把旧访问缺口当成当前未知。没有补核的条件仍保留。T是可选技术使能，不补造厂商采用。
+
+| 旧记录 | 新证据／当前可用判断 | 尚未闭合 |
+|---|---|---|
+| P107 Eilik税运待核 | [U109](#u109)：FAQ明确不含目的地关税、税项及其它当地费用；原139.99 USD金额不改 | 运费／指定目的地落地价、实际履约 |
+| P127 AIBI交付状态 | [U111](#u111)：当前页承诺约两周发出，不是已交付；仅补当前承诺 | 税运、具体赠品、历史批次与真实签收 |
+| P116 Loona收费FAQ未展开 | [U112](#u112)：已展开，ChatGPT 4o“free…for the moment”，仅暂时免费 | 额度、未来收费、停服后功能及实际后台模型 |
+| P207／P229／P230 51515留存价、软件期限与旧Android失败 | [U405](#u405)补2020宣布价来源；[U406](#u406)补LEGO开发者商店声明：Robot Inventor App自2026-10-01停用、不再更新／支持，迁移SPIKE不保证1:1体验或固件替换 | 不能推成已安装软件全部失效或所有平台同日下架；实际迁移待测，SPIKE 2031承诺不回填51515 |
 
 <a id="method-scope"></a>
 ## 一、范围与不重叠统计方法
@@ -36,9 +48,9 @@
 | 估计 | 由公开数据或明确假设计算的结果 | 在这些输入和假设下得到的区间、敏感性 | 不称实测、不以计算精度掩盖输入不确定性 |
 | 研究推断 | 从证据形成的解释、机制或判断 | 可能成立的需求机制、机会条件与反证 | 不把相关性当因果，不把资料缺失当负面经营事实 |
 
-重要数字、核心判断及其适用范围须在相邻句子引用本文件的具体条目。多个判断不共用一条范围不明的段末来源。正式证据采用显式 HTML 小写锚点，M01 使用 `id="m01"`，正文显示 `[M01](evidence.md#m01)`；R01、P101 等同理。当前115个M/R/P/S/E编号均有完整条目及显式锚点；新增S01—S08、E01—E11使用s01/e01等小写锚点。编号不是独立来源，格式示例不另增数量。
+重要数字、核心判断及其适用范围须在相邻句子引用本文件的具体条目。多个判断不共用一条范围不明的段末来源。正式证据采用显式 HTML 小写锚点，M01 使用 `id="m01"`，正文显示 `[M01](evidence.md#m01)`；R01、P101 等同理。旧115个M/R/P/S/E编号均有完整条目及显式锚点；本轮加入T101—T110、T201—T209共19条，另加入U58后现行192个编号，T不证明玩具实际采纳；新增S01—S08、E01—E11使用s01/e01等小写锚点。编号不是独立来源，格式示例不另增数量。
 
-M 类由市场分析分片交付；R 类由法规分析分片交付；P101 起由成人产品分片交付，P201 起由家庭产品分片交付。S类为2026需求/渠道增补，E类为2026产品/交付增补；同品牌或同一上游链不因编号不同而成为独立证明。方法使用 `method-*` 锚点，模型假设使用 `h*`，二者均不计入外部证据条数。正式合并保留原编号；遇重复编号不覆盖、不私自重排，先登记冲突并交主会话裁决。
+M 类由市场分析分片交付；R 类由法规分析分片交付；P101 起由成人产品分片交付，P201 起由家庭产品分片交付。S类为2026需求/渠道增补，E类为2026产品/交付增补；T类为软件／硬件可选使能及条款，U类为逐卡补读／媒体与生命周期补核；同品牌或同一上游链不因编号不同而成为独立证明。方法使用 `method-*` 锚点，模型假设使用 `h*`，二者均不计入外部证据条数。正式合并保留原编号；遇重复编号不覆盖、不私自重排，先登记冲突并交主会话裁决。
 
 **商业阶段不得跳级：**发布/演示→预售/众筹→执行者备货与出货→消费者交付→激活/持续使用→复购/续订。收入确认须说明是否厂商sell-in；有效合同存量和活动自选报告不等于MAU或队列留存。短观察期记为未知，不把早期产品缺复购资料判作失败；融资单列。
 
@@ -200,7 +212,7 @@ CM_life,H = CM_hw + Σ(t=1..H) [(R_sub,t - C_service,t) / (1+d)^t]
 <a id="evidence-register"></a>
 ## 九、正式外部证据登记
 
-**已接入 M01—M17 与 R01—R19，共 36 个编号条目；R18 已取得正式原文并闭合，不再是待核台账。P101—P130、P201—P230共60条均已接入，原M/R/P合计96个编号；新增S01—S08共8条、E01—E11共11条，现合计115个编号，不是115份独立报告或法规全文。** 原基线继承分片的来源访问记录，I1 已读取完整分片，不声称亲自重新访问原站。市场以 M1 最终 30,487 字节版本为基线，并按用户有限授权补入 V1 的 M17 factory-gate 口径；法规以 R1 最终 43,100 字节分片为基线，此后按用户有限授权补入主会话 R18 原文与 V1 更正，包括 R17 正式内容标识办法、R18 正式原文及历史失败记录与 R19 官方解释复核。
+**已接入 M01—M17 与 R01—R19，共 36 个编号条目；R18 已取得正式原文并闭合，不再是待核台账。P101—P130、P201—P230共60条均已接入，原M/R/P合计96个编号；新增S01—S08共8条、E01—E11共11条，此处为原115编号基线，不是115份独立报告或法规全文；本轮新增T/U的现行总数见页首及对应增补节。** 原基线继承分片的来源访问记录，I1 已读取完整分片，不声称亲自重新访问原站。市场以 M1 最终 30,487 字节版本为基线，并按用户有限授权补入 V1 的 M17 factory-gate 口径；法规以 R1 最终 43,100 字节分片为基线，此后按用户有限授权补入主会话 R18 原文与 V1 更正，包括 R17 正式内容标识办法、R18 正式原文及历史失败记录与 R19 官方解释复核。
 
 来源：[市场分片](parts/market.md)、[法规分片](parts/regulation.md)。法规等级 A＝法规/公告正文已读；B＝官方指引/公告已读，不能替代正式法全文；C＝官方搜索摘录、正文受限。这个等级表示核验材料层级，不表示风险大小。
 
@@ -1677,6 +1689,1719 @@ CM_life,H = CM_hw + Σ(t=1..H) [(R_sub,t - C_service,t) / (1+d)^t]
   - 个体反馈不构成治疗效果、安全性或认知症干预有效性的证明；厂商明确声明不代替医疗或治疗。
 - **失败／剩余核验：** 最初本地 HTML 解析因 `bs4` 未安装失败，改用标准库；随后终端 GBK 输出遇 Unicode 编码异常，显式改为 UTF-8 输出后成功。属于提取工具问题，**不是 PR TIMES 无法访问**。生成式实现和实际消费者交付仍未确认。
 
+<!-- INTEGRATE_TECH_START -->
+<a id="technology-enablers"></a>
+## 2026 软件与硬件使能增补（T101—T110、T201—T209）
+
+> 访问日均为2026-10-10。以下完整承接原分片的来源、短引、访问成功与失败、许可和推断边界；集成者本轮未重新联网核验。软件／硬件主体已接收；TECH主干审查通过，T105许可与T201当前正文价格措辞已按追加授权修正，独立复核范围见文末日志。19个T编号是技术／接入记录，不是19种已采用技术或独立网站；T110为已确认的原生文本模型补充，8个官方URL的访问与有限可比基线见该条。
+
+### 软件分片与访问记录
+
+- 研究窗口：**2026-01-01 至 2026-10-10**；来源访问日期：**2026-10-10**。
+- 分工：T1 分析已确认，本文件为 Coder T1 的唯一写入成果；沿用本轮已经读取的来源，未补做联网检索。
+- 范围：生成式文本、图像、音频、视频及实时多模态的产品使能能力；不重复销售研究，不改写产品侧既有四组 40 卡。
+- 验证层级：官方发布／官方文档／官方仓库证据；没有调用付费模型、测试玩具、测量端到端性能或验证实际账户权限。
+- **T101—T108 是能力证据，T109 是地区／年龄接入限制证据，均不是具体玩具采用某模型的证据。** 产品卡可关联这些编号说明技术可能性；只有产品自己的披露才能证明实际采用。
+
+#### 结论与措辞边界
+
+部分支持“2026 年软件能力明显进步”，但应具体化为：**连续对话更自然、后台任务不必阻塞交流、语音自部署选择增加，以及内容生产更灵活**。不能据此宣称长期人格记忆已解决、多模态模型已能在低成本玩具端运行、整链延迟等于宣传数字，或所有成本均大幅下降。
+
+今年“新增”有三种不同含义，正文不得混写：
+
+1. 新模型／新接口能力，例如 GPT-Live 的全双工会话与后端分工。
+2. 既有能力的工程化改进，例如服务端上下文压缩、异步函数调用。
+3. 原有能力变得可下载或可部署，例如 Qwen TTS／ASR 权重与工具链开放；不意味着声音克隆或语音识别在 2026 年才出现。
+
+面向中国市场，不能只把国际云 API 当默认可用选项。**Qwen 的开放权重及官方 ModelScope 下载路线是本片已核实的本地／自托管候选**，但尚未证明能够在本项目板卡或低价玩具芯片上实时运行。云端 Qwen API 的具体型号、国内外部署区域和商用条款仍需按实际产品核验。OpenAI／Gemini Developer API 的中国大陆地区限制，以及 Gemini 的未成年人客户端限制，见 T109。
+
+#### 一、产品映射优先表
+
+下表“可以加持”均为产品推断，不是部署完成、成本已降低或已有玩具采用的事实。
+
+| 编号 | 2026 新增／改进及基线 | 可加持的实体玩具体验 | 可用接口／限制 | 实际玩具采纳证据 |
+|---|---|---|---|---|
+| **T101 文本／记忆基础设施** | 02-10 发布服务端 context compaction；Conversations API 和客户端 compaction 已在 2025 年存在 | 连续故事玩偶、长期养成宠物：接续故事进度，减少长对话塞满上下文；配合应用记忆库保留称呼与偏好 | Responses API；压缩项不透明，不等于可编辑、准确且可删除的长期记忆；角色与关键事实仍需应用管理 | **未证实**，不能由 API 能力推定具体玩具实现了长期记忆 |
+| **T102 全双工语音** | 09-10 GPT-Live 1 GA，可同时听说，后端处理任务时继续交流；Realtime API 早在 2025 年 GA | 可插话陪伴毛绒、问答机器人：说“不是这个故事”时让出话轮；查询内容时仍能简短回应 | `v1/live/sessions`；音频／文本，不支持图像／视频；Free tier 不支持；打断讲话不自动取消后端动作 | **未证实**；儿童产品另核适用条款，不能拿语音演示当玩具验收 |
+| **T103 实时视听与异步任务** | 09-15 Gemini 3.8 Live／Extended Thinking 发布，实时视觉输入、异步函数调用与持续对话 | 带摄像头的探索玩具、桌面棋类伙伴：围绕正在摆放的实物说明规则，执行工具时不断掉交流 | Gemini Live API／AI Studio；开发者 API 可用不等于所有企业通道 GA，企业产品部分是 private preview；T109 对儿童客户端及大陆地区构成接入约束 | **未证实**；官方棋类／办公演示不是实体玩具量产采用 |
+| **T104 TTS／角色声音** | 官方仓库记录 01-22 开放 Qwen3-TTS 0.6B／1.7B；部分型号支持声音设计与自然语言风格控制 | 稳定声线角色玩偶、多人角色故事机：睡前轻声、游戏兴奋反馈、动态或预生成台词 | 开放权重／本地代码，已核 1.7B CustomVoice 模型卡 Apache-2.0；托管 API 需另核型号和区域；97ms 是合成首包相关声明，不是问答整链 | **未证实**；可作国产／自托管候选，不能指定某品牌已采用 |
+| **T105 STT／方言与识别部署** | 官方仓库记录 01-29 开放 Qwen3-ASR 0.6B／1.7B，30 种语言＋22 种中文方言；06-26 原生 Transformers 支持 | 中文家庭故事机、祖孙语音游戏：增加方言覆盖与自托管选择 | 开放权重；所查文档的流式推理依赖 vLLM，不支持 batch／返回时间戳；儿童发音、远场和舵机噪声未测 | **未证实**；支持语言清单不等于目标家庭环境的识别率 |
+| **T106 图像／内容生产** | 04-21 GPT Image 2；09-08 GPT Image 2.5 Sunburst／Flare，新增质量档位与编辑选项 | 带屏故事玩具、配套 App、打印任务卡：插图、奖励卡、场景与角色素材 | Images API／Responses 工具；可能要求组织验证；复杂请求可达约 2 分钟，连续角色一致性及文字排版仍有限制 | **未证实**；主要是内容供给与个性化潜力，不是毫秒级表情动画 |
+| **T107 视频／异步创作** | 03-31 Veo 3.1 Lite：偏成本效率的文生／图生视频，4／6／8 秒、720p／1080p | 配套短剧、角色宣传片、App 故事回顾；提前制作分支剧情片段 | `veo-3.1-lite-generate-preview`，付费 Preview；视频带音频，不支持 4K／Extension；片长不等于生成耗时 | **未证实**；仅支持创作／异步内容推断，不能冒称玩具实时视频交互 |
+| **T108 视频／实时 Avatar** | 09-24 Gemini 3.8 Live with Live Avatar，near-real-time 视频生成与语音、口型、表情结合 | 带屏桌面伙伴、机器人面部屏幕：角色持续听说并呈现表情 | 公告称 Gemini Enterprise 可用；自定义 Avatar 仅 enterprise allowlisting；普通账号权限、并发价格、整链时延、端侧条件未核 | **未证实**；酒店等企业演示不是消费玩具采用 |
+| **T109 接入条件，不是模型采用** | 归档本轮已读 OpenAI／Gemini 地区和年龄条款，不宣称这些限制均于今年首次出现 | 用于筛掉不能直接面向目标中国市场／儿童用户交付的接入路线 | 大陆未列入所查两家 Developer API 支持地区；Gemini 禁止面向或可能由未满 18 岁者访问的 API Client；企业合同另核 | **不适用**，只证明接入限制，不证明任何玩具采用 |
+
+#### 二、逐条证据登记
+
+<a id="t101"></a>
+### T101｜文本角色与记忆：新增管理机制，不是“永不遗忘”
+
+**来源 T101-A**
+
+- 题名：Changelog | OpenAI API。
+- URL：<https://developers.openai.com/api/docs/changelog>
+- 日期：事件／日志日 **2026-02-10**；动态页面本身无单一发布日期。
+- 定位：February, 2026 → Feb 10 → server-side compaction。
+- 短引：“Launched server-side compaction in the Responses API.”
+- 访问：浏览器正文成功。第一次通过页面提供的 WebMCP lookup_page 读取返回“Page exists in the route map, but local content was not found.”；随后直接打开官网正文成功。前一次失败不作为“没有此能力”的证据。
+
+**来源 T101-B**
+
+- 题名：Compaction。
+- 页面 URL：<https://developers.openai.com/api/docs/guides/compaction>
+- 实际读取 URL：<https://developers.openai.com/api/docs/guides/compaction.md>
+- 日期：无独立发布日期；2026-10-10 读取的当前指南，新增事件日由 T101-A 证明。
+- 定位：Overview／Server-side compaction。
+- 短引：“reduce context size while preserving state needed for subsequent turns”；压缩项“opaque and not intended to be human-interpretable”。
+- 访问：官方 Markdown HTTP 200。
+
+**基线、产品价值与缺口**
+
+- 同一发布日志记载：Conversations API 为 **2025-08-20**；client-side compaction 为 **2025-12-11**。因此不得说长期会话状态或压缩是 2026 年首次出现。
+- 当前接口：Responses create 请求的 `context_management`／`compact_threshold`；超过阈值后产生压缩项。官方称可平衡长对话的质量、成本、延迟，没有承诺所有事实无损保存。
+- 产品推断：故事进度与上下文更易延续；角色设定、用户授权后的关键偏好、事实来源和删除操作仍宜由应用的结构化记忆库管理。缓存命中与压缩不是人格一致性本身。
+- 可影响成本环节：后续请求上下文长度；须同时计入压缩、检索和存储成本，**没有本轮同口径历史成本实测，不给降幅**。
+- 接入状态：已发布 API 功能；所查材料未单列该功能的 GA 标签，未提供开放权重交付证据。国际云使用边界见 T109。
+- 未证实：跨月偏好准确率、关键事实保留率、角色不漂移率、儿童隐私合规、真实玩具采用。
+
+<a id="t102"></a>
+### T102｜GPT-Live：全双工、后端分工及明确的会话计费
+
+**来源 T102-A**
+
+- 题名：Changelog | OpenAI API。
+- URL：<https://developers.openai.com/api/docs/changelog>
+- 发布／GA 事件日：**2026-09-10**。
+- 定位：Sep 10 → gpt-live-1 → v1/live/sessions。
+- 短引：“GPT-Live 1 is now generally available in the API.”
+- 访问：官方浏览器正文成功。
+
+**来源 T102-B**
+
+- 题名：GPT-Live 1。
+- 页面 URL：<https://developers.openai.com/api/docs/models/gpt-live-1>
+- 实际读取 URL：<https://developers.openai.com/api/docs/models/gpt-live-1.md>
+- 日期：模型页无独立发布日；GA 日按 T102-A。
+- 定位：Model details／Pricing／Rate limits。
+- 短引：“It can listen and speak at the same time”；“Voice sessions cost $0.05 per minute”；“Backend model and tool usage is billed separately.”
+- 访问：官方 Markdown HTTP 200。
+- 明确边界：输入／输出为 audio、text；image、video 不支持；`v1/live/sessions` 是对应接口，不能把它写成 `v1/realtime` 的同一个端点；Free tier 不支持。所查页按并发会话列出 Build 50／Launch 300／Grow 500，这不是本账户已获配额。
+
+**来源 T102-C**
+
+- 题名：Getting started with GPT-Live。
+- 页面 URL：<https://developers.openai.com/api/docs/guides/live>
+- 实际读取 URL：<https://developers.openai.com/api/docs/guides/live.md>
+- 日期：未标独立发布日期。
+- 定位：Understand the two parts／Choose a connection。
+- 短引：“Backend work can continue when the caller interrupts the assistant; your application decides whether to finish or cancel it.”
+- 访问：官方 Markdown HTTP 200。
+- 接口：WebRTC、WebSockets、SIP 等；后端可以 Responses delegation 或 client delegation 接入。应用负责权限确认、工具执行及任务状态，密钥应保留在可信服务端。
+
+**来源 T102-D**
+
+- 题名：Prompting GPT-Live。
+- 页面 URL：<https://developers.openai.com/api/docs/guides/live-prompting>
+- 实际读取 URL：<https://developers.openai.com/api/docs/guides/live-prompting.md>
+- 日期：未标独立发布日期。
+- 定位：Personality／Backchannels／Interruptions。
+- 短引：“Describe the assistant’s role, tone, and speaking pace”；“When the user interrupts, the assistant should stop its answer and listen.”
+- 访问：官方 Markdown HTTP 200。
+
+**基线、产品价值与缺口**
+
+- 基线：同一日志记载 Realtime API 于 **2025-08-28 GA**；2026 年不是第一次存在实时语音。2026-07-06 的 GPT-Realtime-2.1 条目还记载打断、静音、噪声处理改进，但没有本轮可比的玩具场景指标。
+- 产品推断：用户改口、插话和后端查资料时，玩具不必等整个任务结束才再次发声；可以用短促听者反馈维持交流。
+- **说话让出话轮不等于后端动作已取消**。涉及实体动作时必须由应用分别处理取消、重复执行与状态确认；模型口头确认不是硬件安全联锁。
+- 情绪边界：语气、人格提示与表达力有官方接口依据；不能升级成准确识别心理状态、提供治疗或“真正理解情绪”的证据。
+- 当前成本示例：**300 个会话分钟 × $0.05／分钟 = $15，仅 voice session 费用**；按秒计费，不向整分钟取整。后台模型和工具、网络及硬件另计。会话分钟不是用户开口分钟；这不是历史降价比较，也不是玩具整机月成本。
+- 未证实：真实儿童语音、回声、远场、电机噪声中的打断成功率；首声与停声 p95；开放权重、端侧部署、具体玩具采用。儿童部署适用条款未在本片得到完整核准。
+
+<a id="t103"></a>
+### T103｜Gemini 3.8 Live：实时视觉与异步工具，不把企业 Preview 写成 GA
+
+**来源 T103-A**
+
+- 题名：Build real-time voice applications with Gemini 3.8 Live and 3.5 Transcribe。
+- URL：<https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/>
+- 发布／事件日：**2026-09-15**。
+- 定位：Gemini 3.8 Live & 3.8 Live Extended Thinking → Key capabilities。
+- 短引：“Execute API and tool calls in the background while continuing to stream audio responses”；“Ground dialogue in live visual inputs”。
+- 访问：浏览器官方正文成功。
+
+**来源 T103-B**
+
+- 题名：Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking。
+- URL：<https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/>
+- 发布／事件日：**2026-09-15**；正文注明更新 **2026-09-17**。
+- 定位：Experience more fluid, intelligent conversations／Start using our latest Gemini Audio models。
+- 短引：“reasons and speaks simultaneously”；开发者“In the Gemini API and Google AI Studio”；企业产品部分“In private preview”。
+- 访问：浏览器官方正文成功。
+- 可用性：开发者 API／AI Studio 已提供，不能因发布文章存在就自动写成全部服务 GA。Gemini Enterprise 与 Enterprise for Customer Experience、Workspace 等不同通道的发布状态不能相互替代。
+
+**来源 T103-C（通用接口边界，不代替具体型号卡）**
+
+- 题名：Live API 官方概览。
+- URL：<https://ai.google.dev/gemini-api/docs/live>
+- 日期：本轮未核定其独立发布日期。
+- 定位：能力及输入格式概览。
+- 短引：“processes continuous streams of audio, images, and text”；输入说明含“images (JPEG <= 1FPS)”对应的页面文字。
+- 访问：HTTP 200，读取 HTML 正文。
+- 限制：通用指南语言覆盖等条目与 3.8 专属公告不是同一口径，不能机械合并；“视觉输入”不是输出视频，更不证明高速运动控制闭环。
+
+**基线、产品价值与缺口**
+
+- 官方宣称相较此前 Live 模型改进，列举若干语音／任务评测；本片没有同一实体玩具用例的前后对照。不同榜单、WER、任务完成率、延迟不能拼成“玩具综合提升百分比”。
+- 产品推断：带摄像头探索、桌面棋类、看物问答；摄像头、采样频率、用户同意、家庭图像隐私和网络上行均是独立前提，不表示本项目已配置或验证。
+- 当前价文章给出音频输入／输出每分钟估算，并注明基于各自 token 单价；**不得与 GPT-Live 的会话分钟价格直接相除**，本片不做“便宜多少”的比较。
+- 未发现开放权重依据；不能推定端侧运行。**中国大陆及儿童客户端限制见 T109，尤其不能因开发者成人注册而认为儿童产品可以上线。**
+- 实际采用：官方棋类、办公等演示不是实体玩具；四组 40 卡中如未披露模型，不得补写已用 Gemini。
+
+<a id="t104"></a>
+### T104｜Qwen3-TTS：国产开放权重候选与可控角色声音
+
+**来源 T104-A**
+
+- 题名：Qwen3-TTS，QwenLM 官方仓库 README。
+- 页面 URL：<https://github.com/QwenLM/Qwen3-TTS>
+- 实际读取 URL：<https://raw.githubusercontent.com/QwenLM/Qwen3-TTS/main/README.md>
+- 发布事件日：README News 明记 **2026-01-22**。
+- 定位：News／Introduction／Released Models Description and Download／Evaluation。
+- 短引：“adaptive control of tone, speaking rate, and emotional expression”；“latency as low as 97ms”。
+- 访问：官方仓库 raw README HTTP 200；未下载权重或运行代码。
+
+**来源 T104-B**
+
+- 题名：Qwen3-TTS-12Hz-1.7B-CustomVoice 模型卡，Qwen 官方账号。
+- 页面 URL：<https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice>
+- 实际读取 URL：<https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice/raw/main/README.md>
+- 日期：本轮未单独核定模型卡首次发布日期；事件日仍按官方仓库。
+- 定位：模型卡 YAML 元数据。
+- 短引：`license: apache-2.0`。
+- 访问：HTTP 200。许可结论直接覆盖这个已读模型卡；不据此推定所有云服务及所有型号许可完全相同。
+
+**失败来源／日期差异**
+
+- Qwen 博客题名（搜索结果显示）：Qwen3-TTS Family is Now Open Sourced: Voice Design…。
+- URL：<https://qwen.ai/blog?id=qwen3tts-0115>
+- 访问：从 Google 结果点击后浏览器正文读取超时，后续状态读取也超时；**未取得正文**。
+- 搜索摘要显示 2026-01-21，不作为已核发布日期；本片使用仓库明确记载的 **2026-01-22 发布事件**，不猜测一天差异的原因，也不把 URL 中 `0115` 当发布日期。
+
+**接口与型号边界**
+
+- 开放系列包括 0.6B／1.7B、12Hz tokenizer；覆盖十种语言及部分方言声线。
+- 1.7B VoiceDesign／CustomVoice 表中支持 instruction control；0.6B CustomVoice 不可直接继承该结论。Base 的声音克隆／微调功能与 VoiceDesign 是不同能力。
+- README 提供 ModelScope 路线并注明推荐中国大陆用户使用；开放权重和本地加载是本轮已核实的中国市场候选基础，而不是必须走国际云。
+- README 链接国内托管 API <https://help.aliyun.com/zh/model-studio/qwen-tts-realtime> 及国际文档 <https://www.alibabacloud.com/help/en/model-studio/qwen-tts-realtime>。**本轮仅读到仓库链接，未打开这两份 API 正文**；因此不证明托管型号、账户可用区域、定价、SLA、许可与开放权重完全相同。
+- 所查 README 推荐 GPU／FlashAttention 2 等推理条件，并称其 vLLM-Omni 示例当时仅支持 offline inference；不能将模型支持 streaming 与任意部署框架已支持在线流式服务混为一谈。
+
+**基线、价值与缺口**
+
+- “声音克隆在今年才诞生”不成立；此处可证事件是 2026 年权重、型号与工具发布。
+- 官方同页 Seed-TTS test-zh／test-en 的对比中，2025 年 CosyVoice 3 为 0.71／1.45，Qwen3-TTS-12Hz-1.7B-Base 为 0.77／1.24，均为该表的 WER、越低越好。只说明此表中文／英文结果有取舍，**不是全面领先，也不是 STT 效果**；不能与其他数据集混比。官方自报评测未由本项目复现。
+- 产品推断：固定角色声线、睡前轻声、游戏反馈、多人角色台词；也可预生成并审核后缓存，摊销多次播放的生成成本。
+- 97ms 是官方合成链路／首音频包相关声明，未包含玩具采音、识别、LLM、网络及播放缓冲。本轮没有核定其完整硬件／负载条件，不据此承诺整链低延迟。
+- 未证实：低价玩具 CPU／NPU 或本项目板卡实时运行；儿童中文韵律与长文本稳定性；合法授权的声音资产准备；托管 API 在国内实际可用；实际玩具采用。
+- 自托管只是把部分服务商成本转为推理硬件、运维、能耗与许可管理，**不是免费、不是已经降价**。
+
+<a id="t105"></a>
+### T105｜Qwen3-ASR：方言、开放部署及流式限制
+
+**来源 T105-A**
+
+- 题名：Qwen3-ASR，QwenLM 官方仓库 README。
+- 页面 URL：<https://github.com/QwenLM/Qwen3-ASR>
+- 实际读取 URL：<https://raw.githubusercontent.com/QwenLM/Qwen3-ASR/main/README.md>
+- 事件日：**2026-01-29** 开放 0.6B／1.7B ASR 与 ForcedAligner；**2026-06-26** 原生 Transformers 支持。
+- 定位：News／Introduction／Streaming Inference。
+- 短引：“30 languages and 22 Chinese dialects”；“streaming inference is only available with the vLLM backend”；“does not support batch inference or returning timestamps”。
+- 访问：官方 raw README HTTP 200。
+
+**来源 T105-B／T105-C｜官方模型卡许可补核**
+
+- 题名／型号：Qwen3-ASR-1.7B；Qwen3-ASR-0.6B（Qwen官方账号）。
+- 完整读取 URL：<https://huggingface.co/Qwen/Qwen3-ASR-1.7B/raw/main/README.md>；<https://huggingface.co/Qwen/Qwen3-ASR-0.6B/raw/main/README.md>。
+- 日期：模型卡首次发布日期未单核；本次独立复核访问日为**2026-10-10**，不代替T105-A的01-29事件日。
+- 定位／短引：两份模型卡YAML元数据均为 `license: apache-2.0`。
+- 访问结果／主体：Reviewer TECH本轮实际打开上述两份官方raw模型卡并确认；由主会话回传，Coder INTEGRATE据追加授权归档，**不是集成者重新联网核验**。
+- 许可边界：只直接支持这两份已读模型卡所标许可，不自动覆盖托管API、其它变体、第三方依赖、训练数据或音频／声音权利；也不证明低功耗硬件可实时运行或具体玩具已采用。
+
+**日期与访问边界**
+
+- 仓库关联博客 URL：<https://qwen.ai/blog?id=qwen3asr>。
+- 本轮搜索摘要显示 2026-01-28，但未打开博客正文，不将其作为已核日期；事件按仓库 **01-29**。未核定差异原因。
+- 仓库列出国内实时 API 文档 <https://help.aliyun.com/zh/model-studio/qwen-real-time-speech-recognition>、国内文件识别文档 <https://help.aliyun.com/zh/model-studio/qwen-speech-recognition>，以及国际对应文档 <https://www.alibabacloud.com/help/en/model-studio/qwen-real-time-speech-recognition>、<https://www.alibabacloud.com/help/en/model-studio/qwen-speech-recognition>。**仅确认仓库链接存在，未读取这些 API 正文，不确认账户／区域／云端型号或价格。**
+
+**基线、产品价值与缺口**
+
+- 2026 可证事件是开放权重及工具链完善，不是语音识别或流式 ASR 首次出现；未取得目标玩具任务的历史同口径识别率和成本。
+- 已核：开放架构／权重、ModelScope 下载说明、自托管推理工具；30 种语言与 22 种中文方言覆盖列表；流式／离线统一模型。
+- “2000 times throughput at a concurrency of 128”是官方服务器吞吐描述，**不是单个玩具 2000 倍加速，也不是端到端时延**。没有运行其硬件条件和负载复现。
+- 产品推断：中文家庭、祖孙游戏的方言适配及服务商替代选择。需另测儿童发音、口语改口、多人重叠、远场、电视背景声和舵机噪声。
+- ForcedAligner 的时间戳是单独能力，不可忽略当前流式推理“不返回时间戳”的限制；不能直接据此承诺在线口型／动作同步。
+- 未证实：本机端侧性能、低功耗预算、云 API 与开源版本相同、全面优于所有上一年 ASR、具体实体玩具采用。开放权重不等于不存在商业合规与运行成本。
+
+<a id="t106"></a>
+### T106｜图像生成：内容供给与编辑能力，不是实时玩具动画
+
+**来源 T106-A**
+
+- 题名：Changelog | OpenAI API。
+- URL：<https://developers.openai.com/api/docs/changelog>
+- 事件日：**2026-04-21** GPT Image 2；**2026-09-08** GPT Image 2.5 Sunburst／Flare。
+- 定位：Apr 21／Sep 8 对应模型条目。
+- 短引：“Released GPT Image 2.5 Sunburst and GPT Image 2.5 Flare for image generation and editing”。
+- 访问：官方正文成功。
+
+**来源 T106-B**
+
+- 题名：Image generation。
+- 页面 URL：<https://developers.openai.com/api/docs/guides/image-generation>
+- 实际读取 URL：<https://developers.openai.com/api/docs/guides/image-generation.md>
+- 日期：无独立发布日期；事件日由日志提供。
+- 定位：模型／输出设置、Limitations、Cost and latency。
+- 短引：“Complex prompts may take up to 2 minutes”；“may occasionally struggle to maintain visual consistency for recurring characters”；“The models can use different token counts for the same quality setting”。
+- 访问：官方 Markdown HTTP 200。
+
+**状态、基线、成本与缺口**
+
+- 接口：Images API 和 Responses API image generation tool；2.5 模型支持 `xhigh`、`max`。日志为已发布 API 模型，不把未明确的 GA 标签补写出来；较高分辨率部分标为 experimental。组织可能须先完成 verification，本轮没有实际验证账户资格。
+- 基线：同一日志显示 GPT Image 1.5 于 **2025-12-16** 已发布；2026 不是第一次能生成插图。04-21 日志还记载 Batch API 支持，但异步折扣不是历史模型降价，也不能用于估算实时体验。
+- 当前文档的 2.5 费率为每百万 image input tokens $8、cached image input $2、image output $30、text input $5、cached text input $1.25。这里只记录**不同输入／输出单位各自的当前价**，不跨单位比较、不推出单张固定价格或年内降幅。
+- 缓存限制：文档说 GPT Image 2／2.5 缓存输入价只适用于 Responses 图像工具，不适用于直接 Images API；不能给所有图片调用统一套缓存折扣。
+- 产品推断：任务卡、奖励卡、插图和角色资产，可先生成、人工审核并缓存；改善内容生产与个性化的可能性，不是素材团队总成本已经下降的实证。
+- 未证实：人物跨集一致性、版权与儿童图像授权、内容审核通过率、重复生成率、每张合格素材成本、端侧权重及具体玩具采用。分钟级生成不是毫秒级面部表情动画。
+
+<a id="t107"></a>
+### T107｜视频生成：Veo 3.1 Lite 的创作／异步路线
+
+**来源 T107-A**
+
+- 题名：Build with Veo 3.1 Lite, our most cost-effective video generation model。
+- URL：<https://blog.google/innovation-and-ai/technology/ai/veo-3-1-lite/>
+- 发布／事件日：**2026-03-31**。
+- 定位：Efficiency for builders／Get started。
+- 短引：“Text-to-Video and Image-to-Video”；“duration at 4s, 6s or 8s”；“paid tier on the Gemini API and Google AI Studio”。
+- 访问：官方浏览器正文成功。
+
+**来源 T107-B**
+
+- 题名：Veo 3.1 Lite preview。
+- URL：<https://ai.google.dev/gemini-api/docs/models/veo-3.1-lite-generate-preview>
+- 日期：模型 Latest update 为 **March 2026**；页面 Last updated **2026-10-08 UTC**，不是首次发布日期。
+- 定位：模型代码、输入输出、功能限制。
+- 短引：“Output: Video with audio”；“does not support 4K outputs or Extension”。
+- 访问：HTTP 200。
+
+**状态、基线、产品价值与缺口**
+
+- 确定接口型号为 `veo-3.1-lite-generate-preview`，因此标为 **付费 Preview，非已证 GA**。正文的“available”不取消模型页的 Preview 状态。
+- 输入 Text／Image，输出含音频视频；公告提供 16:9／9:16、720p／1080p、4／6／8 秒。输出片长与生成耗时是两个变量。
+- 基线：公告与 Veo 3.1 Fast 作价格／速度比较，并预告 04-07 Fast 价格变化。这不是同模型同参数历史降价实测；本轮未核准分辨率、音频、质量、时长及后续价格执行的完整对照，**不把宣传比例写成玩具成本降幅**。
+- 产品推断：配套短剧、IP 内容、宣传片、App 回顾视频，以及预制分支故事素材。属于离线／异步内容供给，不证明持续会话中能即时生成视频。
+- 未证实：用户发话至首帧的端到端延迟、端侧执行、生成视频变成可安全执行机械动作、儿童交付许可、具体玩具采用。直接 Developer API 接入须检查 T109；预制内容的再分发及目标受众条款也不能凭本片视为已放行。
+
+<a id="t108"></a>
+### T108｜实时 Avatar：与短片生成不同，企业接入仍有限制
+
+**来源 T108-A**
+
+- 题名：Introducing Gemini 3.8 Live with Live Avatar。
+- URL：<https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/>
+- 发布／事件日：**2026-09-24**。
+- 定位：开篇／Asynchronous tool execution with continuous presence／A Live Avatar to fit your brand needs／Get started。
+- 短引：“pairing near real-time video generation with speech”；“Custom avatar creation is currently available only through enterprise allowlisting.”
+- 访问：官方 HTTP 正文 200；非仅搜索摘要。
+
+**状态、基线、产品价值与缺口**
+
+- 正文称 Gemini Enterprise 可用，具有视觉与音频输入、表达性视频与音频输出、口型和表情、异步工具期间持续交流；本片按文章原词记为 near-real-time，不将其改写为经过测量的固定毫秒值。
+- **自定义 Avatar 的 enterprise allowlist 不可丢失**。普通 AI Studio／Gemini Developer API 账户是否可用、是否有自助接口、企业合同与地区条件，未取得独立接口正文核验；不推定与 T103 完全相同。
+- 基线：公告承接 09-15 Live 模型发布，将实时可视形象作为新增功能；本轮没有与 2025 Avatar 产品的同口径质量／延迟／成本对照。
+- 产品推断：有屏桌面伙伴或机器人面部屏的持续形象，比“生成完整短片后再播放”的 T107 更贴近即时会话；无屏毛绒或机械鸭并不会自动因此获得额外体验收益。
+- 未证实：价格、网络带宽、功耗、并发配额、声画同步 p95、低成本硬件部署、角色定制准入与儿童服务许可；官方酒店等服务演示不是消费玩具采用。
+- 未提供可据以判断端侧可用的权重／算力资料；多模态输出不等于玩具本地推理。
+
+<a id="t109"></a>
+### T109｜仅归档已读的地区与年龄条款（三个来源）
+
+**用途：正文可正式引用的接入条件证据。不是模型能力跃迁、不是玩具采用证据，不扩张为对所有国际云或所有企业合同的一刀切判断。**
+
+#### T109-A｜OpenAI 支持地区
+
+- 题名：Supported countries and territories。
+- URL：<https://developers.openai.com/api/docs/supported-countries>
+- 日期：正文无单一发布日期／生效日；**2026-10-10** 读取的名单快照。
+- 定位：开篇警告及完整国家／地区列表。
+- 短引：“Accessing or offering access to our services outside of the countries and territories listed below may result in your account being blocked or suspended.”
+- 访问：官方 Markdown 形式读取成功，HTTP 200。
+- 可证结论：所查名单**未列中国大陆**；不能默认直接为大陆玩具用户提供此服务。网页可打开、代理网络可连通、成人有账号都不等于获得对目标地区提供服务的许可。
+- 限制：这是该来源覆盖的服务支持名单，不是中国法律结论；不证明特定第三方托管或企业协议一定同样可用／不可用。本条不提供儿童适用性放行。
+
+#### T109-B｜Gemini Developer API 年龄及客户端条款
+
+- 题名：Gemini API Additional Terms of Service。
+- URL：<https://ai.google.dev/gemini-api/terms?hl=en>
+- 日期：正文生效日 **2026-03-23**；页面显示最后更新 **2026-04-28 UTC**；访问 **2026-10-10**。
+- 定位：Age Requirements／Use Restrictions／Unpaid Services／Paid Services。
+- 短引：“You must be 18 years of age or older to use the APIs.”
+- 关键短引：“You also will not use the Services as part of a website, application, or other service ... that is directed towards or is likely to be accessed by individuals under the age of 18.”
+- 地区短引：“You may only access the Services (or make API Clients available to users) within an available region.”
+- 访问：HTTP 200，英文正文读取成功。首次无语言参数响应为葡萄牙语，随后用本 URL 读取英文确认；未靠翻译摘要下结论。
+- 可证结论：**不仅开发者本人要满 18 岁，面向或可能由未满 18 岁者访问的 API Client 也受禁止性限制。家长注册／成人持有 API key 不能自动消除此限制。** 不得直接将 T103／T107 写成可上线儿童玩具的推荐接入方案。
+- 其他已读边界：EEA、英国、瑞士面向用户的 API Client 必须使用 Paid Services；Unpaid Services 可能用于服务改进且可有人类审阅，正文提示不要提交敏感、保密或个人信息。不能把免费试验通道用于真实儿童家庭数据而声称隐私已核准。
+- 限制：本条针对引用这些条款的 Gemini Developer API／AI Studio 等服务。Gemini Enterprise、其他企业合同和潜在许可例外**本轮未核实**；既不自动套用为全部企业服务禁令，也不假定其必然允许儿童使用。
+
+#### T109-C｜Gemini API／AI Studio 地区及年龄验证
+
+- 题名：Available regions for Google AI Studio and Gemini API。
+- URL：<https://ai.google.dev/gemini-api/docs/available-regions>
+- 日期：页面 Last updated **2026-04-28 UTC**；不是地区政策首次生效日期；访问 **2026-10-10**。
+- 定位：访问失败原因／Available regions 列表。
+- 短引：“Age requirements ... (18+)”；“you haven't yet verified your age on your Google Account”。
+- 访问：HTTP 200，官方正文成功。
+- 可证结论：所查列表**未列中国大陆**；除地区外，账号可能需要年龄验证。不能将网页可以访问、某演示可以运行或成人账号可登陆当成大陆产品交付许可。
+- 限制：页面指向其他企业平台选项，但本轮未核验那些通道的合同、地区、具体模型及用户年龄许可；不把导航链接当作已获准替代方案。
+
+#### 三、面向四组 40 卡的引用与方案筛选规则
+
+1. 产品卡已有真实披露时，分别写“产品采用证据”和“技术使能证据 Txxx”；两栏不互相替代。
+2. 未披露模型时，只写“该体验可与 T102／T104 等能力形成映射，具体采用未披露／未证实”，不得填入供应商型号。
+3. 中国市场先区分儿童玩具、成人桌面伙伴、企业展陈，再检查地区和用户年龄。T109 是接入门槛，不是市场销量或产品竞争力证据。
+4. 中国市场候选顺序可先评估 **Qwen 开放 ASR／TTS＋本地或境内自托管后端**；这只是原型候选，尚未核验中文儿童体验、商用接口条款和成本，不等于本片已交付可上线完整架构。
+5. 角色和记忆：T101 对上下文管理，T104 对声线／语气；需要应用自己的授权、遗忘、纠错、角色边界及家长管理，不能由模型型号代替产品设计。
+6. 实时互动：T102／T103 分别核打断、后端状态和视觉输入；T108 仅对有显示需求、满足企业准入的方案有直接意义。
+7. 内容供给：T106／T107 优先按后台生成、审核、缓存、复用理解。**原型更容易制作／内容成本可能被摊销是推断，不是已发生降价或已取得正毛利。**
+8. 实体动作必须经确定性的权限、状态和安全边界执行；语音模型、视频模型的工具输出或流畅口头确认，均不构成硬件动作安全证明。
+
+#### 四、成本与整链延迟：允许写什么，不允许写什么
+
+##### 成本
+
+- 已核算术示例：`300 session-minutes × $0.05/minute = $15`，**仅 GPT-Live voice session，后台模型／工具不含在内**；不是每月无限陪伴套餐，也不是 300 分钟用户开口的固定计费。
+- 禁止把不同模型、不同质量档位、不同评测、token／字符／输入分钟／输出分钟／会话分钟／视频秒数直接相除比较成本。
+- 当前价格没有历史同参数基线时，不写年内降价百分比。异步 Batch 相对同步费率、另一个 Lite 型号相对 Fast、缓存命中价相对非缓存价，均不能自动视为同一玩具体验的历史降价。
+- 开放权重须计推理硬件折旧、显存、并发利用率、电费、运维、网络、授权资产、审核及失败重试；不是零成本。
+- 内容生产应统计“每张／每段审核通过且角色一致的可用素材成本”，而非只取一次模型调用标价。素材缓存的价值取决于复用次数。
+
+##### 延迟与可靠性
+
+完整路径至少包括：
+
+`采音与回声消除 → 网络上行 → 识别或原生语音模型 → 记忆检索／工具 → 合成或原生音频输出 → 下行与播放缓冲`
+
+- 分别测首声、完整回复、用户插话到停声、任务取消／动作停止；报告 p50／p95、网络地区、硬件、并发、儿童／成人语音及噪声条件。
+- TTS 的 97ms、服务器 128 并发吞吐、视频 4／6／8 秒片长，以及 near-real-time 宣传，都不是这条完整链路的结果。
+- 多模态输出不等于开放权重；开放权重不等于低价玩具芯片可运行；实时理解视频不等于实时生成视频；实时生成脸部视频不等于实时安全控制机器人。
+- 所有“更自然”“更便宜”“更快”若没有目标任务同口径对照，应标为官方定性声明或产品推断，并保留验证缺口。
+
+#### 五、已读反证与访问审计（不新增模型采用结论）
+
+##### 服务供给不一定单向增加：Sora API 停服记录
+
+- 题名：Deprecations | OpenAI API。
+- URL：<https://developers.openai.com/api/docs/deprecations>
+- 定位：2026-03-24: Sora 2 video generation models and Videos API。
+- 日期：通知 **2026-03-24**；页面列的 API 移除日 **2026-09-24**。
+- 短引：“deprecation and removal from the API on September 24, 2026”。
+- 访问：由最初官方域搜索结果打开，官方浏览器正文成功；没有实际发 API 请求测试停服。
+- 同一 Changelog 的 **2026-03-12** 还记录 Sora 的角色参考、延长、1080p 等 API 扩充。说明“今年曾经升级”不等于截至研究日仍可用于新产品。
+- 结论：本片不将 Sora 2／Videos API 作为 2026-10-10 的现行推荐方案；生命周期与迁移成本必须独立核验。这不构成另一条玩具采用证据。
+
+##### 已完成的来源顺序与失败处理
+
+- 涉及 OpenAI 前完整读取本地 OpenAI Docs skill；第一实质检索为 `site:developers.openai.com 2026 Realtime audio release`，随后实际打开 Deprecations 官方正文，再沿官方文档读取。OpenAI 来源只使用获准的官方文档域，未用记忆猜型号。
+- Google 搜索结果仅作定位，不将摘要当正文。Qwen 博客未取到正文的日期均未升格为已验证日期。
+- Qwen TTS 博客浏览器超时后，转向 Qwen 官方仓库原文；没有绕过验证码、登录或 HTTPS 安全警告。
+- Google 条款首个响应语言不便核对后，读取英文正文确认未成年人客户端限制；未跳过该限制。
+- 官方仓库 raw／模型卡／文档 Markdown 均只读；未下载权重、未部署、未调用付费生成或上传家庭数据。
+- 未搜索或核验全部行业型号；本文件选择八项可产品化映射的能力，加三份已读条款构成 T109，保留强证据与缺口，而非模型大全。
+
+#### 六、仍需后续主任务裁决／验证
+
+- 哪些产品卡实际披露了模型或供应商；目前 T101—T108 的具体玩具采纳均为“未证实”。
+- 中国市场儿童／成人目标用户如何划分；境内托管接口和企业合同的年龄、数据、模型、区域、许可与价格是否满足要求。
+- Qwen 本地／自托管候选能否在目标硬件、功耗、并发与网络条件下达到儿童普通话／方言体验门槛。
+- 长期记忆的删除、纠错、角色一致性，及跨月准确率；原生语音和串联 STT→文本→TTS 两种架构的同场景对照。
+- 相同体验下每活跃用户成本，包括会话空闲、后台模型、工具、审核、重试与内容缓存；目前没有历史同口径总成本降幅。
+- T108 的企业定制准入、显示形态收益、合同和端到端声画同步；不以发布公告替代上线许可或实物验收。
+
+**交接状态：本片已归档 T101—T108 的能力、产品映射、来源、基线和未证实项，以及 T109 的三个地区／年龄条款来源。所有采纳、性能与成本边界保留；未改动其他文件，未执行 Git。**
+#### 七、主会话独立抽查记录（2026-10-10）
+
+- 复核主体：主会话；本记录依据用户当轮转达的独立复核结果归档，**不是 Coder T1 再次联网核验**。
+- 来源顺序：主会话按 OpenAI Docs 要求，先作官方域搜索，再实际打开模型页。
+- 题名：GPT-Live 1。
+- URL：<https://developers.openai.com/api/docs/models/gpt-live-1>
+- 访问结果：主会话独立打开官方正文成功。
+- 定位：模型说明、Model details、Pricing、Rate limits。
+- 核对的短引／字段：full-duplex／“listen and speak at the same time”；backend agent 分离；“$0.05 per minute”；按秒计费、不向整分钟取整；backend model／tools 另计；Audio／Text 输入输出；Image／Video unsupported；Free not supported。
+- 独立复核结论：确认 T102 的当前能力、模态限制、免费层不支持及计费口径。`300 会话分钟 × $0.05／分钟 = $15` 算术成立，**仅 voice，不含后台模型和工具等费用**。
+- 日期证据边界：本模型页抽查**不单独证明 GA 日期**；T102 的 **2026-09-10 GA** 仍由已经归档的官方 Changelog 条目支持。当前价格不证明历史降价；本复核不新增具体玩具采用、端侧运行或实测延迟证据。
+
+<a id="t110"></a>
+### T110｜2026 年原生文本模型使能：Qwen3.5 小模型系列
+
+- 研究窗口：**2026-01-01 至 2026-10-10**；来源访问日期：**2026-10-10（Asia/Shanghai）**。
+- 状态：只读分析已获主会话确认，本文件按确认内容落盘；写入阶段没有新增联网搜索或抓取。
+- 范围：只记录 **Qwen3.5 0.8B／2B／4B／9B** 这一条官方证据链，以 **Qwen3.5-2B 与 2025 年 Qwen3-1.7B 的同表文本指标**为主要质量证据，不扩展模型榜。
+- 验证层级：官方仓库、官方模型卡、许可证正文；**不是本机实测、独立复现或商业玩具采纳证据**。
+- 写入边界：仅新增本文件，不改既有分片及主入口，不执行 Git；后续集成由主会话处理。
+
+#### 一、结论：补足原生文本能力，不能概称全面提升
+
+**T110 支持：2026 年新增了一组可自托管的开放视文模型，能直接进行纯文本生成；其中 2B 在官方同表中，相比 2025 年 Qwen3-1.7B 的部分知识及 Thinking 模式指令遵循指标提高，但默认 Non-Thinking 模式 IFEval 从 68.2 降至 61.2。**
+
+因此，这条证据既不应降格为只有上下文压缩等工程功能，也不能升格为“文字生成全面提升”“所有小尺寸更强”或“同效果成本已下降”。能够证明的是：**新的原生文本部署选项，以及有任务、模式和型号限定的官方自报能力变化**。
+
+与 [T101 文本／记忆基础设施](parts/enablers-software-2026.md) 的分工：T101 说明长会话上下文管理工程；T110 说明模型本身的文本生成接口及语言评测表现。两者都不单独证明长期人格、故事文学性或儿童回答准确率。
+
+#### 二、完整来源登记
+
+以下均为前序只读分析已实际取得的正文，**访问结果均为 HTTP 200**。未将搜索摘要、URL 中的日期、模型名称中的数字或未打开的博客当作日期证据。仓库与模型卡的 main 路径会继续变化；本文件记录访问日所读内容，不把动态页面的整体修改日期当作模型发布日。
+
+##### T110-A｜Qwen3.5 官方仓库：小模型发布事件与下载路线
+
+- 来源主体：QwenLM 官方仓库。
+- 实际读取 URL：<https://raw.githubusercontent.com/QwenLM/Qwen3.5/main/README.md>
+- 定位：News／Models。
+- 事件日：**2026-03-02**，News 原文：
+  > 2026-03-02: Qwen3.5-9B, Qwen3.5-4B, Qwen3.5-2B, and Qwen3.5-0.8B are now available on [Hugging Face Hub] and [ModelScope]!
+- 方括号中为原文链接文字，链接目标分别为 <https://huggingface.co/collections/Qwen/qwen35>、<https://www.modelscope.cn/collections/Qwen/Qwen35>；本轮确认的是 README 中的官方发布及链接，**未另外打开集合页或下载权重**。
+- 同一 News 记载 **2026-02-16** 首批 Qwen3.5 为 397B-A17B；不能把家族首发日当作小模型系列的发布日期。
+- Models 段说明对无法访问 Hugging Face 的用户推荐 ModelScope，并列出下载及框架环境变量路线；支持作为中国市场自托管候选，不等于已经核验某账号或设备下载、运行成功。
+- 访问结果：HTTP 200，取得 README 正文。
+
+##### T110-B｜Qwen3.5-2B：本条主模型卡
+
+- 来源主体：Hugging Face 上的 Qwen 官方账号。
+- 实际读取 URL：<https://huggingface.co/Qwen/Qwen3.5-2B/raw/main/README.md>
+- 日期：未单独核定模型卡首次发布日期；模型发布事件由 T110-A 的 **2026-03-02** 支持。
+- 定位：YAML 元数据／Model Overview／Benchmark Results → Language／Quickstart／Serving Qwen3.5／Text-Only Input／Thinking Mode／Best Practices。
+- 关键原文：
+  - `license: apache-2.0`。
+  - “Type: Causal Language Model with Vision Encoder”。
+  - “Number of Parameters: 2B”（位于 Language Model 项下）。
+  - “Qwen3.5-2B operates in non-thinking mode by default”。
+  - Text-Only Input 示例请求：“Give me a short introduction to large language models.”
+- 可证内容：模型卡明确提供后训练模型权重与配置、纯文本生成用法、本地推理服务及 Thinking／Non-Thinking 两种模式；第五节的五项正反指标全部取自此卡同一 Language 表。
+- 访问结果：HTTP 200，取得完整模型卡正文。
+
+##### T110-C｜Qwen3.5-9B：尺寸、许可与默认模式边界
+
+- 实际读取 URL：<https://huggingface.co/Qwen/Qwen3.5-9B/raw/main/README.md>
+- 日期：模型卡独立首发日未核；小模型发布事件按 T110-A。
+- 定位：YAML／Model Overview／Quickstart。
+- 关键原文／字段：`license: apache-2.0`；Language Model 的 Number of Parameters 为 9B；“Qwen3.5 models operate in thinking mode by default”。
+- 范围：9B 模型卡的默认 Thinking 说明，**不能直接套给 2B／0.8B**；本文件不把 9B 的评测分数转记到小尺寸型号。
+- 访问结果：HTTP 200，取得完整模型卡正文。
+
+##### T110-D｜Qwen3.5-4B：尺寸、许可与默认模式边界
+
+- 实际读取 URL：<https://huggingface.co/Qwen/Qwen3.5-4B/raw/main/README.md>
+- 日期：模型卡独立首发日未核；小模型发布事件按 T110-A。
+- 定位：YAML／Model Overview／Quickstart。
+- 关键原文／字段：`license: apache-2.0`；Language Model 的 Number of Parameters 为 4B；“Qwen3.5 models operate in thinking mode by default”。
+- 访问结果：HTTP 200，取得完整模型卡正文；写入前从已取得正文核对默认模式，没有再次联网。
+
+##### T110-E｜Qwen3.5-0.8B：尺寸、许可与默认模式边界
+
+- 实际读取 URL：<https://huggingface.co/Qwen/Qwen3.5-0.8B/raw/main/README.md>
+- 日期：模型卡独立首发日未核；小模型发布事件按 T110-A。
+- 定位：YAML／Model Overview／Quickstart。
+- 关键原文／字段：`license: apache-2.0`；Language Model 的 Number of Parameters 为 0.8B；“Qwen3.5-0.8B operates in non-thinking mode by default”。
+- 访问结果：HTTP 200，取得完整模型卡正文；写入前从已取得正文核对默认模式，没有再次联网。
+
+##### T110-F｜Qwen3.5-2B 许可正文
+
+- 实际读取 URL：<https://huggingface.co/Qwen/Qwen3.5-2B/raw/main/LICENSE>
+- 定位／短引：“Apache License / Version 2.0, January 2004”；“TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION”。
+- 日期边界：January 2004 是许可证文本版本，不是模型发布日。
+- 访问结果：HTTP 200，取得许可证正文；与 T110-B 的 Apache-2.0 元数据一致。
+
+##### T110-G｜Qwen3.5-9B 许可正文
+
+- 实际读取 URL：<https://huggingface.co/Qwen/Qwen3.5-9B/raw/main/LICENSE>
+- 定位／短引：“Apache License / Version 2.0, January 2004”。
+- 日期边界：许可证版本日期不等于模型发布日。
+- 访问结果：HTTP 200，取得许可证正文；与 T110-C 的 Apache-2.0 元数据一致。
+- 许可核验范围：四张模型卡均已核元数据；另外完整读取了 **2B 和 9B** 的 LICENSE。未声称已经逐份读取 0.8B／4B 的 LICENSE 或审计全部依赖。
+
+##### T110-H｜Qwen3 官方仓库：2025 年旧基线
+
+- 实际读取 URL：<https://raw.githubusercontent.com/QwenLM/Qwen3/main/README.md>
+- 定位：模型尺寸介绍／News。
+- 旧基线系列发布日：**2025-04-29**。
+- 原文：
+  > 2025.04.29: We released the Qwen3 series. Check our [blog] for more details!
+- 同一 README 的模型尺寸介绍明确包括 **1.7B**。此处依据系列发布记录界定旧基线年份，没有另核单个权重文件的上传时刻。
+- 对照分数取自 T110-B 的同表，不是从旧仓库的另一张榜单拼接而来；模型名 **Qwen3-1.7B** 不替换为其他型号。
+- 访问结果：HTTP 200，取得 README 正文。
+
+#### 三、尺寸、模式及接入状态必须分别记录
+
+| 型号 | 模型卡 Language Model 标称参数 | 该卡记载的默认模式 | 已核许可层级 |
+|---|---:|---|---|
+| Qwen3.5-0.8B | 0.8B | Non-Thinking | 模型卡 Apache-2.0 元数据 |
+| Qwen3.5-2B | 2B | **Non-Thinking** | 模型卡元数据＋LICENSE 正文 |
+| Qwen3.5-4B | 4B | Thinking | 模型卡 Apache-2.0 元数据 |
+| Qwen3.5-9B | 9B | Thinking | 模型卡元数据＋LICENSE 正文 |
+
+- **交付形态**：官方已发布开放权重与配置，可通过支持框架自托管；不是仅存在宣传演示。这里不使用云服务的 GA／Preview 标签代替权重发布状态。
+- **原生文本**：2B 卡将模型定义为带视觉编码器的因果语言模型，并提供 Text-Only Input 及本地服务 `--language-model-only` 用法。文本能力不依赖用户先提交图片，也不是把上下文压缩功能当作模型推理能力。
+- **架构边界**：家族 Highlights 中的概括性架构宣传不能自动替代每个小尺寸的 Model Overview，更不能仅凭家族措辞把各尺寸都认定为同一种 MoE 结构。
+- **本地服务与云 API 分开**：模型卡的兼容 API 示例可以面向本地推理服务；兼容某种 API 格式不等于使用该 API 格式所属厂商的云或模型。本条没有核验阿里云等托管接口的区域、价格、SLA 或儿童产品条款。
+- **商用边界**：Apache-2.0 是模型许可证据，不是全部软件、托管服务、输入数据、第三方内容或生成物权利的统一授权。商业集成仍须按实际分发方式履行许可义务并审查依赖与数据权利。
+- **中国市场候选**：官方 ModelScope 下载路线和自托管说明支持开展境内后端评估；没有验证账号准入、网络可达性、目标硬件、实际下载或部署结果。
+
+#### 四、能生成文本与能做好产品是两层事实
+
+T110-B 的纯文本示例直接发送自然语言请求并生成回答；模型卡还给出 SGLang、vLLM、KTransformers、Transformers 等推理服务路线。因此可确认存在原生文本推理与生成的可实施接口，而非只有压缩、缓存或状态管理。
+
+但示例可运行的说明和接口存在，不等于本项目已经运行成功。模型卡还提示：
+
+- 推理效率与吞吐因框架而显著不同；生产负载需选择、配置及验证服务引擎。
+- 默认长上下文可能造成 OOM，必要时降低上下文窗口；标称支持长上下文不等于目标设备有足够内存。
+- 2B 默认 Non-Thinking；Thinking 需要明确启用。不能把 Thinking 评测成绩用于承诺默认模式体验。
+- Best Practices 建议大多数请求保留 32,768 tokens 输出空间，复杂数学／编程评测可设至 81,920 tokens。这是推荐配置，**不是本轮已核定每个榜单单元使用的实际预算，更不是玩具实时响应的耗时测量**。
+
+#### 五、同表五项正反指标：严格保留模式与退步项
+
+**唯一分数来源：T110-B 的 Benchmark Results → Language。** 以下两个型号在该官方表内比较，模式按行组保留；所有数值均为该表分数，越高越好，不拼成综合百分比，也不表述为儿童场景实测准确率。
+
+| 基准／同表模式 | 旧基线 Qwen3-1.7B | 新模型 Qwen3.5-2B | 证据允许的结论 |
+|---|---:|---:|---|
+| MMLU-Pro／Instruct（Non-Thinking） | 40.2 | 55.3 | 该知识与推理基准分数提高 |
+| C-Eval／Instruct（Non-Thinking） | 61.0 | 65.2 | 该中文知识评测分数提高 |
+| **IFEval／Instruct（Non-Thinking）** | **68.2** | **61.2** | **退步：默认非思考模式的该指令遵循指标下降，不能删除或隐藏** |
+| IFEval／Thinking | 72.5 | 78.6 | 开启思考后的该指令遵循指标提高 |
+| IFBench／Thinking | 26.7 | 41.3 | 开启思考后的另一指令遵循指标提高 |
+
+##### 比较条件与不能外推的内容
+
+1. **官方自报，不是独立复现。** 同一模型卡、同一任务名称与模式分组提供有限比较依据，但本项目没有取得并复现全部评测输入、逐模型采样设置、实际输出预算及评分执行过程。
+2. **参数量不等：1.7B 对 2B。** 这不是同参数规模的严格升级试验；参数量、模型结构、算力、运行内存、激活／缓存、输出长度与推理耗时也不是同一个量。
+3. **算力与成本未归一化。** 没有相同硬件、相同推理预算、相同延迟或相同费用下的对照，不能把分数变化写成单位算力／单位成本提高了某个比例。
+4. **Thinking／Non-Thinking 不混算。** 尤其不能用 2B 的 Thinking IFEval 78.6 代替默认 Non-Thinking 的 61.2；同名 IFEval 的两组比较必须分开。
+5. **默认 IFEval 退步是实质反证。** 可以说知识与部分思考模式任务表现提高，不能概称指令遵循全部改善或文字模型全面提升。
+6. **不跨尺寸迁移成绩。** 本表只比较 Qwen3-1.7B 与 Qwen3.5-2B；0.8B、4B、9B 的存在和许可不意味着它们具有相同成绩或相同默认模式。
+7. 这些基准不是角色故事文学质量、长期人设一致性、儿童中文准确率或家庭多轮交互体验的测量；没有这些目标用例的证据时不得补出结论。
+
+#### 六、实体玩具映射：能力已证，产品效果仍是推断
+
+| 环节 | 本证据能提供什么 | 尚不能证明什么 |
+|---|---|---|
+| 文本问答与规则解释 | 原生文本生成与知识／指令评测基础，可作为后端候选 | 儿童问题准确率、幻觉率、年龄适配、规则解释一定正确 |
+| 台词和内容草稿 | 能根据文本请求生成内容；可设计约束提示并人工审核 | 故事更好、文笔更好、角色更稳定、版权与内容安全已解决 |
+| 多步骤文本任务 | Thinking 模式的部分指令遵循指标提高，可评估复杂请求处理 | 实时响应更快、默认模式同样提高、模型口头回答可直接控制机械动作 |
+| 自托管与服务选择 | 0.8B—9B 开放权重及官方 ModelScope 路线增加后端选择 | 永久免费、运维成本为零、商业云条款自然满足、数据处理自动合规 |
+| 硬件部署 | 可依据型号与推理框架开展内存／吞吐测试 | ESP32／低价 MCU 可运行、本项目板卡已达实时水平、整机 BOM 已下降 |
+
+**具体消费玩具采用 Qwen3.5 的证据：本条未取得。** 产品卡仅可引用 T110 解释可选能力；不得据此填入某品牌已采用某型号。端云边界与整机成本继续参照 [硬件使能片](parts/enablers-hardware-2026.md)，不因“小模型”标签取消内存、功耗、网络、声学和安全工程要求。
+
+#### 七、访问审计、未验证项与交接
+
+- 前序只读分析实际读取了本文件登记的 **8 个官方 URL**：两个仓库 README、四个型号模型卡、两个 LICENSE；全部 HTTP 200，**本条证据链没有读取失败项**。
+- 发布日期来自官方 News 的明确事件记录；没有将模型卡的当前内容、许可证版本日或 Qwen3.5 家族首发日冒充小模型首发日。
+- 没有打开并核验所链接的 Qwen 发布博客、ModelScope 集合页或托管 API 正文；没有凭这些链接补写未读事实。
+- 写入阶段仅复用前序已取得正文，并从保留正文核对四个型号的默认模式；没有追加搜索或联网抓取。
+- 没有下载权重、安装框架、运行模型、调用付费服务、上传家庭数据或进行实物测试。
+- 未验证：目标硬件内存／吞吐／功耗、首 token 与整链 p95、Thinking 额外等待时间、目标产品问答与创作质量、儿童适龄和隐私要求、同效果成本、实际玩具采纳。
+- 必须保留的收敛结论：**原生文本能力与可部署性有直接证据；部分官方基准改善、默认 IFEval 退步同时成立；参数与算力不等，不能概称全面提升。**
+- 本轮只新增本文件；既有分片与主入口未改，未运行 Git。
+
+### 硬件与集成分片记录
+
+> 研究区间：2026-01-01 至 2026-10-10。访问日：2026-10-10（Asia/Shanghai）。
+> 状态：T2 分析已获主会话确认；本文件是 Coder 按确认内容落盘的完整证据分片，尚待集成与独立复核。此次落盘不再扩搜。
+> 范围：低价 MCU、开源云客户端、语音模组、集成开发平台、端侧小模型与资源限制、云服务计费、生产测试可复用性。不是 AI 玩具销量榜、产品采用清单，也不承担其他分片的生成模型音视频能力研究。
+> 修改边界：只写本文件；不修改其他分片、根入口、render 或只读参考库；不运行 Git。用户当轮授权覆盖项目默认自动提交规则。
+
+### 1. 可直接用于集成的判断
+
+**证据支持：2026 年，联网 AI 硬件的原型开发、语音前端集成和软件复用路径继续增加；部分生产测试经验也更加公开。没有取得同型号、同配置、同地区、同数量条件的跨年度价格对比，因此不能量化“今年整机成本下降”。**
+
+更具体地说，新低价硬件是“新能力可获得”，在线构建器和统一框架是“更多步骤被工具覆盖或组件化”，新声学模组是“集成路径更完整”。这些都不等于已经证明实际项目工期减少某个百分比，更不等于完整玩具的 BOM、认证、售后和长期云成本同步下降。
+
+#### 1.1 证据用语分级
+
+- **D｜2026 有日期的增量**：有 release、官方文章或明确日期 News 支持。今年新增的对象、版本或支持范围可以确认。
+- **A｜访问日可获得**：商品价格、服务条款或功能在访问日可读，但不能据此确定今年新增或今年降价。
+- **P｜计划或合作公告**：能够证明宣布了合作/计划，不能证明已供货、量产或采用。
+- **B｜边界或限制证据**：许可证、资源表、计费、官方未验收声明等，用于限制结论。
+- **推断**：依据上述事实判断可能减少的工程步骤；不是本机实测或独立项目工期对照。
+
+#### 1.2 五环节映射总表
+
+| 环节 | 可支持的 2026 变化 | 主要证据 | 明确不能推出 |
+|---|---|---|---|
+| 原型 | 新低价联网板、在线固件构建入口、更多板卡适配、自然语言工作台与成套音频前端 | T201、T202、T205、T206、T207 | 开发板单价就是整机 BOM；无需工程知识即可交付玩具 |
+| 内容 | 故事/音乐播放、角色与 UI 配置、内容资源装配路径更可复用 | T202、T205、T206 | 内容生成质量、版权、儿童适龄及审核已经解决；不替代模型分片 |
+| 实时交互 | 稳定媒体框架、量化唤醒模型、声学前端、打断/混音及更多外设适配 | T203、T204、T205、T207 | MCU 已本地运行完整聊天大模型；开发板表现等于玩具壳体内表现 |
+| 量产 | 模组结构适配与定制入口、公开的 PCBA 测试计划和工作流参考 | T207、T209；T206提供量产边界反证 | 已通过整机认证、可靠性验收，或已证明制造成本下降 |
+| 长期服务 | 设备授权、AI 按量计费与商用责任更容易核对 | T208、T202、T205、T206 | 开源客户端意味着永久免费云、无限额度、无运维或售后成本 |
+
+#### 1.3 与产品卡的关系
+
+T201—T209 只作为**可选使能**引用。任何具体产品是否采用 ESP32、小智、Tuya、reSpeaker 或某个模型，均需该产品自己的直接证据；本分片不为任何产品生成“已采用”标签。平台适配清单也不等于所有适配板都完成同等质量的量产验收。
+
+---
+
+<a id="t201"></a>
+### T201｜Seeed XIAO ESP32-C5：2026 新增廉价双频联网原型选项，不是年度降价
+
+#### 来源、标题、日期与访问
+
+1. **标题**：Meet XIAO ESP32-C5: The First XIAO Dev Board with Dual-Band Wi-Fi 6
+   **URL**：https://www.seeedstudio.com/blog/2026/01/16/xiao-esp32-c5-5ghz-dual-band-wifi6/
+   **发布日**：2026-01-16。页面公开 `article:published_time` 为 `2026-01-16T01:55:45+00:00`。
+   **更新日**：2026-01-20。`article:modified_time` 为 `2026-01-20T09:29:26+00:00`；正文也显示 Last Updated on: January 20, 2026。
+   **事件日**：文章发布/更新时宣布产品上市、官方渠道可购；第一笔订单或实际首批出货日未独立核验，不能把文章时间当出货验收时间。
+   **访问结果**：CUA 后台 iab 成功读取全文与上述公开日期元数据。另一次直接 HTTP 请求返回 403/“Just a moment...”，该次未取得正文；正常浏览器路径成功，不使用绕过验证码的方法。
+2. **标题**：Seeed Studio XIAO ESP32-C5
+   **URL**：https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C5-p-6609.html
+   **发布日期/变价日**：商品页未给出可用于年度比价的独立日期。
+   **访问结果**：HTTP 200，读取商品标题、SKU、报价、数量阶梯、仓库和规格资料；未下单、未登录、未结算。
+
+#### 正文定位与短引
+
+- 文章 **What Makes XIAO ESP32-C5 Stand Out?**：`“the first board in the XIAO series to support 5 GHz Wi-Fi”`。这是 XIAO 系列内的首次，不能扩大为世界首款或 ESP32 首次。
+- 文章 **Join the XIAO ESP32-C5 Revolution**：`“at MRSP $6.9”`，并列官方 Bazaar 和 AliExpress 销售渠道。
+- 文章 **High-Performance Processing** 及商品资料：240 MHz 单核 RISC-V、384 KB SRAM；商品资料列 8 MB Flash 和 8 MB PSRAM。
+
+#### 版本、价格与许可
+
+- **版本/型号**：XIAO ESP32-C5，商品 SKU `100010048`。2.4 GHz/5 GHz Wi-Fi 6，另支持 Bluetooth LE、IEEE 802.15.4 等连接能力。
+- **发布介绍文当前正文记载**：US$6.90。文章2026-01-16发布、01-20修改，本轮未取得发布当日历史快照；这是访问日所读当前正文，不简称“已核首发价”。
+- **访问日商品展示价格**：US$6.90；`10+: $6.50`。这两个价格属于不同数量条件，不是时间上的降价。
+- **币种/地区/数量/税运条件**：国际商店美元展示价；页面列中国、美国、德国仓选项，存在 1pcs/3pcs、排针等选项。本轮未逐一选择地区与配置结算，不能保证所有仓库和变体均同价或有现货。税费、运费及进口费用没有形成指定收货地的落地报价；不能写成含税包邮整机价。
+- **开放或商用状态**：商业销售开发板。支持 Arduino、ESP-IDF 等开发生态，不自动说明 PCB、无线栈、固件、全部第三方依赖都采用同一开源许可；本轮未完成该硬件工程全部许可审计。
+
+#### 2026 增量、环节与限制
+
+- **分级**：D（新板/新连接选项）+ A（访问日报价）+ B（非整机成本）。
+- **主要映射**：原型；次要为联网集成与实时交互的网络基础。
+- **能支持**：今年在 XIAO 尺寸和开发生态内增加了 US$6.90 的双频联网选项，开发者不一定需要为 5 GHz 网络更换到另一套主控开发体系。
+- **推断而非实测**：复用既有 XIAO/ESP-IDF 经验可能减少原型迁移工作；本轮没有测量实际工期、丢包或延迟改善。
+- **不能支持**：MCU 今年整体降价、相同 MCU 降价百分比、所有 AI 玩具可以用此板、更不能支持“US$6.90 就是一台 AI 玩具”。
+- **仍需工程**：麦克风、音频输入输出、供电、结构与电池、天线净空和整机 RF、配网/掉线重连、续航、OTA、安全处理。它本身不是完整语音开发板，也不是本地 LLM 模组。
+- **缺口**：首批实际发货日、指定收货地含税含运价格、同口径旧产品价格、完整硬件许可、目标玩具实测均未取得。
+
+---
+
+<a id="t202"></a>
+### T202｜小智 v2.4.2：新增 Firmware Builder，降低固件定制和板卡适配准备
+
+#### 来源、标题、日期与访问
+
+1. **标题**：Release v2.4.2 · 78/xiaozhi-esp32
+   **URL**：https://github.com/78/xiaozhi-esp32/releases/tag/v2.4.2
+   **实际读取的官方 API**：https://api.github.com/repos/78/xiaozhi-esp32/releases?per_page=12
+   **发布日/事件日**：`2026-08-06T01:03:05Z`（UTC），当日 release 公布新构建器。构建器更早的实际上线日未另证。
+   **访问结果**：官方 API HTTP 200，实际读取 tag、`published_at` 和 release body；不是只依赖搜索摘要。
+2. **标题**：XiaoZhi AI Chatbot — v2.4.2 README（仓库说明）
+   **URL**：https://github.com/78/xiaozhi-esp32/blob/v2.4.2/README.md
+   **读取地址**：https://raw.githubusercontent.com/78/xiaozhi-esp32/v2.4.2/README.md
+   **版本日期**：固定在 v2.4.2；README 未另设独立发布日期。
+   **访问结果**：HTTP 200，实际读取 Firmware Flashing、Features Implemented、About the Project 等段落。
+3. **标题**：MIT License — v2.4.2 LICENSE
+   **URL**：https://github.com/78/xiaozhi-esp32/blob/v2.4.2/LICENSE
+   **读取地址**：https://raw.githubusercontent.com/78/xiaozhi-esp32/v2.4.2/LICENSE
+   **访问结果**：HTTP 200，实际读取授权及版权保留条件。
+4. **标题**：Release v2.5.0 · 78/xiaozhi-esp32
+   **URL**：https://github.com/78/xiaozhi-esp32/releases/tag/v2.5.0
+   **发布日/事件日**：`2026-09-10T18:38:00Z`；换算中国时间为 09-11，引用时须标时区。
+   **访问结果**：同一官方 release API 成功取得完整 body，用作后续资源约束反证，不替代 v2.4.2 的功能发布日期。
+
+#### 正文定位与短引
+
+- v2.4.2 release 开头 **Firmware Builder (New)**：`“A new firmware builder is available”`，指向 https://xiaozhi.me/console/firmware-builder 。本轮只核验官方发布记录，未登录构建器创建项目或执行烧录。
+- v2.4.2 **What's Changed**：新增 ESP32-S31 Function CoreBoard 等板卡支持，同时 `“remove unreliable acoustic provisioning”`。
+- 固定版 README **Firmware Flashing**：默认连官方服务器，免费 Qwen 实时模型说明针对 `“Personal users”`。
+- v2.5.0 **What's Changed**：`“keep ESP32-S31 firmware in the 4MB OTA slot”`；还有板卡配置校验、显示和驱动修复。
+
+#### 版本、价格与许可
+
+- **版本**：客户端 v2.4.2；v2.5.0 仅用于证明后续仍有工程约束。
+- **许可**：客户端 MIT，可商用；需保留版权和许可声明，软件按 AS IS 提供。该许可不自动覆盖在线构建服务、官方托管服务器、接入模型、音色、资源素材或全部依赖。
+- **商用依赖**：默认云服务及其免费使用描述有个人用户范围。不能把客户端代码的商用许可外推为商业玩具永久、无限量免费接入官方云。
+- **价格条件**：本证据没有硬件价格，也没有得到构建器商业订阅价、官方云的完整商业配额/SLA；软件代码无许可费不等于部署总成本为零。币种、地区、税运、采购数量不适用于代码授权；云服务条件待单独确认。
+
+#### 2026 增量、环节与限制
+
+- **分级**：D（新构建入口与适配）+ B（许可、内存、云服务边界）。
+- **主要映射**：原型；次要为内容资产装配、固件复用、长期服务责任。
+- **能支持**：2026 增加在线固件构建入口和更多板卡配置，可减少本地开发环境与手工适配准备。官方新入口的存在已证实，实际节省小时数未测试。
+- **旧基线**：预编译固件、免搭建开发环境刷机早于 2026 已存在；不能把“无需本地编译即可刷固件”本身称为今年首次。
+- **不能支持**：所有板卡验收通过；所有用户均免费商用；本地聊天大模型。README 描述的是包含云端 ASR/LLM/TTS 或实时服务接入的客户端，本地语音唤醒是另一层能力。
+- **仍需工程**：正确板卡/驱动/引脚、Flash 分区、资源包、音频缓冲、AEC 硬件、配网、OTA、鉴权与密钥保护、断网/超时/异常恢复。
+- **缺口**：未实操在线构建器，未做声学或设备测试，未取得官方服务器完整商用价格与 SLA；v2.5.0 的 4 MB OTA 修复反而提醒空间预算仍需管理。
+
+---
+
+<a id="t203"></a>
+### T203｜ESP-GMF v1.0：稳定 API 和统一组件提高跨产品媒体软件复用性
+
+#### 来源、标题、日期与访问
+
+1. **标题**：ESP-GMF v1.0: General Multimedia Framework, First Official Release
+   **URL**：https://developer.espressif.com/blog/2026/07/esp-gmf-v1-0-release/
+   **文章发布日**：2026-07-21，正文时间显示 21 July 2026。
+   **访问结果**：CUA 成功读取全文、Overview、组件表与 release 链接。
+2. **标题**：Release v1.0 · espressif/esp-gmf
+   **URL**：https://github.com/espressif/esp-gmf/releases/tag/v1.0
+   **读取 API**：https://api.github.com/repos/espressif/esp-gmf/releases/tags/v1.0
+   **事件日**：`2026-06-23T01:23:17Z`，是 release 发布日，早于介绍文章。
+   **访问结果**：API HTTP 200，核验 tag 与 `published_at`。
+3. **标题**：Espressif Modified MIT License — v1.0 LICENSE
+   **URL**：https://github.com/espressif/esp-gmf/blob/v1.0/LICENSE
+   **读取地址**：https://raw.githubusercontent.com/espressif/esp-gmf/v1.0/LICENSE
+   **访问结果**：HTTP 200，实际读取完整许可。
+
+#### 正文定位与短引
+
+- 文章 **Overview**：`“the first official, API-stable release”`。
+- **Introduction**：解释此前不同媒体框架具有各自开发模型、接口和运行机制，限制代码复用；本框架统一音频、视频及 AI 媒体应用架构。
+- **Overview / ESP-GMF components summary**：官方组件提升至 1.0.x 基线，新模块包括 `esp_player`、`esp_asrc`、`esp_video_render`、`gmf_fft`；AI 音频新增 VAD/NS/DOA 等元素，板级管理迁出为独立组件。
+- LICENSE：`“EXCLUSIVELY with Espressif Systems products”`，并明确禁止面向非 Espressif 产品的再分发。
+
+#### 版本、价格与许可
+
+- **版本**：ESP-GMF v1.0；文章表中具体组件各有 1.0.0/1.0.1 等版本，不把全部组件当作同一二进制。
+- **许可**：`LicenseRef-Espressif-Modified-MIT`，不是无限制普通 MIT。用于 Espressif 产品的权限与向其他平台移植、再分发的权限不同。
+- **依赖边界**：媒体编解码器、算法库和第三方依赖须逐项审查，不能由主仓库许可证推断所有依赖开放。
+- **价格条件**：无硬件报价、云调用价或历史工时数据。代码许可不产生可计算的整机降价；币种、地区、税运和采购数量不适用于此框架 release。
+
+#### 2026 增量、环节与限制
+
+- **分级**：D（API 稳定基线、组件整合）+ B（平台限定许可）。
+- **主要映射**：实时交互；次要为原型和后续维护复用。
+- **能支持**：从多套媒体开发模型转向统一组件和稳定 API，减少重复拼接和跨项目重新组织代码的必要性。这是架构与组件复用证据，不是实际工期对照实验。
+- **旧基线**：ESP-ADF 等已有音频能力，本次不是“ESP32 今年才可以播放、录音”。
+- **仍需工程**：音频驱动、并发、内存与 DMA 对齐、任务调度、缓冲、资源泄漏和错误恢复、硬件适配、升级回归。
+- **不能支持/缺口**：框架稳定不等于具体玩具稳定；未做设备声学、续航、可靠性、儿童安全或整机认证；没有跨年度同口径成本下降数据。
+
+---
+
+<a id="t204"></a>
+### T204｜ESP-SR：2026 量化 WakeNet10/10s 扩大端侧语音能力，但不是本地完整 LLM
+
+#### 来源、标题、日期与访问
+
+1. **标题**：espressif/esp-sr v2.6.0 — ESP-SR Speech Recognition Framework
+   **URL**：https://components.espressif.com/components/espressif/esp-sr/versions/2.6.0/readme
+   **发布/事件日期**：固定版本 README 的 News 明列下述日期；组件页访问时显示 uploaded 23 hours ago，但本文件不用相对时间伪造精确上传时刻。
+   **访问结果**：HTTP 200，读取固定版本全文、News、能力/目标矩阵与仓库提交 `1a1aee2ba87dc6071dd9b961334249f0cf4256ab`。
+2. **标题**：Benchmark — ESP32-S3 — ESP-SR latest documentation
+   **URL**：https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/benchmark/README.html
+   **发布日期**：本轮未取得独立发布日期；属于访问日最新资源表，不把整张表都当作 2026 新增。
+   **访问结果**：HTTP 200，读取 WakeNet、AFE、MultiNet 资源与测试条件。
+3. **标题**：WakeNet Wake Word Model — ESP32-S3
+   **URL**：https://docs.espressif.com/projects/esp-sr/en/latest/esp32s3/wake_word_engine/README.html
+   **访问结果**：HTTP 200；该说明页正文仍主要描述 WakeNet9 系列，不能覆盖或否定固定版本 README 的 WakeNet10 News。资源链接指向上面的 benchmark。
+4. **标题**：ESPRESSIF MIT License — esp-sr LICENSE
+   **URL**：https://github.com/espressif/esp-sr/blob/1a1aee2ba87dc6071dd9b961334249f0cf4256ab/LICENSE
+   **读取地址**：https://raw.githubusercontent.com/espressif/esp-sr/1a1aee2ba87dc6071dd9b961334249f0cf4256ab/LICENSE
+   **访问结果**：HTTP 200，实际读取许可。
+
+#### 有日期的事件、定位与短引
+
+固定版本 README **News**：
+
+- **2026-08-17**：发布 WakeNet10；支持 `w16a16` 与默认 `w8a16` 量化，采用 ESP-DL。
+- **2026-09-30**：WakeNet10 支持中文、英文、日文、法文、德文、西班牙文、葡萄牙文。
+- **2026-10-09**：ESP-SR v2.6.0 开始支持 WakeNet10s，`“can run on chips without PIE (SIMD) instructions”`，列举 ESP32、C3、C5、C6。
+- **旧基线 2025-04-21**：同一 README 已记录 WakeNet9s 可在无 PSRAM、无 SIMD 芯片运行。因此不能写成“低端 MCU 直到 2026 才能本地唤醒”。
+
+#### 版本、资源、许可与价格
+
+- **版本**：ESP-SR v2.6.0；本次增量涉及 WakeNet10/10s。`w8a16` 是权重 8 bit/激活 16 bit，不应笼统写成所有计算均为 8 bit。
+- **能力类型**：唤醒词和声学处理是端侧小模型；MultiNet 的有限离线命令识别也不等于开放式聊天 LLM 或任意语音转写。
+- **访问日官方 S3 benchmark**：
+
+| 模型/配置 | RAM | PSRAM | 平均每帧运行时间 | 帧长度 | 使用边界 |
+|---|---:|---:|---:|---:|---|
+| Quantised WakeNet9，3 channel | 20 KB | 347 KB | 4.3 ms | 32 ms | 旧模型资源参考，不冒充今年新增 |
+| Quantised WakeNet10，3 channel | 17 KB | 523 KB | 7.1 ms | 32 ms | 文档注明默认检测模式 DET_MODE_3CH_90 |
+
+- 两行不能简单转成全面优劣或识别质量结论，但足以反驳“新模型所有资源都下降”。WakeNet10 的 PSRAM、每帧计算时间在所列表格中高于对应 WakeNet9 行；**WakeNet10s 的同条件资源表本轮未取得**。
+- Benchmark 中距离/噪声识别率表明确基于 **ESP32-S3-Korvo V4.0 和 WakeNet9 (Alexa)**，不能移植为 WakeNet10/10s 性能。表格中的 AFE/模型消耗也不是 Wi-Fi、GUI、音频缓存等全部应用消耗之和。
+- **许可**：ESPRESSIF MIT License 对使用在 Espressif 产品上的软件授予免费权限；不可不加限定地外推至其他平台。README 另提醒唤醒词品牌、商标及名称权利须获得合法使用授权。没有取得全部模型训练管线、权重及第三方依赖的统一开放许可证明。
+- **价格条件**：无硬件商用报价或定制唤醒词报价；不把已有组件免费使用推为全部服务免费。币种、地区、税运和采购数量不适用于组件资源表。
+
+#### 环节、推算与边界
+
+- **分级**：D（模型与目标/语言扩展）+ A（访问日资源表）+ B（能力、资源、许可限制）。
+- **主要映射**：实时交互；次要为原型语言适配。
+- **能支持**：预制量化模型和更多目标芯片支持减少自行实现唤醒算法的工作。今年新增的是模型代际、语言与目标支持，不是首次端侧唤醒。
+- **推算，不是实测**：10^9 参数 × 4 bit ÷ 8 = 500,000,000 byte，即约 500 MB（十进制）或 477 MiB，仅权重；还未计入运行时、激活、KV cache 等。因此几 MB PSRAM 的开发板不能因“支持量化”就被描述成可本地运行完整 1B 聊天模型。
+- **仍需工程**：真实儿童发音、误唤醒/漏唤醒、口音、噪声和播放音量测试；麦克风布局、声学回采、模型选择、内存与调度预算。
+- **缺口**：未测本机，未取得 WakeNet10s 同条件资源/识别率表，未对模型性能或开发成本作独立复现。
+
+---
+
+<a id="t205"></a>
+### T205｜TuyaOpen 2026 release：交互组件与外设适配更完整，成熟机电软件可继续复用
+
+#### 来源、标题、日期与访问
+
+1. **标题**：TuyaOpen 1.6.0 Release Notes
+   **URL**：https://github.com/tuya/TuyaOpen/releases/tag/v1.6.0
+   **发布/事件日**：`2026-01-21T10:22:54Z`。
+2. **标题**：TuyaOpen v1.9.0 Release Notes
+   **URL**：https://github.com/tuya/TuyaOpen/releases/tag/v1.9.0
+   **发布/事件日**：`2026-07-22T09:08:19Z`。
+3. **实际读取的官方 release API**：https://api.github.com/repos/tuya/TuyaOpen/releases?per_page=12
+   **访问结果**：HTTP 200，读取 2026 各版 body 和日期；同时取得 2025 旧版本基线。
+4. **标题**：TuyaOpen v1.9.0 README / Apache License Version 2.0
+   **URL**：https://github.com/tuya/TuyaOpen/blob/v1.9.0/README.md
+   **URL**：https://github.com/tuya/TuyaOpen/blob/v1.9.0/LICENSE
+   **读取地址**：https://raw.githubusercontent.com/tuya/TuyaOpen/v1.9.0/README.md
+   **读取地址**：https://raw.githubusercontent.com/tuya/TuyaOpen/v1.9.0/LICENSE
+   **访问结果**：均 HTTP 200；实际读取许可证及 Disclaimer and Liability Clause。
+5. **旧基线**：https://github.com/tuya/TuyaOpen/releases/tag/v1.3.1 ，发布 `2025-06-09T08:38:39Z`；API body 明列新增 Otto Robot AI 应用。只作年份校正，不作为 2026 新增。
+
+#### 正文定位与短引
+
+- v1.6.0 **New Features**：`“Agent-triggered music/story playback functionality”`；设备 MCP 内置查询设备信息、切换模式、调音量、拍照，并提供扩展注册 API。
+- v1.6.0 **AI APIs Update / New audio_player Audio Playback Service Component**：Tuya AI API 升至 V2.1，新增 OPUS 上报、对话模式/自定义 UI、前后台流抢占或混音，以及多个媒体源和解码格式。
+- v1.9.0 **New Features**：Wi-Fi DTIM 低功耗及 `ultra_lowpower_demo`；更多 T5AI/ESP32 等板卡、相机、IMU、SD 卡适配及 Otto ST7789 V1 屏幕配置。
+- v1.9.0 **Bug Fixes / LCKFB_T5AI_TOUCH Hardware AEC**：没有 MIC2 回采回路时禁用硬件 AEC，以修复语音交互异常。
+
+#### 版本、许可与价格
+
+- **版本**：框架 v1.6.0 / v1.9.0；v1.6.0 的 Tuya AI API V2.1 是接口版本，不等于整个开源框架版本号。
+- **许可**：主框架 Apache-2.0；README 明确第三方子模块独立更新，并要求商用者自行完成全面功能、安全测试及承担相关责任。
+- **商业依赖**：平台云授权、模型、ASR/TTS、音色和内容权利与框架许可证分离，详见 T208。不能写成全部软硬件及云服务完全开放免费。
+- **价格/数量/地区/税运**：release 未给硬件价格或商用云费；软件框架本身不是采购 BOM。无同口径年度降价证据，也无本轮可验证的待机功耗下降百分比。
+
+#### 环节、增量与限制
+
+- **分级**：D（交互/外设与电源管理适配）+ B（硬件 AEC 和商用责任）。
+- **主要映射**：原型、实时交互、内容播放；次要为成熟机电控制复用。
+- **能支持**：今年更多音乐/故事播放、混音、设备工具调用、显示与传感器代码可直接组合，减少从空白代码实现这些功能的步骤。新版 DTIM 示例提供电池设备优化入口，但并无通用续航承诺。
+- **旧基线**：Otto AI 示例在 2025 年已存在；2026 新屏幕配置不应包装成今年才出现机器人/3D 打印路线。
+- **仍需工程**：舵机限位与扭矩/供电保护、屏幕和音频驱动、AEC 回采、电池状态与功耗测量、异常动作约束和安全测试。
+- **内容边界**：播放故事/音乐以及配置角色不授予对应 IP、音色或版权，也不能证明儿童适龄。
+- **缺口**：没有实际设备测试、工期对照或功耗复现；没有审计全部第三方子模块和云服务合同。
+
+---
+
+<a id="t206"></a>
+### T206｜Tuya Cobuilder：2026 新工作台整合多个原型环节，官方明确不等于量产验收
+
+#### 来源、标题、日期与访问
+
+1. **标题**：涂鸦智能发布2026年Q2及H1财报：推动AI能力在真实设备和实际场景中落地
+   **URL**：https://www.tuya.com/cn/news-details/Kfw78hyi7htuk
+   **文章发布日**：正文显示 **2026-08-25**；不能采用搜索摘要的 08-24 代替正文。
+   **事件日**：文中明确 **2026 年第二季度上线 Tuya Cobuilder**，即 04-01—06-30 范围；本轮没有进一步核准某一天为首发。
+   **访问结果**：CUA 最初经搜索结果跳转出现导航超时，随后在最终官方 URL 成功读取全文。财务数值及销量内容不是本条技术论据。
+2. **标题**：Tuya Cobuilder（官方产品与常见问题页面）
+   **URL**：https://www.tuya.com/cn/cobuilder
+   **发布日期**：页面未给独立发布日期；功能与额度只按访问日现状使用。
+   **访问结果**：HTTP 200，实际读取产品能力与完整 FAQ；未注册、登录、生成、编译或烧录项目。
+
+#### 正文定位与短引
+
+- 财报 **夯实开发者生态**：第二季度上线端到端系统，通过自然语言覆盖“**从产品构想到真机验证的核心开发流程**”。
+- 产品 FAQ **Tuya Cobuilder 目前支持哪些硬件？**：固件生成、编译和烧录当前支持 T5 系列开发板，其他品牌后续扩展，具体型号以界面为准。
+- 产品 FAQ **Cobuilder 生成的结果可以直接用于量产吗？**：“**AI 生成结果不等于已经通过量产验证**”。
+- 产品 FAQ **Tuya Cobuilder 如何收费？**：每账号每自然月 2,000 免费资源点，最多同时运行 3 条会话。
+
+#### 版本、许可、价格与商业条件
+
+- **版本**：商业云工作台，未公开语义化版本；不能把页面当前能力全部定年为第二季度首发时就有。
+- **开发能力**：自然语言产品定义、App UI、智能体与受支持硬件固件；TuyaOpen 框架支持 ESP32 不代表 Cobuilder 访问日固件生成功能也支持 ESP32。
+- **开放状态**：Cobuilder 不是已验证开源的全套平台；依赖涂鸦账号与平台。底层 TuyaOpen 的 Apache-2.0 不等于云工作台本身开源。
+- **访问日价格条件**：Free 层按账号/自然月计 2,000 资源点，同时 3 会话；付费加油包价格以产品内购买页为准，本轮未取得。数字资源无运费，付费币种、税务及各区域适用价格未核。**开发工具资源点不是出货设备的语音云免费额度**。
+- **其他边界**：FAQ 说明模型按功能场景与数据区域提供，当前不支持接入或替换为用户自有大模型；这是 Cobuilder 工作台的限制，不能混同于所有 Tuya 设备端方案的模型接入能力。
+
+#### 环节、增量与限制
+
+- **分级**：D（2026 Q2 上线）+ A（访问日支持/额度）+ B（量产与硬件范围限制）。
+- **主要映射**：原型、内容/角色配置、UI 与固件整合；量产只提供边界反证。
+- **能支持**：今年增加一条将多个分散开发环节串进同一工作台的路径，可能减少入口切换和手动串接。未做真实项目计时，不接受“缩短 X%”或“几分钟就能量产”的外推。
+- **仍需工程**：检查 AI 生成结果、硬件适配、功能和异常测试、安全与合规、目标地区服务能力、数据驻留及正式商业合同。
+- **缺口**：精确首发日、最初上线版本功能清单、加油包实际价格、真实开发成功率与量产效果均未验证。
+
+#### T206-P｜JoyInside 联合方案补充：明确是计划证据，不是量产交付
+
+- **标题**：涂鸦智能与京东JoyInside达成战略合作，加速AI硬件走向市场的快车道。
+- **URL**：https://www.tuya.com/cn/news-details/Kg0o37a53kf34
+- **发布日/事件日**：2026-08-26；正文说当天在深圳 IOTE 期间宣布并签约。
+- **访问结果**：CUA 成功读全文；另一次 HTTP 200 读取同一正文。
+- **定位/短引**：中部方案说明“**将……推出适配JoyInside的AI硬件方案**”；后文“计划从AI玩具、智慧家庭、机器人、健康养老等场景起步”。
+- **版本/许可/价格**：未给联合模组型号、正式 SDK release、开源许可、MOQ、NRE、税运或可核验量产报价；商业合作方案。
+- **映射**：潜在硬件—云集成，分级 P。
+- **只支持**：2026 存在减少多方适配的联合方案规划。
+- **不支持**：联合模组已批量供货、标准硬件已上市、费用已下降、具体玩具已经采用；不使用电商流量扶持、排名或销量宣传作技术验证。
+
+---
+
+<a id="t207"></a>
+### T207｜reSpeaker Flex：2026 新分体语音前端减少声学与结构集成重复工作
+
+#### 来源、标题、日期与访问
+
+1. **标题**：Introducing reSpeaker Flex: The Smart Ear for Robotics and Embedded AI
+   **URL**：https://www.seeedstudio.com/blog/2026/04/09/introducing-respeaker-flex-the-smart-ear-for-robotics-and-embedded-ai/
+   **发布日**：公开元数据 `2026-04-09T10:20:55+00:00`。
+   **更新日**：公开元数据 `2026-04-17T02:13:20+00:00`，与正文 Last Updated on: April 17, 2026 一致。
+   **事件日**：这是新产品正式介绍记录；第一批实际交付日未单独核验。
+   **访问结果**：CUA 成功读取全文及上述公开元数据。
+2. **标题**：Getting Started with reSpeaker Flex
+   **URL**：https://wiki.seeedstudio.com/respeaker_flex_introduction/
+   **发布日期**：未取得独立发布日期；按访问日规格说明使用。
+   **访问结果**：HTTP 200，实际读取芯片、接口、固件、供电、产品变体和资源链接。
+3. **标题**：reSpeaker Flex XVF3800 Circular-4 with XIAO ESP32S3 | AI Mic Array for Robotics and Embodied AI
+   **URL**：https://www.seeedstudio.com/reSpeaker-Flex-XVF3800-Circular-4-with-XIAO-ESP32S3-p-6739.html
+   **发布日期/价格生效日**：未给可用于历史比价的独立日期。
+   **访问结果**：HTTP 200，取得 SKU、美元报价、10+ 阶梯、中国仓及变体信息；未结算。
+4. **标题**：reSpeaker Flex XVF3800（官方仓库）
+   **URL**：https://github.com/respeaker/reSpeaker_Flex
+   **API**：https://api.github.com/repos/respeaker/reSpeaker_Flex
+   **仓库创建日**：`2026-03-30T06:47:24Z`，不是上市或固件发货日。
+   **访问结果**：仓库和目录 API HTTP 200；根目录列 README、python_control、xmos_firmwares、.github，没有 LICENSE，API `license` 为 null。
+5. **标题**：reSpeaker Flex XVF3800 Firmware
+   **URL**：https://github.com/respeaker/reSpeaker_Flex/blob/main/xmos_firmwares/README.md
+   **读取地址**：https://raw.githubusercontent.com/respeaker/reSpeaker_Flex/main/xmos_firmwares/README.md
+   **访问结果**：HTTP 200，实际读取 `.bin` 格式、USB/I2S 变体和 v1.0.0—v1.0.4 changelog。另读 Python 控制脚本开头，未见许可头，不能据此断言整仓无任何隐含权利。
+6. **失败记录**：https://api.github.com/repos/respeaker/reSpeaker_Flex/releases?per_page=10 返回 `fetch failed`；本轮未取得每个固件 tag 的准确发布日期，不以仓库创建日期补填。
+
+#### 正文定位与短引
+
+- 发布文章 **Innovative Modular Split Design Microphone Array**：核心处理板与麦克风阵列分离，由 FPC 连接，可以把阵列放在设备外壳合适位置、处理板远离电机和舵机。
+- **Developer-Friendly Integration / Preconfigured Variants**：USB 与 I2S 预配置固件，支持切换固件；有无 XIAO 版本预装模式不同。
+- Wiki **Features / Main Components**：XMOS XVF3800，AEC、AGC、DoA、波束形成、VAD、降噪和去混响；USB UAC 2.0 或 I2S，圆形/线形四麦阵列。
+- 固件 README **Introduction**：`“contains firmware images”`，命名格式以 `.bin` 结尾。可下载二进制不等于声学算法源代码开放。
+
+#### 版本、价格、许可与交付条件
+
+- **硬件型号**：XMOS XVF3800；本次核价为带 XIAO ESP32S3 的圆形四麦版本，SKU `100070894`。
+- **软件版本**：仓库固件 changelog 当前为 v1.0.4。Wiki 另将 XVF3800 处理器固件标为 v3.2.1；这两处版本处于不同说明上下文，未核清层级关系，不直接等同或合并，也不据此指定烧录版本。
+- **访问日价格**：US$60.90；10 件以上 US$55.90。这个报价只绑定所读 SKU，不能套到无 XIAO、线形阵列或核心板单件。
+- **地区/税运/数量**：商品显示中国仓；未指定收货国、未结算，税费和运费没有核成落地价。10+ 是采购数量条件，不能作为年度降价。未核是否包含目标整机所需扬声器、电池、充电、电源适配器、外壳等，不能作为整机 BOM。
+- **许可**：商售音频模组；公开 Python 控制脚本和二进制固件。根目录无 LICENSE、API 许可字段空，未确认可任意再分发、商用修改或开放全部声学算法的许可；不可统称“全开源”。
+- **定制/量产**：文章列麦阵形状、硬件修改、声学调参的定制选项，但未提供项目级 MOQ、NRE、交期、良率、认证和售后报价。
+
+#### 环节、增量与限制
+
+- **分级**：D（2026 新分体模组）+ A（当前价格和固件）+ B（许可和整机边界）。
+- **主要映射**：实时交互、原型；次要为从原型向产品结构迁移。
+- **能支持**：现成音频前端、预配置接口及分体结构减少自行设计全部声学处理和固定一体麦阵位置的必要性。可复用的是前端/接口及结构集成路径，不是“今年首次有 AEC 或四麦”。
+- **不能支持**：板上完整离线聊天大模型；所有下游 STT/LLM/TTS 都在本地；官方远场演示距离在所有玩具壳体和电机条件下成立。
+- **仍需工程**：壳体声孔、腔体、麦距和 FPC、串扰与电机噪声、扬声器回采和音量、供电、电池续航、算法调参、与云或主机连接、安全限制。
+- **缺口**：未做本机声学复现；未核固件 release 时间、完整商用再分发许可、首发价与年度降幅、实际定制量产条款。
+
+---
+
+<a id="t208"></a>
+### T208｜Tuya 当前计费：原型能低成本起步，但设备授权不覆盖无限 AI 用量
+
+#### 来源、标题、日期与访问
+
+1. **标题**：TuyaOpen Licensing & Pricing
+   **URL**：https://tuyaopen.ai/pricing
+   **发布日期/事件日**：页面没有独立发布日期或价格变更日期；本条只代表 2026-10-10 可读取的现行价格和条件。
+   **访问结果**：HTTP 200，实际读取 Plans、How licensing works、Compare tiers 和 FAQ，未领取授权、登录或购买。
+2. **标题**：Agent Metering and Billing
+   **URL**：https://developer.tuya.com/en/docs/iot/ai-agent-price?id=Kegb2s2shaj4d
+   **更新日**：页面显示 `2026-09-01 08:32:00`，未注明时区；不可当作所有价格在该日首次生效的证明。
+   **访问结果**：HTTP 200，实际读取计量周期、费用公式、ASR/TTS/模型价格、扩展能力和减免说明。没有仅凭搜索摘要报价。
+
+#### 正文定位与短引
+
+- Pricing **FAQ / Is this a monthly subscription?**：设备授权一次性，但 AI 超出日免费额后 `“charged per use”`。
+- Billing **Fee structure**：`“Total fee = Model fee + AI voice fee + Extended capability fee - Waived fee”`。
+- Billing **AI voice fees**：ASR 按输入音频时长、TTS 按输出字符数计费；模型另按 token 消耗。
+- Pricing **2 starter licenses**：每开发者可领 2 个开发调试设备授权；不是任意量产数量免费。
+
+#### 版本、价格及适用条件
+
+- **版本/方案**：TuyaOpen Open Source、IoT Connection、AI + IoT；平台服务未提供统一语义版本。TuyaOS 授权码不能直接当作 TuyaOpen 专用授权使用。
+- **开源本地层**：本地/离线项目无 Tuya Cloud 授权要求；第三方 API 项目不因此免除第三方收费。
+- **设备授权**：
+
+| 项目 | 访问日展示价格 | 计量/范围 | 不包含的推断 |
+|---|---:|---|---|
+| IoT Connection | US$0.69/设备 | 一次性云连接授权；页面约写 ¥5 | 不是完整 AI 用量包或整机价格 |
+| AI + IoT | US$1.67/设备 | 一次性；页面约写 ¥12；附每日 AI 免费额度 | 不是无限量模型/ASR/TTS 永久免费 |
+| 开发调试 | 2 个免费设备授权 | 需平台账号，原型调试用途 | 不能直接扩展到全部出货设备 |
+
+- **汇率边界**：约人民币数字是页面近似换算，不把它们当作独立人民币合同报价；没有自行换汇或计算降幅。
+- **ASR/TTS 平台价目表示例**（只选用以说明费用结构，不替代模型音视频分片）：
+
+| 服务 | 指定供应商/模型 | 页面人民币价格 | 数量/单位与限制 |
+|---|---|---:|---|
+| ASR | ALIYUN paraformer-realtime-v2 | ¥0.13 | 每输入音频小时，指定模型报价 |
+| TTS | ALIYUN cosyvoice-v3-flash | ¥1.00 | 每 10,000 输出字符，指定模型报价 |
+
+- 模型 token、其他语音模型、音色克隆、搜索、历史总结、事件记忆等可产生额外费用；不能只取最低一项作为全链路对话成本。
+- **地区/税费/运费/批量条件**：数字服务无运费；本轮没有确认指定账号服务区域、税务处理、各市场可用模型、企业批量折扣或合同保价。企业/初创/教育及规模部署可另询价，不拿公开小量价替代量产合同。
+- **免费额缺口**：页面说明有每日额度和超额计费，但本轮未取得明确数值、所有减免条件或账号内实际权益。不能自行假定“轻度使用必然免费”，厂商概括不等于用户使用模型。
+
+#### 环节、增量与限制
+
+- **分级**：A（访问日可获得价）+ B（持续服务成本）；不是 D 类年度降价。
+- **主要映射**：长期服务；次要为原型和语音云接入。
+- **能支持**：开发阶段可用小量免费授权起步；对云连接、模型、ASR/TTS 和扩展能力已有公开计费入口，便于预算。
+- **不能支持**：今年同口径价格下降；一次设备授权覆盖终身 AI 费用；开源框架免费等于完整商业方案免费。
+- **仍需工程/运营**：每设备身份及密钥、消费监控与封顶策略、超额/欠费处理、模型和音色可用性、断网降级、账号与云运维、隐私/儿童数据、内容安全、客服和售后。
+- **不作估算**：没有统一每天音频时长、输出字符、输入输出 token、用户留存、免费额和活跃率，故不估每玩具每月费用或相对历史降幅。
+
+---
+
+<a id="t209"></a>
+### T209｜Seeed 2026 产测公开指南：更多可复用参考，不等于整套软件已完整开源
+
+#### 来源、标题、日期与访问
+
+- **标题**：Open-Source Modular PCBA Testing: A Complete Guide from Hardware to Test Workflow。
+- **URL**：https://www.seeedstudio.com/blog/2026/10/08/seeed-fusion-open-source-modular-pcba-testing-a-complete-guide-from-hardware-to-test-workflow/
+- **发布日**：永久链接日期 2026-10-08，访问日正文显示 2 days ago，二者一致。本轮未读取该文绝对发布日期元数据，不补造具体时刻。
+- **事件日**：可确认本指南在该日期公开；测试架构、内部软件何时首次研发或在工厂使用，正文没有给出。
+- **访问结果**：CUA 成功读取完整正文、配置示例、参考项目与内部软件说明。没有下载或运行工具，也未核验到完整开源软件包与许可。
+
+#### 正文定位与短引
+
+- 开头：`“Universal Test Box → Product-Specific Adapter Board → Configurable Test Software”`。
+- **Why Use a Modular Test Architecture?**：对比传统产品专用测试板与通用测试盒加适配板，说明每个产品主要变更接口映射和测试流程。
+- **Software Test Framework / Reference Project**：以 reSpeaker Flex XVF3800 Core Board with XIAO 为例，公开测试计划、接口资源映射和 INI 工作流，覆盖电源、GPIO、USB/I2C/I2S、固件、SN 等项目。
+- **Reference Test Software**：`“Seeed uses an internal test application”`。这限制了标题中 Open-Source 的可外推范围。
+
+#### 版本、价格与开放状态
+
+- **版本/对象**：通用测试盒、产品适配板与 `Seeed_Factory_Auto_Test_Tool` 工作流架构，参考对象是带 XIAO 的 reSpeaker Flex Core Board；正文没有给统一正式软件版本。
+- **公开程度**：实际读到配置示例和架构说明，但未核验完整 UI/执行引擎/驱动源码、全部硬件设计包及其许可证。不称为“整套产测系统已完整开源”。
+- **时间边界**：正文说 newer software 支持图形拖拽，没有明确该功能首次发布日，不能直接作为 2026 新功能计入。
+- **价格条件**：没有测试盒、治具、适配板、NRE、软件部署、节拍和产线服务报价；币种、地区、税运、MOQ 均未核。文章比较的是架构可复用性，不是财务成本对照数据。
+
+#### 环节、增量与限制
+
+- **分级**：D（2026 新公开指南）+ B（完整开源/量产成本边界）；证据强度低于固定 release，不作为核心技术突破。
+- **主要映射**：量产准备与生产测试工程复用。
+- **能支持**：今年公开了可直接参考的真实产品测试规划、资源映射和步骤配置；新项目可借鉴通用资源加产品适配板的方式，避免所有测试能力从零重新规划。
+- **不能支持**：2026 才发明模块化产测；完整软件可免费商业使用；已减少某百分比制造成本；所有 PCBA 项目直接套用同一测试阈值。
+- **仍需工程**：产品测试覆盖、接触治具和适配板、测量校准、误判/漏判、节拍与良率、追溯、日志及数据安全、实际维修与产线回归。
+- **认证边界**：PCBA 功能测试不是整机 EMC/无线、电池/电气、机械/材料或儿童玩具安全验收。适用要求由产品定义和销售地区确定，本轮未做法规清单审计。
+- **缺口**：完整源码和许可、厂内首用时间、外部可购买测试套件、服务报价、目标玩具生产效果均未取得。
+
+---
+
+### 2. 横向校正：不要混淆的成本与能力
+
+#### 2.1 成本分层
+
+以下是预算结构提醒，不是已经取得报价的 BOM：
+
+1. **开发板/模组**：T201、T207 的展示价只覆盖特定商品。
+2. **完整硬件与制造**：还可能包含麦克风/扬声器、屏幕、执行器、PCB、保护/充电、电池、结构材料、线束、装配、烧录、测试、损耗、包装和运输。是否包含某项须由实际 SKU/BOM 判断。
+3. **一次性工程**：结构与声学设计、PCB 与治具、固件集成、NRE、工具、验证及适用认证。
+4. **持续服务**：设备授权、模型/语音调用、记忆/搜索等功能、后台和安全维护、内容与隐私运营、客服、退换/售后。
+
+本轮没有形成上述四层的统一报价；不能将板价补成整机成本，也不能用开源许可费为零推导工程费为零。
+
+#### 2.2 端云分层
+
+- 本地 VAD、唤醒词、降噪、AEC、有限命令识别：端侧小模型/声学功能。
+- 小智、TuyaOpen 等：设备端交互、音频传输、云接入与控制组件。
+- 云端 ASR/LLM/TTS：受模型、网络、区域、额度与商业条款约束。
+- 完整产品：还需电源、结构、运动安全、儿童交互边界、内容/隐私、可靠性和服务保障。
+
+**开发板 ≠ 完整语音产品；开源客户端 ≠ 本地大模型；演示跑通 ≠ 可量产认证玩具。**
+
+#### 2.3 3D 打印与成熟机电
+
+- 本轮未取得同口径的 2026 年 3D 打印或舵机/执行器价格、性能、生产效率进一步改善的强证据。
+- 可以把成熟结构、打印件、舵机及社区机器人方案作为既有基线，不将其自动计为今年新增的门槛下降原因。
+- T205 的今年变化是软件适配、示例和接口复用；Otto AI 示例在 2025 年已经存在。
+- T209 的机械治具说明不能外推为消费玩具外壳的 3D 打印突破。
+
+### 3. 访问失败、未采纳资料与研究限制
+
+#### 3.1 访问过程中的具体问题
+
+| 对象/URL | 实际结果 | 处理与可用性 |
+|---|---|---|
+| https://www.seeedstudio.com/blog/wp-json/wp/v2/posts?after=2026-01-01T00:00:00&before=2026-10-11T00:00:00&search=XIAO&per_page=100 | HTTP 请求等待导致执行超时，未取得可用正文 | 不据此得出发布结论；改用实际可读的官方文章，不重复扩搜该 API |
+| https://www.seeedstudio.com/blog/2026/01/16/xiao-esp32-c5-5ghz-dual-band-wifi6/ | 一次直接 HTTP 为 403/Just a moment | CUA 正常加载后读到全文和公开元数据；未解验证码、未绕安全页面 |
+| https://www.seeedstudio.com/blog/2026/02/12/monthly-wrap-up-for-january-2026-embedded-systems-iot-solutions-and-hardware-prototype/ | 初次导航处于挑战/空正文状态，后续正常页面出现 | 只作发现线索，不承担本文件任何核心发布/价格结论 |
+| https://www.tuya.com/cn/news-details/Kfw78hyi7htuk | 搜索跳转时导航超时，最终页随后可读 | 已实际读取正文，发布日期采用 08-25 而不是搜索摘要 08-24 |
+| https://api.github.com/repos/respeaker/reSpeaker_Flex/releases?per_page=10 | fetch failed | 固件各 tag 发布日保留未确认；README changelog 不能替代时间戳 |
+| Google 的一次直接 HTTP 搜索请求 | 返回重定向/反馈提示，未得到正常检索正文 | 没有将该响应当证据；后续用正常 CUA 页面找到官方来源 |
+
+未登录或绕过付费内容，未执行下载获得的代码，未产生硬件烧录、上电、购买或云账号变更。
+
+#### 3.2 旧材料没有冒充今年增量
+
+- 查询 https://api.github.com/repos/espressif/esp-dl/releases?per_page=12 得到的最新 GitHub release 是 **v3.2.0，2025-10-23**，不能据此称 ESP-DL 在 2026 发布该版。本分片的今年端侧模型证据改用有明确 News 日期的 ESP-SR/WakeNet10/10s。
+- WakeNet9s 无 PSRAM/无 SIMD 支持来自 **2025-04-21**；T204 已保留旧基线。
+- TuyaOpen Otto AI 示例来自 **2025-06-09 v1.3.1**；T205 不将其整套算作 2026 新方案。
+- 小智预编译固件、云客户端基础路线早于 2026；本分片只把有 release 支持的新构建入口、适配和修复定年为今年增量。
+- 仅在搜索结果看到的其他旧语音板价格和文章，没有作为已核验正文纳入主证据。
+
+#### 3.3 未解决且不应继续无限扩展的问题
+
+- 同型号、同配置、同数量、同地区、同税运口径的历史价格降幅：未取得，不估算。
+- 新工具真实开发周期缩短量：未做对照实验，仅确认可用功能和减少重复步骤的机制。
+- 目标玩具的整机 BOM、MOQ、NRE、认证、良率、返修和长期服务合同：未取得。
+- reSpeaker 完整算法/软件许可、产测整套源码许可及固件 tag 日期：未核清。
+- Tuya 账号内免费 AI 数量、指定区域最终计费、商业 SLA、小智官方商用云条款：未取得完整依据。
+- 任何产品卡的实际采用：不由本分片推断，留给对应产品直接证据。
+
+### 4. 集成建议与独立复核重点
+
+#### 4.1 优先采用顺序
+
+- 核心有日期增量：**T201、T202、T203、T204、T205、T206、T207**。
+- 持续服务成本边界：**T208**。
+- 生产测试参考、保守使用：**T209**。
+- 计划性补充：**T206-P JoyInside**，不得写成已交付模组。
+
+#### 4.2 推荐表述
+
+> 2026 年，可复用客户端、稳定媒体框架、预训练端侧唤醒模型、模块化语音前端和集成开发平台继续增加，使“做出能联网、能听说的原型”更容易。向可售玩具迈进时，工程工作并未消失，而是更多集中到真实声学环境、结构与电源、生产测试、安全合规及持续云服务。现有报价能说明部分硬件和平台已可获得，不能直接证明同口径的年度整机降价。
+
+#### 4.3 禁止外推
+
+1. “2026 年开发板/整机 BOM 下降 X%”。
+2. “开源云客户端 = 本地完整 LLM = 免费商业服务”。
+3. “厂商演示/开发工具生成 = 量产与认证通过”。
+4. “平台合作公告 = 某具体产品已采用”。
+5. “3D 打印、舵机、Otto 今年才让 AI 玩具成为可能”。
+6. 把供应商声明的低延迟、远场距离或节省工期写成本机实测。
+
+#### 4.4 复核重点
+
+- T201/T207 的发布日期、更新时间、当前价格与实际出货时间分别标注。
+- T203 release 在 06-23，文章在 07-21，不互相替代；许可是平台限定 Modified MIT。
+- T204 WakeNet9/10 表格条件和资源层级，特别避免把 WakeNet9 的识别率当 WakeNet10/10s 测试。
+- T206 只核到第二季度上线，T5 支持和资源点属于访问日 FAQ；JoyInside 正文未来时不得升级为交付。
+- T208 美元授权、人民币模型费率、日免费额度、开发工具资源点是不同计量层，不混算。
+- T209 标题 Open-Source 与正文 internal test application 的差别必须保留。
+
+### 5. 本文件交付状态
+
+- 完整 T201—T209、精确来源 URL、原文标题、日期、正文定位与短引、访问失败、型号版本、价格和许可证边界已落盘。
+- 无图片生成、无用户图片附件归档事项；未下载远程媒体。
+- 本轮不再扩搜；未执行任何硬件测试、安装、运行外部代码、付费、登录或云资源创建。
+- 仅允许修改本文件；不运行 Git、不修改根入口和 render。链接与资料的独立核验由后续审查处理，不能把本文件状态当成审查已通过。
+<!-- INTEGRATE_TECH_END -->
+
+<!-- INTEGRATE_U_START -->
+<a id="atlas-sources"></a>
+## 产品图鉴新增来源（U101—U418的已登记58条）
+
+> 仅登记实际存在的编号：G1为U101—U113共13、G2为U201—U210共10、G3为U301—U317共17、G4为U401—U418共18。来源数不是产品数、独立网站数或观看视频数；完整移入分片末尾的新增来源及限制。视频仅元数据核验（G4另核起始画面），均未完整观看或动态实测；T使能不能充作厂商采纳披露。卡片见[40卡图鉴](product-atlas.md)，逐项媒体字段见[manifest](media/manifest.json)。
+
+### G1 新增来源与原分片限制
+
+> 访问日统一为2026-10-10。以下均为实际读取的公开官方来源，不是实机验收。没有可见发布日的动态页不推断发布日期；素材URL内时间戳也不作发布证据。卡片采用 evidence.md#uXXX 是为合并准备，本节尚未写入正式 evidence.md。金额与功能变更必须由集成者按本节限制同步，不覆盖历史取证经过。
+
+<a id="u101"></a>
+### U101｜aibo 官方首页与 ERS-1000 生活场景图
+- URL：[https://aibo.sony.jp/](https://aibo.sony.jp/)；发布方 Sony；发布／更新日未标注；访问2026-10-10。
+- 方法／定位：HTTP 200，读取首页“aiboとの生活”及首个主视觉 img；原文短引「呼べば駆け寄ってくれます」「お腹がすいたら自分でチャージステーションへ」。实际下载并打开主视觉，白色ERS-1000与人握手，不是旧ERS-7或仅品牌logo。
+- 媒体：[原图URL](https://aibo.sony.jp/images/intro-mv-pc-1.jpg) → media/g1/ad01.jpg；缩放、尺寸、SHA256及权利说明见parts/media-g1.json。
+- 限制：首页通用页尾存在“ERS-1000シリーズは販売を終了しました”，仍沿P101型号明确的正式公告，不升级为所有代际／全球已停售；图不能证明当前库存或照片中个体配置。
+
+<a id="u102"></a>
+### U102｜aibo コミュニケーション
+- URL：[https://aibo.sony.jp/feature/feature2.html](https://aibo.sony.jp/feature/feature2.html)；发布方 Sony；发布日期未标注；访问2026-10-10。
+- 方法／定位：从首页实际链接进入；Python requests HTTP 200，读取「まなざし」「耳をすます」「ふれあい」「好き嫌い」。短引「相手が誰か、ここがどこかがわかる眼（カメラ）」「頭やあごや背中を撫でて」。
+- 支持：认脸、环境识别、声音方向、触摸反馈、玩具与虚拟喂食的厂商功能说明；不证明自由意志、真实情绪或通用语言模型。
+- 限制：没有逐功能运行测量、芯片料号或安全保证；页面营销隐喻按功能而非心理事实记录。
+
+<a id="u103"></a>
+### U103｜aibo 成長：App与云的明确职责
+- URL：[https://aibo.sony.jp/feature/feature3.html](https://aibo.sony.jp/feature/feature3.html)；发布方 Sony；发布日期未标注；访问2026-10-10。
+- 方法／定位：从首页实际链接进入；Python requests HTTP 200。「クラウドと連携して個性豊かに成長」「写真で記録して、クラウドに保存」「必要なクラウドサービス」。
+- 支持：云参与个性成长，照片云存储，My aibo看照片、追加动作，基础云服务为必要计划。
+- 限制：未取得短时断网与永久退订的逐功能对照，不将另一厂商停订删除记忆规则移植至aibo。HTTP曾有TLS连接失败，后续标准验证请求200，未绕过证书或访问控制。
+
+<a id="u104"></a>
+### U104｜LOVOT 3.0 技术与对应代际图
+- URL：[https://lovot.life/technology/](https://lovot.life/technology/)；发布方 GROOVE X；发布日期未标注；访问2026-10-10。
+- 方法／定位：HTTP 200，页面明示「画像・動画はLOVOT 3.0のものです」；读取MULTI SENSOR HORN、REALTIME DECISION MAKING、ALIVE SYNTHESIZER VOICE及AUTONOMOUS DRIVE段。
+- 短引：「ディープラーニングを含む機械学習技術」「声帯をシミュレーションしたシンセサイザー」「ネスト…に自分で戻る」。
+- 支持：3.0感知、实时决策、非语言合成鳴声、触摸与回充。图文件lovot3与页面lovot2明确分开；实际打开核对为带传感器头冠、白色服装的3.0本体。
+- 媒体：[原图URL](https://lovot.life/_nuxt/lovot3.B-Q9C082.png) → media/g1/ad02.jpg；服装不作为报价中的额外免费配件保证。
+- 限制：本卡未复用未核定芯片型号或自由度；“十亿种”组合不作用户可辨识或留存证明，未取得逐功能离线表。
+
+<a id="u105"></a>
+### U105｜CASIO PE-M10 发布稿：成长、App与代际图复读
+- URL：[https://www.casio.co.jp/release/2024/1010-moflin/](https://www.casio.co.jp/release/2024/1010-moflin/)；发布方 CASIO；发布2024-10-10；访问2026-10-10。
+- 方法／定位：HTTP 200实读正文、价格表、MofLife和规格；短引「飼い主が好むしぐさを認識」「現在の感情をアニメーションで視覚的に確認」「PE-M10GD」「PE-M10SR」。
+- 支持：情感／偏好学习宣传、App情绪曲线、原代型号、25℃下约5小时标称。沿用P119的历史MSRP边界，不作2026现价；与P119是同一公司同一来源，不算独立二次实测。
+- 媒体：正文首图[原图URL](https://www.casio.co.jp/content/casio/locales/jp/ja/corporate/release/2024/1010-moflin/_jcr_content/root/responsivegrid/container_489163755_/container/container/container_570173118_/image_copy.casiocoreimg.jpeg/1728535554672/img01.jpeg) → media/g1/ad03.jpg；实际打开确认金、银两只本体，非充电屋或PE-M11错配。
+- 限制：情绪状态不可由外观证明，算法、本体／云处理与断网边界未知；宣传疗愈不作临床结论。
+
+<a id="u106"></a>
+### U106｜Qoobo 大号玩法、护理与官方图
+- URL：[https://store.ux-xu.com/products/qoobo](https://store.ux-xu.com/products/qoobo)；发布方 Yukai Engineering；发布日期未标注；访问2026-10-10。
+- 方法／定位：HTTP 200与IAB实际商品页；读取HOW TO PLAY、TECHNOLOGY、SPECIFICATION、FAQ。短引「そっと撫でるとふわふわ」「その動きを再現するプログラム」「Qooboに音声認識の機能は搭載しておりません」。
+- 支持：无语言的摆尾触摸循环、传统程序依据、YE-QB001G大号；FAQ婴幼儿不可用、不能坐压；脏污严重时可拆外套温水中性洗剂轻柔按洗，可能改变毛感。
+- 媒体：[页面正常加载资源](https://store.ux-xu.com/cdn/shop/products/product_qoobo.jpg?v=1592992083) → media/g1/ad04.jpg。先在IAB核对商品画面，再使用pageAssets导出该页已经加载的灰色大号图；输出实际WebP编码随后转JPEG。
+- 限制：某次直接下载发生TLS握手错误，不是403封锁；没有关闭TLS校验。颜色库存仍按P104限制，不从模板判全线售罄。
+
+<a id="u107"></a>
+### U107｜Mirumi 日本官方店与 Gray 对应图
+- URL：[https://store-jp.mirumi.tokyo/](https://store-jp.mirumi.tokyo/)；发布方 Yukai Engineering；发布日期未标注；访问2026-10-10。
+- 方法／定位：Python requests HTTP 200，读商品列表Gray／Ivory／Pink／Black、现价22,000 JPY及“ちら見するチャームロボット”。调价日期沿P114。
+- 媒体：实际读取img alt=Gray后取[原图URL](https://store-jp.mirumi.tokyo/cdn/shop/files/color_gray.png?v=1773108860&width=500)，打开确认灰色毛绒本体，转为media/g1/ad05.jpg。原先候选骑车场景图中产品占比小，改用本体近照；不是生成图。
+- 限制：颜色陈列不证明全部现货，价格上调原因未核；图片文件时间戳不作发布日期。单次TLS错误经正常请求恢复，无访问限制规避。
+
+<a id="u108"></a>
+### U108｜Mirumi 官方交互机制与设计目的
+- URL：[https://mirumi.tokyo/](https://mirumi.tokyo/)；发布方 Yukai Engineering／Mirumi；发布日期未标注；访问2026-10-10。
+- 方法／定位：HTTP仅壳页，改用后台IAB读取实际渲染文字。短引“in response to sound or touch—or even on its own”；功能标签“Reacts to head patting”“Turns toward sounds”“Moves on its own”。
+- 支持：声音、触碰及自发转头，连接佩戴者与旁观者的设计意图；不是识别人脸、理解对话或生成式模型的证据。
+- 限制：FAQ点击后未取得可用正文，未把传感器或云依赖猜成已核定；模组、芯片与自由度未知。
+
+<a id="u109"></a>
+### U109｜Eilik 基础体验、扩展分界与税费补核
+- URL：[https://store.energizelab.com/products/eilik](https://store.energizelab.com/products/eilik)；发布方 Energize Lab；发布日期未标注；访问2026-10-10。
+- 方法／定位：HTTP 200，正文MORE POSSIBILITIES AWAIT、Eilik's Anatomy、FAQ。短引“AI Station for natural AI conversations”“sold separately”“Eilik can work without WiFi or Internet”。
+- 支持：基础机触摸、动画、多人互动；AI Station／Panxer另售；规格显示OLED、USB-C、Servo EM3×4，不据此臆测主控及完整自由度。
+- **新增相对P107**：税费FAQ明确“The price doesn't include any customs duties, taxes, fees, or any other country-specific charges.”，应将旧税费未知收敛为不含上述费用；运费仍待结账。
+- 媒体：[商品主图URL](https://store.energizelab.com/cdn/shop/files/Eilik_-_B_5dfc87de-19cd-4783-bd25-51a87018ba37_2048x.jpg?v=1706586757) → media/g1/ad06.jpg；实际打开为蓝色基础单机，完整保留139.99宣传标价，不替换水印或价格。
+- 限制：不使用评论推定基础机LLM；图示促销期限未知，当前价仍以访问时正文139.99 USD为据。
+
+<a id="u110"></a>
+### U110｜EMO 基础商品、功能说明与实读官方图
+- URL：[https://living.ai/product/emo/](https://living.ai/product/emo/)；发布方 LivingAI；发布日期未标注；访问2026-10-10。
+- 方法／定位：Python requests HTTP 200，后台IAB复读商品标题、SKU和Personality and ideas／Life with EMO／Tech and design；短引“tracks sounds, recognizes people”“Built-in Neural Network Processor and AI Models”。
+- 支持：感知、桌面自主活动、天气／闹钟与基础包装；处理器类型主张不等于公开芯片型号。
+- 媒体：[商品图URL](https://i0.wp.com/living.ai/wp-content/uploads/2025/04/2026010606.jpg?fit=600%2C600&quality=89&ssl=1) → media/g1/ad07.jpg；实际打开核对本体、Skateboard、线与Smart Light，无GO HOME回充塔。
+- 限制：曾HTTP超时，随后正常访问成功；IAB可见官方内嵌视频标题EMO AI Desktop Pet与Living Ai发布方，但未播放，本分片不将其列成已观看视频。不能采用“never falling off”作安全验收；逐功能云依赖未知。
+
+<a id="u111"></a>
+### U111｜AIBI Pocket 正确SKU、图文功能及发货承诺补核
+- URL：[https://living.ai/product/aibi-pocket/](https://living.ai/product/aibi-pocket/)；发布方 LivingAI；发布日期未标注；访问2026-10-10。
+- 方法／定位：Python requests HTTP 200读取商品正文、SKU LA23101011及img列表；实际打开图文“Face recognize & photography”“Vivid weather report”。
+- 短引：正文“Your order will be shipped out in about 2 weeks”；图片“AIBI can recognize your face…tell AIBI to take a photo”“vivid animations”。
+- **新增相对P127**：当前页约两周发出并赠配件的厂商承诺可读，但不升级为独立验证的交付；税运、具体礼品内容和历史批次仍未核。
+- 媒体：[主图URL](https://i0.wp.com/living.ai/wp-content/uploads/2023/12/2023121605.jpg?fit=600%2C600&quality=89&ssl=1) → media/g1/ad08.jpg；[人脸／拍照功能图](https://i0.wp.com/living.ai/wp-content/uploads/2023/12/2023122702.webp?w=1200&quality=80&ssl=1) → media/g1/ad08-feature-face.jpg；[天气功能图](https://i0.wp.com/living.ai/wp-content/uploads/2023/12/2023122703.webp?w=1200&quality=80&ssl=1) → media/g1/ad08-feature-weather.jpg。
+- 限制：AIBI导航介绍页 /aibi/ 在IAB无法连接，未绕过屏障；本条只基于成功访问的商品页与其实际图片，不假称已读失败页面。LLM、联网与停订完整分工未知。
+
+<a id="u112"></a>
+### U112｜Loona Premium：逐层功能及收费FAQ闭合
+- URL：[https://keyirobot.com/en-sg/products/petbot](https://keyirobot.com/en-sg/products/petbot)；发布方 KEYi；发布日期未标注；访问2026-10-10。
+- 方法／定位：Python requests HTTP 200及后台IAB实读；“Interactive Nature Powered by GPT”、Product Specifications和展开后的FAQ。
+- 短引：“Loona Converses”“Loona Perceives”“Loona Creates”；“As much data processing as possible is done by Loona directly”。规格列720P RGB Camera、3D ToF、Touch Sensor、惯性感知等；CPU栏写5 TOPS而非具体型号，不据此虚构芯片。
+- **重要补核**：IAB点击“Will Loona charge for ChatGPT 4o function?”成功，展开原文 **“Loona offers free ChatGPT 4o function for the moment.”**，旧P116“收费答案未展开”仅是历史采集缺口。当前允许结论为暂时免费；额度、未来计费、停服后功能、后台实际模型仍未知，不写永久免费。
+- 联网FAQ展开主张游戏、AR喂养、Blockly及远程摄像，没有提供完整离线能力矩阵。页面Space Edition 10/17发出是未来计划，不套到本卡当前套件。
+- 媒体：[实际图库图URL](https://cdn.shopify.com/s/files/1/0750/4170/2077/files/gallery-loona-petbot-premium-1-v2.webp?v=1780474015&width=1000&height=1000&crop=center) → media/g1/ad09.jpg。HTTP素材TLS失败后，IAB正常商品页已加载资源由pageAssets导出；实际打开为普通Premium白灰本体，无航天服。源站提供方形版本，本站无额外裁切。
+- 限制：官方宣传渲染图不是用户实拍，所有识别准确率、续航和服务表现未经本机测量；本条没有改变正式三文件，交集成者更新。
+
+<a id="u113"></a>
+### U113｜Vector 2.0 当前商品与代际功能边界
+- URL：[https://anki.bot/products/vector-robot](https://anki.bot/products/vector-robot)；发布方 ANKI当前品牌运营站；发布日期未标注；访问2026-10-10。
+- 方法／定位：HTTP 200，Product Description与订阅FAQ；短引“new 2MP camera”“planned software development”“first 28 days Free”“requires a paid subscription for voice commands”。
+- 支持：当前黑色2.0商品、相机与电池舱改进主张、前28日免费及付费语音依赖。认宠物／微笑能力伴随计划软件文字，不全部视为已实现。语音订阅价格沿P115。
+- 媒体：实际商品图库及og:image一致的[原图URL](https://anki.bot/cdn/shop/files/Vector_Product_ArmsUp_swap_1000px_d2c99795-151d-4095-8534-804920b159ed.jpg?v=1788848061) → media/g1/ad10.jpg；实际打开是黑色履带／举臂本体，非零件或包装。2.0与初代外观接近，代际归属依据当前商品页标注，未拆机鉴定。
+- 限制：页面标题ChatGPT不是模型架构审计；当前“in stock”不能抹去历史经营风险，也不证明旧机服务器稳定或订单履约。
+
+### 分片校对与移交范围
+- 卡片保持8个固定块，每卡约600—800汉字量级；媒体都来自上述实际访问页面，没有生成产品图、下载视频或把视频外链写成观看完成。
+- 网络异常为连接超时／TLS中断等；没有使用关闭证书验证、登录规避、代理绕过或付费内容规避。失败页与未展开的历史局限已分别保留。
+- 新增修订线索：U109的税费排除、U111的约两周发出承诺、U112的暂时免费FAQ，交集成者决定同步正式入口；本分片不直接改competitors/evidence/research，不执行Git。
+- 最终检查：10卡完整；10款主图＋2张AIBI图文证据均已分别打开来源图和最终JPEG，12条媒体verified=true仅表示图像核对，不表示功能实测。预览长边≤900、单张≤105,087 bytes；JSON已记录来源、权利限制、处理、尺寸与SHA256。下载过程的工作副本在保留来源URL、源哈希和轻量引用后不作为重复发布素材保留。
+- 集成注意：新增来源是U101—U113；旧P/E/S链接已核对锚点存在，新U需移入evidence后链接才生效。卡片图片路径为专题根相对路径，不能按parts目录直接解析。本文不是整个市场结论或独立Reviewer终审。
+
+### G2 新增来源与原分片限制
+
+> 下列为公开页补读与最小必要媒体定位，不是实机验证。所有素材归原权利人，非开放许可。只下载小型图片，未下载视频；媒体尺寸、SHA-256 与处理记录独立保存在 `parts/media-g2.json`。
+
+<a id="u201"></a>
+### U201｜Robosen G1 Elite：精确商品图与传统机电边界
+
+- **完整 URL：** <https://us.robosen.com/products/robosen-elite-optimus-prime>。
+- **日期／状态：** 未标发布／更新日；2026-10-10 公开 HTTP 200，读商品正文、规格表、FAQ 与 img；图片 HTTP 200，`view_image` 核验。
+- **短引／定位：** 商品名「Elite Optimus Prime Auto-converting Robot」；规格「Servo Motor QTY 27」「Built-in Voice Commands 39」「Transmission Bluetooth」；正文「125 Original Lines」；FAQ 要求 preset voice commands。
+- **媒体：** <https://us.robosen.com/cdn/shop/products/elite-2.jpg?v=1766736459&width=1200>；`media/g2/ad11.jpg`，精英版卡车形态，非 Flagship、电影版或拖车；版权/IP 归原权利人。
+- **支持／限制：** 支持编排、Bluetooth、固定台词／口令与动作控制。正文 Three Programming Modes 与规格 4 并存，不强行选数；不认定生成式会话。中国渠道价继续用 P120/P121，未结账或确认履约；未测全功能断网。
+
+<a id="u202"></a>
+### U202｜Ropet KAMOMO Pro：套件图、本地互动与联网扩展
+
+- **完整 URL：** <https://ropetai.com/products/ropet%E2%84%A2-ai-comfort-companion-plush-robot>。
+- **日期／状态：** 未标发布／更新日；2026-10-10 HTTP 200，读当前标题、图、FAQ；图片 HTTP 200，`view_image` 核验本体、彩光充电座及 Pro Bundle 文字。
+- **短引／定位：** FAQ 1「Daily interactions still rely on local, offline AI」「Dream Sketch must be manually enabled in the app」；FAQ 5「2.5 to 3.5 hours」；FAQ 8 改毛、面罩、App 眼睛；FAQ 10 feeding／cuddling／soothing／sleep。
+- **媒体：** <https://ropetai.com/cdn/shop/files/ropet_Pro.png?v=1773906287&width=1946>；`media/g2/ad12.jpg`。Ropet 官方 Pro 套件宣传图，不是 Basic；版权归 Ropet。
+- **支持／限制：** 摄像头、麦克风与本地数据处理为厂商说明，未抓包验证。Dream Sketch 具体生成模型、上线时间与订阅未知。页面含 ChatGPT_Image 命名场景素材，已排除；采用产品套件图但不鉴定其商业后期方式，不把资产文件时间当发布日。
+
+<a id="u203"></a>
+### U203｜Kumma／乐乐：当前精确商店与可拆模块
+
+- **完整 URL：** <https://store.folotoy.com/products/folotoy-ai-teddy>；介绍页 <https://www.folotoy.com/products/teddy/>。
+- **日期／状态：** 未标发布／更新日；2026-10-10 HTTP 初次 TLS/SSL EOF，CUA 成功实读商店及 DOM img；介绍页 CUA 两次 ERR_CONNECTION_CLOSED，未绕访问。图片公开 HTTP 200，`view_image` 核验米色围巾小熊。
+- **短引／定位：** 商品名「FoloToy AI Teddy Kumma AI Toy」；规格「Model: F-202」「Battery Capacity: 800mAh」「Wi-Fi 2.4G (hotspot support for on-the-go use)」；35cm toy、55×50×40mm module；Care Instructions 要求取出模块，Hand-wash or spot clean only。
+- **媒体：** <https://store.folotoy.com/cdn/shop/files/b363db57ccaf7b36813ed705912d9e09.png?v=1781179930&width=1346>；`media/g2/ad13.jpg`，非 Panda/Momo；版权归 FoloToy。
+- **支持／限制：** 当前商店 China | USD $、99 USD、包邮文案与结账运费均可见，未裁掉冲突。中文同款、1个月试用后4.9美元/月沿用 P108/P130，不伪称本轮介绍页成功。具体模型、续费及断网功能未核；未注册、购买或接触用户数据。
+
+<a id="u204"></a>
+### U204｜BubblePal：中国站真实挂件素材与 AIGC 玩法
+
+- **完整 URL：** <https://www.haivivi.cn/product/bubblepal>。
+- **日期／状态：** 未标发布／更新日，页脚2024不作发布日期；2026-10-10 HTTP 200，读正文与 CSS 实际 background-image；图片 HTTP 200，`view_image` 核验。
+- **短引／定位：** 标题「BubblePal - AIGC 交互玩具」；角色段「自主创建…玩偶人设」；故事段「互动故事」「参与故事的创作」；规格「需要 2.4G 无线网络」「53*57*40mm」。
+- **媒体：** <https://www.haivivi.cn/assets/product-hero-mobile.png>；`media/g2/ad14.jpg`，官方三色挂绳挂件宣传图，非角色头像／搜索缩略图，不认证六种SKU全部配置；版权归 Haivivi。
+- **支持／限制：** 支持旧玩偶改装、角色、共创故事和监护语境。全知问答、长期记忆、情绪干预未测；本体／包装重量混列，不采用推算。售价和多件门槛沿 P123，订阅／断网能力未确认。
+
+<a id="u205"></a>
+### U205｜CocoMate 奥特曼：准确 IP 商品图与模块功能
+
+- **完整 URL：** <https://shop161889777.m.youzan.com/wscgoods/detail/26w0slv0c2bxlvm>；补读官网 <https://www.haivivi.cn/product/cocomate>。
+- **日期／状态：** 均未标发布／更新日；2026-10-10 有赞 CUA 正文与 DOM 成功，官网 HTTP 200；最终图片 HTTP 200，`view_image` 核验三款奥特曼与模块。
+- **短引／定位：** 有赞「Haivivi CocoMate 奥特曼毛绒玩偶…儿童 AI 玩具」、599、共3种款式；官网「语音智能感应，无需触碰」「轻轻摇一摇」「主题卡给你思路」「Wi-Fi + 4G」；规格75*75*99.5mm、165g、3000mAh。
+- **媒体：** <https://img.yzcdn.cn/upload_files/2026/01/20/FuQ9072VepzevYj910f1jIawx0PA.jpg?imageView2/2/w/750/h/0/q/75/format/jpg>；`media/g2/ad15.jpg`，保留 Haivivi、ULTRA PARK、SCLA 与 ©TSUBURAYA PRODUCTIONS 标識，非开放许可。
+- **支持／限制：** 初选官网 cocomate.png 实为字标，hero-desktop-bg.png 仅电子模块，两者均经 `view_image` 排除后改用准确奥特曼商品图。三款同框不等于599元三件套。电子模块参数不可套整只毛绒；4G大陆边界沿P125，具体模型、“全球首款”、流量／订阅／停订功能未核。
+
+<a id="u206"></a>
+### U206｜Sweekar：厂商经媒体发布的图与未来量产计划
+
+- **完整 URL：** <https://techacute.com/sweekar-pocket-ai-pet-that-grows/>。
+- **日期／状态：** 发布2026-08-24；2026-10-10 HTTP 200，读取全文、日期、图片署名与 img。页面所用 WP CDN 图片 HTTP 200，保留696×392原尺寸不放大，`view_image` 核验。
+- **短引／定位：** Photo credit「The images used are owned by Takway.AI and have been provided for press usage」；正文「It is powered by ChatGPT and Gemini」「super early bird rate of $149」「Mass production and shipping are scheduled for this coming November」。
+- **媒体：** <https://i0.wp.com/techacute.com/wp-content/uploads/2026/08/Sweekar02.jpg?resize=696%2C392&ssl=1>；`media/g2/x01.jpg`，Takway.AI 提供的众筹期成长阶段发布素材，TechAcute 刊载；press usage 非开放许可。
+- **支持／限制：** NFC、扬声器、热点、生成式接入为媒体转述；149是历史超早鸟金额，符号$未核结算币种，不作现价；11月晚于截止日。未请求受限 Kickstarter 或绕官网限制，旧 E04 的403与连接失败仍有效。“works offline”未拆清子集，不能称LLM／云记忆全离线；图片不证明量产签收或一台机器连续长高实拍。
+
+<a id="u207"></a>
+### U207｜KOTTI：灰脸本体图与历史含税项目档位
+
+- **完整 URL：** <https://www.atpress.ne.jp/news/599376>。
+- **日期／状态：** 页显2026-05-25 09:30；旧E05已核 dateModified=2026-06-22；2026-10-10 HTTP 200读正文／img，图片HTTP 200，`view_image` 核验。
+- **短引／定位：** 图注「KOTTI本体(グレーフェイス)」；特征「頭をなでる、持ち上げる、寝かせる」；回报「超超早割限定セット：37,800円(税込)」附一套服装，另有39,800／42,800／45,800日元；现文列「GPT-5.2 × Gemini 2.5 Flash」。
+- **媒体：** <https://www.atpress.ne.jp/releases/599376/LL_img_599376_3.jpg?format=webp&ts=1782137240>；`media/g2/x02.jpg`，未来MD发布的灰脸KOTTI，版权归原发布方／权利人。
+- **支持／限制：** 仅证明发布者如此宣传、历史项目报价，不是已结束项目当前仍可买。声音克隆“実装”与E06当前FAQ“未来考虑”仍冲突，不列已交付；不把10月所见模型名回填5月初稿。图不证明固件，9月到东京办公室仍不是消费者签收，沿E07。
+
+<a id="u208"></a>
+### U208｜Tuya CES Fuzozo：展示版官方图，不给美国站背书
+
+- **完整 URL：** <https://www.tuya.com/news-details/Kf9n2k7vvbj1y>。
+- **日期／状态：** 发布2026-01-09，正文CES始于2026-01-06；2026-10-10 HTTP 200，定位 Cellular Version of Fuzozo 小节之后的 img；图片HTTP 200，`view_image` 核验展台及CES/Tuya标识。
+- **短引／定位：**「co-develop the cellular version of Fuzozo」「based on the user's touch frequency and location」「capable of operating outdoors」。
+- **媒体：** <https://images.tuyacn.com/goat/202619/a949f521-f508-4daa-85fe-23a3d5f4d6c8.jpg>；`media/g2/x03.jpg`，Tuya × Robopoet CES蜂窝展示版；保留CES/Tuya标识，版权归原权利人。
+- **支持／限制：** 触摸回应与户外连接为展会声明，未测延迟、自由度、云模型或交付。未确认Fuzozo.net官方归属，本站未复访，其美国预售／18+／额度仅沿E02网站自述。手机AI To-Do画面、同文Hey Tuya的OmniMem／AI Lens、其他玩具模型均不移植到本款。
+
+<a id="u209"></a>
+### U209｜DeskMate：当前图与手机／云／订阅边界
+
+- **完整 URL：** <https://keyirobot.com/en-no/products/deskmate>。
+- **日期／状态：** 未标发布／更新日；2026-10-10 HTTP TLS/SSL EOF，CUA成功读取商品正文与DOM主图URL；图片公开HTTP 200，`view_image`核验。页内若干视频显示无法播放，未下载视频规避。
+- **短引／定位：**「$299.00」「Loona Deskmate works from day one — no subscription required. More output? See plans」「Compatible with iPhone 12+ with MagSafe」「Only your explicit task commands go to the cloud」「AI Real-Time, Not Preset Animation」。
+- **媒体：** <https://cdn.shopify.com/s/files/1/0750/4170/2077/files/gallery-deskmate-obsidian-1-v1.webp?v=1782099702&width=1000&height=1000&crop=center>；`media/g2/x04.jpg`，KEYi官方Obsidian手机底座图；仅使用页面已加载资产，未自行添加裁切参数，版权归原权利人。
+- **支持／限制：** 基础无需订阅为现页宣称，另有plans入口但未打开或结算，不称所有功能永远免费。$299不自行判作NOK/USD，币种／税费／地区待核；手机是否随箱不据图推定。0.5秒、工具效果、隐私未测，发货时效非履约。E08已厘清4/3发布元数据和8/20修改日，不再称两次众筹事件冲突。
+
+<a id="u210"></a>
+### U210｜bibo：官方媒体补齐，仍不确认 GenAI
+
+- **完整 URL：** <https://moe-lab.com/>；<https://moe-lab.com/product>。原拒绝复制媒体来源：<https://znyj.ofweek.com/news/2026-09/ART-23013-8420-30705276.html>；导航查询：<https://www.google.com/search?q=bibo+%E9%95%AD%E8%90%8C+%E5%AE%98%E7%BD%91>。
+- **日期／状态：** 官方页无发布／更新日；OFweek发表于2026-09-29。2026-10-10 重读OFweek HTTP 200（GB18030解码）见明确禁止复制，未下载其图片；一轮定向查询后CUA实读镭萌首页／product与公司名称，非采用搜索摘要。官方图片HTTP 200，`view_image`核验灰／粉穿搭本体。
+- **短引／定位：** 首页「开创性非语言交互情感机器人」「设备端的多模态情感引擎」；产品页「专属 bibo 语、情绪音效库」「温度感知、压力传感、振动反馈」；公司页脚「杭州镭萌科技有限责任公司」，当前仍有抢先预约／早鸟入口。
+- **媒体：** <https://moe-lab.com/bibo_home_top_2.webp>；`media/g2/x05.jpg`，镭萌官网场景宣传图，版权归原权利人，非开放许可；未鉴定后期方式，不冒充本机实拍。
+- **支持／限制：** 媒体归属闭合，感知、情绪音、App与穿搭为官方主张，不等于芯片或生成模型核验。未采用摘要价／模型猜测；本地云分工、订阅、离线、批次与签收未知。E10七月开售转述与当前预约入口不能自行裁成延期、下架或全面现货；保留非GenAI证据对照地位。
+
+### G3 新增来源与原分片限制
+
+以下为G3当轮实际访问记录，U301—U317仅是定位编号，不等于17个独立机构。既有P条目和M08按原证据库引用，不宣称已重新核验其中全部页面。动态页面／图片的存在不是实物、履约或服务可用性验收。
+
+<a id="u301"></a>
+### U301｜Miko 3产品页与官方产品图
+- 发布者：Miko；标题：Miko 3 AI Robot – The Ultimate Educational Partner for Kids。
+- 完整URL：<https://miko.ai/products/miko-3>；发布日：未标；访问日：2026-10-10；方法：HTTP 200，读取正文及HTML媒体字段。
+- 定位／短引：硬件区“Dual MEMS Microphone”“Time of Flight Range Sensor”“Odometric Sensors”；FAQ要求Miko App及secure WiFi；Max／Non-Max比较表含Story Maker。og:image及产品图库指向红色Miko 3，具体asset URL见媒体JSON。
+- 限制：HTML混有注释／折扣模板、$199及售罄字符串，不能认定当前选中配置或真实库存。本卡价格继承P201可见India USD299与P202年购记录，不用HTML改判月扣。深度学习、识别和内容名不足以确认生成模型；原图版权属Miko等权利方，无开放许可。
+
+<a id="u302"></a>
+### U302｜新Moxie支持FAQ及首页宣传图
+- 发布者：Moxie Robots, Inc.；标题：Help and Support - Moxie Robots／Moxie Robots - AI for the next generation。
+- 完整URL：<https://moxierobots.com/contact>；图片来源首页：<https://moxierobots.com/>；发布日：均未标；访问日：2026-10-10；方法：HTTP正文、首页og:image。
+- 定位／短引：“Moxie robots are no longer available for sale”；资格“v22.9.1501 (Sep 14, 2022) or above”；“I don't have face recognition yet”；“$29.99/month or $4.99 for just a day”；旧数据不转移、原条款不承接。首页meta图显示Moxie原机身。
+- 限制：新方自述权利承接，非法律文件核查；币种、税、付款地区和退费未核；不将未来face recognition／long-term memory写成现状。最初下载的灯光说明图不能展示机身，已以首页产品宣传图替换，非声称原实物实拍。
+
+<a id="u303"></a>
+### U303｜ROYBI World介绍及内嵌产品图
+- 发布者：ROYBI／roybi.world；标题：ROYBI Robot — AI-Powered Educational Robot for Kids Ages 3+。
+- 完整URL：<https://roybi.world/>；发布日：未标；访问日：2026-10-10；方法：HTTP 200。
+- 定位／短引：“Made for curious kids ages 3+”“1,000+ ways to wonder”；Languages区English／Español／Français／中文；Privacy与Parent App区说明镜头遮盖、内容排程和进度报告。
+- 媒体定位：img alt="ROYBI robots wearing colorful interchangeable hats"，HTML内data:image/jpeg;base64；本轮解码其原嵌入数据，未找到独立HTTP资产URL，因此JSON asset_url为null并给出定位，不伪造网址。不同帽色不是不同代际。
+- 限制：未取得可成交硬件价、税运／订阅和有效App安装／账号验证；未独立核认域名控制及公司经营变化。图片为页面公开产品宣传图，非生成新图，版权未开放。
+
+<a id="u304"></a>
+### U304｜Hasbro Furby Purple F6743官方支持页
+- 发布者：Hasbro；标题：Furby Purple Plush Interactive Toys for 6 Year Old Girls & Boys & Up Rules & Instructions。
+- 完整URL：<https://instructions.hasbro.com/en-gb/instruction/furby-purple-plush-interactive-toys-for-6-year-old-girls-boys-up>；发布日：未标；访问日：2026-10-10；方法：CUA可见正文及DOM图片地址。
+- 定位／短引：型号“F6743”；五个语音模式、“over 600”；“Interactive toy does not connect to the internet”；6岁以上、4AA另购。此页补足P212／P225当时未核到的无联网及适龄字段。
+- 媒体：官方产品图原CDN直取HTTP403，改取同一支持页实际提供的750px图像服务地址；已目视匹配紫色毛绒、耳灯及心形按钮，没有使用搜索缩略图或旧代图。
+- 限制：支持页不是在售库存或2026升级公告，未取得售价／税运；同名新闻Business Wire本轮HTTP403，未追加新主张。版权归Hasbro等权利方，非开放许可。
+
+<a id="u305"></a>
+### U305｜Hatchimals Alive Mystery Hatch Draggle官方商品与图
+- 发布者：Spin Master；标题：Hatchimals Alive, Mystery Hatch Draggle (Styles May Vary)。
+- 完整URL：<https://www.spinmaster.com/en-US/brands/hatchimals/hatchimals-alive-mystery-hatch-draggle-styles-may-vary/>；发布日：未标；访问日：2026-10-10；方法：HTTP返回空壳，后以CUA成功读取动态正文及DOM图库。
+- 定位／短引：Features区“mist, lights & sounds”“Cuddle, tap, lift & rock”；“Reveal 1 of 2 Draggles”；Contents含4AA；5+。
+- 限制：图示两种可能角色，不是单盒装两只；未核可重复孵化、雾效机制、售价／税运／库存、2026变动或实机离线性。厂商公开宣传图为评论引用，版权归Spin Master及许可方，非开放许可。
+
+<a id="u306"></a>
+### U306｜Bitzee原版动态商品正文与图库错配
+- 发布者：Spin Master；标题：Bitzee, Interactive Toy Digital Pet and Case with 15 Animals Inside, Virtual Electronic Pets React to Touch, Kids Toys for Girls and Boys。
+- 完整URL：<https://www.spinmaster.com/en-US/brands/bitzee/bitzee-interactive-toy-digital-pet-and-case-with-15-animals-inside-virtual-electronic-pets-react-to-touch-kids-toys-for-girls-and-boys/>；发布日：未标；访问日：2026-10-10；方法：HTTP空壳，CUA成功读取正文与DOM图库。
+- 定位／短引：正文“15 TOY PETS IN 1 POD”、baby→adult→Super Bitzee、5+、3AA，支持原版玩法。
+- 反证／限制：该页首幅图实际是绿色Magicals盒和不同宠物；下载后用view_image查出，不可因为URL标题写15 Animals就判图正确。错误派生预览已被U307首发稿原版图替换；当前正文与图库不一致，不将此页作为当前硬件库存证明。品牌页一次访问连接关闭，不据此认定停服。
+
+<a id="u307"></a>
+### U307｜Bitzee 2023首发官方新闻稿与紫盒配图
+- 发布者：Spin Master，经CNW／企业新闻室；标题：Spin Master Descends on VidCon Welcoming Attendees to Be Among the First to Get Their Hands on Bitzee。
+- 完整URL：<https://spinmaster.mediaroom.com/2023-06-22-Spin-Master-Descends-on-VidCon-Welcoming-Attendees-to-Be-Among-the-First-to-Get-Their-Hands-on-Bitzee>；对应原站入口：<https://www.spinmaster.com/en-gb/corporate/media/press-releases/122931/>。
+- 发布日：2023-06-22；访问日：2026-10-10；方法：新闻室HTTP 200英文原文。搜索曾落到Google翻译页面，仅用来找到原稿，结论以英文原文为准。
+- 定位／短引：“Housed inside a purple pod”；15角色、爱心值、离家可召回；“suggested retail price of $29.99 USD”；“August 1, 2023”。正文图片区CNW 2108928为紫盒本体与包装展示，下载后已view_image复核。
+- 限制：USD29.99是美国渠道背景的2023首发建议价，不是2026现价；税运未标、未核库存。活动到场人数不作玩具销量。宣传图权利归Spin Master／原许可方，非开放许可。
+
+<a id="u308"></a>
+### U308｜Tamagotchi Uni Blue版本与安全支持字段
+- 发布者：BANDAI；标题：Tamagotchi Uni Blue | Products | Tamagotchi Uni。
+- 完整URL：<https://tamagotchi-official.com/us/series/uni/item/01_110/>；发布日：未标；访问日：2026-10-10；方法：HTTP 200正文。
+- 定位／短引：“The play content is the same for all colors”；LiPo；“Security support period : Until 13/July/2026”；部分Wi-Fi服务可能暂停。
+- 限制：不能从内容公告推出安全支持延长，也不能把安全截止当统一停服日；未核当期价／库存。本页明确“Unauthorized distribution or reproduction ... is strictly prohibited”，遵从用户边界不下载本页产品图，改用U309视频链接；不是声明视频内容可自由转载。
+
+<a id="u309"></a>
+### U309｜Uni官方票券视频
+- 发布者：Tamagotchi US；标题：Buy a Tamaverse Ticket and Enter the Tama Portal!。
+- 完整URL：<https://www.youtube.com/watch?v=_zBue18zkdA>；官方发现页：<https://tamagotchi-official.com/us/series/uni/video/>；发布日期：2024-03-29；访问日：2026-10-10。
+- 核验／定位：官方目录链接→YouTube oEmbed核题名／发布者→CUA观看页展开说明，长度1:23。说明“TAMA PORTAL is now open in the Tamagotchi Uni device’s Tamaverse”，含免费Very Berry Land及内容票券店。
+- 限制：只核元数据和说明，播放器保持0:00，未播放／未观看内容，不提供虚构时间戳，也不按2024说明断言2026所有票券可买。本轮另一个旧官方目录视频 <https://www.youtube.com/watch?v=PiUddhrpJsA> 显示私享，弃用。未下载视频或缩略图，权利归原权利方。
+
+<a id="u310"></a>
+### U310｜Hello Barbie DKF74官方支持页及旧型号缩略图
+- 发布者：Mattel；标题：Hello Barbie™ Doll／Mattel and Fisher-Price Customer Center。
+- 完整URL：<https://service.mattel.com/us/productDetail.aspx?prodno=DKF74&siteid=27>；发布／公告日：未标；访问日：2026-10-10；方法：HTTP 200正文与img。
+- 定位／短引：Product# DKF74、Released／Discontinued 2015、6+、不可换3.7V LiPo；说明书下方“have been discontinued and the service will no longer be working”。图片为该货号官方55×110缩略图。
+- 限制：云停服日期未知，不能改写成2015；未取得停服原因、当前电子功能测试、历史定价／订阅条件。保留App旧链接并不证明可安装／联网。缩略图不放大，不冒充高清照片，版权归Mattel等权利方。
+
+<a id="u311"></a>
+### U311｜Paradise Purple Sky首发机官方商品页
+- 发布者：BANDAI；标题：Tamagotchi Paradise - Purple Sky。
+- 完整URL：<https://tamagotchi-official.com/jp/series/paradise/item/01_1000/>；发布日：未标，产品发售日字段2025-07-12；访问日：2026-10-10；方法：HTTP 200。
+- 定位／短引：価格6,380円(税込)、6才以上、単4乾電池×2另售；Zoom Dial、12族／50以上基础角色、遗传组合50,000以上；设备对接；Purple Sky从“そら”开始。
+- 限制：日本JPY含税建议价，不是含运成交价；未确认现货。组合数量非AI生成数；本页限制擅自转载图片，未保存产品图，U314给官方视频。
+
+<a id="u312"></a>
+### U312｜Paradise FAQ的互通与单机边界
+- 发布者：BANDAI；标题：よくあるご質問 | Tamagotchi Paradise。
+- 完整URL：<https://tamagotchi-official.com/jp/series/paradise/faq/>；发布日：未标；访问日：2026-10-10；方法：HTTP 200，读取问答正文。
+- 定位／短引：“Tamagotchi Uni ... とは通信できません”；Uni下载码不可用；“1台でも、本体内のメニューでブリードが可能”；已丢数据不能恢复；设备间及店头Lab Tama通信。
+- 限制：没有实机复核通信、断网、电池及存档；不能把单机可繁育写成店头或双机内容完全等同。新代与首发机部分图鉴不兼容，未逐条建立型号兼容矩阵。
+
+<a id="u313"></a>
+### U313｜Paradise系列首页2026新品公告层
+- 发布者：BANDAI；标题：Tamagotchi Paradise（たまごっちパラダイス）。
+- 完整URL：<https://tamagotchi-official.com/jp/series/paradise/>；动态页面发布日未标；所引新闻列表发布日期2026-10-09；访问日：2026-10-10；方法：HTTP 200。
+- 定位／短引：ニュース区Neon Planets“11月21日(土)発売”，My Lab Tamagotchi；产品区Neon Planets／Premium Set列2026.11.21。首页五阶段缩放专属于Neon Planets宣传，不倒灌首发机。
+- 限制：本条只核首页公告和列表，未核新机发货；截至观察日属未来销售安排，不是2026-11已发生。官网内容仍在不保证旧款库存或门店联动服务。
+
+<a id="u314"></a>
+### U314｜Paradise首发商品PV
+- 发布者：たまごっち/Tamagotchi【公式】；标题：【Tamagotchi Paradise】Tamagotchi Paradise商品PV【たまごっち】。
+- 完整URL：<https://www.youtube.com/watch?v=M-gZZClFCkY>；官方发现页：<https://tamagotchi-official.com/jp/series/paradise/video/?p=2>；发布日期：2025-05-21；访问日：2026-10-10。
+- 核验／定位：官方视频目录、YouTube oEmbed及CUA观看页展开说明，时长0:45；说明“ズームダイヤル”“2025年7月12日(土)に発売”。明确是首发产品PV，不是2026 Neon Planets／My Lab宣传片。
+- 限制：仅核标题、发布者、日期、长度与说明；播放器保持0:00，未播放、未逐秒看完，不提供画面时间戳。只链接、不下载视频或缩略图；权利归BANDAI等原权利方。
+
+<a id="u315"></a>
+### U315｜日本新MicroPets系列与GEN1 Cat产品映射
+- 发布者：タカラトミー（TOMY），页面并列Moose标识；标题：マイクロペット（Micropets）｜タカラトミー。
+- 完整URL：<https://www.takaratomy.co.jp/products/micropets/>；页面发布日未标；所引消息日2025-10-31、2025-12-11、2026-05-28；访问日：2026-10-10；方法：HTTP 200正文及产品DOM。
+- 定位／短引：50種類以上の表情、音、動き；GEN1 キャット／バニー／パピー与GEN2独立列出；“2,498円（税込）”“発売中”；第二弹7月下旬计划发售；Roblox为另列宣传入口。GEN1 Cat商品块同时给item01_a.png及商城g4904810947202链接，建立图／GEN／货号映射。
+- 限制：M08提名不是逐SKU销量；本条仅锁定新日本系列，不借早期同名MicroPets的芯片、语音、无线参数。官网“発売中”与U317商城404冲突，现货未知。官方图©TOMY／©2024 The Moose Group，非开放许可；版权年份不当产品发布日期。
+
+<a id="u316"></a>
+### U316｜MicroPets官方玩法说明
+- 发布者：タカラトミー；标题：あそびかた｜マイクロペット（Micropets）。
+- 完整URL：<https://www.takaratomy.co.jp/products/micropets/startguide/>；发布日：未标；访问日：2026-10-10；方法：HTTP 200正文。
+- 定位／短引：“頭のマークの色で成長レベルがわかる”；通信跳舞、竞赛、唱歌；避免儿童／宠物误吞、监护下使用；页面提供各语言Instruction Manual／Quick Start Guide入口。
+- 限制：本轮未下载PDF，因此不填未核电池、传感器、通信制式或适龄数字，不声称已读完整说明书；联网服务与实机互通未测。
+
+<a id="u317"></a>
+### U317｜MicroPets GEN1 Cat官方商城负向状态
+- 发布者：タカラトミーモール；完整URL：<https://takaratomymall.jp/shop/g/g4904810947202/>。
+- 发布日：未标；访问日：2026-10-10；方法：HTTP404；原字节按Shift_JIS解码后读取日文错误说明。
+- 定位／短引：“ご指定の商品は販売終了か、ただ今お取扱いできない商品です。”即该指定商品销售结束或暂不能处理，不能从二选一提示确定永久停产。
+- 限制：仅该官方商城链接状态，不代表所有零售渠道停售；U315仍标“発売中”，故卡片保留冲突、未核现货。没有付款、注册或询价。
+
+### G3采集与交付检查
+- 仅修改本分片、parts/media-g3.json及media/g3/*；未改根正式文档、只读参考库或脚本，遵从当轮指示不操作Git提交／推送。
+- 10张卡均约500—900汉字（按Unicode Han计、含标题与图注、排除URL），每卡给关键验证问题。8张本地JPEG均逐张用functions.view_image检查，长边≤900、单张<250KB；2个官方视频只核元数据与说明，明确未播放。
+- 图片不裁切、不去水印、不生成替代图；Hello Barbie与Bitzee原新闻图保持小尺寸。Bandai明确转载限制，故Uni／Paradise没有本地产品图，这是刻意保留的媒体边界，不补Logo或错代图。
+- 访问失败、原版图库错配、商城404、ROYBI内嵌图无独立URL、视频私享均已记上；未做销量、留存、医疗／教育效果、账户、购买或实物测试。
+
+### G4 新增来源与原分片限制
+
+<a id="u401"></a>
+### U401｜Sphero BOLT 原版产品页与主图
+
+- **完整URL：** <https://sphero.com/products/sphero-bolt>
+- **发布日期／时点：** 网页未标发布日期；**访问日：2026-10-10**。
+- **定位／短引：** 商品标题／SKU：K002ROWFFP；“$179”“Shipping & tax calculated at checkout/quote”；Tech Specs列Infrared Communication、Magnetometer、Live Sensors；正文列8×8及free Sphero Edu。
+- **实际访问：** 公开HTTP 200，实际读取产品正文与og:image；下载单张主图并view_image核验。
+- **限制／验证状态：** 同页含BOLT+推荐，未并入原版。未结账锁定币种/收货国；未安装App或测离线。图版权属厂商，非开放许可。
+
+<a id="u402"></a>
+### U402｜MORAVIA Education：Dash 官方渠道产品页与图
+
+- **完整URL：** <https://moravia-education.com/products/dash>
+- **发布日期／时点：** 网页未标发布日期；**访问日：2026-10-10**。
+- **定位／短引：** 产品说明：“kids ages 6-11”“does not contain a camera”；移动App“internet connection is not required”，下载/安装及web Blockly需要网络；页面价“$189.99 USD”。
+- **实际访问：** 公开HTTP 200，读取正文、产品数据及图库；选Dash_img1.png而非包装/Logo，下载转JPEG并view_image检查。
+- **限制／验证状态：** P219已建立官方品牌至该销售渠道的关系；可售状态沿用P220并区分页面隐藏Sold out模板。没有付款或配送核验；宣传图评分与当前页评价不一致，不合并、不作为质量统计。
+
+<a id="u403"></a>
+### U403｜Ozobot Evo Entry Kit 官方产品页与使用场景图
+
+- **完整URL：** <https://ozobot.com/products/evo-entry-kit-1>
+- **发布日期／时点：** 网页未标发布日期；**访问日：2026-10-10**。
+- **定位／短引：** 标题Evo Entry Kit；色码无屏路径、online Blockly及免费课程；图库“Ozobot-Evo-Entry-kit-award-winning-coding-robot.jpg”展示Evo手工教学。价与available状态承接P218。
+- **实际访问：** 公开HTTP 200，读取产品正文和图库；先检主图发现本体过小，改用同页Evo使用场景，转JPEG并view_image核验；仅最终图列JSON。
+- **限制／验证状态：** 场景图多台不等于单盒数量，宣传效果不作学习成效证明；年龄/离线/价格边界依P218。未取得独立授权，保留版权和营销文案。
+
+<a id="u404"></a>
+### U404｜Makeblock Education 历史介绍视频：Meet mBot2
+
+- **完整URL：** <https://www.youtube.com/watch?v=uxpoP175mOU>
+- **发布日期／时点：** 视频publishDate：2021-04-15T02:00:15-07:00；**访问日：2026-10-10**。
+- **定位／短引：** 标题“Meet mBot2”；当前author/ownerChannelName“xTool Education”；简介“mBot2 is powered by CyberPi”，并给出历史教育站 https://education.makeblock.com/mbot2/ 。
+- **实际访问：** Google导航后后台IAB实际打开YouTube，目视起始mBot2本体画面及标题/频道；公开HTTP 200读取相同元数据、简介；未下载视频或封面。
+- **限制／验证状态：** 仅核标题/频道/简介/发布时间及播放器静态起始画面；未播放验证动态内容，不作动作连续性/性能/2026供货证据；播放器约2:33，另一元数据2:34，不使用秒数推导内容。支持文档本轮HTTP403、IAB ERR_CONNECTION_CLOSED；营销入口再次跳 https://www.xtool.cn/ ，另试 https://www.makeblockeducation.com/mbot2/ HTTP失败。故价格/库存未知，不用xTool激光产品补图或参数。
+
+<a id="u405"></a>
+### U405｜LEGO Group：51515 官方发布稿与五模型图
+
+- **完整URL：** <https://www.lego.com/en-us/aboutus/news/2020/june/lego-mindstorms-robot-inventor>
+- **发布日期／时点：** 正文：2020-06-12，Billund；**访问日：2026-10-10**。
+- **定位／短引：** “949 pieces”“5 unique models”；“£329.99/$359.99/€359.99”；Notes to Editors列6接口Hub、5×5灯阵、6轴、颜色/距离传感器、4 medium-angular motors。
+- **实际访问：** Google定位原站；IAB ERR_CONNECTION_CLOSED，随后同一公开URL HTTP 200成功读取全文/图库；选51515_Lifestyle_06.jpg下载900px单图并view_image核验。未取118MB全资产包。
+- **限制／验证状态：** 历史发布稿不证明2026现售；五模型为重搭选项。发布价与退役页残留价吻合，可补历史定价依据，不能当现在成交价；未统一各国税运。图版权归LEGO，非开放许可。
+
+<a id="u406"></a>
+### U406｜LEGO 开发者商店：Robot Inventor App 停用期限
+
+- **完整URL：** <https://apps.microsoft.com/detail/9mtq0n7w1d6x?hl=en-US&gl=AE>
+- **发布日期／时点：** 公告初发日未标；页面数据lastUpdateDateUtc=2026-10-02T06:11:22Z；**访问日：2026-10-10**。
+- **定位／短引：** description与notes：“will be discontinued on October 1, 2026, with no further updates or support”；指向SPIKE Prime App迁移，并称“A full 1:1 experience or firmware replacement cannot be guaranteed”；publisherName=LEGO SYSTEM AS。
+- **实际访问：** Google结果进入后台IAB，客户端正文未渲染；公开HTTP 200直接读取Microsoft Store响应的meta description及嵌入产品数据，文字相同，不采Google AI概览为证据。
+- **限制／验证状态：** 这是LEGO开发者在分发平台的声明，不是本机软件停用测试。仍列页面不代表仍支持/可安装，不能推定已安装程序全部失效。补齐旧P229/P230缺口；不把SPIKE的2031期限外推给51515原App。Google曾引导Apple捷克商店 https://apps.apple.com/cz/app/lego-mindstorms-inventor/id1515448947 ，浏览器连接失败，未绕过限制，未采用其摘要证明全平台状态。
+
+<a id="u407"></a>
+### U407｜SPIKE Prime 45678 官方退役FAQ及课堂图
+
+- **完整URL：** <https://education.lego.com/en-us/products/lego-education-spike-prime-set/45678/>
+- **发布日期／时点：** 网页未标发布日期；停售节点2026-06-30，软件支持至2031-06-30；**访问日：2026-10-10**。
+- **定位／短引：** “Retired - contact us”；“We will not add any new features after June 30 2026”；支持/修错至2031-06-30，之后仍在线但无更新；FLL至2027-2028；“Projects are saved on your local device”。
+- **实际访问：** 公开HTTP 200，实际读取FAQ及图库；选择含45678的官方课堂场景，转JPEG并view_image复核。
+- **限制／验证状态：** 一段误写Essential，采用标题/货号/Prime及通用FAQ交叉辨认；不混新Computer Science & AI产品。候选codie.png实为获奖Logo，已被同一路径最终课堂图覆盖，未计为交付媒体。支持时间是承诺而非本机验证，备件不保证永久供给。
+
+<a id="u408"></a>
+### U408｜KEYi Tech ClicBot 发布新闻稿（EIN Presswire）
+
+- **完整URL：** <https://www.einpresswire.com/article/515423202/keyi-tech-launches-clicbot-the-world-s-most-innovative-and-educational-robot>
+- **发布日期／时点：** 2020-04-24 17:43 GMT；**访问日：2026-10-10**。
+- **定位／短引：** “News Provided By Invent PR”；正文KEYi Tech Ltd.，预设“Bic and Bac”；“based on Google Blockly”“compatible with Python”；Standard Kit列模块与足底传感器；“available for pre-order…starting at $299”。
+- **实际访问：** 先经Google打开其翻译页面确认候选，再以原英文URL公开HTTP 200实读全文；未下单、未取众筹数据。
+- **限制／验证状态：** 属于企业发布/公关供稿，非独立测评；历史299美元起不作当前报价。“1000 setups/200 interactions”等营销数量不当销量或实际可实现配置。未取得准确安全年龄，未核2026硬件继续生产。原站无合适产品图，转用U410已有官方视频。
+
+<a id="u409"></a>
+### U409｜ClicBot 官方开发者 Google Play 条目
+
+- **完整URL：** <https://play.google.com/store/apps/details?id=com.keyitech.neuro&hl=en>
+- **发布日期／时点：** 页面更新日2025-12-07；初始发布日期未核；**访问日：2026-10-10**。
+- **定位／短引：** KEYi Technology Co., Ltd.；“movement scripts editing and graphic programming tools”；STEAM视频、社区，Updated on Dec 7, 2025。
+- **实际访问：** 公开HTTP 200，读取开发者、用途和更新时间，并与P223核对；不注册/下载/连接硬件。
+- **限制／验证状态：** App评级不等于硬件适龄，10K+下载不等于台数；条目存在不证明账号/配对/社区可用。其官网 https://www.keyirobot.com/ 返回429， https://keyirobot.com HTTP失败/浏览器候选未到正文，未用Loona图冒充ClicBot。
+
+<a id="u410"></a>
+### U410｜ClicBot 厂商历史视频：The Ultimate Clicbot Official Video
+
+- **完整URL：** <https://www.youtube.com/watch?v=PalRN6ylCW8>
+- **发布日期／时点：** 视频publishDate：2020-02-11T18:45:50-08:00；**访问日：2026-10-10**。
+- **定位／短引：** 标题“The Ultimate Clicbot Official Video”；当前发布者LOONA PETBOT；简介指向 https://www.kickstarter.com/projects/keyitechnology/clicbot-the-best-educational-robot-ever ，标Early Bird和LIVE on Kickstarter。
+- **实际访问：** Google导航，后台IAB实际打开，目视起始画面为轮式ClicBot与亲子场景；HTTP 200读取标题、author、简介和发布时间。实际访问URL附themeRefresh=1；正文使用canonical链接。未下载视频/封面。
+- **限制／验证状态：** 当前频道名不能把旧内容改成Loona产品。账户改名完整沿革未独立核实；标题、KEYi项目链接及画面提供身份交叉。仅核标题/频道/简介/发布时间及播放器静态起始画面；未播放验证动态内容，不作动作连续性/性能/2026供货证据；不引用播放量作销量。
+
+<a id="u411"></a>
+### U411｜AOGU CoCo 50台先行预约公告与厂商图
+
+- **完整URL：** <https://prtimes.jp/main/html/rd/p/000000007.000166793.html>
+- **发布日期／时点：** 2026-07-29 14:00（页面时间）；**访问日：2026-10-10**。
+- **定位／短引：** “予約枠：限定50台”；初期费35,000→10,000円税込；月费5,980/8,980/9,980円税込・通信費込；“リースサブスク”“8月下旬以降、準備が整い次第”；“医療行為や治療の代わりとなるものではありません”。
+- **实际访问：** 公开HTTP 200，完整读取预约、付款顺序、Beta、退款和产品边界；取新闻稿首张AOGU CoCo宣传图，900px转JPEG并view_image核验；未加LINE、预约、付款或联系发布者。
+- **限制／验证状态：** 50是名额，100+累计使用含机构与短期体验；均不是付费交付量，未来寄送承诺不作签收。本轮补明价格及8月下旬起的意向时点，不撤销E11的交付/疗效/GenAI待核边界。图片为企业提供、非开放许可，独立摄影来源未核。
+
+<a id="u412"></a>
+### U412｜Romi 官方产品说明：代际与对话模型
+
+- **完整URL：** <https://romi.ai/about-romi/>
+- **发布日期／时点：** 网页未给当前ChatRomi2.0段落独立发布日期；**访问日：2026-10-10**。
+- **定位／短引：** “AIによる発話生成”；ChatRomi1.0注明P01/P02与Lacatan均可；Lacatan 2.0段“RomiCoreと外部AIとのAPI連携”，以及Web搜索、图像理解、口吻、长期记忆；视觉得用户要求且App可关。
+- **实际访问：** 公开HTTP 200，实际读取代际限定、模型介绍和互动方式。
+- **限制／验证状态：** 厂商能力主张，非本机准确率/实时性测试；不能把2.0和新机功能归入所有旧代，不能把当前文案当首次发布日。活动统计另按S05。
+
+<a id="u413"></a>
+### U413｜Romi 官方商店 Lacatan 商品页与自然白主图
+
+- **完整URL：** <https://shop.romi.ai/products/romi-lacatan>
+- **发布日期／时点：** 网页未标发布日期；2026-10-10价格观察；**访问日：2026-10-10**。
+- **定位／短引：** 商品名“会話AIロボットRomi（Lacatanモデル）”；“¥98,780”“この商品は送料無料”；分期另列108,658円税込；30天退货保证只退本体、月费不退，退回邮费自担。
+- **实际访问：** 公开HTTP 200，读取正文、变体available=true及官方主图；主图转900px JPEG并view_image确认Lacatan自然白。
+- **限制／验证状态：** HTML同时含隐藏Sold Out模板，故只说数据存在可售变体，不断言所有颜色即时有货；未结账锁定税与配送覆盖。98,780的含税口径未在本轮正文重锁，不以分期含税反推所有金额。图不能代表初代或S05全体。
+
+<a id="u414"></a>
+### U414｜Romi 官方FAQ：联网与Lacatan费用
+
+- **完整URL：** <https://romi.ai/faq/purchase/000132/>
+- **发布日期／时点：** 网页未标发布日期；**访问日：2026-10-10**。
+- **定位／短引：** “Romiとの会話は全てインターネットを使用”；无Wi-Fi不能对话；5GHz仅Lacatan；月费1,958円税込／年割19,580円税込；云负责听声、考虑回复与记忆。
+- **实际访问：** 公开HTTP 200实际读全文；未注册、购买或做网络实测。
+- **限制／验证状态：** 厂商网络建议不是实际带宽测试；该价格段明确Lacatan，不给初代套用新月费；本体价/运费另见U413。
+
+<a id="u415"></a>
+### U415｜Romi 官方FAQ：月费、简易模式与停订
+
+- **完整URL：** <https://romi.ai/faq/monthly-fee/000099/>
+- **发布日期／时点：** 网页未标发布日期；**访问日：2026-10-10**。
+- **定位／短引：** 有料おしゃべりモード／無料かんたんモード；免费模式仅“撫でると喜ぶ”和宇宙语，后者注明“Lacatanモデルでは後日実装予定”。
+- **实际访问：** 首个HTTP请求失败；稍后一次相同URL HTTP 200取得正文，未绕过访问限制；实际读取两模式边界。
+- **限制／验证状态：** 不把初代宇宙语默认当Lacatan已实现；未验证具体固件、停订数据删除或退款流程。
+
+<a id="u416"></a>
+### U416｜Romi Lacatan 官方硬件规格
+
+- **完整URL：** <https://romi.ai/about-romi/manual/model-lacatan/>
+- **发布日期／时点：** 网页未标发布日期；**访问日：2026-10-10**。
+- **定位／短引：** Lacatan规格：Wi-Fi 2.4/5GHz，USB Type-C，2875mAh，约400g；与 https://romi.ai/about-romi/manual/ 的P01/02分栏独立。
+- **实际访问：** 由已实读规格索引链接进入，公开HTTP 200读取该代规格；未下载/刷固件或操作实物。
+- **限制／验证状态：** 只对应Lacatan，不把这些参数套给初代；传感/表达用途参考U412，不依据外观估计芯片或算力。
+
+<a id="u417"></a>
+### U417｜Romi 官网截至10月的更新导航
+
+- **完整URL：** <https://romi.ai/>
+- **发布日期／时点：** 2026-10-10观察；列表有2026-09-28的9/29更新通知及10/1展会消息；**访问日：2026-10-10**。
+- **定位／短引：** 首页明示“Romi（Lacatanモデル）”新功能；新闻列表“【2026/9/29実施】…アップデートのお知らせ”；未把列表条目展开当实测。
+- **实际访问：** 公开HTTP 200读取首页导航、功能概览和新闻标题；2026夏祭人数只沿用已正式核验的S05，不另取个人档案。
+- **限制／验证状态：** 列表可达仅说明发布了标题，不证明更新在本机生效；当前能力首次上线日期未定。122份档案是自选活动，不是留存率、销量或独立家庭数。
+
+<a id="u418"></a>
+### U418｜Toniebox 2 欧盟官方介绍、对照表与Moon Grey图
+
+- **完整URL：** <https://tonies.com/en-eu/toniebox-2/>
+- **发布日期／时点：** 网页未标发布日期；2026-10-10价格/产品组合观察；**访问日：2026-10-10**。
+- **定位／短引：** “€119.99”；2代1+，旧代3+；“Works without Wi-Fi*”，脚注说明设置/首次听Tonie或玩Tonieplay需网；旧代“No longer available”；USB-C、Light Ring、Sleep Timer和Sunrise Alarm。
+- **实际访问：** 美国页 https://us.tonies.com/pages/toniebox-2 HTTP429，转Google找到欧盟官方页并在后台IAB实读正文/对照表及实际图片URL；欧盟HTTP另试失败，浏览器原站成功。取当前页Moon Grey 640px预览转JPEG，view_image核验；未登录/结账。
+- **限制／验证状态：** 欧洲区域状态不代表全球停售；含税及最终收货国未锁定，满50欧免运限其配送范围；2代不是M05系列畅销统计的全部。页脚保留针对生成式AI文本/数据挖掘权利，不构成图像开放授权；本项目单图评论性引用，不扩作训练或素材集。
+
+<!-- INTEGRATE_U_END -->
+
 <a id="open-items"></a>
 ## 十、待补与冲突登记
 
@@ -1684,21 +3409,24 @@ CM_life,H = CM_hw + Σ(t=1..H) [(R_sub,t - C_service,t) / (1+d)^t]
 |---|---|---|---|
 | G01 | A1 的 17 条已访问市场证据及完整口径 | A1 / 主会话移交 | 已接入M01—M17，原V1意见已落实（见历史日志）；旧年度资料现仅作背景 |
 | G02 | 最终 R01—R19 分层记录 | A2 / 主会话移交 | 已接入 R17 正式标识办法；R18 拟人化规则已由主会话补齐正式原文；R19 正式法正文仍受阻；不宣称全部全文核验 |
-| G03 | 采样代表性与边界 | A3 / 两冻结产品片 | 已按主会话确认片集成30个目的性样本；SPIKE机构邻接单列，不宣称统计代表性 |
+| G03 | 采样代表性与边界 | A3 / 两冻结产品片 | 原30目的性基线保留；图鉴补10提名共40，37核心研究对象＋F14/X04/X06三邻接，不宣称现售、交付或统计代表性 |
 | G04 | P1：15款、5案例、P101—P130共30条 | P1 | 冻结版已读取并正式合并；含成人/家庭及儿童交叉样本，非纯成人市场 |
 | G05 | P2：15样本、5案例、P201—P230 | P2 | 完整冻结片已集成；核心14+机构邻接1，与P1共30样本/10案例 |
 | G06 | 经济参数的实证缺口 | I1 / 后续实测 | H02纯假设演算已完成；真实BOM、售后、获客、云成本仍未取得，不假称利润 |
-| G07 | 综合交付与独立审查修订 | I1 / 主会话 / 审查角色 | 原30样本/10案例/96编号基线的V1/V2/V3修订保留历史记录；本轮新增S8/E11后共115编号，2026集成待独立审查 |
+| G07 | 综合交付与独立审查修订 | I1 / 主会话 / 审查角色 | 旧115编号与历史审查日志保留；新增T19/U58后共192。TECH两项小修已落实，PRODUCTS23通过；PRODUCTS14通过且两视频／LOVOT小修已落实；最终集成／浏览器视觉结果待回传 |
 | G08 | 近期交易口径及可延续性 | S01/S02/S08 | 淘宝SKU/基数/退款、618采集起止/覆盖/原表未知；S08仅CTE转引，未取得京东第一方战报，不与S02相加 |
-| G09 | 人群、队列与服务成本 | S03/S04/S05/H02 | 智能分项未全归GenAI；合同存量/自选活动非留存；儿童与成人支付及使用独立，模型成本变化未知 |
+| G09 | 人群、队列与服务成本 | S03/S04/S05/H02 | 智能分项未全归GenAI；合同存量/自选活动非留存；儿童与成人支付及使用独立；技术接口／版本变化见T，整链成本的历史降幅未证 |
 | G10 | KOTTI实际交付与功能版本 | E05—E07 | 截至7/27订单的货到执行者东京办公室，不是用户签收；声克隆发布稿/FAQ冲突未裁决 |
 | G11 | Sweekar当前官方进度 | E03/E04 | 7月众筹、8月转述11月计划；官网连接失败/众筹403，不证明兑现或延期 |
 | G12 | Fuzozo网站身份与版本 | E01/E02 | 涂鸦CES稿与fuzozo.net自述分开；制造商官方域名链、地区/SKU关系及交付待核 |
 | G13 | DeskMate网页日期与屏幕能力边界 | E08/E09、S分片 | 众筹公告datePublished为4/3、dateModified为8/20，撤销事件矛盾判断；实际平台启动/交付待核，商品时效非履约，成人生产力邻接 |
 | G14 | 对照及邻接的实现边界 | E10/E11 | bibo等为非GenAI证据对照，7月日不详；AOGU CoCo为照护Beta预约，50是名额而非销量，生成式实现未知 |
 | G15 | 渠道落地能否转化为付费 | S06/S07 | 门店/招商没有实际转化、补货、净贡献；35万为跨年累计，2025融资不计今年 |
+| G16 | 技术落地与长期服务 | T101—T110、T201—T209 | 已有日期化接口／框架／模组证据；原型、内容、实时、量产与长期服务分层。未测账户权益、儿童场景、端到端性能、具体玩具采用、完整BOM和历史降幅 |
+| G17 | 媒体与代际 | U58／四组manifest | 42记录覆盖40卡；38图＋4视频外链。主会话程序核验通过，视频仅元数据／部分起始画面；非完整观看或性能实测，权利限制披露不等于授权 |
+| G18 | 已补核产品条件 | U109/U111/U112/U405/U406 | Eilik税费排除、AIBI发货承诺、Loona暂时免费、51515原App停止支持已入现行；旧P原文保留为历史采集，不再列这些为未展开／期限未知 |
 
-**未采纳及访问边界：** FoloToy报道中五倍增长回顾2025，搜索显示日期与正文不一致；Miko混入同名咖啡公司、旧财年，Ropet/Moflin缺2026可拆分销售或续费。DeskMate众筹原站受限，不采用摘要金额；欧洲用户签收与2026下架/停服原文未取得，不等于没有发生。详细失败与来源见[S分片排除记录](parts/signals-2026-demand.md)、[E分片失败记录](parts/signals-2026-products.md)。
+**未采纳及访问边界：** FoloToy报道中五倍增长回顾2025，搜索显示日期与正文不一致；Miko混入同名咖啡公司、旧财年，Ropet/Moflin缺2026可拆分销售或续费。DeskMate众筹原站受限，不采用摘要金额；此前S/E扫描未取得欧洲用户签收或其对象的2026下架／停服原文，不等于没有发生；本轮51515原App期限另由U406补核，不沿用为所有产品均无停用证据。详细失败与来源见[S分片排除记录](parts/signals-2026-demand.md)、[E分片失败记录](parts/signals-2026-products.md)。
 
 <a id="execution-log"></a>
 ## 十一、研究执行日志（始终置于文件末）
@@ -1908,3 +3636,67 @@ CM_life,H = CM_hw + Σ(t=1..H) [(R_sub,t - C_service,t) / (1+d)^t]
 - 主会话最终QA：9份Markdown的424个本地链接及22表列宽检查无错误；115个证据ID集合完整唯一，正文10,592 Han，D1—D7保留、旧优先组标题为0；HTML检查679个本地链接、13表；编码、凭据模式、文件大小及S03数学复算均通过。此前I26自检计数保留其检查范围与历史含义。
 - 最终仅修正项目进度的分片视角并追加本条QA结果；主体与真实角色操作边界未改。文件冻结交主会话按项目规则commit/push，本条不宣称版本同步已完成；既有数据、访问与产品验证缺口继续保留。
 - 元数据更新后生成器复检通过：新增本节目录锚点使HTML本地链接由679增至680，仍为13表；这是目录变化，不是新增研究证据。
+
+### 2026-10-10｜INTEGRATE：2026技术使能与40卡图鉴集成、阶段审查
+
+- 授权范围：正式research/evidence/competitors、新product-atlas、media/README及manifest、根README/PROGRESS仅本研究入口／进度；按追加授权可生成四HTML。脚本与g*媒体保持只读；仅另获授权修T105的两份ASR模型卡许可、T201的当前正文价格措辞，其余parts未改。不暂存、不commit、不push。
+- 四组冻结卡已接收：G1 AD01—AD10；G2 AD11—AD15/X01—X05；G3 F01—F08/X09—X10；G4 F09—F15/X06—X08。40＝原30＋10提名，37核心研究对象＋F14/X04/X06三邻接，不是40已售／交付／GenAI。每卡U来源段完整移入证据，旧115编号正文与历史日志保留。
+- 当前实数：T101—T109＋T201—T209＝18；U为13＋10＋17＋18＝58；115＋18＋58＝191编号，非独立网站／报告数。媒体42记录＝38 JPEG＋4YouTube外链，覆盖40唯一product_id，其中2张AIBI额外图文证据不加卡数；manifest按四数组无损拼接，不删除扩展字段。
+- 主会话回传独立媒体程序验收：38图均位于media内，SHA-256／width／height／bytes与JSON一致，长边≤1200，总2,360,883 bytes，无未索引多余g*图片。不是INTEGRATE亲自完成的独立图像验收。4视频只核官方标题／简介（G4两条另核起始画面），G3未播放，均未完整观看或逐秒验证；verified不代表功能实测。
+- 主会话回传渲染脚本unittest复跑：27项＝25 pass、2 symlink权限skip，mock越界测试通过；渲染角色已关闭。INTEGRATE不改脚本；四页生成／一致性检查及主会话最终浏览器视觉结果另记。
+- 主会话独立原文抽查：GPT-Live模型页当前$0.05／分钟、按秒计费、后台模型／工具另计、Audio/Text与Image/Video不支持、Free不支持；Gemini Developer API年龄／客户端／地区条款已打开原文确认。GA日期仍归changelog。不是后台/API调用、权益或真实模型性能审计。
+- Reviewer TECH主干通过，无P0/P1；两项小修已据追加授权落实：T105加入Qwen3-ASR-1.7B及0.6B官方raw模型卡license: apache-2.0，限定这两模型卡不外推托管API／其它变体／依赖／数据权利；T201改“发布介绍文当前正文记载US$6.90”，1/16发布、1/20修改未核首发快照。
+- TECH独立复核7条官方证据链：OpenAI changelog（T101/T102/T106的2/10、9/10、4/21、9/8）、Gemini Live T103、Avatar T108、Qwen TTS T104、ASR T105、Seeed C5 T201、reSpeaker T207均支持。T109沿主会话已核；T107/T202—T206/T208—T209仅文本审，未全量重开。两次Seeed HTTP403后CUA正常打开成功，不绕验证码；没有模型/API/权益或具体玩具采纳测试。T101工程工具仅支持可能减少步骤，不证明质量跨越。
+- Reviewer PRODUCTS23通过G2/G3共20卡，无必改：独立逐图检查18/18本地图片并核哈希尺寸，抽查Robosen Elite、Ropet Pro、Bitzee原版news、MicroPets GEN1 Cat四个源页通过；余14源页未复访。两视频仅元数据未播放，版权“通过”指归属／限制披露而非取得授权。不是20款性能、交付或隐私验收；MicroPets Cat不等于M08全类目15.5%。
+- 当前补核同步：Eilik税费排除、AIBI约两周发出承诺、Loona ChatGPT 4o暂时免费、51515原App 2026-10-01停止更新／支持已修正现行正文与竞品；旧P107/P116/P127/P229/P230原文不销毁，现行替代依据见[补核表](#current-corrections)。G1/G4及最终集成独立QA、浏览器视觉尚待回传，不提前记全项目审查完成。
+
+### 2026-10-10｜INTEGRATE阶段自检与四页生成（191编号快照）
+
+- 旧115条正式证据区从m01至原open-items前共87,150字符，与本轮开始快照逐字一致；新增T/U均在旧区之后，现行勘误另表说明，不覆盖历史原文。191个正式显式证据ID集合完整唯一；40个card-id及四个H2组通过清单比对，卡文不保留“新增来源”尾段，U已完整转入本页。
+- 7份Markdown（正式四页、media/README、根README/PROGRESS）共1,054个本地链接／图片目标检查通过，无缺文件、重复显式ID、已检跨页缺锚点或编码替换字符。manifest与四个冻结JSON数组深度相等，所有扩展字段保留；38图实查SHA-256／尺寸／字节和media范围一致，长边≤1200，合2,360,883 bytes，未索引g*文件为0。此为INTEGRATE程序自检，区别于主会话／Reviewer独立验收。
+- 主报告正文在REPORT_BODY_START/END间去附表行、代码、HTML和链接URL后计12,218个Han字符；用户本轮增量优先，较旧12,000目标略超，D1—D7保留，不删关键限制凑字数。完整证据与卡片另页避免主报告重复。
+- 已运行只读脚本生成器构建四HTML并执行--check：4页、1,267个本地链接、23表，通过源文可见文本一致与无远程资产检查。四视频仅外链，不嵌远程播放器。INTEGRATE复跑unittest 27项＝25通过、2 symlink权限跳过；mock越界通过。git diff --check通过（先清理新增硬件证据中的Markdown行尾空格，不改原115条）。
+- 以上是191编号阶段快照，T110仍待独立证据成立，未预占锚点或计数。G1/G4审查与最终浏览器视觉待主会话回传；尚不宣称本轮最终审查完成。源文／日志后续变化会重新生成HTML。未暂存、未commit、未push，脚本与g*媒体未改。
+
+### 2026-10-10｜PRODUCTS14复核回传与媒体范围小修
+
+- 主会话回传Reviewer PRODUCTS14通过G1/G4共20卡；20张本地图逐张view_image及hash核对通过，无漏。独立成功抽查三个来源：Loona暂时免费FAQ、Eilik目的地税费排除、51515 Microsoft Store期限。AIBI本次TLS／浏览器超时，仅沿用原采集资料，不算独立重新核验；没有20款性能、交付或隐私测试，图片版权归属／限制披露不等于获得授权。
+- 唯一P3是F12/F15视频范围措辞，已按追加授权仅修改G4分片两视频卡与U404/U410、两条media-g4视频记录：仅核标题/频道/简介/发布时间及播放器静态起始画面；未播放验证动态内容，不作动作连续性/性能/2026供货证据。JSON新增verification_scope，不把verified等同看过；正式atlas/U/manifest/media README已镜像，图片未改。
+- 主会话浏览图鉴指出AD02阈值旧词复活；已按追加授权仅将G1分片及atlas的“超过2万体”改为“2万体以上”，与S04一致。对应值是7月日本有效合同设备存量，不是新增销量／活跃度。此修正不改原厂资料或其它产品卡。
+- 与PRODUCTS23合计，四组40卡的分组审查均已通过；两组审查合38图，独立源页成功抽查4＋3＝7（不是全部源站复访），AIBI本次失败单列。T110尚待独立片落盘，最终集成／浏览器视觉仍由主会话确认，不把分组审查冒称整套最终QA。
+
+### 2026-10-10｜主会话浏览器阶段视觉核验
+
+- 主会话用loopback临时服务（端口62797，仅服务本专题），桌面1280宽检查AD09卡跳转：Loona图片加载成功，原宽900，显示420×420，无横向溢出。
+- 手机390宽检查AD11 Elite卡：图片加载成功，显示311×311，页面宽375≤390，无横溢，图注可读，无console error。懒加载图片起初未加载、进入视口后正常出现，不记作错误。
+- 未操作远程网站；这不是file://运行、所有卡逐屏阅读或打印PDF实测。主会话明确此为整合过程中的阶段视觉，最终生成后仍须reload核计数与当前版本，不能提前记为最终整合视觉验收。
+
+### 2026-10-10｜T110正式纳入与192编号整合冻结准备
+
+- 主会话确认T110最终文件已落盘，原只读分析／Coder关闭，不再等待素材。完整[原生文本模型证据片](parts/enabler-text-model-2026.md)已并入t110；源片仅只读，未改。19条T全文在证据页，主报告仅紧凑解释和五行正反指标，40卡仍独立成页。
+- T110链为8个已实际读取的官方URL：Qwen3.5／Qwen3两README、0.8B/2B/4B/9B四模型卡、2B/9B两LICENSE，全部HTTP200，无该链访问失败。0.8B／4B只核模型卡许可元数据，未称逐份核LICENSE。集成者沿用获确认前序正文，不冒称重新访问、下载权重或部署。
+- 小尺寸事件日2026-03-02，区别于家族2026-02-16；旧Qwen3系列2025-04-29。2B纯文本及language-model-only可作为问答、规则解释和台词草稿后端候选；同官方Language表的Non-Thinking MMLU-Pro40.2→55.3、C-Eval61.0→65.2，同时IFEval68.2→61.2下降；Thinking的IFEval72.5→78.6、IFBench26.7→41.3。默认模式不混用，2B分数不套0.8B，1.7B对2B不是等参数／算力／成本试验；不推故事质量、儿童准确率、MCU实时或实际玩具采用。
+- 现行总数修订为**192＝旧115＋T19＋U58**；四正式页、根入口／当前进度、图鉴使能范围均同步。上方191日志明确保留为阶段快照，不修改历史总数。40卡＝原30＋10提名，38图＋4视频／42记录及三邻接口径不变。
+- TECH、PRODUCTS23、PRODUCTS14分组审查与小修均已接入；G1阈值、G4视频scope及T105/T201授权修正已镜像。以下最终程序检查后交主会话总审；阶段浏览器检查不冒称最终reload／file://或打印PDF验收。遵从用户指示，不暂存、不commit、不push。
+
+- 主会话另行独立HTTP200复核T110的Qwen3.5仓库News与Qwen3.5-2B raw模型卡：3月2日小尺寸开放、Apache-2.0、Causal Language Model with Vision Encoder、2B默认Non-Thinking，以及同Language表五项正反分数均确认。此为两个来源正文与表头的独立复核，不是模型运行、故事质量或儿童场景实测；与前序8 URL证据链的检查范围分开。
+
+- **最终内容整合与程序自检（192编号）已完成，冻结供主会话总审。** 7份Markdown检查1,060个本地链接／图片目标；192证据ID唯一（T19/U58）、40 card-id／四个H2组完整；旧115条证据区87,150字符与开始快照逐字一致，D1—D7原文完整保留。manifest与四分片数组深度相等，38图哈希／尺寸／字节复检通过，2,360,883 bytes，无未索引g*文件；四视频保持外链与未验证动态内容边界。
+- 最终正文按既定去附录／表格／代码／HTML／URL口径计12,597 Han；较旧12,000目标略超，按用户当轮增量优先保留T110正反证，不用缩写抹去限制。四HTML生成并--check通过：4页、1,279个本地链接、27表，源文可见文本一致、无远程资产；unittest再次27项＝25通过、2 symlink权限跳过。git diff --check通过。源码元数据与日志更新后再生成检查，不沿用旧191版HTML。
+- 所有素材／T110已齐，无分片等待；剩余为主会话最终reload计数／总审，不是内容或生成器阻塞。本轮未做file://／打印PDF测试，未重新访问全部192条来源、运行模型、验证玩具性能／交付。未暂存、未commit、未push；授权外的脚本、图片与参考库未改。
+
+### 2026-10-10｜最终总审回传、四处旧附表同步与收尾QA
+
+- 主会话回传最终总审：主报告T使能与D1—D7、40卡图鉴、媒体及计数均通过；仅旧competitors存在两个主题、四处必须同步。已修F04双状态索引、身份／人群、订阅／云三处，统一为官方支持页F6743已明确6岁以上且不连接互联网，本机未实测，引用U304；现价、库存、税运未知不变。F15身份段改为已取得2020-04-24厂商发布／预售稿，首批实际交付日及硬件安全年龄仍未核，引用U408；App的3岁+评级仍不作硬件安全年龄。
+- 本次仅改上述四处、追加本日志并重建四HTML；旧P证据原文、主报告、图鉴、parts、媒体文件／manifest、README及脚本不改；另按随后追加授权修正根PROGRESS的研究进度表述并保留历史。没有新调研或外访；修正后交Reviewer定点复核，不提前宣称这四处已获复核通过。未暂存、未commit、未push。
+- 主会话最终程序QA回传（四处同步前快照）：四HTML --check通过，1,279个本地链接／27表；全专题18份MD（含历史分片）1,201个本地链接、47表列宽检查0错，产品分片根相对路径按合并语义解析。192证据集合、40卡集合精确且唯一；编码、凭据模式及文件体积检查通过。这是主会话检查范围，不冒称INTEGRATE重新执行了全部18MD检验。
+- 主会话媒体最终程序验收：manifest共42项＝38图＋4视频链接，覆盖40对象；全部本地图hash／尺寸／bytes匹配，合2,360,883 bytes，media/g*无未索引文件。图鉴正文实际嵌入36张主图，另2张AIBI证据图留在归档中；“共38张本地JPEG（36主图＋2证据）”是归档数量，不说38张全部嵌卡。视频仅元数据／静态起始画面核验，不作动态内容或性能实测。
+- 主会话最终浏览器reload：图鉴40卡、36个正文img及4项导航核对通过，无横向溢出；跳至主报告enablers-2026锚点成功，截图中表格清楚。桌面1280的AD09与手机390的AD11阶段检查沿用上文已记录范围；均为loopback专题服务页面，不扩张为file://、全卡实物性能或打印PDF测试。本次四处文本修正后的HTML生成结果另记，不冒称已再次浏览全部页面。
+
+- 根PROGRESS收尾按追加授权处理：只读git show HEAD:PROGRESS.md，完整提取上轮“转为2026滚动线索主线”段，原样放回本轮新段之后；未恢复覆盖整个文件，也未改后续硬件等历史。当前进度改为其余总审／最终程序与视觉已通过、F04/F15四处同步已修待定点复核；移除代理“不commit/push”措辞，改为“版本同步由主会话按项目规则处理”。定点复核结束前不提前改成全部最终完成。
+
+- 四处修正与进度历史恢复后的本次检查：competitors逆向还原四项替换后与本轮开始文件完全一致，未混入其它竞品改写；evidence原有内容完整保留，仅追加本节。四HTML重新生成并--check通过，现为1,284个本地链接、27表（相较主会话1,279快照多4处U引用及1个新日志目录项），源文可见文本一致、无远程资产；git diff --check通过。PROGRESS的742字符上轮段与HEAD提取内容一致，后续历史未改。等待Reviewer对四处和进度修正定点复核，再由主会话处理最终状态及版本同步。
+
+- **最终定点复核通过，所有既有总审问题关闭（2026-10-10）。** 主会话回传Reviewer结论：无新增项；F04／F15当前Markdown与HTML一致，旧错误已撤下；PROGRESS上轮历史保留及版本分工表述正确。此次定点复核未外访、未重跑全套测试，沿用上文已明确范围的程序与视觉QA，不升级为新研究或实物验收。本次仅追加本结论、更新PROGRESS本轮完成状态并重建evidence.html；内容与生成检查完成，冻结交回，版本同步由主会话办理，不宣称commit／push已完成。
+
+- 暂存检查发现新文件行尾空白：硬件使能分片84处Markdown双空格硬换行转换为行末反斜杠，保留换行语义；图鉴源文件去掉EOF多余空行，仅留一个末尾换行。转换前后Markdown渲染结果完全一致，正文事实、图片与原证据内容未改；仅作格式修复后复查并同步受影响HTML。未执行git add／commit，暂存区仍须由主会话重新暂存后完成最终检查。
