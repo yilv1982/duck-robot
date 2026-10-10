@@ -2,6 +2,13 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 参考资料目录整理（2026-10-10）
+
+- 按用户要求，三个上游参考库统一移入根目录 [references/](./references/README.md)；本项目调研记录仍在 `docs/references/`，历史提取件仍在 `local-changes/`。
+- 三个子库内部保持只读、无内容改动；迁移前后 4239 个文件的相对路径、大小及 SHA-256 全部一致。
+- 已同步项目规则、导航、引用与辅助脚本路径；原始训练验收证据及导入哈希不改写为新环境事实。
+- 详细步骤、验证范围及限制见[目录整理记录](./docs/references/reference-layout-20261010/research.md)。
+
 ## 项目规则与本轮资料归档（2026-10-10）
 
 - 新建根目录 [AGENTS.md](./AGENTS.md)：主要目录与文档导航、调研落盘、用户图片归档、硬件标注归档、自动提交并推送、中文沟通及过期信息清理规则；保留只读参考库、UTF-8 BOM 和安全边界。
@@ -11,7 +18,7 @@
 
 ## 参考库使用规则（2026-10-09 起）
 
-**`microduck-replica/`、`microduck-community-kit/`、`microduck-build-tutorial/` 是别人的方案，只读参考，不在里面做任何修改。** 自己的进度、笔记、补丁一律放工程根目录（本文件、`docs/`、`local-changes/`）。历史上混入参考库的本地修改已于 2026-10-09 提取到 [local-changes/](./local-changes/) 并把参考库还原为上游原样：
+**`references/microduck-replica/`、`references/microduck-community-kit/`、`references/microduck-build-tutorial/` 是别人的方案，只读参考，不在里面做任何修改。** 自己的进度、笔记、补丁一律放工程根目录（本文件、`docs/`、`local-changes/`）。历史上混入参考库的本地修改已于 2026-10-09 提取到 [local-changes/](./local-changes/) 并把参考库还原为上游原样：
 
 | 参考库 | 上游 | 本地状态 | 校验（2026-10-09，逐文件 SHA256，忽略 CRLF/LF） |
 |---|---|---|---|
@@ -67,8 +74,8 @@
 
 ## 2026-10-09 参考库清理（提取 → 还原）
 
-- `microduck-replica/调试记录.md`：此前会话把 10-09 到货记录（7 行）写进了上游作者的表格里。用户相关内容已转录到本文件上表；原文件还原为上游版（「手头有的」等小节本来就是上游作者 fanhao375 的库存记录，不是本项目的）。
-- `microduck-build-tutorial/`：A 训练重建的库内修改（4 个改文件 + 51 个添加文件，清单见 [local-changes/README](./local-changes/README.md)）全部提取，目录还原为上游原样。A 训练的说明与验收记录不受影响：[docs/a-training.md](./docs/a-training.md)、[docs/a-training-validation.json](./docs/a-training-validation.json)。
+- `references/microduck-replica/调试记录.md`：此前会话把 10-09 到货记录（7 行）写进了上游作者的表格里。用户相关内容已转录到本文件上表；原文件还原为上游版（「手头有的」等小节本来就是上游作者 fanhao375 的库存记录，不是本项目的）。
+- `references/microduck-build-tutorial/`：A 训练重建的库内修改（4 个改文件 + 51 个添加文件，清单见 [local-changes/README](./local-changes/README.md)）全部提取，目录还原为上游原样。A 训练的说明与验收记录不受影响：[docs/a-training.md](./docs/a-training.md)、[docs/a-training-validation.json](./docs/a-training-validation.json)。
 
 ## 供电架构定稿（2026-10-10）
 

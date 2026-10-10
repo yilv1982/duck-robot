@@ -18,15 +18,15 @@ Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C
 
 ## 并行参考库（只读）
 
-三套开源资料按独立目录保存，**只读参考、不修改、不合并代码、硬件配置或采购清单**（2026-10-09 规则；历史混入的本地修改已提取到 [local-changes/](./local-changes/README.md)）：
+三套开源资料统一存放在 **[references/](./references/README.md)**，各自保持独立目录；本项目自己的调研结论仍放在 `docs/references/`。三套上游参考库**只读参考、不修改、不合并代码、硬件配置或采购清单**（2026-10-09 规则；历史混入的本地修改已提取到 [local-changes/](./local-changes/README.md)）：
 
 | 方案 | 本地入口 | 参考内容 |
 | :--- | :--- | :--- |
-| A：帆哥教程 | [microduck-build-tutorial](./microduck-build-tutorial/README.md) | Pi Zero 2 W / OpenRB / XL330 路线（回退线，基线已存档） |
-| B：fanhao375 复刻研究 | [microduck-replica](./microduck-replica/README.md) | 机械装配、电控与调试资料；兼论 XL330 与飞特路线 |
-| C：jyg9 社区套件 | [microduck-community-kit](./microduck-community-kit/README.md) | **主参考**：imu_to_dxl / banana_pcb / dxl_hub 三块板、GD32 固件与升级工具、robotd 飞特补丁、HLS 舵机调试器 |
+| A：帆哥教程 | [microduck-build-tutorial](./references/microduck-build-tutorial/README.md) | Pi Zero 2 W / OpenRB / XL330 路线（回退线，基线已存档） |
+| B：fanhao375 复刻研究 | [microduck-replica](./references/microduck-replica/README.md) | 机械装配、电控与调试资料；兼论 XL330 与飞特路线 |
+| C：jyg9 社区套件 | [microduck-community-kit](./references/microduck-community-kit/README.md) | **主参考**：imu_to_dxl / banana_pcb / dxl_hub 三块板、GD32 固件与升级工具、robotd 飞特补丁、HLS 舵机调试器 |
 
-- 方案 B 遵循其 [LICENSE](./microduck-replica/LICENSE) 与 [NOTICE](./microduck-replica/NOTICE.md)：不同文件许可不同，不能整目录视为 Apache-2.0 或可商用；其打印 CAD 已迁往上游独立仓 [microduck-replica-cad](https://github.com/fanhao375/microduck-replica-cad)，本地 `cad/`、`print/` 不是完整打印包。
+- 方案 B 遵循其 [LICENSE](./references/microduck-replica/LICENSE) 与 [NOTICE](./references/microduck-replica/NOTICE.md)：不同文件许可不同，不能整目录视为 Apache-2.0 或可商用；其打印 CAD 已迁往上游独立仓 [microduck-replica-cad](https://github.com/fanhao375/microduck-replica-cad)，本地 `cad/`、`print/` 不是完整打印包。
 - 方案 C 缺口（`software/microduck_feetech/` 完整源码上游未推送、真机整定值仅可参考等）见 PROGRESS「方案方向」。
 
 ## 方案 A 回退线（存档）

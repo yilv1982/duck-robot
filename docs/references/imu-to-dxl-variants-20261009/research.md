@@ -49,7 +49,7 @@
 前端的唯一拓扑差异：replica 用 SN74LVC**2G**241 双缓冲（发+收，收常开），ScrapMeta 用单颗 1G**125**（只缓冲发，收直连）。replica 固件本就按"接收常开、发时按长度丢弃回显"设计，在 ScrapMeta 的直连 RX 上同样成立。
 
 **刷录路径**：
-- 预编译 HEX 在本地：`microduck-replica/hardware/imu_to_dxl/firmware/Build/imu_to_dxl.hex`（0.2.0，飞特）——不用装 Keil。
+- 预编译 HEX 在本地：`references/microduck-replica/hardware/imu_to_dxl/firmware/Build/imu_to_dxl.hex`（0.2.0，飞特）——不用装 Keil。
 - SWD 接 ScrapMeta 的 J2（BM07 7P）：2=SWCLK、3=SWDIO、4=GND、7=NRST（1=+3V3 参考），用 ST-Link + OpenOCD（ScrapMeta 仓库自带 `flash_openocd.sh`，把目标换成 replica 的 HEX 即可）。
 - **G0 空片坑**（replica 实测记录）：第一次烧完软件复位可能停在 ST bootloader——**断电重上电一次**即好。
 - 契约对齐：replica 0.2.0 = 飞特 SCS/STS、ID 200、**@56 的 15 字节块**，与 HD-1910（HLS 家族）的 present 块布局及 robotd 飞特补丁的 sync_read 兼容。

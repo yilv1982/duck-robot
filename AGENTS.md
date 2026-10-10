@@ -15,6 +15,7 @@
 |---|---|
 | 仓库根目录 | 本项目规则、总览、当前采购清单和进度入口。 |
 | [`docs/`](docs/) | 本项目方案、测试操作单、训练存档与技术文档。 |
+| [`references/`](references/README.md) | 三个上游参考库的统一入口；子库只读，移动目录不授权修改其内部内容。 |
 | [`docs/references/`](docs/references/) | 调研记录和证据；按 `主题-YYYYMMDD/` 建专题，入口为 `research.md`。 |
 | [`docs/photos/`](docs/photos/README.md) | 用户硬件原始照片、硬件标注图及索引。 |
 | [`docs/schematics/`](docs/schematics/README.md) | 原理图、设计源文件、网表及来源/版本说明；图纸与实物对应关系必须写明。 |
@@ -23,14 +24,14 @@
 | [`flash/`](flash/README.md) | 本项目 IMU 固件、烧录脚本、HEX 校验及验收工具。 |
 | [`scripts/`](scripts/) | 本项目辅助脚本：图片标注、历史训练启动等；复用前核对路径和环境。 |
 | [`tools/jlc-order/`](tools/jlc-order/README.md) | 嘉立创 API 下单/查询工具、测试与示例配置；真实配置和调用台账不提交。 |
-| [`microduck-community-kit/`](microduck-community-kit/README.md) | **C 线主参考，只读**：取电/配电/IMU 板、固件、飞特补丁、舵机调试器。 |
-| [`microduck-replica/`](microduck-replica/README.md) | **B 线参考，只读**：机械、电控、舵机资料、部署及训练研究。各子目录许可不同。 |
-| [`microduck-build-tutorial/`](microduck-build-tutorial/README.md) | **A 线参考，只读**：Pi Zero 2 W / OpenRB / XL330 教程；不是当前 C 线施工依据。 |
+| [`references/microduck-community-kit/`](references/microduck-community-kit/README.md) | **C 线主参考，只读**：取电/配电/IMU 板、固件、飞特补丁、舵机调试器。 |
+| [`references/microduck-replica/`](references/microduck-replica/README.md) | **B 线参考，只读**：机械、电控、舵机资料、部署及训练研究。各子目录许可不同。 |
+| [`references/microduck-build-tutorial/`](references/microduck-build-tutorial/README.md) | **A 线参考，只读**：Pi Zero 2 W / OpenRB / XL330 教程；不是当前 C 线施工依据。 |
 | [`local-changes/`](local-changes/README.md) | 从参考库提取的历史本地改动，仅存档，不是可直接运行的完整工程。 |
 | [`.goal/PROJECT_KNOWLEDGE.md`](.goal/PROJECT_KNOWLEDGE.md) | 历史知识与环境记录；旧路径、WSL 和设备状态需现场重查，不能覆盖当前事实。 |
 | `.zcode/`、`tools/baidu-pan-mcp/` | 本地计划/工具目录，当前被 Git 忽略；不得作为唯一成果存放点，不强制加入版本库。 |
 
-**参考库只读规则**：未经用户明确授权，不修改上述三个 `microduck-*` 参考目录，不将本机进度写入其文档，不为了跑通而改上游配置/锁文件。需要实现时，在本项目可写目录建立注明来源的工作副本或补丁。恢复历史提取件到参考库同样需要用户明确授权。
+**参考库只读规则**：未经用户明确授权，不修改`references/` 下三个 `microduck-*` 参考目录，不将本机进度写入其文档，不为了跑通而改上游配置/锁文件。需要实现时，在本项目可写目录建立注明来源的工作副本或补丁。恢复历史提取件到参考库同样需要用户明确授权。
 
 ## 三、重要文档入口
 
@@ -59,11 +60,11 @@
 
 | 入口 | 简要说明 |
 |---|---|
-| [C 线飞特补丁](microduck-community-kit/firmware/v1/patches/README.md) | robotd 飞特适配、已知缺口、上游真机验证与未整定参数；完整软件源码不能假定存在。 |
-| [C 线固件](microduck-community-kit/firmware/v1/README.md) / [主机工具](microduck-community-kit/firmware/v1/host/README.md) | IMU 固件和测试协议参考；先确认芯片/引脚版本，不能直接互刷。 |
-| [C 线舵机调试器](microduck-community-kit/software/hls_servo_debugger/README.md) | 舵机扫描、参数配置与点检参考。 |
-| [HD-1910 厂商资料](microduck-replica/tools/FeeTech_HD1910M_Servo/README.md) | C001 规格书、接口、电流及通信资料；核对手中型号/批次后使用。 |
-| [B 线电控采购](microduck-replica/docs/电控采购清单.md) / [不打 HAT 方案](microduck-replica/docs/不打HAT.md) | 选型和替代接法参考，不是本机物料状态。 |
+| [C 线飞特补丁](references/microduck-community-kit/firmware/v1/patches/README.md) | robotd 飞特适配、已知缺口、上游真机验证与未整定参数；完整软件源码不能假定存在。 |
+| [C 线固件](references/microduck-community-kit/firmware/v1/README.md) / [主机工具](references/microduck-community-kit/firmware/v1/host/README.md) | IMU 固件和测试协议参考；先确认芯片/引脚版本，不能直接互刷。 |
+| [C 线舵机调试器](references/microduck-community-kit/software/hls_servo_debugger/README.md) | 舵机扫描、参数配置与点检参考。 |
+| [HD-1910 厂商资料](references/microduck-replica/tools/FeeTech_HD1910M_Servo/README.md) | C001 规格书、接口、电流及通信资料；核对手中型号/批次后使用。 |
+| [B 线电控采购](references/microduck-replica/docs/电控采购清单.md) / [不打 HAT 方案](references/microduck-replica/docs/不打HAT.md) | 选型和替代接法参考，不是本机物料状态。 |
 | [A 线阶段基线](docs/route-a-baseline-20260928.md) / [A 线 BOM](docs/bom-route-a-20260928.md) | 已存档的 XL330 路线，仅回退时使用。 |
 | [A 训练](docs/a-training.md) / [A 验收数据](docs/a-training-validation.json) / [B 训练](docs/b-training.md) | 历史训练环境、结果和复现条件，不等于当前机器已部署。 |
 | [供电 v1](docs/power-architecture-v1.md) | 已被取代的历史方案，不得继续作为接线操作依据。 |
@@ -118,7 +119,7 @@
 - 检索相关引用并同步更新 README、BOM、PROGRESS、方案、操作单及图片索引等受影响入口，避免“一处改正、多处仍错”。无法确定替代答案时改为“待确认”，不要猜。
 - “清除”针对过期信息的**现行指导地位**：应保留的用户原图、原始测试数据、厂商资料、历史研究证据和版本源文件不得因结论更新而直接销毁。
 - 历史方案/研究需要追溯时，移入明确的归档位置，或在顶部标“已废弃/仅历史记录/勿用于接线”并指向现行版；已知错误不能留在没有提示的现行图里。无需保留的重复派生物可以清理。
-- 三个只读参考库不为本机勘误而改写；在本项目记录上游错误和替代证据，现行导航不再把错误段落当作操作依据。
+- `references/` 下三个只读参考库不为本机勘误而改写；在本项目记录上游错误和替代证据，现行导航不再把错误段落当作操作依据。
 - 删除或移动前确认目标与引用，禁止破坏用户改动或唯一原始证据；目录及入口变化时同步维护本文件。
 
 ## 五、Windows 与安全边界

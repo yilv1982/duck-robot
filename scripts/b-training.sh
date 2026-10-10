@@ -67,7 +67,7 @@ esac
 
 script_path=$(realpath -e -- "${BASH_SOURCE[0]}")
 project_root=$(cd -- "$(dirname -- "$script_path")/.." && pwd -P)
-training_dir="$project_root/microduck-replica/software/training"
+training_dir="$project_root/references/microduck-replica/software/training"
 [[ -f $training_dir/pyproject.toml && -f $training_dir/uv.lock ]] || die "Training project or lockfile missing: $training_dir"
 
 # Every mode uses the same Linux environment and the existing lockfile.

@@ -14,4 +14,4 @@
 | 微雪 Waveshare Bus Servo Adapter (A) | 商品模块，USB/UART 转半双工总线舵机；官方产品页有规格书（waveshare.com），需要时下载存档 |
 | 黑色降压模块（XT60，丝印 7.2-16V） | 通用商品模块，无公开原理图；用前实测输入下限/输出（见 PROGRESS 待办） |
 
-> 同源参考：fanhao375 replica 的 imu_to_dxl 原理图 PDF（STM32G031 同引脚布局的另一块板）在参考库 `microduck-replica/hardware/imu_to_dxl/imu_to_dxl-原理图.pdf`，可作对照，但**不是本档案板的图**。
+> 同源参考：fanhao375 replica 的 imu_to_dxl 原理图 PDF（STM32G031 同引脚布局的另一块板）在参考库 `references/microduck-replica/hardware/imu_to_dxl/imu_to_dxl-原理图.pdf`，可作对照，但**不是本档案板的图**。

@@ -2,7 +2,7 @@
 
 2026-10-09 按「参考库只读」规则，把此前混入参考目录的本地修改提取到这里，三个参考目录已还原为上游原样（逐文件哈希校验记录见根目录 [PROGRESS.md](../PROGRESS.md)）。
 
-**这里只是存档，不是可运行工程。** 如需恢复 A 训练环境，把对应文件按相对路径复制回 `microduck-build-tutorial/` 即可；注意 `export_onnx.py` 内硬编码的 `/mnt/e/` 路径与 WSL venv 路径是 E 盘时代写的，工程已迁到 `C:\Projects\duck-robot`，复用前必须先改。
+**这里只是存档，不是可运行工程。** 2026-10-10 三个上游参考库已移至根目录 `references/`；本目录中的提取件路径保持不变。如需恢复 A 训练环境，应先取得修改只读参考库的明确授权，再按相对路径恢复到 `references/microduck-build-tutorial/`，或建立独立可写副本；`export_onnx.py` 的旧 `/mnt/e/` 与 venv 路径必须按当前环境改写，不能直接运行。
 
 ## microduck-replica/
 

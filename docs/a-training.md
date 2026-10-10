@@ -1,5 +1,7 @@
 # 方案 A：新训练基线与验收记录
 
+> **目录整理（2026-10-10）**：上游参考现位于 `references/`，本页训练源码链接指向 `local-changes/` 的提取存档；历史运行日志与验收 JSON 中的旧路径是当时证据，不表示当前文件存在。恢复运行需按规则建立可写环境并核实路径。
+
 更新：**2026-09-29**。状态：**已重建、短训练与安全导出通过；尚无成熟行走策略**。
 本页只描述方案 A，不修改或借用方案 B 的环境。正式长训练**尚未启动**，smoke 策略**不得部署上机**。
 
@@ -11,7 +13,7 @@
 - 原部署 `constants.py`、`walk.onnx`、`velocity.pt` 保持不变。旧部署 sim **仍是 19 DOF，尚未重接**新训练模型；不能把新训练链路称为完整实机验证。
 - 文档收尾仅查阅现有文件、字节数、SHA-256；没有再次运行 GPU。运行结果来自主会话验收回报。
 
-入口：[训练项目 README](E:/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/README.md)、[训练脚本](E:/Projects/duck-robot/scripts/a-training.sh)、[机器可读验收记录](E:/Projects/duck-robot/docs/a-training-validation.json)。
+入口：[训练项目 README](../local-changes/microduck-build-tutorial/mjlab_microduck/README.md)、[训练脚本](E:/Projects/duck-robot/scripts/a-training.sh)、[机器可读验收记录](E:/Projects/duck-robot/docs/a-training-validation.json)。
 
 ## 2. 来源、环境与物理假设
 
@@ -20,12 +22,12 @@
 官方 [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl) 固定提交
 [`cb70b792312d559a4da09064d92009079671815f`](https://github.com/pollen-robotics/microduck_rl/tree/cb70b792312d559a4da09064d92009079671815f)。
 模型 XML/assets 从不可变上游 URL 取得，不是从 B 复制。逐文件来源、SHA-256 与许可证据见
-[source_manifest.json](E:/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/robot/source_manifest.json)。
+[source_manifest.json](../local-changes/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/robot/source_manifest.json)。
 代码为 Apache-2.0；上游 3D 模型声明为 Creative Commons BY-SA-NC，未明确版本，不推定为 4.0 或可商用。
 
 BAM 保持 A 原 doc 系列的固定提交 `0007411bd82c48f1bc12ae8382f98e4d8b879c95`（1.0.0）。
 独立 WSL venv：`/home/yilv/.venvs/duck-robot-a-training`；源码固定为
-`/mnt/e/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck`。
+`/mnt/e/Projects/duck-robot/references/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck`。
 Python 3.12.3；mjlab 1.3.0、torch 2.9.1、warp-lang 1.12.0、mujoco 3.10.0。
 `uv sync --locked` 安装 149 个包，`uv lock --check` 通过；保留 protobuf/onnx/zmq overrides，
 所以 `uv pip check` 仍有两项已知 BAM metadata 冲突（缺 zmq、protobuf<4 与实际 6.33.6 不一致），
@@ -54,8 +56,8 @@ XL330 应按官方 3.7–6.0 V、推荐 5.0 V 供电，仿真参数不能替代�
 3000 阶段同时启用 no-stepping 惩罚并调整站立/原地旋转比例。
 play 配置直接采用末阶段速度范围且关闭课程；这些是**训练/评估指令范围，不是已实现的行走速度**。
 合同测试验证了配置及阈值边界；5-iteration smoke 没有实际训练到这两个阶段。
-证据：[环境配置](E:/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/tasks/microduck_velocity_env_cfg.py)、
-[合同脚本](E:/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/scripts/validate_contract.py)。
+证据：[环境配置](../local-changes/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/tasks/microduck_velocity_env_cfg.py)、
+[合同脚本](../local-changes/microduck-build-tutorial/mjlab_microduck/scripts/validate_contract.py)。
 
 ## 4. 实际验收命令与结果
 
@@ -64,7 +66,7 @@ play 配置直接采用末阶段速度范围且关闭课程；这些是**训练/
 ```bash
 bash /mnt/e/Projects/duck-robot/scripts/a-training.sh check
 /home/yilv/.venvs/duck-robot-a-training/bin/python -I -B \
-  /mnt/e/Projects/duck-robot/microduck-build-tutorial/mjlab_microduck/scripts/validate_contract.py \
+  /mnt/e/Projects/duck-robot/references/microduck-build-tutorial/mjlab_microduck/scripts/validate_contract.py \
   --compile-xml --config --env-steps 100 --device cuda:0
 bash /mnt/e/Projects/duck-robot/scripts/a-training.sh smoke
 ```

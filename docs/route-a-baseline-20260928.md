@@ -22,7 +22,7 @@
 
 ### 方案 A 训练入口
 
-> **2026-10-09**：库内修改（`pyproject.toml` 版本钉死、重写的 `export_onnx.py`、env cfg 课程修改、官方 `microduck_rl @ cb70b792` 的 `robot/` 恢复树等）已按「参考库只读」规则提取到 [local-changes/microduck-build-tutorial/](../local-changes/microduck-build-tutorial/)，`microduck-build-tutorial/` 还原为上游原样。**恢复训练环境前需先把提取件按相对路径复制回位**；`export_onnx.py` 内写死的是旧机器 WSL 路径（`/mnt/e/` → 迁移后又改 `/mnt/c/`），现机无 WSL，复用前须按当前环境改写。
+> **2026-10-09**：库内修改（`pyproject.toml` 版本钉死、重写的 `export_onnx.py`、env cfg 课程修改、官方 `microduck_rl @ cb70b792` 的 `robot/` 恢复树等）已按「参考库只读」规则提取到 [local-changes/microduck-build-tutorial/](../local-changes/microduck-build-tutorial/)，`references/microduck-build-tutorial/` 还原为上游原样。**恢复训练环境前需先把提取件按相对路径复制回位**；`export_onnx.py` 内写死的是旧机器 WSL 路径（`/mnt/e/` → 迁移后又改 `/mnt/c/`），现机无 WSL，复用前须按当前环境改写。
 
 - [安装与使用](../local-changes/microduck-build-tutorial/mjlab_microduck/README.md)（提取件位置）
 - [验收命令、模型来源、课程与物理限制](./a-training.md)
@@ -49,7 +49,7 @@ smoke 已生成 model_4.pt（4720063 bytes）及 a-smoke.onnx（773823 bytes）�
 - **电源**：按实际电路设计与验证；XL330 官方输入 **3.7～6.0V，推荐 5.0V，6.0V 是上限**；Pi 需稳定 5V
 - **结构与策略**：PLA 打印件；部署 ONNX 行走策略
 
-[上游教程](../microduck-build-tutorial/README.md) 和 [视频教程](https://www.youtube.com/watch?v=Vep8AjoCnEM) 用于对照，不作为安全规格或复刻成功的保证。
+[上游教程](../references/microduck-build-tutorial/README.md) 和 [视频教程](https://www.youtube.com/watch?v=Vep8AjoCnEM) 用于对照，不作为安全规格或复刻成功的保证。
 
 ## 复刻计划（方案 A 步骤基线）
 
@@ -134,7 +134,7 @@ MICRODUCK_INPUT=keyboard PYTHONPATH=src .venv/bin/python src/main.py
 - `gamepad_daemon` 检测到 `/dev/input/js*` 后，默认通过 `rfkill` 屏蔽 Wi-Fi，SSH 可能断开；不能只靠 SSH 作为唯一停机通道。
 - 服务待机时，长按 START 2 秒启动控制循环。运行时 `run_session()` 使用 `proc.wait()` 等待子进程退出：**关闭/断开手柄只会清零速度，不退出控制循环，也不保证恢复 Wi-Fi**。应先扶稳并按 **B** 退出，确认服务回到待机，再关闭手柄；解除 Wi-Fi 屏蔽也不等于一定重连成功。
 - **双扳机按住 2 秒的关机手势只在 daemon 待机阶段监听，不是运行中的急停。** 正常关机顺序：先扶稳 → 按 B（手柄）或 q（键盘）退出控制循环 → 确认待机后双扳机关机，或在 Pi 本机执行 `sudo shutdown -h now`。
-- 也可在电脑端的部署目录 `microduck-build-tutorial/microduck/` 执行 `make shutdown HOST=user@microduck.local`，但必须具备相应命令环境且 SSH 可达；替换实际账号/主机名。
+- 也可在电脑端的部署目录 `references/microduck-build-tutorial/microduck/` 执行 `make shutdown HOST=user@microduck.local`，但必须具备相应命令环境且 SSH 可达；替换实际账号/主机名。
 - **正常情况下，先停程序、关 Pi，确认系统关机完成后才断电**；10～15 秒只是上游参考等待时间，不是关机完成的判据。若冒烟、短路、失控或发生夹伤风险，优先紧急切断动力，不等待操作系统关机；事先准备可触及的动力断电措施并防止机器人跌落。
 
 ### 阶段 7（可选）：新训练基线、显式导出与部署前验收

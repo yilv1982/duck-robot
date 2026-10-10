@@ -44,7 +44,7 @@
 ## 结构件
 
 - [ ] 打印件清点：版本/材料/缺件登记。
-- **C 线打印模型以上游独立仓库 [microduck-replica-cad](https://github.com/fanhao375/microduck-replica-cad) 为准**（本地未导入）；A 线的 `microduck-build-tutorial/microduck3D打印.3mf` 是 XL330 结构，**不适用 C 线**。
+- **C 线打印模型以上游独立仓库 [microduck-replica-cad](https://github.com/fanhao375/microduck-replica-cad) 为准**（本地未导入）；A 线的 `references/microduck-build-tutorial/microduck3D打印.3mf` 是 XL330 结构，**不适用 C 线**。
 - C 线专属打印件：`banana_pcb_locker`（banana_pcb 到货后打）。
 
 ## 安全边界速记（C 线，按架构 v2）

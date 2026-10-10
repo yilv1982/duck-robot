@@ -14,7 +14,7 @@
 
 ## 2026-09-29 实际验收记录
 
-以下路径均相对于训练目录 `microduck-replica/software/training`。本轮已完成：
+以下路径均相对于训练目录 `references/microduck-replica/software/training`。本轮已完成：
 
 | 项目 | 实测结果 |
 | --- | --- |
@@ -54,7 +54,7 @@ wsl.exe -d Ubuntu -u yilv -- bash /mnt/e/Projects/duck-robot/scripts/b-training.
 wsl.exe -d Ubuntu -u yilv -- bash /mnt/e/Projects/duck-robot/scripts/b-training.sh smoke
 ```
 
-脚本根据自身真实路径定位 `microduck-replica/software/training`，不依赖固定盘符或调用时的工作目录。上面 `/mnt/e/...` 只是本机示例；移动项目时改脚本路径即可。含空格的路径请加双引号。
+脚本根据自身真实路径定位 `references/microduck-replica/software/training`，不依赖固定盘符或调用时的工作目录。上面 `/mnt/e/...` 只是本机示例；移动项目时改脚本路径即可。含空格的路径请加双引号。
 
 WSL Bash 等价命令：
 
@@ -84,7 +84,7 @@ XL330 日志位于训练目录的 **`logs/rsl_rl/velocity/`**。`smoke` 会打�
 
 ```bash
 entry="/mnt/e/Projects/duck-robot/scripts/b-training.sh"
-training="/mnt/e/Projects/duck-robot/microduck-replica/software/training"
+training="/mnt/e/Projects/duck-robot/references/microduck-replica/software/training"
 find "$training/logs/rsl_rl/velocity" -type f -name 'model_*.pt' -print
 # 本次已验收的 checkpoint；以后可换成上一步列出的其他可信文件。
 checkpoint="$training/logs/rsl_rl/velocity/2026-09-29_16-57-58_b-xl330-smoke-20260929T085748488208732-14346-23015/model_4.pt"
