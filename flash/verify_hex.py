@@ -1,7 +1,7 @@
 """Verify the replica imu_to_dxl 0.2.0 prebuilt HEX against the author's published digest.
 
 Decodes the Intel HEX records, rebuilds the flash image from 0x08000000, and compares
-SHA-256 with the value documented in microduck-replica/hardware/imu_to_dxl/firmware/README.md.
+SHA-256 with the value documented in references/microduck-replica/hardware/imu_to_dxl/firmware/README.md.
 """
 import hashlib
 import sys

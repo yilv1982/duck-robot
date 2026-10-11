@@ -2,9 +2,110 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 消费电子玩具：Microduck漏项修补（2026-10-10，现行）
+
+- [X11／G5](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html#card-x11)已补官方成品预售＋开源社区平台；[主文](./docs/references/consumer-electronic-toys-market-20261010/research.html#microduck-community)承认零售成品取样遗漏，以动作／角色表达、教程、套件支持与AI二次开发候选补齐框架，不重做全市场。
+- [D101—D105](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#microduck-sources)为5条新增证据，现行**234编号／41覆盖／39图／4视频**；41＝37消费核心基线＋3邻接＋1开源平台，不是41已售。原229证据、40卡与38图／4视频保留，以下流水中的旧总数为阶段历史。
+- 主会话API快照：主仓9,276 stars／1,199 forks；各仓不相加为用户，不换算销量。官方USD399美国预售未含税运；商店称订单多且爬产，新单估计4—6个月，不保圣诞交付，缺订单量／取消率／出货。主会话独立抽核D101范围已登记，未结账或实测。
+- 已保存X11官方主视觉900×312小图并view_image核对；程序与4HTML生成检查记质量日志。**本补录的独立内容／范围审查及主会话QA已完成，无必改项**；通过范围见质量日志。本角色未暂存／commit／push，版本同步由主会话统一办理。未改只读参考库，不改变C线供电／采购／训练事实。
+
+## 消费电子玩具：融资与海外平台整合（2026-10-10）
+
+- [主报告专节](./docs/references/consumer-electronic-toys-market-20261010/research.html#capital-overseas-2026)新增融资8行、平台代表12行、关联5行三表；只做资本／渠道与销售证据分层，不生成金额或热度排行榜。
+- [统一证据](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#capital-sources)现行**229编号＝旧192＋C12＋W18＋A7**。C12含8主要披露、2限定观察、2历史纠错；W18含11商品、5官方材料／报告线索、1访问记录、1方法；A7为商品观察。18条listing、7平台体系并非18款新产品／成功交易，旧192／115及以下阶段流水原样保留。
+- [40卡图鉴](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html)只补有范围限定的产品／平台深链；原卡数、图片／视频与价格不变。C104补LE270-CN芙崽随行版国内发售的供应方声明，不认证美国.net；C102保留bibo上市6月／开售7月冲突；C112缺来源的公司全称已从分片及正式证据撤回。
+- FIN独立9URL审查及SHOP独立11URL审查结果、未覆盖来源、W102／W199主会话方法核查分别写入[质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#execution-log)；不称全部来源二次核验或资金／销售后台审计。**最终审核与生成检查已完成**：总审无必改项、C112的P2已关闭，程序／视觉QA实数及未测范围见日志；版本同步由主会话办理，不提前记录为已commit／push。
+
+## 消费电子玩具：2026技术使能与40卡整合（2026-10-10）
+
+- [研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)保持国庆／近90天线索主轴、618及上半年单列，新增软件／硬件使能如何改变玩法与门槛；区分原型、内容、实时交互、量产、长期服务。T101只支持compaction工程改善；T110补Qwen3.5小模型原生文本后端与有正反项的官方同表基准，不宣称全面提升或具体玩具已采用。
+- [40卡图鉴](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html)：四组各10卡＝原30＋10提名，37消费核心研究对象＋3邻接（F14机构教育、X04成人生产力、X06成人照护），不是40已售／已交付。原[30样本／10案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)及旧价格基线保留。
+- [正式证据](./docs/references/consumer-electronic-toys-market-20261010/evidence.html)现行**192编号＝旧115＋T19＋U58**，不是独立网站／报告数；旧115条及历史日志保留。T110已依据8个实际读取的官方URL纳入；小尺寸3/2发布、2B默认模式IFEval退步及参数／算力不等条件保留。Eilik税费排除、AIBI发货承诺、Loona暂时免费、51515原App于2026-10-01停止更新／支持已同步现行文，不混入SPIKE 2031承诺。
+- [媒体归档](./docs/references/consumer-electronic-toys-market-20261010/media/README.md)与[manifest](./docs/references/consumer-electronic-toys-market-20261010/media/manifest.json)合42记录＝38JPEG＋4视频链接，覆盖40唯一product_id。主会话独立核38图哈希／尺寸／字节通过，总2,360,883 bytes；视频只元数据／部分起始画面，无完整观看或动态实测。素材版权不开放，披露限制不等于获得授权。
+- TECH主干通过，两小修按追加授权已同步分片与正式文；PRODUCTS23通过G2/G3的20卡（18图、抽查4源页，其余未复访）。G1/G4审查亦通过，两视频范围／LOVOT阈值小修已镜像；最终集成／浏览器视觉结果已回传通过；总审仅列F04／F15两个主题四处旧附表同步，现已修正，已通过最终定点复核，内容与生成检查完成；版本同步由主会话办理；渲染脚本测试主会话回报27项＝25pass＋2权限skip，集成者不改脚本。
+- 主会话最终程序QA已回传：全专题18份Markdown（含历史片）1,201个本地链接、47表列宽检查0错；192证据／40卡集合与媒体校验通过，四HTML --check通过（1,279链接、27表）。这些是四处同步前的检查快照，本次修正后的生成检查另记质量日志。最终浏览器reload确认40卡、36张正文主图及4项导航无横溢，主报告使能锚点跳转和表格可读；另2张证据图在归档，不称file://或打印PDF已测。
+- D1—D7重点、行业中立及硬件C线路线保持；真实签收、留存、完整BOM／云成本／儿童场景仍未验收。版本同步由主会话按项目规则处理；以下完整保留原HEAD的上轮2026滚动阶段及更早历史记录。
+
+
+## 消费电子玩具：转为2026滚动线索主线（2026-10-10）
+
+- [研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)摘要先列国庆/9月实际线索，618及上半年单列；近90天明确为7月13日至10月10日。2025与跨年财年移为背景，不再主导机会排序。
+- [正式证据](./docs/references/consumer-electronic-toys-market-20261010/evidence.html)新增S01—S08、E01—E11共19条，加原96为**115个编号**，不是独立来源数；[竞品页](./docs/references/consumer-electronic-toys-market-20261010/competitors.html#signals-2026)保留30产品/10案例基线，新增观察不硬计为已验证新品。
+- 撤销无屏/ODM默认优先级，保留用户D原则为可证伪假设与韧性要求，允许AI原生玩法但不宣称已证明。儿童、青少年、成人分层；发布/预售/备货/消费者交付/使用/复购独立。
+- 落实S03调整后可比基期、玩具业务合计含智能、LOVOT“2万体以上”；DeskMate网页发布日期/修改日期层次已厘清，实际平台事件仍待核；KOTTI到执行者非签收，5月发布日不保证当前能力文案等同原稿。成功/失败与定点独立审查范围见质量日志。
+- 本轮检索并归档2026公开资料，完成来源抽查、整合与最终QA；未开展实验、采购或设备测试，不改变C线。版本同步由主会话按项目规则办理。以下原96编号完成记录保留其基线轮次含义。
+
+## 市场调研重要商业判断留存（2026-10-10）
+
+- 追加用户标记重要的[养成反馈、操作节奏、角色表达与离线玩法](./docs/references/consumer-electronic-toys-market-20261010/research.html#play-retention)要点（附录D7），原段增加直达链接。沿用M08日本品类数据，明确不是单品留存/销量或生成式AI增速证据；本轮只记录关注点，不开展实验。
+
+- 用户指出机会建议的详细解释很重要，要求记录。已补入报告[附录 D：重要商业判断与验证方法](./docs/references/consumer-electronic-toys-market-20261010/research.html#decision-notes)，并从执行摘要、第六节直接链接；Markdown 与 HTML 同步。
+- 重点保留：玩法先于技术、有限交互/无屏的边界、可复用 ODM 服务、可维修/可降级、分阶段投入，以及静态版/互动版/AI版的对照验证。
+- **用户确认的是重点留存，不是选定商业路线或授权投资/实验；例子和验证方法仍属研究解释与待验证假设。** 本轮未新增外部市场数据、未开展用户实验、不改变 C 线硬件任务。
+
+## 市场调研增加 HTML 阅读版（2026-10-10）
+
+- 按用户要求将三份正式文档转换为[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)、[竞品与案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)、[证据与方法](./docs/references/consumer-electronic-toys-market-20261010/evidence.html) HTML；Markdown 保留为源文件，研究结论和原始来源不变。
+- 增加页间导航、可折叠目录、证据锚点、横向滚动表格、移动端布局与打印样式；样式和脚本内嵌，不依赖 CDN。
+- 生成与检查脚本：[render_toy_market_html.py](./scripts/render_toy_market_html.py)。通过正文文本一致性、本地链接/锚点、重复 ID 和离线资源检查，并在浏览器检查桌面/手机布局及跨页证据跳转。
+
+## 全球消费电子玩具公开资料研究完成（2026-10-10）
+
+- 完成截至2026-10-10的[中文研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.md)、[产品与案例对照](./docs/references/consumer-electronic-toys-market-20261010/competitors.md)及[统一证据/质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.md)的公开资料集成：30个型号/代际样本（消费核心29、机构教育邻接1）、10个案例、96个M/R/P编号记录；编号数不等于独立报告或全部法规全文核验。
+- 内容涵盖规模边界、首购与留存、经营与服务生命周期、假设经济演算、区域合规和多环节机会；来源等级、未知价格/条款及独立审查修订状态均保留在证据日志。
+- **未进行访谈、实物测试、采购或企业接洽；不改变C线硬件路线，也不构成接线、上电、下单或产品上市许可。**
+
+## 用户决定：按 v2 推进，先做基础测试（2026-10-10）
+
+- 用户确认继续 v2：电池经取电/保护进入 HAT 一口，另一口连接舵机链与末端 IMU，40P 对插 Radxa；正常整机不加入微雪板和独立稳压板，暂不增加 dxl_hub 或改成独立动力配电。
+- 先做[基础检查清单](./docs/hat-v1.2-test.md)：断电核针/极性 → HAT 空板台架 → 主控/IMU → 单舵机 → 整链仅通信 → 支撑下低负载分步动作。此后根据实测问题再决定是否需要进一步分析或改造，不因理论最坏值直接扩展采购。
+- 基础测试只能排除明显问题，不等于堵转/全工况安全验证；遇极性或电源网络不明、持续限流、异常压降/重启/发热立即停查。已确认超过额定时不继续试到故障。
+- **本轮只记录路线与测试安排，未操作实物、未改变保护参数，未将任何验收项勾为完成。**
+
+## 堵转是否会损坏 HAT：存在性核查（2026-10-10）
+
+- 用户要求先分析实际问题，不先推进配电改造。新增[风险核查](./docs/references/stall-hat-risk-20261010/research.md)，含原厂规格摘录与来源哈希。
+- 尚无证据证明本机 HAT 会因一次短促堵转烧坏；按现有图纸舵机大电流走直通铜箔而非 5V/2A 降压输出。连续额定/社区平均值不能单独证明瞬时损坏。
+- **新证据**：C001 规格书过流卸载出厂默认关闭；描述是大于 0.5A 持续 2s 后关输出、参数可配且新位置指令清除标志。这是厂商描述，不是本机回读或推荐设置。社区记录与工具也不能保证该保护已开启。
+- 下一步先只读核验舵机实际保护位/阈值/延时/模式与 HAT V1.2 路径，再决定是否改配电；没有设置参数、上电、短路或堵转实验，没有新增采购。
+
+## EH 接口与其他配电方案对照（2026-10-10）
+
+- 用户提供的[HAT SERVOS 局部图](./docs/photos/hat-v1.2-servos-closeup-user-20261010.png)已从临时附件原样归档；EH 名称来自存档图，实物品牌/额定待核。
+- 核对社区 dxl_hub 的 PCB/README：J3 为两线电源输入，头/左右腿/IMU 分支，未见板载保险；这与本会话最小 HAT 单链意向不同。“不打 HAT”采用独立动力支路+保险的计划，亦非本机实测。
+- 新增[配电解释图](./docs/photos/dxl-hub-power-distribution-explained.png)和[对照研究](./docs/references/power-distribution-comparison-20261010/research.md)，含原始资料哈希、PCB 器件/焊盘抽取与在线来源获取失败记录。
+- 结论是评估配电/保护，不是新增采购或准许上电；HAT 可继续用于主控供电和数据转换，具体支路额定/接法/接口数量仍须设计验证。
+
+## 过流保护设计说明（2026-10-10）
+
+- 回答用户保护怎么做，新增[过流保护方案](./docs/overcurrent-protection.md)：正极主保险靠近电池出线，后接直流总开关，明确保险/PTC/电子保护/BMS 的边界。
+- **保险安数与具体器件未定**：需先核准最弱连接器/导线、正常峰值及动作曲线。HAT 入口约 3A 与整机参考 3–5A 的矛盾不能靠加 5A 保险解决；没有实测、短路/堵转试验或采购。
+- BOM 补充待选的直流总开关/断电件；规则导航和供电文档已互链。调研说明同步写入[供电复核记录](./docs/references/power-review-20261010/research.md)。
+
+## HAT 单链接线意向图（2026-10-10）
+
+- 按用户指定的 `hat-v1.2-port-review.png` 底图，生成[接线意向图](./docs/photos/hat-v1.2-wiring-plan.png)与[可复现脚本](./scripts/annotate-hat-wiring.py)：A 口两线进电，B 口接舵机链与末端 IMU，C 排母对插 Radxa。
+- 用户描述的功能流程成立：HAT 降压/总线功能通过后可不装微雪板和独立稳压板；取电、适配接头、保护、匹配充电器仍需。
+- **没有上电或负载测试**；V1.2 针序和电源路径仍未核验，A 口承担整机电流，EH 约 3A 与常态参考 3–5A 的不匹配必须先解决，不能直接接全机验证。
+- [供电方案](./docs/power-architecture-v2.md)、[HAT 验证单](./docs/hat-v1.2-test.md)、BOM 与照片索引已同步；证据与限定见[供电复核记录](./docs/references/power-review-20261010/research.md)。
+
+## 参考资料目录整理（2026-10-10）
+
+- 按用户要求，三个上游参考库统一移入根目录 [references/](./references/README.md)；本项目调研记录仍在 `docs/references/`，历史提取件仍在 `local-changes/`。
+- 三个子库内部保持只读、无内容改动；迁移前后 4239 个文件的相对路径、大小及 SHA-256 全部一致。
+- 已同步项目规则、导航、引用与辅助脚本路径；原始训练验收证据及导入哈希不改写为新环境事实。
+- 详细步骤、验证范围及限制见[目录整理记录](./docs/references/reference-layout-20261010/research.md)。
+
+## 项目规则与本轮资料归档（2026-10-10）
+
+- 新建根目录 [AGENTS.md](./AGENTS.md)：主要目录与文档导航、调研落盘、用户图片归档、硬件标注归档、自动提交并推送、中文沟通及过期信息清理规则；保留只读参考库、UTF-8 BOM 和安全边界。
+- 本会话的供电、VBATT、LDO、舵机分支及 HAT V1.2 实物复核已落盘至 [research.md](./docs/references/power-review-20261010/research.md)。**仅资料/照片复核，无本机上电或带载测试。**
+- 已登记两张派生图：[IMU LDO 位置](./docs/photos/imu-ldo-location.png)、[HAT 接口复核](./docs/photos/hat-v1.2-port-review.png)，来源和旧图失效状态见[照片索引](./docs/photos/README.md)。
+- 供电 v2 与照片索引同步本轮更正：HAT 未识别到独立电池入口，不能直接要求两口分两支；八焊盘对应两组 4Pin 空位；撤回“超级电容”和“软件硬限流兜底”的无依据判断。完整历史文档尚未作全面勘误审计。
+
 ## 参考库使用规则（2026-10-09 起）
 
-**`microduck-replica/`、`microduck-community-kit/`、`microduck-build-tutorial/` 是别人的方案，只读参考，不在里面做任何修改。** 自己的进度、笔记、补丁一律放工程根目录（本文件、`docs/`、`local-changes/`）。历史上混入参考库的本地修改已于 2026-10-09 提取到 [local-changes/](./local-changes/) 并把参考库还原为上游原样：
+**`references/microduck-replica/`、`references/microduck-community-kit/`、`references/microduck-build-tutorial/` 是别人的方案，只读参考，不在里面做任何修改。** 自己的进度、笔记、补丁一律放工程根目录（本文件、`docs/`、`local-changes/`）。历史上混入参考库的本地修改已于 2026-10-09 提取到 [local-changes/](./local-changes/) 并把参考库还原为上游原样：
 
 | 参考库 | 上游 | 本地状态 | 校验（2026-10-09，逐文件 SHA256，忽略 CRLF/LF） |
 |---|---|---|---|
@@ -19,9 +120,9 @@
 | 物品 | 数量 | 说明 / 待办 |
 |---|---|---|
 | 微雪 Waveshare Bus Servo Adapter (A) | 1 | 半双工总线转接板，即 replica《电控采购清单》的「半双工总线转接板」待买项；此前台架一直用 FE-URT-2 顶替。整机走它还是飞线，待测。2026-10-10 照片归档+元件标注（[docs/photos/](./docs/photos/README.md)）：实物 v1.1，输入**直通舵机口不稳压**（HD-1910 台架喂 2S，严禁 12V），跳线 A=UART/B=USB（CH343） |
-| 黑色降压模块（XT60 端子） | 1 | 2026-10-10 照片细读（[存档](./docs/photos/README.md)）+ **空载实测**（[操作单](./docs/buck-module-test.md)）：板名 **BUS SERVO POWER SUPPLY V1.3**（By 造物の乐趣，社区自研件，公开无资料，二维码待扫）；丝印 PWR IN 7.2-18V / OUT PWR 5V or 7.4V MAX 6A。**实测**：VCC（3P）12V→6.00V、6.6V→6.00V、6.3V→5.99V——选压桥 **6V 档**、稳压下限 **≈6.3V**（跌落跟随非关机，远好于丝印 7.2V），**2S 最差工况可用**；PWR OUT（2P）全程跟随输入 = **电池直通口**（舵机总线，对上 HD-1910 直挂 7.8-8.1V 用法）。接口分工闭环（~~DC 母座~~系照片误判，实物无此件）。**接 IMU 前须改焊 5V 档**（LDO 上限 5.5V），带载复测待台架 |
-| 绿色 IMU 板 | 1 | **用户确认 = ScrapMeta microduck-diy imu_to_dxl v0.3**（STM32G031，板 32×22mm）。三版来源对比与刷机兼容性查证见 [docs/references/imu-to-dxl-variants-20261009](./docs/references/imu-to-dxl-variants-20261009/research.md)；**飞特固件刷写包已备好**（[flash/](./flash/README.md)：校验过的 0.2.0 HEX + OpenOCD + 一键脚本 + imu200 验收工具），⚠️ 该板 LDO 上限 5.5V，**只能 5V 供电**，2S 总线集成时 VCC 须走 5V 支路 |
-| 白色鸭图案 HAT（**实物丝印 V1.2**，2026-10-10 照片更正，此前误记 V1.1） | 1 | **原理图已归档查证**（2026-10-09，[docs/references/microduck-hat-20261006](./docs/references/microduck-hat-20261006/research.md)）：官方 RPI Robot HAT 的嘉立创 EDA 派生版，Radxa Zero 3W（舵机总线 UART2=ttyS2）兼容 Pi Zero 2W，比官方多一颗 BNO085。**2026-10-10 正反面照片归档+元件标注**（[docs/photos/](./docs/photos/README.md)）：实物 V1.2 与存档原理图 V1.0 差异大——**背面多一颗 F303 类 MCU（LQFP48）+ 正面多一颗超级电容（疑 RTC 备份），V1.0 图中均无**；RS485 座未焊。接线/上电前须索取 V1.2 原理图 |
+| 黑色降压模块（XT60 端子） | 1 | 2026-10-10 照片细读（[存档](./docs/photos/README.md)）+ **空载实测**（[操作单](./docs/buck-module-test.md)）：板名 **BUS SERVO POWER SUPPLY V1.3**（By 造物の乐趣，社区自研件，公开无资料，二维码待扫）；丝印 PWR IN 7.2-18V / OUT PWR 5V or 7.4V MAX 6A。**实测**：VCC（3P）12V→6.00V、6.6V→6.00V、6.3V→5.99V——选压桥 **6V 档**、稳压下限 **≈6.3V**（跌落跟随非关机，远好于丝印 7.2V），**2S 最差工况可用**；PWR OUT（2P）全程跟随输入 = **电池直通口**（舵机总线，对上 HD-1910 直挂 7.8-8.1V 用法）。接口分工闭环（~~DC 母座~~系照片误判，实物无此件）。当前方案不使用 VCC 稳压口、无需为 IMU 改焊 5V；模块不再是整机必需件，载流未验证 |
+| 绿色 IMU 板 | 1 | **用户确认 = ScrapMeta microduck-diy imu_to_dxl v0.3**（STM32G031，板 32×22mm）。三版来源对比与刷机兼容性查证见 [docs/references/imu-to-dxl-variants-20261009](./docs/references/imu-to-dxl-variants-20261009/research.md)；**飞特固件刷写包已备好**（[flash/](./flash/README.md)：校验过的 0.2.0 HEX + OpenOCD + 一键脚本 + imu200 验收工具），按归档设计拟从总线 VBATT 取电、U3 自降 3.3V；实物料号、输入规格及温升待验证，旧“只能 5V”要求撤回 |
+| 白色鸭图案 HAT（**实物丝印 V1.2**，2026-10-10 照片更正，此前误记 V1.1） | 1 | **原理图已归档查证**（2026-10-09，[docs/references/microduck-hat-20261006](./docs/references/microduck-hat-20261006/research.md)）：官方 RPI Robot HAT 的嘉立创 EDA 派生版，Radxa Zero 3W（舵机总线 UART2=ttyS2）兼容 Pi Zero 2W，比官方多一颗 BNO085。**2026-10-10 正反面照片归档+元件标注**（[docs/photos/](./docs/photos/README.md)）：实物 V1.2 与存档原理图 V1.0 差异大——**背面多一颗 MCU 类器件（完整型号/功能待核）；正面圆柱电容标记 10 / 50V，不再按超级电容处理**；RS485 座未焊。接线/上电前须索取 V1.2 原理图 |
 | 全部舵机 | 待清点 | 型号/数量/出厂 ID 状态待登记。飞特方案按官方关节表应为 HD-1910-C001 ×15（含嘴） |
 | 打印件 | 待清点 | 版本/材料/数量待登记；打印模型以上游独立仓库 microduck-replica-cad 为准 |
 
@@ -48,20 +149,20 @@
 
 ### 由到货衍生的待办
 
-- [ ] 万用表实测降压模块（[操作单](./docs/buck-module-test.md)）：**2026-10-10 空载扫描已完成**——选压桥 6V 档、实测稳压下限 ≈6.3V（压差 0.3V 跌落跟随，远好于丝印 7.2V）、2S 最差点 6.6V 时输出仍 6.00V，**2S 初判可用**；接口分工闭环（XT60 入 / PWR OUT 直通 / 3P VCC 稳压；"DC 母座"系照片误判，实物无此件）。剩余：改焊 5V 档 + 空载复验 5.00V（IMU LDO 上限 5.5V 的前置）→ 台架带载复测
+- [ ] 万用表实测降压模块（[操作单](./docs/buck-module-test.md)）：**2026-10-10 空载扫描已完成**——选压桥 6V 档、实测稳压下限 ≈6.3V（压差 0.3V 跌落跟随，远好于丝印 7.2V）、2S 最差点 6.6V 时输出仍 6.00V，**2S 初判可用**；接口分工闭环（XT60 入 / PWR OUT 直通 / 3P VCC 稳压；"DC 母座"系照片误判，实物无此件）。现行候选不使用稳压口，取消改焊 5V；若仅作直通转接，仍须核验其直通路径及接头载流，空载结果不是整机验收
 - [x] 确认 IMU 板是哪一版设计（2026-10-09 用户确认：ScrapMeta microduck-diy v0.3）
 - [ ] 按手顺完成 IMU 板刷机：购 SWD 调试器（推荐 DAPLink）→ J2 接线（⚠️ 实物 J2 未焊插座只有焊盘，2026-10-10 看实物标注图确认：焊 BM07B-SRSS-TB 座 + SH1.0 7P 线，或杜邦线直接焊盘）→ 双击 `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` 全 PASS（详见 [flash/README.md](./flash/README.md)）
 - [ ] 清点舵机（型号、数量、ID/零位状态）与打印件（版本、材料、缺件）
 - [ ] 微雪转接板上机验证（对比飞线方案）
-- [ ] 向板卡来源索取 HAT **V1.2** 原理图或改动说明（存档图为 V1.0；2026-10-10 照片发现实物 V1.2 多 F303 类 MCU + 超级电容，图物差异大，见 [docs/photos/](./docs/photos/README.md) HAT 小节）
-- [ ] 舵机线 ↔ 板座连接器适配（2026-10-11 实物核对定案）：飞特 HD-1910 原线 **AMP2.0-3P（2.0 mm）**，与三块板全不配——HAT 与 imu_to_dxl 同为 JST EH 3P（2.5 mm）、微雪转接板为 5264-3P（2.5 mm，外壳与 EH 不同形）。**方案：台架过渡期用杜邦公母线**——公头针插进 AMP2.0 母壳端子孔、母头套板座针（2.54 兼容 2.5）；⚠️ 脚序须交叉（飞特线端 `1=Signal/2=Vcc/3=GND` ↔ 板座 `1=GND/2=+BATT/3=DATA`），上电前蜂鸣档逐根核对；仅限调 ID/零位/ping 验收，不带载（堵转 1.8A），接触无保持力需胶带固定。**整机前统一换 EH 压接头**（剪 AMP2.0 头 → 压 EH 端子胶壳，15 根一次改完，三板块全兼容）
+- [ ] 向板卡来源索取 HAT **V1.2** 原理图或改动说明（存档图为 V1.0；实物差异含 MCU 类器件——2026-10-11 实测丝印 **GD32F3xx**（兆易创新，F303 兼容），照片复核另有圆柱电容 10/50V——图物差异大，见 [docs/photos/](./docs/photos/README.md) HAT 小节）
+- [ ] 舵机线 ↔ 板座连接器适配（2026-10-11 实物核对定案，完成远端「逐针核对」待办）：飞特 HD-1910 原线 **AMP2.0-3P（2.0 mm）**，与三块板全不配——HAT 与 imu_to_dxl 同为 JST EH 3P（2.5 mm）、微雪转接板为 5264-3P（2.5 mm，外壳与 EH 不同形）。**方案：台架过渡期用杜邦公母线**——公头针插进 AMP2.0 母壳端子孔、母头套板座针（2.54 兼容 2.5）；⚠️ 脚序须交叉（飞特线端 `1=Signal/2=Vcc/3=GND` ↔ 板座 `1=GND/2=+BATT/3=DATA`），上电前蜂鸣档逐根核对；仅限调 ID/零位/ping 验收，不带载（堵转 1.8A），接触无保持力需胶带固定。**整机前统一换 EH 压接头**（剪 AMP2.0 头 → 压 EH 端子胶壳，15 根一次改完，三板块全兼容）
 - [ ] HAT V1.2 与手头主控/外壳的机械与电气适配核对（电气功能确认按 [docs/hat-v1.2-test.md](./docs/hat-v1.2-test.md) 操作单执行：断电通断核对 + 限流上电分步验证）
 - [ ] banana_pcb 到板装配与取电验证（焊 U6068 ×2、locker 打印、核极性、断电试装、主控支路验证）
 
 ## 2026-10-09 参考库清理（提取 → 还原）
 
-- `microduck-replica/调试记录.md`：此前会话把 10-09 到货记录（7 行）写进了上游作者的表格里。用户相关内容已转录到本文件上表；原文件还原为上游版（「手头有的」等小节本来就是上游作者 fanhao375 的库存记录，不是本项目的）。
-- `microduck-build-tutorial/`：A 训练重建的库内修改（4 个改文件 + 51 个添加文件，清单见 [local-changes/README](./local-changes/README.md)）全部提取，目录还原为上游原样。A 训练的说明与验收记录不受影响：[docs/a-training.md](./docs/a-training.md)、[docs/a-training-validation.json](./docs/a-training-validation.json)。
+- `references/microduck-replica/调试记录.md`：此前会话把 10-09 到货记录（7 行）写进了上游作者的表格里。用户相关内容已转录到本文件上表；原文件还原为上游版（「手头有的」等小节本来就是上游作者 fanhao375 的库存记录，不是本项目的）。
+- `references/microduck-build-tutorial/`：A 训练重建的库内修改（4 个改文件 + 51 个添加文件，清单见 [local-changes/README](./local-changes/README.md)）全部提取，目录还原为上游原样。A 训练的说明与验收记录不受影响：[docs/a-training.md](./docs/a-training.md)、[docs/a-training-validation.json](./docs/a-training-validation.json)。
 
 ## 供电架构定稿（2026-10-10）
 

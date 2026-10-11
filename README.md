@@ -4,11 +4,13 @@ Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C
 
 进度流水、硬件到位记录与当前待办见 [PROGRESS.md](./PROGRESS.md)。
 
+**项目规则与目录导航：[AGENTS.md](./AGENTS.md)**。协作前先读；调研/图片归档、中文沟通、过期信息清理及自动提交推送按此执行。
+
 ## 当前主线：方案 C（飞特路线）
 
 - **执行机构**：飞特 HD-1910-C001 ×15（总线型，官方 robotd 有飞特补丁）
 - **主控/总线**：microduck HAT（Radxa Zero 3W，板载 74LVC 半双工驱动接 UART2）+ imu_to_dxl v0.3 作总线从站（ID 200，双协议）
-- **供电**：舵机/HAT/IMU 全部电池直通电压（电源板为可选转接件），拓扑见 [docs/power-architecture-v2.md](./docs/power-architecture-v2.md)
+- **供电路线 v2（用户确认推进）**：电池原压经取电/保护进入 HAT 一口，另一口接舵机链+末端 IMU，40P 对插主控并供 5V；正常整机不装微雪板和独立稳压板，暂不增加配电板。先按[基础检查清单](./docs/hat-v1.2-test.md)逐步验证，发现实际问题再调整；**路线确认不等于实物已经验收**。见[接线图](./docs/photos/hat-v1.2-wiring-plan.png)与[架构说明](./docs/power-architecture-v2.md)
 - **采购清单**：[BOM.md](./BOM.md)（已重写为 C 线；A 版存档于 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)）
 - **PCB 打样**：[tools/jlc-order](./tools/jlc-order/README.md) —— 嘉立创开放平台全自动下单（计价→建单→审核→进度跟踪），2026-10-09 已实测下单并审核通过
 - **IMU 刷机**：[flash/README.md](./flash/README.md)（DAPLink 接 J2 焊盘）
@@ -16,15 +18,15 @@ Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C
 
 ## 并行参考库（只读）
 
-三套开源资料按独立目录保存，**只读参考、不修改、不合并代码、硬件配置或采购清单**（2026-10-09 规则；历史混入的本地修改已提取到 [local-changes/](./local-changes/README.md)）：
+三套开源资料统一存放在 **[references/](./references/README.md)**，各自保持独立目录；本项目自己的调研结论仍放在 `docs/references/`。三套上游参考库**只读参考、不修改、不合并代码、硬件配置或采购清单**（2026-10-09 规则；历史混入的本地修改已提取到 [local-changes/](./local-changes/README.md)）：
 
 | 方案 | 本地入口 | 参考内容 |
 | :--- | :--- | :--- |
-| A：帆哥教程 | [microduck-build-tutorial](./microduck-build-tutorial/README.md) | Pi Zero 2 W / OpenRB / XL330 路线（回退线，基线已存档） |
-| B：fanhao375 复刻研究 | [microduck-replica](./microduck-replica/README.md) | 机械装配、电控与调试资料；兼论 XL330 与飞特路线 |
-| C：jyg9 社区套件 | [microduck-community-kit](./microduck-community-kit/README.md) | **主参考**：imu_to_dxl / banana_pcb / dxl_hub 三块板、GD32 固件与升级工具、robotd 飞特补丁、HLS 舵机调试器 |
+| A：帆哥教程 | [microduck-build-tutorial](./references/microduck-build-tutorial/README.md) | Pi Zero 2 W / OpenRB / XL330 路线（回退线，基线已存档） |
+| B：fanhao375 复刻研究 | [microduck-replica](./references/microduck-replica/README.md) | 机械装配、电控与调试资料；兼论 XL330 与飞特路线 |
+| C：jyg9 社区套件 | [microduck-community-kit](./references/microduck-community-kit/README.md) | **主参考**：imu_to_dxl / banana_pcb / dxl_hub 三块板、GD32 固件与升级工具、robotd 飞特补丁、HLS 舵机调试器 |
 
-- 方案 B 遵循其 [LICENSE](./microduck-replica/LICENSE) 与 [NOTICE](./microduck-replica/NOTICE.md)：不同文件许可不同，不能整目录视为 Apache-2.0 或可商用；其打印 CAD 已迁往上游独立仓 [microduck-replica-cad](https://github.com/fanhao375/microduck-replica-cad)，本地 `cad/`、`print/` 不是完整打印包。
+- 方案 B 遵循其 [LICENSE](./references/microduck-replica/LICENSE) 与 [NOTICE](./references/microduck-replica/NOTICE.md)：不同文件许可不同，不能整目录视为 Apache-2.0 或可商用；其打印 CAD 已迁往上游独立仓 [microduck-replica-cad](https://github.com/fanhao375/microduck-replica-cad)，本地 `cad/`、`print/` 不是完整打印包。
 - 方案 C 缺口（`software/microduck_feetech/` 完整源码上游未推送、真机整定值仅可参考等）见 PROGRESS「方案方向」。
 
 ## 方案 A 回退线（存档）
@@ -38,3 +40,13 @@ A 线（XL330 + OpenRB + Pi Zero 2W）的完整步骤基线（阶段 0-7）、�
 ## 致谢
 
 感谢 [AI-FanGe/Microduck-build-tutorial](https://github.com/AI-FanGe/Microduck-build-tutorial)、[Rhoban/microban](https://github.com/Rhoban/microban)、[pollen-robotics/microduck](https://github.com/pollen-robotics/microduck) 及方案 B/C 上游作者的开源工作；各参考库内容以其自带许可为准。
+
+## 市场调研
+
+- **2026-10-10 Microduck漏项修补（现行）：**[开源社区专节](./docs/references/consumer-electronic-toys-market-20261010/research.html#microduck-community)与[X11独立卡](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html#card-x11)补入官方成品预售、动作／RL架构、教程／板件生态及五仓库公开快照；不把stars或官方排产压力换成销量。现行**234编号＝旧229＋D5；41覆盖＝37消费核心基线＋3邻接＋1开源平台；39图／4视频**，原40卡及38图／4视频保留。完整来源、主会话抽核及未测范围见[补片](./docs/references/consumer-electronic-toys-market-20261010/parts/microduck-market-2026.md)与[质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#execution-log)；本补录独立审查及主会话QA已通过，版本同步由主会话统一办理。以下229／192／115与40卡数字为此前阶段记录，不再代表现行总数；不改变C线硬件路线。
+
+- 2026-10-10 融资与海外平台增补（此前阶段，以顶部现行补录为准）：[融资×海外平台专节](./docs/references/consumer-electronic-toys-market-20261010/research.html#capital-overseas-2026)与[完整证据／覆盖缺口](./docs/references/consumer-electronic-toys-market-20261010/evidence.html#overseas-sources)已整合；**阶段229编号＝旧192＋C12＋W18＋A7**，含历史纠错、失败与方法，不是229条正向销售证据。18条商品listing观察、7个平台体系不等于18SKU或18次成交；40卡／38图／4视频及原价格保留。下方192／115数字同属此前阶段记录，现行以顶部补录及质量日志为准。
+
+- 2026-10-10（此前阶段，以顶部现行补录为准）：全球消费电子玩具公开资料研究——[研究报告](./docs/references/consumer-electronic-toys-market-20261010/research.html)、[40卡产品图鉴](./docs/references/consumer-electronic-toys-market-20261010/product-atlas.html)、[原30样本与10案例](./docs/references/consumer-electronic-toys-market-20261010/competitors.html)、[证据与质量日志](./docs/references/consumer-electronic-toys-market-20261010/evidence.html)、[媒体来源](./docs/references/consumer-electronic-toys-market-20261010/media/README.md)。2026滚动信号主轴＋软件／硬件使能专节：阶段192编号＝旧115＋T19＋U58（非独立来源数）；40＝原30＋10提名，37核心研究对象＋3邻接，不是40款已售／交付；38图＋4视频仅作研究引用。TECH小修及四组40卡审查修订已落实，最终集成视觉待复核；T110已补原生文本后端与有限正反基准。行业中立，不预设AI或非AI胜出，不改变C线硬件路线。
+
+- 阅读版为可离线打开的 HTML，含章节目录、证据跳转与宽表格；[Markdown 源文件](./docs/references/consumer-electronic-toys-market-20261010/research.md)保留。重新生成：`python scripts/render_toy_market_html.py`；一致性检查：追加 `--check`（依赖 `markdown-it-py`、`Pillow`）。

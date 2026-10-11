@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-10",
+  "verification": "Relative file paths, sizes and SHA-256 compared before/after; includes ignored local files present under the three trees. Source-import and historical training evidence retain original provenance.",
+  "directories": [
+    {
+      "old_path": "microduck-build-tutorial/",
+      "new_path": "references/microduck-build-tutorial/",
+      "files": 141,
+      "bytes": 49029726,
+      "manifest_sha256_before": "c03782673c0f8f757eb88f8ff228b700328ddc3a351051e736a12f6449987913",
+      "manifest_sha256_after": "c03782673c0f8f757eb88f8ff228b700328ddc3a351051e736a12f6449987913",
+      "content_identical": true
+    },
+    {
+      "old_path": "microduck-replica/",
+      "new_path": "references/microduck-replica/",
+      "files": 518,
+      "bytes": 214544156,
+      "manifest_sha256_before": "fa17ad6a96358571d6660211f9b0d3a8e5fd20ba93bbcf786f781c7a4e43a5db",
+      "manifest_sha256_after": "fa17ad6a96358571d6660211f9b0d3a8e5fd20ba93bbcf786f781c7a4e43a5db",
+      "content_identical": true
+    },
+    {
+      "old_path": "microduck-community-kit/",
+      "new_path": "references/microduck-community-kit/",
+      "files": 3580,
+      "bytes": 75072489,
+      "manifest_sha256_before": "f31a1e110eda8831140e72acb6528709331e34af2ae127ec81c51cdb9b1e58f3",
+      "manifest_sha256_after": "f31a1e110eda8831140e72acb6528709331e34af2ae127ec81c51cdb9b1e58f3",
+      "content_identical": true
+    }
+  ],
+  "tracked_files_renamed": 4146,
+  "git_modes_and_blobs_identical": true,
+  "reference_internal_markdown_links_checked": 420,
+  "new_reference_internal_broken_links": 0,
+  "bash_syntax_and_help": "passed for scripts/a-training.sh and scripts/b-training.sh; no training run",
+  "firmware_hex_validation": "10724 bytes; SHA-256 66bc7c532f5a1ad87e3dfff71a4b51f8c4f20840a8f62436874fa5b7c665938e; passed; no hardware access",
+  "changed_markdown_local_links_checked": 152,
+  "changed_markdown_broken_links": 0,
+  "other_existing_broken_links": "32 links in third-party tool license documents or local-changes source archives were already unresolved; no new regressions. Original archives not rewritten."
+}

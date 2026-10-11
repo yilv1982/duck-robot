@@ -1,5 +1,7 @@
 # 项目知识（2026-09-30）
 
+> **2026-10-10 目录更新**：三个上游参考库已统一移至根目录 `references/`，本项目调研仍在 `docs/references/`。以下历史主机、WSL 与运行日志记录不是当前环境探测结果；当前根目录以会话环境为准。
+
 ## 2026-10-09 增补
 - **硬件到位**（用户确认，实物复测未做）：微雪 Bus Servo Adapter (A)、黑色 XT60 降压模块（丝印 7.2-16V 待核；2026-10-10 实测更新见 PROGRESS 与 docs/photos：实为 7.2-18V，空载下限 ≈6.3V）、绿色 IMU2DXL 板（2026-10-09 用户确认 = ScrapMeta microduck-diy **v0.3**，STM32G031；本行早先记"v1.0 待核"已过时）、白色鸭图案 HAT（**实物丝印 V1.2**，2026-10-10 照片确认，PROGRESS 已同步；存档原理图为 V1.0，图物差异大：背面多 F303 类 MCU + 超级电容，V1.2 图纸待向板卡来源索取）；全部舵机与打印件到位，数量待清点。明细与待办见根 `PROGRESS.md`。
 - **方案方向**：主参考改为 `microduck-community-kit`（飞特 HD-1910-C001 + 官方 robotd 飞特补丁 + imu_to_dxl 总线从站）。缺口：`software/microduck_feetech/` 未推送、主控↔总线物理适配未开源、真机整定值需复测。
@@ -9,7 +11,7 @@
 ## 范围与规则
 - 工作区：`C:\Projects\duck-robot`（2026-10-09 自 `E:\Projects\duck-robot` 迁入；历史脚本/文档中的 `/mnt/e/`、`E:/` 路径已失效）。交流用简体中文。含中文的 `.ps1` 必须 UTF-8 BOM；优先用 WSL Bash，避免跨 shell 删除/移动。
 - A、B 是独立上游源码快照，不能混合模型、策略、硬件配置或采购资料。不要为了跑通而直接修改上游配置或锁文件。
-- **参考库只读（2026-10-09 用户定规）**：`microduck-replica/`、`microduck-community-kit/`、`microduck-build-tutorial/` 是别人的方案，只读参考，禁止在里面做任何修改。用户进度记在根 `PROGRESS.md`；历史混入的本地修改已提取到 `local-changes/` 并还原上游原样（快照锚点与校验记录见 PROGRESS.md「参考库使用规则」）。
+- **参考库只读（2026-10-09 用户定规）**：`references/microduck-replica/`、`references/microduck-community-kit/`、`references/microduck-build-tutorial/` 是别人的方案，只读参考，禁止在里面做任何修改。用户进度记在根 `PROGRESS.md`；历史混入的本地修改已提取到 `local-changes/` 并还原上游原样（快照锚点与校验记录见 PROGRESS.md「参考库使用规则」）。
 - 当前已经跑通的是 **B 的 XL330 平地任务**，不是 HD1910；没有进行实机控制。用户正在理解 RL、Real2Sim、训练任务配置和性能。
 
 ## 已安装环境与入口
@@ -17,7 +19,7 @@
 > ⚠️ **本节为旧机（E 盘时代）环境记录**：现机（C 盘，2026-10-09 迁入）**无 WSL**，训练环境不在本机（见根 PROGRESS「工程迁移」）。复用训练流程前须在现机重建，且所有 `/mnt/e/` 路径须改写。
 - WSL 发行版 `Ubuntu`，用户 `yilv`，Ubuntu 24.04；RTX 4080 16GB 可用。
 - Linux uv：`/home/yilv/.local/bin/uv`，版本 0.12.20。
-- 训练目录：`/mnt/e/Projects/duck-robot/microduck-replica/software/training`。
+- 训练目录：`/mnt/e/Projects/duck-robot/references/microduck-replica/software/training`。
 - 虚拟环境：`/home/yilv/.venvs/duck-robot-training`。设 `UV_PROJECT_ENVIRONMENT` 为此路径；`UV_HTTP_TIMEOUT=600`、`UV_LINK_MODE=copy`。使用 `uv run --frozen`。
 - 已按锁文件安装 142 包：Python 3.12.3、PyTorch 2.9.1/CUDA 12.8、Warp 1.12.0、MuJoCo 3.10.0、MuJoCo Warp 3.8.1、BAM 1.0.1、rsl-rl-lib 5.0.1、ONNX Runtime 1.24.4。
 - 新增 `scripts/b-training.sh` 和 `docs/b-training.md`，已经独立审查。入口支持 check/list/smoke/play/export/tensorboard，**没有正式 train 模式**；smoke 固定 64 环境×5轮，play 固定1环境，export拒绝覆盖，TensorBoard仅127.0.0.1默认6007。
@@ -27,14 +29,14 @@
 
 ## 已验证成果
 - 短训练：64环境×5轮，7680环境步，5轮nan_state均0；20项测试通过（test_nan_guard、test_obs_nan_guard、test_head_pose_bias）。
-- 证据目录：`microduck-replica/software/training/logs/setup/20260929-165723/`，含check/list/smoke/tests/export日志、validation.json、xl330-smoke.onnx、model-preview.png。
+- 证据目录：`references/microduck-replica/software/training/logs/setup/20260929-165723/`，含check/list/smoke/tests/export日志、validation.json、xl330-smoke.onnx、model-preview.png。
 - ONNX checker及CPU ORT 5组有限值检查通过，输入[1,61]、输出[1,14]，包含观测归一化。
 - model-preview.png是MuJoCo GLFW渲染的**静态STAND姿态，不是策略行走表现**。交互play/native/viser尚未实际验收。
 - TensorBoard曾在 http://localhost:6007/#scalars 后台启动，Windows端主页和scalar API均HTTP200；状态会变化，先检查再启动/停止。旧PID保存在上述目录的tensorboard.pid，不能不核验身份就kill。
 - 上游pyproject.toml SHA256：45f3476af2b5bba1c3199aadb8372ec1bb08496ca91b08dec78543addd5c8440；uv.lock：2eeeb680025baa737e7ccf3a87da3695a9d49b228de0bb60d8af0c022ab5f1aa。安装前后均未变。
 
 ## 用户完成的正式训练及性能
-- Run：`microduck-replica/software/training/logs/rsl_rl/velocity/2026-09-29_17-16-06_xl330_walk_v1/`。
+- Run：`references/microduck-replica/software/training/logs/rsl_rl/velocity/2026-09-29_17-16-06_xl330_walk_v1/`。
 - 实际参数见该run的 `params/agent.yaml`、`params/env.yaml`，优先于当前源码默认值。YAML含Python标签；只读提取用 `yaml.BaseLoader`，不要UnsafeLoader。
 - 对应命令：`uv run --frozen train Mjlab-Velocity-Flat-MicroDuck --env.scene.num-envs 1024 --agent.max-iterations 5000 --agent.logger tensorboard --agent.run-name xl330_walk_v1`；resume=false，重复命令会重新训练。
 - 最终checkpoint为 `model_4999.pt`。1024×24×5000 = 122,880,000环境步；5000是PPO采样/更新轮数，不是5000个动作或episode。

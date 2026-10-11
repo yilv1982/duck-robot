@@ -64,7 +64,7 @@
 - USB 路径有 **500mA 保险丝**，不能用 Pi USB 给 14 个舵机动态供电。板载 **5V 引脚新版额定 150mA、旧版 300mA**，不能用于给 Pi 供电。
 - 采用 Terminal VIN 供电时，**先断开电池和 USB 等全部电源，再按官方图核对 VIN(DXL) 跳线**；本轮未验证实物默认跳线。须同时明确 USB 数据连接时的供电选择与正电源轨关系。
 
-**软件电压参数不构成实物供电证据。** `microduck-build-tutorial/microduck/src/constants.py` 中 `BAM_VIN = 7.5` **高于** 6.0V 上限，而 `BAM_VIN_MIN = 6.0` **等于**上限，不是两个都高于。本轮不改代码参数；安全供电下的力矩、模型与行走性能匹配仍待验证。
+**软件电压参数不构成实物供电证据。** `references/microduck-build-tutorial/microduck/src/constants.py` 中 `BAM_VIN = 7.5` **高于** 6.0V 上限，而 `BAM_VIN_MIN = 6.0` **等于**上限，不是两个都高于。本轮不改代码参数；安全供电下的力矩、模型与行走性能匹配仍待验证。
 
 ---
 
@@ -88,7 +88,7 @@
 
 | 状态 | 项目 | 说明 |
 | :---: | :--- | :--- |
-| [ ] | 检查并切片 `microduck-build-tutorial/microduck3D打印.3mf` | 文件 **5,298,732 bytes**；Bambu Studio 工程，记录版本 **02.07.01.62**，配置 **P1S / 0.4mm 喷嘴 / PLA / 0.2mm 层高**。 |
+| [ ] | 检查并切片 `references/microduck-build-tutorial/microduck3D打印.3mf` | 文件 **5,298,732 bytes**；Bambu Studio 工程，记录版本 **02.07.01.62**，配置 **P1S / 0.4mm 喷嘴 / PLA / 0.2mm 层高**。 |
 | [ ] | 确认实际打印条件 | 其他机型/喷嘴须核验并重新切片；即使同为 Bambu，也不能无条件复用工程参数。核对打印机、材料、支撑、摆放和切片预览，或向代打印服务说明这些条件。 |
 | [ ] | 核对零件和试装 | 不保证工程包含完整装配所需的全部零件、数量或正确尺寸；结合装配资料确认孔位、间隙、固定件和配件包，必要时先试打关键件。 |
 
@@ -104,11 +104,11 @@
 
 | 状态 | 资源 | 位置 / 限制 |
 | :---: | :--- | :--- |
-| [x] | 行走策略 `walk.onnx` | `microduck-build-tutorial/microduck/src/agents/walk.onnx`，**773,115 bytes**。可优先尝试现成策略、将训练后置；未验证模型加载、实机动作或行走能力。 |
-| [x] | 训练权重 `velocity.pt` | `microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/agents/velocity.pt`，**4,887,111 bytes**。权重存在不代表训练环境或所需资源完整。 |
-| [x] | IMU 方向检查/采样 UI | `microduck-build-tutorial/bno08x_calibrate_ui.py`：在 **Ubuntu PC 上运行 Tkinter UI，经 SSH** 访问 Pi；不是自动保存标定的工具。`--mount-quat` 默认值与部署配置不同，使用前须按实际安装方向匹配。 |
-| [x] | IMU MuJoCo 方向查看工具 | `microduck-build-tutorial/scripts/imu_mujoco_orientation_viewer.py`；默认模型路径位于当前缺失的训练 `robot` 目录，不能按默认路径直接认为可用。 |
-| [x] | 部署目录中的 MJCF / URDF 文件 | `microduck-build-tutorial/microduck/src/model/`；部署 MJCF 有 **19 个 motor**，与当前 14 关节配置不匹配，不能直接用于当前配置的仿真。 |
+| [x] | 行走策略 `walk.onnx` | `references/microduck-build-tutorial/microduck/src/agents/walk.onnx`，**773,115 bytes**。可优先尝试现成策略、将训练后置；未验证模型加载、实机动作或行走能力。 |
+| [x] | 训练权重 `velocity.pt` | `references/microduck-build-tutorial/mjlab_microduck/src/mjlab_microduck/agents/velocity.pt`，**4,887,111 bytes**。权重存在不代表训练环境或所需资源完整。 |
+| [x] | IMU 方向检查/采样 UI | `references/microduck-build-tutorial/bno08x_calibrate_ui.py`：在 **Ubuntu PC 上运行 Tkinter UI，经 SSH** 访问 Pi；不是自动保存标定的工具。`--mount-quat` 默认值与部署配置不同，使用前须按实际安装方向匹配。 |
+| [x] | IMU MuJoCo 方向查看工具 | `references/microduck-build-tutorial/scripts/imu_mujoco_orientation_viewer.py`；默认模型路径位于当前缺失的训练 `robot` 目录，不能按默认路径直接认为可用。 |
+| [x] | 部署目录中的 MJCF / URDF 文件 | `references/microduck-build-tutorial/microduck/src/model/`；部署 MJCF 有 **19 个 motor**，与当前 14 关节配置不匹配，不能直接用于当前配置的仿真。 |
 
 训练目录 `mjlab_microduck/src/mjlab_microduck/robot` 当前缺失。训练和仿真须先恢复/补齐匹配资源、核对关节与执行器映射和环境依赖；现成模型的存在不消除这些限制，也不构成全项目可用的证明。
 
@@ -128,7 +128,7 @@
 
 ## 装配与首次通电检查表
 
-- [ ] **强烈建议装配前逐个连接舵机并设置唯一 ID**，按[上游 README](./microduck-build-tutorial/README.md) 的「舵机 ID」表与当前代码映射核对。装后如可单独连接舵机，或现有 ID 已唯一，仍可修改，不一定需要拆机。
+- [ ] **强烈建议装配前逐个连接舵机并设置唯一 ID**，按[上游 README](../references/microduck-build-tutorial/README.md) 的「舵机 ID」表与当前代码映射核对。装后如可单独连接舵机，或现有 ID 已唯一，仍可修改，不一定需要拆机。
 - [ ] 确认配置工具与供电：OpenRB 的 `usb_to_dynamixel` sketch 是官方出厂固件，但实物仍须检查；配合 **Dynamixel Wizard 2.0，最高 1Mbps**。核对串口、跳线、电压与连接，配置后确认/切换到部署所需固件。
 - [ ] 修改 ID 等 EEPROM 项目前使 **`Torque Enable = 0`**。协议 2.0、1Mbps、Return Delay Time 0、PWM Slope 255 是上游参考设置，须核对当前舵机/板端固件支持及部署要求，不盲目套用。
 - [ ] **保留 Input Voltage Shutdown 等保护**；异常停机先检查电源、压降和接线，不把取消电压保护作为默认步骤。控制表电压阈值与工作范围不是一回事：Max Voltage Limit 寄存器默认 7.0V **不构成超过官方 6.0V 工作上限的依据**，也不代表保护会覆盖所有不安全电压。

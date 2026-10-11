@@ -1,0 +1,86 @@
+{
+  "observed_date": "2026-10-10",
+  "observed_timezone": "Asia/Shanghai",
+  "observed_time": null,
+  "provenance": "主会话通过GitHub官方REST API真实HTTP 200采集后，于本任务用户消息回传；Analyst-Coder未重复请求。仅按回传精度登记；未回传的字段不补造。",
+  "limitations": [
+    "stars不是销量或留存；forks不是完成复刻；仓库之间用户重叠，不相加为独立人数。",
+    "created_at是仓库创建时间，不是产品首发；单日快照不构成增长曲线。",
+    "GitHub license识别不替代目录及文件级许可核查，NOASSERTION不能继承Apache-2.0。"
+  ],
+  "repositories": [
+    {
+      "api_url": "https://api.github.com/repos/pollen-robotics/microduck",
+      "http_status": 200,
+      "full_name": "pollen-robotics/microduck",
+      "stargazers_count": 9276,
+      "forks_count": 1199,
+      "created_at": "2026-07-29T07:52:16Z",
+      "pushed_at": "2026-10-09T15:19:16Z",
+      "pushed_at_precision": "second",
+      "default_branch": "main",
+      "license_spdx_id": "Apache-2.0",
+      "fork": false,
+      "archived": false,
+      "description": "Tiny biped duck robot",
+      "homepage": "https://pollen-robotics.com/microduck",
+      "subscribers_count": 54
+    },
+    {
+      "api_url": "https://api.github.com/repos/pollen-robotics/microduck_rl",
+      "http_status": 200,
+      "full_name": "pollen-robotics/microduck_rl",
+      "stargazers_count": 2396,
+      "forks_count": 543,
+      "created_at": "2025-12-06T13:00:59Z",
+      "pushed_at": "2026-10-09T10:08:49Z",
+      "pushed_at_precision": "second",
+      "default_branch": "develop",
+      "license_spdx_id": "Apache-2.0",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "api_url": "https://api.github.com/repos/AI-FanGe/Microduck-build-tutorial",
+      "http_status": 200,
+      "full_name": "AI-FanGe/Microduck-build-tutorial",
+      "stargazers_count": 1211,
+      "forks_count": 300,
+      "created_at": "2026-09-04T17:18:43Z",
+      "pushed_at": "2026-09-11",
+      "pushed_at_precision": "day",
+      "default_branch": "main",
+      "license_spdx_id": "MIT",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "api_url": "https://api.github.com/repos/fanhao375/microduck-replica",
+      "http_status": 200,
+      "full_name": "fanhao375/microduck-replica",
+      "stargazers_count": 1131,
+      "forks_count": 204,
+      "created_at": "2026-08-28T13:42:48Z",
+      "pushed_at": "2026-10-08",
+      "pushed_at_precision": "day",
+      "default_branch": "master",
+      "license_spdx_id": "NOASSERTION",
+      "fork": false,
+      "archived": false
+    },
+    {
+      "api_url": "https://api.github.com/repos/jyg9/microduck-community-kit",
+      "http_status": 200,
+      "full_name": "jyg9/microduck-community-kit",
+      "stargazers_count": 14,
+      "forks_count": 5,
+      "created_at": "2026-09-27T08:30:35Z",
+      "pushed_at": "2026-10-10T01:20:56Z",
+      "pushed_at_precision": "second",
+      "default_branch": "main",
+      "license_spdx_id": "Apache-2.0",
+      "fork": false,
+      "archived": false
+    }
+  ]
+}
