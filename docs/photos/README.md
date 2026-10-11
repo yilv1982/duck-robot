@@ -18,6 +18,13 @@
 | [hat-v1.2-back.jpg](./hat-v1.2-back.jpg) | HAT 背面 | 2026-10-10 | **F303 类 MCU（V1.0 原理图无此件）**、PAM8406、40P 排母、圆形焊盘×8 | 索取 V1.2 原理图 |
 | [hat-v1.2-front-annotated.jpg](./hat-v1.2-front-annotated.jpg) | ↑ 正面标注版 | 2026-10-10 | 8 处标注；脚本 `scripts/annotate-hat.py` | 接线对照 |
 | [hat-v1.2-back-annotated.jpg](./hat-v1.2-back-annotated.jpg) | ↑ 背面标注版 | 2026-10-10 | 7 处标注 + 关键发现 | 接线对照 |
+| [hat-v1.2-a1-pinout.jpg](./hat-v1.2-a1-pinout.jpg) | HAT A1 量点标注 | 2026-10-11 | 舵机口 pin1 ↔ 排母 pin6 定位方法（脚本 `scripts/annotate-hat-a1.py`） | HAT A 段核对 |
+| [hat-v1.2-a3-inductor.jpg](./hat-v1.2-a3-inductor.jpg) | HAT A3 电感量点标注 | 2026-10-11 | AP63205 电感（CK 6R8）输出侧 ↔ 排母 5V 脚量点 | HAT A 段核对 |
+| [hat-v1.2-back-gnd-marks.png](./hat-v1.2-back-gnd-marks.png) | HAT 背面排母 GND 实测标注 | 2026-10-11 | 与安装孔相通的 8 个排母脚位置（GND 反查法定针序，结果见 PROGRESS A3 行） | HAT A 段核对 |
+| [hat-v1.2-header-pinout.jpg](./hat-v1.2-header-pinout.jpg) | HAT 排母针序标注 | 2026-10-11 | pin1 在下排最右；pin2/4(5V)、pin6(GND)、pin8/10(UART2) 位置 | HAT A/B 段测试 |
+| [board-servo-socket-pinout.png](./board-servo-socket-pinout.png) | 三板舵机座对比 | 2026-10-11 | HAT 与 imu_to_dxl = JST EH 3P（2.5mm）、微雪 = 5264-3P，与飞特原线 AMP2.0-3P（2.0mm）均不配 | 舵机线适配 |
+| [hd1910-amp2.0-3p-pinout.png](./hd1910-amp2.0-3p-pinout.png) | HD-1910 原线端子脚序 | 2026-10-11 | 飞特原线 AMP2.0-3P：1=Signal / 2=Vcc / 3=GND（与板座脚序不同，接线须交叉） | 舵机线适配 |
+| [hd1910-dupont-adapter-wiring.png](./hd1910-dupont-adapter-wiring.png) | 杜邦过渡线接法 | 2026-10-11 | 台架过渡期 AMP2.0 ↔ 板座杜邦转接示意（仅调 ID/零位，不带载，方案见 PROGRESS） | 舵机清点/改 ID |
 
 ## 降压模块（黑色，XT60 输入）— 2026-10-10 照片识别（正面+背面）
 
