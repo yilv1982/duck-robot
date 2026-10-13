@@ -1,5 +1,7 @@
 # Radxa Zero 3W eMMC 线刷记录（路线 A，2026-10-13）
 
+> **终局（2026-10-13 深夜）：板子救活。** b6 镜像旧版 DDR loader 与本板 LPDDR4X 颗粒不兼容导致首启失败；换 rsdk-b1（bookworm KDE，2026-07）maskrom 全量重刷后**正常启动，HDMI 出画面**（用户确认）。DDR 硬件无恙（v1.10.111 loader 3/3 稳定）。本板推算为 4GB 内存档。
+
 接续 [TF 卡烧录记录](../sd-flash-radxa-zero3w-20261013/research.md)：TF 卡烧录受阻（自研脚本 ~66MB 确定性失败、Rufus 不识别内置读卡器），用户决定走路线 A——maskrom 线刷 eMMC，放弃"eMMC 封存前任系统"的保守策略。
 
 ## 结论速览

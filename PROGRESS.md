@@ -2,6 +2,15 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## Radxa Zero 3W 救活：换 rsdk-b1 镜像重刷成功（2026-10-13 深夜）
+
+- **b6 镜像首启失败根因确诊**：b6 自带 idbloader 的 DDR init（V1.18 typ 23/07/17）与本板 LPDDR4X 颗粒不兼容——串口抓到启动随机挂在 DDR 训练各阶段（banner 后/参数中/读训练后/容量识别后），从未到达 U-Boot。**DDR 硬件无恙**：maskrom 下 v1.10.111 loader「下载Boot」3/3 稳定跑通 DDR init。
+- **修复**：换官方最新 **rsdk-b1**（bookworm KDE，2026-07，仅桌面版有 CLI 已停供）`output_512` 镜像 maskrom 全量重刷（Loader v1.10.111 + 镜像 EMMC@0x0 + 强制按地址写），SHA512 校验与官方一致。刷后**正常启动：灯闪、电流 0.6A（挂死态为常亮 0.3A）、HDMI 出画面**（用户确认）。
+- **板卡参数**：LPDDR4X、32-bit 总线、双 CS → 推算 **4GB 内存档**；eMMC 容量/颗粒待进系统 `lsblk` 查。
+- **过程工具与教训入库**：串口抓取 `tools/serial-log.py`（自动重连+落盘 flush）、并行下载 `tools/parallel-download.sh`；DAPLink（VID C251 克隆）多次"假在线"挂死需拔插，USB 口/线组合须逐一验证；串口接线事故（pin6→RXD/pin8→TXD 对顶致假静默）已勘误；`tools/emmc-flash/` 曾整目录丢失（git 忽略文件），已从官方源重建并留清单。
+- **下一步**：进系统配置（账号/WiFi/SSH）→ 验证 rsdk 串口控制台（今 1500000 无输出，配置待查）→ 确认 eMMC 容量 → 接续 [HAT 测试单](./docs/hat-v1.2-test.md) B4（主控 ssh）→ B5（单舵机 ping）。桌面版做机载主控偏重，后续可禁图形自启或评估 Armbian server。
+- 详见 [eMMC 线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)（含完整排障链与串口日志存档 `serial-logs/`）。
+
 ## 主控 eMMC 线刷成功（2026-10-13，路线 A）
 
 - TF 卡烧录受阻后（自研脚本 ~66MB 确定性失败、Rufus 不识别内置读卡器、1TB 卡假卡嫌疑未排除，见 [SD 烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)），用户决定走**路线 A：maskrom 线刷 eMMC**，覆盖前任系统（放弃封存策略）。
