@@ -86,6 +86,7 @@ def main() -> int:
                 stamped = f"[{ts()}] {text}\n"
                 print(stamped, end="", flush=True)
                 f.write(stamped.encode("utf-8"))
+                f.flush()
         except KeyboardInterrupt:
             pass
         finally:
