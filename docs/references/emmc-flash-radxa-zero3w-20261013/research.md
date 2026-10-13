@@ -84,6 +84,7 @@
 - **裁决实验终局：3/3 全部成功**（用户重进 maskrom 重复下载Boot 三次全过）——v1.10.111 的 DDR init 在本板**稳定可用**，与 eMMC 启动路径的镜像自带 idbloader（V1.18）随机挂死形成对照。**结论：假设①成立，DDR 硬件基本无恙，b6 镜像旧版 DDR loader 与本板内存颗粒不兼容是首启失败根因。**
 - **镜像情报（2026-10-13 查证）**：官方 [radxa-build/radxa-zero3 releases](https://github.com/radxa-build/radxa-zero3/releases) 最新为 **rsdk-b1（2026-07-15）**，仅提供 **bookworm KDE 桌面版**（官方不再出 CLI 变体）；资产分 `output_512`（eMMC 512B 扇区，适用本板）与 `output_4096`（UFS）。我们手里的 b6 bullseye CLI 为上一代。新镜像自带新 U-Boot/DDR init，是对"颗粒兼容性"假设最对症的验证与修复路径。已开始下载 `radxa-zero3_bookworm_kde_b1.output_512.img.xz` 至 `images/`。
 - **救板路线（若重复测试稳定）**：maskrom 全量重刷 = Loader 行 v1.10.111 + 新镜像行（存储列 **EMMC**、地址 **0x0**、勾"强制按地址写"——沿用 2026-10-13 白天成功刷写的配置）。刷后串口验证 DDR init → U-Boot → 内核全程。
+- **rsdk-b1 镜像就位并校验通过（2026-10-13 深夜）**：用户浏览器下载 `radxa-zero3_bookworm_kde_b1.output_512.img.xz`（1,454,086,428 B 与官方一致）；SHA512 与官方 `radxa-zero3_bookworm_kde_b1.sha512sum` **完全一致**（`6f9f67df…5c9d`）；解压后 img 8,074,662,912 B（≈7.5GB，KDE 桌面版）位于 `tools/emmc-flash/`。本机 curl 直连仅 60-512KB/s（GitHub 限速），parallel-download.sh 12 段并发亦受 IP 总带宽限制，最终用户浏览器下载最快。
 - 来源：[Releases · radxa-build/radxa-zero3](https://github.com/radxa-build/radxa-zero3/releases)、[Radxa OS Bookworm on Zero 3W（论坛）](https://forum.radxa.com/t/radxa-os-bookworm-on-radxa-zero-3w/26612)
 
 ## 串口抓取工具与供电方案（2026-10-13 备好，待现场执行）
