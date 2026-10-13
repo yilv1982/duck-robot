@@ -26,7 +26,9 @@
 | 文件 | 位置 |
 |---|---|
 | 系统镜像（已校验） | `images/radxa-zero3_debian_bullseye_cli_b6.img`（git 忽略） |
-| 驱动包 + 工具 + loader | `tools/emmc-flash/`（DriverAssitant_v5.14/、RKDevTool_Release_v2.86/、RKDevTool_Release_v2.96/、rk356x_spl_loader_ddr1056_v1.10.111.bin） |
+| 驱动包 + 工具 + loader | `tools/emmc-flash/`（DriverAssitant_v5.14/、RKDevTool_v2.86/、RKDevTool_v2.96/、rk356x_spl_loader_ddr1056_v1.10.111.bin） |
+
+**2026-10-13 晚工具链重建**：原 `tools/emmc-flash/` 目录整个丢失（git 忽略文件无法恢复），且 Windows 驱动仓库中 rockusb 亦不存在（maskrom 设备 CM_PROB_FAILED_INSTALL）。全部从 dl.radxa.com 官方源重新下载成功：DriverAssitant_v5.14.zip、RKDevTool_Release_v2.86.zip、RKDevTool_Release_v2.96_zh.zip（v2.96 包内附 adb.exe）、loader（453,056 B 与原记录一致）。驱动安装需管理员权限，pnputil 提权两次被 UAC 取消，改由用户手动在管理员终端执行。教训：git 忽略的关键工具目录应有落盘清单（本表现在即清单）。
 
 ## 烧录结果（2026-10-13：存储列改 EMMC 后成功）
 
