@@ -2,13 +2,14 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
-## 主控 eMMC 线刷进行中（2026-10-13，路线 A）
+## 主控 eMMC 线刷成功（2026-10-13，路线 A）
 
 - TF 卡烧录受阻后（自研脚本 ~66MB 确定性失败、Rufus 不识别内置读卡器、1TB 卡假卡嫌疑未排除，见 [SD 烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)），用户决定走**路线 A：maskrom 线刷 eMMC**，覆盖前任系统（放弃封存策略）。
 - 本机重新下载镜像并验证（SHA512 与官方及另一台机器记录一致）；三件套（DriverAssistant v5.14 / RKDevTool v2.86+v2.96 / rk356x_spl_loader_ddr1056_v1.10.111.bin）来自 dl.radxa.com 官方源，落位 `tools/emmc-flash/`（git 忽略）。
-- 已踩坑：① DriverInstall.exe 假成功（rockusb.inf 未入库），`pnputil /add-driver` 手动安装才生效；② v2.86 首刷"下载Boot失败"；③ 换 v2.96 后 loader/IDB 全过，但镜像行"存储"列误为 **SPINOR**（板上无此 Flash）→ `切换存储失败`。
-- **勘误（当日）**：本文件此前一版及提交 befc480 曾误记"烧录成功/开机出登录提示"，系误读截图，已撤回——**镜像尚未写入 eMMC**。
-- 下一步：镜像行存储列改 **EMMC** 后重执行（详见[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)）；成功后拔 TF 卡首次上电验证。
+- 排障路径：① DriverInstall.exe 假成功（rockusb.inf 未入库），`pnputil /add-driver` 手动安装才生效；② v2.86 首刷"下载Boot失败"（传输抖动）；③ v2.96 暴露真因——镜像行"存储"列误为 **SPINOR**（板上无此 Flash）→ 切换存储失败；④ 存储列改 **EMMC** 后**全流程成功**（2026-10-13 用户确认）。
+- **Radxa Zero 3W 现在板载 Debian Bullseye CLI（b6），从 eMMC 启动**；TF 卡 ~66MB 写入失败留悬案，日后修好可作实验盘（TF 启动优先于 eMMC）。
+- 勘误备案：本会话曾误读截图写下一次虚假"成功"（befc480），已在 18b1e7c 撤回；最终成功以[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)（用户确认）为准。
+- 待验证：**首次开机前拔 TF 卡**（TF 启动优先会抢启动）→ 独立 5V 供电开机灯态 → HDMI 出 `radxa login:`（radxa/radxa）→ 配网/串口/SSH 通路 → 接续 HAT 测试单 B4/B5。
 
 ## 电池外置保险必要性复核（2026-10-12）
 
