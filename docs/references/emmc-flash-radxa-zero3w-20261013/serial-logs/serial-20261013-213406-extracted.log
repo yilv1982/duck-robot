@@ -25,3 +25,18 @@
 - 挂点：DDR 初始化——read training result 之后无 write training、无 U-Boot banner
 - 乱码行 = DAPLink 克隆 @1500000 丢字符 + 上电电平毛刺；"最后一次全静默"为独立现象
 - 供电：排针 5.0V 稳压，全程 ~0.3A 无峰值（用户读数），未触发限流
+
+=== 22:06-22:25 追加（接线事故修正后重采） ===
+[22:06:17.470] DDR V1.18 f366f69a7d typ 23/0/17-5:48:58
+[22:06:17.974] ln
+（22:06:17 后"全静默"系接线被挪错：用户将 pin6(GND)→DAPLink RXD、pin8(TX)→DAPLink TXD——
+  TX 对顶 + 无共地，期间所有"静默/挂得更早/疑似 maskrom 回退"判读全部作废；
+  22:2x 改回 pin8→RXD、pin9→GND 后串口立即恢复）
+[22:22:27.521] DDR V1.18 f366f69a7d typ 23/07/17-15:48:58
+[22:22:27.522] LP4/4x derate en, oth drm:1x trefi / ddrconfig:7 / LP4 MR14:0x4d / LPDDR4, 34MHz
+[22:22:28.036] BW=32 Col=10 Bk=8 CS0 Row=16 CS1 Row=16 CS=2 Die BW=16   ← 历次最远：容量识别
+[22:23:06.420] DDR V1.18 f366f…（banner 后又停）
+
+汇总判读：随机挂点（banner 后/参数中/读训练后/容量识别后），从未出 DDR 阶段、从未见 U-Boot。
+两假设：①镜像 DDR loader(V1.18 23/07/17) 与本板颗粒不兼容（可救）②DDR 颗粒/焊点 marginal（难救）。
+裁决实验：maskrom 下用 v1.10.111 loader 反复「下载Boot」看 DDR init 稳定性。
