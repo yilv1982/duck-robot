@@ -2,6 +2,14 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## 主控 eMMC 线刷成功（2026-10-13，路线 A）
+
+- TF 卡烧录受阻后（自研脚本 ~66MB 确定性失败、Rufus 不识别内置读卡器、1TB 卡假卡嫌疑未排除，见 [SD 烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)），用户决定走**路线 A：maskrom 线刷 eMMC**，覆盖前任系统（放弃封存策略）。
+- 本机重新下载镜像并验证（SHA512 与官方及另一台机器记录一致）；三件套（DriverAssistant v5.14 / RKDevTool v2.86 / rk356x_spl_loader_ddr1056_v1.10.111.bin）来自 dl.radxa.com 官方源，落位 `tools/emmc-flash/`（git 忽略）。
+- 坑与结论：DriverInstall.exe 假成功（rockusb.inf 未入库），`pnputil /add-driver` 手动安装才生效；首次烧录"下载Boot失败"为一次性抖动，重试即全流程成功（**下载镜像成功**，2.55GB 写入 eMMC，日志见[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)）。
+- **Radxa Zero 3W 现在从 eMMC 启动 Debian Bullseye CLI（b6）**；TF 卡问题挂起，日后修好可作实验盘（TF 启动优先于 eMMC）。
+- 待验证：独立供电开机灯态、进系统通路（HDMI/串口/SSH）、接续 HAT 测试单 B4/B5。
+
 ## 电池外置保险必要性复核（2026-10-12）
 
 - 用户要求确认电池接入是否必须另加保险；结论：**外置保险不是一概必需**，若电池内置 BMS/保护的短路与过流切断规格经核实足以保护外部取电线束，可不另装。
@@ -287,7 +295,7 @@
 | 物品 | 说明 / 待办 |
 |---|---|
 | **banana_pcb 板** | 嘉立创订单 85078132（5 片）到货。装配手顺（2026-10-09 已定）：焊 U6068 插针 ×2（已到货）→ 打印 `banana_pcb_locker` → 拆电池焊接出线（线径按 3-5A）→ 万用表直流档核极性 → 断电机械试装 → 只带主控支路验证 5V |
-| **Radxa Zero 3W** | 到货（二手，板载 eMMC 含前任系统，封存不动）。已定 **TF 卡启动路线**：官方 Debian bullseye CLI 镜像就绪且 SHA512 校验通过；自研烧录脚本两次在 ~66MB 处失败已弃用（复查证实数据已落卡、卡分区表已变 GPT，仅中断而非假写）；Rufus 不识别笔记本内置读卡器（BusType=SCSI，2026-10-13 实测）不可用，改用 **balenaEtcher** 烧录（结果待记），详见 [烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)。烧成后：USB 串口配置 → 配 WiFi → ssh → 舵机 ping（HAT 测试单 B4/B5） |
+| **Radxa Zero 3W** | 到货（二手，板载 eMMC 含前任系统）。**2026-10-13 路线变更：放弃 TF 卡启动（eMMC 封存作废），改 USB 直刷 eMMC**——RKDevTool v2.86 + loader `rk356x_spl_loader_ddr1056_v1.10.111.bin`，镜像 SHA512 已验；板子可进 maskrom（VID_2207&PID_350A 驱动正常），但「下载Boot」两次失败（vendor request err=79，0 字节发出，判为 USB 链路问题，排查阶梯已给出），**镜像尚未写入**；TF 卡阶段（自研脚本两次 ~66MB 失败已弃用、Rufus 不识别内置读卡器、Etcher 未执行即转向）详见 [烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)。烧成后：拔 TF 卡首启 → 配 WiFi → ssh → 舵机 ping（HAT 测试单 B4/B5） |
 | **U6068 香蕉头插针 ×2** | 到货。2.5mm 香蕉头 PCB 插针（banana_pcb 电池触点）——用户确认所称「香蕉插头」「电池座」均指此件，更正此前「台架电源接线耗材」误记及重复登记 |
 | **DAPLink SWD 调试器** | 到货（用户确认）。IMU 刷机链路硬件齐：J2 焊接（杜邦直焊或 BM07B 座）→ `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` |
 | **2S 电池（NP-F550）** | 到货（用户确认）。待登记：化学体系/串数/触点形式、BMS 能力 |
