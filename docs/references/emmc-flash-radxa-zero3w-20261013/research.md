@@ -70,11 +70,10 @@
   1. BootROM 能从 eMMC 读出 idbloader 并执行（DDR banner 是 idbloader 内 DDR loader 打印的）→ **eMMC boot 区可读**，"eMMC 坏块导致完全无法启动"假设削弱（主分区 U-Boot/内核未到达，eMMC 其他区域状态仍未知）。
   2. 挂点在 DDR（内存 LP4X）初始化训练阶段，且挂点位置随机（banner 前/banner 后/全静默）——**二手板 DDR 颗粒/焊点 marginal 嫌疑最大**；3 秒断电可能不够放电，残留状态影响下次训练。
   3. 乱码行 = DAPLink 克隆 @1500000 丢字符（已知局限），不影响挂点判读（有输出→停 vs 全程无输出）。
-- **下一步（按成本排序）**：
-  1. **彻底断电放电**：关输出、拔排针供电线，静置 ≥5 分钟（电容放净），再接回上电看串口——RK 平台 DDR 训练对残留状态敏感，零成本。
-  2. 放电后多次上电试 DDR 训练随机通过（marginal 板有概率过）。
-  3. 仍挂 → **换 DDR loader 版本重刷**（不同版本训练代码/参数不同；官方 v1.12.109 已 404，需另找版本源）。
-  4. 若换 loader 仍挂 → DDR 硬件问题结论加重，评估板子价值（换板 vs 继续投入）。
+- **裁决实验首跑（2026-10-13 晚，用户实测）：v1.10.111 loader「下载Boot」成功**——该 loader 的 DDR 初始化在内存路径跑通，设备进入 LOADER 态。强烈支持假设①（eMMC 镜像自带 iddloader DDR V1.18 typ 23/07/17 与本板颗粒不兼容），削弱假设②（DDR 硬件损坏）。待重复 2-3 次确认稳定性。
+- **镜像情报（2026-10-13 查证）**：官方 [radxa-build/radxa-zero3 releases](https://github.com/radxa-build/radxa-zero3/releases) 最新为 **rsdk-b1（2026-07-15）**，仅提供 **bookworm KDE 桌面版**（官方不再出 CLI 变体）；资产分 `output_512`（eMMC 512B 扇区，适用本板）与 `output_4096`（UFS）。我们手里的 b6 bullseye CLI 为上一代。新镜像自带新 U-Boot/DDR init，是对"颗粒兼容性"假设最对症的验证与修复路径。已开始下载 `radxa-zero3_bookworm_kde_b1.output_512.img.xz` 至 `images/`。
+- **救板路线（若重复测试稳定）**：maskrom 全量重刷 = Loader 行 v1.10.111 + 新镜像行（存储列 **EMMC**、地址 **0x0**、勾"强制按地址写"——沿用 2026-10-13 白天成功刷写的配置）。刷后串口验证 DDR init → U-Boot → 内核全程。
+- 来源：[Releases · radxa-build/radxa-zero3](https://github.com/radxa-build/radxa-zero3/releases)、[Radxa OS Bookworm on Zero 3W（论坛）](https://forum.radxa.com/t/radxa-os-bookworm-on-radxa-zero-3w/26612)
 
 ## 串口抓取工具与供电方案（2026-10-13 备好，待现场执行）
 
