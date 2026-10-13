@@ -8,8 +8,9 @@
 - 本机重新下载镜像并验证（SHA512 与官方及另一台机器记录一致）；三件套（DriverAssistant v5.14 / RKDevTool v2.86+v2.96 / rk356x_spl_loader_ddr1056_v1.10.111.bin）来自 dl.radxa.com 官方源，落位 `tools/emmc-flash/`（git 忽略）。
 - 排障路径：① DriverInstall.exe 假成功（rockusb.inf 未入库），`pnputil /add-driver` 手动安装才生效；② v2.86 首刷"下载Boot失败"（传输抖动）；③ v2.96 暴露真因——镜像行"存储"列误为 **SPINOR**（板上无此 Flash）→ 切换存储失败；④ 存储列改 **EMMC** 后**全流程成功**（2026-10-13 用户确认）。
 - **Radxa Zero 3W 现在板载 Debian Bullseye CLI（b6），从 eMMC 启动**；TF 卡 ~66MB 写入失败留悬案，日后修好可作实验盘（TF 启动优先于 eMMC）。
-- 勘误备案：本会话曾误读截图写下一次虚假"成功"（befc480），已在 18b1e7c 撤回；最终成功以[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)（用户确认）为准。
-- 待验证：**首次开机前拔 TF 卡**（TF 启动优先会抢启动）→ 独立 5V 供电开机灯态 → HDMI 出 `radxa login:`（radxa/radxa）→ 配网/串口/SSH 通路 → 接续 HAT 测试单 B4/B5。
+- 勘误备案：本会话曾误读截图写下一次虚假"成功"（befc480），已在 18b1e7c 撤回；写入成功本身以[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)（用户确认 + 第 4 次重刷日志）为准。
+- **首次开机失败（进行中）**：eMMC 写入确认完整，但上电后灯常亮不闪、micro-HDMI 无信号——maskrom 判别通过（SoC/电源正常），问题锁定从 eMMC 启动过程；此前"显示器无信号"部分系误插 Type-C 口（该口无视频输出），换真 micro-HDMI 后故障仍在。二手 eMMC 坏块在嫌疑列表。
+- 定位手段就绪：DAPLink 到手，调试串口 = 排针 8(TX)/9(GND)/10(RX) @1500000；备选实验 = 第二个 Type-C 口插电脑找 ADB。详见[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)。
 
 ## 电池外置保险必要性复核（2026-10-12）
 
