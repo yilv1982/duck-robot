@@ -41,5 +41,8 @@ images/
 # Large third-party installer archives (rufus-4.15.exe is kept: referenced by research doc)
 tools/etcher-win32.zip
 
+# eMMC flashing tool bundles (RKDevTool/DriverAssitant binaries + run logs, ~36MB; see docs/references/emmc-flash-radxa-zero3w-20261013)
+tools/emmc-flash/
+
 # eMMC flash assets: Rockchip tools + loaders (see docs/references/emmc-flash-radxa-zero3w-20261013)
 tools/emmc-flash/
