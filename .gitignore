@@ -34,3 +34,9 @@ Desktop.ini
 # ZCode agent session state
 .zcode/
 tools/baidu-pan-mcp/
+
+# SD flashing assets - 2.7GB OS images, not tracked (see docs/references/sd-flash-radxa-zero3w-20261013)
+images/
+
+# Large third-party installer archives (rufus-4.15.exe is kept: referenced by research doc)
+tools/etcher-win32.zip

@@ -287,7 +287,7 @@
 | 物品 | 说明 / 待办 |
 |---|---|
 | **banana_pcb 板** | 嘉立创订单 85078132（5 片）到货。装配手顺（2026-10-09 已定）：焊 U6068 插针 ×2（已到货）→ 打印 `banana_pcb_locker` → 拆电池焊接出线（线径按 3-5A）→ 万用表直流档核极性 → 断电机械试装 → 只带主控支路验证 5V |
-| **Radxa Zero 3W** | 到货（二手，板载 eMMC 含前任系统，封存不动）。已定 **TF 卡启动路线**：官方 Debian bullseye CLI 镜像就绪且 SHA512 校验通过；自研烧录脚本两次在 ~66MB 处失败（数据疑似未落卡）已弃用，2026-10-13 起改用 Rufus 烧录（结果待记），详见 [烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)。烧成后：USB 串口配置 → 配 WiFi → ssh → 舵机 ping（HAT 测试单 B4/B5） |
+| **Radxa Zero 3W** | 到货（二手，板载 eMMC 含前任系统，封存不动）。已定 **TF 卡启动路线**：官方 Debian bullseye CLI 镜像就绪且 SHA512 校验通过；自研烧录脚本两次在 ~66MB 处失败已弃用（复查证实数据已落卡、卡分区表已变 GPT，仅中断而非假写）；Rufus 不识别笔记本内置读卡器（BusType=SCSI，2026-10-13 实测）不可用，改用 **balenaEtcher** 烧录（结果待记），详见 [烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)。烧成后：USB 串口配置 → 配 WiFi → ssh → 舵机 ping（HAT 测试单 B4/B5） |
 | **U6068 香蕉头插针 ×2** | 到货。2.5mm 香蕉头 PCB 插针（banana_pcb 电池触点）——用户确认所称「香蕉插头」「电池座」均指此件，更正此前「台架电源接线耗材」误记及重复登记 |
 | **DAPLink SWD 调试器** | 到货（用户确认）。IMU 刷机链路硬件齐：J2 焊接（杜邦直焊或 BM07B 座）→ `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` |
 | **2S 电池（NP-F550）** | 到货（用户确认）。待登记：化学体系/串数/触点形式、BMS 能力 |

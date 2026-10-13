@@ -31,6 +31,13 @@
 | [board-servo-socket-pinout.png](./board-servo-socket-pinout.png) | 三板舵机座对比 | 2026-10-11 | HAT 与 imu_to_dxl = JST EH 3P（2.5mm）、微雪 = 5264-3P，与飞特原线 AMP2.0-3P（2.0mm）均不配 | 舵机线适配 |
 | [hd1910-amp2.0-3p-pinout.png](./hd1910-amp2.0-3p-pinout.png) | HD-1910 原线端子脚序 | 2026-10-11 | 飞特原线 AMP2.0-3P：1=Signal / 2=Vcc / 3=GND（与板座脚序不同，接线须交叉） | 舵机线适配 |
 | [hd1910-dupont-adapter-wiring.png](./hd1910-dupont-adapter-wiring.png) | 杜邦过渡线接法 | 2026-10-11 | 台架过渡期 AMP2.0 ↔ 板座杜邦转接示意（仅调 ID/零位，不带载，方案见 PROGRESS） | 舵机清点/改 ID |
+| [_user-back2.png](./_user-back2.png) | 用户提供的 HAT V1.2 背面照（第 2 张） | 2026-10-11（收到） | A 段实测当晚的定位底图：40P 排母在照片上缘视角，8 焊盘组与排母针序判读均基于此图（结果见 PROGRESS A2/A3 行）；工作文件名 | HAT A 段核对 |
+| [_crop-pads.png](./_crop-pads.png) | ↑ 背面焊盘局部放大（照片推断） | 2026-10-11（制作） | 8 焊盘组定位裁剪图，对应 +BATT（第 3 排）/GND（第 4 排）判读；内容按文件名与生成时间推断 | HAT A2 进板口 |
+| [_crop-f303.png](./_crop-f303.png) | F303 MCU 局部放大（照片推断） | 2026-10-11（制作） | 背面 GD32F3xx（兆易创新 F303 兼容）区域裁剪图，A4 粗查（48 脚不在舵机数据链）对照用 | HAT A4 |
+| [_crop-chip.png](./_crop-chip.png) | 背面芯片局部放大（对象待确认） | 2026-10-11（制作） | 与 _crop-f303 同批生成，具体框选对象未记录，待复核 | HAT 背面元件核对 |
+| [_crop-buck.png](./_crop-buck.png) | 降压模块局部放大（照片推断，对象待确认） | 2026-10-11（制作） | 按文件名推断为降压模块裁剪图，A 段实测下午生成，具体用途未记录 | 降压模块核对 |
+| [_crop-buck2.png](./_crop-buck2.png) | 降压模块局部放大第 2 张（照片推断，对象待确认） | 2026-10-11（制作） | 同上，晚间生成，具体框选对象未记录 | 降压模块核对 |
+| [sch/page1–5.png](./sch/) | HAT V1.0 原理图 PDF 逐页导出图 | 2026-10-11（制作） | 源自 `docs/schematics/microduck-hat-v1.0-sch/` 的 5 页 SCH PDF，供屏幕对照放大查看；**图纸版本 V1.0，实物 V1.2，图物差异见 HAT 小节** | HAT A 段图物对照 |
 
 ## 降压模块（黑色，XT60 输入）— 2026-10-10 照片识别（正面+背面）
 
