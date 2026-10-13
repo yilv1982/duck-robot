@@ -64,22 +64,35 @@ def main() -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / f"serial-{datetime.datetime.now():%Y%m%d-%H%M%S}.log"
 
-    try:
-        ser = serial.Serial(port=port, baudrate=args.baud, bytesize=8,
-                            parity=serial.PARITY_NONE, stopbits=1, timeout=0.5)
-    except serial.SerialException as e:
-        print(f"打开 {port} 失败: {e}")
-        return 2
-
     header = (f"=== serial-log 开始 {datetime.datetime.now():%Y-%m-%d %H:%M:%S} | "
               f"{port} @ {args.baud} 8N1 ===\n")
     print(header, end="", flush=True)
     with open(log_path, "wb") as f:
         f.write(header.encode("utf-8"))
-        print("抓取中... Ctrl+C 停止。")
+        f.flush()
+        print("抓取中... Ctrl+C 停止。USB 适配器掉线时自动重连（需设备自行重新枚举）。")
+        ser = None
         try:
             while True:
-                line = ser.readline()  # 遇 \n 或 0.5s 超时返回
+                if ser is None:
+                    try:
+                        ser = serial.Serial(port=port, baudrate=args.baud, bytesize=8,
+                                            parity=serial.PARITY_NONE, stopbits=1, timeout=0.5)
+                    except serial.SerialException as e:
+                        print(f"[{ts()}] 串口未就绪({e})，2s 后重试...")
+                        time.sleep(2)
+                        continue
+                try:
+                    line = ser.readline()  # 遇 \n 或 0.5s 超时返回
+                except serial.SerialException as e:
+                    print(f"[{ts()}] 串口掉线: {e} — 等待重新枚举...", flush=True)
+                    try:
+                        ser.close()
+                    except Exception:
+                        pass
+                    ser = None
+                    time.sleep(2)
+                    continue
                 if not line:
                     continue
                 text = line.decode("utf-8", "replace").rstrip("\r\n")
@@ -90,9 +103,14 @@ def main() -> int:
         except KeyboardInterrupt:
             pass
         finally:
-            ser.close()
+            if ser is not None:
+                try:
+                    ser.close()
+                except Exception:
+                    pass
             tail = f"=== 结束 {datetime.datetime.now():%Y-%m-%d %H:%M:%S} ===\n"
             f.write(tail.encode("utf-8"))
+            f.flush()
     print(f"\n日志已保存: {log_path}")
     return 0
 
