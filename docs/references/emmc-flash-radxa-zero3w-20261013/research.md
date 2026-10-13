@@ -68,6 +68,18 @@
 | 训练频点 | 528MHz（训练中间值，非最终运行频率） | `change to: 528MHz` | 确定 |
 | eMMC 容量/颗粒、内存厂商、WiFi 芯片 | 未知 | 日志未及 | 刷机后 `lsblk`/`dmesg` 查 |
 
+**2026-10-14 凌晨实测补全（SSH radxa@192.168.1.35，密码 radxa，SSH_ASKPASS 非交互方式）**：
+
+| 项 | 实测值 | 证据 |
+|---|---|---|
+| 内存 | **3.8GiB 可用 = 4GB 实锤**（推算验证通过） | `free -h` |
+| eMMC | **64GB 档**（58.2G 盘）：p1 /config 16M、p2 /boot/efi 300M、p3 / 57.9G + zram swap 1.9G | `lsblk` |
+| eMMC 颗粒 | **SanDisk（manfid 0x000045）DF4064**（iNAND 64GB） | `/sys/block/mmcblk0/device/{manfid,name,cid}` |
+| 内核 | 6.1.84-10-rk2410-nocsf（rsdk；b6 为 5.10 老内核） | `uname -r` |
+| **固件版本** | **DDR v1.23-03ea844c5d / bl31 v1.45 / U-Boot 17.09-51-f，2025-07-14 build**——新 DDR v1.23 即跑通本板颗粒的版本，与 b6 的 V1.18（2023-07）形成根因实证 | `/proc/cmdline androidboot.fwver` |
+| 串口控制台 | `console=ttyFIQ0,1500000n8` 存在——串口无输出系错过启动窗口 + 串口无 getty，非串口坏；下次重启可抓 | `/proc/cmdline` |
+| 型号/主机名 | Radxa ZERO 3（W），`radxa-zero3` | devicetree model / hostname |
+
 
 
 - **排针供电实测（用户读数）**：电流 **0.3A / 功率 1.59W**（≈5V 轨、未触发限流、电压未拉垮）= 板子在取电；**灯灭**（Type-C 供电时灯会亮——LED 供电路径疑挂 VBUS 检测，排针直供 5V 轨不点亮，待串口结果佐证后复核）。**上电无电流峰**（用户观察，最高 0.3A）。
