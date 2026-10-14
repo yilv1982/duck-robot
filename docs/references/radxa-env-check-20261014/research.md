@@ -32,7 +32,7 @@
 过程要点：
 
 - **overlay 副作用**：rk3568-uart2-m0 的 exclusive 列表含 fiq_debugger——pin8/10 原本是调试串口控制台（DAPLink 抓启动日志用的就是它，1500000 波特）。启用后这对引脚归普通串口驱动（ttyS2），**内核段启动日志不再输出**；U-Boot 阶段输出不受影响。需要抓启动日志时临时把 dtbo 改回 .disabled 重启即可。
-- 回环自测（`feetech-ping.py loop`，pin8↔pin10 杜邦短接）验证的是"引脚从 fiq-debugger 切到 8250 驱动后的用户态收发链路"，不重复证明引脚电气连通（调试串口时期已验证）；也**覆盖不到 HAT 74LVC 半双工驱动/换向**，那部分只能在 C4（HAT 上电+舵机）验证。属可选项。
+- 回环自测（`feetech-ping.py loop`，pin8↔pin10 杜邦短接）验证的是"引脚从 fiq-debugger 切到 8250 驱动后的用户态收发链路"，不重复证明引脚电气连通（调试串口时期已验证）；也**覆盖不到 HAT 74LVC 半双工驱动/换向**，那部分只能在 C4（HAT 上电+舵机）验证。**2026-10-14 用户指示按测试价值原则跳过**（不防烧板的纯软件自检不做），脚本保留备查。
 
 - 板子出境网速慢（deb.debian.org RTT ~220ms，约 25–50 KB/s），apt/pip 前台命令易超时；用远程 `nohup bash -c '...' > /tmp/apt-install.log 2>&1 &` 后台执行 + 轮询日志的方式完成。
 - 首次 `apt-get update` 卡死被误杀过一次（pkill -f 匹配到自身 SSH 命令行导致会话断开，改用 `pkill -x apt-get` 精确进程名解决）。
