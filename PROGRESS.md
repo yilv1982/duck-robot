@@ -2,6 +2,13 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## Radxa Zero 3 软件环境核查（2026-10-14）
+
+- 板子经 `ssh radxa`（密钥免密，别名已入本机 ssh config）远程核查：Python 3.11/pip/git/gcc/make/i2c-tools/numpy 就绪；WiFi 自动连接正常。
+- **缺口**：pyserial 未装；cmake 未装；**全系统仅 /dev/ttyS1 且被蓝牙占用（hciattach active），HAT 舵机总线需要的 UART2/ttyS2 尚未启用**（需开 overlay，/boot/dtbo 当前全部 disabled）——B4/B5 前的前置条件。
+- 家目录有历史误操作残留文件 `~/udo -S -p  sh`（less 帮助页内容），无关功能，待用户确认后删。
+- 仅远程只读检查，未装/改任何软件。详见 [环境核查记录](./docs/references/radxa-env-check-20261014/research.md)。同日镜像评估结论：KDE 版无需换小镜像（sddm 已禁用，桌面不驻留，磁盘占用 11%），见 [radxa-system-check-20261014](./docs/references/radxa-system-check-20261014/research.md)。
+
 ## DAPLink 克隆"总连不上"故障定性（2026-10-14）
 
 - 把散在各处的现象归成**四种不同的"连不上"**：①仅充电线/口导致不枚举（10-13 实测）；②COM3 被前一个 serial-log 窗口占用——昨晚 23:34 起三连发"连不上"即此（22:25 会话持有 COM3 至 00:07，事后推定高置信）；③克隆固件"假在线"挂死需拔插；④Radxa 控制台无 getty、错过启动窗口后静默，属正常被误判。1500000 波特乱码是 USB 全速带宽硬限，不是连接故障。
