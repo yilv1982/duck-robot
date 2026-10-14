@@ -90,7 +90,7 @@ URT-2 插电脑 USB，双击 **`2-查COM口.bat`** 找到它的 COM 号。
 
 | 症状 | 处理 |
 |---|---|
-| DAPLink 方式报 `no CMSIS-DAP device found` | 换 USB 线/口（有些线只充电）；设备管理器看有没有 HID 设备 |
+| DAPLink 方式报 `no CMSIS-DAP device found` | 换 USB 线/口（有些线只充电）；设备管理器看有没有 HID 设备。本机这颗克隆的完整故障定性（不枚举/口被占/假在线/静默误判）见 [DAPLink 连接排障](../docs/references/daplink-connectivity-20261014/research.md) |
 | ST-Link 报 `libusb_open() failed` / 找不到 | ST-Link 需要 WinUSB 驱动：装 [Zadig](https://zadig.akeo.ie/) → Options→List All Devices → 选 ST-Link → 目标驱动选 **WinUSB** → Replace Driver（约 30 秒）。换回 ST 官方软件时需重装 ST 驱动 |
 | 连上但 `target halted` 报错/读不到 IDCODE | 检查 SWDIO/SWCLK 有没有接反；把 J2-7 (RST) 也接到调试器 NRST；脚本已用低速 200kHz，仍不行降到 100（编辑 bat） |
 | `Programming Finished` 但 `Verified` 报错 | 重新烧一次；再不行把 bat 里 `verify` 后加 `reset halt` 前多等——一般不出现 |

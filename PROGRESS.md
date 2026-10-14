@@ -2,6 +2,11 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## DAPLink 克隆"总连不上"故障定性（2026-10-14）
+
+- 把散在各处的现象归成**四种不同的"连不上"**：①仅充电线/口导致不枚举（10-13 实测）；②COM3 被前一个 serial-log 窗口占用——昨晚 23:34 起三连发"连不上"即此（22:25 会话持有 COM3 至 00:07，事后推定高置信）；③克隆固件"假在线"挂死需拔插；④Radxa 控制台无 getty、错过启动窗口后静默，属正常被误判。1500000 波特乱码是 USB 全速带宽硬限，不是连接故障。
+- 枚举成功判据（红灯常亮绿灯闪 + "USB 串行设备 (COMx)"）、对策与证据见[连接排障记录](./docs/references/daplink-connectivity-20261014/research.md)；[flash/README](./flash/README.md) 排障表已互链。仅诊断与落盘，未新增采购。
+
 ## Radxa Zero 3W 救活：换 rsdk-b1 镜像重刷成功（2026-10-13 深夜）
 
 - **b6 镜像首启失败根因确诊**：b6 自带 idbloader 的 DDR init（V1.18 typ 23/07/17）与本板 LPDDR4X 颗粒不兼容——串口抓到启动随机挂在 DDR 训练各阶段（banner 后/参数中/读训练后/容量识别后），从未到达 U-Boot。**DDR 硬件无恙**：maskrom 下 v1.10.111 loader「下载Boot」3/3 稳定跑通 DDR init。
