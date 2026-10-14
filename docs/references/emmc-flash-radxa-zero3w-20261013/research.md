@@ -107,6 +107,8 @@
 
 **工具就绪（本机已验证）**：`tools/serial-log.py`（pyserial 3.5，交互选口，默认 1500000 8N1，实时打印 + 带时间戳落盘到本专题 `serial-logs/`）；免命令行可用 `tools/抓Radxa启动日志.bat` 双击。无设备插入时正确提示（已测）。写脚本时本机未枚举到 DAPLink COM 口——**用户插入 DAPLink 后先跑一次确认枚举**（DAPLink 通常显示 "DAPLink CDC UART"）。
 
+**图形串口工具现状（2026-10-14 查证）**：本机**未装**任何 GUI 串口工具（注册表全量核对：无 PuTTY/Tera Term/MobaXterm/串口助手类）。需要交互（中断 U-Boot autoboot、向控制台发命令）时推荐 **PuTTY**（`winget install PuTTY.PuTTY`，v0.85；Serial 页：COM3、Speed 1500000、**Flow control 必须改 None**——PuTTY 默认 XON/XOFF，启动乱码中的 0x13 字节会误触发流控暂停显示；Logging→All session output 可落盘但无时间戳，带时间戳落盘仍用 `tools/serial-log.py`）。备选 Tera Term（`winget install TeraTermProject.teraterm5`，日志可带时间戳）。均未安装，装不装待用户定。
+
 **接线（抓日志最小两根线）**：板排针 **8(TX) → DAPLink RX**、板 **9(GND) → DAPLink GND**（共地必须）；板 10(RX)→DAP TX 仅在需要向板发按键/命令时才接。板排针数法（已焊彩色功能座朝向）：奇数排（靠板内）1/3/5/7/**9**…，偶数排（靠板边）2/4/6/**8**/**10**…。DAPLink 端按丝印找 TX/RX/GND，注意其 TX/RX 是相对 DAPLink 自身，**交叉连接**。
 
 **供电（用户 2026-10-13 提供稳压直流电源；绿联充电头当时不在手边）**：
