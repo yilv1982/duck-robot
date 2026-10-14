@@ -2,6 +2,20 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## DAPLink 克隆"总连不上"故障定性（2026-10-14）
+
+- 把散在各处的现象归成**四种不同的"连不上"**：①仅充电线/口导致不枚举（10-13 实测）；②COM3 被前一个 serial-log 窗口占用——昨晚 23:34 起三连发"连不上"即此（22:25 会话持有 COM3 至 00:07，事后推定高置信）；③克隆固件"假在线"挂死需拔插；④Radxa 控制台无 getty、错过启动窗口后静默，属正常被误判。1500000 波特乱码是 USB 全速带宽硬限，不是连接故障。
+- 枚举成功判据（红灯常亮绿灯闪 + "USB 串行设备 (COMx)"）、对策与证据见[连接排障记录](./docs/references/daplink-connectivity-20261014/research.md)；[flash/README](./flash/README.md) 排障表已互链。仅诊断与落盘，未新增采购。
+
+## Radxa Zero 3W 救活：换 rsdk-b1 镜像重刷成功（2026-10-13 深夜）
+
+- **b6 镜像首启失败根因确诊**：b6 自带 idbloader 的 DDR init（V1.18 typ 23/07/17）与本板 LPDDR4X 颗粒不兼容——串口抓到启动随机挂在 DDR 训练各阶段（banner 后/参数中/读训练后/容量识别后），从未到达 U-Boot。**DDR 硬件无恙**：maskrom 下 v1.10.111 loader「下载Boot」3/3 稳定跑通 DDR init。
+- **修复**：换官方最新 **rsdk-b1**（bookworm KDE，2026-07，仅桌面版有 CLI 已停供）`output_512` 镜像 maskrom 全量重刷（Loader v1.10.111 + 镜像 EMMC@0x0 + 强制按地址写），SHA512 校验与官方一致。刷后**正常启动：灯闪、电流 0.6A（挂死态为常亮 0.3A）、HDMI 出画面**（用户确认）。
+- **板卡参数**：LPDDR4X、32-bit 总线、双 CS → 推算 **4GB 内存档**；eMMC 容量/颗粒待进系统 `lsblk` 查。
+- **过程工具与教训入库**：串口抓取 `tools/serial-log.py`（自动重连+落盘 flush）、并行下载 `tools/parallel-download.sh`；DAPLink（VID C251 克隆）多次"假在线"挂死需拔插，USB 口/线组合须逐一验证；串口接线事故（pin6→RXD/pin8→TXD 对顶致假静默）已勘误；`tools/emmc-flash/` 曾整目录丢失（git 忽略文件），已从官方源重建并留清单。
+- **下一步**：进系统配置（账号/WiFi/SSH）→ 验证 rsdk 串口控制台（今 1500000 无输出，配置待查）→ 确认 eMMC 容量 → 接续 [HAT 测试单](./docs/hat-v1.2-test.md) B4（主控 ssh）→ B5（单舵机 ping）。桌面版做机载主控偏重，后续可禁图形自启或评估 Armbian server。
+- 详见 [eMMC 线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)（含完整排障链与串口日志存档 `serial-logs/`）。
+
 ## 主控 eMMC 线刷成功（2026-10-13，路线 A）
 
 - TF 卡烧录受阻后（自研脚本 ~66MB 确定性失败、Rufus 不识别内置读卡器、1TB 卡假卡嫌疑未排除，见 [SD 烧录记录](./docs/references/sd-flash-radxa-zero3w-20261013/research.md)），用户决定走**路线 A：maskrom 线刷 eMMC**，覆盖前任系统（放弃封存策略）。
@@ -11,6 +25,8 @@
 - 勘误备案：本会话曾误读截图写下一次虚假"成功"（befc480），已在 18b1e7c 撤回；写入成功本身以[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)（用户确认 + 第 4 次重刷日志）为准。
 - **首次开机失败（进行中）**：eMMC 写入确认完整，但上电后灯常亮不闪、micro-HDMI 无信号——maskrom 判别通过（SoC/电源正常），问题锁定从 eMMC 启动过程；此前"显示器无信号"部分系误插 Type-C 口（该口无视频输出），换真 micro-HDMI 后故障仍在。二手 eMMC 坏块在嫌疑列表。
 - 定位手段就绪：DAPLink 到手，调试串口 = 排针 8(TX)/9(GND)/10(RX) @1500000；备选实验 = 第二个 Type-C 口插电脑找 ADB。详见[线刷记录](./docs/references/emmc-flash-radxa-zero3w-20261013/research.md)。
+- 串口抓取工具备好（2026-10-13）：[tools/serial-log.py](./tools/serial-log.py)（pyserial 3.5 验证，默认 1500000 8N1，落盘专题 `serial-logs/`）+ 双击 `tools/抓Radxa启动日志.bat`；供电可用稳压直流电源（**5.0V 严禁调高**、限流 2A、Type-C 剪线 CC 悬空风险与电脑口回退方案见线刷记录）。待现场接 DAPLink 执行。
+- **实验 A 首扫作废 + 供电新线索（2026-10-13 用户实测）**：单线电脑直插下板子**灯亮几下即灭**（电脑口 ≤0.9A 未维持住供电），USB 无枚举是断电必然结果；板子启动电流尖峰超电脑口能力或有过流，待稳压电源电流表区分。
 
 ## 电池外置保险必要性复核（2026-10-12）
 
