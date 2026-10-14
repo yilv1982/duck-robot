@@ -5,9 +5,10 @@
 ## Radxa Zero 3 软件环境核查（2026-10-14）
 
 - 板子经 `ssh radxa`（密钥免密，别名已入本机 ssh config）远程核查：Python 3.11/pip/git/gcc/make/i2c-tools/numpy 就绪；WiFi 自动连接正常。
-- **缺口**：pyserial 未装；cmake 未装；**全系统仅 /dev/ttyS1 且被蓝牙占用（hciattach active），HAT 舵机总线需要的 UART2/ttyS2 尚未启用**（需开 overlay，/boot/dtbo 当前全部 disabled）——B4/B5 前的前置条件。
+- **环境缺口已全部补齐（2026-10-14）**：python3-serial 3.5、cmake 3.25.1 经 apt 装好；**UART2/ttyS2 已通过 overlay `rk3568-uart2-m0` 启用**（M0 mux 即排针 pin8/10，与 HAT A3 实测一致；重启后验证 /dev/ttyS2 存在、serial@fe660000=okay，蓝牙仍独占 ttyS1 不冲突）。extlinux.conf 已写入 fdtoverlays。
+- 坑位记录：板子出境网速慢（apt 全量 update 约 20 分钟），须 nohup 后台 + 轮询；pkill -f 会误杀自身 SSH 会话（用 pkill -x）；镜像初始 apt 索引为空必须先 update。
 - 家目录有历史误操作残留文件 `~/udo -S -p  sh`（less 帮助页内容），无关功能，待用户确认后删。
-- 仅远程只读检查，未装/改任何软件。详见 [环境核查记录](./docs/references/radxa-env-check-20261014/research.md)。同日镜像评估结论：KDE 版无需换小镜像（sddm 已禁用，桌面不驻留，磁盘占用 11%），见 [radxa-system-check-20261014](./docs/references/radxa-system-check-20261014/research.md)。
+- 详见 [环境核查记录](./docs/references/radxa-env-check-20261014/research.md)。同日镜像评估结论：KDE 版无需换小镜像（sddm 已禁用，桌面不驻留，磁盘占用 11%），见 [radxa-system-check-20261014](./docs/references/radxa-system-check-20261014/research.md)。
 
 ## DAPLink 克隆"总连不上"故障定性（2026-10-14）
 

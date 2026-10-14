@@ -21,15 +21,20 @@
 | GPIO | /dev/gpiochip0–5 ✅（用户在 gpio/i2c/spidev/pwm/dialout 组） |
 | 网络 | WiFi `CU_M9pw_5G` 已配自动连接 ✅ |
 
-## 缺口（部署 C 线前需补）
+## 缺口（2026-10-14 已全部补齐）
 
-| 项 | 现状 | 影响 |
+| 项 | 处理 | 结果 |
 |---|---|---|
-| **pyserial** | 未安装（`import serial` 报 ModuleNotFoundError） | 舵机/IMU 总线通信必需；`sudo apt install python3-serial` 或 pip 均可 |
-| **cmake** | 未安装 | 编译 robotd/社区主机工具需要 |
-| **第二个 UART** | 全系统只有 `/dev/ttyS1`，且 **ttyS1 被蓝牙占用**（`rsetup-hciattach@ttyS1.service` active） | HAT 舵机总线设计走 **UART2 = ttyS2**（见 HAT 查证记录），当前未启用——需开 overlay（rsetup 或 dtbo）后出现 /dev/ttyS2，B5 单舵机 ping 的前置条件 |
-| udev 规则 | /etc/udev/rules.d 为空 | 后续为串口设备定别名/权限时需要 |
-| 机器人软件 | 板上无任何 robotd / 社区套件 / Feetech SDK | 待部署（可先在本机研究，部署阶段再拷入） |
+| pyserial | `apt-get install python3-serial` | ✅ 3.5 |
+| cmake | `apt-get install cmake` | ✅ 3.25.1 |
+| UART2/ttyS2 | 启用 overlay `rk3568-uart2-m0`（rsetup 兼容列表中唯一适配 zero3 的 UART2 overlay；M0 mux = 排针 pin8/pin10，与 HAT A3 实测一致；会禁用 fiq_debugger 调试节点，属官方设计）→ `u-boot-update` → 重启 | ✅ /dev/ttyS2 出现，serial@fe660000 status=okay；蓝牙仍独占 ttyS1（hciattach active），两者不冲突 |
+
+过程要点：
+
+- 板子出境网速慢（deb.debian.org RTT ~220ms，约 25–50 KB/s），apt/pip 前台命令易超时；用远程 `nohup bash -c '...' > /tmp/apt-install.log 2>&1 &` 后台执行 + 轮询日志的方式完成。
+- 首次 `apt-get update` 卡死被误杀过一次（pkill -f 匹配到自身 SSH 命令行导致会话断开，改用 `pkill -x apt-get` 精确进程名解决）。
+- overlay 启用机制：/boot/dtbo/*.dtbo（去掉 .disabled 后缀）由 u-boot-update 汇总进 /boot/extlinux/extlinux.conf 的 `fdtoverlays` 行；/etc/default/u-boot 的 U_BOOT_FDT_OVERLAYS_DIR=/boot/dtbo/。
+- 注：镜像初始 apt 索引不全（package lists 未下载过），直接 install 会 "Unable to locate package"，必须先 update。
 
 ## 其他发现
 
@@ -44,5 +49,5 @@
 
 ## 下一步
 
-1. HAT 测试单推进到 B4 前：装 pyserial + cmake，开 UART2 overlay，重启确认 /dev/ttyS2 出现。
+1. ~~HAT 测试单推进到 B4 前：装 pyserial + cmake，开 UART2 overlay，重启确认 /dev/ttyS2 出现。~~（2026-10-14 已全部完成，见上表）
 2. B4（主控 ssh 上 HAT）→ B5（单舵机 ping）按 docs/hat-v1.2-test.md 执行。
