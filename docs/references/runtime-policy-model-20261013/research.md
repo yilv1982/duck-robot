@@ -74,6 +74,7 @@ tick (20 ms = 50 Hz)
 
 ## 关联
 
+- [ESP32 部署可行性调研 20261014](../esp32-mlp-deployment-20261014/research.md)：该 MLP 在 ESP32/S3 上的算力、带宽推算与 XGO-Duck 实证。
 - [B 线训练实测](../../../docs/b-training.md)：ONNX 导出与 shape 证据。
 - [飞特适配架构](../../../references/microduck-replica/software/飞特适配架构.md)：runtime tick 与总线细节。
 - 上游训练库入口：`references/microduck-replica/software/training/README.upstream.md`。
