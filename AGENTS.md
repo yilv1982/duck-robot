@@ -50,6 +50,7 @@
 | [过流保护方案](docs/overcurrent-protection.md) | 电池正极保险/总开关、额定协调与电子保护边界；保险安数及实际入口能力尚未核准。 |
 | [HAT V1.2 接线意向图](docs/photos/hat-v1.2-wiring-plan.png) | 用户底图派生：A 两线进电 / B 舵机+末端 IMU / C 主控对插；未核准针序与载流，不作上电放行。 |
 | [HAT V1.2 测试单](docs/hat-v1.2-test.md) | 断电核对、分阶段上电与总线验证；入口未知时不可照猜测接电。 |
+| [IMU 板②台架验收单](docs/imu-gd32-bench-test.md) | jyg9 GD32 版（单 3P、免刷、6~24V）核针序、限流上电与 imu200 验收；勿套用板①的 5V 供电习惯。 |
 | [降压模块测试单](docs/buck-module-test.md) | 原始空载测量与操作过程；不是整机带载验收，历史错误要求应按勘误清除。 |
 | [照片索引](docs/photos/README.md) | 实物照片、标注图、版本、来源及关联任务。 |
 | [原理图索引](docs/schematics/README.md) | 设计文件与实物对应关系总入口。 |
