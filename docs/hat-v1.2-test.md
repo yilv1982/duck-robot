@@ -54,6 +54,7 @@
 - [ ] C2 主控供电稳定后核验 HAT 的 3.3V 和 DATA 空闲电平、UART2/半双工路径，若与 V1.0 不符先查来源说明。不仅靠万用表平均电压判断协议波形正确。
 - [ ] C3 IMU 在独立限流台架确认实物 LDO、VBATT 输入、3.3V 输出及温升，再刷写匹配固件并做 imu200 验收；本步骤需要的 SWD 调试器不属于整机常驻链路。
 - [ ] C4 先接一颗 ID/波特率已确认的舵机，初始扭矩关闭，确认可通信且无异常动作；之后连接链末 IMU 验证唯一 ID（IMU 200 不与舵机冲突）。连接器与针序核对优先于软件调试。
+  - 主控侧工具：[`scripts/feetech-ping.py`](../scripts/feetech-ping.py)（已部署到板子 `~/feetech-ping.py`）。接线前可先用 `python3 feetech-ping.py loop`（杜邦线短接排针 pin8↔pin10，无需任何供电）验证 ttyS2 收发通路；舵机总线接好后用 `python3 feetech-ping.py scan` ping 舵机（默认扫 ID 0–6、1 Mbps）。前提：/dev/ttyS2 已启用（见 [radxa-env-check-20261014](./references/radxa-env-check-20261014/research.md)）。
 - [ ] C4a **先只读回查舵机保护**：对应型号/固件核验 19 的 BIT3、28 保护电流、38 延时和 33 模式，并核对运行软件对 RAM 目标电流/限幅的改写；不运行会写默认配置的初始化来代替读取。C001 手册过流出厂默认关闭，社区工具默认亦关闭；没有回读前不声称“堵转瞬时保护有效”，不擅自写保护参数。见[风险核查](./references/stall-hat-risk-20261010/research.md)。
 - [ ] C5 MCU 功能需板卡说明或信号测试确认；静置无异常或 ping 成功不证明 MCU 永不影响总线。异常动作/总线冲突先停，不据此直接认定 MCU 是根因或自行断脚。
 
