@@ -109,7 +109,20 @@
 
 **图形串口工具现状（2026-10-14 查证）**：本机**未装**任何 GUI 串口工具（注册表全量核对：无 PuTTY/Tera Term/MobaXterm/串口助手类）。需要交互（中断 U-Boot autoboot、向控制台发命令）时推荐 **PuTTY**（`winget install PuTTY.PuTTY`，v0.85；Serial 页：COM3、Speed 1500000、**Flow control 必须改 None**——PuTTY 默认 XON/XOFF，启动乱码中的 0x13 字节会误触发流控暂停显示；Logging→All session output 可落盘但无时间戳，带时间戳落盘仍用 `tools/serial-log.py`）。备选 Tera Term（`winget install TeraTermProject.teraterm5`，日志可带时间戳）。均未安装，装不装待用户定。
 
-**接线（抓日志最小两根线）**：板排针 **8(TX) → DAPLink RX**、板 **9(GND) → DAPLink GND**（共地必须）；板 10(RX)→DAP TX 仅在需要向板发按键/命令时才接。板排针数法（已焊彩色功能座朝向）：奇数排（靠板内）1/3/5/7/**9**…，偶数排（靠板边）2/4/6/**8**/**10**…。DAPLink 端按丝印找 TX/RX/GND，注意其 TX/RX 是相对 DAPLink 自身，**交叉连接**。
+**接线（2026-10-14 扩写为速查卡；10-13 已实测收到 DDR banner，针位可信）**：
+
+| Radxa 排针 | 位置（彩色功能座朝上） | 接 DAPLink | 备注 |
+|---|---|---|---|
+| pin 8（板 TX） | 外排（靠板边）左起第 4 孔：红(2)→4→6→**8** | **RX** | 抓日志必接 |
+| pin 9（GND） | 内排（靠板内）左起第 5 孔：黄(1)→3→5→7→**9** | **GND** | 共地必须 |
+| pin 10（板 RX） | 外排左起第 5 孔（pin8 下一孔） | **TX** | 仅需向板发按键/命令时接 |
+
+- 锚点：座朝上、板左端**黄=pin1(3.3V)、红=pin2(5V)**；内排全奇数、外排全偶数。数针从红/黄锚点起数，不从中间数。8/9/10 三脚相邻成一个小三角区。
+- **交叉连接**：板 TX→DAP RX、板 RX→DAP TX（DAPLink 丝印 TX/RX 是相对它自己）。**同名相连（TX-TX）必然无输出**。注意微雪转接板的"RX-RX/TX-TX 直连"丝印约定不适用于 DAPLink。
+- **10-13 接线事故勘误**：曾接成 pin6(GND)→DAP RXD、pin8(TX)→DAP TXD——数错针+没交叉，全静默似未连接。两个教训如上。
+- DAPLink 端：排针丝印里找 **TX/RX/GND** 三根（与 SWCLK/SWDIO/RST/3V3 同排），杜邦母线插针上。
+- 静默一分钟排查：①两根信号线对调再上电（最常见=没交叉）；②拔 DAP RX 线用手指捏住金属头看串口是否出乱码（验 DAP 侧链路活）；③确认没有第二个窗口占着 COM 口（见 [DAPLink 排障](../daplink-connectivity-20261014/research.md)故障②）。
+- 与排针直供同做时：电源 5V→pin2(或 pin4)、电源 GND→pin6(或 pin9)；DAPLink GND 接任一 GND 脚即共地。**严禁接 pin1（黄，3.3V 轨）**。
 
 **供电（用户 2026-10-13 提供稳压直流电源；绿联充电头当时不在手边）**：
 
