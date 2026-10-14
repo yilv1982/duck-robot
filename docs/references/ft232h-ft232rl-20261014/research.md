@@ -51,3 +51,18 @@
 ## 下一步（可选）
 
 - 若决定为串口通道采购 FT232H 模块：建采购专题，核对 USB-C/Mini 接口、3.3V 电平、EEPROM 已配置版本，并更新 [BOM.md](../../../BOM.md)。
+
+## 附：JTAG 概念速记（2026-10-14 追加，原理级通识，非本机实测）
+
+- **是什么**：Joint Test Action Group 制定的边界扫描/调试接口标准（IEEE 1149.1）。芯片内部有一条移位寄存器链（TAP），可从外部移位读写，多颗芯片可在板上串成一条链（daisy-chain）。
+- **线序**：4 根——TCK（时钟）、TMS（模式控制）、TDI（数据入）、TDO（数据出），可选 TRST（复位）。
+- **三大用途**：
+  1. 边界扫描（原始用途）：不跑程序、不用探针即可检查 PCB 焊接短路/断路，产测常用；
+  2. 调试 MCU/CPU（现最常用）：暂停/单步 CPU、读写内存与寄存器、硬件断点——J-Link、OpenOCD 等调试器的底层通道；
+  3. 烧录：FPGA 配置加载、SPI Flash 读写、经调试口给 MCU flash 编程。
+- **与 UART 的区别**：UART 是系统运行时对外的通信口（console/日志）；JTAG 是绕过系统、直接访问芯片内部的控制口。用途不重叠。
+- **与本项目的对应**：
+  - 本机 DAPLink 克隆（CMSIS-DAP）就是把 USB 命令转成 JTAG/SWD 时序去烧 IMU 板（见 [flash/README.md](../../../flash/README.md)），该角色已在位；
+  - IMU 板上 ARM Cortex-M 日常用 JTAG 的 2 线精简版 **SWD**（SWDIO/SWCLK），DAPLink 两种均支持；
+  - 因此 FT232H 的 MPSSE 虽也能做 JTAG/SPI 工具（OpenOCD/pyftdi），但**采购 FT232H 的理由是高速串口通道，不是补 JTAG 能力**。
+- 来源：IEEE 1149.1 标准通识与上文 FTDI/pyftdi 资料；未另行逐条网络核验，如后续涉及实际 JTAG 接线再补专项调研。
