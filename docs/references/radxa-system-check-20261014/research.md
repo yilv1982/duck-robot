@@ -8,7 +8,7 @@
 
 - 设备：Radxa Zero 3（hostname `radxa-zero3`），4 核，内存 3.8 GiB（含 1.9 GiB zram），eMMC 58.2 GiB
 - 系统：Debian 12 (bookworm)，内核 6.1.84-10-rk2410-nocsf
-- 连接方式：`ssh radxa@172.16.108.54`（密码认证；本机公钥未授权，SSH_ASKPASS 免交互可用）
+- 连接方式：`ssh radxa@172.16.108.54` 或别名 `ssh radxa`（已配置本机 `~/.ssh/config` Host radxa）；2026-10-14 已将本机 `id_ed25519` 公钥追加到板子 `~/.ssh/authorized_keys`，免密登录已验证（KEY_AUTH_OK）
 
 ## 实测数据（via SSH，非本机直连）
 
