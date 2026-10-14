@@ -61,3 +61,15 @@
 - 手头板照片与到货记录：根 `PROGRESS.md` 2026-10-09 硬件到位表。
 - HAT（Radxa 版）查证：`../microduck-hat-20261006/research.md`。
 - 电池/banana_pcb 调研（其中 §4 也提过 ScrapMeta 仓库）：`../microduck-battery-20261008/research.md`。
+
+## 2026-10-14 补充：用户第二块 IMU 板确认为 jyg9 GD32 社区版
+
+用户提供第二块板（**单个 3P 座**）正反面照片（存 `docs/photos/imu-board-b-20261014-a.jpg` / `-b.jpg`），照片判别：
+
+- 主控 **LQFP48 + GigaDevice GD32F303 丝印** ⇒ jyg9 / community-kit 血统（排除 STM32G031 的 ScrapMeta/replica 血统）。
+- 正面有电感 + 二极管 + SOIC-8 降压前端，与社区库 `hardware/imu_to_dxl/README.md` 标称**供电 6~24V、效率 >90%** 一致 ⇒ **可直接挂 8.4V 舵机总线**。注：ScrapMeta 板"只能 5V"的旧要求已在供电复核中撤回（AP2210K-3.3 上限按设计 13.2V，实物料号待核，见 `../power-review-20261010/research.md`），两板在整机中都可直挂总线；`flash/README.md` 的 5V 红线仅针对**刷机/台架调试阶段**。
+- 出厂双协议自动识别（DXL 2.0 @124 + 飞特 @56），**不需要刷固件**；升级走总线 `upgrade.py`。
+- ⚠️ 差异待确认：本板照片**未见 CH340/USB 调试座**（上文表格称 jyg9 版带 CH340），调试口形式以实物/卖家资料为准。
+- 接线前仍需核对 3P 座针序（照片推断为 JST EH，1=GND 2=V+ 3=DATA，见 `docs/photos/board-servo-socket-pinout.png`），未核针序不上电。
+
+**至此两块 IMU 板身份全部落定**：双 3P 口 = ScrapMeta v0.3（刷 replica 飞特固件 + 5V 供电，见 `flash/README.md`）；单 3P 口 = jyg9 GD32 社区成品版（免刷、6~24V）。两块都能用于 C 线总线末端 IMU，任选其一，另一块作备件。

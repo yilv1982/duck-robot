@@ -161,7 +161,7 @@
 |---|---|---|
 | 微雪 Waveshare Bus Servo Adapter (A) | 1 | 半双工总线转接板，即 replica《电控采购清单》的「半双工总线转接板」待买项；此前台架一直用 FE-URT-2 顶替。整机走它还是飞线，待测。2026-10-10 照片归档+元件标注（[docs/photos/](./docs/photos/README.md)）：实物 v1.1，输入**直通舵机口不稳压**（HD-1910 台架喂 2S，严禁 12V），跳线 A=UART/B=USB（CH343） |
 | 黑色降压模块（XT60 端子） | 1 | 2026-10-10 照片细读（[存档](./docs/photos/README.md)）+ **空载实测**（[操作单](./docs/buck-module-test.md)）：板名 **BUS SERVO POWER SUPPLY V1.3**（By 造物の乐趣，社区自研件，公开无资料，二维码待扫）；丝印 PWR IN 7.2-18V / OUT PWR 5V or 7.4V MAX 6A。**实测**：VCC（3P）12V→6.00V、6.6V→6.00V、6.3V→5.99V——选压桥 **6V 档**、稳压下限 **≈6.3V**（跌落跟随非关机，远好于丝印 7.2V），**2S 最差工况可用**；PWR OUT（2P）全程跟随输入 = **电池直通口**（舵机总线，对上 HD-1910 直挂 7.8-8.1V 用法）。接口分工闭环（~~DC 母座~~系照片误判，实物无此件）。当前方案不使用 VCC 稳压口、无需为 IMU 改焊 5V；模块不再是整机必需件，载流未验证 |
-| 绿色 IMU 板 | 1 | **用户确认 = ScrapMeta microduck-diy imu_to_dxl v0.3**（STM32G031，板 32×22mm）。三版来源对比与刷机兼容性查证见 [docs/references/imu-to-dxl-variants-20261009](./docs/references/imu-to-dxl-variants-20261009/research.md)；**飞特固件刷写包已备好**（[flash/](./flash/README.md)：校验过的 0.2.0 HEX + OpenOCD + 一键脚本 + imu200 验收工具），按归档设计拟从总线 VBATT 取电、U3 自降 3.3V；实物料号、输入规格及温升待验证，旧“只能 5V”要求撤回 |
+| 绿色 IMU 板 ×2 | 2 | **板①（双 3P 口）= ScrapMeta microduck-diy imu_to_dxl v0.3**（STM32G031，板 32×22mm）。三版来源对比与刷机兼容性查证见 [docs/references/imu-to-dxl-variants-20261009](./docs/references/imu-to-dxl-variants-20261009/research.md)；**飞特固件刷写包已备好**（[flash/](./flash/README.md)：校验过的 0.2.0 HEX + OpenOCD + 一键脚本 + imu200 验收工具），按归档设计拟从总线 VBATT 取电、U3 自降 3.3V；实物料号、输入规格及温升待验证，旧“只能 5V”要求撤回。**板②（单 3P 口）= jyg9 社区成品版**（2026-10-14 照片判别：GD32F303 LQFP48 + 降压前端，[照片存档](./docs/photos/README.md)）：出厂 DXL 2.0 + 飞特双协议免刷、供电 6~24V 可直挂总线；调试口形式（照片未见 CH340/USB）待核对。整机用其一即可，另一块备件 |
 | 白色鸭图案 HAT（**实物丝印 V1.2**，2026-10-10 照片更正，此前误记 V1.1） | 1 | **原理图已归档查证**（2026-10-09，[docs/references/microduck-hat-20261006](./docs/references/microduck-hat-20261006/research.md)）：官方 RPI Robot HAT 的嘉立创 EDA 派生版，Radxa Zero 3W（舵机总线 UART2=ttyS2）兼容 Pi Zero 2W，比官方多一颗 BNO085。**2026-10-10 正反面照片归档+元件标注**（[docs/photos/](./docs/photos/README.md)）：实物 V1.2 与存档原理图 V1.0 差异大——**背面多一颗 MCU 类器件（完整型号/功能待核）；正面圆柱电容标记 10 / 50V，不再按超级电容处理**；RS485 座未焊。接线/上电前须索取 V1.2 原理图 |
 | 全部舵机 | 待清点 | 型号/数量/出厂 ID 状态待登记。飞特方案按官方关节表应为 HD-1910-C001 ×15（含嘴） |
 | 打印件 | 待清点 | 版本/材料/数量待登记；打印模型以上游独立仓库 microduck-replica-cad 为准 |
@@ -190,7 +190,7 @@
 ### 由到货衍生的待办
 
 - [ ] 万用表实测降压模块（[操作单](./docs/buck-module-test.md)）：**2026-10-10 空载扫描已完成**——选压桥 6V 档、实测稳压下限 ≈6.3V（压差 0.3V 跌落跟随，远好于丝印 7.2V）、2S 最差点 6.6V 时输出仍 6.00V，**2S 初判可用**；接口分工闭环（XT60 入 / PWR OUT 直通 / 3P VCC 稳压；"DC 母座"系照片误判，实物无此件）。现行候选不使用稳压口，取消改焊 5V；若仅作直通转接，仍须核验其直通路径及接头载流，空载结果不是整机验收
-- [x] 确认 IMU 板是哪一版设计（2026-10-09 用户确认：ScrapMeta microduck-diy v0.3）
+- [x] 确认 IMU 板是哪一版设计（2026-10-09 用户确认板①：ScrapMeta microduck-diy v0.3；2026-10-14 照片判别板②：jyg9 社区 GD32 成品版，见同专题补充节）
 - [ ] 按手顺完成 IMU 板刷机：购 SWD 调试器（推荐 DAPLink）→ J2 接线（⚠️ 实物 J2 未焊插座只有焊盘，2026-10-10 看实物标注图确认：焊 BM07B-SRSS-TB 座 + SH1.0 7P 线，或杜邦线直接焊盘）→ 双击 `flash/1-烧录-DAPLink.bat` → 断电重启 → `flash/3-验收-imu200.bat` 全 PASS（详见 [flash/README.md](./flash/README.md)）
 - [ ] 清点舵机（型号、数量、ID/零位状态）与打印件（版本、材料、缺件）
 - [ ] 微雪转接板上机验证（对比飞线方案）
