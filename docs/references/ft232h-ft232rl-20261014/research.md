@@ -1,0 +1,53 @@
+# FT232H 与 FT232RL 区别调研（2026-10-14）
+
+## 日期与问题
+
+- 日期：2026-10-14
+- 问题：FTDI 的 FT232H 与 FT232RL 有什么区别；在什么场景下选哪个。
+- 背景动机：与本项目 Radxa Zero 3W 串口调试通道（固定 1500000 波特）相关——既往结论（[daplink-connectivity-20261014](../daplink-connectivity-20261014/research.md)）将 DAPLink CDC 在 1.5M 波特下的乱码定性为 USB 全速带宽硬限，评估 FTDI 转接板作为替代串口通道时需分清这两颗常见芯片。
+- 范围：仅规格对比与公开资料整理（属"原理图或厂商规格"级证据），**非本机实测**。
+
+## 来源
+
+- FT232H 官方数据手册：<https://ftdichip.com/wp-content/uploads/2020/07/DS_FT232H.pdf>（新版路径示例：<https://ftdichip.com/wp-content/uploads/2024/09/DS_FT232H.pdf>）
+- FT232R 官方数据手册：<https://ftdichip.com/wp-content/uploads/2020/08/DS_FT232R.pdf>
+- Adafruit FT232H Breakout 指南（UART 与 MPSSE 二选一、MPSSE 时钟 ~450 Hz–30 MHz）：<https://learn.adafruit.com/adafruit-ft232h-breakout/serial-uart>、<https://learn.adafruit.com/adafruit-ft232h-breakout/spi>
+- pyftdi 文档（FT232H 单通道、时钟最高 30 MHz、SPI 主机 + 基础 JTAG 主机）：<https://eblot.github.io/pyftdi>
+- 检索日期：2026-10-14；以上均为公开网页，未下载手册全文逐页核对，关键数字已与多来源交叉。
+
+## 对比（厂商规格，未在本机验证）
+
+| 项目 | FT232RL | FT232H |
+|---|---|---|
+| USB 速度 | USB 2.0 Full Speed（12 Mbps） | USB 2.0 Hi-Speed（480 Mbps） |
+| 接口模式 | 仅 UART；另有异步/同步 bit-bang 与 CBUS 位控 | UART 或并行 FIFO（245 模式）二选一；另有 MPSSE 硬件引擎 |
+| 最高 UART 波特率 | 300 baud – 3 Mbaud | 最高 12 Mbaud |
+| SPI / I2C / JTAG | 无硬件引擎，只能软件位控模拟（速率与稳定性有限，不适合 JTAG） | MPSSE 引擎原生支持，SPI 时钟与 JTAG TCK 最高 30 MHz；I2C 常用 100k/400k（pyftdi/OpenOCD 等支持） |
+| 片上资源 | 集成 1024-bit EEPROM（VID/PID/序列号/CBUS 配置）与振荡器，免晶振 | 同样集成 EEPROM 与振荡器，外围极少 |
+| IO 电平 | 内部 3.3V LDO，VCCIO 选 5V/3.3V（接口 1.8–5V） | VCCIO 1.8–5.25V 可调 |
+| 封装 | SSOP-28（RL）/ QFN-32（RQ） | SSOP-28 / QFN-32 |
+| 典型用途 | USB 串口线、MCU 下载口、低速系统 console | JTAG/SWD 调试探针、SPI Flash 读写、FPGA 配置、I2C 调试工具、高速串口 |
+| 模块价位与渠道 | 便宜、量大；杂牌假芯片（克隆 FT232R）泛滥 | 较贵，以 Adafruit 等正规模块为主 |
+
+注意：FT232H 的 UART 模式与 MPSSE 模式**同一时刻只能用一个**（Adafruit 明确说明）；需要双通道（如一路 UART + 一路 JTAG 同时用）看 FT2232H，四通道看 FT4232H。
+
+## 与本项目的关联
+
+- Radxa Zero 3W console 固定 1500000 波特（约 150 KB/s 有效载荷）：
+  - **FT232RL**：1.5M 在其 3M 标称范围内，但 USB 全速（12 Mbps）链路余量小，且市售 FT232R 假芯片多，高波特率长时间大流量有丢字节/乱码风险；console 这类低占空比输出一般够用。
+  - **FT232H**：1.5M 仅为其 12M 标称的 1/8，480 Mbps 高速 USB 下带宽余量巨大，最稳；且可兼任 pyftdi/OpenOCD 的 SPI/I2C/JTAG 主机工具。
+- 结论对采购的指向：若要外购 FTDI 转接板替代 DAPLink 作为 1.5M console 通道，**FT232H 优先于 FT232RL**；只想要便宜串口则 FT232RL（或 CH340 类）也可用，但须防假货。
+
+## 结论
+
+- 一句话：**FT232RL 是全速 USB 的纯 USB 转 UART 桥；FT232H 是高速 USB 的 UART/FIFO + MPSSE 多协议工具（SPI/I2C/JTAG，时钟至 30 MHz）**。两者封装和"USB 转串口"的基本定位相似，USB 速度、波特率上限和协议引擎能力是三处根本差异。
+
+## 验证状态与限制
+
+- 本页全部为厂商规格与公开资料整理，本机无 FT232H/FT232RL 实测数据。
+- "全速 USB 高波特率易丢字节"是基于既往 DAPLink 实测定性 + 公开经验的推断，未对 FT232RL 实物验证。
+- 未核验当前市售模块价格、真伪与具体渠道；如启动采购需另建采购调研并更新 BOM.md。
+
+## 下一步（可选）
+
+- 若决定为串口通道采购 FT232H 模块：建采购专题，核对 USB-C/Mini 接口、3.3V 电平、EEPROM 已配置版本，并更新 [BOM.md](../../../BOM.md)。
