@@ -149,6 +149,8 @@
 
 **教训**：①fiq_debugger 板子的"降波特率"不是改 cmdline 就能完成的事，改前先确认驱动归属；②DAPLink 克隆挂死时拔下**等 ≥10 秒**再插（短间隔拔插电容未放净，MCU 未真正断电，会"复活失败"假象——当日"报废"误判即源于此）。
 
+**⚠️ 待核查（2026-10-16 记）**：另一会话 2026-10-14 曾向 `/boot/extlinux/extlinux.conf` 写入 `fdtoverlays`（UART2/ttyS2 overlay，见 [radxa 环境核查记录](../radxa-env-check-20261014/research.md)）；本文上节的"extlinux 自 `.bak` 还原"若发生在该写入**之后**，会把 overlay 行抹掉。板子现已关机无法远程验证。**下次开机第一件事**（SSH 或串口）：`grep fdtoverlays /boot/extlinux/extlinux.conf; ls /dev/ttyS2`——无 overlay 行则按环境核查记录补回，有则本悬项关闭。
+
 ## 串口"登录后没反应"根因闭合（2026-10-14，PuTTY 场景）
 
 - **现象**：PuTTY 连 COM3@1500000，见登录提示、账号密码通过，登录后敲键无任何反应。
