@@ -8,6 +8,9 @@
      与 training/params/。生成脚本：training/scripts/build_model_v0.py。 -->
 <mujoco model="duck_v0">
   <compiler angle="radian" autolimits="true"/>
+  <visual>
+    <global offwidth="800" offheight="600"/>
+  </visual>
   <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast"/>
   <default>
     <default class="servo">
