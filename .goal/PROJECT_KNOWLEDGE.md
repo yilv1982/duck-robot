@@ -1,6 +1,6 @@
 # 项目知识（2026-09-30）
 
-> **2026-10-10 目录更新**：三个上游参考库已统一移至根目录 `references/`，本项目调研仍在 `docs/references/`。以下历史主机、WSL 与运行日志记录不是当前环境探测结果；当前根目录以会话环境为准。
+> **历史记录 / 2026-10-15 复查**：三个上游参考库位于 `references/`，本项目调研仍在 `docs/references/`。以下旧主机/训练日志保留历史含义，不是本轮运行结果；当前工作区为 `E:\Projects\duck-robot`，WSL2 Ubuntu 已列为 Running，旧训练环境及 Linux CUDA/依赖功能尚未核验。见[本轮软件研究](../docs/references/c-motion-training-20261015/research.md)。
 
 ## 2026-10-09 增补
 - **硬件到位**（用户确认，实物复测未做）：微雪 Bus Servo Adapter (A)、黑色 XT60 降压模块（丝印 7.2-16V 待核；2026-10-10 实测更新见 PROGRESS 与 docs/photos：实为 7.2-18V，空载下限 ≈6.3V）、绿色 IMU2DXL 板（2026-10-09 用户确认 = ScrapMeta microduck-diy **v0.3**，STM32G031；本行早先记"v1.0 待核"已过时）、白色鸭图案 HAT（**实物丝印 V1.2**，2026-10-10 照片确认，PROGRESS 已同步；存档原理图为 V1.0，图物差异大：背面多 F303 类 MCU + 超级电容，V1.2 图纸待向板卡来源索取）；全部舵机与打印件到位，数量待清点。明细与待办见根 `PROGRESS.md`。
@@ -9,14 +9,14 @@
 - 工程自 E 盘迁 C 盘后，文件时间戳全部为 2026-10-09，**不能再按时间戳找改动**，版本核对一律走上游哈希对比。
 
 ## 范围与规则
-- 工作区：`C:\Projects\duck-robot`（2026-10-09 自 `E:\Projects\duck-robot` 迁入；历史脚本/文档中的 `/mnt/e/`、`E:/` 路径已失效）。交流用简体中文。含中文的 `.ps1` 必须 UTF-8 BOM；优先用 WSL Bash，避免跨 shell 删除/移动。
+- **2026-10-09 历史工作区快照**：当时从 E 盘迁至 `C:\Projects\duck-robot`；当前（2026-10-15）为 `E:\Projects\duck-robot`，旧 `/mnt/e/`、`E:/` 路径须逐项核对，并非全部必然失效。交流用简体中文；含中文的 `.ps1` 必须 UTF-8 BOM，文件操作不跨 shell 拼接。
 - A、B 是独立上游源码快照，不能混合模型、策略、硬件配置或采购资料。不要为了跑通而直接修改上游配置或锁文件。
 - **参考库只读（2026-10-09 用户定规）**：`references/microduck-replica/`、`references/microduck-community-kit/`、`references/microduck-build-tutorial/` 是别人的方案，只读参考，禁止在里面做任何修改。用户进度记在根 `PROGRESS.md`；历史混入的本地修改已提取到 `local-changes/` 并还原上游原样（快照锚点与校验记录见 PROGRESS.md「参考库使用规则」）。
-- 当前已经跑通的是 **B 的 XL330 平地任务**，不是 HD1910；没有进行实机控制。用户正在理解 RL、Real2Sim、训练任务配置和性能。
+- **2026-09-29/30 历史验收**跑通的是 B 的 XL330 平地短训练链路，不是 HD1910/C 线，也不是本轮验收；当时没有进行实机控制。
 
 ## 已安装环境与入口
 
-> ⚠️ **本节为旧机（E 盘时代）环境记录**：现机（C 盘，2026-10-09 迁入）**无 WSL**，训练环境不在本机（见根 PROGRESS「工程迁移」）。复用训练流程前须在现机重建，且所有 `/mnt/e/` 路径须改写。
+> ⚠️ **本节为旧机训练环境历史记录**：2026-10-09/10 的“无 WSL”是当时状态；2026-10-15 已查询到 WSL2 Ubuntu Running。旧 venv、日志、Linux CUDA/训练依赖是否可用仍待查，不把下面版本/PID/路径当现行事实。复用应在可写工作副本逐项核对，见[本轮复查](../docs/references/c-motion-training-20261015/research.md)。
 - WSL 发行版 `Ubuntu`，用户 `yilv`，Ubuntu 24.04；RTX 4080 16GB 可用。
 - Linux uv：`/home/yilv/.local/bin/uv`，版本 0.12.20。
 - 训练目录：`/mnt/e/Projects/duck-robot/references/microduck-replica/software/training`。

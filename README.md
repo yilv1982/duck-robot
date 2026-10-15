@@ -1,6 +1,6 @@
 # duck-robot
 
-Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C（社区套件，飞特舵机路线，2026-10-09 定稿）**：选型采购、3D 打印、装配、系统部署与实机验证；强化学习训练在基础验证后再复现（方案 A 已存档，见下）。
+Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C（社区套件，飞特舵机路线，2026-10-09 定稿）**：选型采购、3D 打印、装配、系统部署与实机验证；软件研究、模型适配与离线训练准备可并行推进；真机动作仍以既定安全检查和模型/接口匹配为前提（方案 A 已存档，见下）。
 
 进度流水、硬件到位记录与当前待办见 [PROGRESS.md](./PROGRESS.md)。
 
@@ -14,7 +14,8 @@ Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C
 - **采购清单**：[BOM.md](./BOM.md)（已重写为 C 线；A 版存档于 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)）
 - **PCB 打样**：[tools/jlc-order](./tools/jlc-order/README.md) —— 嘉立创开放平台全自动下单（计价→建单→审核→进度跟踪），2026-10-09 已实测下单并审核通过
 - **IMU 刷机**：[flash/README.md](./flash/README.md)（DAPLink 接 J2 焊盘）
-- 当前工作序列（IMU 刷机、banana_pcb 到板装配、舵机清点、HAT 验证）以 [PROGRESS](./PROGRESS.md) 待办为准；路线定稿理由与 C 线已知缺口见 PROGRESS「方案方向（2026-10-09）」。
+- **软件与动作训练**：[C 线训练研究与分阶段步骤](./docs/references/c-motion-training-20261015/research.md)（2026-10-15）：站稳 → 慢速直行/停步 → 转向 → 鲁棒性；B 的 HD1910 框架可借鉴，但 C 模型/部署契约待适配，训练尚未开始。
+- 当前工作序列以 [PROGRESS](./PROGRESS.md) 待办与最新记录为准；软件离线准备可与既定硬件步骤并行，不改变硬件安全决定。路线定稿理由与 C 线已知缺口见 PROGRESS「方案方向（2026-10-09）」。
 
 ## 并行参考库（只读）
 
@@ -35,7 +36,7 @@ A 线（XL330 + OpenRB + Pi Zero 2W）的完整步骤基线（阶段 0-7）、�
 
 - A 线 BOM 存档：[docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)
 - 训练基线说明与验收证据：[docs/a-training.md](./docs/a-training.md)、[docs/a-training-validation.json](./docs/a-training-validation.json)
-- 恢复 A 线训练环境前，需先把 [local-changes/microduck-build-tutorial/](./local-changes/microduck-build-tutorial/) 提取件按相对路径复制回位（`export_onnx.py` 内为旧机 WSL 路径，现机无 WSL，复用前须改写）。
+- 恢复 A 线训练应在**可写工作副本**中重建并核对 [local-changes/microduck-build-tutorial/](./local-changes/microduck-build-tutorial/) 提取件；禁止未经授权回填只读参考库。2026-10-15 已列出运行中的 WSL2 Ubuntu，但旧训练环境是否仍在未查；`export_onnx.py` 等旧路径须逐项核对，见[本轮复查](./docs/references/c-motion-training-20261015/research.md)。
 
 ## 致谢
 

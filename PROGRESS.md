@@ -2,6 +2,15 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## C 线动作训练软件研究完成（2026-10-15；训练未开始）
+
+- 新增[软件研究与 10 阶段步骤](./docs/references/c-motion-training-20261015/research.md)：可写基线/模型接口适配 → 站稳 → 慢速直行与停步 → 转向 → 鲁棒性 → 配套导出与受控上机；简单点头/摆头可用关键帧，不必逐动作训练 RL。
+- B 线已有 HD1910 Flat/Rough 任务和公开 1910 BAM 参数，但仍沿用原 Microduck 的几何/惯量及 14 维动作；不能等同本项目 C 线 15 舵机的已校准模型/部署契约。A/B 短训练是历史资产，不是 C 线验收。
+- C 的完整 `software/microduck_feetech/` 在本地及本轮查得公开 main 提交 `923708b6d446f335a9110649cf670f65e29fb2be` 中均缺失；旧补丁仍有 flush/2 ms idle，不能宣称包含 README 后续 50 Hz 修复。上游台架跟随/增益值不是本项目落地行走或整定结果。
+- **本轮只读工具清点**：Windows RTX 4080（16376 MiB，驱动 616.92）、uv 0.10.8；WSL2 Ubuntu 已注册且 Running。尚未验证 Ubuntu 内 CUDA/训练依赖/旧 venv，Windows PATH 无 cargo 不代表未安装 Rust；不复用 PATH 中无关工具 Python 环境。
+- **C 线训练尚未开始**：未安装训练环境、未运行训练/play/策略或硬件动作。本轮仅纠正历史“现机无 WSL/旧路径一律失效”和 Radxa 环境页内部时序矛盾；没有新增 Radxa 实测。
+- 下一步：建立有来源记录的可写 HD1910 平地训练基线与 C 接口/缺参表，并行取得匹配 runtime；主要模型/接口补齐后实施站稳阶段。离线准备可并行，不新增回环等低价值前置测试，不改变 v2 单链供电和既定防烧板检查。
+
 ## Radxa Zero 3 软件环境核查（2026-10-14）
 
 - 板子经 `ssh radxa`（密钥免密，别名已入本机 ssh config）远程核查：Python 3.11/pip/git/gcc/make/i2c-tools/numpy 就绪；WiFi 自动连接正常。
@@ -215,7 +224,7 @@
 
 - **根 BOM.md 重写为 C 线现行清单**（核心件/供电充电/线材/结构件/安全边界，按供电架构 v2 口径：IMU 直挂总线、电源板可选、新增 5A 保险采购项）；原 A 线清单（2026-09-28，XL330 + OpenRB + Pi Zero）原样存档 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)，仅回退 A 线时使用——其供电安全研究（XL330 6.0V 上限、OpenRB 板级电流限制）仍有效。
 - **README.md**：路线状态段更新（主线 = C，指向架构 v2）；「机器人概览」「复刻计划」两节加 A 线基线横幅（原文保留不删——A 训练资产仍有效）。
-- **.goal/PROJECT_KNOWLEDGE.md**：IMU 版本行更正（"v1.0 待核"→已确认 v0.3）；「已安装环境与入口」节加旧机横幅（现机无 WSL，训练环境不在本机，/mnt/e/ 路径失效）。
+- **.goal/PROJECT_KNOWLEDGE.md**：IMU 版本行更正（"v1.0 待核"→已确认 v0.3）；「已安装环境与入口」节曾加旧机横幅（截至 2026-10-10 当时记录为无 WSL、旧训练环境不在该机；2026-10-15 已复查 WSL2 Ubuntu Running，旧环境/路径须逐项核对，见本页最新软件研究）。
 - **power-architecture-v2.md** 两处残留 "实物 V1.1" 更正为 V1.2（与 PROGRESS/照片一致）。
 - 检查过、无需改：docs/a-training.md、docs/b-training.md（明确的 A/B 线训练存档，属历史资产）；flash/、docs/photos/、PROGRESS 本体均为 C 线现行档。
 - 审计移交用户的待确认项：① NP-F550 充电器是否已有（BOM 已列）② HAT V1.2 图纸索取（到货待办已列）。
@@ -233,7 +242,7 @@
 
 2026-10-09 工程从 `E:\Projects\duck-robot` 迁到 `C:\Projects\duck-robot`（全部文件时间戳为迁移当日，无法再据时间戳判断改动，版本核对一律以上游哈希为准）。历史文档/脚本里的 `/mnt/e/`、`E:/` 路径已失效；本次已修根 README 的 3 处链接与 `scripts/a-training.sh` 的 2 处路径，`local-changes/` 里的提取件（export_onnx.py 等）仍含旧路径，复用前需改。
 
-**本机新装工具链（2026-10-09）**：Python 3.13（`%LOCALAPPDATA%\Programs\Python\Python313`，含 pyserial）、OpenOCD 0.12.0（工程内 `flash/tools/`）、嘉立创EDA专业版 3.2.149（`%LOCALAPPDATA%\Programs\lceda-pro`，可开 `.eprj2`）、Git for Windows 2.55（winget 安装于 `C:\Program Files\Git`；`~/.gitconfig` 里失效的本地代理已移除，可直连，user.name/email 已配好）。无 WSL——旧机器的训练环境不在这台机器上。
+**本机新装工具链（2026-10-09）**：Python 3.13（`%LOCALAPPDATA%\Programs\Python\Python313`，含 pyserial）、OpenOCD 0.12.0（工程内 `flash/tools/`）、嘉立创EDA专业版 3.2.149（`%LOCALAPPDATA%\Programs\lceda-pro`，可开 `.eprj2`）、Git for Windows 2.55（winget 安装于 `C:\Program Files\Git`；`~/.gitconfig` 里失效的本地代理已移除，可直连，user.name/email 已配好）。截至 2026-10-09 当时记录为无 WSL、旧训练环境不在该机；2026-10-15 已复查 WSL2 Ubuntu Running，当前工作区为 E 盘，旧训练环境是否仍在待查，见本页最新软件研究。
 
 ## 嘉立创开放平台 API 打通（2026-10-09）
 
