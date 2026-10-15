@@ -14,7 +14,7 @@ Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C
 - **采购清单**：[BOM.md](./BOM.md)（已重写为 C 线；A 版存档于 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)）
 - **PCB 打样**：[tools/jlc-order](./tools/jlc-order/README.md) —— 嘉立创开放平台全自动下单（计价→建单→审核→进度跟踪），2026-10-09 已实测下单并审核通过
 - **IMU 刷机**：[flash/README.md](./flash/README.md)（DAPLink 接 J2 焊盘）
-- **软件与动作训练**：[自建仿真学习步骤与参数借鉴边界](./docs/references/c-motion-training-20261015/research.md)（2026-10-15 用户最新确认）：只读借鉴质量/惯量等物理参数 → 自建模型/环境/奖励 → 通用算法训练 → 回放/调参/导出；不复制或直接运行上游模型、任务配置和代码。实物对齐与机载 runtime 暂缓；尚未提取数值、实现模型或开始训练。
+- **软件与动作训练**：[自建仿真学习步骤与参数借鉴边界](./docs/references/c-motion-training-20261015/research.md)（2026-10-15 用户最新确认）：只读借鉴质量/惯量等物理参数 → 自建模型/环境/奖励 → 通用算法训练 → 回放/调参/导出；不复制或直接运行上游模型、任务配置和代码。实物对齐与机载 runtime 暂缓。**第一轮已落地（2026-10-15）**：[training/](./training/README.md) 自建工程（参数表提取、v0 模型、站立环境、PPO 入口），[物理参数表](./docs/references/c-motion-training-20261015/physical-params.md) 完成溯源；仅仿真学习，无实物操作。
 - 当前工作序列以 [PROGRESS](./PROGRESS.md) 待办与最新记录为准；软件离线准备可与既定硬件步骤并行，不改变硬件安全决定。路线定稿理由与 C 线已知缺口见 PROGRESS「方案方向（2026-10-09）」。
 
 ## 并行参考库（只读）

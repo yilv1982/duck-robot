@@ -23,6 +23,7 @@
 | [`docs/video-notes/`](docs/video-notes/) | 视频笔记、时间戳与核验材料，不能将讲解当作本机实测。 |
 | [`hardware/banana_pcb/`](hardware/banana_pcb/README.md) | 本项目取电板工作副本、KiCad 工程和生产文件；来源见 `SOURCE.md` 与 `source-manifest.json`。 |
 | [`flash/`](flash/README.md) | 本项目 IMU 固件、烧录脚本、HEX 校验及验收工具。 |
+| [`training/`](training/README.md) | 本项目自建 real2sim2real 学习工程：物理参数表、自建 MJCF 生成、站立训练环境与 PPO 入口；只借鉴上游公开数值，不复制模型/任务/训练代码；产物仅仿真学习，不驱动实物。 |
 | [`scripts/`](scripts/) | 本项目辅助脚本：图片标注、历史训练启动等；复用前核对路径和环境。 |
 | [`tools/jlc-order/`](tools/jlc-order/README.md) | 嘉立创 API 下单/查询工具、测试与示例配置；真实配置和调用台账不提交。 |
 | [`references/microduck-community-kit/`](references/microduck-community-kit/README.md) | **C 线主参考，只读**：取电/配电/IMU 板、固件、飞特补丁、舵机调试器。 |
