@@ -3,7 +3,6 @@
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
 ## C 线自建训练工程第一轮落地（2026-10-15；全部仿真，无实物操作）
-
 - 按 2026-10-15 确定的"只借物理参数、全部自建"路线，完成六步学习路线第 1–4 步最小闭环，新建 [training/](./training/README.md) 工程：参数提取脚本（只读解析上游 `robot_walk.xml` 15 body/14 关节/总质量 0.7372 kg 与 LuwuDynamics 1910 BAM 参数）→ [物理参数表](./docs/references/c-motion-training-20261015/physical-params.md)（单位/坐标约定/许可全溯源）→ 自建 v0 模型（自写胶囊/盒几何 + 借鉴质量惯量限位，`build_model_v0.py` 生成）→ 自编 gymnasium 站立环境 + SB3 PPO 训练/回放入口。
 - **验证**：自写四元数级联与 MuJoCo 加载上游 XML 对拍一致（<1e-6）；v0 模型 HOME 静置 4 s 站稳（关节漂 <0.002 rad）。建模修了三个坑（壳-肢体重叠自碰撞、显式积分数值不稳换 implicitfast、foot site 左右局部系不同构致脚盒错位——脚底改用上游 sole mesh 世界位形对照导出），详见[研究记录第 9 节](./docs/references/c-motion-training-20261015/research.md)。
 - **训练未收敛**：两轮各 100 万步 PPO（8 env，CPU ~1900 fps）回合存活停在 ~11 步/500；诊断与下轮迭代方向（终止阈值/动作滤波/站立课程/规模）见 training/README。管线端到端已跑通，策略可加载回放。
@@ -26,10 +25,18 @@
 - 坑位记录：板子出境网速慢（apt 全量 update 约 20 分钟），须 nohup 后台 + 轮询；pkill -f 会误杀自身 SSH 会话（用 pkill -x）；镜像初始 apt 索引为空必须先 update。
 - 家目录有历史误操作残留文件 `~/udo -S -p  sh`（less 帮助页内容），无关功能，待用户确认后删。
 - 详见 [环境核查记录](./docs/references/radxa-env-check-20261014/research.md)。同日镜像评估结论：KDE 版无需换小镜像（sddm 已禁用，桌面不驻留，磁盘占用 11%），见 [radxa-system-check-20261014](./docs/references/radxa-system-check-20261014/research.md)。
+## 串口调试通道终局：115200 不可行已回退，DAPLink 死而复生但仍不可靠（2026-10-14）
+
+- **方案 A（降 115200）实测不可行，已全部回退**：改 extlinux cmdline、给 getty 加 agetty 115200 override 均改变不了 ttyFIQ0 物理波特率——**Rockchip fiq_debugger 驱动独占调试 UART，忽略 cmdline 波特率与用户态 termios**（1.5M 为其硬配置，改它需动设备树，放弃）。板子已还原出厂一致状态（1500000；extlinux 自 `.bak` 还原、override 目录删除）。曾短暂误报"115200 已完成"，勘误。
+- **MOTD 已静音（保留，可逆）**：登录欢迎突发是 DAPLink 挂死触发器；`/etc/motd` 清零 + update-motd.d 两脚本去执行位，备份在板（`/etc/motd.bak`、`/etc/update-motd.d.bak-perms.txt`）。
+- **DAPLink 克隆当日死透→复活**：上午 CDC+HID 双死（OpenOCD `CMD_INFO failed`）、拔插换口无效曾判"报废"；后被较长时间断电救回（CDC 与 SWD/HID 均恢复）。**教训：挂死时拔下等 ≥10 秒再插**（短间隔拔插电容未放净、MCU 未真正断电）。SWD 复活=IMU 刷机功能不受影响；CDC 在 1.5M 下仍随机丢字/挂死（串口登录演示：登录成功、uname 干净返回，随后一条命令即双向丢字）。
+- **通道分工定案**：交互调试走 **SSH**（radxa/radxa，IP 为 DHCP 用前扫——TCP 22 线程扫描可行；本机代理 TUN 会干扰 SSH 需注意绕开）；串口看控制台/救砖用 `serial-log.py` 抓取（接受丢字）；**可靠串口交互待购适配器**（FT232H 最佳 ~¥60-120；CH340/CP2102 ~¥10 理论也够——克隆问题是固件非带宽）。WiFi=CU_M9pw_5G，当日 IP 192.168.1.35。PuTTY 0.85 已装（`C:\Program Files\PuTTY\`）。
+- **勘误（本日）**：①Radxa IP 非固定（DHCP，用户告知）；②1500000 乱码机制早前误算"超 USB 带宽"（差 10 倍），实为 6.67µs 字节间隔超出克隆固件中断响应能力→UART 过载；③"115200 已完成"曾误报（fiq_debugger 假象）。
+- 串口调试通道按用户要求改回手动提交，本条目随 2026-10-16 "update" 一并入库。
 
 ## DAPLink 克隆"总连不上"故障定性（2026-10-14）
 
-- 把散在各处的现象归成**四种不同的"连不上"**：①仅充电线/口导致不枚举（10-13 实测）；②COM3 被前一个 serial-log 窗口占用——昨晚 23:34 起三连发"连不上"即此（22:25 会话持有 COM3 至 00:07，事后推定高置信）；③克隆固件"假在线"挂死需拔插；④Radxa 控制台无 getty、错过启动窗口后静默，属正常被误判。1500000 波特乱码是 USB 全速带宽硬限，不是连接故障。
+- 把散在各处的现象归成**四种不同的"连不上"**：①仅充电线/口导致不枚举（10-13 实测）；②COM3 被前一个 serial-log 窗口占用——昨晚 23:34 起三连发"连不上"即此（22:25 会话持有 COM3 至 00:07，事后推定高置信）；③克隆固件"假在线"挂死需拔插；④Radxa 控制台无 getty、错过启动窗口后静默，属正常被误判。1500000 波特乱码的机制 2026-10-14 已修正：**不是** USB 带宽不够（150KB/s 仅占全速带宽 ~15%，早前"15Mbit/s"系 10 倍笔误），真因是 6.67µs/字节的到达间隔超出克隆固件中断响应能力导致 UART 过载丢字节，持续过载把固件搞死即③；115200（86.8µs/字节，13 倍裕量）下稳定。
 - 枚举成功判据（红灯常亮绿灯闪 + "USB 串行设备 (COMx)"）、对策与证据见[连接排障记录](./docs/references/daplink-connectivity-20261014/research.md)；[flash/README](./flash/README.md) 排障表已互链。仅诊断与落盘，未新增采购。
 
 ## Radxa Zero 3W 救活：换 rsdk-b1 镜像重刷成功（2026-10-13 深夜）

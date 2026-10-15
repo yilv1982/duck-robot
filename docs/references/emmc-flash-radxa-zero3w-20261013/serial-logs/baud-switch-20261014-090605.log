@@ -1,0 +1,5 @@
+[TX 09:06:05.457] grep -o 'console=[^ ]*' /boot/extlinux/extlinux.conf; echo P1END
+[RX 09:06:06.706] b"grep -o 'console=[^ ]*' /boot/extlinux/extlinux.conf; echo P1END\r\n\x1b[?2004l\rconsole=ttyFIQ0,1500000n8\r\nconsole=tty1\r\nconsole=ttyFIQ0,1500000n8\r\nconsole=tty1\rP1END\r\n\x1b[?2004hradxa@radxa-zero3:$ \r\n\x1b[?2004l\r\x1b[?2004hradxa@radxa-zero3:~$ "
+[TX 09:06:08.521] systemctl show -p FragmentPath serial-getty@.service; echo P2END
+[RX 09:06:09.778] b'systemctl show -p FragmentPath serial-getty@.service; echo P2END\r\n\x1b[?2004l\r\r\x1b[0;1;31mFailed to get properties'
+[TX 09:06:11.594] grep -n 1500000 /lib/systemd/system/serial-getty@.service 2>/dev/null | head -3; echo P3END

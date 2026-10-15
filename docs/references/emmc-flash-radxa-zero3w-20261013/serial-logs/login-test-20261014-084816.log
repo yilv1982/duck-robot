@@ -1,0 +1,6 @@
+=== login-test 2026-10-14 08:48:16 | COM3 @ 1500000 8N1 ===
+[08:48:16.187] TX 回车探针: b'\r\n'
+[08:48:17.193] RX b'\r\n\x1b[?2004l\r\x1b[?2004hradxa@radxa-zero3:~$ \r\n\x1b[?2004l\r\x1b[?2004radxa@radxa-zero3:~$ '
+[08:48:37.380] TX 交互验证: b'echo SERIAL-OK-$((9+1))\r\n'
+[08:48:38.387] RX b'echo SERIAL-OK-$(9+1))\r\n\x1b[?2004l\rSERIAL-OK-10\r\n\x1b[?2004hradxa@radxa-zero3:~$ \r\n\x1b[?2004l\r\x1b[?2004hradxa@radxa-zero3:~$ '
+=== 结束 08:48:38 ===
