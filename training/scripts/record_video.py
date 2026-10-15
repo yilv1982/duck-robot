@@ -48,17 +48,21 @@ def main():
     OUT_DIR.mkdir(exist_ok=True)
 
     if mode == "passive":
-        model = mujoco.MjModel.from_xml_path(str(TRAIN / "models" / "duck_v0.xml"))
-        data = mujoco.MjData(model)
-        renderer, cam = make_renderer(model)
-        mujoco.mj_resetDataKeyframe(model, data, 0)
-        data.ctrl[:] = model.key_qpos[0][7:]
+        sys.path.insert(0, str(TRAIN))
+        from duckstand.env import DuckStandEnv
 
-        def step():
-            for _ in range(10):
-                mujoco.mj_step(model, data)
+        env = DuckStandEnv()
+        renderer, cam = make_renderer(env.model)
+        env.reset(seed=0)
 
-        record(data, step, 6.0, OUT_DIR / "stand_passive.mp4", renderer, cam)
+        writer = imageio.get_writer(OUT_DIR / "stand_passive.mp4", fps=FPS, macro_block_size=None)
+        n = int(6.0 * FPS)
+        for _ in range(n):
+            env.step(np.zeros(14))  # action=0 → 目标恒为 HOME，固件力矩环闭环
+            renderer.update_scene(env.data, camera=cam)
+            writer.append_data(renderer.render())
+        writer.close()
+        print(f"已写 {OUT_DIR / 'stand_passive.mp4'} ({n} 帧 / 6s)")
         renderer.close()
 
     elif mode == "policy":

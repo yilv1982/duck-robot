@@ -15,7 +15,7 @@
   <default>
     <default class="servo">
       <joint damping="0" armature="0.00178" frictionloss="0.0158"/>
-      <position kp="25.0" kv="2.0" forcerange="-1.4 1.4"/>
+      <motor ctrllimited="true" ctrlrange="-0.94 0.94"/>
     </default>
     <default class="collision">
       <geom contype="1" conaffinity="1" condim="3" friction="1.0 0.005 0.0001" density="0"/>
@@ -32,23 +32,23 @@
       <geom name="trunk_collision" type="box" size="0.045 0.036 0.035" pos="0 0 0" class="collision"/>
       <site name="imu" pos="-0.021 0 -0.0147" size="0.005"/>
       <body name="yaw2roll" pos="0.006 0.0175 -0.005" quat="0 -0.707107 -0.707107 -0">
-        <joint name="left_hip_yaw" type="hinge" axis="0 0 1" range="-0.436332 0.523599"/>
+        <joint name="left_hip_yaw" type="hinge" axis="0 0 1" range="-0.436332 0.523599" class="servo"/>
         <inertial pos="-8.8e-11 0.00099414 0.0168917" mass="0.0230406" fullinertia="4.1964e-06 3.41752e-06 2.3265e-06 -0 -0 -5.0881e-08"/>
         <geom name="left_hip_yaw_link" type="capsule" size="0.008" fromto="0 0 0 0 0.0165 0.0125" class="collision"/>
         <body name="hip_l" pos="0 0.0165 0.0125" quat="0.707107 -0.707107 -0 -0">
-          <joint name="left_hip_roll" type="hinge" axis="0 0 1" range="-0.383972 0.383972"/>
+          <joint name="left_hip_roll" type="hinge" axis="0 0 1" range="-0.383972 0.383972" class="servo"/>
           <inertial pos="0.014815 1.6179e-08 -0.00829992" mass="0.00618934" fullinertia="8.60626e-07 1.15753e-06 6.51588e-07 1e-12 3.89882e-07 -1e-12"/>
           <geom name="left_hip_roll_link" type="capsule" size="0.008" fromto="0 0 0 0.025 0 -0.0185" class="collision"/>
           <body name="upper_leg_left" pos="0.025 0 -0.0185" quat="0.5 -0.5 0.5 -0.5">
-            <joint name="left_hip_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.5708"/>
+            <joint name="left_hip_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.5708" class="servo"/>
             <inertial pos="0.006766 0.0228838 0.0134531" mass="0.0482067" fullinertia="1.68753e-05 1.03691e-05 1.98269e-05 -4.41852e-06 2.27982e-07 3.89298e-07"/>
             <geom name="left_hip_pitch_link" type="capsule" size="0.011" fromto="0 0 0 0.022 0.0357771 -0.004" class="collision"/>
             <body name="leg" pos="0.022 0.0357771 -0.004" quat="0 0.707107 0.707107 0">
-              <joint name="left_knee" type="hinge" axis="0 0 1" range="-1.5708 1.5708"/>
+              <joint name="left_knee" type="hinge" axis="0 0 1" range="-1.5708 1.5708" class="servo"/>
               <inertial pos="-1.52e-10 0.0318937 -0.00953505" mass="0.0215844" fullinertia="5.25056e-06 2.15507e-06 4.33925e-06 -1e-12 0 7.65005e-07"/>
               <geom name="left_knee_link" type="capsule" size="0.009" fromto="0 0 0 0 0.042 -0.026" class="collision"/>
               <body name="ankle_left" pos="0 0.042 -0.026" quat="0 1 -0 0">
-                <joint name="left_ankle" type="hinge" axis="0 0 1" range="-1.5708 1.5708"/>
+                <joint name="left_ankle" type="hinge" axis="0 0 1" range="-1.5708 1.5708" class="servo"/>
                 <inertial pos="-0.00615738 -0.0137483 -0.0156586" mass="0.0300246" fullinertia="5.91525e-06 1.11534e-05 7.74015e-06 -2.0535e-07 8.2152e-08 5.6714e-08"/>
                 <geom name="left_foot_collision" type="box" size="0.0272 0.0217 0.0068" pos="-0.00678401 -0.0182063 -0.0157014" quat="0 -0 -0.737289 -0.675578" class="foot"/>
               </body>
@@ -57,19 +57,19 @@
         </body>
       </body>
       <body name="neck" pos="0.026 0.0145 0.0324215" quat="0 0 0.707107 -0.707107">
-        <joint name="neck_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.0472"/>
+        <joint name="neck_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.0472" class="servo"/>
         <inertial pos="0 -0.025 0.0141665" mass="0.0368414" fullinertia="1.72925e-05 3.12694e-06 1.63707e-05 0 0 0"/>
         <geom name="neck_pitch_link" type="capsule" size="0.008" fromto="0 0 0 0 -0.05 -0" class="collision"/>
         <body name="neck_pitch" pos="0 -0.05 -0" quat="0 1 0 0">
-          <joint name="head_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.5708"/>
+          <joint name="head_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.5708" class="servo"/>
           <inertial pos="-6.533e-09 0.0116641 -0.0145" mass="0.00572" fullinertia="1.09186e-06 9.66855e-07 5.12111e-07 0 0 0"/>
           <geom name="head_pitch_link" type="capsule" size="0.006" fromto="0 0 0 -0 0.0186931 -0.0145" class="collision"/>
           <body name="yaw_roll_motion" pos="-0 0.0186931 -0.0145" quat="0 0 -0.707107 -0.707107">
-            <joint name="head_yaw" type="hinge" axis="0 0 1" range="-2.96706 2.96706"/>
+            <joint name="head_yaw" type="hinge" axis="0 0 1" range="-2.96706 2.96706" class="servo"/>
             <inertial pos="-0.000166657 -0.00500964 0.0178065" mass="0.0486" fullinertia="6.97903e-06 8.10293e-06 9.57884e-06 3.21657e-07 -3.4797e-08 3.4295e-07"/>
             <geom name="head_yaw_link" type="capsule" size="0.007" fromto="0 0 0 -0.0179 0 0.0145" class="collision"/>
             <body name="jaw_soft" pos="-0.0179 0 0.0145" quat="0.707107 -0 -0.707107 -0">
-              <joint name="head_roll" type="hinge" axis="0 0 1" range="-0.436332 0.436332"/>
+              <joint name="head_roll" type="hinge" axis="0 0 1" range="-0.436332 0.436332" class="servo"/>
               <inertial pos="0.00460523 0.00120047 -0.0324761" mass="0.188766" fullinertia="0.000320812 0.0002541 0.000149882 -6.32292e-07 6.57154e-06 4.18476e-06"/>
               <geom name="head_collision" type="box" size="0.03 0.028 0.026" pos="-0.004 0 -0.02" class="collision"/>
             </body>
@@ -77,23 +77,23 @@
         </body>
       </body>
       <body name="bearing_roll" pos="0.006 -0.0175 -0.005" quat="0 0.707107 0.707107 0">
-        <joint name="right_hip_yaw" type="hinge" axis="0 0 1" range="-0.523599 0.436332"/>
+        <joint name="right_hip_yaw" type="hinge" axis="0 0 1" range="-0.523599 0.436332" class="servo"/>
         <inertial pos="-8.8e-11 0.00099414 0.0168917" mass="0.0230406" fullinertia="4.1964e-06 3.41752e-06 2.3265e-06 -0 -0 -5.0881e-08"/>
         <geom name="right_hip_yaw_link" type="capsule" size="0.008" fromto="0 0 0 -0 0.0165 0.0125" class="collision"/>
         <body name="hip_l_2" pos="-0 0.0165 0.0125" quat="0 -0 0.707107 0.707107">
-          <joint name="right_hip_roll" type="hinge" axis="0 0 1" range="-0.383972 0.383972"/>
+          <joint name="right_hip_roll" type="hinge" axis="0 0 1" range="-0.383972 0.383972" class="servo"/>
           <inertial pos="0.014815 1.6212e-08 -0.00829992" mass="0.00618934" fullinertia="8.60626e-07 1.15753e-06 6.51588e-07 1e-12 3.89882e-07 -1e-12"/>
           <geom name="right_hip_roll_link" type="capsule" size="0.008" fromto="0 0 0 0.025 0 -0.0185" class="collision"/>
           <body name="upper_leg_right" pos="0.025 0 -0.0185" quat="0.5 -0.5 0.5 -0.5">
-            <joint name="right_hip_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.5708"/>
+            <joint name="right_hip_pitch" type="hinge" axis="0 0 1" range="-1.5708 1.5708" class="servo"/>
             <inertial pos="-0.006766 0.0228838 0.0134531" mass="0.0482067" fullinertia="1.68753e-05 1.03691e-05 1.98269e-05 4.41852e-06 -2.27982e-07 3.89298e-07"/>
             <geom name="right_hip_pitch_link" type="capsule" size="0.011" fromto="0 0 0 -0.022 0.0357771 -0.004" class="collision"/>
             <body name="leg_2" pos="-0.022 0.0357771 -0.004" quat="0 1 -0 -0">
-              <joint name="right_knee" type="hinge" axis="0 0 1" range="-1.5708 1.5708"/>
+              <joint name="right_knee" type="hinge" axis="0 0 1" range="-1.5708 1.5708" class="servo"/>
               <inertial pos="-0.0318937 -1.52e-10 -0.00953505" mass="0.0215844" fullinertia="2.15507e-06 5.25056e-06 4.33925e-06 1e-12 -7.65005e-07 0"/>
               <geom name="right_knee_link" type="capsule" size="0.009" fromto="0 0 0 -0.042 0 -0.026" class="collision"/>
               <body name="ankle_right" pos="-0.042 0 -0.026" quat="0 -0.707107 -0.707107 0">
-                <joint name="right_ankle" type="hinge" axis="0 0 1" range="-1.5708 1.5708"/>
+                <joint name="right_ankle" type="hinge" axis="0 0 1" range="-1.5708 1.5708" class="servo"/>
                 <inertial pos="0.00615539 -0.0137482 -0.0156566" mass="0.0300251" fullinertia="5.91534e-06 1.11534e-05 7.74016e-06 2.04877e-07 -8.247e-08 5.7017e-08"/>
                 <geom name="right_foot_collision" type="box" size="0.0272 0.0217 0.0068" pos="0.006784 -0.0182064 -0.0157014" quat="0.675578 -0.737289 0 -0" class="foot"/>
               </body>
@@ -115,20 +115,20 @@
     <exclude body1="jaw_soft" body2="neck"/>
   </contact>
   <actuator>
-    <position class="servo" name="left_hip_yaw" joint="left_hip_yaw" ctrlrange="-0.436332 0.523599"/>
-    <position class="servo" name="left_hip_roll" joint="left_hip_roll" ctrlrange="-0.383972 0.383972"/>
-    <position class="servo" name="left_hip_pitch" joint="left_hip_pitch" ctrlrange="-1.5708 1.5708"/>
-    <position class="servo" name="left_knee" joint="left_knee" ctrlrange="-1.5708 1.5708"/>
-    <position class="servo" name="left_ankle" joint="left_ankle" ctrlrange="-1.5708 1.5708"/>
-    <position class="servo" name="neck_pitch" joint="neck_pitch" ctrlrange="-1.5708 1.0472"/>
-    <position class="servo" name="head_pitch" joint="head_pitch" ctrlrange="-1.5708 1.5708"/>
-    <position class="servo" name="head_yaw" joint="head_yaw" ctrlrange="-2.96706 2.96706"/>
-    <position class="servo" name="head_roll" joint="head_roll" ctrlrange="-0.436332 0.436332"/>
-    <position class="servo" name="right_hip_yaw" joint="right_hip_yaw" ctrlrange="-0.523599 0.436332"/>
-    <position class="servo" name="right_hip_roll" joint="right_hip_roll" ctrlrange="-0.383972 0.383972"/>
-    <position class="servo" name="right_hip_pitch" joint="right_hip_pitch" ctrlrange="-1.5708 1.5708"/>
-    <position class="servo" name="right_knee" joint="right_knee" ctrlrange="-1.5708 1.5708"/>
-    <position class="servo" name="right_ankle" joint="right_ankle" ctrlrange="-1.5708 1.5708"/>
+    <motor class="servo" name="left_hip_yaw" joint="left_hip_yaw" gear="1"/>
+    <motor class="servo" name="left_hip_roll" joint="left_hip_roll" gear="1"/>
+    <motor class="servo" name="left_hip_pitch" joint="left_hip_pitch" gear="1"/>
+    <motor class="servo" name="left_knee" joint="left_knee" gear="1"/>
+    <motor class="servo" name="left_ankle" joint="left_ankle" gear="1"/>
+    <motor class="servo" name="neck_pitch" joint="neck_pitch" gear="1"/>
+    <motor class="servo" name="head_pitch" joint="head_pitch" gear="1"/>
+    <motor class="servo" name="head_yaw" joint="head_yaw" gear="1"/>
+    <motor class="servo" name="head_roll" joint="head_roll" gear="1"/>
+    <motor class="servo" name="right_hip_yaw" joint="right_hip_yaw" gear="1"/>
+    <motor class="servo" name="right_hip_roll" joint="right_hip_roll" gear="1"/>
+    <motor class="servo" name="right_hip_pitch" joint="right_hip_pitch" gear="1"/>
+    <motor class="servo" name="right_knee" joint="right_knee" gear="1"/>
+    <motor class="servo" name="right_ankle" joint="right_ankle" gear="1"/>
   </actuator>
   <keyframe>
     <key name="home" qpos="0 0 0.1182 1 0 0 0 0.0000 -0.0873 -0.4579 -0.0049 0.4530 0.3491 0.3491 0.0000 0.0000 0.0000 0.0873 0.4579 0.0049 -0.4530"/>

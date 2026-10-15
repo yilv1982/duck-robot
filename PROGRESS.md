@@ -8,6 +8,7 @@
 - **验证**：自写四元数级联与 MuJoCo 加载上游 XML 对拍一致（<1e-6）；v0 模型 HOME 静置 4 s 站稳（关节漂 <0.002 rad）。建模修了三个坑（壳-肢体重叠自碰撞、显式积分数值不稳换 implicitfast、foot site 左右局部系不同构致脚盒错位——脚底改用上游 sole mesh 世界位形对照导出），详见[研究记录第 9 节](./docs/references/c-motion-training-20261015/research.md)。
 - **训练未收敛**：两轮各 100 万步 PPO（8 env，CPU ~1900 fps）回合存活停在 ~11 步/500；诊断与下轮迭代方向（终止阈值/动作滤波/站立课程/规模）见 training/README。管线端到端已跑通，策略可加载回放。
 - 依赖：Windows 端 uv venv（Python 3.13 + MuJoCo + gymnasium + SB3 + CPU torch）；未动 WSL/CUDA，未触碰任何实物与参考库。
+- **执行器 v0.1 限速修正（同日，用户指出录像中动作超速后）**：实测旧执行器下关节速度达 792 rad/s（BAM 推算舵机空载上限 ≈11.9 rad/s）；改为 motor+一阶电机模型（电压环/反电动势）后钳到 10.9 rad/s，阶跃响应与舵机规格量级一致；同时修复 XML joint 未引用 default class 致 armature/frictionloss 此前未生效的生成 bug。静置复测通过，录像已重录。
 
 ## C 线动作训练软件研究完成（2026-10-15；训练未开始）
 

@@ -50,12 +50,15 @@ def foot_local_pos(side):
     delta = [FOOT_WORLD_CENTER[side][k] - w["world_pos"][k] for k in range(3)]
     return tuple(sum(m[k][i] * delta[k] for k in range(3)) for i in range(3))
 
-# 执行器 v0：MuJoCo position actuator + PD。kp/kv 为自选初始值（学习用），
-# forcerange 取 HD-1910 堵转 15 kg·cm ≈ 1.47 N·m 的 95%。
-ACT_KP, ACT_KV, ACT_FORCELIMIT = 25.0, 2.0, 1.4
+# 执行器 v0.1：力矩源（motor）+ 环境内一阶电机模型（见 duckstand/env.py）：
+#   V_pwm = clip(KV·(q_target−q), ±vin)；i = (V_pwm − kt·ω)/R；τ = kt·i。
+#   大误差电压饱和 → 反电动势把空载速度钳在 vin/kt ≈ 11.9 rad/s @7.4V（BAM 推算），
+#   修复 v0 position 执行器"无速度上限"的 sim2real 缺陷（关节曾达 792 rad/s）。
+#   ctrlrange = ±kt·vin/R（电压满幅时的力矩饱和，BAM 口径 0.94 N·m @7.4V）。
+ACT_FORCELIMIT = round(BAM["kt"] * 7.4 / BAM["R"], 3)
 # joint 动力学：HD-1910 BAM M6 参数的简化映射
 #   armature = BAM armature（转子折算）；frictionloss = BAM friction_base（库仑摩擦近似）；
-#   BAM 的负载相关摩擦/Stribeck/电压 sag/延迟属完整 BAM 行为，v0 不实现，留待 v1。
+#   BAM 的负载相关摩擦/Stribeck/电压 sag/延迟属完整 BAM 行为，v0.1 不实现，留待 v1。
 JOINT_ARMATURE = round(BAM["armature"], 5)
 JOINT_FRICTION = round(BAM["friction_base"], 5)
 
@@ -132,7 +135,7 @@ def emit_body(name, lines, indent):
     if j:
         lines.append(
             f'{pad}  <joint name="{j["name"]}" type="hinge" axis="{fmt(j["axis"])}" '
-            f'range="{fmt(j["range"])}"/>')
+            f'range="{fmt(j["range"])}" class="servo"/>')
     inert = b["inertial"]
     lines.append(
         f'{pad}  <inertial pos="{fmt(inert["pos"])}" mass="{inert["mass"]:.6g}" '
@@ -187,7 +190,7 @@ def main():
     A('  <default>')
     A('    <default class="servo">')
     A(f'      <joint damping="0" armature="{JOINT_ARMATURE}" frictionloss="{JOINT_FRICTION}"/>')
-    A(f'      <position kp="{ACT_KP}" kv="{ACT_KV}" forcerange="-{ACT_FORCELIMIT} {ACT_FORCELIMIT}"/>')
+    A(f'      <motor ctrllimited="true" ctrlrange="-{ACT_FORCELIMIT} {ACT_FORCELIMIT}"/>')
     A('    </default>')
     A('    <default class="collision">')
     A('      <geom contype="1" conaffinity="1" condim="3" friction="1.0 0.005 0.0001" density="0"/>')
@@ -215,7 +218,7 @@ def main():
     A('  </contact>')
     A('  <actuator>')
     for n in ACT_ORDER:
-        A(f'    <position class="servo" name="{n}" joint="{n}" ctrlrange="{fmt(JOINT_RANGE[n])}"/>')
+        A(f'    <motor class="servo" name="{n}" joint="{n}" gear="1"/>')
     A('  </actuator>')
     A('  <keyframe>')
     A(f'    <key name="home" qpos="0 0 {trunk_z} 1 0 0 0 {home_line}"/>')

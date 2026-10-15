@@ -25,6 +25,15 @@ DECIMATION = 10  # × timestep 0.002s
 ACTION_SCALE = 0.5
 EPISODE_SECONDS = 10.0
 
+# 执行器一阶电机模型（参数来源 training/params/hd1910_bam_m6.json，LuwuDynamics 公开辨识）：
+#   V_pwm = clip(KV·(q_target−q), ±vin)；i = (V_pwm − kt·ω)/R；τ = kt·i → motor ctrl。
+#   电压饱和段空载速度被反电动势钳在 vin/kt ≈ 11.9 rad/s @7.4V；力矩饱和 kt·vin/R ≈ 0.94 N·m。
+#   KV 为自选固件增益（小信号刚度 kt·KV/R ≈ 25 N·m/rad，与 v0 的 kp=25 相当），待整定。
+MOTOR_KT = 0.6237611235393989
+MOTOR_R = 4.910191564179625
+MOTOR_VIN = 7.4
+FIRMWARE_KV = 200.0  # V/rad
+
 # 奖励权重（自选初始值；迭代时一次只改一项）
 W_UPRIGHT = 1.0
 W_HEIGHT = 1.0
@@ -69,6 +78,14 @@ class DuckStandEnv(gym.Env):
         self._renderer = None
         self._viewer = None
 
+    def _motor_torque(self, q_target: np.ndarray) -> np.ndarray:
+        """一阶电机模型：固件电压环 + 反电动势限速，返回关节力矩。"""
+        q = self.data.qpos[self.qpos_addr]
+        dq = self.data.qvel[6:]
+        v_pwm = np.clip(FIRMWARE_KV * (q_target - q), -MOTOR_VIN, MOTOR_VIN)
+        current = (v_pwm - MOTOR_KT * dq) / MOTOR_R
+        return MOTOR_KT * current
+
     # ---------- 观测 ----------
 
     def _gravity_body(self) -> np.ndarray:
@@ -100,7 +117,7 @@ class DuckStandEnv(gym.Env):
         self.data.qvel[2] = rng.uniform(-0.03, 0.03)
 
         self._last_action = np.zeros(self.nu)
-        self.data.ctrl[:] = self.home_q
+        self.data.ctrl[:] = 0.0  # motor ctrl = 关节力矩
         mujoco.mj_forward(self.model, self.data)
         return self._get_obs(), {}
 
@@ -119,8 +136,9 @@ class DuckStandEnv(gym.Env):
                          self.ctrlrange[:, 0], self.ctrlrange[:, 1])
         prev_action = self._last_action.copy()
 
-        self.data.ctrl[:] = target
         for _ in range(DECIMATION):
+            # 每个物理步重算力矩（固件环频率高于控制频率的近似）
+            self.data.ctrl[:] = self._motor_torque(target)
             mujoco.mj_step(self.model, self.data)
 
         obs = self._get_obs()

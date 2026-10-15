@@ -102,15 +102,17 @@ HOME 位形下派生几何（用于自建胶囊设计，由 [extract_public_para
 
 限制（上游 README 明示）：非本项目辨识；`q_offset` 不等于装配零位；`max_velocity` 非空载转速；`command_delay` 与队列 lag 不可相加；原始辨识电压/固件未知；`actuator:"sts3215"` 是 BAM 实现选择，不代表本机固件同款。
 
-### 6.2 v0 模型的简化映射（自定）
+### 6.2 v0.1 模型的简化映射（自定；2026-10-15 用户指出动作超速后修正）
 
-| v0 使用值 | 来源与理由 |
+执行器为**力矩源（motor）+ 环境内一阶电机模型**：`V_pwm = clip(KV·(q_target−q), ±vin)`，`i = (V_pwm − kt·ω)/R`，`τ = kt·i`，每个物理步（0.002 s）重算。
+
+| v0.1 使用值 | 来源与理由 |
 |---|---|
-| joint `armature=0.00178` | S2 `armature` 原值 |
-| joint `frictionloss=0.0158` | S2 `friction_base` 原值（库仑摩擦近似） |
-| position actuator `forcerange=±1.4` | S4 堵转 15 kg·cm≈1.47 N·m 的 95% |
-| position actuator `kp=25, kv=2` | **自选初始值**（无上游依据），训练迭代项 |
-| 延迟/电压 sag/负载相关摩擦/Stribeck | **v0 未实现**，完整 BAM 行为留待 v1 |
+| motor `ctrlrange=±0.94` | S2 电压满幅力矩 `kt·vin/R` @7.4V（规格书 15 kg·cm≈1.47 为 8.4V/辨识口径差异，保留对照） |
+| 速度上限 ≈11.9 rad/s @7.4V | 反电动势自然导出 `vin/kt`（S2），60° 用时 88 ms，与飞特标称量级一致；**修复了 v0 position 执行器无速度上限的缺陷**（旧策略实测关节速度达 792 rad/s，修正后 10.9 rad/s） |
+| joint `armature=0.00178`、`frictionloss=0.0158` | S2 原值。勘误：v0 生成 XML 的 joint 未引用 default class，两参数此前**实际未生效**，2026-10-15 修正后才真正加载 |
+| 固件电压环增益 `KV=200` V/rad | **自选初始值**（小信号刚度 kt·KV/R ≈ 25 N·m/rad，与 v0 的 kp=25 相当），待整定 |
+| 延迟/电压 sag/负载相关摩擦/Stribeck | **v0.1 未实现**，完整 BAM 行为留待 v1 |
 | 控制周期 50 Hz（timestep 0.002 × decimation 10） | 上游控制周期口径，非本机总线实测 |
 
 对照：上游 XL330 XML 辨识默认为 `kp=0.55, kv=0, forcerange ±0.96, damping 0.053, frictionloss 0.0048, armature 0.0018`（**XL330 参数，C 线不用**，仅记录防混用）；上游 HD-1910 任务用完整 BAM + `kp_fw=5`、电压 7.4–8.0 V、命令延迟 3–6 步。
