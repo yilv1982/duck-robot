@@ -28,9 +28,12 @@ uv pip install mujoco gymnasium stable-baselines3 torch   # Windows pypi torch �
 ```bash
 python scripts/extract_public_params.py   # 只读提取参数（参数库变动时重跑）
 python scripts/build_model_v0.py          # 重新生成模型
-.venv/Scripts/python.exe train.py --steps 200000 --envs 8
-.venv/Scripts/python.exe play.py checkpoints/duck_stand_v0/final.zip
+.venv/Scripts/python.exe train.py --steps 1000000 --envs 8
+.venv/Scripts/python.exe play.py checkpoints/duck_stand_v022/final.zip
+.venv/Scripts/python.exe interact.py      # 交互推扰测试（见下）
 ```
+
+**交互测试**（`interact.py`）：加载策略实时控制，在 viewer 窗口**双击身体选中 → Ctrl+左键拖动**手工施加外力（拖得越远力越大），松手后看机器人自行恢复；摔倒 1s 自动重置。无头预验证：躯干侧推 0.5/1/2 N×0.3 s（最强相当于 ~0.8 m/s 冲量）均活满回合。
 
 ## v0 接口约定（训练↔部署一致性以此为准）
 
