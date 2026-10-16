@@ -31,6 +31,16 @@ ACTION_SCALE = 0.1
 ACTION_EMA_ALPHA = 0.25
 EPISODE_SECONDS = 10.0
 
+# v0.3 推扰事件：训练中随机对躯干施加水平脉冲力，逼策略学会主动恢复。
+# 标定依据（恒零策略被动极限，0.3s 脉冲）：1N 满额 100%、2N 62%、3N 12%、≥4N 0%，
+# 故力幅取 1–4N 覆盖"被动扛不住"的区间。设 PUSH_COUNT_RANGE=(0,0) 可整体关闭；
+# interact.py 手推时置 env.push_enabled=False，避免覆写用户施加的力。
+PUSH_COUNT_RANGE = (1, 3)          # 每回合推扰次数
+PUSH_FORCE_RANGE = (1.0, 4.0)      # 力幅 N（水平）
+PUSH_DURATION_RANGE = (0.2, 0.4)   # 持续 s
+PUSH_FIRST_TIME_RANGE = (1.0, 8.0) # 首次时刻 s（留出站稳时间）
+PUSH_INTERVAL_RANGE = (1.0, 3.0)   # 相邻推扰间隔 s
+
 # 执行器一阶电机模型（参数来源 training/params/hd1910_bam_m6.json，LuwuDynamics 公开辨识）：
 #   V_pwm = clip(KV·(q_target−q), ±vin)；i = (V_pwm − kt·ω)/R；τ = kt·i → motor ctrl。
 #   电压饱和段空载速度被反电动势钳在 vin/kt ≈ 11.9 rad/s @7.4V；力矩饱和 kt·vin/R ≈ 0.94 N·m。
@@ -88,6 +98,36 @@ class DuckStandEnv(gym.Env):
         self._step_count = 0
         self._renderer = None
         self._viewer = None
+        # 推扰：施加对象为躯干；实例开关供交互模式关闭（False 时 step 不触碰 xfrc_applied）
+        self.push_enabled = True
+        self._trunk_bid = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_BODY, "trunk_base")
+        self._push_schedule = []  # [(start_step, end_step, fx, fy), ...] 控制步计数
+
+    def _sample_push_schedule(self):
+        """按 PUSH_* 常量抽样本回合推扰时刻表（力水平方向随机）。"""
+        rng = self.np_random
+        n = int(rng.integers(PUSH_COUNT_RANGE[0], PUSH_COUNT_RANGE[1] + 1))
+        schedule = []
+        t = rng.uniform(*PUSH_FIRST_TIME_RANGE)
+        for _ in range(n):
+            start = int(t * CONTROL_HZ)
+            dur = int(rng.uniform(*PUSH_DURATION_RANGE) * CONTROL_HZ)
+            angle = rng.uniform(0, 2 * np.pi)
+            mag = rng.uniform(*PUSH_FORCE_RANGE)
+            schedule.append((start, start + dur, mag * np.cos(angle), mag * np.sin(angle)))
+            t += rng.uniform(*PUSH_DURATION_RANGE) + rng.uniform(*PUSH_INTERVAL_RANGE)
+        return schedule
+
+    def _apply_push(self):
+        """按时刻表写入/清除躯干外力，返回当前力幅（N）。"""
+        active = 0.0
+        for start, end, fx, fy in self._push_schedule:
+            if start <= self._step_count < end:
+                self.data.xfrc_applied[self._trunk_bid, :3] = (fx, fy, 0.0)
+                active = float(np.hypot(fx, fy))
+                return active
+        self.data.xfrc_applied[self._trunk_bid, :3] = 0.0
+        return active
 
     def _motor_torque(self, q_target: np.ndarray) -> np.ndarray:
         """一阶电机模型：固件电压环 + 反电动势限速，返回关节力矩。"""
@@ -130,6 +170,8 @@ class DuckStandEnv(gym.Env):
         self._last_action = np.zeros(self.nu)
         self._action_filtered = np.zeros(self.nu)
         self._step_count = 0
+        self._push_schedule = self._sample_push_schedule() if self.push_enabled else []
+        self.data.xfrc_applied[:] = 0.0
         self.data.ctrl[:] = 0.0  # motor ctrl = 关节力矩
         mujoco.mj_forward(self.model, self.data)
         return self._get_obs(), {}
@@ -151,6 +193,7 @@ class DuckStandEnv(gym.Env):
                          self.ctrlrange[:, 0], self.ctrlrange[:, 1])
         prev_action = self._last_action.copy()
 
+        push_force = self._apply_push() if self.push_enabled else 0.0
         for _ in range(DECIMATION):
             # 每个物理步重算力矩（固件环频率高于控制频率的近似）
             self.data.ctrl[:] = self._motor_torque(target)
@@ -171,6 +214,8 @@ class DuckStandEnv(gym.Env):
                   + W_ACTION_MAG * action_mag + W_ALIVE)
 
         terminated = bool(np.linalg.norm(g[:2]) > TILT_TERMINATE or z < self.z_home * 0.6)
+        if terminated:
+            self.data.xfrc_applied[:] = 0.0  # 摔倒后不再施力
         truncated = self._step_count >= int(EPISODE_SECONDS * CONTROL_HZ)
         self._step_count += 1
         self._last_action = self._action_filtered.copy()
@@ -178,7 +223,7 @@ class DuckStandEnv(gym.Env):
         if self.render_mode == "human":
             self.render()
         return obs, float(reward), terminated, truncated, {
-            "upright": upright, "height": height, "z": z}
+            "upright": upright, "height": height, "z": z, "push_force": push_force}
 
     # ---------- 渲染 ----------
 

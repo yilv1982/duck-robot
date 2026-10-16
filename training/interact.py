@@ -32,6 +32,7 @@ from duckstand.env import DuckStandEnv  # noqa: E402
 def main():
     ckpt = sys.argv[1] if len(sys.argv) > 1 else "checkpoints/duck_stand_v022/final.zip"
     env = DuckStandEnv()
+    env.push_enabled = False  # 交互模式关闭自动推扰，保留用户手推的力
     policy = PPO.load(ckpt)
     obs, _ = env.reset(seed=0)
 
