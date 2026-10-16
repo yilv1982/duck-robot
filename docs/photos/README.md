@@ -40,6 +40,7 @@
 | [imu-board-b-20261014-a.jpg](./imu-board-b-20261014-a.jpg) | 第二块 IMU 板背面 | 2026-10-14 | 仅板厂标记（94V-0 / E469747 / HQPCB-2），无版本丝印 | IMU 版本判别 |
 | [imu-board-b-20261014-b.jpg](./imu-board-b-20261014-b.jpg) | 第二块 IMU 板正面 | 2026-10-14 | **LQFP48 主控（GigaDevice GD32F303）+ 单 3P 白座 + 降压前端（电感 L1/二极管）**；识别为 jyg9 社区成品版 imu_to_dxl | 挂 8.4V 总线前核对针序 |
 | [sch/page1–5.png](./sch/) | HAT V1.0 原理图 PDF 逐页导出图 | 2026-10-11（制作） | 源自 `docs/schematics/microduck-hat-v1.0-sch/` 的 5 页 SCH PDF，供屏幕对照放大查看；**图纸版本 V1.0，实物 V1.2，图物差异见 HAT 小节** | HAT A 段图物对照 |
+| [ft232h-breakout-20261016.jpg](./ft232h-breakout-20261016.jpg) | FT232H 转接板 | 2026-10-16 | 紫色 Adafruit FT232H Breakout 兼容板（USB-C，D0–D7/C0–C9 两排孔，**照片上排针未焊**） | Radxa 1.5M console 接线（见下方小节） |
 
 ## 降压模块（黑色，XT60 输入）— 2026-10-10 照片识别（正面+背面）
 
@@ -185,6 +186,23 @@
 **与之前调研的差异（待确认）**：2026-10-09 调研记录称 jyg9 版"板上带 CH340 调试口"，本板照片上**未见 USB 座或 CH340**，调试/升级通道待核对（可能走总线在线升级 `upgrade.py`，或有未识别的排针焊盘）。
 
 **含义**：出厂即 DXL 2.0 + 飞特双协议自动识别，ID 200，**不需要刷固件**；供电 6~24V，可直接挂 8.4V 舵机总线末端（接线前仍须核对 3P 座针序：对照 [三板舵机座对比](./board-servo-socket-pinout.png)，JST EH 脚序 1=GND 2=V+ 3=DATA）。
+
+## FT232H 转接板 — Adafruit FT232H Breakout 兼容板 — 2026-10-16 照片识别
+
+用户提供照片（[原图](./ft232h-breakout-20261016.jpg)，企业微信压缩图），**照片识别、未上电**。
+
+| 证据 | 观察 |
+|---|---|
+| 板面大字丝印 | FT232H（USB 转 UART/FIFO/JTAG 类转接板） |
+| USB 口 | USB-C |
+| 主控 | SSOP 封装 FTDI 芯片（具体后缀照片看不清），旁有小封装芯片（疑 3.3V LDO） |
+| 引脚 | 两排通孔：上排 Gnd + C0–C9（ACBUS）；下排 3V / 5V / Gnd + D0–D7（ADBUS） |
+| 其他 | I2C 拨码开关 + 4P I2C 专用座（只控制该口上拉，UART 用不到）；晶振、去耦电容若干 |
+
+- 布局与 [Adafruit FT232H Breakout](https://learn.adafruit.com/adafruit-ft232h-breakout) 一致 → UART 模式 **D0=TX、D1=RX**，3.3V 逻辑（兼容板按同设计推断，照片未见电平跳线）。
+- **照片上未见已焊排针（只有通孔焊盘）**：接线前需先焊排针，至少下排相邻的 Gnd / D0 / D1 三脚。
+- 用途：接 Radxa Zero 3W 调试串口（1500000 8N1），替代克隆 DAPLink 的串口通道。接线速查见 [ft232h-radxa-serial-20261016](../references/ft232h-radxa-serial-20261016/research.md)。
+- 待核对：枚举 VID/PID 应为 0403:6014（兼防克隆芯片问题）；丝印细节以实物为准。
 
 ## 新增照片规则
 
