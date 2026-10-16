@@ -25,6 +25,10 @@ DECIMATION = 10  # × timestep 0.002s
 # v0.2：站立只需 ±0.1 rad 内微调（初始扰动 0.015 rad），大缩放会让随机策略
 # 的高频目标抖动立即推倒机器人（±0.05 rad 抖动 0.9s 即摔，见 README 状态节）。
 ACTION_SCALE = 0.1
+# v0.2.2：目标指令低通（EMA）。确定性策略输出每步 |Δa|≈0.32 → 目标角每步跳
+# ±0.03 rad@50Hz；真实舵机固件有斜率/加速度限制本就跟不上这种跳变，EMA 即其
+# 近似（时间常数 ~3 步=60ms），且部署时同样适用（训练/部署一致）。
+ACTION_EMA_ALPHA = 0.25
 EPISODE_SECONDS = 10.0
 
 # 执行器一阶电机模型（参数来源 training/params/hd1910_bam_m6.json，LuwuDynamics 公开辨识）：
@@ -37,11 +41,14 @@ MOTOR_VIN = 7.4
 FIRMWARE_KV = 200.0  # V/rad
 
 # 奖励权重（自选初始值；迭代时一次只改一项）
+# v0.2.1：抖动诊断显示确定性策略每步 |Δa|≈0.32（目标角每步跳 ±0.03 rad、
+# 关节每步摆 2.7°@50Hz），而旧平滑惩罚每步仅 ~0.005 分、占总奖励 <0.2%，
+# 策略无动力收敛到"静止站"。加大 action_rate/mag 惩罚逼出安静站立。
 W_UPRIGHT = 1.0
 W_HEIGHT = 1.0
 W_JOINT_HOME = 0.5
-W_ACTION_RATE = -0.05
-W_ACTION_MAG = -0.01   # 动作幅度惩罚：帮助先收敛到"安静站住"再学调整
+W_ACTION_RATE = -0.5
+W_ACTION_MAG = -0.05
 W_ALIVE = 0.5
 
 Z_HOME_TOL = 0.05     # 高度奖励宽度（m）
@@ -77,6 +84,7 @@ class DuckStandEnv(gym.Env):
         self.action_space = gym.spaces.Box(-1.0, 1.0, (self.nu,), np.float64)
 
         self._last_action = np.zeros(self.nu)
+        self._action_filtered = np.zeros(self.nu)
         self._step_count = 0
         self._renderer = None
         self._viewer = None
@@ -120,6 +128,7 @@ class DuckStandEnv(gym.Env):
         self.data.qvel[2] = rng.uniform(-0.03, 0.03)
 
         self._last_action = np.zeros(self.nu)
+        self._action_filtered = np.zeros(self.nu)
         self._step_count = 0
         self.data.ctrl[:] = 0.0  # motor ctrl = 关节力矩
         mujoco.mj_forward(self.model, self.data)
@@ -136,7 +145,9 @@ class DuckStandEnv(gym.Env):
 
     def step(self, action):
         action = np.clip(action, -1.0, 1.0)
-        target = np.clip(self.home_q + ACTION_SCALE * action,
+        self._action_filtered = (ACTION_EMA_ALPHA * action
+                                 + (1.0 - ACTION_EMA_ALPHA) * self._action_filtered)
+        target = np.clip(self.home_q + ACTION_SCALE * self._action_filtered,
                          self.ctrlrange[:, 0], self.ctrlrange[:, 1])
         prev_action = self._last_action.copy()
 
@@ -162,11 +173,11 @@ class DuckStandEnv(gym.Env):
         terminated = bool(np.linalg.norm(g[:2]) > TILT_TERMINATE or z < self.z_home * 0.6)
         truncated = self._step_count >= int(EPISODE_SECONDS * CONTROL_HZ)
         self._step_count += 1
-        self._last_action = action.copy()
+        self._last_action = self._action_filtered.copy()
 
         if self.render_mode == "human":
             self.render()
-        return obs, float(reward), terminated, False, {
+        return obs, float(reward), terminated, truncated, {
             "upright": upright, "height": height, "z": z}
 
     # ---------- 渲染 ----------
