@@ -14,9 +14,14 @@ from pathlib import Path
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback, CallbackList, CheckpointCallback
 from stable_baselines3.common.monitor import Monitor
-from stable_baselines3.common.vec_env import DummyVecEnv
+from stable_baselines3.common.vec_env import DummyVecEnv, SubprocVecEnv
 
 from duckstand.env import DuckStandEnv
+
+
+def make_env():
+    from stable_baselines3.common.monitor import Monitor
+    return Monitor(DuckStandEnv())
 
 
 class LogStdCap(BaseCallback):
@@ -47,8 +52,13 @@ def main():
     out_dir = Path(__file__).parent / "checkpoints" / args.run_name
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    venv = DummyVecEnv([lambda: Monitor(DuckStandEnv()) for _ in range(args.envs)])
+    if args.envs >= 32:
+        # Linux/WSL 大规模并行：fork 模式，make_env 模块级可 pickle
+        venv = SubprocVecEnv([make_env for _ in range(args.envs)], start_method="fork")
+    else:
+        venv = DummyVecEnv([lambda: Monitor(DuckStandEnv()) for _ in range(args.envs)])
 
+    n_steps = 128 if args.envs >= 32 else 512  # 大并行时缩小单环境 rollout
     if args.continue_from:
         model = PPO.load(args.continue_from, env=venv)
         if args.log_std is not None:
@@ -62,9 +72,10 @@ def main():
             # std≈0.15：与 ACTION_SCALE=0.1 组合后目标抖动 ±0.015 rad，
             # 随机基线存活 ~3s，保证初始梯度信号（大幅 std 下全部 0.5s 内摔死）。
             policy_kwargs=dict(net_arch=[128, 128], log_std_init=-1.0),
-            n_steps=512, batch_size=512, n_epochs=5,
+            n_steps=n_steps, batch_size=4096, n_epochs=5,
             learning_rate=3e-4, gamma=0.99, gae_lambda=0.95,
             ent_coef=0.0, verbose=1,
+            device="auto",
         )
 
     ckpt_cb = CheckpointCallback(save_freq=20_000, save_path=str(out_dir), name_prefix="ckpt")
