@@ -22,8 +22,10 @@ HOME_JSON = TRAIN / "params" / "home_pose.json"
 
 CONTROL_HZ = 50.0
 DECIMATION = 10  # × timestep 0.002s
-# v0.2：站立只需 ±0.1 rad 内微调（初始扰动 0.015 rad），大缩放会让随机策略
-# 的高频目标抖动立即推倒机器人（±0.05 rad 抖动 0.9s 即摔，见 README 状态节）。
+# v0.3c 定论（四轮 1100 万步实证）：scale=0.1 安静+有响应但带宽不足以救 3N；
+# scale=0.3 两轮（v0.3b/d）探索噪声破坏站立全部学崩，压低初始 log_std 也无效
+# （PPO 自适应调回）。当前动作空间架构（EMA+位置目标角）下 3N 恢复不可达，
+# 改进方向见研究记录（非对称动作空间/课程/更大算力），v0.3c 为本轮最佳成果。
 ACTION_SCALE = 0.1
 # v0.2.2：目标指令低通（EMA）。确定性策略输出每步 |Δa|≈0.32 → 目标角每步跳
 # ±0.03 rad@50Hz；真实舵机固件有斜率/加速度限制本就跟不上这种跳变，EMA 即其
@@ -54,11 +56,14 @@ FIRMWARE_KV = 200.0  # V/rad
 # v0.2.1：抖动诊断显示确定性策略每步 |Δa|≈0.32（目标角每步跳 ±0.03 rad、
 # 关节每步摆 2.7°@50Hz），而旧平滑惩罚每步仅 ~0.005 分、占总奖励 <0.2%，
 # 策略无动力收敛到"静止站"。加大 action_rate/mag 惩罚逼出安静站立。
+# v0.3c：解除响应抑制——v0.3 有反应（受力窗口 |Δa| 6.6×）却只有 0.36/1.0 的
+# 幅度（非 scale 封顶），因为 joint_home/action_mag 都在罚"被推时必要的偏离"。
+# 降这两项权重，让"活着"主导；安静由 action_rate（EMA 后天然平滑）维持。
 W_UPRIGHT = 1.0
 W_HEIGHT = 1.0
-W_JOINT_HOME = 0.5
+W_JOINT_HOME = 0.1
 W_ACTION_RATE = -0.5
-W_ACTION_MAG = -0.05
+W_ACTION_MAG = -0.01
 W_ALIVE = 0.5
 
 Z_HOME_TOL = 0.05     # 高度奖励宽度（m）

@@ -25,6 +25,8 @@ def main():
     ap.add_argument("--envs", type=int, default=8)
     ap.add_argument("--continue-from", type=str, default=None, help="续训的 checkpoint 路径")
     ap.add_argument("--run-name", type=str, default="duck_stand_v0")
+    ap.add_argument("--log-std", type=float, default=None,
+                    help="续训时覆盖策略初始 log_std（如 -3.0），压低探索噪声")
     args = ap.parse_args()
 
     out_dir = Path(__file__).parent / "checkpoints" / args.run_name
@@ -34,7 +36,11 @@ def main():
 
     if args.continue_from:
         model = PPO.load(args.continue_from, env=venv)
-        print(f"续训: {args.continue_from}")
+        if args.log_std is not None:
+            model.policy.log_std.data.fill_(args.log_std)
+            print(f"续训: {args.continue_from} (log_std 覆盖为 {args.log_std})")
+        else:
+            print(f"续训: {args.continue_from}")
     else:
         model = PPO(
             "MlpPolicy", venv,
