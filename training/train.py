@@ -38,7 +38,9 @@ def main():
     else:
         model = PPO(
             "MlpPolicy", venv,
-            policy_kwargs=dict(net_arch=[128, 128], log_std_init=-1.0),
+            # std≈0.15：与 ACTION_SCALE=0.1 组合后目标抖动 ±0.015 rad，
+            # 随机基线存活 ~3s，保证初始梯度信号（大幅 std 下全部 0.5s 内摔死）。
+            policy_kwargs=dict(net_arch=[128, 128], log_std_init=-1.9),
             n_steps=512, batch_size=512, n_epochs=5,
             learning_rate=3e-4, gamma=0.99, gae_lambda=0.95,
             ent_coef=0.0, verbose=1,

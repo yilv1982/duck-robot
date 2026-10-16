@@ -22,7 +22,9 @@ HOME_JSON = TRAIN / "params" / "home_pose.json"
 
 CONTROL_HZ = 50.0
 DECIMATION = 10  # × timestep 0.002s
-ACTION_SCALE = 0.5
+# v0.2：站立只需 ±0.1 rad 内微调（初始扰动 0.015 rad），大缩放会让随机策略
+# 的高频目标抖动立即推倒机器人（±0.05 rad 抖动 0.9s 即摔，见 README 状态节）。
+ACTION_SCALE = 0.1
 EPISODE_SECONDS = 10.0
 
 # 执行器一阶电机模型（参数来源 training/params/hd1910_bam_m6.json，LuwuDynamics 公开辨识）：
@@ -75,6 +77,7 @@ class DuckStandEnv(gym.Env):
         self.action_space = gym.spaces.Box(-1.0, 1.0, (self.nu,), np.float64)
 
         self._last_action = np.zeros(self.nu)
+        self._step_count = 0
         self._renderer = None
         self._viewer = None
 
@@ -117,6 +120,7 @@ class DuckStandEnv(gym.Env):
         self.data.qvel[2] = rng.uniform(-0.03, 0.03)
 
         self._last_action = np.zeros(self.nu)
+        self._step_count = 0
         self.data.ctrl[:] = 0.0  # motor ctrl = 关节力矩
         mujoco.mj_forward(self.model, self.data)
         return self._get_obs(), {}
@@ -156,6 +160,8 @@ class DuckStandEnv(gym.Env):
                   + W_ACTION_MAG * action_mag + W_ALIVE)
 
         terminated = bool(np.linalg.norm(g[:2]) > TILT_TERMINATE or z < self.z_home * 0.6)
+        truncated = self._step_count >= int(EPISODE_SECONDS * CONTROL_HZ)
+        self._step_count += 1
         self._last_action = action.copy()
 
         if self.render_mode == "human":

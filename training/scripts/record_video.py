@@ -67,7 +67,7 @@ def main():
 
     elif mode == "policy":
         ckpt = sys.argv[2] if len(sys.argv) > 2 else str(
-            TRAIN / "checkpoints" / "duck_stand_v0_1m_b" / "final.zip")
+            TRAIN / "checkpoints" / "duck_stand_v02" / "final.zip")
         from stable_baselines3 import PPO
         from duckstand.env import DuckStandEnv
 

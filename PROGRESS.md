@@ -2,6 +2,10 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## C 线站立策略训练成功（2026-10-15；仿真，无实物）
+
+- 用户目标「训练站立动作」达成：v0.2 配置（ACTION_SCALE 0.1 + 初始 std 0.15）100 万步 PPO 后，确定性策略 **10/10 回合活满 10 s**（upright>0.996、z≈HOME），**3 倍扰动下 5/5 活满**。关键诊断：杀伤来自策略输出高频目标抖动而非初始扰动；缩小有效动作尺度后 9 分钟收敛。录像与 checkpoint 存 [training/](./training/README.md)（本地不入库）。仅仿真学习成果，不构成实物行为预测或上机依据；下一步推扰鲁棒性、执行器 BAM 化与速度任务。
+
 ## C 线自建训练工程第一轮落地（2026-10-15；全部仿真，无实物操作）
 - 按 2026-10-15 确定的"只借物理参数、全部自建"路线，完成六步学习路线第 1–4 步最小闭环，新建 [training/](./training/README.md) 工程：参数提取脚本（只读解析上游 `robot_walk.xml` 15 body/14 关节/总质量 0.7372 kg 与 LuwuDynamics 1910 BAM 参数）→ [物理参数表](./docs/references/c-motion-training-20261015/physical-params.md)（单位/坐标约定/许可全溯源）→ 自建 v0 模型（自写胶囊/盒几何 + 借鉴质量惯量限位，`build_model_v0.py` 生成）→ 自编 gymnasium 站立环境 + SB3 PPO 训练/回放入口。
 - **验证**：自写四元数级联与 MuJoCo 加载上游 XML 对拍一致（<1e-6）；v0 模型 HOME 静置 4 s 站稳（关节漂 <0.002 rad）。建模修了三个坑（壳-肢体重叠自碰撞、显式积分数值不稳换 implicitfast、foot site 左右局部系不同构致脚盒错位——脚底改用上游 sole mesh 世界位形对照导出），详见[研究记录第 9 节](./docs/references/c-motion-training-20261015/research.md)。
