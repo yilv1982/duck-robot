@@ -12,11 +12,23 @@ import argparse
 from pathlib import Path
 
 from stable_baselines3 import PPO
-from stable_baselines3.common.callbacks import CheckpointCallback
+from stable_baselines3.common.callbacks import BaseCallback, CallbackList, CheckpointCallback
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.vec_env import DummyVecEnv
 
 from duckstand.env import DuckStandEnv
+
+
+class LogStdCap(BaseCallback):
+    def __init__(self, cap: float):
+        super().__init__()
+        self.cap = cap
+
+    def _on_step(self) -> bool:
+        return True
+
+    def on_rollout_start(self):
+        self.model.policy.log_std.data.clamp_(max=self.cap)
 
 
 def main():
@@ -27,6 +39,9 @@ def main():
     ap.add_argument("--run-name", type=str, default="duck_stand_v0")
     ap.add_argument("--log-std", type=float, default=None,
                     help="续训时覆盖策略初始 log_std（如 -3.0），压低探索噪声")
+    ap.add_argument("--log-std-cap", type=float, default=None,
+                    help="每次更新后钳制 log_std 上限（如 -2.66≈std 0.07），"
+                         "防 PPO 自适应调大噪声（v0.3b/d 学崩根因）")
     args = ap.parse_args()
 
     out_dir = Path(__file__).parent / "checkpoints" / args.run_name
@@ -53,7 +68,10 @@ def main():
         )
 
     ckpt_cb = CheckpointCallback(save_freq=20_000, save_path=str(out_dir), name_prefix="ckpt")
-    model.learn(total_timesteps=args.steps, callback=ckpt_cb)
+    callbacks = [ckpt_cb]
+    if args.log_std_cap is not None:
+        callbacks.append(LogStdCap(args.log_std_cap))
+    model.learn(total_timesteps=args.steps, callback=CallbackList(callbacks))
     model.save(out_dir / "final")
     print(f"已保存: {out_dir / 'final'}.zip")
 
