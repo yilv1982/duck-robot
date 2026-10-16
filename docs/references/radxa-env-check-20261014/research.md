@@ -54,3 +54,9 @@
 
 1. ~~HAT 测试单推进到 B4 前：装 pyserial + cmake，开 UART2 overlay，重启确认 /dev/ttyS2 出现。~~（2026-10-14 已全部完成，见上表）
 2. B4（主控 ssh 上 HAT）→ B5（单舵机 ping）按 docs/hat-v1.2-test.md 执行。
+
+## 2026-10-16 补充：本机 ssh 免密配置丢失与重建（联调插曲）
+
+- 现象：用户报告 `ssh radxa` 连不上。实测排查：ping 192.168.1.35 通（6ms）、TCP 22 有 sshd 应答——**板子 WiFi 正常、IP 未变、sshd 存活**；根因在电脑侧：`~/.ssh/config`（radxa 别名）与私钥文件均不存在（目录只剩 known_hosts），2026-10-14 配置的免密整套丢失，原因不明（本机未再查）。
+- 修复（2026-10-10-16 当轮完成）：`ssh-keygen` 重新生成 ed25519 密钥（注释 duck-robot-win）→ 重建 `~/.ssh/config`（radxa → 192.168.1.35 / User radxa）→ paramiko 密码登录（radxa/radxa）将公钥追加进板端 `~/.ssh/authorized_keys` → 实测 `ssh radxa` 免密连通（SSH_OK，板名 radxa-zero3，feetech-ping.py 在位）。plink 管道方式在 Git Bash 下无输出挂死，弃用。
+- 遗留风险：**config 写死 192.168.1.35，而板子是 DHCP**——IP 一变 ssh radxa 又会断。建议路由器给板子 MAC 绑静态租约，或板上 NetworkManager 固定 IP（待做）。本次上电 uptime 16 分钟，中途重启过一次（用户接舵机前后，怀疑供电波动，见 PROGRESS 同日志）。
