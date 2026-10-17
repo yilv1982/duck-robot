@@ -55,7 +55,9 @@ def read_status(port: serial.Serial, timeout: float = 0.05) -> bytes:
 def checksum_ok(frame: bytes) -> bool:
     if len(frame) < 6 or frame[:2] != b"\xFF\xFF":
         return False
-    return (sum(frame[2:-1]) & 0xFF) == 0xFF
+    # CHK = ~sum(ID..params)，等价于含 CHK 求和为 0（2026-10-17 修复：旧版误写 sum==0xFF，
+    # 导致任何正常应答都被判无效——实测 ID1 应答 ff ff 01 02 00 fc 由此被吞）
+    return ((~sum(frame[2:-1])) & 0xFF) == frame[-1]
 
 
 def cmd_loop(port_name: str, baud: int) -> int:
