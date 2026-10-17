@@ -12,12 +12,13 @@
   - **整机 15 台初始化**：出厂 ID 1 → 按内置 microduck 关节表编号 **10~14 / 20~24 / 30~34**，含初始位置校准、回读校验、写锁保护（解锁 55 号 → 改 ID → 上锁，自动流程）；
   - PING/扫描、实时反馈（56~70 共 15 字节：位置/速度/负载/电压/温度/电流 + 趋势图）、位置/速度/电流/PWM 控制、全内存表参数界面（0~86）、同步读写、原始十六进制帧调试；
   - `selftest.py` 无硬件协议自检（含从站模拟，可离线验证整个初始化流程）。
-- 部署（Radxa，链路即 /dev/ttyS2）：
+- 部署（Radxa，链路即 /dev/ttyS2）——**2026-10-17 已部署完成**：
   ```bash
-  # 板上装依赖（apt 慢，nohup 后台 + 轮询，参考 radxa-env-check 坑位记录）
-  sudo apt-get install -y python3-flask        # python3-serial 已有
-  ./run.sh --host 0.0.0.0                      # run.sh 原生支持核心板场景，自动认 /dev/ttyS2
-  # 电脑浏览器访问 http://192.168.1.35:5000
+  # 源码已拷至板上 ~/hls_servo_debugger/（自参考库原样拷贝，未改动）；
+  # python3-flask 2.2.2 已装（python3-serial 原有）
+  cd ~/hls_servo_debugger
+  nohup python3 -m hls_debugger --host 0.0.0.0 > /tmp/hls_debugger.log 2>&1 &
+  # 电脑浏览器访问 http://192.168.1.35:8765（实际端口 8765，非 Flask 默认 5000）
   ```
 - 安全特性：初始化带回读校验；`hw_test.py` 是真机只读连通测试（PING/READ，不产生动作）。
 - 关键内存表事实（Rust 工具 registers.rs 权威核对）：**ID=5、波特率=6（0=1Mbps）、应答级别=8、卸载条件=19（BIT3 过流，出厂只开过热）、写锁=55（0=解锁才能改 EPROM/1=上锁）**、位置 2048=关节角 0、方向位 −1（上游实测）。
