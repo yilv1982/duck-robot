@@ -1,8 +1,10 @@
-"""duck v0 站立任务：本项目自编的最小 gymnasium 训练环境。
+"""duck v0.6 行走（速度命令）任务：站立任务的直接扩展，推扰与行走统一训练。
 
-学习目标（real2sim2real 第 3 步）：从 HOME 站姿出发，抵抗初始扰动保持站立。
-观测 45 维：机体坐标系重力方向(3) + 相对 HOME 关节角(14) + 关节速度(14) + 上次动作(14)。
-动作 14 维：目标角 = HOME + ACTION_SCALE × action，position actuator 直控。
+设计依据：九轮 3600 万步实证"站立任务下 3N 推扰不可救（救法本质是跨步/蹬地）"，
+本任务允许跨步（速度跟踪），3N 恢复作为统一验收目标之一。
+观测 47 维：重力方向(3) + 关节角(14) + 关节速度(14) + 上次动作(14) + [vx_cmd, vx_actual]。
+动作 14 维：目标角 = HOME + ACTION_SCALE × EMA(action)；行走需要大幅摆腿，
+scale 取 0.5（步态本身是持续节律动作，站立的"噪声敏感"问题不复存在）。
 
 不使用上游观测/奖励配置；接口定义见 training/README.md。
 """
@@ -22,11 +24,13 @@ HOME_JSON = TRAIN / "params" / "home_pose.json"
 
 CONTROL_HZ = 50.0
 DECIMATION = 10  # × timestep 0.002s
-# v0.3c 定论（四轮 1100 万步实证）：scale=0.1 安静+有响应但带宽不足以救 3N；
-# scale=0.3 两轮（v0.3b/d）探索噪声破坏站立全部学崩，压低初始 log_std 也无效
-# （PPO 自适应调回）。当前动作空间架构（EMA+位置目标角）下 3N 恢复不可达，
-# 改进方向见研究记录（非对称动作空间/课程/更大算力），v0.3c 为本轮最佳成果。
-ACTION_SCALE = 0.1
+# v0.6：行走需要大幅摆腿，固定大 scale；EMA 保留（学习稳定价值九轮实证）。
+# 步态 ~2Hz 下 EMA 60ms 时间常数对节律动作衰减有限。
+ACTION_SCALE = 0.5
+
+# 速度命令（起步仅前后向，小速度段）
+CMD_VX_RANGE = (-0.1, 0.1)   # m/s；v0.7：±0.2 接近腿长 9cm 机器人的物理极限速度
+CMD_ZERO_PROB = 0.15         # v0.6b：降低站立档占比，强化速度学习
 # v0.2.2：目标指令低通（EMA）。确定性策略输出每步 |Δa|≈0.32 → 目标角每步跳
 # ±0.03 rad@50Hz；真实舵机固件有斜率/加速度限制本就跟不上这种跳变，EMA 即其
 # 近似（时间常数 ~3 步=60ms），且部署时同样适用（训练/部署一致）。
@@ -64,7 +68,9 @@ W_HEIGHT = 1.0
 W_JOINT_HOME = 0.1
 W_ACTION_RATE = -0.5
 W_ACTION_MAG = -0.01
-W_ALIVE = 0.5
+W_VEL_TRACK = 4.0  # v0.6b：2.0 下学成'安全赖着不动'，加码逼出步态
+W_FEET_AIR = 1.0   # v0.6c：脚腾空奖励（诱导抬脚迈步），每脚 0.5×min(air,0.4s)/0.4
+W_ALIVE = 0.25     # v0.6c：从 0.5 降权，削弱'苟着不动'收益
 
 Z_HOME_TOL = 0.05     # 高度奖励宽度（m）
 TILT_TERMINATE = 0.9  # |重力水平分量| 超过此值判摔（cos 倾角 < ~0.44）
@@ -94,7 +100,9 @@ class DuckStandEnv(gym.Env):
         self.ctrlrange = self.model.actuator_ctrlrange.copy()
         self.z_home = self.model.key_qpos[0][2]
 
-        self.obs_dim = 3 + 14 + 14 + 14
+        self.obs_dim = 3 + 14 + 14 + 14 + 2
+        self._vx_cmd = 0.0
+        self._air_time = np.zeros(2)  # [left, right] 脚离地累计秒数
         self.observation_space = gym.spaces.Box(-np.inf, np.inf, (self.obs_dim,), np.float64)
         self.action_space = gym.spaces.Box(-1.0, 1.0, (self.nu,), np.float64)
 
@@ -156,7 +164,8 @@ class DuckStandEnv(gym.Env):
     def _get_obs(self) -> np.ndarray:
         q_rel = self.data.qpos[self.qpos_addr] - self.home_q
         dq = self.data.qvel[6:]
-        return np.concatenate([self._gravity_body(), q_rel, dq, self._last_action]).astype(np.float64)
+        return np.concatenate([self._gravity_body(), q_rel, dq, self._last_action,
+                               [self._vx_cmd, self.data.qvel[0]]]).astype(np.float64)
 
     # ---------- 回合流程 ----------
 
@@ -175,6 +184,8 @@ class DuckStandEnv(gym.Env):
         self._last_action = np.zeros(self.nu)
         self._action_filtered = np.zeros(self.nu)
         self._step_count = 0
+        self._vx_cmd = 0.0
+        self._air_time = np.zeros(2)  # [left, right] 脚离地累计秒数 if rng.random() < CMD_ZERO_PROB else rng.uniform(*CMD_VX_RANGE)
         self._push_schedule = self._sample_push_schedule() if self.push_enabled else []
         self.data.xfrc_applied[:] = 0.0
         self.data.ctrl[:] = 0.0  # motor ctrl = 关节力矩
@@ -213,10 +224,24 @@ class DuckStandEnv(gym.Env):
         joint_home = float(np.exp(-np.mean((self.data.qpos[self.qpos_addr] - self.home_q) ** 2) / 0.25))
         action_rate = float(np.mean((action - prev_action) ** 2))
         action_mag = float(np.mean(action ** 2))
+        vx = self.data.qvel[0]
+        vel_track = float(np.exp(-((vx - self._vx_cmd) / 0.25) ** 2))
+
+        # 脚触地检测（geom 名匹配），更新腾空计时
+        grounded = [False, False]
+        for i in range(self.data.ncon):
+            for j, fname in enumerate(("left_foot_collision", "right_foot_collision")):
+                for gid in (self.data.contact[i].geom1, self.data.contact[i].geom2):
+                    if mujoco.mj_id2name(self.model, mujoco.mjtObj.mjOBJ_GEOM, gid) == fname:
+                        grounded[j] = True
+        dt_ctrl = 1.0 / CONTROL_HZ
+        self._air_time = np.where(grounded, 0.0, self._air_time + dt_ctrl)
+        feet_air = float(np.mean(np.minimum(self._air_time, 0.4) / 0.4))
 
         reward = (W_UPRIGHT * upright + W_HEIGHT * height
                   + W_JOINT_HOME * joint_home + W_ACTION_RATE * action_rate
-                  + W_ACTION_MAG * action_mag + W_ALIVE)
+                  + W_ACTION_MAG * action_mag + W_VEL_TRACK * vel_track
+                  + W_FEET_AIR * feet_air + W_ALIVE)
 
         terminated = bool(np.linalg.norm(g[:2]) > TILT_TERMINATE or z < self.z_home * 0.6)
         if terminated:
@@ -228,7 +253,8 @@ class DuckStandEnv(gym.Env):
         if self.render_mode == "human":
             self.render()
         return obs, float(reward), terminated, truncated, {
-            "upright": upright, "height": height, "z": z, "push_force": push_force}
+            "upright": upright, "height": height, "z": z, "push_force": push_force,
+            "vx": vx, "vx_cmd": self._vx_cmd}
 
     # ---------- 渲染 ----------
 
