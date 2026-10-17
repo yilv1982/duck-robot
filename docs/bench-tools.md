@@ -25,10 +25,20 @@
 
 ## 二、IMU 测试
 
+### imu-viewer.py（本项目自研，**姿态实时可视化**）
+
+- 位置：`scripts/imu-viewer.py`（2026-10-17 建；已部署板上 `~/imu-viewer.py`，运行于 **http://192.168.1.35:8766**）
+- **浏览器打开即用：3D 立方体实时跟随 IMU 姿态**（晃动板子立方体跟着转），并显示四元数/陀螺 dps/采样计数/状态/读取率。
+- 实现零新依赖：Flask（板上已有）+ SSE 推流 + CSS 3D（无 three.js/CDN，离线可用）。数据契约照 imu200.py（@56 读 15 字节：gyro i16×3 + quat half×3，w 由归一恢复）。
+- 用法：`python3 imu-viewer.py [--port /dev/ttyS2] [--http 8766] [--sim]`（`--sim` 为无硬件模拟自测；经微雪板看时 `--port COM4`）。
+- ⚠️ 与 hls_servo_debugger **不同时占用串口**（后连的会打不开 ttyS2，页面会显示串口错误）。
+
+### 其他 IMU 工具
+
 | 工具 | 来源 | 用途 | 入口 |
 |---|---|---|---|
-| `imu200.py` | 本项目 | **板②验收主力**：13 项判据（ID 200 在线、@56 读遥测、四元数范数、计数递增、sync_read 时延等），URT-2/COM 口电脑侧跑 | [flash/tools/imu200/](../flash/tools/imu200/)（双击 `flash/3-验收-imu200.bat`） |
-| `sensor_probe.py` | 社区 kit `firmware/v1/host/tools/` | 深度表征：陀螺/加计统计、四元数范数、重力一致性、采样率与计数连续性、静态零偏、SFLP 重启检查、PASS/FAIL（只读+一个复位厂商命令） | 参考；`--port` 适配串口 |
+| `imu200.py` | 本项目 | **板②验收**：13 项判据（URT-2/COM 口电脑侧跑） | [flash/tools/imu200/](../flash/tools/imu200/)（双击 `flash/3-验收-imu200.bat`） |
+| `sensor_probe.py` | 社区 kit `firmware/v1/host/tools/` | 深度表征：陀螺/加计统计、四元数范数、采样率、静态零偏、PASS/FAIL（只读+复位厂商命令） | 参考；`--port` 适配串口 |
 
 ## 三、舵机测试
 
