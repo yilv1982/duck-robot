@@ -2,6 +2,12 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## HAT→舵机总线联调排障：Radxa 侧清白，收敛到 HAT 驱动（2026-10-17）
+
+- 舵机扫描全范围 0–253 **0 应答**，经分层隔离：①杜邦接触不良（曾致启动失败，用户修复）；②**fiq_debugger 占用 uart2 已修**——`/etc/kernel/cmdline` 删 `console=ttyFIQ0`+`/etc/default/u-boot` 固定 uart2-m0 overlay+`u-boot-update`，板上有备份；③pinmux 确认 uart2m0-xfer 生效；④**回环 PASS**（pin8↔pin10 短接，36/36 字节）——Radxa 驱动/mux/引脚全正常。**故障域收敛到 HAT 板内 74LVC 半双工驱动**（pin8 空闲 3.16V 正常进板，舵机座 DATA 针仅 1V 且不随发送变化；无 V1.2 图纸不深挖）。
+- 附带发现：**pin8/10 短接状态下上电会锁死 U-Boot**（banner 回灌 RX 被当按键输入）——判断"无法启动"时须考虑串口回灌路径；纪律：不在短接状态上电。Radxa 重启后 WiFi 就绪需 1–2 分钟属正常（NM+DHCP），灯亮后等 2 分钟再 ping。
+- **下一步**：FE-URT-2（或微雪板 B=USB 模式）绕过 HAT 直连舵机 ping，验证舵机+拿 ID；台架期通信暂走该链路，HAT 驱动问题挂起（待向卖家索取 V1.2 图纸）。详见[排障记录](./docs/references/hat-servo-bus-debug-20261016/research.md)。
+
 ## 测试范围按用户指示大幅精简，进入装机最短路径（2026-10-16）
 
 - **空板 5V 门已通过（2026-10-16 用户实测）**：HAT 空板经背面第 3/4 排焊盘 7.4V/0.3A 限流供电，40P pin2/4 对 GND（pin6）实测 **4.96V**，在 5.0V±0.2V 判定门内。输入侧无持续顶限。
