@@ -2,9 +2,12 @@
 
 设计依据：九轮 3600 万步实证"站立任务下 3N 推扰不可救（救法本质是跨步/蹬地）"，
 本任务允许跨步（速度跟踪），3N 恢复作为统一验收目标之一。
-观测 47 维：重力方向(3) + 关节角(14) + 关节速度(14) + 上次动作(14) + [vx_cmd, vx_actual]。
-动作 14 维：目标角 = HOME + ACTION_SCALE × EMA(action)；行走需要大幅摆腿，
-scale 取 0.5（步态本身是持续节律动作，站立的"噪声敏感"问题不复存在）。
+观测 49 维：重力方向(3) + 关节角(14) + 关节速度(14) + 上次动作(14) + [vx_cmd, vx_actual]
++ [sin(φ), cos(φ)]（步态相位）。
+v0.8 相位辅助：v0.6 系列证明策略学不出"交替迈步"节律（原地稳定局部最优），
+引入相位振荡器提供节律先验——相位 φ 随时间循环（频率随速度命令），观测暴露
+sin/cos(φ)，奖励把"左脚在 φ∈(0,π) 腾空 / 右脚在 φ∈(π,2π) 腾空"耦合起来，
+直接告诉策略何时迈哪条腿（CPG 式引导）。
 
 不使用上游观测/奖励配置；接口定义见 training/README.md。
 """
@@ -29,12 +32,15 @@ DECIMATION = 10  # × timestep 0.002s
 ACTION_SCALE = 0.5
 
 # 速度命令（起步仅前后向，小速度段）
-CMD_VX_RANGE = (-0.1, 0.1)   # m/s；v0.7：±0.2 接近腿长 9cm 机器人的物理极限速度
+CMD_VX_RANGE = (-0.2, 0.2)   # m/s；v0.8 修复：reset 的命令采样行曾误入注释致 vx_cmd 恒 0
+GAIT_FREQ_BASE = 0.8         # Hz，站立档相位频率
+GAIT_FREQ_GAIN = 4.0         # Hz/(m/s)，步频随 |vx_cmd| 抬升
+W_PHASE_FOOT = 2.0
 CMD_ZERO_PROB = 0.15         # v0.6b：降低站立档占比，强化速度学习
 # v0.2.2：目标指令低通（EMA）。确定性策略输出每步 |Δa|≈0.32 → 目标角每步跳
 # ±0.03 rad@50Hz；真实舵机固件有斜率/加速度限制本就跟不上这种跳变，EMA 即其
 # 近似（时间常数 ~3 步=60ms），且部署时同样适用（训练/部署一致）。
-ACTION_EMA_ALPHA = 0.25
+ACTION_EMA_ALPHA = 0.25  # v0.9 证伪：无 EMA 连稳定都学不出（存活 0-20%），EMA 是行走与站立共同的必需稳定缓冲
 EPISODE_SECONDS = 10.0
 
 # v0.3 推扰事件：训练中随机对躯干施加水平脉冲力，逼策略学会主动恢复。
@@ -100,8 +106,9 @@ class DuckStandEnv(gym.Env):
         self.ctrlrange = self.model.actuator_ctrlrange.copy()
         self.z_home = self.model.key_qpos[0][2]
 
-        self.obs_dim = 3 + 14 + 14 + 14 + 2
+        self.obs_dim = 3 + 14 + 14 + 14 + 2 + 2
         self._vx_cmd = 0.0
+        self._phase = 0.0  # 步态相位 [0, 2π)
         self._air_time = np.zeros(2)  # [left, right] 脚离地累计秒数
         self.observation_space = gym.spaces.Box(-np.inf, np.inf, (self.obs_dim,), np.float64)
         self.action_space = gym.spaces.Box(-1.0, 1.0, (self.nu,), np.float64)
@@ -165,7 +172,8 @@ class DuckStandEnv(gym.Env):
         q_rel = self.data.qpos[self.qpos_addr] - self.home_q
         dq = self.data.qvel[6:]
         return np.concatenate([self._gravity_body(), q_rel, dq, self._last_action,
-                               [self._vx_cmd, self.data.qvel[0]]]).astype(np.float64)
+                               [self._vx_cmd, self.data.qvel[0]],
+                               [np.sin(self._phase), np.cos(self._phase)]]).astype(np.float64)
 
     # ---------- 回合流程 ----------
 
@@ -185,7 +193,8 @@ class DuckStandEnv(gym.Env):
         self._action_filtered = np.zeros(self.nu)
         self._step_count = 0
         self._vx_cmd = 0.0
-        self._air_time = np.zeros(2)  # [left, right] 脚离地累计秒数 if rng.random() < CMD_ZERO_PROB else rng.uniform(*CMD_VX_RANGE)
+        self._air_time = np.zeros(2)  # [left, right] 脚离地累计秒数
+        self._vx_cmd = 0.0 if rng.random() < CMD_ZERO_PROB else rng.uniform(*CMD_VX_RANGE)
         self._push_schedule = self._sample_push_schedule() if self.push_enabled else []
         self.data.xfrc_applied[:] = 0.0
         self.data.ctrl[:] = 0.0  # motor ctrl = 关节力矩
@@ -202,6 +211,8 @@ class DuckStandEnv(gym.Env):
         return quat
 
     def step(self, action):
+        gait_freq = GAIT_FREQ_BASE + GAIT_FREQ_GAIN * abs(self._vx_cmd)
+        self._phase = (self._phase + 2 * np.pi * gait_freq / CONTROL_HZ) % (2 * np.pi)
         action = np.clip(action, -1.0, 1.0)
         self._action_filtered = (ACTION_EMA_ALPHA * action
                                  + (1.0 - ACTION_EMA_ALPHA) * self._action_filtered)
@@ -237,11 +248,15 @@ class DuckStandEnv(gym.Env):
         dt_ctrl = 1.0 / CONTROL_HZ
         self._air_time = np.where(grounded, 0.0, self._air_time + dt_ctrl)
         feet_air = float(np.mean(np.minimum(self._air_time, 0.4) / 0.4))
+        # 相位-抬脚耦合：前半周期左脚应腾空、后半周期右脚应腾空（节律先验）
+        left_window = 0.0 if self._phase < np.pi else 1.0
+        phase_foot = (float(not grounded[0]) * left_window
+                      + float(not grounded[1]) * (1.0 - left_window))
 
         reward = (W_UPRIGHT * upright + W_HEIGHT * height
                   + W_JOINT_HOME * joint_home + W_ACTION_RATE * action_rate
                   + W_ACTION_MAG * action_mag + W_VEL_TRACK * vel_track
-                  + W_FEET_AIR * feet_air + W_ALIVE)
+                  + W_FEET_AIR * feet_air + W_PHASE_FOOT * phase_foot + W_ALIVE)
 
         terminated = bool(np.linalg.norm(g[:2]) > TILT_TERMINATE or z < self.z_home * 0.6)
         if terminated:
