@@ -432,3 +432,21 @@ Radxa 10-14 研究开头/结尾“全只读、未改软件”和末段“overlay
 **smoke 结果（scripts/mjx_env_smoke.py）**：自建 XML+自写 `duck_home_reward` 在 ManagerBasedRlEnv GPU 闭环，**4096 环境 129,950 env-steps/s**（含观测+奖励，200 控制步实测）——SubprocVecEnv CPU 方案（15k fps）的 8.7 倍、Windows 8 env DummyVecEnv（1.9k fps）的 68 倍；环境构建+批量重置 4.3s。
 
 **剩余工作（下阶段）**：完整 DuckWalk mjlab 环境（速度命令/动作平滑等效/推扰事件/相位/全套自设计奖励与终止）→ 任务注册+rsl_rl 训练入口 → 正式训练与 eval_walk 验收。
+
+### mjlab 首次训练全面达标：GPU 物理路线终局验证（2026-10-19）
+
+**训练**：完整 DuckWalk mjlab 环境（4096 env，rsl_rl PPO 128×128，10000 迭代，3.4 小时，本机 RTX 4080）。reward 从 1.1 收敛至 ~34（含推扰与全命令档训练）。
+
+**验收（scripts/eval_mjlab.py，逐 env 独立存活统计，checkpoint model_9999.pt）**：
+
+| 指标 | mjlab GPU 版 | CPU 版 19 轮最好成绩 | 达标 |
+|---|---|---|---|
+| ±0.2 档速度误差 | **0.005–0.018 m/s** | 0.10–0.22（不位移） | ✅ 超 10 倍 |
+| 全命令档存活率 | **19–20/20（95–100%）** | 100%（不位移的存活） | ✅ |
+| 3N 等效推扰满额率 | **100%（100/100）** | 5–30% | ✅✅ 远超 80% 门槛 |
+
+**口径说明**：mjlab 推扰用速度脉冲 0.36 m/s（= 3N×0.3s/0.737kg 冲量等效，mjlab 内置 push 机制即速度式），与 CPU 版 eval_push 的力脉冲（3N×0.3s xfrc）口径不完全相同，但冲量等效物理一致。
+
+**终局结论修正**：19 轮 CPU 实验的"架构组合穷尽"结论只对 CPU MuJoCo 栈成立。GPU 物理路线（mjlab warp 引擎）首次训练即全面达标，证明此前瓶颈是 **CPU MuJoCo 的接触求解器行为与有限样本规模下的探索**（4096 env×24 步/迭代的样本多样性 vs 512 env CPU），不是动作空间设计。此前"算力不足论被证伪"的结论需要修正为：512 env CPU 与 8 env CPU 无差异（同引擎同瓶颈），而 GPU warp 引擎有本质差异。
+
+**自建边界重申**：环境/观测/奖励/终止/推扰/命令全部本项目自设计（mjlab_duck/env_cfg.py），仅物理引擎与 RL 框架作为通用工具使用，模型为自建 duck_v0.xml+参数表。

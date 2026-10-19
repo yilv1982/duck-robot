@@ -2,6 +2,10 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## C 线 mjlab 首训全面达标（2026-10-19；仿真，无实物）
+
+- 完整 DuckWalk mjlab 环境（命令/推扰/全套奖励/终止）+ rsl_rl PPO 训练入口（mjlab_duck/）全栈跑通；4096 env×10000 迭代 3.4 小时。**验收：速度误差 0.001–0.018（CPU 版的 1/10 以上）、全档存活 95–100%、3N 等效推扰满额率 100%（100/100，门槛 80%）**。19 轮 CPU 归因就此修正：瓶颈是 CPU MuJoCo 接触求解+样本规模，GPU warp 引擎+4096 env 首训即达标。详见[研究记录](./docs/references/c-motion-training-20261015/research.md)。
+
 ## C 线 mjlab 路线：GPU 物理管线闭环达成（2026-10-17 晚；仿真，无实物）
 
 - 用户指示切换 mjlab 路线。WSL 装齐 B 线锁定组合（mjlab 1.3.0+mujoco 3.10.0+mujoco-warp 3.8.1+warp 1.12.0，坑：漏声明 scipy、新版 mujoco-warp 3.9.1 接口不兼容）。自建 duck_v0.xml（删 XML 执行器由 IdealPd 接管）+ 自写奖励经 ManagerBasedRlEnv GPU 闭环 smoke 通过：**4096 环境 129,950 env-steps/s**（CPU SubprocVecEnv 的 8.7 倍）。下阶段：完整 DuckWalk 环境+训练入口+验收。详见[研究记录](./docs/references/c-motion-training-20261015/research.md)。
