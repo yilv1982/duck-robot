@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""duck v0 站立策略训练入口（SB3 PPO）。
+"""duck 当前速度命令与相位任务的训练入口（SB3 PPO）。
 
 用法（在 training/ 下）：
     .venv/Scripts/python.exe train.py --steps 200000
@@ -45,8 +45,8 @@ def main():
     ap.add_argument("--log-std", type=float, default=None,
                     help="续训时覆盖策略初始 log_std（如 -3.0），压低探索噪声")
     ap.add_argument("--log-std-cap", type=float, default=None,
-                    help="每次更新后钳制 log_std 上限（如 -2.66≈std 0.07），"
-                         "防 PPO 自适应调大噪声（v0.3b/d 学崩根因）")
+                    help="每轮 rollout 开始时钳制 log_std 上限（如 -2.66≈std 0.07），"
+                         "作为探索噪声控制项；其失败因果贡献尚未隔离")
     args = ap.parse_args()
 
     out_dir = Path(__file__).parent / "checkpoints" / args.run_name
@@ -69,8 +69,8 @@ def main():
     else:
         model = PPO(
             "MlpPolicy", venv,
-            # std≈0.15：与 ACTION_SCALE=0.1 组合后目标抖动 ±0.015 rad，
-            # 随机基线存活 ~3s，保证初始梯度信号（大幅 std 下全部 0.5s 内摔死）。
+            # 当前初始化 std=exp(-1)≈0.368；旧站立配置为 log_std=-1.9、scale=0.1。
+            # 初始化字段不等于训练后std；更改scale/EMA续训也不保留原控制行为。
             policy_kwargs=dict(net_arch=[128, 128], log_std_init=-1.0),
             n_steps=n_steps, batch_size=4096, n_epochs=5,
             learning_rate=3e-4, gamma=0.99, gae_lambda=0.95,

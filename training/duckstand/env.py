@@ -1,13 +1,13 @@
-"""duck v0.6 行走（速度命令）任务：站立任务的直接扩展，推扰与行走统一训练。
+"""duck v0.8 速度命令与相位任务：历史站立任务的扩展，保留推扰。
 
-设计依据：九轮 3600 万步实证"站立任务下 3N 推扰不可救（救法本质是跨步/蹬地）"，
-本任务允许跨步（速度跟踪），3N 恢复作为统一验收目标之一。
-观测 49 维：重力方向(3) + 关节角(14) + 关节速度(14) + 上次动作(14) + [vx_cmd, vx_actual]
+3N×0.3s 满额率≥80% 尚未达到；旧“站立物理不可达”归因已于 2026-10-19 撤回，
+见 docs/references/c-motion-training-20261015/failure-analysis-20261019.md。
+观测 49 维：重力方向(3) + 关节角(14) + 关节速度(14) + 动作状态(14) + [vx_cmd, vx_actual]
 + [sin(φ), cos(φ)]（步态相位）。
-v0.8 相位辅助：v0.6 系列证明策略学不出"交替迈步"节律（原地稳定局部最优），
-引入相位振荡器提供节律先验——相位 φ 随时间循环（频率随速度命令），观测暴露
-sin/cos(φ)，奖励把"左脚在 φ∈(0,π) 腾空 / 右脚在 φ∈(π,2π) 腾空"耦合起来，
-直接告诉策略何时迈哪条腿（CPG 式引导）。
+v0.8 同时修复命令采样并引入相位辅助，不是单项因果对照。相位 φ 随时间循环，
+频率随速度命令；当前奖励在前半周期偏好右脚腾空、后半周期偏好左脚腾空。
+已知待修：动作状态观测晚一拍、目标角误用 motor 力矩范围裁剪、reset 未重置相位。
+本轮只勘误注释，执行逻辑保持原状；旧45/47维策略不能直接用于当前环境。
 
 不使用上游观测/奖励配置；接口定义见 training/README.md。
 """
@@ -27,8 +27,8 @@ HOME_JSON = TRAIN / "params" / "home_pose.json"
 
 CONTROL_HZ = 50.0
 DECIMATION = 10  # × timestep 0.002s
-# v0.6：行走需要大幅摆腿，固定大 scale；EMA 保留（学习稳定价值九轮实证）。
-# 步态 ~2Hz 下 EMA 60ms 时间常数对节律动作衰减有限。
+# v0.6 起实验使用较大 scale；相同策略均值的目标偏移会随 scale 改变。
+# EMA 的收益与代价尚未通过固定其他条件的对照隔离。
 ACTION_SCALE = 0.5
 
 # 速度命令（起步仅前后向，小速度段）
@@ -37,15 +37,15 @@ GAIT_FREQ_BASE = 0.8         # Hz，站立档相位频率
 GAIT_FREQ_GAIN = 4.0         # Hz/(m/s)，步频随 |vx_cmd| 抬升
 W_PHASE_FOOT = 2.0
 CMD_ZERO_PROB = 0.15         # v0.6b：降低站立档占比，强化速度学习
-# v0.2.2：目标指令低通（EMA）。确定性策略输出每步 |Δa|≈0.32 → 目标角每步跳
-# ±0.03 rad@50Hz；真实舵机固件有斜率/加速度限制本就跟不上这种跳变，EMA 即其
-# 近似（时间常数 ~3 步=60ms），且部署时同样适用（训练/部署一致）。
-ACTION_EMA_ALPHA = 0.25  # v0.9 证伪：无 EMA 连稳定都学不出（存活 0-20%），EMA 是行走与站立共同的必需稳定缓冲
+# v0.2.2 起对目标指令做 EMA；50Hz、alpha=0.25 时等效时间常数 69.5ms，
+# 100ms 阶跃响应约76.3%，不是纯延迟，也不等同固件斜率限制。
+# v0.9 去 EMA 的一次失败不能证明所有无 EMA 配置都不可学；尚无部署一致性验证。
+ACTION_EMA_ALPHA = 0.25
 EPISODE_SECONDS = 10.0
 
 # v0.3 推扰事件：训练中随机对躯干施加水平脉冲力，逼策略学会主动恢复。
-# 标定依据（恒零策略被动极限，0.3s 脉冲）：1N 满额 100%、2N 62%、3N 12%、≥4N 0%，
-# 故力幅取 1–4N 覆盖"被动扛不住"的区间。设 PUSH_COUNT_RANGE=(0,0) 可整体关闭；
+# 历史8方向初标定：1N 100%、2N 62%、3N 12%、≥4N 0%；与正式20场景不是同一测试集。
+# 当前1–4N随机分布未做渐进课程。设 PUSH_COUNT_RANGE=(0,0) 可整体关闭；
 # interact.py 手推时置 env.push_enabled=False，避免覆写用户施加的力。
 PUSH_COUNT_RANGE = (1, 3)          # 每回合推扰次数
 PUSH_FORCE_RANGE = (1.0, 4.0)      # 力幅 N（水平）
@@ -66,9 +66,9 @@ FIRMWARE_KV = 200.0  # V/rad
 # v0.2.1：抖动诊断显示确定性策略每步 |Δa|≈0.32（目标角每步跳 ±0.03 rad、
 # 关节每步摆 2.7°@50Hz），而旧平滑惩罚每步仅 ~0.005 分、占总奖励 <0.2%，
 # 策略无动力收敛到"静止站"。加大 action_rate/mag 惩罚逼出安静站立。
-# v0.3c：解除响应抑制——v0.3 有反应（受力窗口 |Δa| 6.6×）却只有 0.36/1.0 的
-# 幅度（非 scale 封顶），因为 joint_home/action_mag 都在罚"被推时必要的偏离"。
-# 降这两项权重，让"活着"主导；安静由 action_rate（EMA 后天然平滑）维持。
+# v0.3c 当时降低 joint_home/action_mag，意图减少对恢复动作的抑制；因果贡献未隔离。
+# action_rate 当前比较 raw action 与上一 filtered action，不是相邻 raw/filtered 差分。
+# alpha=0.25 时其平方项等于相邻 filtered 差分平方的16倍；惩罚语义待明确。
 W_UPRIGHT = 1.0
 W_HEIGHT = 1.0
 W_JOINT_HOME = 0.1
@@ -248,7 +248,7 @@ class DuckStandEnv(gym.Env):
         dt_ctrl = 1.0 / CONTROL_HZ
         self._air_time = np.where(grounded, 0.0, self._air_time + dt_ctrl)
         feet_air = float(np.mean(np.minimum(self._air_time, 0.4) / 0.4))
-        # 相位-抬脚耦合：前半周期左脚应腾空、后半周期右脚应腾空（节律先验）
+        # 相位-抬脚耦合：当前实现前半周期偏好右脚腾空、后半周期偏好左脚腾空
         left_window = 0.0 if self._phase < np.pi else 1.0
         phase_foot = (float(not grounded[0]) * left_window
                       + float(not grounded[1]) * (1.0 - left_window))
