@@ -2,6 +2,10 @@
 
 事实性的进度流水：什么时候到了什么、做了什么。核对结论与安全边界见 [README](./README.md) 与 [BOM](./BOM.md)。
 
+## C 线 mjlab 路线：GPU 物理管线闭环达成（2026-10-17 晚；仿真，无实物）
+
+- 用户指示切换 mjlab 路线。WSL 装齐 B 线锁定组合（mjlab 1.3.0+mujoco 3.10.0+mujoco-warp 3.8.1+warp 1.12.0，坑：漏声明 scipy、新版 mujoco-warp 3.9.1 接口不兼容）。自建 duck_v0.xml（删 XML 执行器由 IdealPd 接管）+ 自写奖励经 ManagerBasedRlEnv GPU 闭环 smoke 通过：**4096 环境 129,950 env-steps/s**（CPU SubprocVecEnv 的 8.7 倍）。下阶段：完整 DuckWalk 环境+训练入口+验收。详见[研究记录](./docs/references/c-motion-training-20261015/research.md)。
+
 ## C 线站立推扰失败复核与旧归因勘误（2026-10-19；只读分析，无重训/实物）
 
 - 新增[失败分析](./docs/references/c-motion-training-20261015/failure-analysis-20261019.md)与[checkpoint 元数据](./docs/references/c-motion-training-20261015/checkpoint-metadata-20261019.json)。v0.3c 历史 3N×0.3s 满额率 50%=恒零，≥80% 未达；优先候选是机身速度观测缺失、EMA 状态晚一拍、raw/filtered 混合惩罚、直接改变动作尺度/滤波续训及缺少课程，因果贡献未做单项对照。

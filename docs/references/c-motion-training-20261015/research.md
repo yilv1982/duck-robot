@@ -420,3 +420,15 @@ Radxa 10-14 研究开头/结尾“全只读、未改软件”和末段“overlay
 **v0.9 失败记录**：历史汇总无扰存活 0–20%、3N≈0；checkpoint 末 100 训练回合平均 69.62 控制步（约 1.39s）、满 500 步 0/100，支持训练末段失败。本轮没有重测，也不能据此判定每回合都在首次受力前摔倒。去 EMA 的单次结果不能证明所有无 EMA 配置都不可学；当前环境已回滚 v0.8 配置，但尚有未修实现问题。
 
 **现行结论（2026-10-19）**：原“19 轮约 1.35 亿步、架构穷尽、必须数周或 MJX 重构”撤回。现存 23 个 final 含 2 个 smoke；21 个非 smoke 的 `num_timesteps` 合计 107,311,104，仅为现存字段合计，不是完整历史总量。v0.8/v0.9 JSON 开始时间为北京时间 10-19 10:06:01/10:22:00，zip data 保存 10:20:04/10:36:54，`bf9a977` author 时间 10:39:50（committer 时间 10:40:20，均为当天北京时间）；旧日期错标已修正。失败仍需从已证观测/动作问题与混杂条件入手，完整依据和下一步见[失败分析](failure-analysis-20261019.md)及[元数据摘录](checkpoint-metadata-20261019.json)。
+
+### mjlab 路线启动：GPU 物理管线闭环达成（2026-10-17 晚）
+
+用户指示「先换成 mjlab 路线」后执行（与上游生态对齐的 Warp 后端 GPU 并行物理，替代 CPU SubprocVecEnv）。边界重申：mjlab 作为通用开源库使用（同 MuJoCo/SB3 性质）；自建 duck_v0.xml/参数表/观测/奖励全部保留迁移，API 写法以 mjlab 自带 cartpole 示例为形状参考，不复制上游任务配置。
+
+**环境搭建（WSL .venv-wsl）**：mjlab 1.3.0（B 线锁定版）+ 必须手动补 scipy（mjlab 忘声明依赖，B 线同坑）+ **版本锁定关键**：mujoco==3.10.0 / mujoco-warp==3.8.1 / warp-lang==1.12.0（B 线 uv.lock 精确组合；uv 默认解析到 mujoco-warp 3.9.1 会因 `ls_parallel` 接口删除而崩溃）。
+
+**管线适配三处**：①SceneCfg.terrain 用 `TerrainEntityCfg(terrain_type="plane")`（不是 TerrainGeneratorCfg）；②XML 内 motor 执行器须先删（`spec.delete(act_obj)`，MjSpec 无按 id/名删除的公开重载）再由 mjlab 执行器接管——`IdealPdActuatorCfg(stiffness=25/damping=2/effort_limit=0.94/armature=0.00178/frictionloss=0.0158)` 对齐我们 CPU 版位置目标+力矩饱和链（stiffness/damping 自选值与 BAM armature/摩擦沿用参数表）；③观测返回为扁平张量（cartpole 的 dict 形态是高层包装）。
+
+**smoke 结果（scripts/mjx_env_smoke.py）**：自建 XML+自写 `duck_home_reward` 在 ManagerBasedRlEnv GPU 闭环，**4096 环境 129,950 env-steps/s**（含观测+奖励，200 控制步实测）——SubprocVecEnv CPU 方案（15k fps）的 8.7 倍、Windows 8 env DummyVecEnv（1.9k fps）的 68 倍；环境构建+批量重置 4.3s。
+
+**剩余工作（下阶段）**：完整 DuckWalk mjlab 环境（速度命令/动作平滑等效/推扰事件/相位/全套自设计奖励与终止）→ 任务注册+rsl_rl 训练入口 → 正式训练与 eval_walk 验收。
