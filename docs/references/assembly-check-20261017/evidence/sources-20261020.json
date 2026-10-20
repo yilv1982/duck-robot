@@ -1,0 +1,52 @@
+{
+  "retrieved_at": "2026-10-20T08:39:25+08:00",
+  "scope": "保存厂商 API 的 Markdown 正文原字符串；未保存编辑人员等非必要字段。元数据修改时间不是舵机固件发布日期。",
+  "sources": [
+    {
+      "kind": "hls",
+      "q": "250689e628d7",
+      "entry_url": "http://doc.feetech.cn/#/prodinfodownload?srcType=FTServo-emanual-ab4947a479784a71a8cb7928",
+      "display_url": "http://doc.feetech.cn/#/f?q=250689e628d7",
+      "api_url": "http://longbos.com:9009/workflow/yf-specification/getQr/250689e628d7",
+      "http_status": 200,
+      "metadata": {
+        "id": 100026,
+        "name": "磁编码HLS舵机内存表手册",
+        "code": "FT-HLS-emanual",
+        "annexVer": "1.0",
+        "version": 270,
+        "srcType": "FT-HTS-emanual-f8e8b2515f99475789e628d7",
+        "lastModifiedDate": 1790650860000
+      },
+      "local_path": "feetech-hls-memory-v1.0-20261020.md",
+      "encoding": "UTF-8 without BOM",
+      "content_field": "data.mdcontent",
+      "bytes": 10483,
+      "sha256": "af17d3f64079eda4081cd31562380a1a445af8e42f386115f45db298593274e2",
+      "last_modified_asia_shanghai": "2026-09-29T11:01:00+08:00"
+    },
+    {
+      "kind": "scs",
+      "q": "2506ba160b93",
+      "entry_url": "http://doc.feetech.cn/#/prodinfodownload?srcType=FTServo-emanual-ab4947a479784a71a8cb7928",
+      "display_url": "http://doc.feetech.cn/#/f?q=2506ba160b93",
+      "api_url": "http://longbos.com:9009/workflow/yf-specification/getQr/2506ba160b93",
+      "http_status": 200,
+      "metadata": {
+        "id": 100046,
+        "name": "SCS通信协议",
+        "code": "FT-SCS-Protocol",
+        "annexVer": "1.0",
+        "version": 257,
+        "srcType": "FT-SCS-Protocol-41ad23fe8a244712ba160b93",
+        "lastModifiedDate": 1791458999000
+      },
+      "local_path": "feetech-scs-protocol-v1.0-20261020.md",
+      "encoding": "UTF-8 without BOM",
+      "content_field": "data.mdcontent",
+      "bytes": 13978,
+      "sha256": "e842aa2d3630909cc5bdee4795ca5060ea72a4c53a9ae9969e3734da8531fa2f",
+      "last_modified_asia_shanghai": "2026-10-08T19:29:59+08:00"
+    }
+  ]
+}
