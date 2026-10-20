@@ -1,0 +1,13 @@
+[Unit]
+Description=duck IMU posture viewer web (:8766)
+After=network.target
+
+[Service]
+Type=simple
+User=radxa
+ExecStart=/usr/bin/python3 /home/radxa/imu-viewer.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
