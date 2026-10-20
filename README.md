@@ -9,7 +9,7 @@ Microduck 小型双足机器人的个人复刻项目。**当前主线为方案 C
 ## 当前主线：方案 C（飞特路线）
 
 - **执行机构**：飞特 HD-1910-C001 ×15（总线型，官方 robotd 有飞特补丁）
-- **装配与零位校准**：[归中装盘与 CAL 调研](./docs/references/assembly-check-20261017/research.md)（2026-10-20）：未装盘时推荐先到 2048、选近齿位，再按机械零姿态 CAL；这不是 CAL 协议前提。15 颗 ID 已完成，零位仍待校准；校后恢复扭矩前须确认读数并对齐目标。
+- **装配与零位校准**：[归中装盘与 CAL 调研](./docs/references/assembly-check-20261017/research.md)（2026-10-20）：未装盘时推荐先到 2048、选近齿位，再按机械零姿态 CAL；这不是 CAL 协议前提。15 颗 ID 已完成，[本机映射](./docs/servo-id-mapping.md)为 10–14 左腿、20–24 右腿；零位仍待校准，校后恢复扭矩前须确认读数并对齐目标。
 - **主控/总线**：microduck HAT（Radxa Zero 3W，板载 74LVC 半双工驱动接 UART2）+ imu_to_dxl v0.3 作总线从站（ID 200，双协议）
 - **供电路线 v2（用户确认推进）**：电池原压经取电及已核实的过流保护进入 HAT 一口，另一口接舵机链+末端 IMU，40P 对插主控并供 5V；正常整机不装微雪板和独立稳压板，暂不增加配电板。独立主保险是否需要由电池内置保护资料决定，不预设必买；先按[基础检查清单](./docs/hat-v1.2-test.md)逐步验证，发现实际问题再调整；**路线确认不等于实物已经验收**。见[接线图](./docs/photos/hat-v1.2-wiring-plan.png)与[架构说明](./docs/power-architecture-v2.md)
 - **采购清单**：[BOM.md](./BOM.md)（已重写为 C 线；A 版存档于 [docs/bom-route-a-20260928.md](./docs/bom-route-a-20260928.md)）
