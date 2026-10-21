@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-21",
+  "browser": "153.0.8010.53",
+  "page_errors": [],
+  "paused_pose_stable": true,
+  "pause_pose": [
+    "世界 XYZ / m　+0.049　-0.003　+0.097",
+    "横滚 / 俯仰 / 偏航　+6.0°　+39.9°　-44.4°"
+  ],
+  "reset_pose": [
+    "世界 XYZ / m　+0.000　+0.000　+0.118",
+    "横滚 / 俯仰 / 偏航　+0.0°　+0.0°　+0.0°"
+  ],
+  "single_step_pose": [
+    "世界 XYZ / m　+0.002　-0.001　+0.116",
+    "横滚 / 俯仰 / 偏航　-0.4°　+4.1°　-2.1°"
+  ],
+  "speed_before_reset": 0.05,
+  "speed_after_reset": 0.05,
+  "controls_exercised": [
+    "pause",
+    "reset",
+    "single step paused/running",
+    "velocity arrow/zero",
+    "0.5x/1x/2x",
+    "four camera presets",
+    "follow/world",
+    "collision toggle"
+  ],
+  "browser_fps": null,
+  "speed_retained_across_reset": true,
+  "final_collision_control": "仅显示碰撞体",
+  "final_page_errors": [],
+  "final_state": "paused, reset, velocity=0, visual meshes shown",
+  "collision_fix": "Explicitly synchronized mesh handle visibility through mjviser _sync_visibilities",
+  "collision_screenshot_review": "passed",
+  "collision_screenshot_review_details": "Main session and independent Reviewer opened the final viewer-collisions.png and confirmed box/capsule geometry with visual meshes hidden and checkbox state consistent. Main session then opened viewer-browser.png and confirmed that disabling collision-only mode restored the complete visual meshes at the same pose without clipping. No final page errors."
+}

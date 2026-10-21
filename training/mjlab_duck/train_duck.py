@@ -2,7 +2,8 @@
 """自建 DuckWalk mjlab 任务训练入口（GPU 物理 + rsl_rl PPO）。
 
 用法（WSL training/ 下）：
-    .venv-wsl/bin/python mjlab_duck/train_duck.py [--steps N] [--envs N] [--play]
+    .venv-wsl/bin/python mjlab_duck/train_duck.py [mjlab train 参数]
+回放使用独立入口：.venv-wsl/bin/python play_mujoco.py
 任务注册后转交 mjlab.scripts.train（与上游同一 CLI，但任务为本项目自建）。
 """
 

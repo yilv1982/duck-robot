@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "viewer": "viser",
+  "checkpoint": "/mnt/e/Projects/duck-robot/training/logs/rsl_rl/duck_walk/2026-10-19_15-02-25/model_9999.pt",
+  "model": "/mnt/e/Projects/duck-robot/training/models/duck_visual.xml",
+  "versions": {
+    "mjlab": "1.3.0",
+    "mujoco": "3.10.0",
+    "viser": "1.1.1",
+    "rsl-rl-lib": "5.0.1",
+    "torch": "2.14.1"
+  },
+  "device": "cuda:0",
+  "num_envs": 1,
+  "observation_dimensions": 49,
+  "action_dimensions": 14,
+  "requested_duration_seconds": null,
+  "url": "http://127.0.0.1:8080",
+  "wall_seconds": 30.29316453199135,
+  "active_wall_seconds": 22.70463272498455,
+  "paused_wall_seconds": 7.588530613982584,
+  "control_step_seconds": 0.02,
+  "running_simulation_seconds": 23.36,
+  "actual_realtime_ratio": 1.028864914176492,
+  "control_hz": 51.4432457088246,
+  "scene_completed_hz_including_pauses": 43.37612198330548,
+  "scene_task_limit": 1,
+  "max_scene_tasks_in_flight": 1,
+  "counts": {
+    "scene_inflight_current": 0,
+    "scene_inflight_max": 1,
+    "scene_submitted": 1314,
+    "viewer_sync_ticks": 1792,
+    "scene_completed": 1314,
+    "running_control_steps": 1168,
+    "scene_skipped_busy": 39,
+    "pauses": 2,
+    "resets": 2,
+    "velocity_changes": 3,
+    "single_control_steps": 2,
+    "speed_changes": 3,
+    "resumes": 1,
+    "budget_capped_ticks": 22
+  },
+  "timings": {
+    "control_host_ms": {
+      "retained_samples": 1170,
+      "p50": 9.866474487353116,
+      "p95": 15.014823849196546,
+      "max": 74.8375509865582
+    },
+    "simulation_lock_wait_ms": {
+      "retained_samples": 1170,
+      "p50": 0.005362991942092776,
+      "p95": 0.009503736509941517,
+      "max": 2.635968034155667
+    },
+    "scene_update_ms": {
+      "retained_samples": 1314,
+      "p50": 0.8130794740281999,
+      "p95": 9.45244545291642,
+      "max": 77.86958001088351
+    },
+    "scene_completion_interval_ms": {
+      "retained_samples": 1313,
+      "p50": 18.0657219607383,
+      "p95": 28.86946881189941,
+      "max": 1632.1020919713192
+    }
+  },
+  "browser_fps": null,
+  "timing_note": "后端墙钟计时；control_host_ms 含推理/步进主机耗时，不是独立 GPU kernel 时间。分位数保留最近 8192 点。",
+  "error": null
+}

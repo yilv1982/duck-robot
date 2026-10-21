@@ -280,8 +280,8 @@ class DuckStandEnv(gym.Env):
             self._renderer.update_scene(self.data)
             return self._renderer.render()
         if self._viewer is None:
-            import mujoco.viewer
-            self._viewer = mujoco.viewer.launch_passive(self.model, self.data)
+            from mujoco import viewer as mujoco_viewer
+            self._viewer = mujoco_viewer.launch_passive(self.model, self.data)
         if self._viewer.is_running():
             self._viewer.sync()
         return None

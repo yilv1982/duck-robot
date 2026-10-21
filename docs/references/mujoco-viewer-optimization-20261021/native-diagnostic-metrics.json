@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "viewer": "native",
+  "checkpoint": "/mnt/e/Projects/duck-robot/training/logs/rsl_rl/duck_walk/2026-10-19_15-02-25/model_9999.pt",
+  "model": "/mnt/e/Projects/duck-robot/training/models/duck_visual.xml",
+  "versions": {
+    "mjlab": "1.3.0",
+    "mujoco": "3.10.0",
+    "viser": "1.1.1",
+    "rsl-rl-lib": "5.0.1",
+    "torch": "2.14.1"
+  },
+  "device": "cuda:0",
+  "num_envs": 1,
+  "observation_dimensions": 49,
+  "action_dimensions": 14,
+  "requested_duration_seconds": 3.0,
+  "wall_seconds": 3.203006491996348,
+  "active_wall_seconds": 3.203005789022427,
+  "paused_wall_seconds": 0.0,
+  "control_step_seconds": 0.02,
+  "running_simulation_seconds": 0.4,
+  "actual_realtime_ratio": 0.12488269655050545,
+  "control_hz": 6.244134827525272,
+  "scene_completed_hz_including_pauses": 0.0,
+  "scene_task_limit": 1,
+  "max_scene_tasks_in_flight": 0,
+  "counts": {
+    "native_sync_calls": 11,
+    "running_control_steps": 20,
+    "budget_capped_ticks": 9
+  },
+  "timings": {
+    "control_host_ms": {
+      "retained_samples": 20,
+      "p50": 9.000251506222412,
+      "p95": 10.585522220935673,
+      "max": 11.232476041186601
+    },
+    "simulation_lock_wait_ms": {
+      "retained_samples": 20,
+      "p50": 0.0033329997677356005,
+      "p95": 0.006488600047305236,
+      "max": 0.018848979379981756
+    },
+    "scene_update_ms": {
+      "retained_samples": 0,
+      "p50": null,
+      "p95": null,
+      "max": null
+    },
+    "scene_completion_interval_ms": {
+      "retained_samples": 0,
+      "p50": null,
+      "p95": null,
+      "max": null
+    }
+  },
+  "browser_fps": null,
+  "timing_note": "后端墙钟计时；control_host_ms 含推理/步进主机耗时，不是独立 GPU kernel 时间。分位数保留最近 8192 点。",
+  "error": null
+}

@@ -1,0 +1,169 @@
+Warp 1.12.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.4
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA GeForce RTX 4080" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/yilv/.cache/warp/1.12.0
+Warp DeprecationWarning: The symbol `warp.context.runtime` will soon be removed from the public API. It can still be accessed from `warp._src.context.runtime` but might be changed or removed without notice.
+Module mujoco_warp._src.smooth 95a0b8b load on device 'cuda:0' took 4.81 ms  (cached)
+Module mujoco_warp._src.collision_driver 88f7770 load on device 'cuda:0' took 2.27 ms  (cached)
+Module _nxn_broadphase__locals__kernel_e73b1315 e73b131 load on device 'cuda:0' took 1.91 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_c9a289e6 c9a289e load on device 'cuda:0' took 4.87 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_b65ff338 b65ff33 load on device 'cuda:0' took 3.22 ms  (cached)
+Module mujoco_warp._src.constraint 27c5750 load on device 'cuda:0' took 4.67 ms  (cached)
+Module _efc_contact_init__locals__kernel_fda71e14 fda71e1 load on device 'cuda:0' took 1.74 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_7974b597 cc0fc30 load on device 'cuda:0' took 2.09 ms  (cached)
+Module _efc_contact_update__locals__kernel_90315d53 90315d5 load on device 'cuda:0' took 2.95 ms  (cached)
+Module mujoco_warp._src.forward f60f76d load on device 'cuda:0' took 3.54 ms  (cached)
+Module mujoco_warp._src.passive 1a5e55c load on device 'cuda:0' took 2.91 ms  (cached)
+Module mujoco_warp._src.forward 8ebfcb1 load on device 'cuda:0' took 3.27 ms  (cached)
+Module mujoco_warp._src.support dd3f924 load on device 'cuda:0' took 1.88 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_b16bf393 b7e5d5f load on device 'cuda:0' took 65.28 ms  (cached)
+Module mujoco_warp._src.solver b116efb load on device 'cuda:0' took 3.26 ms  (cached)
+Module solve_init_jaref__locals__kernel_5208712d 5208712 load on device 'cuda:0' took 1.63 ms  (cached)
+Module mul_m_dense__locals___mul_m_dense_b66df345 b66df34 load on device 'cuda:0' took 1.76 ms  (cached)
+Module update_constraint_efc__locals__kernel_32935e9d 32935e9 load on device 'cuda:0' took 1.85 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_baf8e129 baf8e12 load on device 'cuda:0' took 3.05 ms  (cached)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_545c3598 7d15843 load on device 'cuda:0' took 2.51 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_5ee47d83 324a2ff load on device 'cuda:0' took 69.47 ms  (cached)
+Module linesearch_jv_fused__locals__kernel_7bf09094 7bf0909 load on device 'cuda:0' took 1.98 ms  (cached)
+Module linesearch_prepare_gauss__locals__kernel_97347d38 97347d3 load on device 'cuda:0' took 2.12 ms  (cached)
+Module update_constraint_efc__locals__kernel_3c1a9816 3c1a981 load on device 'cuda:0' took 2.10 ms  (cached)
+Module mujoco_warp._src.sensor 7fc0378 load on device 'cuda:0' took 4.49 ms  (cached)
+Module mujoco_warp._src.derivative d0e2fd7 load on device 'cuda:0' took 2.42 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_e7898c5c e7898c5 load on device 'cuda:0' took 1.97 ms  (cached)
+Module reset_data__locals__reset_qM_10d3c793 10d3c79 load on device 'cuda:0' took 1.42 ms  (cached)
+Module reset_data__locals__reset_mocap_ff71f630 ff71f63 load on device 'cuda:0' took 2.22 ms  (cached)
+Module reset_data__locals__reset_contact_df686d47 df686d4 load on device 'cuda:0' took 1.54 ms  (cached)
+Module reset_data__locals__reset_nworld_6e0d904e 6e0d904 load on device 'cuda:0' took 1.48 ms  (cached)
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 1      |
+| Environment device     | cuda:0 |
+| Environment seed       | None   |
+| Physics step-size      | 0.002  |
+| Environment step-size  | 0.02   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 0 active terms.
+
+[INFO] <CommandManager> contains 1 active terms.
++--------------------------------------------+
+|            Active Command Terms            |
++-------+----------+-------------------------+
+| Index | Name     |           Type          |
++-------+----------+-------------------------+
+|   0   | velocity | PlaybackVelocityCommand |
++-------+----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 14) |
++--------+---------+--------------+
+| Index  | Name    |    Dimension |
++--------+---------+--------------+
+|   0    | joints  |           14 |
++--------+---------+--------------+
+
+[INFO] <ObservationManager> contains 2 groups.
++-----------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (49,)) |
++--------------+----------------------------+---------------+
+|    Index     | Name                       |     Shape     |
++--------------+----------------------------+---------------+
+|      0       | gravity                    |      (3,)     |
+|      1       | joint_pos                  |     (14,)     |
+|      2       | joint_vel                  |     (14,)     |
+|      3       | last_action                |     (14,)     |
+|      4       | vx                         |      (2,)     |
+|      5       | command                    |      (2,)     |
++--------------+----------------------------+---------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (49,)) |
++--------------+-----------------------------+---------------+
+|    Index     | Name                        |     Shape     |
++--------------+-----------------------------+---------------+
+|      0       | gravity                     |      (3,)     |
+|      1       | joint_pos                   |     (14,)     |
+|      2       | joint_vel                   |     (14,)     |
+|      3       | last_action                 |     (14,)     |
+|      4       | vx                          |      (2,)     |
+|      5       | command                     |      (2,)     |
++--------------+-----------------------------+---------------+
+
+[INFO] <TerminationManager> contains 3 active terms.
++------------------------------------+
+|      Active Termination Terms      |
++-------+-----------------+----------+
+| Index | Name            | Time Out |
++-------+-----------------+----------+
+|   0   | bad_orientation |  False   |
+|   1   | low_height      |  False   |
+|   2   | time_out        |   True   |
++-------+-----------------+----------+
+
+[INFO] <RewardManager> contains 4 active terms.
++-----------------------------+
+|     Active Reward Terms     |
++-------+------------+--------+
+| Index | Name       | Weight |
++-------+------------+--------+
+|   0   | vel_track  |    2.0 |
+|   1   | upright    |    1.0 |
+|   2   | height     |    1.0 |
+|   3   | joint_home |    0.1 |
++-------+------------+--------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <NullMetricsManager> (inactive)
+[INFO] <NullRecorderManager> (inactive)
+--------------------------------------------------------------------------------
+Resolved observation sets:
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=49, out_features=128, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=128, out_features=128, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=128, out_features=14, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=49, out_features=128, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=128, out_features=128, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+策略：model_9999.pt | 单环境 | 控制 50 Hz | 模型：duck_visual.xml
+后端计时已保存：/mnt/e/Projects/duck-robot/docs/references/mujoco-viewer-optimization-20261021/native-diagnostic-metrics.json
+完成控制步：20；场景完成：0；浏览器 FPS 未测量。
+
+[stderr]
+/mnt/e/Projects/duck-robot/training/.venv-wsl/lib/python3.12/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+/mnt/e/Projects/duck-robot/training/.venv-wsl/lib/python3.12/site-packages/mjlab/entity/entity.py:149: UserWarning: Actuator config matched 14 joint(s) but the same expressions also match 1 site(s): imu. Add a separate config with transmission_type=TransmissionType.SITE if those should be actuated too.
+  self._add_actuators()
+/mnt/e/Projects/duck-robot/training/.venv-wsl/lib/python3.12/site-packages/mjlab/scene/scene.py:65: UserWarning: Entity 'robot' has 2 keyframes; only the first one will be used.
+  self._add_entities()
+/mnt/e/Projects/duck-robot/training/.venv-wsl/lib/python3.12/site-packages/mjlab/scene/scene.py:65: UserWarning: Entity 'robot' has non-default <option> fields (integrator) that will not be propagated by MjSpec.attach(). Use MujocoCfg instead.
+  self._add_entities()
+WARNING: Attach conflict when attaching 'duck_visual' to 'mjlab scene', policy is 'warning'
+integrator: parent has 0, child has 3, keeping parent value
+
+/mnt/e/Projects/duck-robot/training/.venv-wsl/lib/python3.12/site-packages/mjlab/scene/scene.py:71: UserWarning: Attach conflict when attaching 'duck_visual' to 'mjlab scene', policy is 'warning'
+integrator: parent has 0, child has 3, keeping parent value
+  return self._spec.compile()

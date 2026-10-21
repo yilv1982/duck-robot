@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "viewer": "native",
+  "checkpoint": "/mnt/e/Projects/duck-robot/training/logs/rsl_rl/duck_walk/2026-10-19_15-02-25/model_9999.pt",
+  "model": "/mnt/e/Projects/duck-robot/training/models/duck_visual.xml",
+  "versions": {
+    "mjlab": "1.3.0",
+    "mujoco": "3.10.0",
+    "viser": "1.1.1",
+    "rsl-rl-lib": "5.0.1",
+    "torch": "2.14.1"
+  },
+  "device": "cuda:0",
+  "num_envs": 1,
+  "observation_dimensions": 49,
+  "action_dimensions": 14,
+  "requested_duration_seconds": 3.0,
+  "wall_seconds": 3.168694880034309,
+  "active_wall_seconds": 3.168693700048607,
+  "paused_wall_seconds": 0.0,
+  "control_step_seconds": 0.02,
+  "running_simulation_seconds": 0.32,
+  "actual_realtime_ratio": 0.10098798757200524,
+  "control_hz": 5.049399378600262,
+  "scene_completed_hz_including_pauses": 0.0,
+  "scene_task_limit": 1,
+  "max_scene_tasks_in_flight": 0,
+  "counts": {
+    "native_sync_calls": 10,
+    "running_control_steps": 16,
+    "budget_capped_ticks": 8
+  },
+  "timings": {
+    "control_host_ms": {
+      "retained_samples": 16,
+      "p50": 9.29333150270395,
+      "p95": 13.392931999987923,
+      "max": 14.25945502705872
+    },
+    "simulation_lock_wait_ms": {
+      "retained_samples": 16,
+      "p50": 0.0028339854907244444,
+      "p95": 0.009081486496143043,
+      "max": 0.022409018129110336
+    },
+    "scene_update_ms": {
+      "retained_samples": 0,
+      "p50": null,
+      "p95": null,
+      "max": null
+    },
+    "scene_completion_interval_ms": {
+      "retained_samples": 0,
+      "p50": null,
+      "p95": null,
+      "max": null
+    }
+  },
+  "browser_fps": null,
+  "timing_note": "后端墙钟计时；control_host_ms 含推理/步进主机耗时，不是独立 GPU kernel 时间。分位数保留最近 8192 点。",
+  "error": null,
+  "process_exit_code": 1,
+  "validation_status": "degraded",
+  "validation_note": "Native window initialized and 10 sync calls completed, but realtime ratio was 0.101; the launcher exited 1 without a Python exception. Native is not validated for realtime viewing."
+}
